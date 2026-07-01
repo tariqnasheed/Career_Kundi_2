@@ -1,0 +1,9 @@
+# Development variant — runs the Vite dev server with hot-module-reload
+# instead of building a static bundle. Used by docker-compose.dev.yml.
+FROM node:20-alpine
+WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN npm install
+COPY . .
+EXPOSE 5173
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]

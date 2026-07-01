@@ -1,0 +1,95 @@
+/* Toast.module.css */
+
+.container {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 380px;
+  width: calc(100vw - var(--space-8));
+  pointer-events: none;
+}
+
+/* --- Individual toast ------------------------------------------------- */
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3-5) var(--space-4);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-lg);
+  pointer-events: all;
+}
+
+/* --- Type colors ------------------------------------------------------- */
+.success .icon { color: var(--accent-emerald); }
+.success       { border-left: 3px solid var(--accent-emerald); }
+
+.error .icon   { color: var(--accent-rose); }
+.error         { border-left: 3px solid var(--accent-rose); }
+
+.warning .icon { color: var(--accent-amber); }
+.warning       { border-left: 3px solid var(--accent-amber); }
+
+.info .icon    { color: var(--accent-cyan-bright); }
+.info          { border-left: 3px solid var(--accent-cyan); }
+
+.ai .icon      { color: var(--accent-violet); }
+.ai            { border-left: 3px solid var(--accent-violet); }
+
+/* --- Icon slot -------------------------------------------------------- */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --- Body ------------------------------------------------------------- */
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  line-height: var(--line-height-snug);
+}
+
+.message {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: var(--line-height-snug);
+}
+
+/* --- Dismiss button --------------------------------------------------- */
+.dismiss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.dismiss:hover {
+  background: var(--bg-overlay);
+  color: var(--text-primary);
+}

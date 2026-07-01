@@ -1,0 +1,113 @@
+/* Input.module.css */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* --- Label ------------------------------------------------------------ */
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+}
+
+/* --- Input wrap (holds icon slots) ------------------------------------ */
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputWrap.hasError .input {
+  border-color: var(--accent-rose);
+  box-shadow: 0 0 0 1px var(--accent-rose);
+}
+
+/* --- The actual input element ----------------------------------------- */
+.input {
+  width: 100%;
+  padding: var(--space-2-5) var(--space-3-5);
+  background: var(--bg-overlay);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  line-height: var(--line-height-normal);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:hover:not(:disabled) {
+  border-color: var(--border-default);
+  background: var(--bg-elevated);
+}
+
+.input:focus:not(:disabled) {
+  border-color: var(--accent-violet);
+  background: var(--bg-elevated);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Icon slot padding adjustments ------------------------------------ */
+.withLeftIcon  { padding-left: calc(var(--space-3-5) + 22px); }
+.withRightIcon { padding-right: calc(var(--space-3-5) + 22px); }
+
+/* --- Icon slots ------------------------------------------------------- */
+.iconLeft,
+.iconRight {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+}
+
+.iconLeft  { left: var(--space-3); }
+.iconRight { right: var(--space-3); }
+
+/* --- Textarea variant ------------------------------------------------- */
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+  line-height: var(--line-height-relaxed);
+}
+
+/* --- Hint & Error messages -------------------------------------------- */
+.hint {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  line-height: var(--line-height-normal);
+}
+
+.error {
+  font-size: var(--font-size-xs);
+  color: var(--accent-rose);
+  line-height: var(--line-height-normal);
+}

@@ -1,0 +1,365 @@
+/*
+ * globals.css
+ * ===========
+ * Careerkundi's entire design token system lives here as CSS Custom Properties.
+ * Every component reads from these variables — changing a theme is as simple
+ * as swapping the [data-theme] attribute on <html>.
+ *
+ * Architecture:
+ *   1. Design tokens (colors, typography, spacing, radii, shadows, transitions)
+ *   2. CSS reset + sensible base element styles
+ *   3. Utility classes used across multiple components (gradients, glass effect,
+ *      scrollbar styling, focus ring, noise texture overlay)
+ *
+ * Typography scale uses a 1.25 (Major Third) ratio:
+ *   xs  = 0.64rem   sm  = 0.8rem    base = 1rem      lg = 1.25rem
+ *   xl  = 1.563rem  2xl = 1.953rem  3xl = 2.441rem   4xl = 3.052rem
+ */
+
+/* =============================================================================
+   DESIGN TOKENS — DARK THEME (default)
+   ============================================================================= */
+:root,
+[data-theme="dark"] {
+  /* --- Backgrounds ---------------------------------------------------------- */
+  --bg-base:     #050914;   /* deep space — main page background */
+  --bg-surface:  #0D1425;   /* slightly lifted — used for page sections */
+  --bg-elevated: #141E35;   /* cards, panels */
+  --bg-overlay:  #1C2845;   /* modals, dropdowns */
+  --bg-glass:    rgba(13, 20, 37, 0.65);  /* glassmorphism surface */
+
+  /* --- Accent palette ------------------------------------------------------- */
+  --accent-violet:  #8B5CF6;   /* primary brand violet */
+  --accent-violet-bright: #A78BFA;
+  --accent-violet-dim:    #6D28D9;
+  --accent-cyan:    #06B6D4;   /* electric cyan — secondary accent */
+  --accent-cyan-bright: #22D3EE;
+  --accent-emerald: #10B981;   /* success / positive state */
+  --accent-amber:   #F59E0B;   /* warning */
+  --accent-rose:    #F43F5E;   /* error / destructive */
+  --accent-pink:    #EC4899;   /* rare highlight */
+
+  /* --- Gradient ------------------------------------------------------------ */
+  --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
+  --gradient-primary-soft: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(139, 92, 246, 0.05) 0%, transparent 100%);
+  --gradient-glow-violet: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(139, 92, 246, 0.25) 0%, transparent 70%);
+  --gradient-glow-cyan: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(6, 182, 212, 0.2) 0%, transparent 70%);
+  --gradient-mesh:
+    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(6, 182, 212, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 60% 40%, rgba(236, 72, 153, 0.06) 0%, transparent 50%);
+
+  /* --- Text ---------------------------------------------------------------- */
+  --text-primary:   #F0F4FF;
+  --text-secondary: #8898B8;
+  --text-muted:     #4E6080;
+  --text-disabled:  #2E3F58;
+  --text-inverse:   #0D1425;
+
+  /* --- Borders ------------------------------------------------------------- */
+  --border-subtle:  rgba(139, 92, 246, 0.12);
+  --border-default: rgba(139, 92, 246, 0.22);
+  --border-active:  rgba(139, 92, 246, 0.55);
+  --border-focus:   #8B5CF6;
+
+  /* --- Shadows ------------------------------------------------------------- */
+  --shadow-sm:  0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md:  0 4px 20px rgba(0, 0, 0, 0.45), 0 1px 4px rgba(0, 0, 0, 0.3);
+  --shadow-lg:  0 8px 40px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-xl:  0 16px 64px rgba(0, 0, 0, 0.65), 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-violet: 0 4px 24px rgba(139, 92, 246, 0.35), 0 0 0 1px rgba(139, 92, 246, 0.2);
+  --shadow-cyan:   0 4px 24px rgba(6, 182, 212, 0.3), 0 0 0 1px rgba(6, 182, 212, 0.15);
+  --shadow-glow:   0 0 32px rgba(139, 92, 246, 0.4), 0 0 64px rgba(6, 182, 212, 0.15);
+}
+
+/* =============================================================================
+   DESIGN TOKENS — LIGHT THEME
+   ============================================================================= */
+[data-theme="light"] {
+  --bg-base:     #F5F7FF;
+  --bg-surface:  #FFFFFF;
+  --bg-elevated: #EEEFFE;
+  --bg-overlay:  #FFFFFF;
+  --bg-glass:    rgba(255, 255, 255, 0.80);
+
+  --gradient-primary: linear-gradient(135deg, #7C3AED 0%, #0891B2 100%);
+  --gradient-primary-soft: linear-gradient(135deg, rgba(124, 58, 237, 0.10) 0%, rgba(8, 145, 178, 0.10) 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(124, 58, 237, 0.04) 0%, transparent 100%);
+  --gradient-glow-violet: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+  --gradient-glow-cyan: none;
+  --gradient-mesh:
+    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(124, 58, 237, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(8, 145, 178, 0.06) 0%, transparent 60%);
+
+  --accent-violet: #7C3AED;
+  --accent-violet-bright: #8B5CF6;
+  --accent-violet-dim:    #6D28D9;
+  --accent-cyan:    #0891B2;
+  --accent-cyan-bright: #06B6D4;
+  --accent-emerald: #059669;
+  --accent-amber:   #D97706;
+  --accent-rose:    #E11D48;
+  --accent-pink:    #DB2777;
+
+  --text-primary:   #0D1425;
+  --text-secondary: #4A5870;
+  --text-muted:     #8898B0;
+  --text-disabled:  #C0CADA;
+  --text-inverse:   #F0F4FF;
+
+  --border-subtle:  rgba(13, 20, 37, 0.08);
+  --border-default: rgba(13, 20, 37, 0.14);
+  --border-active:  rgba(124, 58, 237, 0.45);
+  --border-focus:   #7C3AED;
+
+  --shadow-sm:  0 1px 4px rgba(0, 0, 0, 0.07);
+  --shadow-md:  0 2px 12px rgba(0, 0, 0, 0.10), 0 1px 3px rgba(0, 0, 0, 0.07);
+  --shadow-lg:  0 4px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-xl:  0 8px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.10);
+  --shadow-violet: 0 4px 20px rgba(124, 58, 237, 0.25), 0 0 0 1px rgba(124, 58, 237, 0.15);
+  --shadow-cyan:   0 4px 20px rgba(8, 145, 178, 0.2), 0 0 0 1px rgba(8, 145, 178, 0.1);
+  --shadow-glow:   0 0 24px rgba(124, 58, 237, 0.25);
+}
+
+/* =============================================================================
+   DESIGN TOKENS — SHARED (same across both themes)
+   ============================================================================= */
+:root {
+  /* --- Typography ---------------------------------------------------------- */
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+  --font-body:    "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", "Fira Code", monospace;
+
+  --font-size-xs:   0.64rem;
+  --font-size-sm:   0.8rem;
+  --font-size-base: 1rem;
+  --font-size-lg:   1.25rem;
+  --font-size-xl:   1.563rem;
+  --font-size-2xl:  1.953rem;
+  --font-size-3xl:  2.441rem;
+  --font-size-4xl:  3.052rem;
+  --font-size-5xl:  3.815rem;
+
+  --line-height-tight:  1.2;
+  --line-height-snug:   1.35;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.75;
+
+  --font-weight-light:   300;
+  --font-weight-normal:  400;
+  --font-weight-medium:  500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:    700;
+  --font-weight-extrabold: 800;
+
+  /* --- Spacing scale (0.25rem base) --------------------------------------- */
+  --space-1:   0.25rem;
+  --space-1-5: 0.375rem;
+  --space-2:   0.5rem;
+  --space-2-5: 0.625rem;
+  --space-3:   0.75rem;
+  --space-3-5: 0.875rem;
+  --space-4:   1rem;
+  --space-5:   1.25rem;
+  --space-6:   1.5rem;
+  --space-8:   2rem;
+  --space-10:  2.5rem;
+  --space-12:  3rem;
+  --space-16:  4rem;
+  --space-20:  5rem;
+  --space-24:  6rem;
+
+  /* --- Border radii ------------------------------------------------------- */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* --- Transitions -------------------------------------------------------- */
+  --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow:   400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* --- Layout ------------------------------------------------------------- */
+  --sidebar-width:           240px;
+  --sidebar-width-collapsed: 64px;
+  --sidebar-collapsed-width: 64px;   /* alias used in layout components */
+  --header-height:           56px;
+  --topbar-height:           56px;   /* alias used in layout components */
+  --content-max-width:       1280px;
+  --chatbot-width:           400px;
+  --chatbot-height:          600px;
+
+  /* --- Z-index stack ------------------------------------------------------ */
+  --z-base:     1;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-sidebar:  250;
+  --z-header:   260;
+  --z-modal:    300;
+  --z-toast:    400;
+  --z-chatbot:  350;
+}
+
+/* =============================================================================
+   CSS RESET + BASE
+   ============================================================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-base);
+  min-height: 100dvh;
+  transition:
+    background-color var(--transition-slow),
+    color var(--transition-slow);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--accent-violet-bright);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover { color: var(--accent-cyan-bright); }
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img, svg, video { display: block; max-width: 100%; }
+
+ul, ol { list-style: none; }
+
+code, kbd, pre, samp {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+/* Focus ring — accessible, styled to the brand accent */
+:focus-visible {
+  outline: 2px solid var(--accent-violet);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* =============================================================================
+   SCROLLBAR STYLING
+   ============================================================================= */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--border-active); }
+
+/* =============================================================================
+   UTILITY CLASSES
+   ============================================================================= */
+
+/* Gradient text — headline treatment */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphism card/surface */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Mesh gradient background (used on full-page sections) */
+.mesh-bg { background-image: var(--gradient-mesh); }
+
+/* Noise texture overlay — adds organic depth to flat surfaces */
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Ambient glow helpers */
+.glow-violet { box-shadow: var(--shadow-violet); }
+.glow-cyan   { box-shadow: var(--shadow-cyan); }
+
+/* Confidence score color utilities */
+.confidence-high   { color: var(--accent-emerald); }
+.confidence-medium { color: var(--accent-amber); }
+.confidence-low    { color: var(--accent-rose); }
+
+/* Visually hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Truncate long text to one line */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Shimmer skeleton loading effect */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-elevated) 25%,
+    var(--bg-overlay) 50%,
+    var(--bg-elevated) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: var(--radius-md);
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}

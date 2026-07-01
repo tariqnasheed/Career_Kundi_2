@@ -1,0 +1,1 @@
+"""Careerkundi backend application package."""

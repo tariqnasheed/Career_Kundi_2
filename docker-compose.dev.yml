@@ -1,0 +1,25 @@
+# =============================================================================
+# Careerkundi — Development Compose Overlay
+# Usage: docker compose -f docker-compose.yml -f docker-compose.dev.yml up
+# Swaps the production Dockerfiles for dev variants with hot-reload and
+# bind-mounts source code so edits on the host are reflected immediately.
+# =============================================================================
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    command: npm run dev -- --host 0.0.0.0
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules

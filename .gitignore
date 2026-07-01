@@ -1,0 +1,91 @@
+# =============================================================================
+# Careerkundi — .gitignore
+# Every entry below is commented so future contributors know WHY it's excluded.
+# =============================================================================
+
+# --- Python ------------------------------------------------------------------
+__pycache__/            # Compiled bytecode caches, regenerated on every run
+*.py[cod]                # Compiled/optimized Python files (.pyc/.pyo/.pyd)
+*$py.class                # Jython compiled classes (defensive, unused here)
+*.so                       # Compiled C extensions (faiss/native deps build artifacts)
+.venv/                     # Local virtualenv created by `uv sync`
+venv/
+env/
+*.egg-info/                # setuptools metadata generated on install
+*.egg
+.eggs/
+
+# --- UV --------------------------------------------------------------------
+.uv/                        # UV's local cache directory
+
+# --- Node.js -----------------------------------------------------------------
+node_modules/                # Installed npm packages — restored via `npm install`
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# --- Build outputs -------------------------------------------------------------
+dist/                          # Frontend production build output (Vite)
+build/                          # Generic build output directory
+.next/                           # (unused here, defensive for future Next.js migration)
+out/
+*.timestamp-*.mjs              # Vite hot-reload artifacts — regenerated on every dev start
+
+# --- Environment files (NEVER commit secrets) ------------------------------------
+.env                               # Real secrets — local backend env file
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.production
+!.env.example                       # Exception: the documented template IS committed
+
+# --- IDE -------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# --- OS --------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Docker ------------------------------------------------------------------------
+docker-compose.override.yml        # Local-only compose overrides should never be shared
+
+# --- Database ----------------------------------------------------------------------
+*.db
+*.sqlite3
+data/postgres/                      # Local Postgres volume data (if bind-mounted)
+data/redis/                          # Local Redis volume data (if bind-mounted)
+data/vector_store/                    # Generated FAISS index — rebuildable from source data
+data/knowledge_graph.gpickle            # Generated knowledge graph — rebuildable
+
+# --- Logs -----------------------------------------------------------------------------
+*.log
+logs/
+
+# --- Testing & Coverage -----------------------------------------------------------------
+.coverage
+htmlcov/
+coverage/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Playwright -------------------------------------------------------------------------
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# --- Generated user files -----------------------------------------------------------------
+*.pdf
+*.docx
+uploads/
+generated/

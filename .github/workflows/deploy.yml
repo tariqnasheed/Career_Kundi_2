@@ -1,0 +1,33 @@
+# =============================================================================
+# Careerkundi — Deployment Template (customize before enabling)
+# Manually triggered workflow that builds + pushes images and applies them
+# to your target environment. Fill in the registry/host secrets in your
+# repo settings before using. Disabled by default (workflow_dispatch only).
+# =============================================================================
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        default: "staging"
+        type: choice
+        options: [staging, production]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build & push images
+        run: |
+          echo "Configure registry login + docker push here, e.g.:"
+          echo "docker build -t \$REGISTRY/careerkundi-backend:\${{ github.sha }} ./backend"
+          echo "docker push \$REGISTRY/careerkundi-backend:\${{ github.sha }}"
+      - name: Deploy
+        run: |
+          echo "Add your deployment step here: kubectl apply, docker compose pull && up -d over SSH,"
+          echo "Cloud Run / ECS / Fly.io deploy command, etc. — see README 'Deployment Guide'."
