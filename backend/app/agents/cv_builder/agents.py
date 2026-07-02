@@ -115,6 +115,25 @@ requirements is encouraged; inventing a skill the candidate doesn't list is
 not.
 """.strip()
 
+_ROLE_TARGETED_WRITER_ROLE = """
+You are the CV Builder agent for Careerkundi. The candidate wants a CV
+written for a DIFFERENT target role than their saved profile emphasizes.
+Using their profile only as background context, you fully author every
+ENABLED section's content so it reads as a credible CV for the requested
+target role. Section toggles control inclusion only — you decide the wording,
+structure, and emphasis inside each enabled section.
+""".strip()
+
+_ROLE_TARGETED_DIRECTIVE = """
+Generate complete, professional CV content for the target role described.
+Use the candidate's profile as grounding context where helpful (real names,
+contact info, education dates) but rewrite experience bullets, skills, and
+summary to align with the target role. Plausible, role-appropriate
+achievements and skills are expected — this is aspirational CV drafting,
+not a verbatim copy of the saved profile. Return content only for the
+sections listed in sections_included; omit disabled sections entirely.
+""".strip()
+
 _CV_RESULT_SCHEMA = CVGenerationResult.model_json_schema()
 
 _SECTION_PRESENCE_CHECKS: dict[str, str] = {
@@ -131,6 +150,8 @@ _SECTION_PRESENCE_CHECKS: dict[str, str] = {
     "references": "references",
     "custom": "custom_sections",
 }
+
+_ALL_SECTION_IDS = list(_SECTION_PRESENCE_CHECKS.keys())
 
 
 def _available_sections(profile: dict) -> list[str]:
@@ -156,6 +177,8 @@ class CVBuilderGuardrailAgent(BaseGuardrailAgent):
     async def extra_checks(self, state: dict, sanitized_input: str) -> list[str]:
         if not state.get("profile_snapshot"):
             return ["No profile data was provided — cannot generate a CV from nothing."]
+        if state.get("generation_mode") == "role_targeted" and not (state.get("target_role_title") or "").strip():
+            return ["A target role title is required for role-targeted CV generation."]
         return []
 
 
@@ -170,15 +193,21 @@ class CVPlannerAgent(BaseAgent):
         profile = state["profile_snapshot"]
         target_job = state.get("target_job_snapshot")
         requested = state.get("requested_section_ids")
+        generation_mode = state.get("generation_mode", "profile")
 
-        available = _available_sections(profile)
-        section_ids = [s for s in requested if s in available] if requested else available
+        if generation_mode == "role_targeted":
+            default_sections = [s for s in _ALL_SECTION_IDS if s != "custom"]
+            section_ids = [s for s in (requested or default_sections) if s in _ALL_SECTION_IDS]
+        else:
+            available = _available_sections(profile)
+            section_ids = [s for s in requested if s in available] if requested else available
 
         profile_chars = len(mock_data.profile_text_blob(profile))
         job_chars = len((target_job or {}).get("description_raw") or "")
+        role_chars = len(state.get("target_role_description") or "")
         tier = self.cost_monitor.recommend_tier(
-            input_length_chars=profile_chars + job_chars,
-            force_pro=bool(target_job),
+            input_length_chars=profile_chars + job_chars + role_chars,
+            force_pro=bool(target_job) or generation_mode == "role_targeted",
         )
 
         jd_keywords = [
@@ -191,9 +220,10 @@ class CVPlannerAgent(BaseAgent):
             "tier": tier,
             "retrieval_k": 6,
             "retrieval_category": "career_advice",
-            "available_section_ids": available,
+            "available_section_ids": section_ids if generation_mode == "role_targeted" else _available_sections(profile),
             "section_ids": section_ids,
             "jd_keywords": jd_keywords,
+            "generation_mode": generation_mode,
         }
         return {"plan": plan}
 
@@ -211,6 +241,7 @@ class CVBulletWriterExecutorAgent(BaseAgent):
         plan = state["plan"]
         tone = state.get("tone", "concise")
         revision_issues = state.get("reflection_issues") or []
+        generation_mode = plan.get("generation_mode", state.get("generation_mode", "profile"))
 
         retrieved = retrieve(
             "resume bullet writing ATS keyword quantified achievements action verbs",
@@ -222,34 +253,62 @@ class CVBulletWriterExecutorAgent(BaseAgent):
         tier = plan["tier"]
 
         if settings.llm_mode == "mock":
-            draft = mock_data.mock_generate_cv_content(profile, target_job, plan["section_ids"], tone)
+            if generation_mode == "role_targeted":
+                draft = mock_data.mock_generate_role_targeted_cv_content(
+                    profile,
+                    state.get("target_role_title") or "",
+                    state.get("target_role_description"),
+                    target_job,
+                    plan["section_ids"],
+                    tone,
+                )
+            else:
+                draft = mock_data.mock_generate_cv_content(profile, target_job, plan["section_ids"], tone)
         else:
             llm = get_llm(tier)
-            user_prompt = (
-                f"Numbered resume-writing best-practice context:\n{context}\n\n"
-                f"Tone requested: {tone}\n"
-                f"Sections to include: {plan['section_ids']}\n"
-                f"JD keywords to prioritize, if any: {plan['jd_keywords']}\n\n"
-                f"Full candidate profile (JSON):\n{profile}\n\n"
-                f"Target job (JSON, may be empty if no specific role was selected):\n{target_job or {}}"
-            )
+            if generation_mode == "role_targeted":
+                user_prompt = (
+                    f"Numbered resume-writing best-practice context:\n{context}\n\n"
+                    f"Tone requested: {tone}\n"
+                    f"Sections to include (generate full content for each): {plan['section_ids']}\n"
+                    f"Target role title: {state.get('target_role_title')}\n"
+                    f"Target role description / JD context:\n{state.get('target_role_description') or '(none)'}\n\n"
+                    f"Candidate profile for grounding (JSON):\n{profile}\n\n"
+                    f"Saved target job, if any (JSON):\n{target_job or {}}\n\n"
+                    "Return generated_sections with keys matching each section_id in sections_included. "
+                    "summary uses {\"content\": \"...\"}; experience/projects/education/certifications/etc. use "
+                    "{\"entries\": [...]}; skills uses {\"items\": [...]}."
+                )
+                role_directive = _ROLE_TARGETED_DIRECTIVE
+                writer_role = _ROLE_TARGETED_WRITER_ROLE
+            else:
+                user_prompt = (
+                    f"Numbered resume-writing best-practice context:\n{context}\n\n"
+                    f"Tone requested: {tone}\n"
+                    f"Sections to include: {plan['section_ids']}\n"
+                    f"JD keywords to prioritize, if any: {plan['jd_keywords']}\n\n"
+                    f"Full candidate profile (JSON):\n{profile}\n\n"
+                    f"Target job (JSON, may be empty if no specific role was selected):\n{target_job or {}}"
+                )
+                role_directive = _FABRICATION_DIRECTIVE
+                writer_role = _CV_WRITER_ROLE
             if revision_issues:
                 user_prompt += (
-                    "\n\nThe previous draft had these issues — fix them. CRITICAL: never add a "
-                    "number, name, or claim that isn't already in the profile JSON above:\n"
+                    "\n\nThe previous draft had these issues — fix them:\n"
                     + "\n".join(f"- {issue}" for issue in revision_issues)
                 )
             spec = PromptSpec(
-                system_prompt=build_system_prompt(_CV_WRITER_ROLE, extra_directives=_FABRICATION_DIRECTIVE),
+                system_prompt=build_system_prompt(writer_role, extra_directives=role_directive),
                 user_prompt=user_prompt,
                 json_schema=_CV_RESULT_SCHEMA,
-                temperature=0.3,
+                temperature=0.4 if generation_mode == "role_targeted" else 0.3,
                 max_output_tokens=8192,
             )
             response = await llm.generate(spec)
             self.cost_monitor.record(response, tier=tier)
             draft = response.parsed_json or {}
             draft["sections_included"] = plan["section_ids"]
+            draft["generation_mode"] = generation_mode
 
         draft["citations"] = citations
         return {"draft_output": draft, "citations": citations, "retrieved_context": context, "model_tier_used": tier}
@@ -281,18 +340,30 @@ class CVReflectorAgent(BaseReflectorAgent):
             return ["Draft output is not a structured object."]
 
         issues: list[str] = []
-        profile = state.get("profile_snapshot") or {}
-        allowed_corpus = mock_data.profile_text_blob(profile)
-
-        if not draft.get("professional_summary") and not draft.get("needs_manual_input"):
-            issues.append("Missing a professional summary.")
-
+        generation_mode = draft.get("generation_mode", state.get("generation_mode", "profile"))
         plan = state.get("plan") or {}
         requested_sections = set(plan.get("section_ids") or [])
         draft_sections = set(draft.get("sections_included") or [])
         missing_sections = requested_sections - draft_sections
         if missing_sections:
             issues.append(f"Output is missing requested section(s): {sorted(missing_sections)}")
+
+        if generation_mode == "role_targeted":
+            generated = draft.get("generated_sections") or {}
+            for section_id in requested_sections:
+                if section_id not in generated:
+                    issues.append(f"Role-targeted draft is missing generated content for section '{section_id}'.")
+                elif section_id == "summary" and not (generated.get("summary") or {}).get("content"):
+                    issues.append("Role-targeted summary section is empty.")
+                elif section_id == "skills" and not (generated.get("skills") or {}).get("items"):
+                    issues.append("Role-targeted skills section is empty.")
+            return issues
+
+        profile = state.get("profile_snapshot") or {}
+        allowed_corpus = mock_data.profile_text_blob(profile)
+
+        if not draft.get("professional_summary") and not draft.get("needs_manual_input"):
+            issues.append("Missing a professional summary.")
 
         for group_key in ("enhanced_work_experiences", "enhanced_projects"):
             for entry in draft.get(group_key) or []:

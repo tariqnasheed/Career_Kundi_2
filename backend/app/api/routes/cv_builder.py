@@ -126,6 +126,9 @@ async def _generate_and_render(*, db: AsyncSession, user: User, payload: CVGener
         target_job_snapshot=target_job_snapshot,
         requested_section_ids=payload.section_ids,
         tone=payload.tone,
+        generation_mode=payload.generation_mode,
+        target_role_title=payload.target_role_title,
+        target_role_description=payload.target_role_description,
     )
     final_state = result["state"]
     cost_monitor = result["cost_monitor"]
@@ -135,7 +138,7 @@ async def _generate_and_render(*, db: AsyncSession, user: User, payload: CVGener
     rendered_content = render_cv(
         profile=profile_snapshot,
         target_job=target_job_snapshot,
-        draft=draft,
+        draft={**draft, "target_role_title": payload.target_role_title},
         section_ids=section_ids,
         template=payload.template,
         tone=payload.tone,

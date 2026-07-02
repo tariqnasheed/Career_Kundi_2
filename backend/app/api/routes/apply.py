@@ -261,7 +261,7 @@ async def confirm_and_submit(
         select(Profile).where(Profile.user_id == user.id)
     )
     profile = profile_result.scalar_one_or_none()
-    profile_sufficient = bool(profile and profile.completeness_score and profile.completeness_score >= 60)
+    profile_sufficient = bool(profile and profile.calculate_completeness_score() >= 60)
 
     profile_data = {}
     if profile:

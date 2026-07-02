@@ -51,6 +51,9 @@ async def run_cv_generation_pipeline(
     target_job_snapshot: dict[str, Any] | None = None,
     requested_section_ids: list[str] | None = None,
     tone: str = "concise",
+    generation_mode: str = "profile",
+    target_role_title: str | None = None,
+    target_role_description: str | None = None,
     request_id: str | None = None,
 ) -> dict[str, Any]:
     """
@@ -78,6 +81,9 @@ async def run_cv_generation_pipeline(
         target_job_snapshot=target_job_snapshot,
         requested_section_ids=requested_section_ids,
         tone=tone,
+        generation_mode=generation_mode,
+        target_role_title=target_role_title,
+        target_role_description=target_role_description,
     )
     final_state = await graph.ainvoke(state)
     raise_if_guardrail_failed(final_state)

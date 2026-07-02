@@ -1,0 +1,37 @@
+{
+  "role_name": "Call Center Agent (Part-time)",
+  "normalized_role_slug": "call_center_agent_part_time",
+  "category": "custom_roles",
+  "stream_or_department": "admin_remote",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 23,
+  "question_specific_study_material_count": 23,
+  "skill_count": 40,
+  "pdf_files": [
+    "call_center_agent_part_time_interview_pack.pdf",
+    "call_center_agent_part_time_study_material.pdf",
+    "call_center_agent_part_time_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "call_center_agent_part_time_interview_pack.md",
+    "call_center_agent_part_time_study_material.md",
+    "call_center_agent_part_time_questions_answers.md"
+  ],
+  "source_files": [
+    "call_center_agent_part_time_interview_pack.md",
+    "call_center_agent_part_time_study_material.md",
+    "call_center_agent_part_time_questions_answers.md",
+    "call_center_agent_part_time_interview_pack.pdf",
+    "call_center_agent_part_time_study_material.pdf",
+    "call_center_agent_part_time_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/call_center_agent_part_time",
+  "has_pdf": true,
+  "has_markdown": true
+}

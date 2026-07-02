@@ -1,0 +1,37 @@
+{
+  "role_name": "HR Advisor",
+  "normalized_role_slug": "hr_advisor",
+  "category": "business",
+  "stream_or_department": "social_sciences",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 24,
+  "question_specific_study_material_count": 24,
+  "skill_count": 40,
+  "pdf_files": [
+    "hr_advisor_interview_pack.pdf",
+    "hr_advisor_study_material.pdf",
+    "hr_advisor_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "hr_advisor_interview_pack.md",
+    "hr_advisor_study_material.md",
+    "hr_advisor_questions_answers.md"
+  ],
+  "source_files": [
+    "hr_advisor_interview_pack.md",
+    "hr_advisor_study_material.md",
+    "hr_advisor_questions_answers.md",
+    "hr_advisor_interview_pack.pdf",
+    "hr_advisor_study_material.pdf",
+    "hr_advisor_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/business/hr_advisor",
+  "has_pdf": true,
+  "has_markdown": true
+}

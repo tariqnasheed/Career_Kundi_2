@@ -1,0 +1,37 @@
+{
+  "role_name": "Retail Sales Associate",
+  "normalized_role_slug": "retail_sales_associate",
+  "category": "technology",
+  "stream_or_department": "retail_hospitality",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 22,
+  "question_specific_study_material_count": 22,
+  "skill_count": 29,
+  "pdf_files": [
+    "retail_sales_associate_interview_pack.pdf",
+    "retail_sales_associate_study_material.pdf",
+    "retail_sales_associate_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "retail_sales_associate_interview_pack.md",
+    "retail_sales_associate_study_material.md",
+    "retail_sales_associate_questions_answers.md"
+  ],
+  "source_files": [
+    "retail_sales_associate_interview_pack.md",
+    "retail_sales_associate_study_material.md",
+    "retail_sales_associate_questions_answers.md",
+    "retail_sales_associate_interview_pack.pdf",
+    "retail_sales_associate_study_material.pdf",
+    "retail_sales_associate_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/retail_sales_associate",
+  "has_pdf": true,
+  "has_markdown": true
+}

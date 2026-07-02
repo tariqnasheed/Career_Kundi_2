@@ -117,6 +117,7 @@ async def run_interview_pack_pipeline(
     job_snapshot: dict[str, Any],
     focus_areas: list[str] | None = None,
     difficulty: str = "auto",
+    include_study_material: bool = True,
     request_id: str | None = None,
 ) -> dict[str, Any]:
     """Generate an interview pack against an already-enriched job snapshot (a saved job's fields as a plain dict)."""
@@ -138,6 +139,7 @@ async def run_interview_pack_pipeline(
         job_snapshot=job_snapshot,
         focus_areas=focus_areas or [],
         difficulty=difficulty,
+        include_study_material=include_study_material,
     )
     final_state = await graph.ainvoke(state)
     raise_if_guardrail_failed(final_state)

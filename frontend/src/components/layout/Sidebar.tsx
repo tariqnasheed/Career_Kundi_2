@@ -20,7 +20,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   LayoutDashboard,
   Search,
-  FileText,
   BookOpen,
   Map,
   Trophy,
@@ -43,8 +42,7 @@ const NAV_GROUPS: { heading?: string; items: NavItem[] }[] = [
   {
     items: [
       { to: "/dashboard",      icon: <LayoutDashboard size={18} />, label: "Dashboard" },
-      { to: "/jobs",           icon: <Search          size={18} />, label: "Job Search" },
-      { to: "/interview-pack", icon: <FileText        size={18} />, label: "Interview Pack" },
+      { to: "/jobs",           icon: <Search          size={18} />, label: "Jobs & Interview Prep" },
     ],
   },
   {

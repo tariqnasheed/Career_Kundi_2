@@ -1,0 +1,3179 @@
+{
+  "role_name": "Paralegal",
+  "role_slug": "paralegal",
+  "category": "law",
+  "role_overview": {
+    "role_name": "Paralegal",
+    "summary": "The Paralegal role integrates Case management, Legal documentation, E-discovery to deliver on responsibilities such as support attorneys. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Support attorneys",
+      "Organize case files",
+      "Conduct legal research"
+    ],
+    "required_skills": [
+      "Case management",
+      "Legal documentation",
+      "E-discovery"
+    ],
+    "what_employers_expect": [
+      "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: Paralegal certificate."
+    ],
+    "skill_clusters": [
+      "Social Care",
+      "Legal Finance"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "If a new hire joined your Paralegal function while handling 'Support attorneys', how would you break down Case management into practical steps?",
+      "why_asked": "Tests genuine conceptual understanding of Case management, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Case management",
+      "question_id": "PARALEGAL-CASE-MANAGEM-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ],
+      "common_mistakes": [
+        "Executing Case Management without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Paralegal context, Case Management starts with translate policy into a concrete workflow with eligibility rules and deadlines. and continues through create a complete case record trail: intake, decision evidence, approvals, and correspondence.. The critical discipline is evidence: most service delays come from incomplete case data and unclear ownership.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support attorneys stays reliable under real operational constraints.\n\nAs Paralegal, I redesigned the support attorneys workflow with mandatory data fields and decision templates; average processing time dropped 24% and audit queries reduced by half.",
+      "answer_explanation": "Key knowledge demonstrated for Case Management:\n\u2022 Most service delays come from incomplete case data and unclear ownership.\n\u2022 Auditability matters as much as speed in public-facing administration.\n\u2022 Clear decision logs reduce appeals and repeat contacts.\nStandards referenced: Data protection policy, Records retention schedule",
+      "study_material": {
+        "overview": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records. In Paralegal practice, Case Management directly supports support attorneys. Social care and psychology apply ethical frameworks, statutory duties, and therapeutic models to support individuals and communities. Practitioners navigate complexity, trauma, and multi-agency systems while maintaining professional boundaries and safeguarding duties. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "definitions": [
+          {
+            "term": "Case Management",
+            "definition": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          },
+          {
+            "term": "Data protection policy",
+            "definition": "Applicable standard/regulation: Data protection policy."
+          },
+          {
+            "term": "Records retention schedule",
+            "definition": "Applicable standard/regulation: Records retention schedule."
+          },
+          {
+            "term": "Service-level targets",
+            "definition": "Applicable standard/regulation: Service-level targets."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Case Management",
+            "explanation": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records. In Paralegal practice, Case Management directly supports support attorneys. Social care and psychology apply ethical frameworks, statutory duties, and therapeutic models to support individuals and communities. Practitioners navigate complexity, trauma, and multi-agency systems while maintaining professional boundaries and safeguarding duties. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Legal Documentation",
+            "explanation": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          }
+        ],
+        "principles": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "key_concepts": [
+          "Case Management",
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "social care",
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "step_by_step_breakdown": [
+          "Translate policy into a concrete workflow with eligibility rules and deadlines.",
+          "Create a complete case record trail: intake, decision evidence, approvals, and correspondence.",
+          "Run QA checks on completeness, lawful basis, and timeliness before closure.",
+          "Escalate exceptions early with written risk/impact notes.",
+          "Track cycle-time and rework rate to improve process reliability."
+        ],
+        "explanations": [
+          "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records. In Paralegal practice, Case Management directly supports support attorneys. Social care and psychology apply ethical frameworks, statutory duties, and therapeutic models to support individuals and communities. Practitioners navigate complexity, trauma, and multi-agency systems while maintaining professional boundaries and safeguarding duties. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+        ],
+        "practical_example": "As Paralegal, I redesigned the support attorneys workflow with mandatory data fields and decision templates; average processing time dropped 24% and audit queries reduced by half.",
+        "common_mistakes": [
+          "Executing Case Management without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Case Management applies to: Support attorneys.",
+          "List the standards that govern Case Management in Paralegal work.",
+          "Write out the verification steps after completing a Case Management task."
+        ],
+        "revision_notes": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "related_concepts": [
+          "Case Management",
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "social care"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Case Management applies to: Support attorneys.",
+        "List the standards that govern Case Management in Paralegal work.",
+        "Write out the verification steps after completing a Case Management task."
+      ],
+      "revision_notes": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Give a detailed example where Case management was critical to recovering a difficult Paralegal outcome while handling 'Support attorneys'.",
+      "why_asked": "Probes depth of hands-on experience with Case management under real constraints.",
+      "skill_tag": "Case management",
+      "question_id": "PARALEGAL-CASE-MANAGEM-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ],
+      "common_mistakes": [
+        "Executing Case Management without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Paralegal context, Case Management starts with translate policy into a concrete workflow with eligibility rules and deadlines. and continues through create a complete case record trail: intake, decision evidence, approvals, and correspondence.. The critical discipline is evidence: most service delays come from incomplete case data and unclear ownership.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support attorneys stays reliable under real operational constraints.\n\nAs Paralegal, I redesigned the support attorneys workflow with mandatory data fields and decision templates; average processing time dropped 24% and audit queries reduced by half.",
+      "answer_explanation": "Key knowledge demonstrated for Case Management:\n\u2022 Most service delays come from incomplete case data and unclear ownership.\n\u2022 Auditability matters as much as speed in public-facing administration.\n\u2022 Clear decision logs reduce appeals and repeat contacts.\nStandards referenced: Data protection policy, Records retention schedule",
+      "study_material": {
+        "overview": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records. In Paralegal practice, Case Management directly supports support attorneys. Social care and psychology apply ethical frameworks, statutory duties, and therapeutic models to support individuals and communities. Practitioners navigate complexity, trauma, and multi-agency systems while maintaining professional boundaries and safeguarding duties. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "definitions": [
+          {
+            "term": "Case Management",
+            "definition": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          },
+          {
+            "term": "Data protection policy",
+            "definition": "Applicable standard/regulation: Data protection policy."
+          },
+          {
+            "term": "Records retention schedule",
+            "definition": "Applicable standard/regulation: Records retention schedule."
+          },
+          {
+            "term": "Service-level targets",
+            "definition": "Applicable standard/regulation: Service-level targets."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Case Management",
+            "explanation": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records. In Paralegal practice, Case Management directly supports support attorneys. Social care and psychology apply ethical frameworks, statutory duties, and therapeutic models to support individuals and communities. Practitioners navigate complexity, trauma, and multi-agency systems while maintaining professional boundaries and safeguarding duties. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Legal Documentation",
+            "explanation": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          }
+        ],
+        "principles": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "key_concepts": [
+          "Case Management",
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "social care",
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "step_by_step_breakdown": [
+          "Translate policy into a concrete workflow with eligibility rules and deadlines.",
+          "Create a complete case record trail: intake, decision evidence, approvals, and correspondence.",
+          "Run QA checks on completeness, lawful basis, and timeliness before closure.",
+          "Escalate exceptions early with written risk/impact notes.",
+          "Track cycle-time and rework rate to improve process reliability."
+        ],
+        "explanations": [
+          "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records. In Paralegal practice, Case Management directly supports support attorneys. Social care and psychology apply ethical frameworks, statutory duties, and therapeutic models to support individuals and communities. Practitioners navigate complexity, trauma, and multi-agency systems while maintaining professional boundaries and safeguarding duties. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+        ],
+        "practical_example": "As Paralegal, I redesigned the support attorneys workflow with mandatory data fields and decision templates; average processing time dropped 24% and audit queries reduced by half.",
+        "common_mistakes": [
+          "Executing Case Management without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Case Management applies to: Support attorneys.",
+          "List the standards that govern Case Management in Paralegal work.",
+          "Write out the verification steps after completing a Case Management task."
+        ],
+        "revision_notes": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "related_concepts": [
+          "Case Management",
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "social care"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Case Management applies to: Support attorneys.",
+        "List the standards that govern Case Management in Paralegal work.",
+        "Write out the verification steps after completing a Case Management task."
+      ],
+      "revision_notes": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Paralegal practitioner in Case management while handling 'Support attorneys'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Case management from those who only name-drop it.",
+      "skill_tag": "Case management",
+      "terminology_terms": [
+        {
+          "term": "Case Management",
+          "definition": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+        },
+        {
+          "term": "Data protection policy",
+          "definition": "Standard/framework governing Case Management: Data protection policy."
+        },
+        {
+          "term": "Records retention schedule",
+          "definition": "Standard/framework governing Case Management: Records retention schedule."
+        },
+        {
+          "term": "Service-level targets",
+          "definition": "Standard/framework governing Case Management: Service-level targets."
+        },
+        {
+          "term": "Most service delays come from incomplete",
+          "definition": "Most service delays come from incomplete case data and unclear ownership."
+        },
+        {
+          "term": "Auditability matters as much as speed in",
+          "definition": "Auditability matters as much as speed in public-facing administration."
+        },
+        {
+          "term": "Clear decision logs reduce appeals and r",
+          "definition": "Clear decision logs reduce appeals and repeat contacts."
+        },
+        {
+          "term": "Most service delays come from incomplete case data and unclear ownership.",
+          "definition": "Related concept used with Case Management in professional practice."
+        }
+      ],
+      "question_id": "PARALEGAL-CASE-MANAGEM-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Case Management: Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records.",
+        "Data protection policy: Standard/framework governing Case Management: Data protection policy.",
+        "Records retention schedule: Standard/framework governing Case Management: Records retention schedule.",
+        "Service-level targets: Standard/framework governing Case Management: Service-level targets.",
+        "Most service delays come from incomplete: Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in: Auditability matters as much as speed in public-facing administration."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Paralegal work, these terms are foundational:\n\n\n**Case Management** \u2014 Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records.\n\n**Data protection policy** \u2014 Standard/framework governing Case Management: Data protection policy.\n\n**Records retention schedule** \u2014 Standard/framework governing Case Management: Records retention schedule.\n\n**Service-level targets** \u2014 Standard/framework governing Case Management: Service-level targets.\n\n**Most service delays come from incomplete** \u2014 Most service delays come from incomplete case data and unclear ownership.\n\n**Auditability matters as much as speed in** \u2014 Auditability matters as much as speed in public-facing administration.\n\n**Clear decision logs reduce appeals and r** \u2014 Clear decision logs reduce appeals and repeat contacts.\n\n**Most service delays come from incomplete case data and unclear ownership.** \u2014 Related concept used with Case Management in professional practice.",
+      "answer_explanation": "Definitions covered: Case Management, Data protection policy, Records retention schedule, Service-level targets, Most service delays come from incomplete, Auditability matters as much as speed in",
+      "study_material": {
+        "overview": "Core terminology for Case Management \u2014 precise definitions required for Paralegal interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Case Management terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Case Management",
+            "definition": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          },
+          {
+            "term": "Data protection policy",
+            "definition": "Standard/framework governing Case Management: Data protection policy."
+          },
+          {
+            "term": "Records retention schedule",
+            "definition": "Standard/framework governing Case Management: Records retention schedule."
+          },
+          {
+            "term": "Service-level targets",
+            "definition": "Standard/framework governing Case Management: Service-level targets."
+          },
+          {
+            "term": "Most service delays come from incomplete",
+            "definition": "Most service delays come from incomplete case data and unclear ownership."
+          },
+          {
+            "term": "Auditability matters as much as speed in",
+            "definition": "Auditability matters as much as speed in public-facing administration."
+          },
+          {
+            "term": "Clear decision logs reduce appeals and r",
+            "definition": "Clear decision logs reduce appeals and repeat contacts."
+          },
+          {
+            "term": "Most service delays come from incomplete case data and unclear ownership.",
+            "definition": "Related concept used with Case Management in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Case Management",
+            "explanation": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          },
+          {
+            "skill": "Data protection policy",
+            "explanation": "Standard/framework governing Case Management: Data protection policy."
+          },
+          {
+            "skill": "Records retention schedule",
+            "explanation": "Standard/framework governing Case Management: Records retention schedule."
+          },
+          {
+            "skill": "Service-level targets",
+            "explanation": "Standard/framework governing Case Management: Service-level targets."
+          },
+          {
+            "skill": "Most service delays come from incomplete",
+            "explanation": "Most service delays come from incomplete case data and unclear ownership."
+          },
+          {
+            "skill": "Auditability matters as much as speed in",
+            "explanation": "Auditability matters as much as speed in public-facing administration."
+          },
+          {
+            "skill": "Clear decision logs reduce appeals and r",
+            "explanation": "Clear decision logs reduce appeals and repeat contacts."
+          },
+          {
+            "skill": "Most service delays come from incomplete case data and unclear ownership.",
+            "explanation": "Related concept used with Case Management in professional practice."
+          }
+        ],
+        "principles": [
+          "Case Management: Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records.",
+          "Data protection policy: Standard/framework governing Case Management: Data protection policy.",
+          "Records retention schedule: Standard/framework governing Case Management: Records retention schedule.",
+          "Service-level targets: Standard/framework governing Case Management: Service-level targets.",
+          "Most service delays come from incomplete: Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in: Auditability matters as much as speed in public-facing administration."
+        ],
+        "key_concepts": [
+          "Case Management",
+          "Data protection policy",
+          "Records retention schedule",
+          "Service-level targets",
+          "Most service delays come from incomplete",
+          "Auditability matters as much as speed in",
+          "Clear decision logs reduce appeals and r",
+          "Most service delays come from incomplete case data and unclear ownership."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Case Management** \u2014 Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records.",
+          "**Data protection policy** \u2014 Standard/framework governing Case Management: Data protection policy.",
+          "**Records retention schedule** \u2014 Standard/framework governing Case Management: Records retention schedule.",
+          "**Service-level targets** \u2014 Standard/framework governing Case Management: Service-level targets.",
+          "**Most service delays come from incomplete** \u2014 Most service delays come from incomplete case data and unclear ownership.",
+          "**Auditability matters as much as speed in** \u2014 Auditability matters as much as speed in public-facing administration.",
+          "**Clear decision logs reduce appeals and r** \u2014 Clear decision logs reduce appeals and repeat contacts.",
+          "**Most service delays come from incomplete case data and unclear ownership.** \u2014 Related concept used with Case Management in professional practice."
+        ],
+        "practical_example": "\u2022 Case Management: Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records.\n\u2022 Data protection policy: Standard/framework governing Case Management: Data protection policy.\n\u2022 Records retention schedule: Standard/framework governing Case Management: Records retention schedule.\n\u2022 Service-level targets: Standard/framework governing Case Management: Service-level targets.\n\u2022 Most service delays come from incomplete: Most service delays come from incomplete case data and unclear ownership.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Case Management terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Case Management",
+          "Data protection policy",
+          "Records retention schedule",
+          "Service-level targets",
+          "Most service delays come from incomplete",
+          "Auditability matters as much as speed in",
+          "Clear decision logs reduce appeals and r",
+          "Most service delays come from incomplete case data and unclear ownership."
+        ],
+        "related_concepts": [
+          "Case Management",
+          "Data protection policy",
+          "Records retention schedule",
+          "Service-level targets",
+          "Most service delays come from incomplete",
+          "Auditability matters as much as speed in",
+          "Clear decision logs reduce appeals and r",
+          "Most service delays come from incomplete case data and unclear ownership."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Case Management terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Case Management",
+        "Data protection policy",
+        "Records retention schedule",
+        "Service-level targets",
+        "Most service delays come from incomplete",
+        "Auditability matters as much as speed in",
+        "Clear decision logs reduce appeals and r",
+        "Most service delays come from incomplete case data and unclear ownership."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which non-negotiable rules and execution sequence govern Case management for Paralegal work while handling 'Support attorneys'?",
+      "why_asked": "Tests whether you know how Case management is actually executed to standard, not only what it is called.",
+      "skill_tag": "Case management",
+      "question_id": "PARALEGAL-CASE-MANAGEM-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Case Management as a Paralegal:\n\n1. Most service delays come from incomplete case data and unclear ownership.\n2. Auditability matters as much as speed in public-facing administration.\n3. Clear decision logs reduce appeals and repeat contacts.\n\nStandard workflow:\n1. Translate policy into a concrete workflow with eligibility rules and deadlines.\n2. Create a complete case record trail: intake, decision evidence, approvals, and correspondence.\n3. Run QA checks on completeness, lawful basis, and timeliness before closure.\n4. Escalate exceptions early with written risk/impact notes.\n5. Track cycle-time and rework rate to improve process reliability.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Case Management \u2014 how work is executed to standard in Paralegal roles.",
+        "what_you_need_to_know_first": [
+          "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Case Management",
+            "definition": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Case Management",
+            "explanation": "Most service delays come from incomplete case data and unclear ownership."
+          },
+          {
+            "skill": "Case Management",
+            "explanation": "Auditability matters as much as speed in public-facing administration."
+          },
+          {
+            "skill": "Case Management",
+            "explanation": "Clear decision logs reduce appeals and repeat contacts."
+          }
+        ],
+        "principles": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "key_concepts": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "step_by_step_breakdown": [
+          "Translate policy into a concrete workflow with eligibility rules and deadlines.",
+          "Create a complete case record trail: intake, decision evidence, approvals, and correspondence.",
+          "Run QA checks on completeness, lawful basis, and timeliness before closure.",
+          "Escalate exceptions early with written risk/impact notes.",
+          "Track cycle-time and rework rate to improve process reliability."
+        ],
+        "explanations": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "practical_example": "1. Translate policy into a concrete workflow with eligibility rules and deadlines.\n2. Create a complete case record trail: intake, decision evidence, approvals, and correspondence.\n3. Run QA checks on completeness, lawful basis, and timeliness before closure.\n4. Escalate exceptions early with written risk/impact notes.\n5. Track cycle-time and rework rate to improve process reliability.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Case Management workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "related_concepts": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Case Management workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "For Case management in Paralegal delivery while handling 'Support attorneys', which numeric thresholds or KPIs determine whether work is acceptable?",
+      "why_asked": "Tests ability to work with numbers, metrics, or measurable outcomes in Case management.",
+      "skill_tag": "Case management",
+      "question_id": "PARALEGAL-CASE-MANAGEM-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ],
+      "common_mistakes": [
+        "Hand-waving without numbers",
+        "Wrong precision for context"
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "On a typical Paralegal task involving Case Management, I'd first identify what must be measured \u2014 for example load, flow, dose, or error rate. I'd gather inputs from Data protection policy, apply the appropriate formula or clinical calculation, show units, and compare against the limit before proceeding. I'd document the calculation on the test sheet or clinical record.",
+      "answer_explanation": "Quantitative method with formula, units, and limit check.",
+      "study_material": {
+        "overview": "For Case Management, identify measurable quantities on typical Paralegal tasks \u2014 loads, doses, rates, margins.",
+        "what_you_need_to_know_first": [
+          "Name what you would measure on site or in clinic.",
+          "State how you would calculate or estimate it.",
+          "Explain how the number drives a decision."
+        ],
+        "definitions": [
+          {
+            "term": "Case Management",
+            "definition": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "key_concepts": [
+          "Measurement",
+          "Estimation",
+          "Thresholds",
+          "Verification"
+        ],
+        "step_by_step_breakdown": [
+          "Identify the quantity (load, dose, flow, cost, latency).",
+          "State data sources and instruments.",
+          "Apply formula or rule of thumb.",
+          "Compare to limit and document."
+        ],
+        "explanations": [],
+        "practical_example": "As Paralegal, I redesigned the support attorneys workflow with mandatory data fields and decision templates; average processing time dropped 24% and audit queries reduced by half.",
+        "common_mistakes": [
+          "Hand-waving without numbers",
+          "Wrong precision for context"
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "List three numeric checks you perform when using Case Management."
+        ],
+        "revision_notes": [],
+        "related_concepts": [
+          "Case Management"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "List three numeric checks you perform when using Case Management."
+      ],
+      "revision_notes": []
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Explain Legal documentation to a new colleague and include compliance/evidence expectations.",
+      "why_asked": "Tests genuine conceptual understanding of Legal documentation, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Legal documentation",
+      "question_id": "PARALEGAL-LEGAL-DOCUME-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Legal documentation",
+        "Case management",
+        "E-discovery",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ],
+      "common_mistakes": [
+        "Executing Legal Documentation without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Paralegal context, Legal Documentation starts with define scope, materiality threshold, and governing framework. and continues through gather and reconcile source documents against assertions.. The critical discipline is evidence: materiality drives prioritization of review effort.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support attorneys stays reliable under real operational constraints.\n\nAs Paralegal, I challenged a key assumption in the support attorneys file, identified a hidden risk exposure, and updated the recommendation before sign-off.",
+      "answer_explanation": "Key knowledge demonstrated for Legal Documentation:\n\u2022 Materiality drives prioritization of review effort.\n\u2022 Defensible documentation is essential for auditability.\n\u2022 Professional skepticism reduces avoidable compliance failures.\nStandards referenced: Applicable statutory framework, Internal control policy",
+      "study_material": {
+        "overview": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, Legal Documentation directly supports support attorneys. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "definitions": [
+          {
+            "term": "Legal Documentation",
+            "definition": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          },
+          {
+            "term": "Applicable statutory framework",
+            "definition": "Applicable standard/regulation: Applicable statutory framework."
+          },
+          {
+            "term": "Internal control policy",
+            "definition": "Applicable standard/regulation: Internal control policy."
+          },
+          {
+            "term": "Audit trail requirements",
+            "definition": "Applicable standard/regulation: Audit trail requirements."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Legal Documentation",
+            "explanation": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, Legal Documentation directly supports support attorneys. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Case Management",
+            "explanation": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          }
+        ],
+        "principles": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "key_concepts": [
+          "Legal Documentation",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "legal finance",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "step_by_step_breakdown": [
+          "Define scope, materiality threshold, and governing framework.",
+          "Gather and reconcile source documents against assertions.",
+          "Test assumptions and perform variance/sensitivity analysis.",
+          "Document recommendations with risk disclosure and alternatives.",
+          "Archive defensible working papers for audit/legal review."
+        ],
+        "explanations": [
+          "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, Legal Documentation directly supports support attorneys. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+        ],
+        "practical_example": "As Paralegal, I challenged a key assumption in the support attorneys file, identified a hidden risk exposure, and updated the recommendation before sign-off.",
+        "common_mistakes": [
+          "Executing Legal Documentation without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Legal Documentation applies to: Support attorneys.",
+          "List the standards that govern Legal Documentation in Paralegal work.",
+          "Write out the verification steps after completing a Legal Documentation task."
+        ],
+        "revision_notes": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "related_concepts": [
+          "Legal Documentation",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "legal finance"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Legal Documentation applies to: Support attorneys.",
+        "List the standards that govern Legal Documentation in Paralegal work.",
+        "Write out the verification steps after completing a Legal Documentation task."
+      ],
+      "revision_notes": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a complex case/analysis where Legal documentation changed risk or financial outcome.",
+      "why_asked": "Probes depth of hands-on experience with Legal documentation under real constraints.",
+      "skill_tag": "Legal documentation",
+      "question_id": "PARALEGAL-LEGAL-DOCUME-SCEN-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Legal documentation",
+        "Case management",
+        "E-discovery",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ],
+      "common_mistakes": [
+        "Executing Legal Documentation without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Paralegal context, Legal Documentation starts with define scope, materiality threshold, and governing framework. and continues through gather and reconcile source documents against assertions.. The critical discipline is evidence: materiality drives prioritization of review effort.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support attorneys stays reliable under real operational constraints.\n\nAs Paralegal, I challenged a key assumption in the support attorneys file, identified a hidden risk exposure, and updated the recommendation before sign-off.",
+      "answer_explanation": "Key knowledge demonstrated for Legal Documentation:\n\u2022 Materiality drives prioritization of review effort.\n\u2022 Defensible documentation is essential for auditability.\n\u2022 Professional skepticism reduces avoidable compliance failures.\nStandards referenced: Applicable statutory framework, Internal control policy",
+      "study_material": {
+        "overview": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, Legal Documentation directly supports support attorneys. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "definitions": [
+          {
+            "term": "Legal Documentation",
+            "definition": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          },
+          {
+            "term": "Applicable statutory framework",
+            "definition": "Applicable standard/regulation: Applicable statutory framework."
+          },
+          {
+            "term": "Internal control policy",
+            "definition": "Applicable standard/regulation: Internal control policy."
+          },
+          {
+            "term": "Audit trail requirements",
+            "definition": "Applicable standard/regulation: Audit trail requirements."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Legal Documentation",
+            "explanation": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, Legal Documentation directly supports support attorneys. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Case Management",
+            "explanation": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          }
+        ],
+        "principles": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "key_concepts": [
+          "Legal Documentation",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "legal finance",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "step_by_step_breakdown": [
+          "Define scope, materiality threshold, and governing framework.",
+          "Gather and reconcile source documents against assertions.",
+          "Test assumptions and perform variance/sensitivity analysis.",
+          "Document recommendations with risk disclosure and alternatives.",
+          "Archive defensible working papers for audit/legal review."
+        ],
+        "explanations": [
+          "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, Legal Documentation directly supports support attorneys. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+        ],
+        "practical_example": "As Paralegal, I challenged a key assumption in the support attorneys file, identified a hidden risk exposure, and updated the recommendation before sign-off.",
+        "common_mistakes": [
+          "Executing Legal Documentation without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Legal Documentation applies to: Support attorneys.",
+          "List the standards that govern Legal Documentation in Paralegal work.",
+          "Write out the verification steps after completing a Legal Documentation task."
+        ],
+        "revision_notes": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "related_concepts": [
+          "Legal Documentation",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "legal finance"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Legal Documentation applies to: Support attorneys.",
+        "List the standards that govern Legal Documentation in Paralegal work.",
+        "Write out the verification steps after completing a Legal Documentation task."
+      ],
+      "revision_notes": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Paralegal practitioner in Legal documentation while handling 'Support attorneys'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Legal documentation from those who only name-drop it.",
+      "skill_tag": "Legal documentation",
+      "terminology_terms": [
+        {
+          "term": "Legal Documentation",
+          "definition": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+        },
+        {
+          "term": "Applicable statutory framework",
+          "definition": "Standard/framework governing Legal Documentation: Applicable statutory framework."
+        },
+        {
+          "term": "Internal control policy",
+          "definition": "Standard/framework governing Legal Documentation: Internal control policy."
+        },
+        {
+          "term": "Audit trail requirements",
+          "definition": "Standard/framework governing Legal Documentation: Audit trail requirements."
+        },
+        {
+          "term": "Materiality drives prioritization of rev",
+          "definition": "Materiality drives prioritization of review effort."
+        },
+        {
+          "term": "Defensible documentation is essential fo",
+          "definition": "Defensible documentation is essential for auditability."
+        },
+        {
+          "term": "Professional skepticism reduces avoidabl",
+          "definition": "Professional skepticism reduces avoidable compliance failures."
+        },
+        {
+          "term": "Materiality drives prioritization of review effort.",
+          "definition": "Related concept used with Legal Documentation in professional practice."
+        }
+      ],
+      "question_id": "PARALEGAL-LEGAL-DOCUME-TERM-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Legal documentation",
+        "Case management",
+        "E-discovery",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Legal Documentation: Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.",
+        "Applicable statutory framework: Standard/framework governing Legal Documentation: Applicable statutory framework.",
+        "Internal control policy: Standard/framework governing Legal Documentation: Internal control policy.",
+        "Audit trail requirements: Standard/framework governing Legal Documentation: Audit trail requirements.",
+        "Materiality drives prioritization of rev: Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential fo: Defensible documentation is essential for auditability."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Paralegal work, these terms are foundational:\n\n\n**Legal Documentation** \u2014 Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.\n\n**Applicable statutory framework** \u2014 Standard/framework governing Legal Documentation: Applicable statutory framework.\n\n**Internal control policy** \u2014 Standard/framework governing Legal Documentation: Internal control policy.\n\n**Audit trail requirements** \u2014 Standard/framework governing Legal Documentation: Audit trail requirements.\n\n**Materiality drives prioritization of rev** \u2014 Materiality drives prioritization of review effort.\n\n**Defensible documentation is essential fo** \u2014 Defensible documentation is essential for auditability.\n\n**Professional skepticism reduces avoidabl** \u2014 Professional skepticism reduces avoidable compliance failures.\n\n**Materiality drives prioritization of review effort.** \u2014 Related concept used with Legal Documentation in professional practice.",
+      "answer_explanation": "Definitions covered: Legal Documentation, Applicable statutory framework, Internal control policy, Audit trail requirements, Materiality drives prioritization of rev, Defensible documentation is essential fo",
+      "study_material": {
+        "overview": "Core terminology for Legal Documentation \u2014 precise definitions required for Paralegal interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Legal Documentation terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Legal Documentation",
+            "definition": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          },
+          {
+            "term": "Applicable statutory framework",
+            "definition": "Standard/framework governing Legal Documentation: Applicable statutory framework."
+          },
+          {
+            "term": "Internal control policy",
+            "definition": "Standard/framework governing Legal Documentation: Internal control policy."
+          },
+          {
+            "term": "Audit trail requirements",
+            "definition": "Standard/framework governing Legal Documentation: Audit trail requirements."
+          },
+          {
+            "term": "Materiality drives prioritization of rev",
+            "definition": "Materiality drives prioritization of review effort."
+          },
+          {
+            "term": "Defensible documentation is essential fo",
+            "definition": "Defensible documentation is essential for auditability."
+          },
+          {
+            "term": "Professional skepticism reduces avoidabl",
+            "definition": "Professional skepticism reduces avoidable compliance failures."
+          },
+          {
+            "term": "Materiality drives prioritization of review effort.",
+            "definition": "Related concept used with Legal Documentation in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Legal Documentation",
+            "explanation": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          },
+          {
+            "skill": "Applicable statutory framework",
+            "explanation": "Standard/framework governing Legal Documentation: Applicable statutory framework."
+          },
+          {
+            "skill": "Internal control policy",
+            "explanation": "Standard/framework governing Legal Documentation: Internal control policy."
+          },
+          {
+            "skill": "Audit trail requirements",
+            "explanation": "Standard/framework governing Legal Documentation: Audit trail requirements."
+          },
+          {
+            "skill": "Materiality drives prioritization of rev",
+            "explanation": "Materiality drives prioritization of review effort."
+          },
+          {
+            "skill": "Defensible documentation is essential fo",
+            "explanation": "Defensible documentation is essential for auditability."
+          },
+          {
+            "skill": "Professional skepticism reduces avoidabl",
+            "explanation": "Professional skepticism reduces avoidable compliance failures."
+          },
+          {
+            "skill": "Materiality drives prioritization of review effort.",
+            "explanation": "Related concept used with Legal Documentation in professional practice."
+          }
+        ],
+        "principles": [
+          "Legal Documentation: Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.",
+          "Applicable statutory framework: Standard/framework governing Legal Documentation: Applicable statutory framework.",
+          "Internal control policy: Standard/framework governing Legal Documentation: Internal control policy.",
+          "Audit trail requirements: Standard/framework governing Legal Documentation: Audit trail requirements.",
+          "Materiality drives prioritization of rev: Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential fo: Defensible documentation is essential for auditability."
+        ],
+        "key_concepts": [
+          "Legal Documentation",
+          "Applicable statutory framework",
+          "Internal control policy",
+          "Audit trail requirements",
+          "Materiality drives prioritization of rev",
+          "Defensible documentation is essential fo",
+          "Professional skepticism reduces avoidabl",
+          "Materiality drives prioritization of review effort."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Legal Documentation** \u2014 Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.",
+          "**Applicable statutory framework** \u2014 Standard/framework governing Legal Documentation: Applicable statutory framework.",
+          "**Internal control policy** \u2014 Standard/framework governing Legal Documentation: Internal control policy.",
+          "**Audit trail requirements** \u2014 Standard/framework governing Legal Documentation: Audit trail requirements.",
+          "**Materiality drives prioritization of rev** \u2014 Materiality drives prioritization of review effort.",
+          "**Defensible documentation is essential fo** \u2014 Defensible documentation is essential for auditability.",
+          "**Professional skepticism reduces avoidabl** \u2014 Professional skepticism reduces avoidable compliance failures.",
+          "**Materiality drives prioritization of review effort.** \u2014 Related concept used with Legal Documentation in professional practice."
+        ],
+        "practical_example": "\u2022 Legal Documentation: Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.\n\u2022 Applicable statutory framework: Standard/framework governing Legal Documentation: Applicable statutory framework.\n\u2022 Internal control policy: Standard/framework governing Legal Documentation: Internal control policy.\n\u2022 Audit trail requirements: Standard/framework governing Legal Documentation: Audit trail requirements.\n\u2022 Materiality drives prioritization of rev: Materiality drives prioritization of review effort.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Legal Documentation terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Legal Documentation",
+          "Applicable statutory framework",
+          "Internal control policy",
+          "Audit trail requirements",
+          "Materiality drives prioritization of rev",
+          "Defensible documentation is essential fo",
+          "Professional skepticism reduces avoidabl",
+          "Materiality drives prioritization of review effort."
+        ],
+        "related_concepts": [
+          "Legal Documentation",
+          "Applicable statutory framework",
+          "Internal control policy",
+          "Audit trail requirements",
+          "Materiality drives prioritization of rev",
+          "Defensible documentation is essential fo",
+          "Professional skepticism reduces avoidabl",
+          "Materiality drives prioritization of review effort."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Legal Documentation terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Legal Documentation",
+        "Applicable statutory framework",
+        "Internal control policy",
+        "Audit trail requirements",
+        "Materiality drives prioritization of rev",
+        "Defensible documentation is essential fo",
+        "Professional skepticism reduces avoidabl",
+        "Materiality drives prioritization of review effort."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the governing principles and review workflow for Legal documentation in a Paralegal role?",
+      "why_asked": "Tests whether you know how Legal documentation is actually executed to standard, not only what it is called.",
+      "skill_tag": "Legal documentation",
+      "question_id": "PARALEGAL-LEGAL-DOCUME-PRIN-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Legal documentation",
+        "Case management",
+        "E-discovery",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Legal Documentation as a Paralegal:\n\n1. Materiality drives prioritization of review effort.\n2. Defensible documentation is essential for auditability.\n3. Professional skepticism reduces avoidable compliance failures.\n\nStandard workflow:\n1. Define scope, materiality threshold, and governing framework.\n2. Gather and reconcile source documents against assertions.\n3. Test assumptions and perform variance/sensitivity analysis.\n4. Document recommendations with risk disclosure and alternatives.\n5. Archive defensible working papers for audit/legal review.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Legal Documentation \u2014 how work is executed to standard in Paralegal roles.",
+        "what_you_need_to_know_first": [
+          "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Legal Documentation",
+            "definition": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Legal Documentation",
+            "explanation": "Materiality drives prioritization of review effort."
+          },
+          {
+            "skill": "Legal Documentation",
+            "explanation": "Defensible documentation is essential for auditability."
+          },
+          {
+            "skill": "Legal Documentation",
+            "explanation": "Professional skepticism reduces avoidable compliance failures."
+          }
+        ],
+        "principles": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "key_concepts": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "step_by_step_breakdown": [
+          "Define scope, materiality threshold, and governing framework.",
+          "Gather and reconcile source documents against assertions.",
+          "Test assumptions and perform variance/sensitivity analysis.",
+          "Document recommendations with risk disclosure and alternatives.",
+          "Archive defensible working papers for audit/legal review."
+        ],
+        "explanations": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "practical_example": "1. Define scope, materiality threshold, and governing framework.\n2. Gather and reconcile source documents against assertions.\n3. Test assumptions and perform variance/sensitivity analysis.\n4. Document recommendations with risk disclosure and alternatives.\n5. Archive defensible working papers for audit/legal review.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Legal Documentation workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "related_concepts": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Legal Documentation workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Quantitative validation scenario (Paralegal, Legal documentation) while handling 'Support attorneys': Company EBITDA \u00a32m, multiple 8\u00d7, net debt \u00a33m. Estimate equity value.",
+      "why_asked": "Tests numerical and analytical competence in Legal documentation \u2014 essential for Paralegal roles.",
+      "skill_tag": "Legal documentation",
+      "calculation": {
+        "skill": "Legal Documentation",
+        "prompt": "Company EBITDA \u00a32m, multiple 8\u00d7, net debt \u00a33m. Estimate equity value.",
+        "answer": "EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).",
+        "steps": [
+          "EV = EBITDA \u00d7 multiple",
+          "Subtract net debt",
+          "Note adjustment items"
+        ]
+      },
+      "question_id": "PARALEGAL-LEGAL-DOCUME-CALC-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Legal documentation",
+        "Case management",
+        "E-discovery",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "EV = EBITDA \u00d7 multiple",
+        "Subtract net debt",
+        "Note adjustment items"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Company EBITDA \u00a32m, multiple 8\u00d7, net debt \u00a33m. Estimate equity value.\n\nWorking:\n1. EV = EBITDA \u00d7 multiple\n2. Subtract net debt\n3. Note adjustment items\n\nAnswer: EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).\n\nIn Paralegal practice, I anchor this using: EV = EBITDA \u00d7 multiple, Subtract net debt, Given data.",
+      "answer_explanation": "Calculation: EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).",
+      "study_material": {
+        "overview": "Quantitative problem for Legal Documentation: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Company EBITDA \u00a32m, multiple 8\u00d7, net debt \u00a33m. Estimate equity value."
+          },
+          {
+            "term": "Expected result",
+            "definition": "EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital)."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "EV = EBITDA \u00d7 multiple",
+          "Subtract net debt",
+          "Note adjustment items"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "EV = EBITDA \u00d7 multiple",
+          "Subtract net debt",
+          "Note adjustment items"
+        ],
+        "explanations": [
+          "EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).",
+          "Step: EV = EBITDA \u00d7 multiple",
+          "Step: Subtract net debt",
+          "Step: Note adjustment items"
+        ],
+        "practical_example": "EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Legal Documentation calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "EV = EBITDA \u00d7 multiple",
+          "Subtract net debt",
+          "Note adjustment items"
+        ],
+        "related_concepts": [
+          "Legal Documentation",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Legal Documentation calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "EV = EBITDA \u00d7 multiple",
+        "Subtract net debt",
+        "Note adjustment items"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Explain E-discovery to a new colleague and include compliance/evidence expectations.",
+      "why_asked": "Tests genuine conceptual understanding of E-discovery, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "E-discovery",
+      "question_id": "PARALEGAL-E-DISCOVERY-EXPL-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "E-discovery",
+        "Case management",
+        "Legal documentation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ],
+      "common_mistakes": [
+        "Executing E-Discovery without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Paralegal context, E-Discovery starts with define scope, materiality threshold, and governing framework. and continues through gather and reconcile source documents against assertions.. The critical discipline is evidence: materiality drives prioritization of review effort.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support attorneys stays reliable under real operational constraints.\n\nAs Paralegal, I challenged a key assumption in the support attorneys file, identified a hidden risk exposure, and updated the recommendation before sign-off.",
+      "answer_explanation": "Key knowledge demonstrated for E-Discovery:\n\u2022 Materiality drives prioritization of review effort.\n\u2022 Defensible documentation is essential for auditability.\n\u2022 Professional skepticism reduces avoidable compliance failures.\nStandards referenced: Applicable statutory framework, Internal control policy",
+      "study_material": {
+        "overview": "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, E-Discovery directly supports support attorneys. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "definitions": [
+          {
+            "term": "E-Discovery",
+            "definition": "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          },
+          {
+            "term": "Applicable statutory framework",
+            "definition": "Applicable standard/regulation: Applicable statutory framework."
+          },
+          {
+            "term": "Internal control policy",
+            "definition": "Applicable standard/regulation: Internal control policy."
+          },
+          {
+            "term": "Audit trail requirements",
+            "definition": "Applicable standard/regulation: Audit trail requirements."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "E-Discovery",
+            "explanation": "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, E-Discovery directly supports support attorneys. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Case Management",
+            "explanation": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          }
+        ],
+        "principles": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "key_concepts": [
+          "E-Discovery",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "legal finance",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "step_by_step_breakdown": [
+          "Define scope, materiality threshold, and governing framework.",
+          "Gather and reconcile source documents against assertions.",
+          "Test assumptions and perform variance/sensitivity analysis.",
+          "Document recommendations with risk disclosure and alternatives.",
+          "Archive defensible working papers for audit/legal review."
+        ],
+        "explanations": [
+          "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, E-Discovery directly supports support attorneys. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+        ],
+        "practical_example": "As Paralegal, I challenged a key assumption in the support attorneys file, identified a hidden risk exposure, and updated the recommendation before sign-off.",
+        "common_mistakes": [
+          "Executing E-Discovery without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how E-Discovery applies to: Support attorneys.",
+          "List the standards that govern E-Discovery in Paralegal work.",
+          "Write out the verification steps after completing a E-Discovery task."
+        ],
+        "revision_notes": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "related_concepts": [
+          "E-Discovery",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "legal finance"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how E-Discovery applies to: Support attorneys.",
+        "List the standards that govern E-Discovery in Paralegal work.",
+        "Write out the verification steps after completing a E-Discovery task."
+      ],
+      "revision_notes": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a complex case/analysis where E-discovery changed risk or financial outcome.",
+      "why_asked": "Probes depth of hands-on experience with E-discovery under real constraints.",
+      "skill_tag": "E-discovery",
+      "question_id": "PARALEGAL-E-DISCOVERY-SCEN-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "E-discovery",
+        "Case management",
+        "Legal documentation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ],
+      "common_mistakes": [
+        "Executing E-Discovery without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Paralegal context, E-Discovery starts with define scope, materiality threshold, and governing framework. and continues through gather and reconcile source documents against assertions.. The critical discipline is evidence: materiality drives prioritization of review effort.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support attorneys stays reliable under real operational constraints.\n\nAs Paralegal, I challenged a key assumption in the support attorneys file, identified a hidden risk exposure, and updated the recommendation before sign-off.",
+      "answer_explanation": "Key knowledge demonstrated for E-Discovery:\n\u2022 Materiality drives prioritization of review effort.\n\u2022 Defensible documentation is essential for auditability.\n\u2022 Professional skepticism reduces avoidable compliance failures.\nStandards referenced: Applicable statutory framework, Internal control policy",
+      "study_material": {
+        "overview": "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, E-Discovery directly supports support attorneys. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "definitions": [
+          {
+            "term": "E-Discovery",
+            "definition": "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          },
+          {
+            "term": "Applicable statutory framework",
+            "definition": "Applicable standard/regulation: Applicable statutory framework."
+          },
+          {
+            "term": "Internal control policy",
+            "definition": "Applicable standard/regulation: Internal control policy."
+          },
+          {
+            "term": "Audit trail requirements",
+            "definition": "Applicable standard/regulation: Audit trail requirements."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "E-Discovery",
+            "explanation": "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, E-Discovery directly supports support attorneys. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Case Management",
+            "explanation": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          }
+        ],
+        "principles": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "key_concepts": [
+          "E-Discovery",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "legal finance",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "step_by_step_breakdown": [
+          "Define scope, materiality threshold, and governing framework.",
+          "Gather and reconcile source documents against assertions.",
+          "Test assumptions and perform variance/sensitivity analysis.",
+          "Document recommendations with risk disclosure and alternatives.",
+          "Archive defensible working papers for audit/legal review."
+        ],
+        "explanations": [
+          "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, E-Discovery directly supports support attorneys. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+        ],
+        "practical_example": "As Paralegal, I challenged a key assumption in the support attorneys file, identified a hidden risk exposure, and updated the recommendation before sign-off.",
+        "common_mistakes": [
+          "Executing E-Discovery without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how E-Discovery applies to: Support attorneys.",
+          "List the standards that govern E-Discovery in Paralegal work.",
+          "Write out the verification steps after completing a E-Discovery task."
+        ],
+        "revision_notes": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "related_concepts": [
+          "E-Discovery",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "legal finance"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how E-Discovery applies to: Support attorneys.",
+        "List the standards that govern E-Discovery in Paralegal work.",
+        "Write out the verification steps after completing a E-Discovery task."
+      ],
+      "revision_notes": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Paralegal practitioner in E-discovery while handling 'Support attorneys'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand E-discovery from those who only name-drop it.",
+      "skill_tag": "E-discovery",
+      "terminology_terms": [
+        {
+          "term": "E-Discovery",
+          "definition": "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+        },
+        {
+          "term": "Applicable statutory framework",
+          "definition": "Standard/framework governing E-Discovery: Applicable statutory framework."
+        },
+        {
+          "term": "Internal control policy",
+          "definition": "Standard/framework governing E-Discovery: Internal control policy."
+        },
+        {
+          "term": "Audit trail requirements",
+          "definition": "Standard/framework governing E-Discovery: Audit trail requirements."
+        },
+        {
+          "term": "Materiality drives prioritization of rev",
+          "definition": "Materiality drives prioritization of review effort."
+        },
+        {
+          "term": "Defensible documentation is essential fo",
+          "definition": "Defensible documentation is essential for auditability."
+        },
+        {
+          "term": "Professional skepticism reduces avoidabl",
+          "definition": "Professional skepticism reduces avoidable compliance failures."
+        },
+        {
+          "term": "Materiality drives prioritization of review effort.",
+          "definition": "Related concept used with E-Discovery in professional practice."
+        }
+      ],
+      "question_id": "PARALEGAL-E-DISCOVERY-TERM-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "E-discovery",
+        "Case management",
+        "Legal documentation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "E-Discovery: E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.",
+        "Applicable statutory framework: Standard/framework governing E-Discovery: Applicable statutory framework.",
+        "Internal control policy: Standard/framework governing E-Discovery: Internal control policy.",
+        "Audit trail requirements: Standard/framework governing E-Discovery: Audit trail requirements.",
+        "Materiality drives prioritization of rev: Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential fo: Defensible documentation is essential for auditability."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Paralegal work, these terms are foundational:\n\n\n**E-Discovery** \u2014 E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.\n\n**Applicable statutory framework** \u2014 Standard/framework governing E-Discovery: Applicable statutory framework.\n\n**Internal control policy** \u2014 Standard/framework governing E-Discovery: Internal control policy.\n\n**Audit trail requirements** \u2014 Standard/framework governing E-Discovery: Audit trail requirements.\n\n**Materiality drives prioritization of rev** \u2014 Materiality drives prioritization of review effort.\n\n**Defensible documentation is essential fo** \u2014 Defensible documentation is essential for auditability.\n\n**Professional skepticism reduces avoidabl** \u2014 Professional skepticism reduces avoidable compliance failures.\n\n**Materiality drives prioritization of review effort.** \u2014 Related concept used with E-Discovery in professional practice.",
+      "answer_explanation": "Definitions covered: E-Discovery, Applicable statutory framework, Internal control policy, Audit trail requirements, Materiality drives prioritization of rev, Defensible documentation is essential fo",
+      "study_material": {
+        "overview": "Core terminology for E-Discovery \u2014 precise definitions required for Paralegal interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how E-Discovery terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "E-Discovery",
+            "definition": "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          },
+          {
+            "term": "Applicable statutory framework",
+            "definition": "Standard/framework governing E-Discovery: Applicable statutory framework."
+          },
+          {
+            "term": "Internal control policy",
+            "definition": "Standard/framework governing E-Discovery: Internal control policy."
+          },
+          {
+            "term": "Audit trail requirements",
+            "definition": "Standard/framework governing E-Discovery: Audit trail requirements."
+          },
+          {
+            "term": "Materiality drives prioritization of rev",
+            "definition": "Materiality drives prioritization of review effort."
+          },
+          {
+            "term": "Defensible documentation is essential fo",
+            "definition": "Defensible documentation is essential for auditability."
+          },
+          {
+            "term": "Professional skepticism reduces avoidabl",
+            "definition": "Professional skepticism reduces avoidable compliance failures."
+          },
+          {
+            "term": "Materiality drives prioritization of review effort.",
+            "definition": "Related concept used with E-Discovery in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "E-Discovery",
+            "explanation": "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          },
+          {
+            "skill": "Applicable statutory framework",
+            "explanation": "Standard/framework governing E-Discovery: Applicable statutory framework."
+          },
+          {
+            "skill": "Internal control policy",
+            "explanation": "Standard/framework governing E-Discovery: Internal control policy."
+          },
+          {
+            "skill": "Audit trail requirements",
+            "explanation": "Standard/framework governing E-Discovery: Audit trail requirements."
+          },
+          {
+            "skill": "Materiality drives prioritization of rev",
+            "explanation": "Materiality drives prioritization of review effort."
+          },
+          {
+            "skill": "Defensible documentation is essential fo",
+            "explanation": "Defensible documentation is essential for auditability."
+          },
+          {
+            "skill": "Professional skepticism reduces avoidabl",
+            "explanation": "Professional skepticism reduces avoidable compliance failures."
+          },
+          {
+            "skill": "Materiality drives prioritization of review effort.",
+            "explanation": "Related concept used with E-Discovery in professional practice."
+          }
+        ],
+        "principles": [
+          "E-Discovery: E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.",
+          "Applicable statutory framework: Standard/framework governing E-Discovery: Applicable statutory framework.",
+          "Internal control policy: Standard/framework governing E-Discovery: Internal control policy.",
+          "Audit trail requirements: Standard/framework governing E-Discovery: Audit trail requirements.",
+          "Materiality drives prioritization of rev: Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential fo: Defensible documentation is essential for auditability."
+        ],
+        "key_concepts": [
+          "E-Discovery",
+          "Applicable statutory framework",
+          "Internal control policy",
+          "Audit trail requirements",
+          "Materiality drives prioritization of rev",
+          "Defensible documentation is essential fo",
+          "Professional skepticism reduces avoidabl",
+          "Materiality drives prioritization of review effort."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**E-Discovery** \u2014 E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.",
+          "**Applicable statutory framework** \u2014 Standard/framework governing E-Discovery: Applicable statutory framework.",
+          "**Internal control policy** \u2014 Standard/framework governing E-Discovery: Internal control policy.",
+          "**Audit trail requirements** \u2014 Standard/framework governing E-Discovery: Audit trail requirements.",
+          "**Materiality drives prioritization of rev** \u2014 Materiality drives prioritization of review effort.",
+          "**Defensible documentation is essential fo** \u2014 Defensible documentation is essential for auditability.",
+          "**Professional skepticism reduces avoidabl** \u2014 Professional skepticism reduces avoidable compliance failures.",
+          "**Materiality drives prioritization of review effort.** \u2014 Related concept used with E-Discovery in professional practice."
+        ],
+        "practical_example": "\u2022 E-Discovery: E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.\n\u2022 Applicable statutory framework: Standard/framework governing E-Discovery: Applicable statutory framework.\n\u2022 Internal control policy: Standard/framework governing E-Discovery: Internal control policy.\n\u2022 Audit trail requirements: Standard/framework governing E-Discovery: Audit trail requirements.\n\u2022 Materiality drives prioritization of rev: Materiality drives prioritization of review effort.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all E-Discovery terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "E-Discovery",
+          "Applicable statutory framework",
+          "Internal control policy",
+          "Audit trail requirements",
+          "Materiality drives prioritization of rev",
+          "Defensible documentation is essential fo",
+          "Professional skepticism reduces avoidabl",
+          "Materiality drives prioritization of review effort."
+        ],
+        "related_concepts": [
+          "E-Discovery",
+          "Applicable statutory framework",
+          "Internal control policy",
+          "Audit trail requirements",
+          "Materiality drives prioritization of rev",
+          "Defensible documentation is essential fo",
+          "Professional skepticism reduces avoidabl",
+          "Materiality drives prioritization of review effort."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all E-Discovery terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "E-Discovery",
+        "Applicable statutory framework",
+        "Internal control policy",
+        "Audit trail requirements",
+        "Materiality drives prioritization of rev",
+        "Defensible documentation is essential fo",
+        "Professional skepticism reduces avoidabl",
+        "Materiality drives prioritization of review effort."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the governing principles and review workflow for E-discovery in a Paralegal role?",
+      "why_asked": "Tests whether you know how E-discovery is actually executed to standard, not only what it is called.",
+      "skill_tag": "E-discovery",
+      "question_id": "PARALEGAL-E-DISCOVERY-PRIN-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "E-discovery",
+        "Case management",
+        "Legal documentation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for E-Discovery as a Paralegal:\n\n1. Materiality drives prioritization of review effort.\n2. Defensible documentation is essential for auditability.\n3. Professional skepticism reduces avoidable compliance failures.\n\nStandard workflow:\n1. Define scope, materiality threshold, and governing framework.\n2. Gather and reconcile source documents against assertions.\n3. Test assumptions and perform variance/sensitivity analysis.\n4. Document recommendations with risk disclosure and alternatives.\n5. Archive defensible working papers for audit/legal review.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for E-Discovery \u2014 how work is executed to standard in Paralegal roles.",
+        "what_you_need_to_know_first": [
+          "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "E-Discovery",
+            "definition": "E-Discovery in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "E-Discovery",
+            "explanation": "Materiality drives prioritization of review effort."
+          },
+          {
+            "skill": "E-Discovery",
+            "explanation": "Defensible documentation is essential for auditability."
+          },
+          {
+            "skill": "E-Discovery",
+            "explanation": "Professional skepticism reduces avoidable compliance failures."
+          }
+        ],
+        "principles": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "key_concepts": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "step_by_step_breakdown": [
+          "Define scope, materiality threshold, and governing framework.",
+          "Gather and reconcile source documents against assertions.",
+          "Test assumptions and perform variance/sensitivity analysis.",
+          "Document recommendations with risk disclosure and alternatives.",
+          "Archive defensible working papers for audit/legal review."
+        ],
+        "explanations": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "practical_example": "1. Define scope, materiality threshold, and governing framework.\n2. Gather and reconcile source documents against assertions.\n3. Test assumptions and perform variance/sensitivity analysis.\n4. Document recommendations with risk disclosure and alternatives.\n5. Archive defensible working papers for audit/legal review.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of E-Discovery workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "related_concepts": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of E-Discovery workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Calculation / quantitative question for Paralegal (E-discovery) while handling 'Support attorneys': Company EBITDA \u00a32m, multiple 8\u00d7, net debt \u00a33m. Estimate equity value.",
+      "why_asked": "Tests numerical and analytical competence in E-discovery \u2014 essential for Paralegal roles.",
+      "skill_tag": "E-discovery",
+      "calculation": {
+        "skill": "E-Discovery",
+        "prompt": "Company EBITDA \u00a32m, multiple 8\u00d7, net debt \u00a33m. Estimate equity value.",
+        "answer": "EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).",
+        "steps": [
+          "EV = EBITDA \u00d7 multiple",
+          "Subtract net debt",
+          "Note adjustment items"
+        ]
+      },
+      "question_id": "PARALEGAL-E-DISCOVERY-CALC-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "E-discovery",
+        "Case management",
+        "Legal documentation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "EV = EBITDA \u00d7 multiple",
+        "Subtract net debt",
+        "Note adjustment items"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Company EBITDA \u00a32m, multiple 8\u00d7, net debt \u00a33m. Estimate equity value.\n\nWorking:\n1. EV = EBITDA \u00d7 multiple\n2. Subtract net debt\n3. Note adjustment items\n\nAnswer: EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).\n\nIn Paralegal practice, I anchor this using: EV = EBITDA \u00d7 multiple, Subtract net debt, Given data.",
+      "answer_explanation": "Calculation: EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).",
+      "study_material": {
+        "overview": "Quantitative problem for E-Discovery: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Company EBITDA \u00a32m, multiple 8\u00d7, net debt \u00a33m. Estimate equity value."
+          },
+          {
+            "term": "Expected result",
+            "definition": "EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital)."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "EV = EBITDA \u00d7 multiple",
+          "Subtract net debt",
+          "Note adjustment items"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "EV = EBITDA \u00d7 multiple",
+          "Subtract net debt",
+          "Note adjustment items"
+        ],
+        "explanations": [
+          "EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).",
+          "Step: EV = EBITDA \u00d7 multiple",
+          "Step: Subtract net debt",
+          "Step: Note adjustment items"
+        ],
+        "practical_example": "EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this E-Discovery calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "EV = EBITDA \u00d7 multiple",
+          "Subtract net debt",
+          "Note adjustment items"
+        ],
+        "related_concepts": [
+          "E-Discovery",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this E-Discovery calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "EV = EBITDA \u00d7 multiple",
+        "Subtract net debt",
+        "Note adjustment items"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Paralegal, define and explain these core professional terms: Case Management, Data protection policy, Records retention schedule, Legal Documentation, Applicable statutory framework, Internal control policy.",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Case Management",
+          "definition": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+        },
+        {
+          "term": "Data protection policy",
+          "definition": "Standard/framework governing Case Management: Data protection policy."
+        },
+        {
+          "term": "Records retention schedule",
+          "definition": "Standard/framework governing Case Management: Records retention schedule."
+        },
+        {
+          "term": "Legal Documentation",
+          "definition": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+        },
+        {
+          "term": "Applicable statutory framework",
+          "definition": "Standard/framework governing Legal Documentation: Applicable statutory framework."
+        },
+        {
+          "term": "Internal control policy",
+          "definition": "Standard/framework governing Legal Documentation: Internal control policy."
+        }
+      ],
+      "question_id": "PARALEGAL-CORE-TERMINO-TERM-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Case Management: Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records.",
+        "Data protection policy: Standard/framework governing Case Management: Data protection policy.",
+        "Records retention schedule: Standard/framework governing Case Management: Records retention schedule.",
+        "Legal Documentation: Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.",
+        "Applicable statutory framework: Standard/framework governing Legal Documentation: Applicable statutory framework.",
+        "Internal control policy: Standard/framework governing Legal Documentation: Internal control policy."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Paralegal work, these terms are foundational:\n\n\n**Case Management** \u2014 Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records.\n\n**Data protection policy** \u2014 Standard/framework governing Case Management: Data protection policy.\n\n**Records retention schedule** \u2014 Standard/framework governing Case Management: Records retention schedule.\n\n**Legal Documentation** \u2014 Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.\n\n**Applicable statutory framework** \u2014 Standard/framework governing Legal Documentation: Applicable statutory framework.\n\n**Internal control policy** \u2014 Standard/framework governing Legal Documentation: Internal control policy.",
+      "answer_explanation": "Definitions covered: Case Management, Data protection policy, Records retention schedule, Legal Documentation, Applicable statutory framework, Internal control policy",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Paralegal interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Case Management",
+            "definition": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          },
+          {
+            "term": "Data protection policy",
+            "definition": "Standard/framework governing Case Management: Data protection policy."
+          },
+          {
+            "term": "Records retention schedule",
+            "definition": "Standard/framework governing Case Management: Records retention schedule."
+          },
+          {
+            "term": "Legal Documentation",
+            "definition": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          },
+          {
+            "term": "Applicable statutory framework",
+            "definition": "Standard/framework governing Legal Documentation: Applicable statutory framework."
+          },
+          {
+            "term": "Internal control policy",
+            "definition": "Standard/framework governing Legal Documentation: Internal control policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Case Management",
+            "explanation": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          },
+          {
+            "skill": "Data protection policy",
+            "explanation": "Standard/framework governing Case Management: Data protection policy."
+          },
+          {
+            "skill": "Records retention schedule",
+            "explanation": "Standard/framework governing Case Management: Records retention schedule."
+          },
+          {
+            "skill": "Legal Documentation",
+            "explanation": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          },
+          {
+            "skill": "Applicable statutory framework",
+            "explanation": "Standard/framework governing Legal Documentation: Applicable statutory framework."
+          },
+          {
+            "skill": "Internal control policy",
+            "explanation": "Standard/framework governing Legal Documentation: Internal control policy."
+          }
+        ],
+        "principles": [
+          "Case Management: Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records.",
+          "Data protection policy: Standard/framework governing Case Management: Data protection policy.",
+          "Records retention schedule: Standard/framework governing Case Management: Records retention schedule.",
+          "Legal Documentation: Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.",
+          "Applicable statutory framework: Standard/framework governing Legal Documentation: Applicable statutory framework.",
+          "Internal control policy: Standard/framework governing Legal Documentation: Internal control policy."
+        ],
+        "key_concepts": [
+          "Case Management",
+          "Data protection policy",
+          "Records retention schedule",
+          "Legal Documentation",
+          "Applicable statutory framework",
+          "Internal control policy"
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Case Management** \u2014 Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records.",
+          "**Data protection policy** \u2014 Standard/framework governing Case Management: Data protection policy.",
+          "**Records retention schedule** \u2014 Standard/framework governing Case Management: Records retention schedule.",
+          "**Legal Documentation** \u2014 Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.",
+          "**Applicable statutory framework** \u2014 Standard/framework governing Legal Documentation: Applicable statutory framework.",
+          "**Internal control policy** \u2014 Standard/framework governing Legal Documentation: Internal control policy."
+        ],
+        "practical_example": "\u2022 Case Management: Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records.\n\u2022 Data protection policy: Standard/framework governing Case Management: Data protection policy.\n\u2022 Records retention schedule: Standard/framework governing Case Management: Records retention schedule.\n\u2022 Legal Documentation: Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions.\n\u2022 Applicable statutory framework: Standard/framework governing Legal Documentation: Applicable statutory framework.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Case Management",
+          "Data protection policy",
+          "Records retention schedule",
+          "Legal Documentation",
+          "Applicable statutory framework",
+          "Internal control policy"
+        ],
+        "related_concepts": [
+          "Case Management",
+          "Data protection policy",
+          "Records retention schedule",
+          "Legal Documentation",
+          "Applicable statutory framework",
+          "Internal control policy"
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Case Management",
+        "Data protection policy",
+        "Records retention schedule",
+        "Legal Documentation",
+        "Applicable statutory framework",
+        "Internal control policy"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Support attorneys'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "PARALEGAL-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. Controls were implemented before period close/case milestone, and external review found no major findings.",
+      "answer_explanation": "This answer covers: While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation pla\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Paralegal handles when support attorneys. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Paralegal work involves support attorneys under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Paralegal",
+            "definition": "The Paralegal role integrates Case management, Legal documentation, E-discovery to deliver on responsibilities such as support attorneys. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Regulatory accuracy",
+          "Evidence quality",
+          "Material risk",
+          "Audit trail"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Paralegal reference support attorneys and relevant standards or tools."
+        ],
+        "practical_example": "While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. Controls were implemented before period close/case milestone, and external review found no major findings.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Paralegal challenge with numbers.",
+          "Link the story to: Support attorneys."
+        ],
+        "revision_notes": [
+          "Case management",
+          "Legal documentation",
+          "E-discovery"
+        ],
+        "related_concepts": [
+          "Social Care",
+          "Legal Finance"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Paralegal challenge with numbers.",
+        "Link the story to: Support attorneys."
+      ],
+      "revision_notes": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Organize case files'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "PARALEGAL-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. Controls were implemented before period close/case milestone, and external review found no major findings.",
+      "answer_explanation": "This answer covers: While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation pla\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Paralegal handles when support attorneys. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Paralegal work involves support attorneys under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Paralegal",
+            "definition": "The Paralegal role integrates Case management, Legal documentation, E-discovery to deliver on responsibilities such as support attorneys. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Regulatory accuracy",
+          "Evidence quality",
+          "Material risk",
+          "Audit trail"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Paralegal reference support attorneys and relevant standards or tools."
+        ],
+        "practical_example": "While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. Controls were implemented before period close/case milestone, and external review found no major findings.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Paralegal challenge with numbers.",
+          "Link the story to: Support attorneys."
+        ],
+        "revision_notes": [
+          "Case management",
+          "Legal documentation",
+          "E-discovery"
+        ],
+        "related_concepts": [
+          "Social Care",
+          "Legal Finance"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Paralegal challenge with numbers.",
+        "Link the story to: Support attorneys."
+      ],
+      "revision_notes": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Conduct legal research'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "PARALEGAL-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. Controls were implemented before period close/case milestone, and external review found no major findings.",
+      "answer_explanation": "This answer covers: While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation pla\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Paralegal handles when support attorneys. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Paralegal work involves support attorneys under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Paralegal",
+            "definition": "The Paralegal role integrates Case management, Legal documentation, E-discovery to deliver on responsibilities such as support attorneys. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Regulatory accuracy",
+          "Evidence quality",
+          "Material risk",
+          "Audit trail"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Paralegal reference support attorneys and relevant standards or tools."
+        ],
+        "practical_example": "While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. Controls were implemented before period close/case milestone, and external review found no major findings.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Paralegal challenge with numbers.",
+          "Link the story to: Support attorneys."
+        ],
+        "revision_notes": [
+          "Case management",
+          "Legal documentation",
+          "E-discovery"
+        ],
+        "related_concepts": [
+          "Social Care",
+          "Legal Finance"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Paralegal challenge with numbers.",
+        "Link the story to: Support attorneys."
+      ],
+      "revision_notes": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Tell me about a time you caught a material risk/compliance issue in Paralegal work.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "PARALEGAL-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. Controls were implemented before period close/case milestone, and external review found no major findings.",
+      "answer_explanation": "This answer covers: While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation pla\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Paralegal handles when support attorneys. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Paralegal work involves support attorneys under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Paralegal",
+            "definition": "The Paralegal role integrates Case management, Legal documentation, E-discovery to deliver on responsibilities such as support attorneys. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Regulatory accuracy",
+          "Evidence quality",
+          "Material risk",
+          "Audit trail"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Paralegal reference support attorneys and relevant standards or tools."
+        ],
+        "practical_example": "While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. Controls were implemented before period close/case milestone, and external review found no major findings.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Paralegal challenge with numbers.",
+          "Link the story to: Support attorneys."
+        ],
+        "revision_notes": [
+          "Case management",
+          "Legal documentation",
+          "E-discovery"
+        ],
+        "related_concepts": [
+          "Social Care",
+          "Legal Finance"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Paralegal challenge with numbers.",
+        "Link the story to: Support attorneys."
+      ],
+      "revision_notes": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe a difficult stakeholder challenge where evidence and regulation guided your decision. In this role-specific case, address: Paralegal context: Support attorneys.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "PARALEGAL-BEHAVIORAL-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. Controls were implemented before period close/case milestone, and external review found no major findings.",
+      "answer_explanation": "This answer covers: While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation pla\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Paralegal handles when support attorneys. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Paralegal work involves support attorneys under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Paralegal",
+            "definition": "The Paralegal role integrates Case management, Legal documentation, E-discovery to deliver on responsibilities such as support attorneys. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Regulatory accuracy",
+          "Evidence quality",
+          "Material risk",
+          "Audit trail"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Paralegal reference support attorneys and relevant standards or tools."
+        ],
+        "practical_example": "While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. Controls were implemented before period close/case milestone, and external review found no major findings.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Paralegal challenge with numbers.",
+          "Link the story to: Support attorneys."
+        ],
+        "revision_notes": [
+          "Case management",
+          "Legal documentation",
+          "E-discovery"
+        ],
+        "related_concepts": [
+          "Social Care",
+          "Legal Finance"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Paralegal challenge with numbers.",
+        "Link the story to: Support attorneys."
+      ],
+      "revision_notes": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Give an example where your analysis changed a business or case outcome. In this role-specific case, address: Paralegal context: Support attorneys.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "PARALEGAL-BEHAVIORAL-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. Controls were implemented before period close/case milestone, and external review found no major findings.",
+      "answer_explanation": "This answer covers: While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation pla\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Paralegal handles when support attorneys. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Paralegal work involves support attorneys under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Paralegal",
+            "definition": "The Paralegal role integrates Case management, Legal documentation, E-discovery to deliver on responsibilities such as support attorneys. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Case management supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Regulatory accuracy",
+          "Evidence quality",
+          "Material risk",
+          "Audit trail"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Paralegal reference support attorneys and relevant standards or tools."
+        ],
+        "practical_example": "While working as Paralegal on support attorneys, I identified a material compliance/control gap during review. I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. Controls were implemented before period close/case milestone, and external review found no major findings.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Paralegal challenge with numbers.",
+          "Link the story to: Support attorneys."
+        ],
+        "revision_notes": [
+          "Case management",
+          "Legal documentation",
+          "E-discovery"
+        ],
+        "related_concepts": [
+          "Social Care",
+          "Legal Finance"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Paralegal challenge with numbers.",
+        "Link the story to: Support attorneys."
+      ],
+      "revision_notes": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Paralegal position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "PARALEGAL-ROLE-SPECIFI-023",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Paralegal, my approach to support attorneys is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Paralegal practice, I anchor this using: Materiality drives prioritization of review effort., Defensible documentation is essential for auditability., Role Specific.",
+      "answer_explanation": "This answer covers: As Paralegal, my approach to support attorneys is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I sta\u2026",
+      "study_material": {
+        "overview": "Role Specific in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, Role Specific directly supports support attorneys. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          },
+          {
+            "term": "Applicable statutory framework",
+            "definition": "Applicable standard/regulation: Applicable statutory framework."
+          },
+          {
+            "term": "Internal control policy",
+            "definition": "Applicable standard/regulation: Internal control policy."
+          },
+          {
+            "term": "Audit trail requirements",
+            "definition": "Applicable standard/regulation: Audit trail requirements."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, Role Specific directly supports support attorneys. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Case Management",
+            "explanation": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          },
+          {
+            "skill": "Legal Documentation",
+            "explanation": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          }
+        ],
+        "principles": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "general professional",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "step_by_step_breakdown": [
+          "Define scope, materiality threshold, and governing framework.",
+          "Gather and reconcile source documents against assertions.",
+          "Test assumptions and perform variance/sensitivity analysis.",
+          "Document recommendations with risk disclosure and alternatives.",
+          "Archive defensible working papers for audit/legal review."
+        ],
+        "explanations": [
+          "Role Specific in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, Role Specific directly supports support attorneys. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+        ],
+        "practical_example": "As Paralegal, I challenged a key assumption in the support attorneys file, identified a hidden risk exposure, and updated the recommendation before sign-off.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Support attorneys.",
+          "List the standards that govern Role Specific in Paralegal work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Support attorneys.",
+        "List the standards that govern Role Specific in Paralegal work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Paralegal context: Support attorneys. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Paralegal context: Support attorneys.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "PARALEGAL-COMPANY-SPEC-024",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Case management",
+        "Legal documentation",
+        "E-discovery",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Paralegal, my approach to support attorneys is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Paralegal practice, I anchor this using: Materiality drives prioritization of review effort., Defensible documentation is essential for auditability., Company Specific.",
+      "answer_explanation": "This answer covers: As Paralegal, my approach to support attorneys is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I sta\u2026",
+      "study_material": {
+        "overview": "Company Specific in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, Company Specific directly supports support attorneys. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          },
+          {
+            "term": "Applicable statutory framework",
+            "definition": "Applicable standard/regulation: Applicable statutory framework."
+          },
+          {
+            "term": "Internal control policy",
+            "definition": "Applicable standard/regulation: Internal control policy."
+          },
+          {
+            "term": "Audit trail requirements",
+            "definition": "Applicable standard/regulation: Audit trail requirements."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, Company Specific directly supports support attorneys. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Case Management",
+            "explanation": "Case Management in public administration is the design and execution of auditable workflows that deliver support attorneys lawfully, on time, and with complete records."
+          },
+          {
+            "skill": "Legal Documentation",
+            "explanation": "Legal Documentation in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+          }
+        ],
+        "principles": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "general professional",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "step_by_step_breakdown": [
+          "Define scope, materiality threshold, and governing framework.",
+          "Gather and reconcile source documents against assertions.",
+          "Test assumptions and perform variance/sensitivity analysis.",
+          "Document recommendations with risk disclosure and alternatives.",
+          "Archive defensible working papers for audit/legal review."
+        ],
+        "explanations": [
+          "Company Specific in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions. In Paralegal practice, Company Specific directly supports support attorneys. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific in legal/financial work is the evidence-based application of statutory rules and professional judgment to produce defensible decisions."
+        ],
+        "practical_example": "As Paralegal, I challenged a key assumption in the support attorneys file, identified a hidden risk exposure, and updated the recommendation before sign-off.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Support attorneys.",
+          "List the standards that govern Company Specific in Paralegal work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "Professional skepticism reduces avoidable compliance failures."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Materiality drives prioritization of review effort.",
+          "Defensible documentation is essential for auditability.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Support attorneys.",
+        "List the standards that govern Company Specific in Paralegal work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Materiality drives prioritization of review effort.",
+        "Defensible documentation is essential for auditability.",
+        "Professional skepticism reduces avoidable compliance failures."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:29:00.858305+00:00",
+  "confidence_score": 0.9
+}

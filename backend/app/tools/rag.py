@@ -90,14 +90,18 @@ def retrieve(query: str, k: int = 5, category: str | None = None) -> list[Docume
     learning_resource | career_advice). This is the function every
     Executor agent calls before constructing its generation prompt.
     """
-    store = get_vector_store()
-    # Over-fetch then filter client-side — FAISS's metadata filtering support
-    # varies by LangChain version, so this keeps the call site simple and
-    # version-agnostic.
-    raw_results = store.similarity_search(query, k=k * 3 if category else k)
-    if category:
-        raw_results = [d for d in raw_results if d.metadata.get("category") == category]
-    return raw_results[:k]
+    try:
+        store = get_vector_store()
+        # Over-fetch then filter client-side — FAISS's metadata filtering support
+        # varies by LangChain version, so this keeps the call site simple and
+        # version-agnostic.
+        raw_results = store.similarity_search(query, k=k * 3 if category else k)
+        if category:
+            raw_results = [d for d in raw_results if d.metadata.get("category") == category]
+        return raw_results[:k]
+    except Exception as exc:  # noqa: BLE001 — RAG must never block generation
+        logger.warning("rag_retrieve_failed", query=query[:120], error=str(exc))
+        return []
 
 
 def add_documents(documents: list[Document]) -> int:

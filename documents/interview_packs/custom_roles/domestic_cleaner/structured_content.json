@@ -1,0 +1,2757 @@
+{
+  "role_name": "Domestic Cleaner",
+  "role_slug": "domestic_cleaner",
+  "category": "custom_roles",
+  "role_overview": {
+    "role_name": "Domestic Cleaner",
+    "summary": "The Domestic Cleaner role integrates Cleaning, Time management, Trustworthiness to deliver on responsibilities such as clean homes or offices. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Clean homes or offices",
+      "Follow checklists",
+      "Bring supplies if required"
+    ],
+    "required_skills": [
+      "Cleaning",
+      "Time management",
+      "Trustworthiness"
+    ],
+    "what_employers_expect": [
+      "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: Cleaning experience."
+    ],
+    "skill_clusters": [
+      "Hospitality Operations",
+      "General Professional"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Walk me through how you would explain Cleaning to a teammate who has never used it in a Domestic Cleaner context while handling 'Clean homes or offices'.",
+      "why_asked": "Tests genuine conceptual understanding of Cleaning, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Cleaning",
+      "question_id": "DOMESTIC-CLEANER-CLEANING-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Cleaning without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Domestic Cleaner context, Cleaning starts with clarify required outcome, constraints, and stakeholders for clean homes or offices. and continues through apply cleaning using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how clean homes or offices stays reliable under real operational constraints.\n\nIn Domestic Cleaner, I applied Cleaning to stabilize clean homes or offices under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Cleaning:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Cleaning directly supports clean homes or offices. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Cleaning",
+            "definition": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Cleaning directly supports clean homes or offices. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Time Management",
+            "explanation": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Cleaning",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for clean homes or offices.",
+          "Apply Cleaning using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Cleaning directly supports clean homes or offices. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+        ],
+        "practical_example": "In Domestic Cleaner, I applied Cleaning to stabilize clean homes or offices under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Cleaning without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Cleaning applies to: Clean homes or offices.",
+          "List the standards that govern Cleaning in Domestic Cleaner work.",
+          "Write out the verification steps after completing a Cleaning task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Cleaning",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Cleaning applies to: Clean homes or offices.",
+        "List the standards that govern Cleaning in Domestic Cleaner work.",
+        "Write out the verification steps after completing a Cleaning task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "In your Domestic Cleaner experience while handling 'Clean homes or offices', what high-stakes incident required deep use of Cleaning, and how did you resolve it?",
+      "why_asked": "Probes depth of hands-on experience with Cleaning under real constraints.",
+      "skill_tag": "Cleaning",
+      "question_id": "DOMESTIC-CLEANER-CLEANING-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Cleaning without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Domestic Cleaner context, Cleaning starts with clarify required outcome, constraints, and stakeholders for clean homes or offices. and continues through apply cleaning using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how clean homes or offices stays reliable under real operational constraints.\n\nIn Domestic Cleaner, I applied Cleaning to stabilize clean homes or offices under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Cleaning:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Cleaning directly supports clean homes or offices. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Cleaning",
+            "definition": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Cleaning directly supports clean homes or offices. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Time Management",
+            "explanation": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Cleaning",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for clean homes or offices.",
+          "Apply Cleaning using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Cleaning directly supports clean homes or offices. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+        ],
+        "practical_example": "In Domestic Cleaner, I applied Cleaning to stabilize clean homes or offices under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Cleaning without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Cleaning applies to: Clean homes or offices.",
+          "List the standards that govern Cleaning in Domestic Cleaner work.",
+          "Write out the verification steps after completing a Cleaning task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Cleaning",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Cleaning applies to: Clean homes or offices.",
+        "List the standards that govern Cleaning in Domestic Cleaner work.",
+        "Write out the verification steps after completing a Cleaning task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Domestic Cleaner practitioner in Cleaning while handling 'Clean homes or offices'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Cleaning from those who only name-drop it.",
+      "skill_tag": "Cleaning",
+      "terminology_terms": [
+        {
+          "term": "Cleaning",
+          "definition": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Cleaning in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Cleaning in professional practice."
+        }
+      ],
+      "question_id": "DOMESTIC-CLEANER-CLEANING-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Cleaning: Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Cleaning in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Cleaning in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Domestic Cleaner work, these terms are foundational:\n\n\n**Cleaning** \u2014 Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Cleaning in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Cleaning in professional practice.",
+      "answer_explanation": "Definitions covered: Cleaning, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Cleaning \u2014 precise definitions required for Domestic Cleaner interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Cleaning terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Cleaning",
+            "definition": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Cleaning in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Cleaning in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Cleaning in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Cleaning in professional practice."
+          }
+        ],
+        "principles": [
+          "Cleaning: Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Cleaning in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Cleaning in professional practice."
+        ],
+        "key_concepts": [
+          "Cleaning",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Cleaning** \u2014 Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Cleaning in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Cleaning in professional practice."
+        ],
+        "practical_example": "\u2022 Cleaning: Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Cleaning in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Cleaning terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Cleaning",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Cleaning",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Cleaning terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Cleaning",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "When performing Cleaning as a Domestic Cleaner while handling 'Clean homes or offices', what are the governing principles, checkpoints, and sign-off criteria?",
+      "why_asked": "Tests whether you know how Cleaning is actually executed to standard, not only what it is called.",
+      "skill_tag": "Cleaning",
+      "question_id": "DOMESTIC-CLEANER-CLEANING-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Cleaning as a Domestic Cleaner:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for clean homes or offices.\n2. Apply Cleaning using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Cleaning \u2014 how work is executed to standard in Domestic Cleaner roles.",
+        "what_you_need_to_know_first": [
+          "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Cleaning",
+            "definition": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Cleaning",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for clean homes or offices.",
+          "Apply Cleaning using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for clean homes or offices.\n2. Apply Cleaning using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Cleaning workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Cleaning workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Quantitative validation scenario (Domestic Cleaner, Cleaning) while handling 'Clean homes or offices': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Cleaning \u2014 essential for Domestic Cleaner roles.",
+      "skill_tag": "Cleaning",
+      "calculation": {
+        "skill": "Cleaning",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "DOMESTIC-CLEANER-CLEANING-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Domestic Cleaner practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Cleaning: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Cleaning calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Cleaning",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Cleaning calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "How would you teach Time management to a new colleague in a Domestic Cleaner team while handling 'Clean homes or offices', including where beginners fail first?",
+      "why_asked": "Tests genuine conceptual understanding of Time management, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Time management",
+      "question_id": "DOMESTIC-CLEANER-TIME-MANAGEM-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Time management",
+        "Cleaning",
+        "Trustworthiness",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Time Management without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Domestic Cleaner context, Time Management starts with clarify required outcome, constraints, and stakeholders for clean homes or offices. and continues through apply time management using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how clean homes or offices stays reliable under real operational constraints.\n\nIn Domestic Cleaner, I applied Time Management to stabilize clean homes or offices under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Time Management:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Time Management directly supports clean homes or offices. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Time Management",
+            "definition": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Time Management",
+            "explanation": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Time Management directly supports clean homes or offices. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Time Management",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for clean homes or offices.",
+          "Apply Time Management using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Time Management directly supports clean homes or offices. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+        ],
+        "practical_example": "In Domestic Cleaner, I applied Time Management to stabilize clean homes or offices under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Time Management without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Time Management applies to: Clean homes or offices.",
+          "List the standards that govern Time Management in Domestic Cleaner work.",
+          "Write out the verification steps after completing a Time Management task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Time Management",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Time Management applies to: Clean homes or offices.",
+        "List the standards that govern Time Management in Domestic Cleaner work.",
+        "Write out the verification steps after completing a Time Management task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Domestic Cleaner practitioner in Time management while handling 'Clean homes or offices'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Time management from those who only name-drop it.",
+      "skill_tag": "Time management",
+      "terminology_terms": [
+        {
+          "term": "Time Management",
+          "definition": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Time Management in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Time Management in professional practice."
+        }
+      ],
+      "question_id": "DOMESTIC-CLEANER-TIME-MANAGEM-TERM-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Time management",
+        "Cleaning",
+        "Trustworthiness",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Time Management: Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Time Management in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Time Management in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Domestic Cleaner work, these terms are foundational:\n\n\n**Time Management** \u2014 Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Time Management in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Time Management in professional practice.",
+      "answer_explanation": "Definitions covered: Time Management, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Time Management \u2014 precise definitions required for Domestic Cleaner interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Time Management terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Time Management",
+            "definition": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Time Management in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Time Management in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Time Management",
+            "explanation": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Time Management in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Time Management in professional practice."
+          }
+        ],
+        "principles": [
+          "Time Management: Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Time Management in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Time Management in professional practice."
+        ],
+        "key_concepts": [
+          "Time Management",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Time Management** \u2014 Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Time Management in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Time Management in professional practice."
+        ],
+        "practical_example": "\u2022 Time Management: Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Time Management in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Time Management terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Time Management",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Time Management",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Time Management terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Time Management",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the core operating principles and standard workflow for applying Time management in a Domestic Cleaner role while handling 'Clean homes or offices'?",
+      "why_asked": "Tests whether you know how Time management is actually executed to standard, not only what it is called.",
+      "skill_tag": "Time management",
+      "question_id": "DOMESTIC-CLEANER-TIME-MANAGEM-PRIN-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Time management",
+        "Cleaning",
+        "Trustworthiness",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Time Management as a Domestic Cleaner:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for clean homes or offices.\n2. Apply Time Management using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Time Management \u2014 how work is executed to standard in Domestic Cleaner roles.",
+        "what_you_need_to_know_first": [
+          "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Time Management",
+            "definition": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Time Management",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Time Management",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Time Management",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for clean homes or offices.",
+          "Apply Time Management using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for clean homes or offices.\n2. Apply Time Management using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Time Management workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Time Management workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Calculation / quantitative question for Domestic Cleaner (Time management) while handling 'Clean homes or offices': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Time management \u2014 essential for Domestic Cleaner roles.",
+      "skill_tag": "Time management",
+      "calculation": {
+        "skill": "Time Management",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "DOMESTIC-CLEANER-TIME-MANAGEM-CALC-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Time management",
+        "Cleaning",
+        "Trustworthiness",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Domestic Cleaner practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Time Management: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Time Management calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Time Management",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Time Management calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "How would you teach Trustworthiness to a new colleague in a Domestic Cleaner team while handling 'Clean homes or offices', including where beginners fail first?",
+      "why_asked": "Tests genuine conceptual understanding of Trustworthiness, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Trustworthiness",
+      "question_id": "DOMESTIC-CLEANER-TRUSTWORTHIN-EXPL-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Trustworthiness",
+        "Cleaning",
+        "Time management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Trustworthiness without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Domestic Cleaner context, Trustworthiness starts with clarify required outcome, constraints, and stakeholders for clean homes or offices. and continues through apply trustworthiness using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how clean homes or offices stays reliable under real operational constraints.\n\nIn Domestic Cleaner, I applied Trustworthiness to stabilize clean homes or offices under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Trustworthiness:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Trustworthiness directly supports clean homes or offices. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Trustworthiness",
+            "definition": "Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Trustworthiness",
+            "explanation": "Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Trustworthiness directly supports clean homes or offices. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Trustworthiness",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for clean homes or offices.",
+          "Apply Trustworthiness using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Trustworthiness directly supports clean homes or offices. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+        ],
+        "practical_example": "In Domestic Cleaner, I applied Trustworthiness to stabilize clean homes or offices under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Trustworthiness without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Trustworthiness applies to: Clean homes or offices.",
+          "List the standards that govern Trustworthiness in Domestic Cleaner work.",
+          "Write out the verification steps after completing a Trustworthiness task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Trustworthiness",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Trustworthiness applies to: Clean homes or offices.",
+        "List the standards that govern Trustworthiness in Domestic Cleaner work.",
+        "Write out the verification steps after completing a Trustworthiness task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "What are the essential technical terms every Domestic Cleaner must know when working with Trustworthiness while handling 'Clean homes or offices'? Define each precisely.",
+      "why_asked": "Core terminology separates practitioners who understand Trustworthiness from those who only name-drop it.",
+      "skill_tag": "Trustworthiness",
+      "terminology_terms": [
+        {
+          "term": "Trustworthiness",
+          "definition": "Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Trustworthiness in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Trustworthiness in professional practice."
+        }
+      ],
+      "question_id": "DOMESTIC-CLEANER-TRUSTWORTHIN-TERM-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Trustworthiness",
+        "Cleaning",
+        "Time management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Trustworthiness: Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Trustworthiness in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Trustworthiness in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Domestic Cleaner work, these terms are foundational:\n\n\n**Trustworthiness** \u2014 Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Trustworthiness in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Trustworthiness in professional practice.",
+      "answer_explanation": "Definitions covered: Trustworthiness, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Trustworthiness \u2014 precise definitions required for Domestic Cleaner interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Trustworthiness terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Trustworthiness",
+            "definition": "Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Trustworthiness in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Trustworthiness in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Trustworthiness",
+            "explanation": "Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Trustworthiness in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Trustworthiness in professional practice."
+          }
+        ],
+        "principles": [
+          "Trustworthiness: Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Trustworthiness in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Trustworthiness in professional practice."
+        ],
+        "key_concepts": [
+          "Trustworthiness",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Trustworthiness** \u2014 Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Trustworthiness in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Trustworthiness in professional practice."
+        ],
+        "practical_example": "\u2022 Trustworthiness: Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Trustworthiness in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Trustworthiness terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Trustworthiness",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Trustworthiness",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Trustworthiness terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Trustworthiness",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the core operating principles and standard workflow for applying Trustworthiness in a Domestic Cleaner role while handling 'Clean homes or offices'?",
+      "why_asked": "Tests whether you know how Trustworthiness is actually executed to standard, not only what it is called.",
+      "skill_tag": "Trustworthiness",
+      "question_id": "DOMESTIC-CLEANER-TRUSTWORTHIN-PRIN-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Trustworthiness",
+        "Cleaning",
+        "Time management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Trustworthiness as a Domestic Cleaner:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for clean homes or offices.\n2. Apply Trustworthiness using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Trustworthiness \u2014 how work is executed to standard in Domestic Cleaner roles.",
+        "what_you_need_to_know_first": [
+          "Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Trustworthiness",
+            "definition": "Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Trustworthiness",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Trustworthiness",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Trustworthiness",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for clean homes or offices.",
+          "Apply Trustworthiness using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for clean homes or offices.\n2. Apply Trustworthiness using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Trustworthiness workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Trustworthiness workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "For Trustworthiness in Domestic Cleaner delivery while handling 'Clean homes or offices', which numeric thresholds or KPIs determine whether work is acceptable?",
+      "why_asked": "Tests ability to work with numbers, metrics, or measurable outcomes in Trustworthiness.",
+      "skill_tag": "Trustworthiness",
+      "question_id": "DOMESTIC-CLEANER-TRUSTWORTHIN-CALC-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Trustworthiness",
+        "Cleaning",
+        "Time management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Hand-waving without numbers",
+        "Wrong precision for context"
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "On a typical Domestic Cleaner task involving Trustworthiness, I'd first identify what must be measured \u2014 for example load, flow, dose, or error rate. I'd gather inputs from site data or patient parameters, apply the appropriate formula or clinical calculation, show units, and compare against the limit before proceeding. I'd document the calculation on the test sheet or clinical record.",
+      "answer_explanation": "Quantitative method with formula, units, and limit check.",
+      "study_material": {
+        "overview": "For Trustworthiness, identify measurable quantities on typical Domestic Cleaner tasks \u2014 loads, doses, rates, margins.",
+        "what_you_need_to_know_first": [
+          "Name what you would measure on site or in clinic.",
+          "State how you would calculate or estimate it.",
+          "Explain how the number drives a decision."
+        ],
+        "definitions": [
+          {
+            "term": "Trustworthiness",
+            "definition": "Trustworthiness is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Measurement",
+          "Estimation",
+          "Thresholds",
+          "Verification"
+        ],
+        "step_by_step_breakdown": [
+          "Identify the quantity (load, dose, flow, cost, latency).",
+          "State data sources and instruments.",
+          "Apply formula or rule of thumb.",
+          "Compare to limit and document."
+        ],
+        "explanations": [],
+        "practical_example": "In Domestic Cleaner, I applied Trustworthiness to stabilize clean homes or offices under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Hand-waving without numbers",
+          "Wrong precision for context"
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "List three numeric checks you perform when using Trustworthiness."
+        ],
+        "revision_notes": [],
+        "related_concepts": [
+          "Trustworthiness"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "List three numeric checks you perform when using Trustworthiness."
+      ],
+      "revision_notes": []
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Domestic Cleaner, define and explain these core professional terms: Cleaning, Outcome quality improves when assumption, Traceability prevents repeated failures , Time Management, Outcome quality improves when assumption, Traceability prevents repeated failures .",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Cleaning",
+          "definition": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Time Management",
+          "definition": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        }
+      ],
+      "question_id": "DOMESTIC-CLEANER-CORE-TERMINO-TERM-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Cleaning: Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Time Management: Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Domestic Cleaner work, these terms are foundational:\n\n\n**Cleaning** \u2014 Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Time Management** \u2014 Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+      "answer_explanation": "Definitions covered: Cleaning, Outcome quality improves when assumption, Traceability prevents repeated failures , Time Management, Outcome quality improves when assumption, Traceability prevents repeated failures ",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Domestic Cleaner interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Cleaning",
+            "definition": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Time Management",
+            "definition": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Time Management",
+            "explanation": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          }
+        ],
+        "principles": [
+          "Cleaning: Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Time Management: Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs."
+        ],
+        "key_concepts": [
+          "Cleaning",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Time Management",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Cleaning** \u2014 Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Time Management** \u2014 Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs."
+        ],
+        "practical_example": "\u2022 Cleaning: Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Time Management: Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Cleaning",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Time Management",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "related_concepts": [
+          "Cleaning",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Time Management",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Cleaning",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Time Management",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures "
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Clean homes or offices'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "DOMESTIC-CLEANER-BEHAVIORAL-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Domestic Cleaner handles when clean homes or offices. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Domestic Cleaner work involves clean homes or offices under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Domestic Cleaner",
+            "definition": "The Domestic Cleaner role integrates Cleaning, Time management, Trustworthiness to deliver on responsibilities such as clean homes or offices. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Domestic Cleaner reference clean homes or offices and relevant standards or tools."
+        ],
+        "practical_example": "In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Domestic Cleaner challenge with numbers.",
+          "Link the story to: Clean homes or offices."
+        ],
+        "revision_notes": [
+          "Cleaning",
+          "Time management",
+          "Trustworthiness"
+        ],
+        "related_concepts": [
+          "Hospitality Operations",
+          "General Professional"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Domestic Cleaner challenge with numbers.",
+        "Link the story to: Clean homes or offices."
+      ],
+      "revision_notes": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Follow checklists'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "DOMESTIC-CLEANER-BEHAVIORAL-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Domestic Cleaner handles when clean homes or offices. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Domestic Cleaner work involves clean homes or offices under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Domestic Cleaner",
+            "definition": "The Domestic Cleaner role integrates Cleaning, Time management, Trustworthiness to deliver on responsibilities such as clean homes or offices. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Domestic Cleaner reference clean homes or offices and relevant standards or tools."
+        ],
+        "practical_example": "In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Domestic Cleaner challenge with numbers.",
+          "Link the story to: Clean homes or offices."
+        ],
+        "revision_notes": [
+          "Cleaning",
+          "Time management",
+          "Trustworthiness"
+        ],
+        "related_concepts": [
+          "Hospitality Operations",
+          "General Professional"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Domestic Cleaner challenge with numbers.",
+        "Link the story to: Clean homes or offices."
+      ],
+      "revision_notes": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Bring supplies if required'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "DOMESTIC-CLEANER-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Domestic Cleaner handles when clean homes or offices. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Domestic Cleaner work involves clean homes or offices under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Domestic Cleaner",
+            "definition": "The Domestic Cleaner role integrates Cleaning, Time management, Trustworthiness to deliver on responsibilities such as clean homes or offices. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Domestic Cleaner reference clean homes or offices and relevant standards or tools."
+        ],
+        "practical_example": "In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Domestic Cleaner challenge with numbers.",
+          "Link the story to: Clean homes or offices."
+        ],
+        "revision_notes": [
+          "Cleaning",
+          "Time management",
+          "Trustworthiness"
+        ],
+        "related_concepts": [
+          "Hospitality Operations",
+          "General Professional"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Domestic Cleaner challenge with numbers.",
+        "Link the story to: Clean homes or offices."
+      ],
+      "revision_notes": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe a difficult delivery challenge specific to Domestic Cleaner responsibilities while handling 'Clean homes or offices' and how you resolved it.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "DOMESTIC-CLEANER-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Domestic Cleaner handles when clean homes or offices. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Domestic Cleaner work involves clean homes or offices under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Domestic Cleaner",
+            "definition": "The Domestic Cleaner role integrates Cleaning, Time management, Trustworthiness to deliver on responsibilities such as clean homes or offices. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Domestic Cleaner reference clean homes or offices and relevant standards or tools."
+        ],
+        "practical_example": "In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Domestic Cleaner challenge with numbers.",
+          "Link the story to: Clean homes or offices."
+        ],
+        "revision_notes": [
+          "Cleaning",
+          "Time management",
+          "Trustworthiness"
+        ],
+        "related_concepts": [
+          "Hospitality Operations",
+          "General Professional"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Domestic Cleaner challenge with numbers.",
+        "Link the story to: Clean homes or offices."
+      ],
+      "revision_notes": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Tell me about a time you improved quality or outcomes in your Domestic Cleaner work while handling 'Clean homes or offices' using measurable evidence.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "DOMESTIC-CLEANER-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Domestic Cleaner handles when clean homes or offices. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Domestic Cleaner work involves clean homes or offices under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Domestic Cleaner",
+            "definition": "The Domestic Cleaner role integrates Cleaning, Time management, Trustworthiness to deliver on responsibilities such as clean homes or offices. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Domestic Cleaner reference clean homes or offices and relevant standards or tools."
+        ],
+        "practical_example": "In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Domestic Cleaner challenge with numbers.",
+          "Link the story to: Clean homes or offices."
+        ],
+        "revision_notes": [
+          "Cleaning",
+          "Time management",
+          "Trustworthiness"
+        ],
+        "related_concepts": [
+          "Hospitality Operations",
+          "General Professional"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Domestic Cleaner challenge with numbers.",
+        "Link the story to: Clean homes or offices."
+      ],
+      "revision_notes": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe a stakeholder conflict in Domestic Cleaner work while handling 'Clean homes or offices' and the decision framework you used.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "DOMESTIC-CLEANER-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Domestic Cleaner handles when clean homes or offices. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Domestic Cleaner work involves clean homes or offices under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Domestic Cleaner",
+            "definition": "The Domestic Cleaner role integrates Cleaning, Time management, Trustworthiness to deliver on responsibilities such as clean homes or offices. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Cleaning supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Domestic Cleaner reference clean homes or offices and relevant standards or tools."
+        ],
+        "practical_example": "In Domestic Cleaner work involving clean homes or offices, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Domestic Cleaner challenge with numbers.",
+          "Link the story to: Clean homes or offices."
+        ],
+        "revision_notes": [
+          "Cleaning",
+          "Time management",
+          "Trustworthiness"
+        ],
+        "related_concepts": [
+          "Hospitality Operations",
+          "General Professional"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Domestic Cleaner challenge with numbers.",
+        "Link the story to: Clean homes or offices."
+      ],
+      "revision_notes": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Domestic Cleaner position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "DOMESTIC-CLEANER-ROLE-SPECIFI-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Domestic Cleaner, my approach to clean homes or offices is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Domestic Cleaner practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Role Specific.",
+      "answer_explanation": "This answer covers: As Domestic Cleaner, my approach to clean homes or offices is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand\u2026",
+      "study_material": {
+        "overview": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Role Specific directly supports clean homes or offices. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Role Specific directly supports clean homes or offices. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          },
+          {
+            "skill": "Time Management",
+            "explanation": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for clean homes or offices.",
+          "Apply Role Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Role Specific directly supports clean homes or offices. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+        ],
+        "practical_example": "In Domestic Cleaner, I applied Role Specific to stabilize clean homes or offices under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Clean homes or offices.",
+          "List the standards that govern Role Specific in Domestic Cleaner work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Clean homes or offices.",
+        "List the standards that govern Role Specific in Domestic Cleaner work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Domestic Cleaner context: Clean homes or offices. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Domestic Cleaner context: Clean homes or offices.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "DOMESTIC-CLEANER-COMPANY-SPEC-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Time management",
+        "Trustworthiness",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Domestic Cleaner, my approach to clean homes or offices is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Domestic Cleaner practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Company Specific.",
+      "answer_explanation": "This answer covers: As Domestic Cleaner, my approach to clean homes or offices is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand\u2026",
+      "study_material": {
+        "overview": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Company Specific directly supports clean homes or offices. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Company Specific directly supports clean homes or offices. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          },
+          {
+            "skill": "Time Management",
+            "explanation": "Time Management is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for clean homes or offices.",
+          "Apply Company Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices. In Domestic Cleaner practice, Company Specific directly supports clean homes or offices. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Domestic Cleaner professionals apply when performing clean homes or offices."
+        ],
+        "practical_example": "In Domestic Cleaner, I applied Company Specific to stabilize clean homes or offices under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Clean homes or offices.",
+          "List the standards that govern Company Specific in Domestic Cleaner work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Clean homes or offices.",
+        "List the standards that govern Company Specific in Domestic Cleaner work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:31:54.968828+00:00",
+  "confidence_score": 0.9
+}

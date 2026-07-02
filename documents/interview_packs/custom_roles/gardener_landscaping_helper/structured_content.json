@@ -1,0 +1,2988 @@
+{
+  "role_name": "Gardener / Landscaping Helper",
+  "role_slug": "gardener_landscaping_helper",
+  "category": "custom_roles",
+  "role_overview": {
+    "role_name": "Gardener / Landscaping Helper",
+    "summary": "The Gardener / Landscaping Helper role integrates Gardening, Physical work, Tool use to deliver on responsibilities such as mow lawns and trim hedges. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Mow lawns and trim hedges",
+      "Clear garden waste",
+      "Maintain outdoor spaces"
+    ],
+    "required_skills": [
+      "Gardening",
+      "Physical work",
+      "Tool use"
+    ],
+    "what_employers_expect": [
+      "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: Outdoor work experience."
+    ],
+    "skill_clusters": [
+      "General Professional",
+      "Engineering",
+      "Hospitality Operations"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "How would you teach Gardening to a new colleague in a Gardener / Landscaping Helper team while handling 'Mow lawns and trim hedges', including where beginners fail first?",
+      "why_asked": "Tests genuine conceptual understanding of Gardening, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Gardening",
+      "question_id": "GARDENER-LANDSCAPING-GARDENING-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Gardening without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Gardener / Landscaping Helper context, Gardening starts with clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges. and continues through apply gardening using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how mow lawns and trim hedges stays reliable under real operational constraints.\n\nIn Gardener / Landscaping Helper, I applied Gardening to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Gardening:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Gardening directly supports mow lawns and trim hedges. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Gardening",
+            "definition": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Gardening",
+            "explanation": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Gardening directly supports mow lawns and trim hedges. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Physical Work",
+            "explanation": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Gardening",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.",
+          "Apply Gardening using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Gardening directly supports mow lawns and trim hedges. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper, I applied Gardening to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Gardening without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Gardening applies to: Mow lawns and trim hedges.",
+          "List the standards that govern Gardening in Gardener / Landscaping Helper work.",
+          "Write out the verification steps after completing a Gardening task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Gardening",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Gardening applies to: Mow lawns and trim hedges.",
+        "List the standards that govern Gardening in Gardener / Landscaping Helper work.",
+        "Write out the verification steps after completing a Gardening task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe the most complex problem you've solved using Gardening as a Gardener / Landscaping Helper while handling 'Mow lawns and trim hedges'.",
+      "why_asked": "Probes depth of hands-on experience with Gardening under real constraints.",
+      "skill_tag": "Gardening",
+      "question_id": "GARDENER-LANDSCAPING-GARDENING-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Gardening without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Gardener / Landscaping Helper context, Gardening starts with clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges. and continues through apply gardening using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how mow lawns and trim hedges stays reliable under real operational constraints.\n\nIn Gardener / Landscaping Helper, I applied Gardening to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Gardening:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Gardening directly supports mow lawns and trim hedges. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Gardening",
+            "definition": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Gardening",
+            "explanation": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Gardening directly supports mow lawns and trim hedges. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Physical Work",
+            "explanation": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Gardening",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.",
+          "Apply Gardening using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Gardening directly supports mow lawns and trim hedges. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper, I applied Gardening to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Gardening without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Gardening applies to: Mow lawns and trim hedges.",
+          "List the standards that govern Gardening in Gardener / Landscaping Helper work.",
+          "Write out the verification steps after completing a Gardening task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Gardening",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Gardening applies to: Mow lawns and trim hedges.",
+        "List the standards that govern Gardening in Gardener / Landscaping Helper work.",
+        "Write out the verification steps after completing a Gardening task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for Gardening in Gardener / Landscaping Helper practice while handling 'Mow lawns and trim hedges', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand Gardening from those who only name-drop it.",
+      "skill_tag": "Gardening",
+      "terminology_terms": [
+        {
+          "term": "Gardening",
+          "definition": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Gardening in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Gardening in professional practice."
+        }
+      ],
+      "question_id": "GARDENER-LANDSCAPING-GARDENING-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Gardening: Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Gardening in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Gardening in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Gardener / Landscaping Helper work, these terms are foundational:\n\n\n**Gardening** \u2014 Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Gardening in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Gardening in professional practice.",
+      "answer_explanation": "Definitions covered: Gardening, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Gardening \u2014 precise definitions required for Gardener / Landscaping Helper interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Gardening terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Gardening",
+            "definition": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Gardening in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Gardening in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Gardening",
+            "explanation": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Gardening in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Gardening in professional practice."
+          }
+        ],
+        "principles": [
+          "Gardening: Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Gardening in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Gardening in professional practice."
+        ],
+        "key_concepts": [
+          "Gardening",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Gardening** \u2014 Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Gardening in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Gardening in professional practice."
+        ],
+        "practical_example": "\u2022 Gardening: Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Gardening in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Gardening terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Gardening",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Gardening",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Gardening terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Gardening",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which non-negotiable rules and execution sequence govern Gardening for Gardener / Landscaping Helper work while handling 'Mow lawns and trim hedges'?",
+      "why_asked": "Tests whether you know how Gardening is actually executed to standard, not only what it is called.",
+      "skill_tag": "Gardening",
+      "question_id": "GARDENER-LANDSCAPING-GARDENING-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Gardening as a Gardener / Landscaping Helper:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.\n2. Apply Gardening using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Gardening \u2014 how work is executed to standard in Gardener / Landscaping Helper roles.",
+        "what_you_need_to_know_first": [
+          "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Gardening",
+            "definition": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Gardening",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Gardening",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Gardening",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.",
+          "Apply Gardening using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.\n2. Apply Gardening using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Gardening workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Gardening workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "For Gardening in Gardener / Landscaping Helper delivery while handling 'Mow lawns and trim hedges', which numeric thresholds or KPIs determine whether work is acceptable?",
+      "why_asked": "Tests ability to work with numbers, metrics, or measurable outcomes in Gardening.",
+      "skill_tag": "Gardening",
+      "question_id": "GARDENER-LANDSCAPING-GARDENING-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Hand-waving without numbers",
+        "Wrong precision for context"
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "On a typical Gardener / Landscaping Helper task involving Gardening, I'd first identify what must be measured \u2014 for example load, flow, dose, or error rate. I'd gather inputs from site data or patient parameters, apply the appropriate formula or clinical calculation, show units, and compare against the limit before proceeding. I'd document the calculation on the test sheet or clinical record.",
+      "answer_explanation": "Quantitative method with formula, units, and limit check.",
+      "study_material": {
+        "overview": "For Gardening, identify measurable quantities on typical Gardener / Landscaping Helper tasks \u2014 loads, doses, rates, margins.",
+        "what_you_need_to_know_first": [
+          "Name what you would measure on site or in clinic.",
+          "State how you would calculate or estimate it.",
+          "Explain how the number drives a decision."
+        ],
+        "definitions": [
+          {
+            "term": "Gardening",
+            "definition": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Measurement",
+          "Estimation",
+          "Thresholds",
+          "Verification"
+        ],
+        "step_by_step_breakdown": [
+          "Identify the quantity (load, dose, flow, cost, latency).",
+          "State data sources and instruments.",
+          "Apply formula or rule of thumb.",
+          "Compare to limit and document."
+        ],
+        "explanations": [],
+        "practical_example": "In Gardener / Landscaping Helper, I applied Gardening to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Hand-waving without numbers",
+          "Wrong precision for context"
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "List three numeric checks you perform when using Gardening."
+        ],
+        "revision_notes": [],
+        "related_concepts": [
+          "Gardening"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "List three numeric checks you perform when using Gardening."
+      ],
+      "revision_notes": []
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Explain Physical work to an apprentice and include how you verify compliance to standards.",
+      "why_asked": "Tests genuine conceptual understanding of Physical work, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Physical work",
+      "question_id": "GARDENER-LANDSCAPING-PHYSICAL-WOR-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Physical work",
+        "Gardening",
+        "Tool use",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Physical Work without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Gardener / Landscaping Helper context, Physical Work starts with clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges. and continues through apply physical work using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how mow lawns and trim hedges stays reliable under real operational constraints.\n\nIn Gardener / Landscaping Helper, I applied Physical Work to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Physical Work:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Physical Work directly supports mow lawns and trim hedges. Engineering applies scientific and mathematical principles to design, build, and maintain systems that meet safety, performance, and regulatory constraints. Professional engineers translate ambiguous requirements into verifiable specifications, document assumptions, and validate outcomes through calculation, simulation, and inspection. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Physical Work",
+            "definition": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Physical Work",
+            "explanation": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Physical Work directly supports mow lawns and trim hedges. Engineering applies scientific and mathematical principles to design, build, and maintain systems that meet safety, performance, and regulatory constraints. Professional engineers translate ambiguous requirements into verifiable specifications, document assumptions, and validate outcomes through calculation, simulation, and inspection. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Gardening",
+            "explanation": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Physical Work",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "engineering",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.",
+          "Apply Physical Work using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Physical Work directly supports mow lawns and trim hedges. Engineering applies scientific and mathematical principles to design, build, and maintain systems that meet safety, performance, and regulatory constraints. Professional engineers translate ambiguous requirements into verifiable specifications, document assumptions, and validate outcomes through calculation, simulation, and inspection. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper, I applied Physical Work to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Physical Work without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Physical Work applies to: Mow lawns and trim hedges.",
+          "List the standards that govern Physical Work in Gardener / Landscaping Helper work.",
+          "Write out the verification steps after completing a Physical Work task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Physical Work",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "engineering"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Physical Work applies to: Mow lawns and trim hedges.",
+        "List the standards that govern Physical Work in Gardener / Landscaping Helper work.",
+        "Write out the verification steps after completing a Physical Work task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a technically difficult Physical work fault/design problem you resolved under constraints.",
+      "why_asked": "Probes depth of hands-on experience with Physical work under real constraints.",
+      "skill_tag": "Physical work",
+      "question_id": "GARDENER-LANDSCAPING-PHYSICAL-WOR-SCEN-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Physical work",
+        "Gardening",
+        "Tool use",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Physical Work without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Gardener / Landscaping Helper context, Physical Work starts with clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges. and continues through apply physical work using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how mow lawns and trim hedges stays reliable under real operational constraints.\n\nIn Gardener / Landscaping Helper, I applied Physical Work to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Physical Work:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Physical Work directly supports mow lawns and trim hedges. Engineering applies scientific and mathematical principles to design, build, and maintain systems that meet safety, performance, and regulatory constraints. Professional engineers translate ambiguous requirements into verifiable specifications, document assumptions, and validate outcomes through calculation, simulation, and inspection. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Physical Work",
+            "definition": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Physical Work",
+            "explanation": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Physical Work directly supports mow lawns and trim hedges. Engineering applies scientific and mathematical principles to design, build, and maintain systems that meet safety, performance, and regulatory constraints. Professional engineers translate ambiguous requirements into verifiable specifications, document assumptions, and validate outcomes through calculation, simulation, and inspection. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Gardening",
+            "explanation": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Physical Work",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "engineering",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.",
+          "Apply Physical Work using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Physical Work directly supports mow lawns and trim hedges. Engineering applies scientific and mathematical principles to design, build, and maintain systems that meet safety, performance, and regulatory constraints. Professional engineers translate ambiguous requirements into verifiable specifications, document assumptions, and validate outcomes through calculation, simulation, and inspection. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper, I applied Physical Work to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Physical Work without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Physical Work applies to: Mow lawns and trim hedges.",
+          "List the standards that govern Physical Work in Gardener / Landscaping Helper work.",
+          "Write out the verification steps after completing a Physical Work task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Physical Work",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "engineering"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Physical Work applies to: Mow lawns and trim hedges.",
+        "List the standards that govern Physical Work in Gardener / Landscaping Helper work.",
+        "Write out the verification steps after completing a Physical Work task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Gardener / Landscaping Helper practitioner in Physical work while handling 'Mow lawns and trim hedges'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Physical work from those who only name-drop it.",
+      "skill_tag": "Physical work",
+      "terminology_terms": [
+        {
+          "term": "Physical Work",
+          "definition": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Physical Work in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Physical Work in professional practice."
+        }
+      ],
+      "question_id": "GARDENER-LANDSCAPING-PHYSICAL-WOR-TERM-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Physical work",
+        "Gardening",
+        "Tool use",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Physical Work: Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Physical Work in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Physical Work in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Gardener / Landscaping Helper work, these terms are foundational:\n\n\n**Physical Work** \u2014 Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Physical Work in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Physical Work in professional practice.",
+      "answer_explanation": "Definitions covered: Physical Work, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Physical Work \u2014 precise definitions required for Gardener / Landscaping Helper interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Physical Work terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Physical Work",
+            "definition": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Physical Work in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Physical Work in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Physical Work",
+            "explanation": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Physical Work in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Physical Work in professional practice."
+          }
+        ],
+        "principles": [
+          "Physical Work: Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Physical Work in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Physical Work in professional practice."
+        ],
+        "key_concepts": [
+          "Physical Work",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Physical Work** \u2014 Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Physical Work in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Physical Work in professional practice."
+        ],
+        "practical_example": "\u2022 Physical Work: Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Physical Work in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Physical Work terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Physical Work",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Physical Work",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Physical Work terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Physical Work",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the engineering principles and site workflow used to execute Physical work safely?",
+      "why_asked": "Tests whether you know how Physical work is actually executed to standard, not only what it is called.",
+      "skill_tag": "Physical work",
+      "question_id": "GARDENER-LANDSCAPING-PHYSICAL-WOR-PRIN-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Physical work",
+        "Gardening",
+        "Tool use",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Physical Work as a Gardener / Landscaping Helper:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.\n2. Apply Physical Work using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Physical Work \u2014 how work is executed to standard in Gardener / Landscaping Helper roles.",
+        "what_you_need_to_know_first": [
+          "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Physical Work",
+            "definition": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Physical Work",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Physical Work",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Physical Work",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.",
+          "Apply Physical Work using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.\n2. Apply Physical Work using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Physical Work workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Physical Work workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Quantitative validation scenario (Gardener / Landscaping Helper, Physical work) while handling 'Mow lawns and trim hedges': A component must carry 50 kN load with factor of safety 2.5. What is the required design strength?",
+      "why_asked": "Tests numerical and analytical competence in Physical work \u2014 essential for Gardener / Landscaping Helper roles.",
+      "skill_tag": "Physical work",
+      "calculation": {
+        "skill": "Physical Work",
+        "prompt": "A component must carry 50 kN load with factor of safety 2.5. What is the required design strength?",
+        "answer": "Required ultimate capacity = 50 \u00d7 2.5 = 125 kN. Design must ensure failure load \u2265 125 kN with documented material properties.",
+        "steps": [
+          "Load \u00d7 FoS",
+          "Compare to material capacity",
+          "Document assumption"
+        ]
+      },
+      "question_id": "GARDENER-LANDSCAPING-PHYSICAL-WOR-CALC-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Physical work",
+        "Gardening",
+        "Tool use",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Load \u00d7 FoS",
+        "Compare to material capacity",
+        "Document assumption"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: A component must carry 50 kN load with factor of safety 2.5. What is the required design strength?\n\nWorking:\n1. Load \u00d7 FoS\n2. Compare to material capacity\n3. Document assumption\n\nAnswer: Required ultimate capacity = 50 \u00d7 2.5 = 125 kN. Design must ensure failure load \u2265 125 kN with documented material properties.\n\nIn Gardener / Landscaping Helper practice, I anchor this using: Load \u00d7 FoS, Compare to material capacity, Given data.",
+      "answer_explanation": "Calculation: Required ultimate capacity = 50 \u00d7 2.5 = 125 kN. Design must ensure failure load \u2265 125 kN with documented material properties.",
+      "study_material": {
+        "overview": "Quantitative problem for Physical Work: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "A component must carry 50 kN load with factor of safety 2.5. What is the required design strength?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Required ultimate capacity = 50 \u00d7 2.5 = 125 kN. Design must ensure failure load \u2265 125 kN with documented material properties."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Load \u00d7 FoS",
+          "Compare to material capacity",
+          "Document assumption"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "Load \u00d7 FoS",
+          "Compare to material capacity",
+          "Document assumption"
+        ],
+        "explanations": [
+          "Required ultimate capacity = 50 \u00d7 2.5 = 125 kN. Design must ensure failure load \u2265 125 kN with documented material properties.",
+          "Step: Load \u00d7 FoS",
+          "Step: Compare to material capacity",
+          "Step: Document assumption"
+        ],
+        "practical_example": "Required ultimate capacity = 50 \u00d7 2.5 = 125 kN. Design must ensure failure load \u2265 125 kN with documented material properties.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Physical Work calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "Load \u00d7 FoS",
+          "Compare to material capacity",
+          "Document assumption"
+        ],
+        "related_concepts": [
+          "Physical Work",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Physical Work calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "Load \u00d7 FoS",
+        "Compare to material capacity",
+        "Document assumption"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "If a new hire joined your Gardener / Landscaping Helper function while handling 'Mow lawns and trim hedges', how would you break down Tool use into practical steps?",
+      "why_asked": "Tests genuine conceptual understanding of Tool use, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Tool use",
+      "question_id": "GARDENER-LANDSCAPING-TOOL-USE-EXPL-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Tool use",
+        "Gardening",
+        "Physical work",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Tool Use without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Gardener / Landscaping Helper context, Tool Use starts with clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges. and continues through apply tool use using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how mow lawns and trim hedges stays reliable under real operational constraints.\n\nIn Gardener / Landscaping Helper, I applied Tool Use to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Tool Use:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Tool Use directly supports mow lawns and trim hedges. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Tool Use",
+            "definition": "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Tool Use",
+            "explanation": "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Tool Use directly supports mow lawns and trim hedges. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Gardening",
+            "explanation": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Tool Use",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.",
+          "Apply Tool Use using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Tool Use directly supports mow lawns and trim hedges. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper, I applied Tool Use to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Tool Use without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Tool Use applies to: Mow lawns and trim hedges.",
+          "List the standards that govern Tool Use in Gardener / Landscaping Helper work.",
+          "Write out the verification steps after completing a Tool Use task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Tool Use",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Tool Use applies to: Mow lawns and trim hedges.",
+        "List the standards that govern Tool Use in Gardener / Landscaping Helper work.",
+        "Write out the verification steps after completing a Tool Use task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Give a detailed example where Tool use was critical to recovering a difficult Gardener / Landscaping Helper outcome while handling 'Mow lawns and trim hedges'.",
+      "why_asked": "Probes depth of hands-on experience with Tool use under real constraints.",
+      "skill_tag": "Tool use",
+      "question_id": "GARDENER-LANDSCAPING-TOOL-USE-SCEN-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Tool use",
+        "Gardening",
+        "Physical work",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Tool Use without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Gardener / Landscaping Helper context, Tool Use starts with clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges. and continues through apply tool use using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how mow lawns and trim hedges stays reliable under real operational constraints.\n\nIn Gardener / Landscaping Helper, I applied Tool Use to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Tool Use:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Tool Use directly supports mow lawns and trim hedges. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Tool Use",
+            "definition": "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Tool Use",
+            "explanation": "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Tool Use directly supports mow lawns and trim hedges. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Gardening",
+            "explanation": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Tool Use",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.",
+          "Apply Tool Use using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Tool Use directly supports mow lawns and trim hedges. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper, I applied Tool Use to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Tool Use without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Tool Use applies to: Mow lawns and trim hedges.",
+          "List the standards that govern Tool Use in Gardener / Landscaping Helper work.",
+          "Write out the verification steps after completing a Tool Use task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Tool Use",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Tool Use applies to: Mow lawns and trim hedges.",
+        "List the standards that govern Tool Use in Gardener / Landscaping Helper work.",
+        "Write out the verification steps after completing a Tool Use task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for Tool use in Gardener / Landscaping Helper practice while handling 'Mow lawns and trim hedges', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand Tool use from those who only name-drop it.",
+      "skill_tag": "Tool use",
+      "terminology_terms": [
+        {
+          "term": "Tool Use",
+          "definition": "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Tool Use in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Tool Use in professional practice."
+        }
+      ],
+      "question_id": "GARDENER-LANDSCAPING-TOOL-USE-TERM-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Tool use",
+        "Gardening",
+        "Physical work",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Tool Use: Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Tool Use in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Tool Use in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Gardener / Landscaping Helper work, these terms are foundational:\n\n\n**Tool Use** \u2014 Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Tool Use in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Tool Use in professional practice.",
+      "answer_explanation": "Definitions covered: Tool Use, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Tool Use \u2014 precise definitions required for Gardener / Landscaping Helper interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Tool Use terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Tool Use",
+            "definition": "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Tool Use in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Tool Use in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Tool Use",
+            "explanation": "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Tool Use in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Tool Use in professional practice."
+          }
+        ],
+        "principles": [
+          "Tool Use: Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Tool Use in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Tool Use in professional practice."
+        ],
+        "key_concepts": [
+          "Tool Use",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Tool Use** \u2014 Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Tool Use in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Tool Use in professional practice."
+        ],
+        "practical_example": "\u2022 Tool Use: Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Tool Use in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Tool Use terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Tool Use",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Tool Use",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Tool Use terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Tool Use",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which non-negotiable rules and execution sequence govern Tool use for Gardener / Landscaping Helper work while handling 'Mow lawns and trim hedges'?",
+      "why_asked": "Tests whether you know how Tool use is actually executed to standard, not only what it is called.",
+      "skill_tag": "Tool use",
+      "question_id": "GARDENER-LANDSCAPING-TOOL-USE-PRIN-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Tool use",
+        "Gardening",
+        "Physical work",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Tool Use as a Gardener / Landscaping Helper:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.\n2. Apply Tool Use using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Tool Use \u2014 how work is executed to standard in Gardener / Landscaping Helper roles.",
+        "what_you_need_to_know_first": [
+          "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Tool Use",
+            "definition": "Tool Use is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Tool Use",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Tool Use",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Tool Use",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.",
+          "Apply Tool Use using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.\n2. Apply Tool Use using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Tool Use workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Tool Use workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Calculation / quantitative question for Gardener / Landscaping Helper (Tool use) while handling 'Mow lawns and trim hedges': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Tool use \u2014 essential for Gardener / Landscaping Helper roles.",
+      "skill_tag": "Tool use",
+      "calculation": {
+        "skill": "Tool Use",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "GARDENER-LANDSCAPING-TOOL-USE-CALC-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Tool use",
+        "Gardening",
+        "Physical work",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Gardener / Landscaping Helper practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Tool Use: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Tool Use calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Tool Use",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Tool Use calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Gardener / Landscaping Helper, define and explain these core professional terms: Gardening, Outcome quality improves when assumption, Traceability prevents repeated failures , Physical Work, Outcome quality improves when assumption, Traceability prevents repeated failures .",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Gardening",
+          "definition": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Physical Work",
+          "definition": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        }
+      ],
+      "question_id": "GARDENER-LANDSCAPING-CORE-TERMINO-TERM-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Gardening: Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Physical Work: Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Gardener / Landscaping Helper work, these terms are foundational:\n\n\n**Gardening** \u2014 Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Physical Work** \u2014 Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+      "answer_explanation": "Definitions covered: Gardening, Outcome quality improves when assumption, Traceability prevents repeated failures , Physical Work, Outcome quality improves when assumption, Traceability prevents repeated failures ",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Gardener / Landscaping Helper interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Gardening",
+            "definition": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Physical Work",
+            "definition": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Gardening",
+            "explanation": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Physical Work",
+            "explanation": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          }
+        ],
+        "principles": [
+          "Gardening: Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Physical Work: Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs."
+        ],
+        "key_concepts": [
+          "Gardening",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Physical Work",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Gardening** \u2014 Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Physical Work** \u2014 Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs."
+        ],
+        "practical_example": "\u2022 Gardening: Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Physical Work: Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Gardening",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Physical Work",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "related_concepts": [
+          "Gardening",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Physical Work",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Gardening",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Physical Work",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures "
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Mow lawns and trim hedges'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "GARDENER-LANDSCAPING-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking mea\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Gardener / Landscaping Helper handles when mow lawns and trim hedges. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Gardener / Landscaping Helper work involves mow lawns and trim hedges under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Gardener / Landscaping Helper",
+            "definition": "The Gardener / Landscaping Helper role integrates Gardening, Physical work, Tool use to deliver on responsibilities such as mow lawns and trim hedges. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Gardener / Landscaping Helper reference mow lawns and trim hedges and relevant standards or tools."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Gardener / Landscaping Helper challenge with numbers.",
+          "Link the story to: Mow lawns and trim hedges."
+        ],
+        "revision_notes": [
+          "Gardening",
+          "Physical work",
+          "Tool use"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Engineering",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Gardener / Landscaping Helper challenge with numbers.",
+        "Link the story to: Mow lawns and trim hedges."
+      ],
+      "revision_notes": [
+        "Gardening",
+        "Physical work",
+        "Tool use"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Clear garden waste'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "GARDENER-LANDSCAPING-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking mea\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Gardener / Landscaping Helper handles when mow lawns and trim hedges. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Gardener / Landscaping Helper work involves mow lawns and trim hedges under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Gardener / Landscaping Helper",
+            "definition": "The Gardener / Landscaping Helper role integrates Gardening, Physical work, Tool use to deliver on responsibilities such as mow lawns and trim hedges. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Gardener / Landscaping Helper reference mow lawns and trim hedges and relevant standards or tools."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Gardener / Landscaping Helper challenge with numbers.",
+          "Link the story to: Mow lawns and trim hedges."
+        ],
+        "revision_notes": [
+          "Gardening",
+          "Physical work",
+          "Tool use"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Engineering",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Gardener / Landscaping Helper challenge with numbers.",
+        "Link the story to: Mow lawns and trim hedges."
+      ],
+      "revision_notes": [
+        "Gardening",
+        "Physical work",
+        "Tool use"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Maintain outdoor spaces'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "GARDENER-LANDSCAPING-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking mea\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Gardener / Landscaping Helper handles when mow lawns and trim hedges. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Gardener / Landscaping Helper work involves mow lawns and trim hedges under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Gardener / Landscaping Helper",
+            "definition": "The Gardener / Landscaping Helper role integrates Gardening, Physical work, Tool use to deliver on responsibilities such as mow lawns and trim hedges. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Gardener / Landscaping Helper reference mow lawns and trim hedges and relevant standards or tools."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Gardener / Landscaping Helper challenge with numbers.",
+          "Link the story to: Mow lawns and trim hedges."
+        ],
+        "revision_notes": [
+          "Gardening",
+          "Physical work",
+          "Tool use"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Engineering",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Gardener / Landscaping Helper challenge with numbers.",
+        "Link the story to: Mow lawns and trim hedges."
+      ],
+      "revision_notes": [
+        "Gardening",
+        "Physical work",
+        "Tool use"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe one complex assignment in Gardener / Landscaping Helper work while handling 'Mow lawns and trim hedges' where your planning prevented failure.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "GARDENER-LANDSCAPING-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking mea\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Gardener / Landscaping Helper handles when mow lawns and trim hedges. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Gardener / Landscaping Helper work involves mow lawns and trim hedges under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Gardener / Landscaping Helper",
+            "definition": "The Gardener / Landscaping Helper role integrates Gardening, Physical work, Tool use to deliver on responsibilities such as mow lawns and trim hedges. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Gardener / Landscaping Helper reference mow lawns and trim hedges and relevant standards or tools."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Gardener / Landscaping Helper challenge with numbers.",
+          "Link the story to: Mow lawns and trim hedges."
+        ],
+        "revision_notes": [
+          "Gardening",
+          "Physical work",
+          "Tool use"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Engineering",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Gardener / Landscaping Helper challenge with numbers.",
+        "Link the story to: Mow lawns and trim hedges."
+      ],
+      "revision_notes": [
+        "Gardening",
+        "Physical work",
+        "Tool use"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Give an example where your evidence or metrics in Gardener / Landscaping Helper delivery while handling 'Mow lawns and trim hedges' changed a decision.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "GARDENER-LANDSCAPING-BEHAVIORAL-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking mea\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Gardener / Landscaping Helper handles when mow lawns and trim hedges. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Gardener / Landscaping Helper work involves mow lawns and trim hedges under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Gardener / Landscaping Helper",
+            "definition": "The Gardener / Landscaping Helper role integrates Gardening, Physical work, Tool use to deliver on responsibilities such as mow lawns and trim hedges. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Gardener / Landscaping Helper reference mow lawns and trim hedges and relevant standards or tools."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Gardener / Landscaping Helper challenge with numbers.",
+          "Link the story to: Mow lawns and trim hedges."
+        ],
+        "revision_notes": [
+          "Gardening",
+          "Physical work",
+          "Tool use"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Engineering",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Gardener / Landscaping Helper challenge with numbers.",
+        "Link the story to: Mow lawns and trim hedges."
+      ],
+      "revision_notes": [
+        "Gardening",
+        "Physical work",
+        "Tool use"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Explain a stakeholder-management challenge from Gardener / Landscaping Helper work while handling 'Mow lawns and trim hedges' and the outcome.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "GARDENER-LANDSCAPING-BEHAVIORAL-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking mea\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Gardener / Landscaping Helper handles when mow lawns and trim hedges. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Gardener / Landscaping Helper work involves mow lawns and trim hedges under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Gardener / Landscaping Helper",
+            "definition": "The Gardener / Landscaping Helper role integrates Gardening, Physical work, Tool use to deliver on responsibilities such as mow lawns and trim hedges. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Gardening supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Gardener / Landscaping Helper reference mow lawns and trim hedges and relevant standards or tools."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper work involving mow lawns and trim hedges, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Gardener / Landscaping Helper challenge with numbers.",
+          "Link the story to: Mow lawns and trim hedges."
+        ],
+        "revision_notes": [
+          "Gardening",
+          "Physical work",
+          "Tool use"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Engineering",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Gardener / Landscaping Helper challenge with numbers.",
+        "Link the story to: Mow lawns and trim hedges."
+      ],
+      "revision_notes": [
+        "Gardening",
+        "Physical work",
+        "Tool use"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Gardener / Landscaping Helper position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "GARDENER-LANDSCAPING-ROLE-SPECIFI-023",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Gardener / Landscaping Helper, my approach to mow lawns and trim hedges is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Gardener / Landscaping Helper practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Role Specific.",
+      "answer_explanation": "This answer covers: As Gardener / Landscaping Helper, my approach to mow lawns and trim hedges is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, d\u2026",
+      "study_material": {
+        "overview": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Role Specific directly supports mow lawns and trim hedges. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Role Specific directly supports mow lawns and trim hedges. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Gardening",
+            "explanation": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          },
+          {
+            "skill": "Physical Work",
+            "explanation": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.",
+          "Apply Role Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Role Specific directly supports mow lawns and trim hedges. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper, I applied Role Specific to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Mow lawns and trim hedges.",
+          "List the standards that govern Role Specific in Gardener / Landscaping Helper work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Mow lawns and trim hedges.",
+        "List the standards that govern Role Specific in Gardener / Landscaping Helper work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Gardener / Landscaping Helper context: Mow lawns and trim hedges. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Gardener / Landscaping Helper context: Mow lawns and trim hedges.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "GARDENER-LANDSCAPING-COMPANY-SPEC-024",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Gardening",
+        "Physical work",
+        "Tool use",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Gardener / Landscaping Helper, my approach to mow lawns and trim hedges is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Gardener / Landscaping Helper practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Company Specific.",
+      "answer_explanation": "This answer covers: As Gardener / Landscaping Helper, my approach to mow lawns and trim hedges is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, d\u2026",
+      "study_material": {
+        "overview": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Company Specific directly supports mow lawns and trim hedges. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Company Specific directly supports mow lawns and trim hedges. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Gardening",
+            "explanation": "Gardening is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          },
+          {
+            "skill": "Physical Work",
+            "explanation": "Physical Work is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for mow lawns and trim hedges.",
+          "Apply Company Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges. In Gardener / Landscaping Helper practice, Company Specific directly supports mow lawns and trim hedges. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Gardener / Landscaping Helper professionals apply when performing mow lawns and trim hedges."
+        ],
+        "practical_example": "In Gardener / Landscaping Helper, I applied Company Specific to stabilize mow lawns and trim hedges under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Mow lawns and trim hedges.",
+          "List the standards that govern Company Specific in Gardener / Landscaping Helper work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Mow lawns and trim hedges.",
+        "List the standards that govern Company Specific in Gardener / Landscaping Helper work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:31:57.634736+00:00",
+  "confidence_score": 0.9
+}

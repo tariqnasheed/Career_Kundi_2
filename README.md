@@ -498,7 +498,8 @@ CV export supports **Markdown, PDF (WeasyPrint), and DOCX (python-docx)** — al
 - **Endpoint**: `GET /api/v1/cv-builder/{cv_id}/export?format=pdf|docx|markdown`
 - **Frontend client**: `cvApi.downloadPdf(cvId, format)` in `lib/api.ts` — implemented and correctly targets this endpoint.
 - **Current gap**: the "Export PDF / DOCX" button on `CVBuilderPage` does not call `cvApi.downloadPdf()` yet; it shows a placeholder toast ("Export will be available after generating"). The backend path itself is real and was verified working (see the project's `report.md` audit). To use it today, call the endpoint directly (e.g. via the interactive API docs at `/api/docs`) with a valid CV ID and auth token.
-- **Roadmap/Interview-pack/Study-bundle PDF export**: routed through a separate background `/queue/jobs` system that is currently fully simulated on the backend and not called by any frontend page at all — see [§36](#36-known-limitations). There is no working PDF export for roadmaps or interview packs today.
+- **Interview pack PDF export**: available on the Job Search page — full pack, study-only, and Q&A PDFs. Generated packs are also saved under `documents/interview_packs/` for reuse when API/web access fails.
+- **Roadmap PDF export**: still routed through the background `/queue/jobs` system (simulated) — see [§36](#36-known-limitations).
 
 ## 26. CV Viewer Guide
 

@@ -23,7 +23,7 @@ from __future__ import annotations
 
 import uuid
 from datetime import datetime
-from typing import Literal
+from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
@@ -46,6 +46,10 @@ class CVGenerateRequest(BaseModel):
     data for" (the CV Builder's default, no-thinking-required path);
     explicitly passing a list lets the user toggle sections off, per §4.3
     "Dynamic Section Toggles".
+
+    `generation_mode="role_targeted"` generates full section content for a
+    different target role via the model. Section toggles only control which
+    sections appear — the model writes the content for each enabled section.
     """
 
     name: str | None = Field(default=None, description="Display name for this saved CV, e.g. 'Backend Eng — Acme'")
@@ -53,6 +57,24 @@ class CVGenerateRequest(BaseModel):
     template: Literal["modern", "classic", "compact", "creative"] = "modern"
     section_ids: list[str] | None = Field(default=None, description="None = every populated section")
     tone: Literal["concise", "detailed", "executive"] = "concise"
+    generation_mode: Literal["profile", "role_targeted"] = Field(
+        default="profile",
+        description="profile = enhance existing profile data; role_targeted = model generates all enabled sections for a different role",
+    )
+    target_role_title: str | None = Field(
+        default=None,
+        description="Required when generation_mode=role_targeted — the job role to generate the CV for",
+    )
+    target_role_description: str | None = Field(
+        default=None,
+        description="Optional role/JD context when generation_mode=role_targeted",
+    )
+
+    @model_validator(mode="after")
+    def _validate_role_targeted(self) -> "CVGenerateRequest":
+        if self.generation_mode == "role_targeted" and not (self.target_role_title or "").strip():
+            raise ValueError("target_role_title is required when generation_mode is role_targeted.")
+        return self
 
 
 class CVRegenerateRequest(CVGenerateRequest):
@@ -129,3 +151,8 @@ class CVGenerationResult(BaseModel):
     confidence_score: float = 0.0
     needs_manual_input: bool = False
     manual_input_reason: str | None = None
+    generation_mode: Literal["profile", "role_targeted"] = "profile"
+    generated_sections: dict[str, Any] = Field(
+        default_factory=dict,
+        description="Role-targeted mode: full section payloads keyed by section_id (summary, experience, skills, …)",
+    )

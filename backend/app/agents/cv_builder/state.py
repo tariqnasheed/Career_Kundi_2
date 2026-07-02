@@ -34,6 +34,9 @@ class CVGenerationState(BaseAgentState, total=False):
     target_job_snapshot: dict[str, Any] | None  # a SavedJob's fields, if tailoring toward a specific role
     requested_section_ids: list[str] | None  # None = every section the profile has data for
     tone: str  # concise | detailed | executive
+    generation_mode: str  # profile | role_targeted
+    target_role_title: str | None
+    target_role_description: str | None
 
 
 class BulletImprovementState(BaseAgentState, total=False):

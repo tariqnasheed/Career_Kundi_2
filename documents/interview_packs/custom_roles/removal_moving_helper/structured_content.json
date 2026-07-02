@@ -1,0 +1,3078 @@
+{
+  "role_name": "Removal / Moving Helper",
+  "role_slug": "removal_moving_helper",
+  "category": "custom_roles",
+  "role_overview": {
+    "role_name": "Removal / Moving Helper",
+    "summary": "The Removal / Moving Helper role integrates Heavy lifting, Teamwork, Care with belongings to deliver on responsibilities such as load and unload vans. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Load and unload vans",
+      "Protect furniture",
+      "Follow move schedules"
+    ],
+    "required_skills": [
+      "Heavy lifting",
+      "Teamwork",
+      "Care with belongings"
+    ],
+    "what_employers_expect": [
+      "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: Physical fitness."
+    ],
+    "skill_clusters": [
+      "Engineering",
+      "Hospitality Operations",
+      "Healthcare"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Explain Heavy lifting to an apprentice and include how you verify compliance to standards.",
+      "why_asked": "Tests genuine conceptual understanding of Heavy lifting, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Heavy lifting",
+      "question_id": "REMOVAL-MOVING-HELPE-HEAVY-LIFTIN-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Heavy Lifting without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Removal / Moving Helper context, Heavy Lifting starts with clarify required outcome, constraints, and stakeholders for load and unload vans. and continues through apply heavy lifting using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how load and unload vans stays reliable under real operational constraints.\n\nIn Removal / Moving Helper, I applied Heavy Lifting to stabilize load and unload vans under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Heavy Lifting:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Heavy Lifting directly supports load and unload vans. Engineering applies scientific and mathematical principles to design, build, and maintain systems that meet safety, performance, and regulatory constraints. Professional engineers translate ambiguous requirements into verifiable specifications, document assumptions, and validate outcomes through calculation, simulation, and inspection. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Heavy Lifting",
+            "definition": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Heavy Lifting directly supports load and unload vans. Engineering applies scientific and mathematical principles to design, build, and maintain systems that meet safety, performance, and regulatory constraints. Professional engineers translate ambiguous requirements into verifiable specifications, document assumptions, and validate outcomes through calculation, simulation, and inspection. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Teamwork",
+            "explanation": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Heavy Lifting",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "engineering",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for load and unload vans.",
+          "Apply Heavy Lifting using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Heavy Lifting directly supports load and unload vans. Engineering applies scientific and mathematical principles to design, build, and maintain systems that meet safety, performance, and regulatory constraints. Professional engineers translate ambiguous requirements into verifiable specifications, document assumptions, and validate outcomes through calculation, simulation, and inspection. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+        ],
+        "practical_example": "In Removal / Moving Helper, I applied Heavy Lifting to stabilize load and unload vans under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Heavy Lifting without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Heavy Lifting applies to: Load and unload vans.",
+          "List the standards that govern Heavy Lifting in Removal / Moving Helper work.",
+          "Write out the verification steps after completing a Heavy Lifting task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Heavy Lifting",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "engineering"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Heavy Lifting applies to: Load and unload vans.",
+        "List the standards that govern Heavy Lifting in Removal / Moving Helper work.",
+        "Write out the verification steps after completing a Heavy Lifting task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a technically difficult Heavy lifting fault/design problem you resolved under constraints.",
+      "why_asked": "Probes depth of hands-on experience with Heavy lifting under real constraints.",
+      "skill_tag": "Heavy lifting",
+      "question_id": "REMOVAL-MOVING-HELPE-HEAVY-LIFTIN-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Heavy Lifting without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Removal / Moving Helper context, Heavy Lifting starts with clarify required outcome, constraints, and stakeholders for load and unload vans. and continues through apply heavy lifting using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how load and unload vans stays reliable under real operational constraints.\n\nIn Removal / Moving Helper, I applied Heavy Lifting to stabilize load and unload vans under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Heavy Lifting:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Heavy Lifting directly supports load and unload vans. Engineering applies scientific and mathematical principles to design, build, and maintain systems that meet safety, performance, and regulatory constraints. Professional engineers translate ambiguous requirements into verifiable specifications, document assumptions, and validate outcomes through calculation, simulation, and inspection. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Heavy Lifting",
+            "definition": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Heavy Lifting directly supports load and unload vans. Engineering applies scientific and mathematical principles to design, build, and maintain systems that meet safety, performance, and regulatory constraints. Professional engineers translate ambiguous requirements into verifiable specifications, document assumptions, and validate outcomes through calculation, simulation, and inspection. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Teamwork",
+            "explanation": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Heavy Lifting",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "engineering",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for load and unload vans.",
+          "Apply Heavy Lifting using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Heavy Lifting directly supports load and unload vans. Engineering applies scientific and mathematical principles to design, build, and maintain systems that meet safety, performance, and regulatory constraints. Professional engineers translate ambiguous requirements into verifiable specifications, document assumptions, and validate outcomes through calculation, simulation, and inspection. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+        ],
+        "practical_example": "In Removal / Moving Helper, I applied Heavy Lifting to stabilize load and unload vans under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Heavy Lifting without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Heavy Lifting applies to: Load and unload vans.",
+          "List the standards that govern Heavy Lifting in Removal / Moving Helper work.",
+          "Write out the verification steps after completing a Heavy Lifting task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Heavy Lifting",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "engineering"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Heavy Lifting applies to: Load and unload vans.",
+        "List the standards that govern Heavy Lifting in Removal / Moving Helper work.",
+        "Write out the verification steps after completing a Heavy Lifting task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Removal / Moving Helper practitioner in Heavy lifting while handling 'Load and unload vans'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Heavy lifting from those who only name-drop it.",
+      "skill_tag": "Heavy lifting",
+      "terminology_terms": [
+        {
+          "term": "Heavy Lifting",
+          "definition": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Heavy Lifting in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Heavy Lifting in professional practice."
+        }
+      ],
+      "question_id": "REMOVAL-MOVING-HELPE-HEAVY-LIFTIN-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Heavy Lifting: Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Heavy Lifting in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Heavy Lifting in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Removal / Moving Helper work, these terms are foundational:\n\n\n**Heavy Lifting** \u2014 Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Heavy Lifting in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Heavy Lifting in professional practice.",
+      "answer_explanation": "Definitions covered: Heavy Lifting, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Heavy Lifting \u2014 precise definitions required for Removal / Moving Helper interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Heavy Lifting terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Heavy Lifting",
+            "definition": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Heavy Lifting in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Heavy Lifting in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Heavy Lifting in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Heavy Lifting in professional practice."
+          }
+        ],
+        "principles": [
+          "Heavy Lifting: Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Heavy Lifting in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Heavy Lifting in professional practice."
+        ],
+        "key_concepts": [
+          "Heavy Lifting",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Heavy Lifting** \u2014 Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Heavy Lifting in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Heavy Lifting in professional practice."
+        ],
+        "practical_example": "\u2022 Heavy Lifting: Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Heavy Lifting in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Heavy Lifting terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Heavy Lifting",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Heavy Lifting",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Heavy Lifting terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Heavy Lifting",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the engineering principles and site workflow used to execute Heavy lifting safely?",
+      "why_asked": "Tests whether you know how Heavy lifting is actually executed to standard, not only what it is called.",
+      "skill_tag": "Heavy lifting",
+      "question_id": "REMOVAL-MOVING-HELPE-HEAVY-LIFTIN-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Heavy Lifting as a Removal / Moving Helper:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for load and unload vans.\n2. Apply Heavy Lifting using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Heavy Lifting \u2014 how work is executed to standard in Removal / Moving Helper roles.",
+        "what_you_need_to_know_first": [
+          "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Heavy Lifting",
+            "definition": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for load and unload vans.",
+          "Apply Heavy Lifting using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for load and unload vans.\n2. Apply Heavy Lifting using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Heavy Lifting workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Heavy Lifting workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Calculation / quantitative question for Removal / Moving Helper (Heavy lifting) while handling 'Load and unload vans': A component must carry 50 kN load with factor of safety 2.5. What is the required design strength?",
+      "why_asked": "Tests numerical and analytical competence in Heavy lifting \u2014 essential for Removal / Moving Helper roles.",
+      "skill_tag": "Heavy lifting",
+      "calculation": {
+        "skill": "Heavy Lifting",
+        "prompt": "A component must carry 50 kN load with factor of safety 2.5. What is the required design strength?",
+        "answer": "Required ultimate capacity = 50 \u00d7 2.5 = 125 kN. Design must ensure failure load \u2265 125 kN with documented material properties.",
+        "steps": [
+          "Load \u00d7 FoS",
+          "Compare to material capacity",
+          "Document assumption"
+        ]
+      },
+      "question_id": "REMOVAL-MOVING-HELPE-HEAVY-LIFTIN-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Load \u00d7 FoS",
+        "Compare to material capacity",
+        "Document assumption"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: A component must carry 50 kN load with factor of safety 2.5. What is the required design strength?\n\nWorking:\n1. Load \u00d7 FoS\n2. Compare to material capacity\n3. Document assumption\n\nAnswer: Required ultimate capacity = 50 \u00d7 2.5 = 125 kN. Design must ensure failure load \u2265 125 kN with documented material properties.\n\nIn Removal / Moving Helper practice, I anchor this using: Load \u00d7 FoS, Compare to material capacity, Given data.",
+      "answer_explanation": "Calculation: Required ultimate capacity = 50 \u00d7 2.5 = 125 kN. Design must ensure failure load \u2265 125 kN with documented material properties.",
+      "study_material": {
+        "overview": "Quantitative problem for Heavy Lifting: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "A component must carry 50 kN load with factor of safety 2.5. What is the required design strength?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Required ultimate capacity = 50 \u00d7 2.5 = 125 kN. Design must ensure failure load \u2265 125 kN with documented material properties."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Load \u00d7 FoS",
+          "Compare to material capacity",
+          "Document assumption"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "Load \u00d7 FoS",
+          "Compare to material capacity",
+          "Document assumption"
+        ],
+        "explanations": [
+          "Required ultimate capacity = 50 \u00d7 2.5 = 125 kN. Design must ensure failure load \u2265 125 kN with documented material properties.",
+          "Step: Load \u00d7 FoS",
+          "Step: Compare to material capacity",
+          "Step: Document assumption"
+        ],
+        "practical_example": "Required ultimate capacity = 50 \u00d7 2.5 = 125 kN. Design must ensure failure load \u2265 125 kN with documented material properties.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Heavy Lifting calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "Load \u00d7 FoS",
+          "Compare to material capacity",
+          "Document assumption"
+        ],
+        "related_concepts": [
+          "Heavy Lifting",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Heavy Lifting calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "Load \u00d7 FoS",
+        "Compare to material capacity",
+        "Document assumption"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Walk me through how you would explain Teamwork to a teammate who has never used it in a Removal / Moving Helper context while handling 'Load and unload vans'.",
+      "why_asked": "Tests genuine conceptual understanding of Teamwork, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Teamwork",
+      "question_id": "REMOVAL-MOVING-HELPE-TEAMWORK-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Teamwork",
+        "Heavy lifting",
+        "Care with belongings",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Teamwork without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Removal / Moving Helper context, Teamwork starts with clarify required outcome, constraints, and stakeholders for load and unload vans. and continues through apply teamwork using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how load and unload vans stays reliable under real operational constraints.\n\nIn Removal / Moving Helper, I applied Teamwork to stabilize load and unload vans under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Teamwork:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Teamwork directly supports load and unload vans. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Teamwork",
+            "definition": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Teamwork",
+            "explanation": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Teamwork directly supports load and unload vans. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Teamwork",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for load and unload vans.",
+          "Apply Teamwork using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Teamwork directly supports load and unload vans. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+        ],
+        "practical_example": "In Removal / Moving Helper, I applied Teamwork to stabilize load and unload vans under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Teamwork without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Teamwork applies to: Load and unload vans.",
+          "List the standards that govern Teamwork in Removal / Moving Helper work.",
+          "Write out the verification steps after completing a Teamwork task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Teamwork",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Teamwork applies to: Load and unload vans.",
+        "List the standards that govern Teamwork in Removal / Moving Helper work.",
+        "Write out the verification steps after completing a Teamwork task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe the most complex problem you've solved using Teamwork as a Removal / Moving Helper while handling 'Load and unload vans'.",
+      "why_asked": "Probes depth of hands-on experience with Teamwork under real constraints.",
+      "skill_tag": "Teamwork",
+      "question_id": "REMOVAL-MOVING-HELPE-TEAMWORK-SCEN-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Teamwork",
+        "Heavy lifting",
+        "Care with belongings",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Teamwork without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Removal / Moving Helper context, Teamwork starts with clarify required outcome, constraints, and stakeholders for load and unload vans. and continues through apply teamwork using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how load and unload vans stays reliable under real operational constraints.\n\nIn Removal / Moving Helper, I applied Teamwork to stabilize load and unload vans under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Teamwork:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Teamwork directly supports load and unload vans. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Teamwork",
+            "definition": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Teamwork",
+            "explanation": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Teamwork directly supports load and unload vans. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Teamwork",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for load and unload vans.",
+          "Apply Teamwork using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Teamwork directly supports load and unload vans. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+        ],
+        "practical_example": "In Removal / Moving Helper, I applied Teamwork to stabilize load and unload vans under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Teamwork without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Teamwork applies to: Load and unload vans.",
+          "List the standards that govern Teamwork in Removal / Moving Helper work.",
+          "Write out the verification steps after completing a Teamwork task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Teamwork",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Teamwork applies to: Load and unload vans.",
+        "List the standards that govern Teamwork in Removal / Moving Helper work.",
+        "Write out the verification steps after completing a Teamwork task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for Teamwork in Removal / Moving Helper practice while handling 'Load and unload vans', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand Teamwork from those who only name-drop it.",
+      "skill_tag": "Teamwork",
+      "terminology_terms": [
+        {
+          "term": "Teamwork",
+          "definition": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Teamwork in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Teamwork in professional practice."
+        }
+      ],
+      "question_id": "REMOVAL-MOVING-HELPE-TEAMWORK-TERM-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Teamwork",
+        "Heavy lifting",
+        "Care with belongings",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Teamwork: Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Teamwork in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Teamwork in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Removal / Moving Helper work, these terms are foundational:\n\n\n**Teamwork** \u2014 Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Teamwork in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Teamwork in professional practice.",
+      "answer_explanation": "Definitions covered: Teamwork, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Teamwork \u2014 precise definitions required for Removal / Moving Helper interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Teamwork terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Teamwork",
+            "definition": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Teamwork in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Teamwork in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Teamwork",
+            "explanation": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Teamwork in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Teamwork in professional practice."
+          }
+        ],
+        "principles": [
+          "Teamwork: Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Teamwork in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Teamwork in professional practice."
+        ],
+        "key_concepts": [
+          "Teamwork",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Teamwork** \u2014 Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Teamwork in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Teamwork in professional practice."
+        ],
+        "practical_example": "\u2022 Teamwork: Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Teamwork in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Teamwork terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Teamwork",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Teamwork",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Teamwork terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Teamwork",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "When performing Teamwork as a Removal / Moving Helper while handling 'Load and unload vans', what are the governing principles, checkpoints, and sign-off criteria?",
+      "why_asked": "Tests whether you know how Teamwork is actually executed to standard, not only what it is called.",
+      "skill_tag": "Teamwork",
+      "question_id": "REMOVAL-MOVING-HELPE-TEAMWORK-PRIN-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Teamwork",
+        "Heavy lifting",
+        "Care with belongings",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Teamwork as a Removal / Moving Helper:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for load and unload vans.\n2. Apply Teamwork using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Teamwork \u2014 how work is executed to standard in Removal / Moving Helper roles.",
+        "what_you_need_to_know_first": [
+          "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Teamwork",
+            "definition": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Teamwork",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Teamwork",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Teamwork",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for load and unload vans.",
+          "Apply Teamwork using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for load and unload vans.\n2. Apply Teamwork using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Teamwork workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Teamwork workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Numbers-driven check for Removal / Moving Helper work using Teamwork while handling 'Load and unload vans': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Teamwork \u2014 essential for Removal / Moving Helper roles.",
+      "skill_tag": "Teamwork",
+      "calculation": {
+        "skill": "Teamwork",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "REMOVAL-MOVING-HELPE-TEAMWORK-CALC-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Teamwork",
+        "Heavy lifting",
+        "Care with belongings",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Removal / Moving Helper practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Teamwork: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Teamwork calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Teamwork",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Teamwork calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "As a Removal / Moving Helper, explain Care with belongings to a newly qualified clinician and include clinical safety checks.",
+      "why_asked": "Tests genuine conceptual understanding of Care with belongings, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Care with belongings",
+      "question_id": "REMOVAL-MOVING-HELPE-CARE-WITH-BE-EXPL-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Care with belongings",
+        "Heavy lifting",
+        "Teamwork",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Care With Belongings without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Removal / Moving Helper context, Care With Belongings starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how load and unload vans stays reliable under real operational constraints.\n\nOn shift as Removal / Moving Helper, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Care With Belongings:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Removal / Moving Helper practice, Care With Belongings directly supports load and unload vans. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Care With Belongings",
+            "definition": "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Care With Belongings",
+            "explanation": "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Removal / Moving Helper practice, Care With Belongings directly supports load and unload vans. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Care With Belongings",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Removal / Moving Helper practice, Care With Belongings directly supports load and unload vans. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Removal / Moving Helper, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Care With Belongings without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Care With Belongings applies to: Load and unload vans.",
+          "List the standards that govern Care With Belongings in Removal / Moving Helper work.",
+          "Write out the verification steps after completing a Care With Belongings task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Care With Belongings",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Care With Belongings applies to: Load and unload vans.",
+        "List the standards that govern Care With Belongings in Removal / Moving Helper work.",
+        "Write out the verification steps after completing a Care With Belongings task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a high-risk clinical case where Care with belongings changed patient management.",
+      "why_asked": "Probes depth of hands-on experience with Care with belongings under real constraints.",
+      "skill_tag": "Care with belongings",
+      "question_id": "REMOVAL-MOVING-HELPE-CARE-WITH-BE-SCEN-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Care with belongings",
+        "Heavy lifting",
+        "Teamwork",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Care With Belongings without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Removal / Moving Helper context, Care With Belongings starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how load and unload vans stays reliable under real operational constraints.\n\nOn shift as Removal / Moving Helper, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Care With Belongings:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Removal / Moving Helper practice, Care With Belongings directly supports load and unload vans. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Care With Belongings",
+            "definition": "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Care With Belongings",
+            "explanation": "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Removal / Moving Helper practice, Care With Belongings directly supports load and unload vans. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Care With Belongings",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Removal / Moving Helper practice, Care With Belongings directly supports load and unload vans. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Removal / Moving Helper, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Care With Belongings without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Care With Belongings applies to: Load and unload vans.",
+          "List the standards that govern Care With Belongings in Removal / Moving Helper work.",
+          "Write out the verification steps after completing a Care With Belongings task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Care With Belongings",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Care With Belongings applies to: Load and unload vans.",
+        "List the standards that govern Care With Belongings in Removal / Moving Helper work.",
+        "Write out the verification steps after completing a Care With Belongings task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for Care with belongings in Removal / Moving Helper practice while handling 'Load and unload vans', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand Care with belongings from those who only name-drop it.",
+      "skill_tag": "Care with belongings",
+      "terminology_terms": [
+        {
+          "term": "Care With Belongings",
+          "definition": "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Care With Belongings: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Care With Belongings: Medication safety checks."
+        },
+        {
+          "term": "SBAR handover",
+          "definition": "Standard/framework governing Care With Belongings: SBAR handover."
+        },
+        {
+          "term": "Early escalation prevents preventable de",
+          "definition": "Early escalation prevents preventable deterioration."
+        },
+        {
+          "term": "Medication errors often occur at transit",
+          "definition": "Medication errors often occur at transition points and handovers."
+        },
+        {
+          "term": "Documentation quality is directly linked",
+          "definition": "Documentation quality is directly linked to continuity of care."
+        },
+        {
+          "term": "Early escalation prevents preventable deterioration.",
+          "definition": "Related concept used with Care With Belongings in professional practice."
+        }
+      ],
+      "question_id": "REMOVAL-MOVING-HELPE-CARE-WITH-BE-TERM-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Care with belongings",
+        "Heavy lifting",
+        "Teamwork",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Care With Belongings: Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Care With Belongings: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Care With Belongings: Medication safety checks.",
+        "SBAR handover: Standard/framework governing Care With Belongings: SBAR handover.",
+        "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Removal / Moving Helper work, these terms are foundational:\n\n\n**Care With Belongings** \u2014 Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Care With Belongings: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Care With Belongings: Medication safety checks.\n\n**SBAR handover** \u2014 Standard/framework governing Care With Belongings: SBAR handover.\n\n**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.\n\n**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.\n\n**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.\n\n**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Care With Belongings in professional practice.",
+      "answer_explanation": "Definitions covered: Care With Belongings, Clinical guideline pathway, Medication safety checks, SBAR handover, Early escalation prevents preventable de, Medication errors often occur at transit",
+      "study_material": {
+        "overview": "Core terminology for Care With Belongings \u2014 precise definitions required for Removal / Moving Helper interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Care With Belongings terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Care With Belongings",
+            "definition": "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Care With Belongings: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Care With Belongings: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Standard/framework governing Care With Belongings: SBAR handover."
+          },
+          {
+            "term": "Early escalation prevents preventable de",
+            "definition": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "term": "Medication errors often occur at transit",
+            "definition": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "term": "Documentation quality is directly linked",
+            "definition": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "term": "Early escalation prevents preventable deterioration.",
+            "definition": "Related concept used with Care With Belongings in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Care With Belongings",
+            "explanation": "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Care With Belongings: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Care With Belongings: Medication safety checks."
+          },
+          {
+            "skill": "SBAR handover",
+            "explanation": "Standard/framework governing Care With Belongings: SBAR handover."
+          },
+          {
+            "skill": "Early escalation prevents preventable de",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Medication errors often occur at transit",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Documentation quality is directly linked",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "skill": "Early escalation prevents preventable deterioration.",
+            "explanation": "Related concept used with Care With Belongings in professional practice."
+          }
+        ],
+        "principles": [
+          "Care With Belongings: Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Care With Belongings: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Care With Belongings: Medication safety checks.",
+          "SBAR handover: Standard/framework governing Care With Belongings: SBAR handover.",
+          "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+        ],
+        "key_concepts": [
+          "Care With Belongings",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Care With Belongings** \u2014 Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Care With Belongings: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Care With Belongings: Medication safety checks.",
+          "**SBAR handover** \u2014 Standard/framework governing Care With Belongings: SBAR handover.",
+          "**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.",
+          "**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.",
+          "**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.",
+          "**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Care With Belongings in professional practice."
+        ],
+        "practical_example": "\u2022 Care With Belongings: Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Care With Belongings: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Care With Belongings: Medication safety checks.\n\u2022 SBAR handover: Standard/framework governing Care With Belongings: SBAR handover.\n\u2022 Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Care With Belongings terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Care With Belongings",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "related_concepts": [
+          "Care With Belongings",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Care With Belongings terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Care With Belongings",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "SBAR handover",
+        "Early escalation prevents preventable de",
+        "Medication errors often occur at transit",
+        "Documentation quality is directly linked",
+        "Early escalation prevents preventable deterioration."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which clinical operating principles and protocol sequence govern Care with belongings in Removal / Moving Helper practice?",
+      "why_asked": "Tests whether you know how Care with belongings is actually executed to standard, not only what it is called.",
+      "skill_tag": "Care with belongings",
+      "question_id": "REMOVAL-MOVING-HELPE-CARE-WITH-BE-PRIN-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Care with belongings",
+        "Heavy lifting",
+        "Teamwork",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Care With Belongings as a Removal / Moving Helper:\n\n1. Early escalation prevents preventable deterioration.\n2. Medication errors often occur at transition points and handovers.\n3. Documentation quality is directly linked to continuity of care.\n\nStandard workflow:\n1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Care With Belongings \u2014 how work is executed to standard in Removal / Moving Helper roles.",
+        "what_you_need_to_know_first": [
+          "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Care With Belongings",
+            "definition": "Care With Belongings in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Care With Belongings",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Care With Belongings",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Care With Belongings",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "practical_example": "1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Care With Belongings workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Care With Belongings workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Calculation / quantitative question for Removal / Moving Helper (Care with belongings) while handling 'Load and unload vans': Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?",
+      "why_asked": "Tests numerical and analytical competence in Care with belongings \u2014 essential for Removal / Moving Helper roles.",
+      "skill_tag": "Care with belongings",
+      "calculation": {
+        "skill": "Care With Belongings",
+        "prompt": "Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?",
+        "answer": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+        "steps": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ]
+      },
+      "question_id": "REMOVAL-MOVING-HELPE-CARE-WITH-BE-CALC-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Care with belongings",
+        "Heavy lifting",
+        "Teamwork",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Score each parameter",
+        "Sum NEWS2",
+        "Apply escalation pathway"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?\n\nWorking:\n1. Score each parameter\n2. Sum NEWS2\n3. Apply escalation pathway\n\nAnswer: Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.\n\nIn Removal / Moving Helper practice, I anchor this using: Score each parameter, Sum NEWS2, Given data.",
+      "answer_explanation": "Calculation: Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+      "study_material": {
+        "overview": "Quantitative problem for Care With Belongings: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "explanations": [
+          "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+          "Step: Score each parameter",
+          "Step: Sum NEWS2",
+          "Step: Apply escalation pathway"
+        ],
+        "practical_example": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Care With Belongings calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "related_concepts": [
+          "Care With Belongings",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Care With Belongings calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "Score each parameter",
+        "Sum NEWS2",
+        "Apply escalation pathway"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Removal / Moving Helper, define and explain these core professional terms: Heavy Lifting, Outcome quality improves when assumption, Traceability prevents repeated failures , Teamwork, Outcome quality improves when assumption, Traceability prevents repeated failures .",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Heavy Lifting",
+          "definition": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Teamwork",
+          "definition": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        }
+      ],
+      "question_id": "REMOVAL-MOVING-HELPE-CORE-TERMINO-TERM-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Heavy Lifting: Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Teamwork: Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Removal / Moving Helper work, these terms are foundational:\n\n\n**Heavy Lifting** \u2014 Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Teamwork** \u2014 Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+      "answer_explanation": "Definitions covered: Heavy Lifting, Outcome quality improves when assumption, Traceability prevents repeated failures , Teamwork, Outcome quality improves when assumption, Traceability prevents repeated failures ",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Removal / Moving Helper interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Heavy Lifting",
+            "definition": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Teamwork",
+            "definition": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Teamwork",
+            "explanation": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          }
+        ],
+        "principles": [
+          "Heavy Lifting: Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Teamwork: Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs."
+        ],
+        "key_concepts": [
+          "Heavy Lifting",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Teamwork",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Heavy Lifting** \u2014 Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Teamwork** \u2014 Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs."
+        ],
+        "practical_example": "\u2022 Heavy Lifting: Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Teamwork: Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Heavy Lifting",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Teamwork",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "related_concepts": [
+          "Heavy Lifting",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Teamwork",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Heavy Lifting",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Teamwork",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures "
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Load and unload vans'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "REMOVAL-MOVING-HELPE-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable out\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Removal / Moving Helper handles when load and unload vans. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Removal / Moving Helper work involves load and unload vans under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Removal / Moving Helper",
+            "definition": "The Removal / Moving Helper role integrates Heavy lifting, Teamwork, Care with belongings to deliver on responsibilities such as load and unload vans. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Removal / Moving Helper reference load and unload vans and relevant standards or tools."
+        ],
+        "practical_example": "In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Removal / Moving Helper challenge with numbers.",
+          "Link the story to: Load and unload vans."
+        ],
+        "revision_notes": [
+          "Heavy lifting",
+          "Teamwork",
+          "Care with belongings"
+        ],
+        "related_concepts": [
+          "Engineering",
+          "Hospitality Operations",
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Removal / Moving Helper challenge with numbers.",
+        "Link the story to: Load and unload vans."
+      ],
+      "revision_notes": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Protect furniture'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "REMOVAL-MOVING-HELPE-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable out\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Removal / Moving Helper handles when load and unload vans. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Removal / Moving Helper work involves load and unload vans under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Removal / Moving Helper",
+            "definition": "The Removal / Moving Helper role integrates Heavy lifting, Teamwork, Care with belongings to deliver on responsibilities such as load and unload vans. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Removal / Moving Helper reference load and unload vans and relevant standards or tools."
+        ],
+        "practical_example": "In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Removal / Moving Helper challenge with numbers.",
+          "Link the story to: Load and unload vans."
+        ],
+        "revision_notes": [
+          "Heavy lifting",
+          "Teamwork",
+          "Care with belongings"
+        ],
+        "related_concepts": [
+          "Engineering",
+          "Hospitality Operations",
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Removal / Moving Helper challenge with numbers.",
+        "Link the story to: Load and unload vans."
+      ],
+      "revision_notes": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Follow move schedules'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "REMOVAL-MOVING-HELPE-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable out\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Removal / Moving Helper handles when load and unload vans. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Removal / Moving Helper work involves load and unload vans under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Removal / Moving Helper",
+            "definition": "The Removal / Moving Helper role integrates Heavy lifting, Teamwork, Care with belongings to deliver on responsibilities such as load and unload vans. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Removal / Moving Helper reference load and unload vans and relevant standards or tools."
+        ],
+        "practical_example": "In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Removal / Moving Helper challenge with numbers.",
+          "Link the story to: Load and unload vans."
+        ],
+        "revision_notes": [
+          "Heavy lifting",
+          "Teamwork",
+          "Care with belongings"
+        ],
+        "related_concepts": [
+          "Engineering",
+          "Hospitality Operations",
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Removal / Moving Helper challenge with numbers.",
+        "Link the story to: Load and unload vans."
+      ],
+      "revision_notes": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "In Removal / Moving Helper duties while handling 'Load and unload vans', describe a deadline risk and the controls you used to keep delivery on track.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "REMOVAL-MOVING-HELPE-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable out\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Removal / Moving Helper handles when load and unload vans. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Removal / Moving Helper work involves load and unload vans under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Removal / Moving Helper",
+            "definition": "The Removal / Moving Helper role integrates Heavy lifting, Teamwork, Care with belongings to deliver on responsibilities such as load and unload vans. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Removal / Moving Helper reference load and unload vans and relevant standards or tools."
+        ],
+        "practical_example": "In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Removal / Moving Helper challenge with numbers.",
+          "Link the story to: Load and unload vans."
+        ],
+        "revision_notes": [
+          "Heavy lifting",
+          "Teamwork",
+          "Care with belongings"
+        ],
+        "related_concepts": [
+          "Engineering",
+          "Hospitality Operations",
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Removal / Moving Helper challenge with numbers.",
+        "Link the story to: Load and unload vans."
+      ],
+      "revision_notes": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Share an example from Removal / Moving Helper work while handling 'Load and unload vans' where you improved process reliability or quality.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "REMOVAL-MOVING-HELPE-BEHAVIORAL-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable out\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Removal / Moving Helper handles when load and unload vans. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Removal / Moving Helper work involves load and unload vans under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Removal / Moving Helper",
+            "definition": "The Removal / Moving Helper role integrates Heavy lifting, Teamwork, Care with belongings to deliver on responsibilities such as load and unload vans. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Removal / Moving Helper reference load and unload vans and relevant standards or tools."
+        ],
+        "practical_example": "In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Removal / Moving Helper challenge with numbers.",
+          "Link the story to: Load and unload vans."
+        ],
+        "revision_notes": [
+          "Heavy lifting",
+          "Teamwork",
+          "Care with belongings"
+        ],
+        "related_concepts": [
+          "Engineering",
+          "Hospitality Operations",
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Removal / Moving Helper challenge with numbers.",
+        "Link the story to: Load and unload vans."
+      ],
+      "revision_notes": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Tell me about a cross-team disagreement in Removal / Moving Helper practice while handling 'Load and unload vans' and how you reached alignment.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "REMOVAL-MOVING-HELPE-BEHAVIORAL-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable out\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Removal / Moving Helper handles when load and unload vans. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Removal / Moving Helper work involves load and unload vans under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Removal / Moving Helper",
+            "definition": "The Removal / Moving Helper role integrates Heavy lifting, Teamwork, Care with belongings to deliver on responsibilities such as load and unload vans. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Heavy lifting supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Removal / Moving Helper reference load and unload vans and relevant standards or tools."
+        ],
+        "practical_example": "In Removal / Moving Helper work involving load and unload vans, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Removal / Moving Helper challenge with numbers.",
+          "Link the story to: Load and unload vans."
+        ],
+        "revision_notes": [
+          "Heavy lifting",
+          "Teamwork",
+          "Care with belongings"
+        ],
+        "related_concepts": [
+          "Engineering",
+          "Hospitality Operations",
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Removal / Moving Helper challenge with numbers.",
+        "Link the story to: Load and unload vans."
+      ],
+      "revision_notes": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Removal / Moving Helper position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "REMOVAL-MOVING-HELPE-ROLE-SPECIFI-023",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Removal / Moving Helper, my approach to load and unload vans is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Removal / Moving Helper practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Role Specific.",
+      "answer_explanation": "This answer covers: As Removal / Moving Helper, my approach to load and unload vans is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and\u2026",
+      "study_material": {
+        "overview": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Role Specific directly supports load and unload vans. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Role Specific directly supports load and unload vans. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          },
+          {
+            "skill": "Teamwork",
+            "explanation": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for load and unload vans.",
+          "Apply Role Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Role Specific directly supports load and unload vans. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+        ],
+        "practical_example": "In Removal / Moving Helper, I applied Role Specific to stabilize load and unload vans under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Load and unload vans.",
+          "List the standards that govern Role Specific in Removal / Moving Helper work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Load and unload vans.",
+        "List the standards that govern Role Specific in Removal / Moving Helper work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Removal / Moving Helper context: Load and unload vans. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Removal / Moving Helper context: Load and unload vans.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "REMOVAL-MOVING-HELPE-COMPANY-SPEC-024",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Heavy lifting",
+        "Teamwork",
+        "Care with belongings",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Removal / Moving Helper, my approach to load and unload vans is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Removal / Moving Helper practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Company Specific.",
+      "answer_explanation": "This answer covers: As Removal / Moving Helper, my approach to load and unload vans is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and\u2026",
+      "study_material": {
+        "overview": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Company Specific directly supports load and unload vans. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Company Specific directly supports load and unload vans. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Heavy Lifting",
+            "explanation": "Heavy Lifting is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          },
+          {
+            "skill": "Teamwork",
+            "explanation": "Teamwork is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for load and unload vans.",
+          "Apply Company Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans. In Removal / Moving Helper practice, Company Specific directly supports load and unload vans. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Removal / Moving Helper professionals apply when performing load and unload vans."
+        ],
+        "practical_example": "In Removal / Moving Helper, I applied Company Specific to stabilize load and unload vans under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Load and unload vans.",
+          "List the standards that govern Company Specific in Removal / Moving Helper work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Load and unload vans.",
+        "List the standards that govern Company Specific in Removal / Moving Helper work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:32:00.621908+00:00",
+  "confidence_score": 0.9
+}

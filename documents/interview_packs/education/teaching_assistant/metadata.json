@@ -1,0 +1,37 @@
+{
+  "role_name": "Teaching Assistant",
+  "normalized_role_slug": "teaching_assistant",
+  "category": "education",
+  "stream_or_department": "tutoring",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 24,
+  "question_specific_study_material_count": 24,
+  "skill_count": 33,
+  "pdf_files": [
+    "teaching_assistant_interview_pack.pdf",
+    "teaching_assistant_study_material.pdf",
+    "teaching_assistant_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "teaching_assistant_interview_pack.md",
+    "teaching_assistant_study_material.md",
+    "teaching_assistant_questions_answers.md"
+  ],
+  "source_files": [
+    "teaching_assistant_interview_pack.md",
+    "teaching_assistant_study_material.md",
+    "teaching_assistant_questions_answers.md",
+    "teaching_assistant_interview_pack.pdf",
+    "teaching_assistant_study_material.pdf",
+    "teaching_assistant_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/education/teaching_assistant",
+  "has_pdf": true,
+  "has_markdown": true
+}

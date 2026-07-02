@@ -24,9 +24,6 @@ class _ORMModel(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
 
-# --- Job parsing / enrichment --------------------------------------------------------
-
-
 class JobParseRequest(BaseModel):
     """
     Either `url` (direct paste of a job posting link, scraped via
@@ -43,6 +40,34 @@ class JobParseRequest(BaseModel):
         if not (self.url or self.pasted_text):
             raise ValueError("Provide either 'url' or 'pasted_text'.")
         return self
+
+
+class JobDiscoverRequest(BaseModel):
+    """Natural-language + filter search against live job postings on the web."""
+
+    q: str | None = Field(default=None, description="Role, skills, or natural-language query")
+    location: str | None = None
+    employment_type: str | None = None
+    remote: bool | None = None
+    salary_min: float | None = None
+    experience_level: str | None = None
+    date_posted: str | None = None
+    url: str | None = Field(default=None, description="Direct job posting URL (paste field)")
+
+
+class JobDiscoveryResult(BaseModel):
+    """A single hit from web job discovery — not yet saved to the user's account."""
+
+    title: str
+    company_name: str | None = None
+    location: str | None = None
+    employment_type: str | None = None
+    is_remote: bool | None = None
+    snippet: str = ""
+    source_url: str
+    source_site: str | None = None
+    salary_hint: str | None = None
+    verified: bool = False
 
 
 class ExtractedSkill(BaseModel):
@@ -83,6 +108,7 @@ class SavedJobRead(_ORMModel):
     match_score: float | None = None
     interview_pack_confidence: float | None = None
     interview_pack_generated_at: datetime | None = None
+    has_interview_pack: bool = False
     created_at: datetime
     updated_at: datetime
 
@@ -91,6 +117,40 @@ class JobStatusUpdate(BaseModel):
     """Body for `PATCH /job-search/{job_id}/status` — the application tracker."""
 
     status: Literal["saved", "applied", "interviewing", "offered", "rejected"]
+
+
+class SavedJobUpdate(BaseModel):
+    """Body for `PATCH /job-search/{job_id}` — update reviewed job fields from the unified job form."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    title: str | None = None
+    source_url: str | None = None
+    source_site: str | None = None
+    company_name: str | None = None
+    company_url: str | None = None
+    location: str | None = None
+    employment_type: str | None = None
+    is_remote: bool | None = None
+    salary_min: float | None = None
+    salary_max: float | None = None
+    salary_currency: str | None = None
+    description_raw: str | None = None
+    responsibilities: list[str] | None = None
+    requirements: list[str] | None = None
+    benefits: list[str] | None = None
+    extracted_skills: list[dict] | None = None
+
+    @field_validator(
+        "source_url", "source_site", "company_name", "company_url", "location",
+        "employment_type", "salary_min", "salary_max", "salary_currency", "description_raw",
+        mode="before",
+    )
+    @classmethod
+    def _blank_to_none(cls, v: object) -> object:
+        if isinstance(v, str) and v.strip() == "":
+            return None
+        return v
 
 
 class SavedJobCreate(BaseModel):
@@ -182,16 +242,70 @@ class InterviewPackRequest(BaseModel):
 
     focus_areas: list[str] = Field(default_factory=list)
     difficulty: Literal["entry", "mid", "senior", "auto"] = "auto"
+    include_study_material: bool = Field(
+        default=True,
+        description="When true, each question includes beginner-friendly study material (definitions, principles, explanations).",
+    )
+
+
+class InterviewStudyMaterial(BaseModel):
+    """
+    Zero-prior-knowledge study module for ONE interview question.
+    Each section teaches every skill/concept mentioned in that question's answer.
+    """
+
+    overview: str = ""
+    what_you_need_to_know_first: list[str] = Field(default_factory=list)
+    definitions: list[dict[str, str]] = Field(
+        default_factory=list,
+        description='Glossary entries, e.g. [{"term": "REST", "definition": "..."}]',
+    )
+    skill_explanations: list[dict[str, str]] = Field(
+        default_factory=list,
+        description='Per-skill teaching, e.g. [{"skill": "Python", "explanation": "..."}]',
+    )
+    principles: list[str] = Field(default_factory=list)
+    key_concepts: list[str] = Field(default_factory=list)
+    step_by_step_breakdown: list[str] = Field(default_factory=list)
+    explanations: list[str] = Field(default_factory=list)
+    practical_example: str = ""
+    common_mistakes: list[str] = Field(default_factory=list)
+    how_to_answer_better: list[str] = Field(default_factory=list)
+    practice_exercises: list[str] = Field(default_factory=list)
+    revision_notes: list[str] = Field(default_factory=list)
+    related_concepts: list[str] = Field(default_factory=list)
+    estimated_reading_time_minutes: int | None = None
+
+
+class RoleOverview(BaseModel):
+    role_name: str = ""
+    summary: str = ""
+    responsibilities: list[str] = Field(default_factory=list)
+    required_skills: list[str] = Field(default_factory=list)
+    what_employers_expect: list[str] = Field(default_factory=list)
+    skill_clusters: list[str] = Field(default_factory=list)
 
 
 class InterviewQuestion(BaseModel):
+    question_id: str | None = None
     category: Literal["behavioral", "technical", "system_design", "role_specific", "company_specific"]
     question: str
     why_asked: str
+    difficulty: Literal["Easy", "Medium", "Hard", "Expert"] = "Medium"
+    related_skills: list[str] = Field(default_factory=list)
+    model_answer: str = ""
+    answer_explanation: str = ""
     ideal_answer_points: list[str] = Field(default_factory=list)
+    evaluation_criteria: list[str] = Field(default_factory=list)
+    common_mistakes: list[str] = Field(default_factory=list)
     follow_ups: list[str] = Field(default_factory=list)
+    follow_up_questions: list[str] = Field(default_factory=list)
+    study_material: InterviewStudyMaterial = Field(default_factory=InterviewStudyMaterial)
+    practice_tasks: list[str] = Field(default_factory=list)
+    revision_notes: list[str] = Field(default_factory=list)
     citations: list[dict] = Field(default_factory=list)
     skill_tag: str | None = None
+    estimated_answer_time_minutes: int = 5
 
 
 class InterviewPackResult(BaseModel):
@@ -206,3 +320,26 @@ class InterviewPackRead(BaseModel):
     questions: list[InterviewQuestion] = Field(default_factory=list)
     confidence_score: float | None = None
     generated_at: datetime | None = None
+    role_slug: str | None = None
+    role_overview: RoleOverview | None = None
+    library_status: Literal["generated", "library_reused", "library_fallback", "none"] = "generated"
+    saved_documents: list[str] = Field(default_factory=list)
+    fallback_message: str | None = None
+    from_library: bool = False
+
+
+class RolePackLibraryEntry(BaseModel):
+    role_slug: str
+    role_name: str
+    category: str
+    question_count: int = 0
+    pdf_files: list[str] = Field(default_factory=list)
+    last_updated: str | None = None
+    folder: str | None = None
+
+
+class RolePackLookupResponse(BaseModel):
+    status: Literal["exact_match", "related_only", "none", "found"]
+    message: str
+    pack: InterviewPackRead | None = None
+    related: list[RolePackLibraryEntry] = Field(default_factory=list)

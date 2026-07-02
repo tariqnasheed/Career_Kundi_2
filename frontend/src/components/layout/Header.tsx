@@ -17,8 +17,7 @@ import styles from "./Header.module.css";
 // Human-readable page title map
 const PAGE_LABELS: Record<string, string> = {
   dashboard:      "Dashboard",
-  jobs:           "Job Search",
-  "interview-pack": "Interview Pack",
+  jobs:           "Jobs & Interview Prep",
   "cv-builder":   "CV Builder",
   roadmap:        "Career Roadmap",
   achievements:   "Achievements",

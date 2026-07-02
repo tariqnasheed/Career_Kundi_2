@@ -12,26 +12,34 @@ map the pipeline's plain-dict output onto `SavedJob` columns and persist,
 
 Endpoint summary
 ----------------
+POST   /api/v1/job-search/discover                         — Search live job postings on the web (preview cards).
 POST   /api/v1/job-search/parse                          — Resolve a URL or pasted text into a saved, enriched job.
 GET    /api/v1/job-search/                                — List the current user's saved jobs.
 GET    /api/v1/job-search/{job_id}                        — Fetch one saved job.
 DELETE /api/v1/job-search/{job_id}                        — Delete a saved job.
 POST   /api/v1/job-search/{job_id}/interview-pack         — Generate (or regenerate) an interview pack for a saved job.
 GET    /api/v1/job-search/{job_id}/interview-pack         — Fetch the most recently generated interview pack.
+GET    /api/v1/job-search/{job_id}/interview-pack/export  — Download interview pack as PDF.
 """
 
 from __future__ import annotations
 
 import uuid
 from datetime import datetime, timezone
+from typing import Literal
 
-from fastapi import APIRouter, Depends, Query, Response
+from fastapi import APIRouter, Body, Depends, Query, Response
 from sqlalchemy import or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm.attributes import flag_modified
 
 from app.agents.job_search.graph import run_interview_pack_pipeline, run_job_enrichment_pipeline
+from app.agents.job_search import mock_data
+from app.core.config import settings
+from app.services import role_pack_library as library
 from app.api.deps import get_current_user
-from app.core.errors import NotFoundError
+from app.core.errors import NotFoundError, ValidationFailedError
+from app.core.logging import get_logger
 from app.db.models.job import SavedJob
 from app.db.models.profile import Profile, Skill
 from app.db.models.user import User
@@ -39,14 +47,25 @@ from app.db.session import get_db
 from app.schemas.job_search import (
     InterviewPackRead,
     InterviewPackRequest,
+    JobDiscoverRequest,
+    JobDiscoveryResult,
     JobParseRequest,
     JobStatusUpdate,
+    RoleOverview,
     SavedJobCreate,
     SavedJobRead,
+    SavedJobUpdate,
 )
+from app.services.job_discovery import discover_jobs
 from app.services.matching import compute_match_score
+from app.tools.document_export import (
+    export_interview_pack_pdf,
+    export_questions_answers_pdf,
+    export_study_material_pdf,
+)
 
 router = APIRouter(prefix="/job-search", tags=["job-search"])
+logger = get_logger(__name__)
 
 
 async def _get_owned_job(db: AsyncSession, user: User, job_id: uuid.UUID) -> SavedJob:
@@ -64,6 +83,33 @@ async def _user_skill_names(db: AsyncSession, user: User) -> set[str]:
         select(Skill.name).join(Profile, Skill.profile_id == Profile.id).where(Profile.user_id == user.id)
     )
     return {row[0] for row in result.all()}
+
+
+def _pack_read_response(
+    job: SavedJob,
+    *,
+    library_status: str = "generated",
+    saved_documents: list[str] | None = None,
+    fallback_message: str | None = None,
+    from_library: bool = False,
+    role_overview: dict | None = None,
+) -> InterviewPackRead:
+    slug = library.normalize_role_slug(job.title)
+    overview = role_overview
+    if overview and not isinstance(overview, RoleOverview):
+        overview = RoleOverview(**overview)
+    return InterviewPackRead(
+        job_id=str(job.id),
+        questions=job.interview_pack,
+        confidence_score=job.interview_pack_confidence,
+        generated_at=job.interview_pack_generated_at,
+        role_slug=slug,
+        role_overview=overview,
+        library_status=library_status,  # type: ignore[arg-type]
+        saved_documents=saved_documents or [],
+        fallback_message=fallback_message,
+        from_library=from_library,
+    )
 
 
 @router.post("/parse", response_model=SavedJobRead, status_code=201)
@@ -124,6 +170,27 @@ async def parse_job(
     await db.commit()  # CostMonitor.persist() only flushes — commit explicitly so the usage record survives session close
 
     return job
+
+
+@router.post("/discover", response_model=list[JobDiscoveryResult])
+async def discover_jobs_from_web(
+    payload: JobDiscoverRequest,
+    user: User = Depends(get_current_user),
+) -> list[JobDiscoveryResult]:
+    """
+    Search live job postings on the web (Google Jobs via SerpAPI in live mode,
+    or realistic mock listings offline). Returns preview cards — full extraction
+    happens when the user clicks 'Use this job' (`POST /parse`).
+    """
+    hits = await discover_jobs(
+        q=payload.q,
+        location=payload.location,
+        employment_type=payload.employment_type,
+        remote=payload.remote,
+        experience_level=payload.experience_level,
+        url=payload.url,
+    )
+    return [JobDiscoveryResult(**hit) for hit in hits]
 
 
 @router.post("/", response_model=SavedJobRead, status_code=201)
@@ -254,6 +321,25 @@ async def delete_saved_job(
     return Response(status_code=204)
 
 
+@router.patch("/{job_id}", response_model=SavedJobRead)
+async def update_saved_job(
+    job_id: uuid.UUID,
+    payload: SavedJobUpdate,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> SavedJob:
+    """Update job posting fields after the user edits them in the unified job form."""
+    job = await _get_owned_job(db, user, job_id)
+    data = payload.model_dump(exclude_unset=True)
+    for key, value in data.items():
+        setattr(job, key, value)
+    if "extracted_skills" in data:
+        job.match_score = compute_match_score(await _user_skill_names(db, user), job.extracted_skills)
+    await db.commit()
+    await db.refresh(job)
+    return job
+
+
 @router.patch("/{job_id}/status", response_model=SavedJobRead)
 async def update_job_status(
     job_id: uuid.UUID,
@@ -276,7 +362,7 @@ async def update_job_status(
 @router.post("/{job_id}/interview-pack", response_model=InterviewPackRead)
 async def generate_interview_pack(
     job_id: uuid.UUID,
-    payload: InterviewPackRequest,
+    payload: InterviewPackRequest = Body(default_factory=InterviewPackRequest),
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ) -> InterviewPackRead:
@@ -297,31 +383,97 @@ async def generate_interview_pack(
         "extracted_skills": job.extracted_skills,
     }
 
-    result = await run_interview_pack_pipeline(
-        user_id=str(user.id),
-        job_snapshot=job_snapshot,
-        focus_areas=payload.focus_areas,
-        difficulty=payload.difficulty,
-    )
-    final_state = result["state"]
-    cost_monitor = result["cost_monitor"]
-    draft = final_state.get("draft_output") or {}
-    questions = draft.get("questions", [])
+    library_status = "generated"
+    fallback_message: str | None = None
+    from_library = False
+    role_overview: dict | None = None
+    saved_documents: list[str] = []
+    api_failed = False
+
+    try:
+        result = await run_interview_pack_pipeline(
+            user_id=str(user.id),
+            job_snapshot=job_snapshot,
+            focus_areas=payload.focus_areas,
+            difficulty=payload.difficulty,
+            include_study_material=payload.include_study_material,
+        )
+        final_state = result["state"]
+        cost_monitor = result["cost_monitor"]
+        draft = final_state.get("draft_output") or {}
+        questions = draft.get("questions", [])
+    except Exception:
+        api_failed = True
+        questions = []
+        cost_monitor = None
+        final_state = {}
+
+    if not questions:
+        stored = library.load_stored_pack_for_role(job.title)
+        if stored:
+            questions = stored["questions"]
+            role_overview = stored.get("role_overview")
+            library_status = "library_fallback"
+            fallback_message = (
+                "Live generation did not produce questions — loaded the pre-seeded interview pack "
+                "from the project documents library."
+            )
+            from_library = True
+            saved_documents = (stored.get("pdf_files") or []) + (stored.get("metadata", {}).get("markdown_files") or [])
+        else:
+            questions = mock_data.mock_generate_questions(
+                job_snapshot,
+                focus_areas=payload.focus_areas,
+                difficulty=payload.difficulty,
+            )
+
+    if not questions:
+        fb = library.fallback_for_role(job.title, api_unavailable=api_failed)
+        if fb.get("pack"):
+            pack_data = fb["pack"]
+            questions = pack_data["questions"]
+            role_overview = pack_data.get("role_overview")
+            library_status = "library_fallback"
+            fallback_message = fb["message"]
+            from_library = True
+            saved_documents = pack_data.get("pdf_files") or []
+        else:
+            raise ValidationFailedError(fb["message"])
+
     generated_at = datetime.now(timezone.utc)
 
     job.interview_pack = questions
-    job.interview_pack_confidence = final_state.get("confidence_score")
+    flag_modified(job, "interview_pack")
+    job.interview_pack_confidence = final_state.get("confidence_score") if final_state else 0.85
     job.interview_pack_generated_at = generated_at
     await db.commit()
+    await db.refresh(job)
 
-    await cost_monitor.persist(db, user_id=str(user.id), model_used=final_state.get("model_tier_used", "unknown"))
-    await db.commit()  # CostMonitor.persist() only flushes — commit explicitly so the usage record survives session close
+    if cost_monitor:
+        await cost_monitor.persist(db, user_id=str(user.id), model_used=final_state.get("model_tier_used", "unknown"))
+        await db.commit()
 
-    return InterviewPackRead(
-        job_id=str(job.id),
-        questions=questions,
-        confidence_score=job.interview_pack_confidence,
-        generated_at=generated_at,
+    if not from_library:
+        try:
+            saved = library.save_role_pack(
+                role_name=job.title,
+                questions=questions,
+                job_snapshot=job_snapshot,
+                confidence_score=job.interview_pack_confidence,
+                generated_by="Gemini-powered multi-agent workflow" if settings.llm_mode == "live" else "mock pipeline",
+            )
+            saved_documents = saved.get("pdf_files") or []
+            role_overview = library.build_role_overview(job.title, job_snapshot)
+        except Exception as exc:
+            logger.warning("role_pack_library_save_failed", error=str(exc))
+
+    return _pack_read_response(
+        job,
+        library_status=library_status,
+        saved_documents=saved_documents,
+        fallback_message=fallback_message,
+        from_library=from_library,
+        role_overview=role_overview,
     )
 
 
@@ -332,11 +484,51 @@ async def get_interview_pack(
     db: AsyncSession = Depends(get_db),
 ) -> InterviewPackRead:
     job = await _get_owned_job(db, user, job_id)
-    if not job.interview_pack:
+    if not job.interview_pack or len(job.interview_pack) == 0:
         raise NotFoundError("No interview pack has been generated for this job yet.")
-    return InterviewPackRead(
-        job_id=str(job.id),
+    return _pack_read_response(job)
+
+
+@router.get("/{job_id}/interview-pack/export")
+async def export_interview_pack(
+    job_id: uuid.UUID,
+    format: Literal["pdf", "study_material", "questions_answers"] = "pdf",
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> Response:
+    """Export a saved interview pack as PDF — full pack, study-only, or Q&A-only."""
+    job = await _get_owned_job(db, user, job_id)
+    if not job.interview_pack or len(job.interview_pack) == 0:
+        raise NotFoundError("No interview pack has been generated for this job yet.")
+
+    overview = library.build_role_overview(job.title, {
+        "title": job.title,
+        "responsibilities": job.responsibilities,
+        "requirements": job.requirements,
+        "extracted_skills": job.extracted_skills,
+    })
+    common = dict(
+        job_title=job.title,
+        company_name=job.company_name,
         questions=job.interview_pack,
-        confidence_score=job.interview_pack_confidence,
         generated_at=job.interview_pack_generated_at,
+        confidence_score=job.interview_pack_confidence,
+        role_overview=overview,
+    )
+    if format == "study_material":
+        content = export_study_material_pdf(**common)
+        suffix = "study_material"
+    elif format == "questions_answers":
+        content = export_questions_answers_pdf(**common)
+        suffix = "questions_answers"
+    else:
+        content = export_interview_pack_pdf(**common)
+        suffix = "interview_pack"
+
+    safe_title = (job.title or "interview_pack").strip().replace(" ", "_")[:60]
+    filename = f"{safe_title}_{suffix}.pdf"
+    return Response(
+        content=content,
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )

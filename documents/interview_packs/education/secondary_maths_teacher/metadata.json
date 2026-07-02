@@ -1,0 +1,37 @@
+{
+  "role_name": "Secondary Maths Teacher",
+  "normalized_role_slug": "secondary_maths_teacher",
+  "category": "education",
+  "stream_or_department": "education",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 23,
+  "question_specific_study_material_count": 23,
+  "skill_count": 30,
+  "pdf_files": [
+    "secondary_maths_teacher_interview_pack.pdf",
+    "secondary_maths_teacher_study_material.pdf",
+    "secondary_maths_teacher_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "secondary_maths_teacher_interview_pack.md",
+    "secondary_maths_teacher_study_material.md",
+    "secondary_maths_teacher_questions_answers.md"
+  ],
+  "source_files": [
+    "secondary_maths_teacher_interview_pack.md",
+    "secondary_maths_teacher_study_material.md",
+    "secondary_maths_teacher_questions_answers.md",
+    "secondary_maths_teacher_interview_pack.pdf",
+    "secondary_maths_teacher_study_material.pdf",
+    "secondary_maths_teacher_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/education/secondary_maths_teacher",
+  "has_pdf": true,
+  "has_markdown": true
+}

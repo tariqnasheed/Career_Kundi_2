@@ -1,0 +1,3093 @@
+{
+  "role_name": "Secondary Maths Teacher",
+  "role_slug": "secondary_maths_teacher",
+  "category": "education",
+  "role_overview": {
+    "role_name": "Secondary Maths Teacher",
+    "summary": "The Secondary Maths Teacher role integrates Mathematics curriculum, Differentiated instruction, Exam preparation to deliver on responsibilities such as deliver maths lessons. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Deliver maths lessons",
+      "Mark and assess work",
+      "Support extracurricular activities"
+    ],
+    "required_skills": [
+      "Mathematics curriculum",
+      "Differentiated instruction",
+      "Exam preparation"
+    ],
+    "what_employers_expect": [
+      "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: PGCE or equivalent."
+    ],
+    "skill_clusters": [
+      "Education"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Explain Mathematics curriculum to a new teacher and include how you evidence learner progress.",
+      "why_asked": "Tests genuine conceptual understanding of Mathematics curriculum, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Mathematics curriculum",
+      "question_id": "SECONDARY-MATHS-TEAC-MATHEMATICS--EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Mathematics Curriculum without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Secondary Maths Teacher context, Mathematics Curriculum starts with map lesson objective to curriculum standard and success criteria. and continues through diagnose baseline understanding with a short formative check.. The critical discipline is evidence: formative assessment has larger impact than one-off summative testing.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how deliver maths lessons stays reliable under real operational constraints.\n\nIn a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+      "answer_explanation": "Key knowledge demonstrated for Mathematics Curriculum:\n\u2022 Formative assessment has larger impact than one-off summative testing.\n\u2022 Differentiation is about access route, not lower expectations.\n\u2022 Safeguarding responsibilities apply during every teaching activity.\nStandards referenced: Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Mathematics Curriculum directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Mathematics Curriculum",
+            "definition": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Mathematics Curriculum directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Differentiated Instruction",
+            "explanation": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Mathematics Curriculum",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Mathematics Curriculum directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Mathematics Curriculum without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Mathematics Curriculum applies to: Deliver maths lessons.",
+          "List the standards that govern Mathematics Curriculum in Secondary Maths Teacher work.",
+          "Write out the verification steps after completing a Mathematics Curriculum task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Mathematics Curriculum",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Mathematics Curriculum applies to: Deliver maths lessons.",
+        "List the standards that govern Mathematics Curriculum in Secondary Maths Teacher work.",
+        "Write out the verification steps after completing a Mathematics Curriculum task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a difficult classroom/learning challenge where Mathematics curriculum improved outcomes.",
+      "why_asked": "Probes depth of hands-on experience with Mathematics curriculum under real constraints.",
+      "skill_tag": "Mathematics curriculum",
+      "question_id": "SECONDARY-MATHS-TEAC-MATHEMATICS--SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Mathematics Curriculum without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Secondary Maths Teacher context, Mathematics Curriculum starts with map lesson objective to curriculum standard and success criteria. and continues through diagnose baseline understanding with a short formative check.. The critical discipline is evidence: formative assessment has larger impact than one-off summative testing.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how deliver maths lessons stays reliable under real operational constraints.\n\nIn a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+      "answer_explanation": "Key knowledge demonstrated for Mathematics Curriculum:\n\u2022 Formative assessment has larger impact than one-off summative testing.\n\u2022 Differentiation is about access route, not lower expectations.\n\u2022 Safeguarding responsibilities apply during every teaching activity.\nStandards referenced: Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Mathematics Curriculum directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Mathematics Curriculum",
+            "definition": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Mathematics Curriculum directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Differentiated Instruction",
+            "explanation": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Mathematics Curriculum",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Mathematics Curriculum directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Mathematics Curriculum without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Mathematics Curriculum applies to: Deliver maths lessons.",
+          "List the standards that govern Mathematics Curriculum in Secondary Maths Teacher work.",
+          "Write out the verification steps after completing a Mathematics Curriculum task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Mathematics Curriculum",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Mathematics Curriculum applies to: Deliver maths lessons.",
+        "List the standards that govern Mathematics Curriculum in Secondary Maths Teacher work.",
+        "Write out the verification steps after completing a Mathematics Curriculum task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for Mathematics curriculum in Secondary Maths Teacher practice while handling 'Deliver maths lessons', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand Mathematics curriculum from those who only name-drop it.",
+      "skill_tag": "Mathematics curriculum",
+      "terminology_terms": [
+        {
+          "term": "Mathematics Curriculum",
+          "definition": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        },
+        {
+          "term": "Curriculum outcomes",
+          "definition": "Standard/framework governing Mathematics Curriculum: Curriculum outcomes."
+        },
+        {
+          "term": "Safeguarding policy",
+          "definition": "Standard/framework governing Mathematics Curriculum: Safeguarding policy."
+        },
+        {
+          "term": "Assessment policy",
+          "definition": "Standard/framework governing Mathematics Curriculum: Assessment policy."
+        },
+        {
+          "term": "Formative assessment has larger impact t",
+          "definition": "Formative assessment has larger impact than one-off summative testing."
+        },
+        {
+          "term": "Differentiation is about access route, n",
+          "definition": "Differentiation is about access route, not lower expectations."
+        },
+        {
+          "term": "Safeguarding responsibilities apply duri",
+          "definition": "Safeguarding responsibilities apply during every teaching activity."
+        },
+        {
+          "term": "Formative assessment has larger impact than one-off summative testing.",
+          "definition": "Related concept used with Mathematics Curriculum in professional practice."
+        }
+      ],
+      "question_id": "SECONDARY-MATHS-TEAC-MATHEMATICS--TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Mathematics Curriculum: Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+        "Curriculum outcomes: Standard/framework governing Mathematics Curriculum: Curriculum outcomes.",
+        "Safeguarding policy: Standard/framework governing Mathematics Curriculum: Safeguarding policy.",
+        "Assessment policy: Standard/framework governing Mathematics Curriculum: Assessment policy.",
+        "Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, n: Differentiation is about access route, not lower expectations."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Secondary Maths Teacher work, these terms are foundational:\n\n\n**Mathematics Curriculum** \u2014 Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\n**Curriculum outcomes** \u2014 Standard/framework governing Mathematics Curriculum: Curriculum outcomes.\n\n**Safeguarding policy** \u2014 Standard/framework governing Mathematics Curriculum: Safeguarding policy.\n\n**Assessment policy** \u2014 Standard/framework governing Mathematics Curriculum: Assessment policy.\n\n**Formative assessment has larger impact t** \u2014 Formative assessment has larger impact than one-off summative testing.\n\n**Differentiation is about access route, n** \u2014 Differentiation is about access route, not lower expectations.\n\n**Safeguarding responsibilities apply duri** \u2014 Safeguarding responsibilities apply during every teaching activity.\n\n**Formative assessment has larger impact than one-off summative testing.** \u2014 Related concept used with Mathematics Curriculum in professional practice.",
+      "answer_explanation": "Definitions covered: Mathematics Curriculum, Curriculum outcomes, Safeguarding policy, Assessment policy, Formative assessment has larger impact t, Differentiation is about access route, n",
+      "study_material": {
+        "overview": "Core terminology for Mathematics Curriculum \u2014 precise definitions required for Secondary Maths Teacher interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Mathematics Curriculum terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Mathematics Curriculum",
+            "definition": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Standard/framework governing Mathematics Curriculum: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Standard/framework governing Mathematics Curriculum: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Standard/framework governing Mathematics Curriculum: Assessment policy."
+          },
+          {
+            "term": "Formative assessment has larger impact t",
+            "definition": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "term": "Differentiation is about access route, n",
+            "definition": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "term": "Safeguarding responsibilities apply duri",
+            "definition": "Safeguarding responsibilities apply during every teaching activity."
+          },
+          {
+            "term": "Formative assessment has larger impact than one-off summative testing.",
+            "definition": "Related concept used with Mathematics Curriculum in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Curriculum outcomes",
+            "explanation": "Standard/framework governing Mathematics Curriculum: Curriculum outcomes."
+          },
+          {
+            "skill": "Safeguarding policy",
+            "explanation": "Standard/framework governing Mathematics Curriculum: Safeguarding policy."
+          },
+          {
+            "skill": "Assessment policy",
+            "explanation": "Standard/framework governing Mathematics Curriculum: Assessment policy."
+          },
+          {
+            "skill": "Formative assessment has larger impact t",
+            "explanation": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "skill": "Differentiation is about access route, n",
+            "explanation": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "skill": "Safeguarding responsibilities apply duri",
+            "explanation": "Safeguarding responsibilities apply during every teaching activity."
+          },
+          {
+            "skill": "Formative assessment has larger impact than one-off summative testing.",
+            "explanation": "Related concept used with Mathematics Curriculum in professional practice."
+          }
+        ],
+        "principles": [
+          "Mathematics Curriculum: Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Curriculum outcomes: Standard/framework governing Mathematics Curriculum: Curriculum outcomes.",
+          "Safeguarding policy: Standard/framework governing Mathematics Curriculum: Safeguarding policy.",
+          "Assessment policy: Standard/framework governing Mathematics Curriculum: Assessment policy.",
+          "Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, n: Differentiation is about access route, not lower expectations."
+        ],
+        "key_concepts": [
+          "Mathematics Curriculum",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Mathematics Curriculum** \u2014 Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "**Curriculum outcomes** \u2014 Standard/framework governing Mathematics Curriculum: Curriculum outcomes.",
+          "**Safeguarding policy** \u2014 Standard/framework governing Mathematics Curriculum: Safeguarding policy.",
+          "**Assessment policy** \u2014 Standard/framework governing Mathematics Curriculum: Assessment policy.",
+          "**Formative assessment has larger impact t** \u2014 Formative assessment has larger impact than one-off summative testing.",
+          "**Differentiation is about access route, n** \u2014 Differentiation is about access route, not lower expectations.",
+          "**Safeguarding responsibilities apply duri** \u2014 Safeguarding responsibilities apply during every teaching activity.",
+          "**Formative assessment has larger impact than one-off summative testing.** \u2014 Related concept used with Mathematics Curriculum in professional practice."
+        ],
+        "practical_example": "\u2022 Mathematics Curriculum: Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\u2022 Curriculum outcomes: Standard/framework governing Mathematics Curriculum: Curriculum outcomes.\n\u2022 Safeguarding policy: Standard/framework governing Mathematics Curriculum: Safeguarding policy.\n\u2022 Assessment policy: Standard/framework governing Mathematics Curriculum: Assessment policy.\n\u2022 Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Mathematics Curriculum terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Mathematics Curriculum",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "related_concepts": [
+          "Mathematics Curriculum",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Mathematics Curriculum terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Mathematics Curriculum",
+        "Curriculum outcomes",
+        "Safeguarding policy",
+        "Assessment policy",
+        "Formative assessment has larger impact t",
+        "Differentiation is about access route, n",
+        "Safeguarding responsibilities apply duri",
+        "Formative assessment has larger impact than one-off summative testing."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What instructional principles and lesson workflow guide Mathematics curriculum in Secondary Maths Teacher practice?",
+      "why_asked": "Tests whether you know how Mathematics curriculum is actually executed to standard, not only what it is called.",
+      "skill_tag": "Mathematics curriculum",
+      "question_id": "SECONDARY-MATHS-TEAC-MATHEMATICS--PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Mathematics Curriculum as a Secondary Maths Teacher:\n\n1. Formative assessment has larger impact than one-off summative testing.\n2. Differentiation is about access route, not lower expectations.\n3. Safeguarding responsibilities apply during every teaching activity.\n\nStandard workflow:\n1. Map lesson objective to curriculum standard and success criteria.\n2. Diagnose baseline understanding with a short formative check.\n3. Deliver scaffolded instruction with differentiated tasks.\n4. Assess understanding in-class and adapt pacing immediately.\n5. Record attainment evidence and next-step intervention.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Mathematics Curriculum \u2014 how work is executed to standard in Secondary Maths Teacher roles.",
+        "what_you_need_to_know_first": [
+          "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Mathematics Curriculum",
+            "definition": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Safeguarding responsibilities apply during every teaching activity."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "practical_example": "1. Map lesson objective to curriculum standard and success criteria.\n2. Diagnose baseline understanding with a short formative check.\n3. Deliver scaffolded instruction with differentiated tasks.\n4. Assess understanding in-class and adapt pacing immediately.\n5. Record attainment evidence and next-step intervention.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Mathematics Curriculum workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Mathematics Curriculum workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Quantitative validation scenario (Secondary Maths Teacher, Mathematics curriculum) while handling 'Deliver maths lessons': Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?",
+      "why_asked": "Tests numerical and analytical competence in Mathematics curriculum \u2014 essential for Secondary Maths Teacher roles.",
+      "skill_tag": "Mathematics curriculum",
+      "calculation": {
+        "skill": "Mathematics Curriculum",
+        "prompt": "Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?",
+        "answer": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+        "steps": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ]
+      },
+      "question_id": "SECONDARY-MATHS-TEAC-MATHEMATICS--CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Calculate percentage",
+        "Compare to target",
+        "Plan intervention"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?\n\nWorking:\n1. Calculate percentage\n2. Compare to target\n3. Plan intervention\n\nAnswer: 18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.\n\nIn Secondary Maths Teacher practice, I anchor this using: Calculate percentage, Compare to target, Given data.",
+      "answer_explanation": "Calculation: 18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+      "study_material": {
+        "overview": "Quantitative problem for Mathematics Curriculum: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "explanations": [
+          "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+          "Step: Calculate percentage",
+          "Step: Compare to target",
+          "Step: Plan intervention"
+        ],
+        "practical_example": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Mathematics Curriculum calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "related_concepts": [
+          "Mathematics Curriculum",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Mathematics Curriculum calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "Calculate percentage",
+        "Compare to target",
+        "Plan intervention"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Explain Differentiated instruction to a new teacher and include how you evidence learner progress.",
+      "why_asked": "Tests genuine conceptual understanding of Differentiated instruction, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Differentiated instruction",
+      "question_id": "SECONDARY-MATHS-TEAC-DIFFERENTIAT-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Differentiated instruction",
+        "Mathematics curriculum",
+        "Exam preparation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Differentiated Instruction without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Secondary Maths Teacher context, Differentiated Instruction starts with map lesson objective to curriculum standard and success criteria. and continues through diagnose baseline understanding with a short formative check.. The critical discipline is evidence: formative assessment has larger impact than one-off summative testing.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how deliver maths lessons stays reliable under real operational constraints.\n\nIn a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+      "answer_explanation": "Key knowledge demonstrated for Differentiated Instruction:\n\u2022 Formative assessment has larger impact than one-off summative testing.\n\u2022 Differentiation is about access route, not lower expectations.\n\u2022 Safeguarding responsibilities apply during every teaching activity.\nStandards referenced: Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Differentiated Instruction directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Differentiated Instruction",
+            "definition": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Differentiated Instruction",
+            "explanation": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Differentiated Instruction directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Differentiated Instruction",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Differentiated Instruction directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Differentiated Instruction without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Differentiated Instruction applies to: Deliver maths lessons.",
+          "List the standards that govern Differentiated Instruction in Secondary Maths Teacher work.",
+          "Write out the verification steps after completing a Differentiated Instruction task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Differentiated Instruction",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Differentiated Instruction applies to: Deliver maths lessons.",
+        "List the standards that govern Differentiated Instruction in Secondary Maths Teacher work.",
+        "Write out the verification steps after completing a Differentiated Instruction task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a difficult classroom/learning challenge where Differentiated instruction improved outcomes.",
+      "why_asked": "Probes depth of hands-on experience with Differentiated instruction under real constraints.",
+      "skill_tag": "Differentiated instruction",
+      "question_id": "SECONDARY-MATHS-TEAC-DIFFERENTIAT-SCEN-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Differentiated instruction",
+        "Mathematics curriculum",
+        "Exam preparation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Differentiated Instruction without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Secondary Maths Teacher context, Differentiated Instruction starts with map lesson objective to curriculum standard and success criteria. and continues through diagnose baseline understanding with a short formative check.. The critical discipline is evidence: formative assessment has larger impact than one-off summative testing.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how deliver maths lessons stays reliable under real operational constraints.\n\nIn a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+      "answer_explanation": "Key knowledge demonstrated for Differentiated Instruction:\n\u2022 Formative assessment has larger impact than one-off summative testing.\n\u2022 Differentiation is about access route, not lower expectations.\n\u2022 Safeguarding responsibilities apply during every teaching activity.\nStandards referenced: Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Differentiated Instruction directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Differentiated Instruction",
+            "definition": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Differentiated Instruction",
+            "explanation": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Differentiated Instruction directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Differentiated Instruction",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Differentiated Instruction directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Differentiated Instruction without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Differentiated Instruction applies to: Deliver maths lessons.",
+          "List the standards that govern Differentiated Instruction in Secondary Maths Teacher work.",
+          "Write out the verification steps after completing a Differentiated Instruction task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Differentiated Instruction",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Differentiated Instruction applies to: Deliver maths lessons.",
+        "List the standards that govern Differentiated Instruction in Secondary Maths Teacher work.",
+        "Write out the verification steps after completing a Differentiated Instruction task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for Differentiated instruction in Secondary Maths Teacher practice while handling 'Deliver maths lessons', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand Differentiated instruction from those who only name-drop it.",
+      "skill_tag": "Differentiated instruction",
+      "terminology_terms": [
+        {
+          "term": "Differentiated Instruction",
+          "definition": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        },
+        {
+          "term": "Curriculum outcomes",
+          "definition": "Standard/framework governing Differentiated Instruction: Curriculum outcomes."
+        },
+        {
+          "term": "Safeguarding policy",
+          "definition": "Standard/framework governing Differentiated Instruction: Safeguarding policy."
+        },
+        {
+          "term": "Assessment policy",
+          "definition": "Standard/framework governing Differentiated Instruction: Assessment policy."
+        },
+        {
+          "term": "Formative assessment has larger impact t",
+          "definition": "Formative assessment has larger impact than one-off summative testing."
+        },
+        {
+          "term": "Differentiation is about access route, n",
+          "definition": "Differentiation is about access route, not lower expectations."
+        },
+        {
+          "term": "Safeguarding responsibilities apply duri",
+          "definition": "Safeguarding responsibilities apply during every teaching activity."
+        },
+        {
+          "term": "Formative assessment has larger impact than one-off summative testing.",
+          "definition": "Related concept used with Differentiated Instruction in professional practice."
+        }
+      ],
+      "question_id": "SECONDARY-MATHS-TEAC-DIFFERENTIAT-TERM-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Differentiated instruction",
+        "Mathematics curriculum",
+        "Exam preparation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Differentiated Instruction: Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+        "Curriculum outcomes: Standard/framework governing Differentiated Instruction: Curriculum outcomes.",
+        "Safeguarding policy: Standard/framework governing Differentiated Instruction: Safeguarding policy.",
+        "Assessment policy: Standard/framework governing Differentiated Instruction: Assessment policy.",
+        "Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, n: Differentiation is about access route, not lower expectations."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Secondary Maths Teacher work, these terms are foundational:\n\n\n**Differentiated Instruction** \u2014 Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\n**Curriculum outcomes** \u2014 Standard/framework governing Differentiated Instruction: Curriculum outcomes.\n\n**Safeguarding policy** \u2014 Standard/framework governing Differentiated Instruction: Safeguarding policy.\n\n**Assessment policy** \u2014 Standard/framework governing Differentiated Instruction: Assessment policy.\n\n**Formative assessment has larger impact t** \u2014 Formative assessment has larger impact than one-off summative testing.\n\n**Differentiation is about access route, n** \u2014 Differentiation is about access route, not lower expectations.\n\n**Safeguarding responsibilities apply duri** \u2014 Safeguarding responsibilities apply during every teaching activity.\n\n**Formative assessment has larger impact than one-off summative testing.** \u2014 Related concept used with Differentiated Instruction in professional practice.",
+      "answer_explanation": "Definitions covered: Differentiated Instruction, Curriculum outcomes, Safeguarding policy, Assessment policy, Formative assessment has larger impact t, Differentiation is about access route, n",
+      "study_material": {
+        "overview": "Core terminology for Differentiated Instruction \u2014 precise definitions required for Secondary Maths Teacher interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Differentiated Instruction terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Differentiated Instruction",
+            "definition": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Standard/framework governing Differentiated Instruction: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Standard/framework governing Differentiated Instruction: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Standard/framework governing Differentiated Instruction: Assessment policy."
+          },
+          {
+            "term": "Formative assessment has larger impact t",
+            "definition": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "term": "Differentiation is about access route, n",
+            "definition": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "term": "Safeguarding responsibilities apply duri",
+            "definition": "Safeguarding responsibilities apply during every teaching activity."
+          },
+          {
+            "term": "Formative assessment has larger impact than one-off summative testing.",
+            "definition": "Related concept used with Differentiated Instruction in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Differentiated Instruction",
+            "explanation": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Curriculum outcomes",
+            "explanation": "Standard/framework governing Differentiated Instruction: Curriculum outcomes."
+          },
+          {
+            "skill": "Safeguarding policy",
+            "explanation": "Standard/framework governing Differentiated Instruction: Safeguarding policy."
+          },
+          {
+            "skill": "Assessment policy",
+            "explanation": "Standard/framework governing Differentiated Instruction: Assessment policy."
+          },
+          {
+            "skill": "Formative assessment has larger impact t",
+            "explanation": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "skill": "Differentiation is about access route, n",
+            "explanation": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "skill": "Safeguarding responsibilities apply duri",
+            "explanation": "Safeguarding responsibilities apply during every teaching activity."
+          },
+          {
+            "skill": "Formative assessment has larger impact than one-off summative testing.",
+            "explanation": "Related concept used with Differentiated Instruction in professional practice."
+          }
+        ],
+        "principles": [
+          "Differentiated Instruction: Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Curriculum outcomes: Standard/framework governing Differentiated Instruction: Curriculum outcomes.",
+          "Safeguarding policy: Standard/framework governing Differentiated Instruction: Safeguarding policy.",
+          "Assessment policy: Standard/framework governing Differentiated Instruction: Assessment policy.",
+          "Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, n: Differentiation is about access route, not lower expectations."
+        ],
+        "key_concepts": [
+          "Differentiated Instruction",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Differentiated Instruction** \u2014 Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "**Curriculum outcomes** \u2014 Standard/framework governing Differentiated Instruction: Curriculum outcomes.",
+          "**Safeguarding policy** \u2014 Standard/framework governing Differentiated Instruction: Safeguarding policy.",
+          "**Assessment policy** \u2014 Standard/framework governing Differentiated Instruction: Assessment policy.",
+          "**Formative assessment has larger impact t** \u2014 Formative assessment has larger impact than one-off summative testing.",
+          "**Differentiation is about access route, n** \u2014 Differentiation is about access route, not lower expectations.",
+          "**Safeguarding responsibilities apply duri** \u2014 Safeguarding responsibilities apply during every teaching activity.",
+          "**Formative assessment has larger impact than one-off summative testing.** \u2014 Related concept used with Differentiated Instruction in professional practice."
+        ],
+        "practical_example": "\u2022 Differentiated Instruction: Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\u2022 Curriculum outcomes: Standard/framework governing Differentiated Instruction: Curriculum outcomes.\n\u2022 Safeguarding policy: Standard/framework governing Differentiated Instruction: Safeguarding policy.\n\u2022 Assessment policy: Standard/framework governing Differentiated Instruction: Assessment policy.\n\u2022 Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Differentiated Instruction terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Differentiated Instruction",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "related_concepts": [
+          "Differentiated Instruction",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Differentiated Instruction terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Differentiated Instruction",
+        "Curriculum outcomes",
+        "Safeguarding policy",
+        "Assessment policy",
+        "Formative assessment has larger impact t",
+        "Differentiation is about access route, n",
+        "Safeguarding responsibilities apply duri",
+        "Formative assessment has larger impact than one-off summative testing."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What instructional principles and lesson workflow guide Differentiated instruction in Secondary Maths Teacher practice?",
+      "why_asked": "Tests whether you know how Differentiated instruction is actually executed to standard, not only what it is called.",
+      "skill_tag": "Differentiated instruction",
+      "question_id": "SECONDARY-MATHS-TEAC-DIFFERENTIAT-PRIN-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Differentiated instruction",
+        "Mathematics curriculum",
+        "Exam preparation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Differentiated Instruction as a Secondary Maths Teacher:\n\n1. Formative assessment has larger impact than one-off summative testing.\n2. Differentiation is about access route, not lower expectations.\n3. Safeguarding responsibilities apply during every teaching activity.\n\nStandard workflow:\n1. Map lesson objective to curriculum standard and success criteria.\n2. Diagnose baseline understanding with a short formative check.\n3. Deliver scaffolded instruction with differentiated tasks.\n4. Assess understanding in-class and adapt pacing immediately.\n5. Record attainment evidence and next-step intervention.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Differentiated Instruction \u2014 how work is executed to standard in Secondary Maths Teacher roles.",
+        "what_you_need_to_know_first": [
+          "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Differentiated Instruction",
+            "definition": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Differentiated Instruction",
+            "explanation": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "skill": "Differentiated Instruction",
+            "explanation": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "skill": "Differentiated Instruction",
+            "explanation": "Safeguarding responsibilities apply during every teaching activity."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "practical_example": "1. Map lesson objective to curriculum standard and success criteria.\n2. Diagnose baseline understanding with a short formative check.\n3. Deliver scaffolded instruction with differentiated tasks.\n4. Assess understanding in-class and adapt pacing immediately.\n5. Record attainment evidence and next-step intervention.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Differentiated Instruction workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Differentiated Instruction workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Calculation / quantitative question for Secondary Maths Teacher (Differentiated instruction) while handling 'Deliver maths lessons': Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?",
+      "why_asked": "Tests numerical and analytical competence in Differentiated instruction \u2014 essential for Secondary Maths Teacher roles.",
+      "skill_tag": "Differentiated instruction",
+      "calculation": {
+        "skill": "Differentiated Instruction",
+        "prompt": "Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?",
+        "answer": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+        "steps": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ]
+      },
+      "question_id": "SECONDARY-MATHS-TEAC-DIFFERENTIAT-CALC-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Differentiated instruction",
+        "Mathematics curriculum",
+        "Exam preparation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Calculate percentage",
+        "Compare to target",
+        "Plan intervention"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?\n\nWorking:\n1. Calculate percentage\n2. Compare to target\n3. Plan intervention\n\nAnswer: 18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.\n\nIn Secondary Maths Teacher practice, I anchor this using: Calculate percentage, Compare to target, Given data.",
+      "answer_explanation": "Calculation: 18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+      "study_material": {
+        "overview": "Quantitative problem for Differentiated Instruction: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "explanations": [
+          "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+          "Step: Calculate percentage",
+          "Step: Compare to target",
+          "Step: Plan intervention"
+        ],
+        "practical_example": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Differentiated Instruction calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "related_concepts": [
+          "Differentiated Instruction",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Differentiated Instruction calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "Calculate percentage",
+        "Compare to target",
+        "Plan intervention"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Explain Exam preparation to a new teacher and include how you evidence learner progress.",
+      "why_asked": "Tests genuine conceptual understanding of Exam preparation, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Exam preparation",
+      "question_id": "SECONDARY-MATHS-TEAC-EXAM-PREPARA-EXPL-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Exam preparation",
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Exam Preparation without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Secondary Maths Teacher context, Exam Preparation starts with map lesson objective to curriculum standard and success criteria. and continues through diagnose baseline understanding with a short formative check.. The critical discipline is evidence: formative assessment has larger impact than one-off summative testing.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how deliver maths lessons stays reliable under real operational constraints.\n\nIn a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+      "answer_explanation": "Key knowledge demonstrated for Exam Preparation:\n\u2022 Formative assessment has larger impact than one-off summative testing.\n\u2022 Differentiation is about access route, not lower expectations.\n\u2022 Safeguarding responsibilities apply during every teaching activity.\nStandards referenced: Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Exam Preparation directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Exam Preparation",
+            "definition": "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Exam Preparation",
+            "explanation": "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Exam Preparation directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Exam Preparation",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Exam Preparation directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Exam Preparation without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Exam Preparation applies to: Deliver maths lessons.",
+          "List the standards that govern Exam Preparation in Secondary Maths Teacher work.",
+          "Write out the verification steps after completing a Exam Preparation task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Exam Preparation",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Exam Preparation applies to: Deliver maths lessons.",
+        "List the standards that govern Exam Preparation in Secondary Maths Teacher work.",
+        "Write out the verification steps after completing a Exam Preparation task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a difficult classroom/learning challenge where Exam preparation improved outcomes.",
+      "why_asked": "Probes depth of hands-on experience with Exam preparation under real constraints.",
+      "skill_tag": "Exam preparation",
+      "question_id": "SECONDARY-MATHS-TEAC-EXAM-PREPARA-SCEN-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Exam preparation",
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Exam Preparation without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Secondary Maths Teacher context, Exam Preparation starts with map lesson objective to curriculum standard and success criteria. and continues through diagnose baseline understanding with a short formative check.. The critical discipline is evidence: formative assessment has larger impact than one-off summative testing.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how deliver maths lessons stays reliable under real operational constraints.\n\nIn a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+      "answer_explanation": "Key knowledge demonstrated for Exam Preparation:\n\u2022 Formative assessment has larger impact than one-off summative testing.\n\u2022 Differentiation is about access route, not lower expectations.\n\u2022 Safeguarding responsibilities apply during every teaching activity.\nStandards referenced: Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Exam Preparation directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Exam Preparation",
+            "definition": "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Exam Preparation",
+            "explanation": "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Exam Preparation directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Exam Preparation",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Exam Preparation directly supports deliver maths lessons. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Exam Preparation without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Exam Preparation applies to: Deliver maths lessons.",
+          "List the standards that govern Exam Preparation in Secondary Maths Teacher work.",
+          "Write out the verification steps after completing a Exam Preparation task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Exam Preparation",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Exam Preparation applies to: Deliver maths lessons.",
+        "List the standards that govern Exam Preparation in Secondary Maths Teacher work.",
+        "Write out the verification steps after completing a Exam Preparation task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "What are the essential technical terms every Secondary Maths Teacher must know when working with Exam preparation while handling 'Deliver maths lessons'? Define each precisely.",
+      "why_asked": "Core terminology separates practitioners who understand Exam preparation from those who only name-drop it.",
+      "skill_tag": "Exam preparation",
+      "terminology_terms": [
+        {
+          "term": "Exam Preparation",
+          "definition": "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        },
+        {
+          "term": "Curriculum outcomes",
+          "definition": "Standard/framework governing Exam Preparation: Curriculum outcomes."
+        },
+        {
+          "term": "Safeguarding policy",
+          "definition": "Standard/framework governing Exam Preparation: Safeguarding policy."
+        },
+        {
+          "term": "Assessment policy",
+          "definition": "Standard/framework governing Exam Preparation: Assessment policy."
+        },
+        {
+          "term": "Formative assessment has larger impact t",
+          "definition": "Formative assessment has larger impact than one-off summative testing."
+        },
+        {
+          "term": "Differentiation is about access route, n",
+          "definition": "Differentiation is about access route, not lower expectations."
+        },
+        {
+          "term": "Safeguarding responsibilities apply duri",
+          "definition": "Safeguarding responsibilities apply during every teaching activity."
+        },
+        {
+          "term": "Formative assessment has larger impact than one-off summative testing.",
+          "definition": "Related concept used with Exam Preparation in professional practice."
+        }
+      ],
+      "question_id": "SECONDARY-MATHS-TEAC-EXAM-PREPARA-TERM-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Exam preparation",
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Exam Preparation: Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+        "Curriculum outcomes: Standard/framework governing Exam Preparation: Curriculum outcomes.",
+        "Safeguarding policy: Standard/framework governing Exam Preparation: Safeguarding policy.",
+        "Assessment policy: Standard/framework governing Exam Preparation: Assessment policy.",
+        "Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, n: Differentiation is about access route, not lower expectations."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Secondary Maths Teacher work, these terms are foundational:\n\n\n**Exam Preparation** \u2014 Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\n**Curriculum outcomes** \u2014 Standard/framework governing Exam Preparation: Curriculum outcomes.\n\n**Safeguarding policy** \u2014 Standard/framework governing Exam Preparation: Safeguarding policy.\n\n**Assessment policy** \u2014 Standard/framework governing Exam Preparation: Assessment policy.\n\n**Formative assessment has larger impact t** \u2014 Formative assessment has larger impact than one-off summative testing.\n\n**Differentiation is about access route, n** \u2014 Differentiation is about access route, not lower expectations.\n\n**Safeguarding responsibilities apply duri** \u2014 Safeguarding responsibilities apply during every teaching activity.\n\n**Formative assessment has larger impact than one-off summative testing.** \u2014 Related concept used with Exam Preparation in professional practice.",
+      "answer_explanation": "Definitions covered: Exam Preparation, Curriculum outcomes, Safeguarding policy, Assessment policy, Formative assessment has larger impact t, Differentiation is about access route, n",
+      "study_material": {
+        "overview": "Core terminology for Exam Preparation \u2014 precise definitions required for Secondary Maths Teacher interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Exam Preparation terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Exam Preparation",
+            "definition": "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Standard/framework governing Exam Preparation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Standard/framework governing Exam Preparation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Standard/framework governing Exam Preparation: Assessment policy."
+          },
+          {
+            "term": "Formative assessment has larger impact t",
+            "definition": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "term": "Differentiation is about access route, n",
+            "definition": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "term": "Safeguarding responsibilities apply duri",
+            "definition": "Safeguarding responsibilities apply during every teaching activity."
+          },
+          {
+            "term": "Formative assessment has larger impact than one-off summative testing.",
+            "definition": "Related concept used with Exam Preparation in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Exam Preparation",
+            "explanation": "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Curriculum outcomes",
+            "explanation": "Standard/framework governing Exam Preparation: Curriculum outcomes."
+          },
+          {
+            "skill": "Safeguarding policy",
+            "explanation": "Standard/framework governing Exam Preparation: Safeguarding policy."
+          },
+          {
+            "skill": "Assessment policy",
+            "explanation": "Standard/framework governing Exam Preparation: Assessment policy."
+          },
+          {
+            "skill": "Formative assessment has larger impact t",
+            "explanation": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "skill": "Differentiation is about access route, n",
+            "explanation": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "skill": "Safeguarding responsibilities apply duri",
+            "explanation": "Safeguarding responsibilities apply during every teaching activity."
+          },
+          {
+            "skill": "Formative assessment has larger impact than one-off summative testing.",
+            "explanation": "Related concept used with Exam Preparation in professional practice."
+          }
+        ],
+        "principles": [
+          "Exam Preparation: Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Curriculum outcomes: Standard/framework governing Exam Preparation: Curriculum outcomes.",
+          "Safeguarding policy: Standard/framework governing Exam Preparation: Safeguarding policy.",
+          "Assessment policy: Standard/framework governing Exam Preparation: Assessment policy.",
+          "Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, n: Differentiation is about access route, not lower expectations."
+        ],
+        "key_concepts": [
+          "Exam Preparation",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Exam Preparation** \u2014 Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "**Curriculum outcomes** \u2014 Standard/framework governing Exam Preparation: Curriculum outcomes.",
+          "**Safeguarding policy** \u2014 Standard/framework governing Exam Preparation: Safeguarding policy.",
+          "**Assessment policy** \u2014 Standard/framework governing Exam Preparation: Assessment policy.",
+          "**Formative assessment has larger impact t** \u2014 Formative assessment has larger impact than one-off summative testing.",
+          "**Differentiation is about access route, n** \u2014 Differentiation is about access route, not lower expectations.",
+          "**Safeguarding responsibilities apply duri** \u2014 Safeguarding responsibilities apply during every teaching activity.",
+          "**Formative assessment has larger impact than one-off summative testing.** \u2014 Related concept used with Exam Preparation in professional practice."
+        ],
+        "practical_example": "\u2022 Exam Preparation: Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\u2022 Curriculum outcomes: Standard/framework governing Exam Preparation: Curriculum outcomes.\n\u2022 Safeguarding policy: Standard/framework governing Exam Preparation: Safeguarding policy.\n\u2022 Assessment policy: Standard/framework governing Exam Preparation: Assessment policy.\n\u2022 Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Exam Preparation terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Exam Preparation",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "related_concepts": [
+          "Exam Preparation",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Exam Preparation terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Exam Preparation",
+        "Curriculum outcomes",
+        "Safeguarding policy",
+        "Assessment policy",
+        "Formative assessment has larger impact t",
+        "Differentiation is about access route, n",
+        "Safeguarding responsibilities apply duri",
+        "Formative assessment has larger impact than one-off summative testing."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What instructional principles and lesson workflow guide Exam preparation in Secondary Maths Teacher practice?",
+      "why_asked": "Tests whether you know how Exam preparation is actually executed to standard, not only what it is called.",
+      "skill_tag": "Exam preparation",
+      "question_id": "SECONDARY-MATHS-TEAC-EXAM-PREPARA-PRIN-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Exam preparation",
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Exam Preparation as a Secondary Maths Teacher:\n\n1. Formative assessment has larger impact than one-off summative testing.\n2. Differentiation is about access route, not lower expectations.\n3. Safeguarding responsibilities apply during every teaching activity.\n\nStandard workflow:\n1. Map lesson objective to curriculum standard and success criteria.\n2. Diagnose baseline understanding with a short formative check.\n3. Deliver scaffolded instruction with differentiated tasks.\n4. Assess understanding in-class and adapt pacing immediately.\n5. Record attainment evidence and next-step intervention.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Exam Preparation \u2014 how work is executed to standard in Secondary Maths Teacher roles.",
+        "what_you_need_to_know_first": [
+          "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Exam Preparation",
+            "definition": "Exam Preparation in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Exam Preparation",
+            "explanation": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "skill": "Exam Preparation",
+            "explanation": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "skill": "Exam Preparation",
+            "explanation": "Safeguarding responsibilities apply during every teaching activity."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "practical_example": "1. Map lesson objective to curriculum standard and success criteria.\n2. Diagnose baseline understanding with a short formative check.\n3. Deliver scaffolded instruction with differentiated tasks.\n4. Assess understanding in-class and adapt pacing immediately.\n5. Record attainment evidence and next-step intervention.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Exam Preparation workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Exam Preparation workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Secondary Maths Teacher, define and explain these core professional terms: Mathematics Curriculum, Curriculum outcomes, Safeguarding policy, Differentiated Instruction, Curriculum outcomes, Safeguarding policy.",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Mathematics Curriculum",
+          "definition": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        },
+        {
+          "term": "Curriculum outcomes",
+          "definition": "Standard/framework governing Mathematics Curriculum: Curriculum outcomes."
+        },
+        {
+          "term": "Safeguarding policy",
+          "definition": "Standard/framework governing Mathematics Curriculum: Safeguarding policy."
+        },
+        {
+          "term": "Differentiated Instruction",
+          "definition": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        },
+        {
+          "term": "Curriculum outcomes",
+          "definition": "Standard/framework governing Differentiated Instruction: Curriculum outcomes."
+        },
+        {
+          "term": "Safeguarding policy",
+          "definition": "Standard/framework governing Differentiated Instruction: Safeguarding policy."
+        }
+      ],
+      "question_id": "SECONDARY-MATHS-TEAC-CORE-TERMINO-TERM-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Mathematics Curriculum: Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+        "Curriculum outcomes: Standard/framework governing Mathematics Curriculum: Curriculum outcomes.",
+        "Safeguarding policy: Standard/framework governing Mathematics Curriculum: Safeguarding policy.",
+        "Differentiated Instruction: Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+        "Curriculum outcomes: Standard/framework governing Differentiated Instruction: Curriculum outcomes.",
+        "Safeguarding policy: Standard/framework governing Differentiated Instruction: Safeguarding policy."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Secondary Maths Teacher work, these terms are foundational:\n\n\n**Mathematics Curriculum** \u2014 Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\n**Curriculum outcomes** \u2014 Standard/framework governing Mathematics Curriculum: Curriculum outcomes.\n\n**Safeguarding policy** \u2014 Standard/framework governing Mathematics Curriculum: Safeguarding policy.\n\n**Differentiated Instruction** \u2014 Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\n**Curriculum outcomes** \u2014 Standard/framework governing Differentiated Instruction: Curriculum outcomes.\n\n**Safeguarding policy** \u2014 Standard/framework governing Differentiated Instruction: Safeguarding policy.",
+      "answer_explanation": "Definitions covered: Mathematics Curriculum, Curriculum outcomes, Safeguarding policy, Differentiated Instruction, Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Secondary Maths Teacher interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Mathematics Curriculum",
+            "definition": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Standard/framework governing Mathematics Curriculum: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Standard/framework governing Mathematics Curriculum: Safeguarding policy."
+          },
+          {
+            "term": "Differentiated Instruction",
+            "definition": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Standard/framework governing Differentiated Instruction: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Standard/framework governing Differentiated Instruction: Safeguarding policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Curriculum outcomes",
+            "explanation": "Standard/framework governing Mathematics Curriculum: Curriculum outcomes."
+          },
+          {
+            "skill": "Safeguarding policy",
+            "explanation": "Standard/framework governing Mathematics Curriculum: Safeguarding policy."
+          },
+          {
+            "skill": "Differentiated Instruction",
+            "explanation": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Curriculum outcomes",
+            "explanation": "Standard/framework governing Differentiated Instruction: Curriculum outcomes."
+          },
+          {
+            "skill": "Safeguarding policy",
+            "explanation": "Standard/framework governing Differentiated Instruction: Safeguarding policy."
+          }
+        ],
+        "principles": [
+          "Mathematics Curriculum: Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Curriculum outcomes: Standard/framework governing Mathematics Curriculum: Curriculum outcomes.",
+          "Safeguarding policy: Standard/framework governing Mathematics Curriculum: Safeguarding policy.",
+          "Differentiated Instruction: Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Curriculum outcomes: Standard/framework governing Differentiated Instruction: Curriculum outcomes.",
+          "Safeguarding policy: Standard/framework governing Differentiated Instruction: Safeguarding policy."
+        ],
+        "key_concepts": [
+          "Mathematics Curriculum",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Differentiated Instruction",
+          "Curriculum outcomes",
+          "Safeguarding policy"
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Mathematics Curriculum** \u2014 Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "**Curriculum outcomes** \u2014 Standard/framework governing Mathematics Curriculum: Curriculum outcomes.",
+          "**Safeguarding policy** \u2014 Standard/framework governing Mathematics Curriculum: Safeguarding policy.",
+          "**Differentiated Instruction** \u2014 Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "**Curriculum outcomes** \u2014 Standard/framework governing Differentiated Instruction: Curriculum outcomes.",
+          "**Safeguarding policy** \u2014 Standard/framework governing Differentiated Instruction: Safeguarding policy."
+        ],
+        "practical_example": "\u2022 Mathematics Curriculum: Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\u2022 Curriculum outcomes: Standard/framework governing Mathematics Curriculum: Curriculum outcomes.\n\u2022 Safeguarding policy: Standard/framework governing Mathematics Curriculum: Safeguarding policy.\n\u2022 Differentiated Instruction: Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\u2022 Curriculum outcomes: Standard/framework governing Differentiated Instruction: Curriculum outcomes.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Mathematics Curriculum",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Differentiated Instruction",
+          "Curriculum outcomes",
+          "Safeguarding policy"
+        ],
+        "related_concepts": [
+          "Mathematics Curriculum",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Differentiated Instruction",
+          "Curriculum outcomes",
+          "Safeguarding policy"
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Mathematics Curriculum",
+        "Curriculum outcomes",
+        "Safeguarding policy",
+        "Differentiated Instruction",
+        "Curriculum outcomes",
+        "Safeguarding policy"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Deliver maths lessons'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "SECONDARY-MATHS-TEAC-BEHAVIORAL-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+      "answer_explanation": "This answer covers: In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted in\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Secondary Maths Teacher handles when deliver maths lessons. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Secondary Maths Teacher work involves deliver maths lessons under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Secondary Maths Teacher",
+            "definition": "The Secondary Maths Teacher role integrates Mathematics curriculum, Differentiated instruction, Exam preparation to deliver on responsibilities such as deliver maths lessons. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Learning outcomes",
+          "Assessment evidence",
+          "Safeguarding",
+          "Differentiation"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Secondary Maths Teacher reference deliver maths lessons and relevant standards or tools."
+        ],
+        "practical_example": "In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Secondary Maths Teacher challenge with numbers.",
+          "Link the story to: Deliver maths lessons."
+        ],
+        "revision_notes": [
+          "Mathematics curriculum",
+          "Differentiated instruction",
+          "Exam preparation"
+        ],
+        "related_concepts": [
+          "Education"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Secondary Maths Teacher challenge with numbers.",
+        "Link the story to: Deliver maths lessons."
+      ],
+      "revision_notes": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Mark and assess work'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "SECONDARY-MATHS-TEAC-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+      "answer_explanation": "This answer covers: In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted in\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Secondary Maths Teacher handles when deliver maths lessons. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Secondary Maths Teacher work involves deliver maths lessons under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Secondary Maths Teacher",
+            "definition": "The Secondary Maths Teacher role integrates Mathematics curriculum, Differentiated instruction, Exam preparation to deliver on responsibilities such as deliver maths lessons. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Learning outcomes",
+          "Assessment evidence",
+          "Safeguarding",
+          "Differentiation"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Secondary Maths Teacher reference deliver maths lessons and relevant standards or tools."
+        ],
+        "practical_example": "In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Secondary Maths Teacher challenge with numbers.",
+          "Link the story to: Deliver maths lessons."
+        ],
+        "revision_notes": [
+          "Mathematics curriculum",
+          "Differentiated instruction",
+          "Exam preparation"
+        ],
+        "related_concepts": [
+          "Education"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Secondary Maths Teacher challenge with numbers.",
+        "Link the story to: Deliver maths lessons."
+      ],
+      "revision_notes": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Support extracurricular activities'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "SECONDARY-MATHS-TEAC-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+      "answer_explanation": "This answer covers: In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted in\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Secondary Maths Teacher handles when deliver maths lessons. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Secondary Maths Teacher work involves deliver maths lessons under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Secondary Maths Teacher",
+            "definition": "The Secondary Maths Teacher role integrates Mathematics curriculum, Differentiated instruction, Exam preparation to deliver on responsibilities such as deliver maths lessons. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Learning outcomes",
+          "Assessment evidence",
+          "Safeguarding",
+          "Differentiation"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Secondary Maths Teacher reference deliver maths lessons and relevant standards or tools."
+        ],
+        "practical_example": "In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Secondary Maths Teacher challenge with numbers.",
+          "Link the story to: Deliver maths lessons."
+        ],
+        "revision_notes": [
+          "Mathematics curriculum",
+          "Differentiated instruction",
+          "Exam preparation"
+        ],
+        "related_concepts": [
+          "Education"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Secondary Maths Teacher challenge with numbers.",
+        "Link the story to: Deliver maths lessons."
+      ],
+      "revision_notes": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe a lesson/intervention that moved outcomes for underperforming learners in Secondary Maths Teacher work.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "SECONDARY-MATHS-TEAC-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+      "answer_explanation": "This answer covers: In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted in\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Secondary Maths Teacher handles when deliver maths lessons. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Secondary Maths Teacher work involves deliver maths lessons under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Secondary Maths Teacher",
+            "definition": "The Secondary Maths Teacher role integrates Mathematics curriculum, Differentiated instruction, Exam preparation to deliver on responsibilities such as deliver maths lessons. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Learning outcomes",
+          "Assessment evidence",
+          "Safeguarding",
+          "Differentiation"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Secondary Maths Teacher reference deliver maths lessons and relevant standards or tools."
+        ],
+        "practical_example": "In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Secondary Maths Teacher challenge with numbers.",
+          "Link the story to: Deliver maths lessons."
+        ],
+        "revision_notes": [
+          "Mathematics curriculum",
+          "Differentiated instruction",
+          "Exam preparation"
+        ],
+        "related_concepts": [
+          "Education"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Secondary Maths Teacher challenge with numbers.",
+        "Link the story to: Deliver maths lessons."
+      ],
+      "revision_notes": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Tell me about a safeguarding or pastoral issue and how you handled it. In this role-specific case, address: Secondary Maths Teacher context: Deliver maths lessons.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "SECONDARY-MATHS-TEAC-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+      "answer_explanation": "This answer covers: In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted in\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Secondary Maths Teacher handles when deliver maths lessons. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Secondary Maths Teacher work involves deliver maths lessons under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Secondary Maths Teacher",
+            "definition": "The Secondary Maths Teacher role integrates Mathematics curriculum, Differentiated instruction, Exam preparation to deliver on responsibilities such as deliver maths lessons. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Learning outcomes",
+          "Assessment evidence",
+          "Safeguarding",
+          "Differentiation"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Secondary Maths Teacher reference deliver maths lessons and relevant standards or tools."
+        ],
+        "practical_example": "In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Secondary Maths Teacher challenge with numbers.",
+          "Link the story to: Deliver maths lessons."
+        ],
+        "revision_notes": [
+          "Mathematics curriculum",
+          "Differentiated instruction",
+          "Exam preparation"
+        ],
+        "related_concepts": [
+          "Education"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Secondary Maths Teacher challenge with numbers.",
+        "Link the story to: Deliver maths lessons."
+      ],
+      "revision_notes": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Give an example of adapting instruction based on assessment evidence. In this role-specific case, address: Secondary Maths Teacher context: Deliver maths lessons.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "SECONDARY-MATHS-TEAC-BEHAVIORAL-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+      "answer_explanation": "This answer covers: In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted in\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Secondary Maths Teacher handles when deliver maths lessons. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Secondary Maths Teacher work involves deliver maths lessons under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Secondary Maths Teacher",
+            "definition": "The Secondary Maths Teacher role integrates Mathematics curriculum, Differentiated instruction, Exam preparation to deliver on responsibilities such as deliver maths lessons. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Mathematics curriculum supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Learning outcomes",
+          "Assessment evidence",
+          "Safeguarding",
+          "Differentiation"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Secondary Maths Teacher reference deliver maths lessons and relevant standards or tools."
+        ],
+        "practical_example": "In my Secondary Maths Teacher role for deliver maths lessons, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Secondary Maths Teacher challenge with numbers.",
+          "Link the story to: Deliver maths lessons."
+        ],
+        "revision_notes": [
+          "Mathematics curriculum",
+          "Differentiated instruction",
+          "Exam preparation"
+        ],
+        "related_concepts": [
+          "Education"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Secondary Maths Teacher challenge with numbers.",
+        "Link the story to: Deliver maths lessons."
+      ],
+      "revision_notes": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Secondary Maths Teacher position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "SECONDARY-MATHS-TEAC-ROLE-SPECIFI-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Secondary Maths Teacher, my approach to deliver maths lessons is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Secondary Maths Teacher practice, I anchor this using: Formative assessment has larger impact than one-off summative testing., Differentiation is about access route, not lower expectations., Role Specific.",
+      "answer_explanation": "This answer covers: As Secondary Maths Teacher, my approach to deliver maths lessons is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document an\u2026",
+      "study_material": {
+        "overview": "Role Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Role Specific directly supports deliver maths lessons. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Role Specific directly supports deliver maths lessons. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Differentiated Instruction",
+            "explanation": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "general professional",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Role Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Role Specific directly supports deliver maths lessons. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Deliver maths lessons.",
+          "List the standards that govern Role Specific in Secondary Maths Teacher work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Deliver maths lessons.",
+        "List the standards that govern Role Specific in Secondary Maths Teacher work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Secondary Maths Teacher context: Deliver maths lessons. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Secondary Maths Teacher context: Deliver maths lessons.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "SECONDARY-MATHS-TEAC-COMPANY-SPEC-023",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mathematics curriculum",
+        "Differentiated instruction",
+        "Exam preparation",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Secondary Maths Teacher, my approach to deliver maths lessons is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Secondary Maths Teacher practice, I anchor this using: Formative assessment has larger impact than one-off summative testing., Differentiation is about access route, not lower expectations., Company Specific.",
+      "answer_explanation": "This answer covers: As Secondary Maths Teacher, my approach to deliver maths lessons is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document an\u2026",
+      "study_material": {
+        "overview": "Company Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Company Specific directly supports deliver maths lessons. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Company Specific directly supports deliver maths lessons. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Mathematics Curriculum",
+            "explanation": "Mathematics Curriculum in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Differentiated Instruction",
+            "explanation": "Differentiated Instruction in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "general professional",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Company Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Secondary Maths Teacher practice, Company Specific directly supports deliver maths lessons. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Secondary Maths Teacher class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Deliver maths lessons.",
+          "List the standards that govern Company Specific in Secondary Maths Teacher work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Deliver maths lessons.",
+        "List the standards that govern Company Specific in Secondary Maths Teacher work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:29:10.926321+00:00",
+  "confidence_score": 0.9
+}

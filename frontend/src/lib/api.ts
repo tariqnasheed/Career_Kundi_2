@@ -22,6 +22,7 @@ import axios, { type AxiosInstance, type AxiosResponse } from "axios";
 import type {
   TokenResponse,
   UserRead,
+  JobDiscoveryResult,
   SavedJobRead,
   InterviewPackRead,
   GeneratedCVRead,
@@ -130,8 +131,23 @@ export const authApi = {
 // ---------------------------------------------------------------------------
 
 export const jobApi = {
-  /** Search for jobs by natural-language query or filters. */
-  search: async (params: {
+  /** Search live job postings on the web (Google Jobs / job boards). */
+  discover: async (params: {
+    q?: string;
+    location?: string;
+    employment_type?: string;
+    remote?: boolean;
+    salary_min?: number;
+    experience_level?: string;
+    date_posted?: string;
+    url?: string;
+  }): Promise<JobDiscoveryResult[]> => {
+    const res = await http.post<JobDiscoveryResult[]>("/job-search/discover", params);
+    return res.data;
+  },
+
+  /** Filter the user's saved jobs (local library). */
+  searchSaved: async (params: {
     q?: string;
     location?: string;
     employment_type?: string;
@@ -142,10 +158,24 @@ export const jobApi = {
     return res.data;
   },
 
-  /** Import a job from a direct URL (backend re-runs the extraction pipeline). */
-  importUrl: async (url: string): Promise<SavedJobRead> => {
-    const res = await http.post<SavedJobRead>("/job-search/parse", { url });
+  /** @deprecated Alias for searchSaved — filters saved jobs only, not the live web. */
+  search: async (params: {
+    q?: string;
+    location?: string;
+    employment_type?: string;
+    remote?: boolean;
+    page?: number;
+  }): Promise<SavedJobRead[]> => jobApi.searchSaved(params),
+
+  /** Import a job from URL or pasted text (full enrichment pipeline). */
+  parse: async (payload: { url?: string; pasted_text?: string }): Promise<SavedJobRead> => {
+    const res = await http.post<SavedJobRead>("/job-search/parse", payload);
     return res.data;
+  },
+
+  /** @deprecated Use parse() — kept for backwards compatibility */
+  importUrl: async (url: string): Promise<SavedJobRead> => {
+    return jobApi.parse({ url });
   },
 
   /** List the user's saved jobs. */
@@ -160,9 +190,15 @@ export const jobApi = {
     return res.data;
   },
 
-  /** Save a reviewed job (persists the fields as-is, no re-scrape). */
-  save: async (jobData: Partial<SavedJobRead>): Promise<SavedJobRead> => {
+  /** Save a reviewed job manually (after editing extracted fields). */
+  save: async (jobData: Record<string, unknown>): Promise<SavedJobRead> => {
     const res = await http.post<SavedJobRead>("/job-search/", jobData);
+    return res.data;
+  },
+
+  /** Update an existing saved job's fields from the job form. */
+  update: async (id: string, jobData: Record<string, unknown>): Promise<SavedJobRead> => {
+    const res = await http.patch<SavedJobRead>(`/job-search/${id}`, jobData);
     return res.data;
   },
 
@@ -178,8 +214,27 @@ export const jobApi = {
   },
 
   /** Generate an interview pack for a saved job. */
-  generateInterviewPack: async (jobId: string): Promise<InterviewPackRead> => {
-    const res = await http.post<InterviewPackRead>(`/job-search/${jobId}/interview-pack`);
+  generateInterviewPack: async (
+    jobId: string,
+    options?: { focus_areas?: string[]; difficulty?: string; include_study_material?: boolean },
+  ): Promise<InterviewPackRead> => {
+    const res = await http.post<InterviewPackRead>(`/job-search/${jobId}/interview-pack`, {
+      include_study_material: true,
+      ...options,
+    });
+    return res.data;
+  },
+
+  /** Download interview pack PDF (full | study_material | questions_answers). */
+  downloadInterviewPackPdf: async (
+    jobId: string,
+    format: "pdf" | "study_material" | "questions_answers" = "pdf",
+  ): Promise<Blob> => {
+    const param = format === "pdf" ? "pdf" : format;
+    const res = await http.get(`/job-search/${jobId}/interview-pack/export`, {
+      params: { format: param },
+      responseType: "blob",
+    });
     return res.data;
   },
 
@@ -205,16 +260,24 @@ export const cvApi = {
     return res.data;
   },
 
-  /** Generate a new CV. */
+  /** Generate a new CV from the user's profile. */
   generate: async (payload: {
-    template: string;
-    enabled_sections: string[];
-    target_job_id?: string;
-    target_job_title?: string;
-    target_company?: string;
     name?: string;
+    target_job_id?: string;
+    template?: string;
+    section_ids?: string[];
+    tone?: "concise" | "detailed" | "executive";
+    generation_mode?: "profile" | "role_targeted";
+    target_role_title?: string;
+    target_role_description?: string;
   }): Promise<GeneratedCVRead> => {
     const res = await http.post<GeneratedCVRead>("/cv-builder/generate", payload);
+    return res.data;
+  },
+
+  /** Fetch a single saved CV (includes rendered_content for preview). */
+  get: async (cvId: string): Promise<GeneratedCVRead> => {
+    const res = await http.get<GeneratedCVRead>(`/cv-builder/${cvId}`);
     return res.data;
   },
 

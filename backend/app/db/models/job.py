@@ -69,6 +69,10 @@ class SavedJob(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     interview_pack_confidence: Mapped[float | None] = mapped_column(Float, nullable=True)
     interview_pack_generated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
 
+    @property
+    def has_interview_pack(self) -> bool:
+        return bool(self.interview_pack and len(self.interview_pack) > 0)
+
     user: Mapped["User"] = relationship(back_populates="saved_jobs")  # noqa: F821
     applications: Mapped[list["JobApplication"]] = relationship(  # noqa: F821
         back_populates="job", cascade="all, delete-orphan"

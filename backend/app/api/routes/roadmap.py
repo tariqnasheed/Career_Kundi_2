@@ -94,6 +94,17 @@ def _milestones_to_orm(milestones: list[dict]) -> list[RoadmapMilestone]:
     return orm_milestones
 
 
+async def _roadmap_read_response(
+    db: AsyncSession, user: User, roadmap_id: uuid.UUID, final_state: dict
+) -> RoadmapRead:
+    """Eager-load milestones/skills before Pydantic validation (async SQLAlchemy safe)."""
+    roadmap = await _get_owned_roadmap(db, user, roadmap_id)
+    roadmap_read = RoadmapRead.model_validate(roadmap)
+    roadmap_read.generation_confidence = final_state.get("confidence_score", 0.0)
+    roadmap_read.generation_citations = final_state.get("citations", [])
+    return roadmap_read
+
+
 async def _existing_profile_skill_names(db: AsyncSession, user: User) -> list[str]:
     """The user's own Profile.skills names — lets `SkillDecomposerAgent` mark roadmap skills the user already has as `already_known` instead of scheduling redundant study time for them."""
     profile = await _get_or_create_profile(db, user)
@@ -132,15 +143,12 @@ async def generate_roadmap(
     )
     db.add(roadmap)
     await db.commit()
-    await db.refresh(roadmap)
+    roadmap_id = roadmap.id
 
     await cost_monitor.persist(db, user_id=str(user.id), model_used=final_state.get("model_tier_used", "unknown"))
     await db.commit()  # CostMonitor.persist() only flushes — commit explicitly so the usage record survives session close
 
-    roadmap_read = RoadmapRead.model_validate(roadmap)
-    roadmap_read.generation_confidence = final_state.get("confidence_score", 0.0)
-    roadmap_read.generation_citations = final_state.get("citations", [])
-    return roadmap_read
+    return await _roadmap_read_response(db, user, roadmap_id, final_state)
 
 
 @router.get("/", response_model=list[RoadmapRead])
@@ -209,15 +217,11 @@ async def regenerate_roadmap(
     roadmap.personalization_inputs = personalization_inputs
     roadmap.milestones = _milestones_to_orm(draft.get("milestones", []))  # cascade="all, delete-orphan" cleans up the old rows
     await db.commit()
-    await db.refresh(roadmap)
 
     await cost_monitor.persist(db, user_id=str(user.id), model_used=final_state.get("model_tier_used", "unknown"))
     await db.commit()  # CostMonitor.persist() only flushes — commit explicitly so the usage record survives session close
 
-    roadmap_read = RoadmapRead.model_validate(roadmap)
-    roadmap_read.generation_confidence = final_state.get("confidence_score", 0.0)
-    roadmap_read.generation_citations = final_state.get("citations", [])
-    return roadmap_read
+    return await _roadmap_read_response(db, user, roadmap.id, final_state)
 
 
 @router.patch("/{roadmap_id}/skills/{skill_id}/status", response_model=RoadmapSkillRead)

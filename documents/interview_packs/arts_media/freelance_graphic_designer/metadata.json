@@ -1,0 +1,37 @@
+{
+  "role_name": "Freelance Graphic Designer",
+  "normalized_role_slug": "freelance_graphic_designer",
+  "category": "arts_media",
+  "stream_or_department": "creative_freelance",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 29,
+  "question_specific_study_material_count": 29,
+  "skill_count": 35,
+  "pdf_files": [
+    "freelance_graphic_designer_interview_pack.pdf",
+    "freelance_graphic_designer_study_material.pdf",
+    "freelance_graphic_designer_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "freelance_graphic_designer_interview_pack.md",
+    "freelance_graphic_designer_study_material.md",
+    "freelance_graphic_designer_questions_answers.md"
+  ],
+  "source_files": [
+    "freelance_graphic_designer_interview_pack.md",
+    "freelance_graphic_designer_study_material.md",
+    "freelance_graphic_designer_questions_answers.md",
+    "freelance_graphic_designer_interview_pack.pdf",
+    "freelance_graphic_designer_study_material.pdf",
+    "freelance_graphic_designer_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/arts_media/freelance_graphic_designer",
+  "has_pdf": true,
+  "has_markdown": true
+}

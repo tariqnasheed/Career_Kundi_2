@@ -1,0 +1,37 @@
+{
+  "role_name": "Virtual Assistant",
+  "normalized_role_slug": "virtual_assistant",
+  "category": "custom_roles",
+  "stream_or_department": "admin_remote",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 25,
+  "question_specific_study_material_count": 25,
+  "skill_count": 29,
+  "pdf_files": [
+    "virtual_assistant_interview_pack.pdf",
+    "virtual_assistant_study_material.pdf",
+    "virtual_assistant_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "virtual_assistant_interview_pack.md",
+    "virtual_assistant_study_material.md",
+    "virtual_assistant_questions_answers.md"
+  ],
+  "source_files": [
+    "virtual_assistant_interview_pack.md",
+    "virtual_assistant_study_material.md",
+    "virtual_assistant_questions_answers.md",
+    "virtual_assistant_interview_pack.pdf",
+    "virtual_assistant_study_material.pdf",
+    "virtual_assistant_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/virtual_assistant",
+  "has_pdf": true,
+  "has_markdown": true
+}

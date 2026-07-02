@@ -33,7 +33,7 @@ export default function LoginPage() {
       await login(email, password);
       navigate("/dashboard", { replace: true });
     } catch (err: any) {
-      const msg = err?.response?.data?.detail || "Invalid email or password.";
+      const msg = err?.message || err?.response?.data?.message || err?.response?.data?.detail || "Invalid email or password.";
       setError(msg);
       addToast({ type: "error", message: msg });
     } finally {

@@ -1,0 +1,2783 @@
+{
+  "role_name": "Dog Walker / Pet Sitter",
+  "role_slug": "dog_walker_pet_sitter",
+  "category": "custom_roles",
+  "role_overview": {
+    "role_name": "Dog Walker / Pet Sitter",
+    "summary": "The Dog Walker / Pet Sitter role integrates Animal care, Reliability, Communication to deliver on responsibilities such as walk dogs safely. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Walk dogs safely",
+      "Feed and check on pets",
+      "Send updates to owners"
+    ],
+    "required_skills": [
+      "Animal care",
+      "Reliability",
+      "Communication"
+    ],
+    "what_employers_expect": [
+      "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: Animal experience."
+    ],
+    "skill_clusters": [
+      "General Professional",
+      "Hospitality Operations"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Walk me through how you would explain Animal care to a teammate who has never used it in a Dog Walker / Pet Sitter context while handling 'Walk dogs safely'.",
+      "why_asked": "Tests genuine conceptual understanding of Animal care, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Animal care",
+      "question_id": "DOG-WALKER-PET-SITTE-ANIMAL-CARE-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Animal Care without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Dog Walker / Pet Sitter context, Animal Care starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how walk dogs safely stays reliable under real operational constraints.\n\nOn shift as Dog Walker / Pet Sitter, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Animal Care:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Dog Walker / Pet Sitter practice, Animal Care directly supports walk dogs safely. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Animal Care",
+            "definition": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Animal Care",
+            "explanation": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Dog Walker / Pet Sitter practice, Animal Care directly supports walk dogs safely. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Reliability",
+            "explanation": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Animal Care",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "general professional",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Dog Walker / Pet Sitter practice, Animal Care directly supports walk dogs safely. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Dog Walker / Pet Sitter, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Animal Care without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Animal Care applies to: Walk dogs safely.",
+          "List the standards that govern Animal Care in Dog Walker / Pet Sitter work.",
+          "Write out the verification steps after completing a Animal Care task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Animal Care",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Animal Care applies to: Walk dogs safely.",
+        "List the standards that govern Animal Care in Dog Walker / Pet Sitter work.",
+        "Write out the verification steps after completing a Animal Care task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "In your Dog Walker / Pet Sitter experience while handling 'Walk dogs safely', what high-stakes incident required deep use of Animal care, and how did you resolve it?",
+      "why_asked": "Probes depth of hands-on experience with Animal care under real constraints.",
+      "skill_tag": "Animal care",
+      "question_id": "DOG-WALKER-PET-SITTE-ANIMAL-CARE-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Animal Care without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Dog Walker / Pet Sitter context, Animal Care starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how walk dogs safely stays reliable under real operational constraints.\n\nOn shift as Dog Walker / Pet Sitter, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Animal Care:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Dog Walker / Pet Sitter practice, Animal Care directly supports walk dogs safely. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Animal Care",
+            "definition": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Animal Care",
+            "explanation": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Dog Walker / Pet Sitter practice, Animal Care directly supports walk dogs safely. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Reliability",
+            "explanation": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Animal Care",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "general professional",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Dog Walker / Pet Sitter practice, Animal Care directly supports walk dogs safely. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Dog Walker / Pet Sitter, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Animal Care without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Animal Care applies to: Walk dogs safely.",
+          "List the standards that govern Animal Care in Dog Walker / Pet Sitter work.",
+          "Write out the verification steps after completing a Animal Care task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Animal Care",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Animal Care applies to: Walk dogs safely.",
+        "List the standards that govern Animal Care in Dog Walker / Pet Sitter work.",
+        "Write out the verification steps after completing a Animal Care task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "What are the essential technical terms every Dog Walker / Pet Sitter must know when working with Animal care while handling 'Walk dogs safely'? Define each precisely.",
+      "why_asked": "Core terminology separates practitioners who understand Animal care from those who only name-drop it.",
+      "skill_tag": "Animal care",
+      "terminology_terms": [
+        {
+          "term": "Animal Care",
+          "definition": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Animal Care: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Animal Care: Medication safety checks."
+        },
+        {
+          "term": "SBAR handover",
+          "definition": "Standard/framework governing Animal Care: SBAR handover."
+        },
+        {
+          "term": "Early escalation prevents preventable de",
+          "definition": "Early escalation prevents preventable deterioration."
+        },
+        {
+          "term": "Medication errors often occur at transit",
+          "definition": "Medication errors often occur at transition points and handovers."
+        },
+        {
+          "term": "Documentation quality is directly linked",
+          "definition": "Documentation quality is directly linked to continuity of care."
+        },
+        {
+          "term": "Early escalation prevents preventable deterioration.",
+          "definition": "Related concept used with Animal Care in professional practice."
+        }
+      ],
+      "question_id": "DOG-WALKER-PET-SITTE-ANIMAL-CARE-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Animal Care: Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Animal Care: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Animal Care: Medication safety checks.",
+        "SBAR handover: Standard/framework governing Animal Care: SBAR handover.",
+        "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Dog Walker / Pet Sitter work, these terms are foundational:\n\n\n**Animal Care** \u2014 Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Animal Care: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Animal Care: Medication safety checks.\n\n**SBAR handover** \u2014 Standard/framework governing Animal Care: SBAR handover.\n\n**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.\n\n**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.\n\n**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.\n\n**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Animal Care in professional practice.",
+      "answer_explanation": "Definitions covered: Animal Care, Clinical guideline pathway, Medication safety checks, SBAR handover, Early escalation prevents preventable de, Medication errors often occur at transit",
+      "study_material": {
+        "overview": "Core terminology for Animal Care \u2014 precise definitions required for Dog Walker / Pet Sitter interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Animal Care terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Animal Care",
+            "definition": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Animal Care: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Animal Care: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Standard/framework governing Animal Care: SBAR handover."
+          },
+          {
+            "term": "Early escalation prevents preventable de",
+            "definition": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "term": "Medication errors often occur at transit",
+            "definition": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "term": "Documentation quality is directly linked",
+            "definition": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "term": "Early escalation prevents preventable deterioration.",
+            "definition": "Related concept used with Animal Care in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Animal Care",
+            "explanation": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Animal Care: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Animal Care: Medication safety checks."
+          },
+          {
+            "skill": "SBAR handover",
+            "explanation": "Standard/framework governing Animal Care: SBAR handover."
+          },
+          {
+            "skill": "Early escalation prevents preventable de",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Medication errors often occur at transit",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Documentation quality is directly linked",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "skill": "Early escalation prevents preventable deterioration.",
+            "explanation": "Related concept used with Animal Care in professional practice."
+          }
+        ],
+        "principles": [
+          "Animal Care: Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Animal Care: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Animal Care: Medication safety checks.",
+          "SBAR handover: Standard/framework governing Animal Care: SBAR handover.",
+          "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+        ],
+        "key_concepts": [
+          "Animal Care",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Animal Care** \u2014 Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Animal Care: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Animal Care: Medication safety checks.",
+          "**SBAR handover** \u2014 Standard/framework governing Animal Care: SBAR handover.",
+          "**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.",
+          "**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.",
+          "**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.",
+          "**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Animal Care in professional practice."
+        ],
+        "practical_example": "\u2022 Animal Care: Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Animal Care: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Animal Care: Medication safety checks.\n\u2022 SBAR handover: Standard/framework governing Animal Care: SBAR handover.\n\u2022 Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Animal Care terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Animal Care",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "related_concepts": [
+          "Animal Care",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Animal Care terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Animal Care",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "SBAR handover",
+        "Early escalation prevents preventable de",
+        "Medication errors often occur at transit",
+        "Documentation quality is directly linked",
+        "Early escalation prevents preventable deterioration."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the core operating principles and standard workflow for applying Animal care in a Dog Walker / Pet Sitter role while handling 'Walk dogs safely'?",
+      "why_asked": "Tests whether you know how Animal care is actually executed to standard, not only what it is called.",
+      "skill_tag": "Animal care",
+      "question_id": "DOG-WALKER-PET-SITTE-ANIMAL-CARE-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Animal Care as a Dog Walker / Pet Sitter:\n\n1. Early escalation prevents preventable deterioration.\n2. Medication errors often occur at transition points and handovers.\n3. Documentation quality is directly linked to continuity of care.\n\nStandard workflow:\n1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Animal Care \u2014 how work is executed to standard in Dog Walker / Pet Sitter roles.",
+        "what_you_need_to_know_first": [
+          "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Animal Care",
+            "definition": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Animal Care",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Animal Care",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Animal Care",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "practical_example": "1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Animal Care workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Animal Care workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "What calculation or numeric validation do you rely on most when applying Animal care as a Dog Walker / Pet Sitter while handling 'Walk dogs safely'?",
+      "why_asked": "Tests ability to work with numbers, metrics, or measurable outcomes in Animal care.",
+      "skill_tag": "Animal care",
+      "question_id": "DOG-WALKER-PET-SITTE-ANIMAL-CARE-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Hand-waving without numbers",
+        "Wrong precision for context"
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "On a typical Dog Walker / Pet Sitter task involving Animal Care, I'd first identify what must be measured \u2014 for example load, flow, dose, or error rate. I'd gather inputs from Clinical guideline pathway, apply the appropriate formula or clinical calculation, show units, and compare against the limit before proceeding. I'd document the calculation on the test sheet or clinical record.",
+      "answer_explanation": "Quantitative method with formula, units, and limit check.",
+      "study_material": {
+        "overview": "For Animal Care, identify measurable quantities on typical Dog Walker / Pet Sitter tasks \u2014 loads, doses, rates, margins.",
+        "what_you_need_to_know_first": [
+          "Name what you would measure on site or in clinic.",
+          "State how you would calculate or estimate it.",
+          "Explain how the number drives a decision."
+        ],
+        "definitions": [
+          {
+            "term": "Animal Care",
+            "definition": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Measurement",
+          "Estimation",
+          "Thresholds",
+          "Verification"
+        ],
+        "step_by_step_breakdown": [
+          "Identify the quantity (load, dose, flow, cost, latency).",
+          "State data sources and instruments.",
+          "Apply formula or rule of thumb.",
+          "Compare to limit and document."
+        ],
+        "explanations": [],
+        "practical_example": "On shift as Dog Walker / Pet Sitter, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Hand-waving without numbers",
+          "Wrong precision for context"
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "List three numeric checks you perform when using Animal Care."
+        ],
+        "revision_notes": [],
+        "related_concepts": [
+          "Animal Care"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "List three numeric checks you perform when using Animal Care."
+      ],
+      "revision_notes": []
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "If a new hire joined your Dog Walker / Pet Sitter function while handling 'Walk dogs safely', how would you break down Reliability into practical steps?",
+      "why_asked": "Tests genuine conceptual understanding of Reliability, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Reliability",
+      "question_id": "DOG-WALKER-PET-SITTE-RELIABILITY-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Reliability",
+        "Animal care",
+        "Communication",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Reliability without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Dog Walker / Pet Sitter context, Reliability starts with clarify required outcome, constraints, and stakeholders for walk dogs safely. and continues through apply reliability using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how walk dogs safely stays reliable under real operational constraints.\n\nIn Dog Walker / Pet Sitter, I applied Reliability to stabilize walk dogs safely under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Reliability:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely. In Dog Walker / Pet Sitter practice, Reliability directly supports walk dogs safely. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Reliability",
+            "definition": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Reliability",
+            "explanation": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely. In Dog Walker / Pet Sitter practice, Reliability directly supports walk dogs safely. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Animal Care",
+            "explanation": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Reliability",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for walk dogs safely.",
+          "Apply Reliability using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely. In Dog Walker / Pet Sitter practice, Reliability directly supports walk dogs safely. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+        ],
+        "practical_example": "In Dog Walker / Pet Sitter, I applied Reliability to stabilize walk dogs safely under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Reliability without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Reliability applies to: Walk dogs safely.",
+          "List the standards that govern Reliability in Dog Walker / Pet Sitter work.",
+          "Write out the verification steps after completing a Reliability task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Reliability",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Reliability applies to: Walk dogs safely.",
+        "List the standards that govern Reliability in Dog Walker / Pet Sitter work.",
+        "Write out the verification steps after completing a Reliability task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe the most complex problem you've solved using Reliability as a Dog Walker / Pet Sitter while handling 'Walk dogs safely'.",
+      "why_asked": "Probes depth of hands-on experience with Reliability under real constraints.",
+      "skill_tag": "Reliability",
+      "question_id": "DOG-WALKER-PET-SITTE-RELIABILITY-SCEN-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Reliability",
+        "Animal care",
+        "Communication",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Reliability without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Dog Walker / Pet Sitter context, Reliability starts with clarify required outcome, constraints, and stakeholders for walk dogs safely. and continues through apply reliability using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how walk dogs safely stays reliable under real operational constraints.\n\nIn Dog Walker / Pet Sitter, I applied Reliability to stabilize walk dogs safely under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Reliability:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely. In Dog Walker / Pet Sitter practice, Reliability directly supports walk dogs safely. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Reliability",
+            "definition": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Reliability",
+            "explanation": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely. In Dog Walker / Pet Sitter practice, Reliability directly supports walk dogs safely. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Animal Care",
+            "explanation": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Reliability",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for walk dogs safely.",
+          "Apply Reliability using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely. In Dog Walker / Pet Sitter practice, Reliability directly supports walk dogs safely. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+        ],
+        "practical_example": "In Dog Walker / Pet Sitter, I applied Reliability to stabilize walk dogs safely under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Reliability without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Reliability applies to: Walk dogs safely.",
+          "List the standards that govern Reliability in Dog Walker / Pet Sitter work.",
+          "Write out the verification steps after completing a Reliability task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Reliability",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Reliability applies to: Walk dogs safely.",
+        "List the standards that govern Reliability in Dog Walker / Pet Sitter work.",
+        "Write out the verification steps after completing a Reliability task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "What are the essential technical terms every Dog Walker / Pet Sitter must know when working with Reliability while handling 'Walk dogs safely'? Define each precisely.",
+      "why_asked": "Core terminology separates practitioners who understand Reliability from those who only name-drop it.",
+      "skill_tag": "Reliability",
+      "terminology_terms": [
+        {
+          "term": "Reliability",
+          "definition": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Reliability in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Reliability in professional practice."
+        }
+      ],
+      "question_id": "DOG-WALKER-PET-SITTE-RELIABILITY-TERM-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Reliability",
+        "Animal care",
+        "Communication",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Reliability: Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Reliability in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Reliability in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Dog Walker / Pet Sitter work, these terms are foundational:\n\n\n**Reliability** \u2014 Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Reliability in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Reliability in professional practice.",
+      "answer_explanation": "Definitions covered: Reliability, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Reliability \u2014 precise definitions required for Dog Walker / Pet Sitter interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Reliability terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Reliability",
+            "definition": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Reliability in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Reliability in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Reliability",
+            "explanation": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Reliability in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Reliability in professional practice."
+          }
+        ],
+        "principles": [
+          "Reliability: Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Reliability in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Reliability in professional practice."
+        ],
+        "key_concepts": [
+          "Reliability",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Reliability** \u2014 Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Reliability in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Reliability in professional practice."
+        ],
+        "practical_example": "\u2022 Reliability: Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Reliability in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Reliability terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Reliability",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Reliability",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Reliability terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Reliability",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "When performing Reliability as a Dog Walker / Pet Sitter while handling 'Walk dogs safely', what are the governing principles, checkpoints, and sign-off criteria?",
+      "why_asked": "Tests whether you know how Reliability is actually executed to standard, not only what it is called.",
+      "skill_tag": "Reliability",
+      "question_id": "DOG-WALKER-PET-SITTE-RELIABILITY-PRIN-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Reliability",
+        "Animal care",
+        "Communication",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Reliability as a Dog Walker / Pet Sitter:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for walk dogs safely.\n2. Apply Reliability using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Reliability \u2014 how work is executed to standard in Dog Walker / Pet Sitter roles.",
+        "what_you_need_to_know_first": [
+          "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Reliability",
+            "definition": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Reliability",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Reliability",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Reliability",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for walk dogs safely.",
+          "Apply Reliability using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for walk dogs safely.\n2. Apply Reliability using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Reliability workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Reliability workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Quantitative validation scenario (Dog Walker / Pet Sitter, Reliability) while handling 'Walk dogs safely': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Reliability \u2014 essential for Dog Walker / Pet Sitter roles.",
+      "skill_tag": "Reliability",
+      "calculation": {
+        "skill": "Reliability",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "DOG-WALKER-PET-SITTE-RELIABILITY-CALC-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Reliability",
+        "Animal care",
+        "Communication",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Dog Walker / Pet Sitter practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Reliability: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Reliability calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Reliability",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Reliability calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Dog Walker / Pet Sitter practitioner in Communication while handling 'Walk dogs safely'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Communication from those who only name-drop it.",
+      "skill_tag": "Communication",
+      "terminology_terms": [
+        {
+          "term": "Communication",
+          "definition": "Communication is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Communication in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Communication in professional practice."
+        }
+      ],
+      "question_id": "DOG-WALKER-PET-SITTE-COMMUNICATIO-TERM-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Communication",
+        "Animal care",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Communication: Communication is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Communication in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Communication in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Dog Walker / Pet Sitter work, these terms are foundational:\n\n\n**Communication** \u2014 Communication is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Communication in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Communication in professional practice.",
+      "answer_explanation": "Definitions covered: Communication, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Communication \u2014 precise definitions required for Dog Walker / Pet Sitter interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Communication terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Communication",
+            "definition": "Communication is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Communication in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Communication in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Communication",
+            "explanation": "Communication is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Communication in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Communication in professional practice."
+          }
+        ],
+        "principles": [
+          "Communication: Communication is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Communication in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Communication in professional practice."
+        ],
+        "key_concepts": [
+          "Communication",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Communication** \u2014 Communication is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Communication in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Communication in professional practice."
+        ],
+        "practical_example": "\u2022 Communication: Communication is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Communication in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Communication terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Communication",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Communication",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Communication terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Communication",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which non-negotiable rules and execution sequence govern Communication for Dog Walker / Pet Sitter work while handling 'Walk dogs safely'?",
+      "why_asked": "Tests whether you know how Communication is actually executed to standard, not only what it is called.",
+      "skill_tag": "Communication",
+      "question_id": "DOG-WALKER-PET-SITTE-COMMUNICATIO-PRIN-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Communication",
+        "Animal care",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Communication as a Dog Walker / Pet Sitter:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for walk dogs safely.\n2. Apply Communication using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Communication \u2014 how work is executed to standard in Dog Walker / Pet Sitter roles.",
+        "what_you_need_to_know_first": [
+          "Communication is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Communication",
+            "definition": "Communication is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Communication",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Communication",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Communication",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for walk dogs safely.",
+          "Apply Communication using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for walk dogs safely.\n2. Apply Communication using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Communication workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Communication workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "What calculation or numeric validation do you rely on most when applying Communication as a Dog Walker / Pet Sitter while handling 'Walk dogs safely'?",
+      "why_asked": "Tests ability to work with numbers, metrics, or measurable outcomes in Communication.",
+      "skill_tag": "Communication",
+      "question_id": "DOG-WALKER-PET-SITTE-COMMUNICATIO-CALC-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Communication",
+        "Animal care",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Hand-waving without numbers",
+        "Wrong precision for context"
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "On a typical Dog Walker / Pet Sitter task involving Communication, I'd first identify what must be measured \u2014 for example load, flow, dose, or error rate. I'd gather inputs from site data or patient parameters, apply the appropriate formula or clinical calculation, show units, and compare against the limit before proceeding. I'd document the calculation on the test sheet or clinical record.",
+      "answer_explanation": "Quantitative method with formula, units, and limit check.",
+      "study_material": {
+        "overview": "For Communication, identify measurable quantities on typical Dog Walker / Pet Sitter tasks \u2014 loads, doses, rates, margins.",
+        "what_you_need_to_know_first": [
+          "Name what you would measure on site or in clinic.",
+          "State how you would calculate or estimate it.",
+          "Explain how the number drives a decision."
+        ],
+        "definitions": [
+          {
+            "term": "Communication",
+            "definition": "Communication is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Measurement",
+          "Estimation",
+          "Thresholds",
+          "Verification"
+        ],
+        "step_by_step_breakdown": [
+          "Identify the quantity (load, dose, flow, cost, latency).",
+          "State data sources and instruments.",
+          "Apply formula or rule of thumb.",
+          "Compare to limit and document."
+        ],
+        "explanations": [],
+        "practical_example": "In Dog Walker / Pet Sitter, I applied Communication to stabilize walk dogs safely under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Hand-waving without numbers",
+          "Wrong precision for context"
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "List three numeric checks you perform when using Communication."
+        ],
+        "revision_notes": [],
+        "related_concepts": [
+          "Communication"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "List three numeric checks you perform when using Communication."
+      ],
+      "revision_notes": []
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Dog Walker / Pet Sitter, define and explain these core professional terms: Animal Care, Clinical guideline pathway, Medication safety checks, Reliability, Outcome quality improves when assumption, Traceability prevents repeated failures .",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Animal Care",
+          "definition": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Animal Care: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Animal Care: Medication safety checks."
+        },
+        {
+          "term": "Reliability",
+          "definition": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        }
+      ],
+      "question_id": "DOG-WALKER-PET-SITTE-CORE-TERMINO-TERM-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Animal Care: Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Animal Care: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Animal Care: Medication safety checks.",
+        "Reliability: Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Dog Walker / Pet Sitter work, these terms are foundational:\n\n\n**Animal Care** \u2014 Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Animal Care: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Animal Care: Medication safety checks.\n\n**Reliability** \u2014 Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+      "answer_explanation": "Definitions covered: Animal Care, Clinical guideline pathway, Medication safety checks, Reliability, Outcome quality improves when assumption, Traceability prevents repeated failures ",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Dog Walker / Pet Sitter interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Animal Care",
+            "definition": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Animal Care: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Animal Care: Medication safety checks."
+          },
+          {
+            "term": "Reliability",
+            "definition": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Animal Care",
+            "explanation": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Animal Care: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Animal Care: Medication safety checks."
+          },
+          {
+            "skill": "Reliability",
+            "explanation": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          }
+        ],
+        "principles": [
+          "Animal Care: Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Animal Care: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Animal Care: Medication safety checks.",
+          "Reliability: Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs."
+        ],
+        "key_concepts": [
+          "Animal Care",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "Reliability",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Animal Care** \u2014 Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Animal Care: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Animal Care: Medication safety checks.",
+          "**Reliability** \u2014 Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs."
+        ],
+        "practical_example": "\u2022 Animal Care: Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Animal Care: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Animal Care: Medication safety checks.\n\u2022 Reliability: Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Animal Care",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "Reliability",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "related_concepts": [
+          "Animal Care",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "Reliability",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Animal Care",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "Reliability",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures "
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Walk dogs safely'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "DOG-WALKER-PET-SITTE-BEHAVIORAL-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcome\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Dog Walker / Pet Sitter handles when walk dogs safely. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Dog Walker / Pet Sitter work involves walk dogs safely under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Dog Walker / Pet Sitter",
+            "definition": "The Dog Walker / Pet Sitter role integrates Animal care, Reliability, Communication to deliver on responsibilities such as walk dogs safely. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Dog Walker / Pet Sitter reference walk dogs safely and relevant standards or tools."
+        ],
+        "practical_example": "In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Dog Walker / Pet Sitter challenge with numbers.",
+          "Link the story to: Walk dogs safely."
+        ],
+        "revision_notes": [
+          "Animal care",
+          "Reliability",
+          "Communication"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Dog Walker / Pet Sitter challenge with numbers.",
+        "Link the story to: Walk dogs safely."
+      ],
+      "revision_notes": [
+        "Animal care",
+        "Reliability",
+        "Communication"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Feed and check on pets'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "DOG-WALKER-PET-SITTE-BEHAVIORAL-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcome\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Dog Walker / Pet Sitter handles when walk dogs safely. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Dog Walker / Pet Sitter work involves walk dogs safely under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Dog Walker / Pet Sitter",
+            "definition": "The Dog Walker / Pet Sitter role integrates Animal care, Reliability, Communication to deliver on responsibilities such as walk dogs safely. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Dog Walker / Pet Sitter reference walk dogs safely and relevant standards or tools."
+        ],
+        "practical_example": "In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Dog Walker / Pet Sitter challenge with numbers.",
+          "Link the story to: Walk dogs safely."
+        ],
+        "revision_notes": [
+          "Animal care",
+          "Reliability",
+          "Communication"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Dog Walker / Pet Sitter challenge with numbers.",
+        "Link the story to: Walk dogs safely."
+      ],
+      "revision_notes": [
+        "Animal care",
+        "Reliability",
+        "Communication"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Send updates to owners'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "DOG-WALKER-PET-SITTE-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcome\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Dog Walker / Pet Sitter handles when walk dogs safely. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Dog Walker / Pet Sitter work involves walk dogs safely under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Dog Walker / Pet Sitter",
+            "definition": "The Dog Walker / Pet Sitter role integrates Animal care, Reliability, Communication to deliver on responsibilities such as walk dogs safely. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Dog Walker / Pet Sitter reference walk dogs safely and relevant standards or tools."
+        ],
+        "practical_example": "In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Dog Walker / Pet Sitter challenge with numbers.",
+          "Link the story to: Walk dogs safely."
+        ],
+        "revision_notes": [
+          "Animal care",
+          "Reliability",
+          "Communication"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Dog Walker / Pet Sitter challenge with numbers.",
+        "Link the story to: Walk dogs safely."
+      ],
+      "revision_notes": [
+        "Animal care",
+        "Reliability",
+        "Communication"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "In Dog Walker / Pet Sitter duties while handling 'Walk dogs safely', describe a deadline risk and the controls you used to keep delivery on track.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "DOG-WALKER-PET-SITTE-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcome\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Dog Walker / Pet Sitter handles when walk dogs safely. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Dog Walker / Pet Sitter work involves walk dogs safely under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Dog Walker / Pet Sitter",
+            "definition": "The Dog Walker / Pet Sitter role integrates Animal care, Reliability, Communication to deliver on responsibilities such as walk dogs safely. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Dog Walker / Pet Sitter reference walk dogs safely and relevant standards or tools."
+        ],
+        "practical_example": "In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Dog Walker / Pet Sitter challenge with numbers.",
+          "Link the story to: Walk dogs safely."
+        ],
+        "revision_notes": [
+          "Animal care",
+          "Reliability",
+          "Communication"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Dog Walker / Pet Sitter challenge with numbers.",
+        "Link the story to: Walk dogs safely."
+      ],
+      "revision_notes": [
+        "Animal care",
+        "Reliability",
+        "Communication"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Share an example from Dog Walker / Pet Sitter work while handling 'Walk dogs safely' where you improved process reliability or quality.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "DOG-WALKER-PET-SITTE-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcome\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Dog Walker / Pet Sitter handles when walk dogs safely. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Dog Walker / Pet Sitter work involves walk dogs safely under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Dog Walker / Pet Sitter",
+            "definition": "The Dog Walker / Pet Sitter role integrates Animal care, Reliability, Communication to deliver on responsibilities such as walk dogs safely. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Dog Walker / Pet Sitter reference walk dogs safely and relevant standards or tools."
+        ],
+        "practical_example": "In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Dog Walker / Pet Sitter challenge with numbers.",
+          "Link the story to: Walk dogs safely."
+        ],
+        "revision_notes": [
+          "Animal care",
+          "Reliability",
+          "Communication"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Dog Walker / Pet Sitter challenge with numbers.",
+        "Link the story to: Walk dogs safely."
+      ],
+      "revision_notes": [
+        "Animal care",
+        "Reliability",
+        "Communication"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Tell me about a cross-team disagreement in Dog Walker / Pet Sitter practice while handling 'Walk dogs safely' and how you reached alignment.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "DOG-WALKER-PET-SITTE-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcome\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Dog Walker / Pet Sitter handles when walk dogs safely. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Dog Walker / Pet Sitter work involves walk dogs safely under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Dog Walker / Pet Sitter",
+            "definition": "The Dog Walker / Pet Sitter role integrates Animal care, Reliability, Communication to deliver on responsibilities such as walk dogs safely. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Animal care supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Dog Walker / Pet Sitter reference walk dogs safely and relevant standards or tools."
+        ],
+        "practical_example": "In Dog Walker / Pet Sitter work involving walk dogs safely, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Dog Walker / Pet Sitter challenge with numbers.",
+          "Link the story to: Walk dogs safely."
+        ],
+        "revision_notes": [
+          "Animal care",
+          "Reliability",
+          "Communication"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Dog Walker / Pet Sitter challenge with numbers.",
+        "Link the story to: Walk dogs safely."
+      ],
+      "revision_notes": [
+        "Animal care",
+        "Reliability",
+        "Communication"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Dog Walker / Pet Sitter position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "DOG-WALKER-PET-SITTE-ROLE-SPECIFI-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Dog Walker / Pet Sitter, my approach to walk dogs safely is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Dog Walker / Pet Sitter practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Role Specific.",
+      "answer_explanation": "This answer covers: As Dog Walker / Pet Sitter, my approach to walk dogs safely is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and han\u2026",
+      "study_material": {
+        "overview": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely. In Dog Walker / Pet Sitter practice, Role Specific directly supports walk dogs safely. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely. In Dog Walker / Pet Sitter practice, Role Specific directly supports walk dogs safely. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Animal Care",
+            "explanation": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Reliability",
+            "explanation": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for walk dogs safely.",
+          "Apply Role Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely. In Dog Walker / Pet Sitter practice, Role Specific directly supports walk dogs safely. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+        ],
+        "practical_example": "In Dog Walker / Pet Sitter, I applied Role Specific to stabilize walk dogs safely under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Walk dogs safely.",
+          "List the standards that govern Role Specific in Dog Walker / Pet Sitter work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Walk dogs safely.",
+        "List the standards that govern Role Specific in Dog Walker / Pet Sitter work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Dog Walker / Pet Sitter context: Walk dogs safely. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Dog Walker / Pet Sitter context: Walk dogs safely.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "DOG-WALKER-PET-SITTE-COMPANY-SPEC-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Animal care",
+        "Reliability",
+        "Communication",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Dog Walker / Pet Sitter, my approach to walk dogs safely is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Dog Walker / Pet Sitter practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Company Specific.",
+      "answer_explanation": "This answer covers: As Dog Walker / Pet Sitter, my approach to walk dogs safely is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and han\u2026",
+      "study_material": {
+        "overview": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely. In Dog Walker / Pet Sitter practice, Company Specific directly supports walk dogs safely. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely. In Dog Walker / Pet Sitter practice, Company Specific directly supports walk dogs safely. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Animal Care",
+            "explanation": "Animal Care in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Reliability",
+            "explanation": "Reliability is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for walk dogs safely.",
+          "Apply Company Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely. In Dog Walker / Pet Sitter practice, Company Specific directly supports walk dogs safely. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Dog Walker / Pet Sitter professionals apply when performing walk dogs safely."
+        ],
+        "practical_example": "In Dog Walker / Pet Sitter, I applied Company Specific to stabilize walk dogs safely under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Walk dogs safely.",
+          "List the standards that govern Company Specific in Dog Walker / Pet Sitter work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Walk dogs safely.",
+        "List the standards that govern Company Specific in Dog Walker / Pet Sitter work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:31:29.356076+00:00",
+  "confidence_score": 0.9
+}

@@ -1,531 +1,664 @@
 /**
  * CVBuilderPage.tsx
- * =================
- * Two-panel CV builder:
- *   Left  — form controls (sections, template picker, target job)
- *   Right — live preview panel with 10 template styles, zoom, ATS/Visual toggle
- *
- * GUARDRAIL: The system NEVER invents data. All content comes strictly from the
- * user's saved profile. The AI "generates" formatting improvements and bullet
- * rewrites only — the underlying experience, company names, dates, and
- * certifications are always sourced from profile data.
+ * Premium AI CV builder — profile-driven, live CV viewer, template gallery,
+ * section toggles + reorder, target job import, multi-format export.
  */
 
-import { useState, useRef } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { motion, AnimatePresence } from "framer-motion";
+import { useSearchParams, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
-  FileText, Download, Eye, Maximize2, Minimize2, Zap,
-  ChevronDown, ChevronUp, LayoutTemplate, AlignLeft,
-  CheckCircle, Info, Loader2, ZoomIn, ZoomOut, RefreshCw,
-  Briefcase, GraduationCap, Award, Code, User, Globe,
+  FileText, Download, Zap, ChevronUp, ChevronDown,
+  Info, ZoomIn, ZoomOut, RefreshCw, Briefcase,
+  Monitor, Smartphone, Printer, Star, GripVertical, User, Sparkles,
 } from "lucide-react";
-import { cvApi, profileApi } from "../lib/api";
+import { cvApi, jobApi, profileApi } from "../lib/api";
 import { Button } from "../components/ui/Button";
-import { Input } from "../components/ui/Input";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card";
+import { Input, Textarea } from "../components/ui/Input";
 import { Badge } from "../components/ui/Badge";
 import { Spinner } from "../components/ui/Spinner";
 import { useUIStore } from "../store/ui";
-import type { GeneratedCVRead } from "../types/api";
+import type { GeneratedCVRead, SavedJobRead } from "../types/api";
 
-// ─── Constants ─────────────────────────────────────────────────────────────
+const DEFAULT_CV_KEY = "ck_default_cv_id";
 
 const TEMPLATES = [
-  { id: "modern",      label: "Modern",      accent: "#8B5CF6", category: "visual" },
-  { id: "professional",label: "Professional", accent: "#0EA5E9", category: "visual" },
-  { id: "minimal",     label: "Minimal",     accent: "#6B7280", category: "ats" },
-  { id: "bold",        label: "Bold",        accent: "#F59E0B", category: "visual" },
-  { id: "elegant",     label: "Elegant",     accent: "#EC4899", category: "visual" },
-  { id: "executive",   label: "Executive",   accent: "#1E40AF", category: "visual" },
-  { id: "tech",        label: "Tech",        accent: "#10B981", category: "ats" },
-  { id: "creative",    label: "Creative",    accent: "#F97316", category: "visual" },
-  { id: "academic",    label: "Academic",    accent: "#7C3AED", category: "ats" },
-  { id: "compact",     label: "Compact",     accent: "#374151", category: "ats" },
+  { id: "modern", label: "Modern", accent: "#8B5CF6", category: "visual", backend: "modern" },
+  { id: "professional", label: "Classic", accent: "#0EA5E9", category: "visual", backend: "classic" },
+  { id: "minimal", label: "Minimalist", accent: "#6B7280", category: "ats", backend: "compact" },
+  { id: "bold", label: "Creative", accent: "#F97316", category: "visual", backend: "creative" },
+  { id: "elegant", label: "Designer", accent: "#EC4899", category: "visual", backend: "creative" },
+  { id: "executive", label: "Executive", accent: "#1E40AF", category: "visual", backend: "classic" },
+  { id: "tech", label: "Tech", accent: "#10B981", category: "ats", backend: "modern" },
+  { id: "academic", label: "Academic", accent: "#7C3AED", category: "ats", backend: "classic" },
+  { id: "compact", label: "ATS-Optimized", accent: "#374151", category: "ats", backend: "compact" },
+  { id: "startup", label: "Startup", accent: "#06B6D4", category: "visual", backend: "modern" },
+  { id: "federal", label: "Federal / Govt", accent: "#1D4ED8", category: "ats", backend: "classic" },
+  { id: "two-column", label: "Two-Column", accent: "#A855F7", category: "visual", backend: "creative" },
 ];
 
-const SECTIONS = [
-  { id: "summary",        label: "Summary",         icon: <User size={14} /> },
-  { id: "experience",     label: "Experience",       icon: <Briefcase size={14} /> },
-  { id: "education",      label: "Education",        icon: <GraduationCap size={14} /> },
-  { id: "skills",         label: "Skills",           icon: <Code size={14} /> },
-  { id: "certifications", label: "Certifications",   icon: <Award size={14} /> },
-  { id: "projects",       label: "Projects",         icon: <Globe size={14} /> },
+const BASE_SECTIONS = [
+  { id: "summary", label: "Summary" },
+  { id: "experience", label: "Experience" },
+  { id: "education", label: "Education" },
+  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
+  { id: "certifications", label: "Certifications" },
+  { id: "publications", label: "Publications" },
+  { id: "languages", label: "Languages" },
+  { id: "volunteer", label: "Volunteer" },
+  { id: "awards", label: "Awards" },
+  { id: "references", label: "References" },
+  { id: "custom", label: "Custom sections" },
 ];
 
-// ─── Mock CV preview renderer ───────────────────────────────────────────────
-// In production this would be a real-time PDF preview via a backend endpoint.
-// Here we render a styled HTML representation of the CV content.
+type CvSection = { section_id?: string; title: string; content?: string; items?: string[]; entries?: Record<string, unknown>[]; section_type?: string; free_text_content?: string | null; tags?: string[] };
 
-function CVPreviewContent({
+function formatDateRange(start?: string | null, end?: string | null, isCurrent?: boolean) {
+  const fmt = (v?: string | null) => (v ? String(v).slice(0, 7) : "");
+  if (!start && !end) return "";
+  return `${fmt(start)} – ${isCurrent ? "Present" : fmt(end)}`.trim();
+}
+
+function CVSectionBlock({ section, accent }: { section: CvSection; accent: string }) {
+  const titleStyle = { fontSize: "0.75rem", fontWeight: 700 as const, color: accent, textTransform: "uppercase" as const, letterSpacing: "0.08em", marginBottom: "0.5rem" };
+
+  if (section.content) {
+    return (
+      <div style={{ marginBottom: "1.25rem" }}>
+        <p style={titleStyle}>{section.title}</p>
+        <p>{section.content}</p>
+      </div>
+    );
+  }
+
+  if (section.items?.length) {
+    return (
+      <div style={{ marginBottom: "1.25rem" }}>
+        <p style={titleStyle}>{section.title}</p>
+        <p>{section.items.join(" · ")}</p>
+      </div>
+    );
+  }
+
+  if (section.free_text_content) {
+    return (
+      <div style={{ marginBottom: "1.25rem" }}>
+        <p style={titleStyle}>{section.title}</p>
+        <p>{section.free_text_content}</p>
+      </div>
+    );
+  }
+
+  if (section.tags?.length) {
+    return (
+      <div style={{ marginBottom: "1.25rem" }}>
+        <p style={titleStyle}>{section.title}</p>
+        <p>{section.tags.join(" · ")}</p>
+      </div>
+    );
+  }
+
+  if (!section.entries?.length) return null;
+
+  return (
+    <div style={{ marginBottom: "1.25rem", borderBottom: `1px solid ${accent}22`, paddingBottom: "0.75rem" }}>
+      <p style={titleStyle}>{section.title}</p>
+      {section.entries.map((entry, j) => {
+        const heading = (entry.job_title || entry.title || entry.name || entry.role || entry.degree) as string | undefined;
+        const sub = (entry.company_name || entry.institution || entry.issuing_organization || entry.organization || entry.publisher || entry.field_of_study || entry.proficiency) as string | undefined;
+        const dates = formatDateRange(entry.start_date as string, entry.end_date as string, entry.is_current as boolean);
+        const bullets = (entry.bullets || entry.description_bullets || entry.key_achievements) as string[] | undefined;
+        const description = entry.description != null ? String(entry.description) : "";
+        return (
+          <div key={j} style={{ marginBottom: "0.6rem" }}>
+            {heading && <strong>{heading}</strong>}
+            {sub && <span style={{ color: "#555" }}> — {sub}</span>}
+            {dates && <div style={{ color: "#777", fontSize: "0.68rem" }}>{dates}</div>}
+            {description && <p>{description}</p>}
+            {bullets?.map((b, k) => <div key={k} style={{ paddingLeft: "0.75rem" }}>• {b}</div>)}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function buildProfileSections(profile: any, enabledSections: string[]): CvSection[] {
+  if (!profile) return [];
+  const sections: CvSection[] = [];
+
+  if (enabledSections.includes("summary") && (profile.bio_summary || profile.professional_headline)) {
+    sections.push({ section_id: "summary", title: "Professional Summary", content: profile.bio_summary || profile.professional_headline });
+  }
+  if (enabledSections.includes("experience") && profile.work_experiences?.length) {
+    sections.push({
+      section_id: "experience", title: "Work Experience",
+      entries: profile.work_experiences.map((we: any) => ({
+        job_title: we.job_title, company_name: we.company_name, location: we.location,
+        start_date: we.start_date, end_date: we.end_date, is_current: we.is_current,
+        bullets: we.description_bullets,
+      })),
+    });
+  }
+  if (enabledSections.includes("education") && profile.educations?.length) {
+    sections.push({
+      section_id: "education", title: "Education",
+      entries: profile.educations.map((edu: any) => ({
+        degree: edu.degree, institution: edu.institution, field_of_study: edu.field_of_study,
+        start_date: edu.start_date, end_date: edu.end_date, is_current: edu.is_current, grade: edu.grade,
+      })),
+    });
+  }
+  if (enabledSections.includes("skills") && profile.skills?.length) {
+    sections.push({ section_id: "skills", title: "Skills", items: profile.skills.map((s: any) => s.name || s) });
+  }
+  if (enabledSections.includes("projects") && profile.projects?.length) {
+    sections.push({
+      section_id: "projects", title: "Projects",
+      entries: profile.projects.map((p: any) => ({
+        title: p.title, role: p.role, description: p.description, technologies: p.technologies,
+        bullets: p.key_achievements,
+      })),
+    });
+  }
+  if (enabledSections.includes("certifications") && profile.certifications?.length) {
+    sections.push({ section_id: "certifications", title: "Certifications", entries: profile.certifications });
+  }
+  if (enabledSections.includes("publications") && profile.publications?.length) {
+    sections.push({ section_id: "publications", title: "Publications", entries: profile.publications });
+  }
+  if (enabledSections.includes("languages") && profile.languages?.length) {
+    sections.push({ section_id: "languages", title: "Languages", entries: profile.languages });
+  }
+  if (enabledSections.includes("volunteer") && profile.volunteer_entries?.length) {
+    sections.push({ section_id: "volunteer", title: "Volunteer Experience", entries: profile.volunteer_entries });
+  }
+  if (enabledSections.includes("awards") && profile.awards?.length) {
+    sections.push({ section_id: "awards", title: "Awards", entries: profile.awards });
+  }
+  if (enabledSections.includes("references") && profile.references?.length) {
+    sections.push({ section_id: "references", title: "References", entries: profile.references });
+  }
+  if (enabledSections.includes("custom") && profile.custom_sections?.length) {
+    for (const cs of profile.custom_sections) {
+      sections.push({
+        section_id: `custom-${cs.id}`, title: cs.title, section_type: cs.section_type,
+        free_text_content: cs.free_text_content, tags: cs.tags, entries: cs.entries,
+      });
+    }
+  }
+  return sections;
+}
+
+type PreviewMode = "visual" | "ats";
+type ViewportMode = "desktop" | "mobile" | "print";
+
+function RenderedCVPreview({
+  content,
   template,
   mode,
-  profile,
-  targetJob,
-  targetCompany,
-  enabledSections,
+}: {
+  content: Record<string, unknown>;
+  template: (typeof TEMPLATES)[0];
+  mode: PreviewMode;
+}) {
+  const info = (content.personal_info ?? {}) as Record<string, string>;
+  const sections = (content.sections ?? []) as CvSection[];
+  const accent = mode === "ats" ? "#333" : template.accent;
+  const fontFamily = mode === "ats" ? "Arial, sans-serif" : "Georgia, serif";
+
+  return (
+    <div style={{ fontFamily, fontSize: "0.72rem", color: "#1a1a1a", background: "#fff", padding: "1.5rem 1.75rem", minHeight: "260mm", lineHeight: 1.45 }}>
+      <div style={{ marginBottom: "1.25rem", paddingBottom: "0.75rem", borderBottom: `3px solid ${accent}` }}>
+        <h1 style={{ fontSize: "1.25rem", fontWeight: 700, color: accent, margin: 0 }}>{info.full_name ?? "Your Name"}</h1>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", fontSize: "0.68rem", color: "#555", marginTop: "4px" }}>
+          {info.email && <span>{info.email}</span>}
+          {info.phone && <span>{info.phone}</span>}
+          {info.location && <span>{info.location}</span>}
+        </div>
+        {info.headline && <p style={{ marginTop: "4px", color: "#555", fontSize: "0.7rem" }}>{info.headline}</p>}
+      </div>
+      {sections.map((section, i) => (
+        <CVSectionBlock key={section.section_id ?? i} section={section} accent={accent} />
+      ))}
+    </div>
+  );
+}
+
+function ProfileCVPreview({
+  template, mode, profile, targetJob, targetCompany, enabledSections, roleTargeted, targetRoleTitle,
 }: {
   template: (typeof TEMPLATES)[0];
-  mode: "visual" | "ats";
+  mode: PreviewMode;
   profile: any;
   targetJob: string;
   targetCompany: string;
   enabledSections: string[];
+  roleTargeted?: boolean;
+  targetRoleTitle?: string;
 }) {
-  const name = (profile as any)?.full_name ?? "Your Name";
-  const email = profile?.email ?? "email@example.com";
-  const phone = profile?.phone ?? "";
-  const location = profile?.location ?? "";
-  const summary = profile?.summary ?? "Experienced professional with a strong track record of delivering impactful results.";
-  const experience = profile?.experience ?? [];
-  const education = profile?.education ?? [];
-  const skills = profile?.skills ?? [];
-  const certs = profile?.certifications ?? [];
-  const projects = profile?.projects ?? [];
-
+  const name = profile?.full_name ?? "Your Name";
   const accent = mode === "ats" ? "#333" : template.accent;
-  const fontFamily = mode === "ats"
-    ? "'Arial', sans-serif"
-    : template.id === "elegant" ? "'Georgia', serif"
-    : template.id === "academic" ? "'Times New Roman', serif"
-    : "var(--font-sans)";
-
-  const sectionStyle: React.CSSProperties = {
-    marginBottom: "1.25rem",
-    borderBottom: mode === "ats" ? "1px solid #ccc" : `2px solid ${accent}22`,
-    paddingBottom: "0.75rem",
-  };
-  const sectionHeadStyle: React.CSSProperties = {
-    fontFamily,
-    fontSize: mode === "ats" ? "0.8rem" : "0.75rem",
-    fontWeight: 700,
-    color: mode === "ats" ? "#000" : accent,
-    textTransform: "uppercase",
-    letterSpacing: mode === "ats" ? "0.05em" : "0.1em",
-    marginBottom: "0.6rem",
-  };
+  const headline = roleTargeted && targetRoleTitle
+    ? `Targeting: ${targetRoleTitle}`
+    : (targetJob ? `${targetJob}${targetCompany ? ` · ${targetCompany}` : ""}` : profile?.professional_headline);
+  const sections = buildProfileSections(profile, enabledSections);
 
   return (
-    <div style={{
-      fontFamily,
-      fontSize: "0.72rem",
-      color: "#1a1a1a",
-      background: "#fff",
-      padding: "2rem 2.25rem",
-      minHeight: "297mm",
-      boxSizing: "border-box",
-      lineHeight: 1.45,
-    }}>
-      {/* Header */}
-      <div style={{
-        marginBottom: "1.5rem",
-        paddingBottom: "1rem",
-        borderBottom: `3px solid ${mode === "ats" ? "#333" : accent}`,
-      }}>
-        <h1 style={{ fontFamily, fontSize: "1.4rem", fontWeight: 700, color: mode === "ats" ? "#000" : accent, margin: 0 }}>{name}</h1>
-        {targetJob && (
-          <p style={{ fontSize: "0.8rem", fontWeight: 500, color: "#555", margin: "3px 0 6px" }}>{targetJob}{targetCompany && ` · Targeting ${targetCompany}`}</p>
+    <div style={{ fontFamily: mode === "ats" ? "Arial" : "sans-serif", fontSize: "0.72rem", background: "#fff", padding: "1.5rem", minHeight: "260mm", color: "#1a1a1a" }}>
+      <div style={{ borderBottom: `3px solid ${accent}`, paddingBottom: "0.75rem", marginBottom: "1rem" }}>
+        <h1 style={{ color: accent, fontSize: "1.2rem", margin: 0 }}>{name}</h1>
+        {headline && <p style={{ color: "#555", marginTop: "4px", fontSize: "0.7rem" }}>{headline}</p>}
+        {roleTargeted && (
+          <p style={{ marginTop: "6px", fontSize: "0.65rem", color: "#888" }}>
+            Role-targeted mode — enabled sections will be fully generated by AI for this role.
+          </p>
         )}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", fontSize: "0.72rem", color: "#555", marginTop: "4px" }}>
-          {email    && <span>{email}</span>}
-          {phone    && <span>{phone}</span>}
-          {location && <span>{location}</span>}
-        </div>
       </div>
-
-      {/* Summary */}
-      {enabledSections.includes("summary") && (
-        <div style={sectionStyle}>
-          <p style={sectionHeadStyle}>Professional Summary</p>
-          <p>{summary}</p>
-        </div>
-      )}
-
-      {/* Experience */}
-      {enabledSections.includes("experience") && experience.length > 0 && (
-        <div style={sectionStyle}>
-          <p style={sectionHeadStyle}>Work Experience</p>
-          {experience.map((exp: any, i: number) => (
-            <div key={i} style={{ marginBottom: "0.75rem" }}>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <strong>{exp.title ?? "Job Title"}</strong>
-                <span style={{ color: "#777" }}>{exp.start_date} – {exp.end_date ?? "Present"}</span>
-              </div>
-              <div style={{ color: "#555", marginBottom: "4px" }}>{exp.company}</div>
-              {exp.bullets?.slice(0, 3).map((b: string, j: number) => (
-                <div key={j} style={{ paddingLeft: "0.75rem" }}>• {b}</div>
-              ))}
-            </div>
-          ))}
-          {experience.length === 0 && (
-            <p style={{ color: "#aaa", fontStyle: "italic" }}>No experience data — add it in your Profile.</p>
-          )}
-        </div>
-      )}
-
-      {/* Education */}
-      {enabledSections.includes("education") && (
-        <div style={sectionStyle}>
-          <p style={sectionHeadStyle}>Education</p>
-          {education.length > 0 ? education.map((edu: any, i: number) => (
-            <div key={i} style={{ marginBottom: "0.5rem" }}>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <strong>{edu.degree ?? "Degree"}</strong>
-                <span style={{ color: "#777" }}>{edu.graduation_year}</span>
-              </div>
-              <div style={{ color: "#555" }}>{edu.institution}</div>
-            </div>
-          )) : (
-            <p style={{ color: "#aaa", fontStyle: "italic" }}>No education data — add it in your Profile.</p>
-          )}
-        </div>
-      )}
-
-      {/* Skills */}
-      {enabledSections.includes("skills") && skills.length > 0 && (
-        <div style={sectionStyle}>
-          <p style={sectionHeadStyle}>Skills</p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem" }}>
-            {skills.map((s: string, i: number) => (
-              <span key={i} style={{
-                padding: "2px 8px",
-                borderRadius: "4px",
-                background: mode === "ats" ? "#eee" : `${accent}18`,
-                color: mode === "ats" ? "#333" : accent,
-                fontSize: "0.68rem",
-              }}>{s}</span>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Certifications */}
-      {enabledSections.includes("certifications") && certs.length > 0 && (
-        <div style={sectionStyle}>
-          <p style={sectionHeadStyle}>Certifications</p>
-          {certs.map((c: any, i: number) => (
-            <div key={i}>• {typeof c === "string" ? c : c.name}</div>
-          ))}
-        </div>
-      )}
-
-      {/* Projects */}
-      {enabledSections.includes("projects") && projects.length > 0 && (
-        <div style={sectionStyle}>
-          <p style={sectionHeadStyle}>Projects</p>
-          {projects.slice(0, 3).map((p: any, i: number) => (
-            <div key={i} style={{ marginBottom: "0.5rem" }}>
-              <strong>{p.name ?? "Project"}</strong>
-              {p.description && <div style={{ color: "#555" }}>{p.description}</div>}
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* ATS watermark */}
-      {mode === "ats" && (
-        <div style={{ marginTop: "2rem", fontSize: "0.65rem", color: "#bbb", textAlign: "center" }}>
-          ATS-optimised plain text format — all content sourced from your profile
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ─── Template picker ───────────────────────────────────────────────────────
-function TemplatePicker({ selected, onChange }: { selected: string; onChange: (id: string) => void }) {
-  return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "0.5rem" }}>
-      {TEMPLATES.map(t => (
-        <button
-          key={t.id}
-          onClick={() => onChange(t.id)}
-          style={{
-            padding: "0.5rem 0.35rem",
-            borderRadius: "8px",
-            border: selected === t.id ? `2px solid ${t.accent}` : "1px solid var(--border-subtle)",
-            background: selected === t.id ? `${t.accent}14` : "var(--bg-overlay)",
-            cursor: "pointer",
-            color: selected === t.id ? t.accent : "var(--text-secondary)",
-            fontSize: "0.7rem",
-            fontWeight: selected === t.id ? 700 : 400,
-            transition: "all 0.15s",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "4px",
-          }}
-        >
-          <div style={{ width: "20px", height: "4px", borderRadius: "2px", background: t.accent }} />
-          {t.label}
-          <span style={{ fontSize: "0.6rem", color: "#999" }}>{t.category.toUpperCase()}</span>
-        </button>
+      {sections.length === 0 ? (
+        <p style={{ color: "#888", fontSize: "0.75rem" }}>
+          {roleTargeted ? "Toggle sections on, then generate to create AI content for this role." : "Add profile data or generate a CV to preview sections."}
+        </p>
+      ) : sections.map((section, i) => (
+        <CVSectionBlock key={section.section_id ?? i} section={section} accent={accent} />
       ))}
     </div>
   );
 }
 
-// ─── Section toggles ───────────────────────────────────────────────────────
-function SectionToggles({ enabled, onChange }: { enabled: string[]; onChange: (s: string[]) => void }) {
+function SectionOrderList({ sections, onChange, sectionDefs }: { sections: string[]; onChange: (s: string[]) => void; sectionDefs: { id: string; label: string }[] }) {
   const toggle = (id: string) =>
-    onChange(enabled.includes(id) ? enabled.filter(x => x !== id) : [...enabled, id]);
+    onChange(sections.includes(id) ? sections.filter((x) => x !== id) : [...sections, id]);
+  const move = (id: string, dir: -1 | 1) => {
+    const idx = sections.indexOf(id);
+    if (idx < 0) return;
+    const next = [...sections];
+    const swap = idx + dir;
+    if (swap < 0 || swap >= next.length) return;
+    [next[idx], next[swap]] = [next[swap], next[idx]];
+    onChange(next);
+  };
+
+  const allIds = sectionDefs.map((s) => s.id);
+  const ordered = [...sections, ...allIds.filter((id) => !sections.includes(id))];
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-      {SECTIONS.map(s => (
-        <label key={s.id} style={{ display: "flex", alignItems: "center", gap: "0.75rem", cursor: "pointer", padding: "0.5rem 0.625rem", borderRadius: "8px", border: "1px solid var(--border-subtle)", background: enabled.includes(s.id) ? "rgba(139,92,246,0.05)" : "transparent" }}>
-          <input
-            type="checkbox"
-            checked={enabled.includes(s.id)}
-            onChange={() => toggle(s.id)}
-            style={{ accentColor: "var(--accent-violet)", width: "14px", height: "14px" }}
-          />
-          <span style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.8rem", color: "var(--text-primary)" }}>
-            {s.icon}{s.label}
-          </span>
-        </label>
-      ))}
-    </div>
-  );
-}
-
-// ─── Saved CVs list ────────────────────────────────────────────────────────
-function SavedCVsList({ onLoad }: { onLoad: (cv: GeneratedCVRead) => void }) {
-  const { data: cvs, isLoading } = useQuery({ queryKey: ["cvs"], queryFn: () => cvApi.list() });
-  const qc = useQueryClient();
-  const { addToast } = useUIStore();
-
-  const deleteMutation = useMutation({
-    mutationFn: (id: string) => cvApi.delete(id),
-    onSuccess: () => { qc.invalidateQueries({ queryKey: ["cvs"] }); addToast({ type: "success", message: "CV deleted." }); },
-  });
-
-  if (isLoading) return <Spinner size="sm" />;
-  if (!cvs?.length) return <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>No CVs yet. Generate your first below.</p>;
-
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-      {cvs.map((cv: GeneratedCVRead) => (
-        <div key={cv.id} style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.5rem 0.75rem", borderRadius: "8px", border: "1px solid var(--border-subtle)", background: "var(--bg-overlay)" }}>
-          <FileText size={14} style={{ color: "var(--accent-violet)", flexShrink: 0 }} />
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <p style={{ fontSize: "0.8rem", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{cv.name || cv.template || "Untitled CV"}</p>
-            <p style={{ fontSize: "0.7rem", color: "var(--text-secondary)" }}>{cv.template} · {cv.enabled_sections?.length ?? 0} sections</p>
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+      {ordered.map((id) => {
+        const sec = sectionDefs.find((s) => s.id === id);
+        if (!sec) return null;
+        const enabled = sections.includes(id);
+        return (
+          <div key={id} style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.45rem 0.5rem", borderRadius: "8px", border: "1px solid var(--border-subtle)", background: enabled ? "rgba(139,92,246,0.05)" : "transparent" }}>
+            <GripVertical size={12} style={{ color: "var(--text-muted)" }} />
+            <input type="checkbox" checked={enabled} onChange={() => toggle(id)} style={{ accentColor: "var(--accent-violet)" }} />
+            <span style={{ flex: 1, fontSize: "0.8rem" }}>{sec.label}</span>
+            {enabled && (
+              <>
+                <button type="button" onClick={() => move(id, -1)} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text-secondary)" }}><ChevronUp size={14} /></button>
+                <button type="button" onClick={() => move(id, 1)} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text-secondary)" }}><ChevronDown size={14} /></button>
+              </>
+            )}
           </div>
-          <Button variant="ghost" size="sm" onClick={() => onLoad(cv)}>Load</Button>
-          <Button variant="ghost" size="sm" onClick={() => deleteMutation.mutate(cv.id)}>×</Button>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
 
-// ─── Main page ─────────────────────────────────────────────────────────────
 export default function CVBuilderPage() {
   const { addToast } = useUIStore();
   const qc = useQueryClient();
+  const [searchParams] = useSearchParams();
+  const jobIdParam = searchParams.get("jobId");
+
   const { data: profile } = useQuery({ queryKey: ["profile"], queryFn: () => profileApi.get() });
-
-  // Form state
-  const [selectedTemplate, setSelectedTemplate] = useState("modern");
-  const [mode, setMode] = useState<"visual" | "ats">("visual");
-  const [enabledSections, setEnabledSections] = useState(["summary", "experience", "education", "skills", "certifications"]);
-  const [targetJob, setTargetJob] = useState("");
-  const [targetCompany, setTargetCompany] = useState("");
-  const [cvName, setCvName] = useState("");
-  const [zoom, setZoom] = useState(0.65);
-  const [lastCvId, setLastCvId] = useState<string | null>(null);
-
-  // Newest CV first — used as the export target when the user hasn't just
-  // generated one this session.
+  const { data: jobs } = useQuery({ queryKey: ["jobs"], queryFn: () => jobApi.list() });
   const { data: cvs } = useQuery({ queryKey: ["cvs"], queryFn: () => cvApi.list() });
 
-  const template = TEMPLATES.find(t => t.id === selectedTemplate) ?? TEMPLATES[0];
+  const [selectedTemplate, setSelectedTemplate] = useState("modern");
+  const [mode, setMode] = useState<PreviewMode>("visual");
+  const [viewport, setViewport] = useState<ViewportMode>("desktop");
+  const [enabledSections, setEnabledSections] = useState([
+    "summary", "experience", "education", "skills", "certifications", "projects",
+  ]);
+  const [roleTargetedMode, setRoleTargetedMode] = useState(false);
+  const [targetRoleTitle, setTargetRoleTitle] = useState("");
+  const [targetRoleDescription, setTargetRoleDescription] = useState("");
+  const [targetJobId, setTargetJobId] = useState<string>("");
+  const [targetJobDescription, setTargetJobDescription] = useState("");
+  const [cvName, setCvName] = useState("");
+  const [tone, setTone] = useState<"concise" | "detailed" | "executive">("concise");
+  const [zoom, setZoom] = useState(0.48);
+  const [lastCvId, setLastCvId] = useState<string | null>(null);
+  const [defaultCvId, setDefaultCvId] = useState<string | null>(localStorage.getItem(DEFAULT_CV_KEY));
+
+  const { data: generatedCv } = useQuery({
+    queryKey: ["cv", lastCvId],
+    queryFn: () => cvApi.get(lastCvId!),
+    enabled: !!lastCvId,
+  });
+
+  const template = TEMPLATES.find((t) => t.id === selectedTemplate) ?? TEMPLATES[0];
+  const selectedJob = jobs?.find((j) => j.id === targetJobId);
+
+  const sectionDefs = useMemo(() => {
+    const defs = [...BASE_SECTIONS];
+    const customCount = profile?.custom_sections?.length ?? 0;
+    if (customCount > 0) {
+      const customIdx = defs.findIndex((d) => d.id === "custom");
+      if (customIdx >= 0) defs[customIdx] = { ...defs[customIdx], label: `Custom sections (${customCount})` };
+    }
+    return defs;
+  }, [profile?.custom_sections?.length]);
+
+  useEffect(() => {
+    if (jobIdParam && jobs?.length) setTargetJobId(jobIdParam);
+  }, [jobIdParam, jobs]);
+
+  useEffect(() => {
+    if (selectedJob) {
+      setTargetJobDescription(selectedJob.description_raw ?? "");
+      if (!cvName) setCvName(`${selectedJob.title} — ${selectedJob.company_name ?? "CV"}`);
+    }
+  }, [selectedJob]);
+
+  const previewContent = generatedCv?.rendered_content as Record<string, unknown> | undefined;
+  const hasRendered = previewContent && Object.keys(previewContent).length > 0;
+
+  const viewportWidth = viewport === "mobile" ? "320px" : "210mm";
 
   const generateMutation = useMutation({
-    mutationFn: () => cvApi.generate({
-      template: selectedTemplate,
-      enabled_sections: enabledSections,
-      target_job_title: targetJob || undefined,
-      target_company: targetCompany || undefined,
-      name: cvName || `${(profile as any)?.full_name ?? "My"} CV — ${selectedTemplate}`,
-    }),
+    mutationFn: () => {
+      if (roleTargetedMode && !targetRoleTitle.trim()) {
+        throw new Error("role-required");
+      }
+      return cvApi.generate({
+        name: cvName || `${profile?.full_name ?? "My"} CV`,
+        target_job_id: targetJobId || undefined,
+        template: template.backend,
+        section_ids: enabledSections,
+        tone,
+        generation_mode: roleTargetedMode ? "role_targeted" : "profile",
+        target_role_title: roleTargetedMode ? targetRoleTitle.trim() : undefined,
+        target_role_description: roleTargetedMode
+          ? (targetRoleDescription || targetJobDescription || undefined)
+          : undefined,
+      });
+    },
     onSuccess: (cv: GeneratedCVRead) => {
       setLastCvId(cv.id);
       qc.invalidateQueries({ queryKey: ["cvs"] });
-      addToast({ type: "success", title: "CV generated!", message: "Your CV has been saved. Export it below." });
+      addToast({
+        type: "success",
+        title: "CV generated!",
+        message: roleTargetedMode
+          ? `AI authored content for the ${targetRoleTitle} role.`
+          : "Preview updated with AI-enhanced content from your profile.",
+      });
     },
-    onError: () => addToast({ type: "error", message: "CV generation failed. Try again." }),
+    onError: (e: any) => addToast({
+      type: e?.message === "role-required" ? "info" : "error",
+      message: e?.message === "role-required" ? "Enter a target role title for role-targeted generation." : "CV generation failed.",
+    }),
   });
 
-  // Real export: fetch the PDF (or DOCX) blob from the backend export route and
-  // trigger a browser download. Replaces the previous placeholder toast (§36 #4).
   const exportMutation = useMutation({
-    mutationFn: async (format: "pdf" | "docx") => {
+    mutationFn: async (format: "pdf" | "docx" | "markdown") => {
       const cvId = lastCvId ?? cvs?.[0]?.id;
       if (!cvId) throw new Error("no-cv");
       const blob = await cvApi.downloadPdf(cvId, format);
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `${(cvName || "cv").replace(/\s+/g, "_") || "cv"}.${format}`;
+      a.download = `${(cvName || "cv").replace(/\s+/g, "_")}.${format === "markdown" ? "md" : format}`;
       document.body.appendChild(a);
       a.click();
       a.remove();
       URL.revokeObjectURL(url);
     },
     onError: (e: any) =>
-      addToast(
-        e?.message === "no-cv"
-          ? { type: "info", message: "Generate a CV first, then export." }
-          : { type: "error", message: "Export failed. Please try again." }
-      ),
+      addToast(e?.message === "no-cv"
+        ? { type: "info", message: "Generate a CV first, then export." }
+        : { type: "error", message: "Export failed." }),
   });
 
-  const loadCV = (cv: GeneratedCVRead) => {
-    setSelectedTemplate(cv.template || "modern");
-    setEnabledSections(cv.enabled_sections ?? []);
-    setTargetJob(cv.target_job_title ?? "");
-    setTargetCompany(cv.target_company ?? "");
-    setCvName(cv.name || "");
-    addToast({ type: "info", message: `Loaded: ${cv.name || cv.template}` });
+  const loadCV = async (cv: GeneratedCVRead) => {
+    setSelectedTemplate(TEMPLATES.find((t) => t.backend === cv.template)?.id ?? cv.template);
+    setEnabledSections(cv.section_config?.filter((s) => s.enabled).map((s) => s.section_id) ?? []);
+    setCvName(cv.name);
+    setLastCvId(cv.id);
+    if (cv.target_job_id) setTargetJobId(cv.target_job_id);
+    const full = await cvApi.get(cv.id);
+    setLastCvId(full.id);
+    addToast({ type: "info", message: `Loaded: ${cv.name}` });
   };
 
+  const setAsDefault = (id: string) => {
+    localStorage.setItem(DEFAULT_CV_KEY, id);
+    setDefaultCvId(id);
+    addToast({ type: "success", message: "Default CV set for applications." });
+  };
+
+  const aiSuggestions = useMemo(() => {
+    const suggestions: string[] = [];
+    if (targetJobDescription.toLowerCase().includes("project")) suggestions.push("Enable Projects and move above Education for this role.");
+    if (targetJobDescription.toLowerCase().includes("certif")) suggestions.push("Highlight Certifications — detected in the job description.");
+    if (enabledSections.includes("skills") && !enabledSections.includes("projects")) suggestions.push("Consider enabling Projects to showcase applied skills.");
+    if (tone === "executive") suggestions.push("Executive tone pairs well with Summary + Experience first.");
+    return suggestions.length ? suggestions : ["Import a target job to receive AI section recommendations tailored to the role."];
+  }, [targetJobDescription, enabledSections, tone]);
+
   return (
-    <div style={{ display: "flex", height: "calc(100vh - 56px)", overflow: "hidden" }}>
-      {/* ── Left panel ── */}
-      <div style={{
-        width: "340px", flexShrink: 0,
-        overflowY: "auto", padding: "1.5rem",
-        borderRight: "1px solid var(--border-subtle)",
-        background: "var(--bg-base)",
-      }}>
+    <div className="cv-studio">
+      <div className="cv-studio__sidebar">
+        <span className="feature-hero__eyebrow" style={{ marginBottom: "0.75rem" }}><Sparkles size={12} /> AI CV Studio</span>
         <h1 style={{ fontFamily: "var(--font-heading)", fontSize: "1.3rem", fontWeight: 700, marginBottom: "0.25rem" }}>CV Builder</h1>
-        <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>
-          Content is sourced entirely from your profile — AI improves the writing only.
+        <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", marginBottom: "1rem" }}>
+          {roleTargetedMode
+            ? "Role-targeted mode — toggles control which sections the AI writes for a different job role."
+            : "Profile-driven · AI improves writing only · never invents experience."}
         </p>
 
-        {/* Profile data notice */}
-        <div style={{ display: "flex", gap: "0.5rem", padding: "0.6rem 0.75rem", borderRadius: "10px", background: "rgba(6,182,212,0.07)", border: "1px solid rgba(6,182,212,0.2)", marginBottom: "1.5rem", fontSize: "0.75rem", color: "var(--text-secondary)" }}>
-          <Info size={13} style={{ color: "var(--accent-cyan)", marginTop: "1px", flexShrink: 0 }} />
-          AI never invents experience, companies, dates, or certifications. All data comes from your profile.
+        <Link to="/profile" style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.6rem 0.75rem", borderRadius: "10px", background: "rgba(139,92,246,0.08)", border: "1px solid var(--border-subtle)", marginBottom: "1rem", fontSize: "0.75rem", color: "var(--accent-violet-bright)", textDecoration: "none" }}>
+          <User size={14} /> Edit profile data →
+        </Link>
+
+        <div style={{ display: "flex", gap: "0.5rem", padding: "0.6rem", borderRadius: "10px", background: roleTargetedMode ? "rgba(249,115,22,0.08)" : "rgba(6,182,212,0.07)", border: `1px solid ${roleTargetedMode ? "rgba(249,115,22,0.25)" : "rgba(6,182,212,0.2)"}`, marginBottom: "1.25rem", fontSize: "0.72rem", color: "var(--text-secondary)" }}>
+          <Info size={13} style={{ flexShrink: 0, marginTop: "1px", color: roleTargetedMode ? "#F97316" : "var(--accent-cyan)" }} />
+          {roleTargetedMode
+            ? "Section toggles are on/off only. The model fully generates content for each enabled section toward your target role."
+            : "All content is sourced from your profile. AI rewrites bullets for clarity and impact without fabricating facts."}
         </div>
 
-        {/* CV name */}
+        <div className="feature-glass" style={{ padding: "0.75rem", marginBottom: "1rem" }}>
+          <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.78rem", fontWeight: 600, cursor: "pointer" }}>
+            <input
+              type="checkbox"
+              checked={roleTargetedMode}
+              onChange={(e) => setRoleTargetedMode(e.target.checked)}
+              style={{ accentColor: "var(--accent-violet)" }}
+            />
+            Generate for a different target role
+          </label>
+          {roleTargetedMode && (
+            <div style={{ marginTop: "0.75rem", display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+              <Input
+                label="Target role title"
+                value={targetRoleTitle}
+                onChange={(e) => setTargetRoleTitle(e.target.value)}
+                placeholder="e.g. Senior Product Manager"
+                fullWidth
+              />
+              <Textarea
+                label="Role / JD context (optional)"
+                value={targetRoleDescription}
+                onChange={(e) => setTargetRoleDescription(e.target.value)}
+                placeholder="Describe the role, responsibilities, or paste a job description…"
+                rows={3}
+                fullWidth
+              />
+            </div>
+          )}
+        </div>
+
+        <div style={{ marginBottom: "1rem" }}>
+          <Input label="CV name" value={cvName} onChange={(e) => setCvName(e.target.value)} placeholder="e.g. Senior Engineer — Acme" fullWidth />
+        </div>
+
+        <div style={{ marginBottom: "1rem" }}>
+          <label style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-secondary)", display: "block", marginBottom: "0.4rem" }}>Target job (import)</label>
+          <select
+            value={targetJobId}
+            onChange={(e) => setTargetJobId(e.target.value)}
+            style={{ width: "100%", padding: "0.55rem", borderRadius: "8px", background: "var(--bg-overlay)", border: "1px solid var(--border-subtle)", color: "var(--text-primary)", fontSize: "0.8rem", marginBottom: "0.5rem" }}
+          >
+            <option value="">No target job</option>
+            {jobs?.map((j: SavedJobRead) => <option key={j.id} value={j.id}>{j.title} — {j.company_name}</option>)}
+          </select>
+          <Textarea
+            label="Target job description"
+            value={targetJobDescription}
+            onChange={(e) => setTargetJobDescription(e.target.value)}
+            placeholder="Paste or import a job description to tailor keyword alignment…"
+            rows={4}
+            fullWidth
+          />
+        </div>
+
         <div style={{ marginBottom: "1.25rem" }}>
-          <Input label="CV name (optional)" value={cvName} onChange={e => setCvName(e.target.value)} placeholder="e.g. Senior Engineer — Google" fullWidth />
+          <p style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-secondary)", marginBottom: "0.5rem" }}>SECTIONS (toggle + reorder)</p>
+          <SectionOrderList sections={enabledSections} onChange={setEnabledSections} sectionDefs={sectionDefs} />
         </div>
 
-        {/* Target job */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginBottom: "1.5rem" }}>
-          <Input label="Target job title" value={targetJob} onChange={e => setTargetJob(e.target.value)} placeholder="e.g. Senior Software Engineer" fullWidth />
-          <Input label="Target company (optional)" value={targetCompany} onChange={e => setTargetCompany(e.target.value)} placeholder="e.g. Google" fullWidth />
+        <div className="feature-glass" style={{ padding: "0.75rem", marginBottom: "1.25rem", fontSize: "0.72rem" }}>
+          <p style={{ fontWeight: 600, marginBottom: "0.35rem", color: "var(--accent-cyan)" }}><Sparkles size={12} style={{ display: "inline", marginRight: 4 }} />AI section suggestions</p>
+          <ul style={{ margin: 0, paddingLeft: "1rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>
+            {aiSuggestions.map((s, i) => <li key={i}>{s}</li>)}
+          </ul>
         </div>
 
-        {/* Sections */}
-        <div style={{ marginBottom: "1.5rem" }}>
-          <p style={{ fontSize: "0.8rem", fontWeight: 600, marginBottom: "0.75rem", color: "var(--text-secondary)" }}>SECTIONS</p>
-          <SectionToggles enabled={enabledSections} onChange={setEnabledSections} />
-        </div>
-
-        {/* Template picker */}
-        <div style={{ marginBottom: "1.5rem" }}>
-          <p style={{ fontSize: "0.8rem", fontWeight: 600, marginBottom: "0.75rem", color: "var(--text-secondary)" }}>TEMPLATE</p>
-          <TemplatePicker selected={selectedTemplate} onChange={setSelectedTemplate} />
-        </div>
-
-        {/* Mode toggle */}
-        <div style={{ marginBottom: "1.5rem" }}>
-          <p style={{ fontSize: "0.8rem", fontWeight: 600, marginBottom: "0.75rem", color: "var(--text-secondary)" }}>MODE</p>
-          <div style={{ display: "flex", borderRadius: "10px", overflow: "hidden", border: "1px solid var(--border-subtle)" }}>
-            {(["visual", "ats"] as const).map(m => (
-              <button key={m} onClick={() => setMode(m)} style={{
-                flex: 1, padding: "0.5rem",
-                background: mode === m ? "var(--accent-violet)" : "transparent",
-                color: mode === m ? "#fff" : "var(--text-secondary)",
-                border: "none", cursor: "pointer", fontSize: "0.8rem", fontWeight: 600,
-              }}>
-                {m === "visual" ? "🎨 Visual" : "📄 ATS"}
+        <div style={{ marginBottom: "1.25rem" }}>
+          <p style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-secondary)", marginBottom: "0.5rem" }}>TEMPLATE GALLERY (12)</p>
+          <div className="cv-template-grid">
+            {TEMPLATES.map((t) => (
+              <button key={t.id} onClick={() => setSelectedTemplate(t.id)} className={`cv-template-tile${selectedTemplate === t.id ? " cv-template-tile--active" : ""}`}>
+                <div className="cv-template-tile__swatch" style={{ background: t.accent }} />
+                {t.label}
+                <span style={{ display: "block", fontSize: "0.6rem", opacity: 0.7 }}>{t.category.toUpperCase()}</span>
               </button>
             ))}
           </div>
-          <p style={{ fontSize: "0.7rem", color: "var(--text-secondary)", marginTop: "0.5rem" }}>
-            {mode === "ats" ? "Plain text format optimised for Applicant Tracking Systems." : "Rich design with colours and typography."}
-          </p>
         </div>
 
-        {/* Actions */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.625rem" }}>
+        <div style={{ marginBottom: "1.25rem" }}>
+          <p style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-secondary)", marginBottom: "0.5rem" }}>TONE</p>
+          <div style={{ display: "flex", gap: "0.4rem" }}>
+            {(["concise", "detailed", "executive"] as const).map((t) => (
+              <button key={t} onClick={() => setTone(t)} style={{
+                flex: 1, padding: "0.4rem", borderRadius: "8px", fontSize: "0.72rem", cursor: "pointer", textTransform: "capitalize",
+                border: tone === t ? "2px solid var(--accent-violet)" : "1px solid var(--border-subtle)",
+                background: tone === t ? "rgba(139,92,246,0.08)" : "transparent",
+              }}>{t}</button>
+            ))}
+          </div>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1.5rem" }}>
           <Button variant="primary" fullWidth onClick={() => generateMutation.mutate()} loading={generateMutation.isPending} leftIcon={<Zap size={15} />}>
             Generate & Save CV
           </Button>
-          <Button variant="secondary" fullWidth leftIcon={<Download size={15} />} loading={exportMutation.isPending} onClick={() => exportMutation.mutate("pdf")}>
-            Export PDF
-          </Button>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "0.4rem" }}>
+            {(["pdf", "docx", "markdown"] as const).map((fmt) => (
+              <Button key={fmt} variant="secondary" size="sm" onClick={() => exportMutation.mutate(fmt)} loading={exportMutation.isPending}>
+                {fmt.toUpperCase()}
+              </Button>
+            ))}
+          </div>
         </div>
 
-        {/* Saved CVs */}
-        <div style={{ marginTop: "1.75rem" }}>
-          <p style={{ fontSize: "0.8rem", fontWeight: 600, marginBottom: "0.75rem", color: "var(--text-secondary)" }}>SAVED CVs</p>
-          <SavedCVsList onLoad={loadCV} />
+        <div>
+          <p style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-secondary)", marginBottom: "0.5rem" }}>SAVED CV LIBRARY</p>
+          {!cvs?.length ? <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)" }}>No CVs yet.</p> : (
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+              {cvs.map((cv) => (
+                <div key={cv.id} style={{ display: "flex", alignItems: "center", gap: "0.4rem", padding: "0.5rem", borderRadius: "8px", border: "1px solid var(--border-subtle)" }}>
+                  <FileText size={13} style={{ color: "var(--accent-violet)" }} />
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <p style={{ fontSize: "0.75rem", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{cv.name}</p>
+                    <p style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>{cv.template}</p>
+                  </div>
+                  {defaultCvId === cv.id && <Star size={12} style={{ color: "var(--accent-amber)" }} />}
+                  <Button variant="ghost" size="sm" onClick={() => loadCV(cv)}>Load</Button>
+                  <Button variant="ghost" size="sm" onClick={() => setAsDefault(cv.id)} title="Set as default"><Star size={12} /></Button>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
-      {/* ── Right preview panel ── */}
-      <div style={{ flex: 1, overflow: "hidden", display: "flex", flexDirection: "column", background: "#e5e7eb" }}>
-        {/* Preview toolbar */}
-        <div style={{
-          display: "flex", alignItems: "center", gap: "0.75rem",
-          padding: "0.625rem 1.25rem",
-          background: "var(--bg-glass)", backdropFilter: "blur(16px)",
-          borderBottom: "1px solid var(--border-subtle)", flexShrink: 0,
-        }}>
-          <div style={{ flex: 1, display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <Badge color="violet" size="sm" dot>{template.label}</Badge>
-            <Badge color={mode === "ats" ? "cyan" : "amber"} size="sm">{mode.toUpperCase()}</Badge>
+      <div className="cv-studio__viewer">
+        <div className="cv-studio__toolbar">
+          <span style={{ fontWeight: 700, fontSize: "0.8rem" }}>CV Viewer</span>
+          <Badge color="violet" size="sm">{template.label}</Badge>
+          <div style={{ display: "flex", gap: "0.25rem" }}>
+            {(["visual", "ats"] as const).map((m) => (
+              <button key={m} onClick={() => setMode(m)} style={{ padding: "0.25rem 0.5rem", borderRadius: "6px", fontSize: "0.7rem", border: "none", cursor: "pointer", background: mode === m ? "var(--accent-violet)" : "var(--bg-overlay)", color: mode === m ? "#fff" : "var(--text-secondary)" }}>
+                {m === "visual" ? "Visual" : "ATS"}
+              </button>
+            ))}
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <Button variant="ghost" size="sm" onClick={() => setZoom(z => Math.max(0.3, z - 0.1))}><ZoomOut size={14} /></Button>
-            <span style={{ fontSize: "0.75rem", color: "var(--text-secondary)", minWidth: "36px", textAlign: "center" }}>{Math.round(zoom * 100)}%</span>
-            <Button variant="ghost" size="sm" onClick={() => setZoom(z => Math.min(1.2, z + 0.1))}><ZoomIn size={14} /></Button>
-            <Button variant="ghost" size="sm" onClick={() => setZoom(0.65)}><RefreshCw size={14} /></Button>
+          <div style={{ display: "flex", gap: "0.25rem", marginLeft: "0.5rem" }}>
+            {([
+              { id: "desktop", icon: <Monitor size={13} /> },
+              { id: "mobile", icon: <Smartphone size={13} /> },
+              { id: "print", icon: <Printer size={13} /> },
+            ] as const).map((v) => (
+              <button key={v.id} onClick={() => setViewport(v.id)} style={{ padding: "0.3rem 0.5rem", borderRadius: "6px", border: viewport === v.id ? "2px solid var(--accent-violet)" : "1px solid var(--border-subtle)", background: "transparent", cursor: "pointer", color: viewport === v.id ? "var(--accent-violet)" : "var(--text-secondary)" }}>
+                {v.icon}
+              </button>
+            ))}
+          </div>
+          <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "0.4rem" }}>
+            <Button variant="ghost" size="sm" onClick={() => setZoom((z) => Math.max(0.3, z - 0.1))}><ZoomOut size={14} /></Button>
+            <span style={{ fontSize: "0.7rem", minWidth: "36px", textAlign: "center" }}>{Math.round(zoom * 100)}%</span>
+            <Button variant="ghost" size="sm" onClick={() => setZoom((z) => Math.min(1.2, z + 0.1))}><ZoomIn size={14} /></Button>
+            <Button variant="ghost" size="sm" onClick={() => setZoom(0.48)}><RefreshCw size={14} /></Button>
           </div>
         </div>
 
-        {/* Preview scroll area */}
-        <div style={{ flex: 1, overflow: "auto", display: "flex", justifyContent: "center", padding: "2rem" }}>
+        <div className="cv-studio__canvas">
+          {generateMutation.isPending && (
+            <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "rgba(10,16,32,0.85)", zIndex: 10, gap: "1rem" }}>
+              <div className="skeleton shimmer" style={{ width: 210, height: 297, borderRadius: 8 }} />
+              <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>AI agents enhancing your CV…</p>
+            </div>
+          )}
           <motion.div
             animate={{ scale: zoom }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            style={{
-              transformOrigin: "top center",
-              width: "210mm",
-              minWidth: "210mm",
-              boxShadow: "0 20px 60px rgba(0,0,0,0.25)",
-              borderRadius: "4px",
-              overflow: "hidden",
-            }}
+            style={{ transformOrigin: "top center", width: viewportWidth, minWidth: viewportWidth, boxShadow: "0 20px 60px rgba(0,0,0,0.2)", borderRadius: "4px", overflow: "hidden", position: "relative" }}
           >
-            <CVPreviewContent
-              template={template}
-              mode={mode}
-              profile={profile}
-              targetJob={targetJob}
-              targetCompany={targetCompany}
-              enabledSections={enabledSections}
-            />
+            {hasRendered ? (
+              <RenderedCVPreview content={previewContent!} template={template} mode={mode} />
+            ) : (
+              <ProfileCVPreview
+                template={template}
+                mode={mode}
+                profile={profile}
+                targetJob={selectedJob?.title ?? ""}
+                targetCompany={selectedJob?.company_name ?? ""}
+                enabledSections={enabledSections}
+                roleTargeted={roleTargetedMode}
+                targetRoleTitle={targetRoleTitle}
+              />
+            )}
+            <div style={{ position: "absolute", bottom: "48px", left: 0, right: 0, borderTop: "2px dashed #ccc", pointerEvents: "none" }}>
+              <span style={{ position: "absolute", top: "-10px", left: "50%", transform: "translateX(-50%)", background: "#fff", padding: "0 8px", fontSize: "0.6rem", color: "#999" }}>Page break</span>
+            </div>
           </motion.div>
-        </div>
-
-        {/* Page break indicator */}
-        <div style={{
-          position: "absolute", bottom: "120px", left: "50%", transform: "translateX(-50%)",
-          display: "flex", alignItems: "center", gap: "0.5rem",
-          padding: "3px 10px", borderRadius: "999px",
-          background: "rgba(0,0,0,0.5)", color: "#fff", fontSize: "0.65rem",
-          pointerEvents: "none",
-        }}>
-          ── Page break ──
         </div>
       </div>
     </div>

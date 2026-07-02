@@ -1,0 +1,3136 @@
+{
+  "role_name": "Babysitter / Nanny",
+  "role_slug": "babysitter_nanny",
+  "category": "custom_roles",
+  "role_overview": {
+    "role_name": "Babysitter / Nanny",
+    "summary": "The Babysitter / Nanny role integrates Childcare, First aid, Reliability to deliver on responsibilities such as supervise children. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Supervise children",
+      "Follow routines",
+      "Communicate with parents"
+    ],
+    "required_skills": [
+      "Childcare",
+      "First aid",
+      "Reliability"
+    ],
+    "what_employers_expect": [
+      "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: Childcare experience."
+    ],
+    "skill_clusters": [
+      "Education",
+      "Healthcare",
+      "Hospitality Operations"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Explain Childcare to a new teacher and include how you evidence learner progress.",
+      "why_asked": "Tests genuine conceptual understanding of Childcare, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Childcare",
+      "question_id": "BABYSITTER-NANNY-CHILDCARE-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Childcare without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Babysitter / Nanny context, Childcare starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how supervise children stays reliable under real operational constraints.\n\nOn shift as Babysitter / Nanny, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Childcare:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Babysitter / Nanny practice, Childcare directly supports supervise children. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Childcare",
+            "definition": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Childcare",
+            "explanation": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Babysitter / Nanny practice, Childcare directly supports supervise children. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "First Aid",
+            "explanation": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Childcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "education",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Babysitter / Nanny practice, Childcare directly supports supervise children. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Babysitter / Nanny, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Childcare without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Childcare applies to: Supervise children.",
+          "List the standards that govern Childcare in Babysitter / Nanny work.",
+          "Write out the verification steps after completing a Childcare task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Childcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "education"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Childcare applies to: Supervise children.",
+        "List the standards that govern Childcare in Babysitter / Nanny work.",
+        "Write out the verification steps after completing a Childcare task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a difficult classroom/learning challenge where Childcare improved outcomes.",
+      "why_asked": "Probes depth of hands-on experience with Childcare under real constraints.",
+      "skill_tag": "Childcare",
+      "question_id": "BABYSITTER-NANNY-CHILDCARE-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Childcare without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Babysitter / Nanny context, Childcare starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how supervise children stays reliable under real operational constraints.\n\nOn shift as Babysitter / Nanny, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Childcare:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Babysitter / Nanny practice, Childcare directly supports supervise children. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Childcare",
+            "definition": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Childcare",
+            "explanation": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Babysitter / Nanny practice, Childcare directly supports supervise children. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "First Aid",
+            "explanation": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Childcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "education",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Babysitter / Nanny practice, Childcare directly supports supervise children. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Babysitter / Nanny, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Childcare without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Childcare applies to: Supervise children.",
+          "List the standards that govern Childcare in Babysitter / Nanny work.",
+          "Write out the verification steps after completing a Childcare task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Childcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "education"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Childcare applies to: Supervise children.",
+        "List the standards that govern Childcare in Babysitter / Nanny work.",
+        "Write out the verification steps after completing a Childcare task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for Childcare in Babysitter / Nanny practice while handling 'Supervise children', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand Childcare from those who only name-drop it.",
+      "skill_tag": "Childcare",
+      "terminology_terms": [
+        {
+          "term": "Childcare",
+          "definition": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Childcare: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Childcare: Medication safety checks."
+        },
+        {
+          "term": "SBAR handover",
+          "definition": "Standard/framework governing Childcare: SBAR handover."
+        },
+        {
+          "term": "Early escalation prevents preventable de",
+          "definition": "Early escalation prevents preventable deterioration."
+        },
+        {
+          "term": "Medication errors often occur at transit",
+          "definition": "Medication errors often occur at transition points and handovers."
+        },
+        {
+          "term": "Documentation quality is directly linked",
+          "definition": "Documentation quality is directly linked to continuity of care."
+        },
+        {
+          "term": "Early escalation prevents preventable deterioration.",
+          "definition": "Related concept used with Childcare in professional practice."
+        }
+      ],
+      "question_id": "BABYSITTER-NANNY-CHILDCARE-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Childcare: Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Childcare: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Childcare: Medication safety checks.",
+        "SBAR handover: Standard/framework governing Childcare: SBAR handover.",
+        "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Babysitter / Nanny work, these terms are foundational:\n\n\n**Childcare** \u2014 Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Childcare: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Childcare: Medication safety checks.\n\n**SBAR handover** \u2014 Standard/framework governing Childcare: SBAR handover.\n\n**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.\n\n**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.\n\n**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.\n\n**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Childcare in professional practice.",
+      "answer_explanation": "Definitions covered: Childcare, Clinical guideline pathway, Medication safety checks, SBAR handover, Early escalation prevents preventable de, Medication errors often occur at transit",
+      "study_material": {
+        "overview": "Core terminology for Childcare \u2014 precise definitions required for Babysitter / Nanny interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Childcare terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Childcare",
+            "definition": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Childcare: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Childcare: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Standard/framework governing Childcare: SBAR handover."
+          },
+          {
+            "term": "Early escalation prevents preventable de",
+            "definition": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "term": "Medication errors often occur at transit",
+            "definition": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "term": "Documentation quality is directly linked",
+            "definition": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "term": "Early escalation prevents preventable deterioration.",
+            "definition": "Related concept used with Childcare in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Childcare",
+            "explanation": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Childcare: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Childcare: Medication safety checks."
+          },
+          {
+            "skill": "SBAR handover",
+            "explanation": "Standard/framework governing Childcare: SBAR handover."
+          },
+          {
+            "skill": "Early escalation prevents preventable de",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Medication errors often occur at transit",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Documentation quality is directly linked",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "skill": "Early escalation prevents preventable deterioration.",
+            "explanation": "Related concept used with Childcare in professional practice."
+          }
+        ],
+        "principles": [
+          "Childcare: Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Childcare: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Childcare: Medication safety checks.",
+          "SBAR handover: Standard/framework governing Childcare: SBAR handover.",
+          "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+        ],
+        "key_concepts": [
+          "Childcare",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Childcare** \u2014 Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Childcare: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Childcare: Medication safety checks.",
+          "**SBAR handover** \u2014 Standard/framework governing Childcare: SBAR handover.",
+          "**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.",
+          "**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.",
+          "**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.",
+          "**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Childcare in professional practice."
+        ],
+        "practical_example": "\u2022 Childcare: Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Childcare: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Childcare: Medication safety checks.\n\u2022 SBAR handover: Standard/framework governing Childcare: SBAR handover.\n\u2022 Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Childcare terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Childcare",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "related_concepts": [
+          "Childcare",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Childcare terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Childcare",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "SBAR handover",
+        "Early escalation prevents preventable de",
+        "Medication errors often occur at transit",
+        "Documentation quality is directly linked",
+        "Early escalation prevents preventable deterioration."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What instructional principles and lesson workflow guide Childcare in Babysitter / Nanny practice?",
+      "why_asked": "Tests whether you know how Childcare is actually executed to standard, not only what it is called.",
+      "skill_tag": "Childcare",
+      "question_id": "BABYSITTER-NANNY-CHILDCARE-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Childcare as a Babysitter / Nanny:\n\n1. Early escalation prevents preventable deterioration.\n2. Medication errors often occur at transition points and handovers.\n3. Documentation quality is directly linked to continuity of care.\n\nStandard workflow:\n1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Childcare \u2014 how work is executed to standard in Babysitter / Nanny roles.",
+        "what_you_need_to_know_first": [
+          "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Childcare",
+            "definition": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Childcare",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Childcare",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Childcare",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "practical_example": "1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Childcare workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Childcare workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Numbers-driven check for Babysitter / Nanny work using Childcare while handling 'Supervise children': Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?",
+      "why_asked": "Tests numerical and analytical competence in Childcare \u2014 essential for Babysitter / Nanny roles.",
+      "skill_tag": "Childcare",
+      "calculation": {
+        "skill": "Childcare",
+        "prompt": "Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?",
+        "answer": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+        "steps": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ]
+      },
+      "question_id": "BABYSITTER-NANNY-CHILDCARE-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Calculate percentage",
+        "Compare to target",
+        "Plan intervention"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?\n\nWorking:\n1. Calculate percentage\n2. Compare to target\n3. Plan intervention\n\nAnswer: 18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.\n\nIn Babysitter / Nanny practice, I anchor this using: Calculate percentage, Compare to target, Given data.",
+      "answer_explanation": "Calculation: 18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+      "study_material": {
+        "overview": "Quantitative problem for Childcare: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "explanations": [
+          "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+          "Step: Calculate percentage",
+          "Step: Compare to target",
+          "Step: Plan intervention"
+        ],
+        "practical_example": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Childcare calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "related_concepts": [
+          "Childcare",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Childcare calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "Calculate percentage",
+        "Compare to target",
+        "Plan intervention"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "As a Babysitter / Nanny, explain First aid to a newly qualified clinician and include clinical safety checks.",
+      "why_asked": "Tests genuine conceptual understanding of First aid, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "First aid",
+      "question_id": "BABYSITTER-NANNY-FIRST-AID-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "First aid",
+        "Childcare",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing First Aid without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Babysitter / Nanny context, First Aid starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how supervise children stays reliable under real operational constraints.\n\nOn shift as Babysitter / Nanny, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for First Aid:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Babysitter / Nanny practice, First Aid directly supports supervise children. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "First Aid",
+            "definition": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "First Aid",
+            "explanation": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Babysitter / Nanny practice, First Aid directly supports supervise children. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Childcare",
+            "explanation": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "First Aid",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Babysitter / Nanny practice, First Aid directly supports supervise children. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Babysitter / Nanny, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing First Aid without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how First Aid applies to: Supervise children.",
+          "List the standards that govern First Aid in Babysitter / Nanny work.",
+          "Write out the verification steps after completing a First Aid task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "First Aid",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how First Aid applies to: Supervise children.",
+        "List the standards that govern First Aid in Babysitter / Nanny work.",
+        "Write out the verification steps after completing a First Aid task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a high-risk clinical case where First aid changed patient management.",
+      "why_asked": "Probes depth of hands-on experience with First aid under real constraints.",
+      "skill_tag": "First aid",
+      "question_id": "BABYSITTER-NANNY-FIRST-AID-SCEN-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "First aid",
+        "Childcare",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing First Aid without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Babysitter / Nanny context, First Aid starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how supervise children stays reliable under real operational constraints.\n\nOn shift as Babysitter / Nanny, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for First Aid:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Babysitter / Nanny practice, First Aid directly supports supervise children. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "First Aid",
+            "definition": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "First Aid",
+            "explanation": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Babysitter / Nanny practice, First Aid directly supports supervise children. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Childcare",
+            "explanation": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "First Aid",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Babysitter / Nanny practice, First Aid directly supports supervise children. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Babysitter / Nanny, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing First Aid without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how First Aid applies to: Supervise children.",
+          "List the standards that govern First Aid in Babysitter / Nanny work.",
+          "Write out the verification steps after completing a First Aid task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "First Aid",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how First Aid applies to: Supervise children.",
+        "List the standards that govern First Aid in Babysitter / Nanny work.",
+        "Write out the verification steps after completing a First Aid task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for First aid in Babysitter / Nanny practice while handling 'Supervise children', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand First aid from those who only name-drop it.",
+      "skill_tag": "First aid",
+      "terminology_terms": [
+        {
+          "term": "First Aid",
+          "definition": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing First Aid: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing First Aid: Medication safety checks."
+        },
+        {
+          "term": "SBAR handover",
+          "definition": "Standard/framework governing First Aid: SBAR handover."
+        },
+        {
+          "term": "Early escalation prevents preventable de",
+          "definition": "Early escalation prevents preventable deterioration."
+        },
+        {
+          "term": "Medication errors often occur at transit",
+          "definition": "Medication errors often occur at transition points and handovers."
+        },
+        {
+          "term": "Documentation quality is directly linked",
+          "definition": "Documentation quality is directly linked to continuity of care."
+        },
+        {
+          "term": "Early escalation prevents preventable deterioration.",
+          "definition": "Related concept used with First Aid in professional practice."
+        }
+      ],
+      "question_id": "BABYSITTER-NANNY-FIRST-AID-TERM-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "First aid",
+        "Childcare",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "First Aid: First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing First Aid: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing First Aid: Medication safety checks.",
+        "SBAR handover: Standard/framework governing First Aid: SBAR handover.",
+        "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Babysitter / Nanny work, these terms are foundational:\n\n\n**First Aid** \u2014 First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing First Aid: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing First Aid: Medication safety checks.\n\n**SBAR handover** \u2014 Standard/framework governing First Aid: SBAR handover.\n\n**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.\n\n**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.\n\n**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.\n\n**Early escalation prevents preventable deterioration.** \u2014 Related concept used with First Aid in professional practice.",
+      "answer_explanation": "Definitions covered: First Aid, Clinical guideline pathway, Medication safety checks, SBAR handover, Early escalation prevents preventable de, Medication errors often occur at transit",
+      "study_material": {
+        "overview": "Core terminology for First Aid \u2014 precise definitions required for Babysitter / Nanny interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how First Aid terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "First Aid",
+            "definition": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing First Aid: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing First Aid: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Standard/framework governing First Aid: SBAR handover."
+          },
+          {
+            "term": "Early escalation prevents preventable de",
+            "definition": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "term": "Medication errors often occur at transit",
+            "definition": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "term": "Documentation quality is directly linked",
+            "definition": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "term": "Early escalation prevents preventable deterioration.",
+            "definition": "Related concept used with First Aid in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "First Aid",
+            "explanation": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing First Aid: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing First Aid: Medication safety checks."
+          },
+          {
+            "skill": "SBAR handover",
+            "explanation": "Standard/framework governing First Aid: SBAR handover."
+          },
+          {
+            "skill": "Early escalation prevents preventable de",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Medication errors often occur at transit",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Documentation quality is directly linked",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "skill": "Early escalation prevents preventable deterioration.",
+            "explanation": "Related concept used with First Aid in professional practice."
+          }
+        ],
+        "principles": [
+          "First Aid: First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing First Aid: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing First Aid: Medication safety checks.",
+          "SBAR handover: Standard/framework governing First Aid: SBAR handover.",
+          "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+        ],
+        "key_concepts": [
+          "First Aid",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**First Aid** \u2014 First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing First Aid: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing First Aid: Medication safety checks.",
+          "**SBAR handover** \u2014 Standard/framework governing First Aid: SBAR handover.",
+          "**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.",
+          "**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.",
+          "**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.",
+          "**Early escalation prevents preventable deterioration.** \u2014 Related concept used with First Aid in professional practice."
+        ],
+        "practical_example": "\u2022 First Aid: First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing First Aid: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing First Aid: Medication safety checks.\n\u2022 SBAR handover: Standard/framework governing First Aid: SBAR handover.\n\u2022 Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all First Aid terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "First Aid",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "related_concepts": [
+          "First Aid",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all First Aid terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "First Aid",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "SBAR handover",
+        "Early escalation prevents preventable de",
+        "Medication errors often occur at transit",
+        "Documentation quality is directly linked",
+        "Early escalation prevents preventable deterioration."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which clinical operating principles and protocol sequence govern First aid in Babysitter / Nanny practice?",
+      "why_asked": "Tests whether you know how First aid is actually executed to standard, not only what it is called.",
+      "skill_tag": "First aid",
+      "question_id": "BABYSITTER-NANNY-FIRST-AID-PRIN-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "First aid",
+        "Childcare",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for First Aid as a Babysitter / Nanny:\n\n1. Early escalation prevents preventable deterioration.\n2. Medication errors often occur at transition points and handovers.\n3. Documentation quality is directly linked to continuity of care.\n\nStandard workflow:\n1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for First Aid \u2014 how work is executed to standard in Babysitter / Nanny roles.",
+        "what_you_need_to_know_first": [
+          "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "First Aid",
+            "definition": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "First Aid",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "First Aid",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "First Aid",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "practical_example": "1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of First Aid workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of First Aid workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Quantitative validation scenario (Babysitter / Nanny, First aid) while handling 'Supervise children': Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?",
+      "why_asked": "Tests numerical and analytical competence in First aid \u2014 essential for Babysitter / Nanny roles.",
+      "skill_tag": "First aid",
+      "calculation": {
+        "skill": "First Aid",
+        "prompt": "Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?",
+        "answer": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+        "steps": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ]
+      },
+      "question_id": "BABYSITTER-NANNY-FIRST-AID-CALC-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "First aid",
+        "Childcare",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Score each parameter",
+        "Sum NEWS2",
+        "Apply escalation pathway"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?\n\nWorking:\n1. Score each parameter\n2. Sum NEWS2\n3. Apply escalation pathway\n\nAnswer: Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.\n\nIn Babysitter / Nanny practice, I anchor this using: Score each parameter, Sum NEWS2, Given data.",
+      "answer_explanation": "Calculation: Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+      "study_material": {
+        "overview": "Quantitative problem for First Aid: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "explanations": [
+          "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+          "Step: Score each parameter",
+          "Step: Sum NEWS2",
+          "Step: Apply escalation pathway"
+        ],
+        "practical_example": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this First Aid calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "related_concepts": [
+          "First Aid",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this First Aid calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "Score each parameter",
+        "Sum NEWS2",
+        "Apply escalation pathway"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "How would you teach Reliability to a new colleague in a Babysitter / Nanny team while handling 'Supervise children', including where beginners fail first?",
+      "why_asked": "Tests genuine conceptual understanding of Reliability, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Reliability",
+      "question_id": "BABYSITTER-NANNY-RELIABILITY-EXPL-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Reliability",
+        "Childcare",
+        "First aid",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Reliability without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Babysitter / Nanny context, Reliability starts with clarify required outcome, constraints, and stakeholders for supervise children. and continues through apply reliability using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how supervise children stays reliable under real operational constraints.\n\nIn Babysitter / Nanny, I applied Reliability to stabilize supervise children under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Reliability:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children. In Babysitter / Nanny practice, Reliability directly supports supervise children. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Reliability",
+            "definition": "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Reliability",
+            "explanation": "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children. In Babysitter / Nanny practice, Reliability directly supports supervise children. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Childcare",
+            "explanation": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Reliability",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for supervise children.",
+          "Apply Reliability using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children. In Babysitter / Nanny practice, Reliability directly supports supervise children. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children."
+        ],
+        "practical_example": "In Babysitter / Nanny, I applied Reliability to stabilize supervise children under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Reliability without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Reliability applies to: Supervise children.",
+          "List the standards that govern Reliability in Babysitter / Nanny work.",
+          "Write out the verification steps after completing a Reliability task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Reliability",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Reliability applies to: Supervise children.",
+        "List the standards that govern Reliability in Babysitter / Nanny work.",
+        "Write out the verification steps after completing a Reliability task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Give a detailed example where Reliability was critical to recovering a difficult Babysitter / Nanny outcome while handling 'Supervise children'.",
+      "why_asked": "Probes depth of hands-on experience with Reliability under real constraints.",
+      "skill_tag": "Reliability",
+      "question_id": "BABYSITTER-NANNY-RELIABILITY-SCEN-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Reliability",
+        "Childcare",
+        "First aid",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Reliability without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Babysitter / Nanny context, Reliability starts with clarify required outcome, constraints, and stakeholders for supervise children. and continues through apply reliability using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how supervise children stays reliable under real operational constraints.\n\nIn Babysitter / Nanny, I applied Reliability to stabilize supervise children under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Reliability:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children. In Babysitter / Nanny practice, Reliability directly supports supervise children. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Reliability",
+            "definition": "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Reliability",
+            "explanation": "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children. In Babysitter / Nanny practice, Reliability directly supports supervise children. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Childcare",
+            "explanation": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Reliability",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for supervise children.",
+          "Apply Reliability using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children. In Babysitter / Nanny practice, Reliability directly supports supervise children. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children."
+        ],
+        "practical_example": "In Babysitter / Nanny, I applied Reliability to stabilize supervise children under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Reliability without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Reliability applies to: Supervise children.",
+          "List the standards that govern Reliability in Babysitter / Nanny work.",
+          "Write out the verification steps after completing a Reliability task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Reliability",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Reliability applies to: Supervise children.",
+        "List the standards that govern Reliability in Babysitter / Nanny work.",
+        "Write out the verification steps after completing a Reliability task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Babysitter / Nanny practitioner in Reliability while handling 'Supervise children'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Reliability from those who only name-drop it.",
+      "skill_tag": "Reliability",
+      "terminology_terms": [
+        {
+          "term": "Reliability",
+          "definition": "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Reliability in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Reliability in professional practice."
+        }
+      ],
+      "question_id": "BABYSITTER-NANNY-RELIABILITY-TERM-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Reliability",
+        "Childcare",
+        "First aid",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Reliability: Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Reliability in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Reliability in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Babysitter / Nanny work, these terms are foundational:\n\n\n**Reliability** \u2014 Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Reliability in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Reliability in professional practice.",
+      "answer_explanation": "Definitions covered: Reliability, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Reliability \u2014 precise definitions required for Babysitter / Nanny interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Reliability terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Reliability",
+            "definition": "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Reliability in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Reliability in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Reliability",
+            "explanation": "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Reliability in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Reliability in professional practice."
+          }
+        ],
+        "principles": [
+          "Reliability: Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Reliability in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Reliability in professional practice."
+        ],
+        "key_concepts": [
+          "Reliability",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Reliability** \u2014 Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Reliability in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Reliability in professional practice."
+        ],
+        "practical_example": "\u2022 Reliability: Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Reliability in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Reliability terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Reliability",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Reliability",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Reliability terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Reliability",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the core operating principles and standard workflow for applying Reliability in a Babysitter / Nanny role while handling 'Supervise children'?",
+      "why_asked": "Tests whether you know how Reliability is actually executed to standard, not only what it is called.",
+      "skill_tag": "Reliability",
+      "question_id": "BABYSITTER-NANNY-RELIABILITY-PRIN-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Reliability",
+        "Childcare",
+        "First aid",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Reliability as a Babysitter / Nanny:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for supervise children.\n2. Apply Reliability using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Reliability \u2014 how work is executed to standard in Babysitter / Nanny roles.",
+        "what_you_need_to_know_first": [
+          "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Reliability",
+            "definition": "Reliability is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Reliability",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Reliability",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Reliability",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for supervise children.",
+          "Apply Reliability using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for supervise children.\n2. Apply Reliability using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Reliability workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Reliability workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Numbers-driven check for Babysitter / Nanny work using Reliability while handling 'Supervise children': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Reliability \u2014 essential for Babysitter / Nanny roles.",
+      "skill_tag": "Reliability",
+      "calculation": {
+        "skill": "Reliability",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "BABYSITTER-NANNY-RELIABILITY-CALC-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Reliability",
+        "Childcare",
+        "First aid",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Babysitter / Nanny practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Reliability: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Reliability calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Reliability",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Reliability calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Babysitter / Nanny, define and explain these core professional terms: Childcare, Clinical guideline pathway, Medication safety checks, First Aid, Clinical guideline pathway, Medication safety checks.",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Childcare",
+          "definition": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Childcare: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Childcare: Medication safety checks."
+        },
+        {
+          "term": "First Aid",
+          "definition": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing First Aid: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing First Aid: Medication safety checks."
+        }
+      ],
+      "question_id": "BABYSITTER-NANNY-CORE-TERMINO-TERM-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Childcare: Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Childcare: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Childcare: Medication safety checks.",
+        "First Aid: First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing First Aid: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing First Aid: Medication safety checks."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Babysitter / Nanny work, these terms are foundational:\n\n\n**Childcare** \u2014 Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Childcare: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Childcare: Medication safety checks.\n\n**First Aid** \u2014 First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing First Aid: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing First Aid: Medication safety checks.",
+      "answer_explanation": "Definitions covered: Childcare, Clinical guideline pathway, Medication safety checks, First Aid, Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Babysitter / Nanny interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Childcare",
+            "definition": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Childcare: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Childcare: Medication safety checks."
+          },
+          {
+            "term": "First Aid",
+            "definition": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing First Aid: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing First Aid: Medication safety checks."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Childcare",
+            "explanation": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Childcare: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Childcare: Medication safety checks."
+          },
+          {
+            "skill": "First Aid",
+            "explanation": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing First Aid: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing First Aid: Medication safety checks."
+          }
+        ],
+        "principles": [
+          "Childcare: Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Childcare: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Childcare: Medication safety checks.",
+          "First Aid: First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing First Aid: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing First Aid: Medication safety checks."
+        ],
+        "key_concepts": [
+          "Childcare",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "First Aid",
+          "Clinical guideline pathway",
+          "Medication safety checks"
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Childcare** \u2014 Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Childcare: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Childcare: Medication safety checks.",
+          "**First Aid** \u2014 First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing First Aid: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing First Aid: Medication safety checks."
+        ],
+        "practical_example": "\u2022 Childcare: Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Childcare: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Childcare: Medication safety checks.\n\u2022 First Aid: First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing First Aid: Clinical guideline pathway.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Childcare",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "First Aid",
+          "Clinical guideline pathway",
+          "Medication safety checks"
+        ],
+        "related_concepts": [
+          "Childcare",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "First Aid",
+          "Clinical guideline pathway",
+          "Medication safety checks"
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Childcare",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "First Aid",
+        "Clinical guideline pathway",
+        "Medication safety checks"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Supervise children'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "BABYSITTER-NANNY-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. \u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Babysitter / Nanny handles when supervise children. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Babysitter / Nanny work involves supervise children under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Babysitter / Nanny",
+            "definition": "The Babysitter / Nanny role integrates Childcare, First aid, Reliability to deliver on responsibilities such as supervise children. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Babysitter / Nanny reference supervise children and relevant standards or tools."
+        ],
+        "practical_example": "In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Babysitter / Nanny challenge with numbers.",
+          "Link the story to: Supervise children."
+        ],
+        "revision_notes": [
+          "Childcare",
+          "First aid",
+          "Reliability"
+        ],
+        "related_concepts": [
+          "Education",
+          "Healthcare",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Babysitter / Nanny challenge with numbers.",
+        "Link the story to: Supervise children."
+      ],
+      "revision_notes": [
+        "Childcare",
+        "First aid",
+        "Reliability"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Follow routines'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "BABYSITTER-NANNY-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. \u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Babysitter / Nanny handles when supervise children. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Babysitter / Nanny work involves supervise children under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Babysitter / Nanny",
+            "definition": "The Babysitter / Nanny role integrates Childcare, First aid, Reliability to deliver on responsibilities such as supervise children. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Babysitter / Nanny reference supervise children and relevant standards or tools."
+        ],
+        "practical_example": "In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Babysitter / Nanny challenge with numbers.",
+          "Link the story to: Supervise children."
+        ],
+        "revision_notes": [
+          "Childcare",
+          "First aid",
+          "Reliability"
+        ],
+        "related_concepts": [
+          "Education",
+          "Healthcare",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Babysitter / Nanny challenge with numbers.",
+        "Link the story to: Supervise children."
+      ],
+      "revision_notes": [
+        "Childcare",
+        "First aid",
+        "Reliability"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Communicate with parents'. Tell me about a time you did something similar. In this role-specific case, address: Babysitter / Nanny context: Supervise children.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "BABYSITTER-NANNY-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. \u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Babysitter / Nanny handles when supervise children. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Babysitter / Nanny work involves supervise children under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Babysitter / Nanny",
+            "definition": "The Babysitter / Nanny role integrates Childcare, First aid, Reliability to deliver on responsibilities such as supervise children. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Babysitter / Nanny reference supervise children and relevant standards or tools."
+        ],
+        "practical_example": "In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Babysitter / Nanny challenge with numbers.",
+          "Link the story to: Supervise children."
+        ],
+        "revision_notes": [
+          "Childcare",
+          "First aid",
+          "Reliability"
+        ],
+        "related_concepts": [
+          "Education",
+          "Healthcare",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Babysitter / Nanny challenge with numbers.",
+        "Link the story to: Supervise children."
+      ],
+      "revision_notes": [
+        "Childcare",
+        "First aid",
+        "Reliability"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe a difficult delivery challenge specific to Babysitter / Nanny responsibilities while handling 'Supervise children' and how you resolved it.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "BABYSITTER-NANNY-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. \u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Babysitter / Nanny handles when supervise children. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Babysitter / Nanny work involves supervise children under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Babysitter / Nanny",
+            "definition": "The Babysitter / Nanny role integrates Childcare, First aid, Reliability to deliver on responsibilities such as supervise children. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Babysitter / Nanny reference supervise children and relevant standards or tools."
+        ],
+        "practical_example": "In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Babysitter / Nanny challenge with numbers.",
+          "Link the story to: Supervise children."
+        ],
+        "revision_notes": [
+          "Childcare",
+          "First aid",
+          "Reliability"
+        ],
+        "related_concepts": [
+          "Education",
+          "Healthcare",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Babysitter / Nanny challenge with numbers.",
+        "Link the story to: Supervise children."
+      ],
+      "revision_notes": [
+        "Childcare",
+        "First aid",
+        "Reliability"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Tell me about a time you improved quality or outcomes in your Babysitter / Nanny work while handling 'Supervise children' using measurable evidence.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "BABYSITTER-NANNY-BEHAVIORAL-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. \u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Babysitter / Nanny handles when supervise children. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Babysitter / Nanny work involves supervise children under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Babysitter / Nanny",
+            "definition": "The Babysitter / Nanny role integrates Childcare, First aid, Reliability to deliver on responsibilities such as supervise children. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Babysitter / Nanny reference supervise children and relevant standards or tools."
+        ],
+        "practical_example": "In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Babysitter / Nanny challenge with numbers.",
+          "Link the story to: Supervise children."
+        ],
+        "revision_notes": [
+          "Childcare",
+          "First aid",
+          "Reliability"
+        ],
+        "related_concepts": [
+          "Education",
+          "Healthcare",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Babysitter / Nanny challenge with numbers.",
+        "Link the story to: Supervise children."
+      ],
+      "revision_notes": [
+        "Childcare",
+        "First aid",
+        "Reliability"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe a stakeholder conflict in Babysitter / Nanny work while handling 'Supervise children' and the decision framework you used.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "BABYSITTER-NANNY-BEHAVIORAL-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. \u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Babysitter / Nanny handles when supervise children. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Babysitter / Nanny work involves supervise children under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Babysitter / Nanny",
+            "definition": "The Babysitter / Nanny role integrates Childcare, First aid, Reliability to deliver on responsibilities such as supervise children. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Childcare supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Babysitter / Nanny reference supervise children and relevant standards or tools."
+        ],
+        "practical_example": "In Babysitter / Nanny work involving supervise children, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Babysitter / Nanny challenge with numbers.",
+          "Link the story to: Supervise children."
+        ],
+        "revision_notes": [
+          "Childcare",
+          "First aid",
+          "Reliability"
+        ],
+        "related_concepts": [
+          "Education",
+          "Healthcare",
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Babysitter / Nanny challenge with numbers.",
+        "Link the story to: Supervise children."
+      ],
+      "revision_notes": [
+        "Childcare",
+        "First aid",
+        "Reliability"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Babysitter / Nanny position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "BABYSITTER-NANNY-ROLE-SPECIFI-023",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Babysitter / Nanny, my approach to supervise children is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Babysitter / Nanny practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Role Specific.",
+      "answer_explanation": "This answer covers: As Babysitter / Nanny, my approach to supervise children is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand o\u2026",
+      "study_material": {
+        "overview": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children. In Babysitter / Nanny practice, Role Specific directly supports supervise children. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children. In Babysitter / Nanny practice, Role Specific directly supports supervise children. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Childcare",
+            "explanation": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "First Aid",
+            "explanation": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for supervise children.",
+          "Apply Role Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children. In Babysitter / Nanny practice, Role Specific directly supports supervise children. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children."
+        ],
+        "practical_example": "In Babysitter / Nanny, I applied Role Specific to stabilize supervise children under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Supervise children.",
+          "List the standards that govern Role Specific in Babysitter / Nanny work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Supervise children.",
+        "List the standards that govern Role Specific in Babysitter / Nanny work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Babysitter / Nanny context: Supervise children. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Babysitter / Nanny context: Supervise children.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "BABYSITTER-NANNY-COMPANY-SPEC-024",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Childcare",
+        "First aid",
+        "Reliability",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Babysitter / Nanny, my approach to supervise children is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Babysitter / Nanny practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Company Specific.",
+      "answer_explanation": "This answer covers: As Babysitter / Nanny, my approach to supervise children is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand o\u2026",
+      "study_material": {
+        "overview": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children. In Babysitter / Nanny practice, Company Specific directly supports supervise children. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children. In Babysitter / Nanny practice, Company Specific directly supports supervise children. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Childcare",
+            "explanation": "Childcare in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "First Aid",
+            "explanation": "First Aid in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for supervise children.",
+          "Apply Company Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children. In Babysitter / Nanny practice, Company Specific directly supports supervise children. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Babysitter / Nanny professionals apply when performing supervise children."
+        ],
+        "practical_example": "In Babysitter / Nanny, I applied Company Specific to stabilize supervise children under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Supervise children.",
+          "List the standards that govern Company Specific in Babysitter / Nanny work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Supervise children.",
+        "List the standards that govern Company Specific in Babysitter / Nanny work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:31:26.225604+00:00",
+  "confidence_score": 0.9
+}

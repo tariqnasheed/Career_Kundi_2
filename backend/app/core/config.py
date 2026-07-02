@@ -33,6 +33,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 # The backend/ directory — used to resolve relative paths deterministically
 # regardless of the working directory uvicorn is started from.
 _BACKEND_ROOT = Path(__file__).resolve().parent.parent.parent
+_PROJECT_ROOT = _BACKEND_ROOT.parent
 
 
 class Settings(BaseSettings):
@@ -78,6 +79,14 @@ class Settings(BaseSettings):
     vector_store_url: str = Field(default="")
     vector_store_provider: Literal["faiss", "pinecone", "weaviate"] = Field(default="faiss")
     graph_store_path: str = Field(default="")
+    documents_root: str = Field(default="", description="Project documents/ folder for role-pack PDF library")
+
+    @property
+    def resolved_documents_root(self) -> str:
+        """Absolute path to documents/ (role-pack PDF library + indexes)."""
+        if self.documents_root:
+            return str(Path(self.documents_root).resolve())
+        return str(_PROJECT_ROOT / "documents")
 
     @property
     def resolved_vector_store_path(self) -> str:

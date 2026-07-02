@@ -63,7 +63,7 @@ services:
       DATABASE_URL_SYNC: postgresql+psycopg2://${POSTGRES_USER:-careerkundi}:${POSTGRES_PASSWORD:-careerkundi}@db:5432/${POSTGRES_DB:-careerkundi}
       REDIS_URL: redis://redis:6379/0
     volumes:
-      - ./backend:/app                 # Hot-reload friendly bind mount for local dev
+      - ./backend/app:/app/app
       - vector_store:/app/data         # Persisted FAISS index + knowledge graph
     ports:
       - "8000:8000"

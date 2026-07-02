@@ -1,0 +1,3069 @@
+{
+  "role_name": "Occupational Therapist",
+  "role_slug": "occupational_therapist",
+  "category": "healthcare",
+  "role_overview": {
+    "role_name": "Occupational Therapist",
+    "summary": "The Occupational Therapist role integrates ADL training, Assistive technology, Mental health support to deliver on responsibilities such as support daily living skills. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Support daily living skills",
+      "Adapt environments for patients",
+      "Work with multidisciplinary teams"
+    ],
+    "required_skills": [
+      "ADL training",
+      "Assistive technology",
+      "Mental health support"
+    ],
+    "what_employers_expect": [
+      "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: OT degree."
+    ],
+    "skill_clusters": [
+      "Healthcare"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "As a Occupational Therapist, explain ADL training to a newly qualified clinician and include clinical safety checks.",
+      "why_asked": "Tests genuine conceptual understanding of ADL training, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "ADL training",
+      "question_id": "OCCUPATIONAL-THERAPI-ADL-TRAINING-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Adl Training without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Occupational Therapist context, Adl Training starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support daily living skills stays reliable under real operational constraints.\n\nOn shift as Occupational Therapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Adl Training:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Adl Training directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Adl Training",
+            "definition": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Adl Training",
+            "explanation": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Adl Training directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Assistive Technology",
+            "explanation": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Adl Training",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Adl Training directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Occupational Therapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Adl Training without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Adl Training applies to: Support daily living skills.",
+          "List the standards that govern Adl Training in Occupational Therapist work.",
+          "Write out the verification steps after completing a Adl Training task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Adl Training",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Adl Training applies to: Support daily living skills.",
+        "List the standards that govern Adl Training in Occupational Therapist work.",
+        "Write out the verification steps after completing a Adl Training task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a high-risk clinical case where ADL training changed patient management.",
+      "why_asked": "Probes depth of hands-on experience with ADL training under real constraints.",
+      "skill_tag": "ADL training",
+      "question_id": "OCCUPATIONAL-THERAPI-ADL-TRAINING-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Adl Training without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Occupational Therapist context, Adl Training starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support daily living skills stays reliable under real operational constraints.\n\nOn shift as Occupational Therapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Adl Training:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Adl Training directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Adl Training",
+            "definition": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Adl Training",
+            "explanation": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Adl Training directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Assistive Technology",
+            "explanation": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Adl Training",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Adl Training directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Occupational Therapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Adl Training without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Adl Training applies to: Support daily living skills.",
+          "List the standards that govern Adl Training in Occupational Therapist work.",
+          "Write out the verification steps after completing a Adl Training task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Adl Training",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Adl Training applies to: Support daily living skills.",
+        "List the standards that govern Adl Training in Occupational Therapist work.",
+        "Write out the verification steps after completing a Adl Training task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for ADL training in Occupational Therapist practice while handling 'Support daily living skills', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand ADL training from those who only name-drop it.",
+      "skill_tag": "ADL training",
+      "terminology_terms": [
+        {
+          "term": "Adl Training",
+          "definition": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Adl Training: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Adl Training: Medication safety checks."
+        },
+        {
+          "term": "SBAR handover",
+          "definition": "Standard/framework governing Adl Training: SBAR handover."
+        },
+        {
+          "term": "Early escalation prevents preventable de",
+          "definition": "Early escalation prevents preventable deterioration."
+        },
+        {
+          "term": "Medication errors often occur at transit",
+          "definition": "Medication errors often occur at transition points and handovers."
+        },
+        {
+          "term": "Documentation quality is directly linked",
+          "definition": "Documentation quality is directly linked to continuity of care."
+        },
+        {
+          "term": "Early escalation prevents preventable deterioration.",
+          "definition": "Related concept used with Adl Training in professional practice."
+        }
+      ],
+      "question_id": "OCCUPATIONAL-THERAPI-ADL-TRAINING-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Adl Training: Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Adl Training: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Adl Training: Medication safety checks.",
+        "SBAR handover: Standard/framework governing Adl Training: SBAR handover.",
+        "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Occupational Therapist work, these terms are foundational:\n\n\n**Adl Training** \u2014 Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Adl Training: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Adl Training: Medication safety checks.\n\n**SBAR handover** \u2014 Standard/framework governing Adl Training: SBAR handover.\n\n**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.\n\n**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.\n\n**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.\n\n**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Adl Training in professional practice.",
+      "answer_explanation": "Definitions covered: Adl Training, Clinical guideline pathway, Medication safety checks, SBAR handover, Early escalation prevents preventable de, Medication errors often occur at transit",
+      "study_material": {
+        "overview": "Core terminology for Adl Training \u2014 precise definitions required for Occupational Therapist interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Adl Training terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Adl Training",
+            "definition": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Adl Training: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Adl Training: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Standard/framework governing Adl Training: SBAR handover."
+          },
+          {
+            "term": "Early escalation prevents preventable de",
+            "definition": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "term": "Medication errors often occur at transit",
+            "definition": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "term": "Documentation quality is directly linked",
+            "definition": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "term": "Early escalation prevents preventable deterioration.",
+            "definition": "Related concept used with Adl Training in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Adl Training",
+            "explanation": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Adl Training: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Adl Training: Medication safety checks."
+          },
+          {
+            "skill": "SBAR handover",
+            "explanation": "Standard/framework governing Adl Training: SBAR handover."
+          },
+          {
+            "skill": "Early escalation prevents preventable de",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Medication errors often occur at transit",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Documentation quality is directly linked",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "skill": "Early escalation prevents preventable deterioration.",
+            "explanation": "Related concept used with Adl Training in professional practice."
+          }
+        ],
+        "principles": [
+          "Adl Training: Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Adl Training: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Adl Training: Medication safety checks.",
+          "SBAR handover: Standard/framework governing Adl Training: SBAR handover.",
+          "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+        ],
+        "key_concepts": [
+          "Adl Training",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Adl Training** \u2014 Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Adl Training: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Adl Training: Medication safety checks.",
+          "**SBAR handover** \u2014 Standard/framework governing Adl Training: SBAR handover.",
+          "**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.",
+          "**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.",
+          "**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.",
+          "**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Adl Training in professional practice."
+        ],
+        "practical_example": "\u2022 Adl Training: Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Adl Training: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Adl Training: Medication safety checks.\n\u2022 SBAR handover: Standard/framework governing Adl Training: SBAR handover.\n\u2022 Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Adl Training terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Adl Training",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "related_concepts": [
+          "Adl Training",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Adl Training terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Adl Training",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "SBAR handover",
+        "Early escalation prevents preventable de",
+        "Medication errors often occur at transit",
+        "Documentation quality is directly linked",
+        "Early escalation prevents preventable deterioration."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which clinical operating principles and protocol sequence govern ADL training in Occupational Therapist practice?",
+      "why_asked": "Tests whether you know how ADL training is actually executed to standard, not only what it is called.",
+      "skill_tag": "ADL training",
+      "question_id": "OCCUPATIONAL-THERAPI-ADL-TRAINING-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Adl Training as a Occupational Therapist:\n\n1. Early escalation prevents preventable deterioration.\n2. Medication errors often occur at transition points and handovers.\n3. Documentation quality is directly linked to continuity of care.\n\nStandard workflow:\n1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Adl Training \u2014 how work is executed to standard in Occupational Therapist roles.",
+        "what_you_need_to_know_first": [
+          "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Adl Training",
+            "definition": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Adl Training",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Adl Training",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Adl Training",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "practical_example": "1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Adl Training workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Adl Training workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Numbers-driven check for Occupational Therapist work using ADL training while handling 'Support daily living skills': Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?",
+      "why_asked": "Tests numerical and analytical competence in ADL training \u2014 essential for Occupational Therapist roles.",
+      "skill_tag": "ADL training",
+      "calculation": {
+        "skill": "Adl Training",
+        "prompt": "Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?",
+        "answer": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+        "steps": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ]
+      },
+      "question_id": "OCCUPATIONAL-THERAPI-ADL-TRAINING-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Score each parameter",
+        "Sum NEWS2",
+        "Apply escalation pathway"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?\n\nWorking:\n1. Score each parameter\n2. Sum NEWS2\n3. Apply escalation pathway\n\nAnswer: Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.\n\nIn Occupational Therapist practice, I anchor this using: Score each parameter, Sum NEWS2, Given data.",
+      "answer_explanation": "Calculation: Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+      "study_material": {
+        "overview": "Quantitative problem for Adl Training: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "explanations": [
+          "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+          "Step: Score each parameter",
+          "Step: Sum NEWS2",
+          "Step: Apply escalation pathway"
+        ],
+        "practical_example": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Adl Training calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "related_concepts": [
+          "Adl Training",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Adl Training calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "Score each parameter",
+        "Sum NEWS2",
+        "Apply escalation pathway"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "As a Occupational Therapist, explain Assistive technology to a newly qualified clinician and include clinical safety checks.",
+      "why_asked": "Tests genuine conceptual understanding of Assistive technology, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Assistive technology",
+      "question_id": "OCCUPATIONAL-THERAPI-ASSISTIVE-TE-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Assistive technology",
+        "ADL training",
+        "Mental health support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Assistive Technology without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Occupational Therapist context, Assistive Technology starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support daily living skills stays reliable under real operational constraints.\n\nOn shift as Occupational Therapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Assistive Technology:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Assistive Technology directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Assistive Technology",
+            "definition": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Assistive Technology",
+            "explanation": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Assistive Technology directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Adl Training",
+            "explanation": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Assistive Technology",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Assistive Technology directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Occupational Therapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Assistive Technology without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Assistive Technology applies to: Support daily living skills.",
+          "List the standards that govern Assistive Technology in Occupational Therapist work.",
+          "Write out the verification steps after completing a Assistive Technology task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Assistive Technology",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Assistive Technology applies to: Support daily living skills.",
+        "List the standards that govern Assistive Technology in Occupational Therapist work.",
+        "Write out the verification steps after completing a Assistive Technology task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a high-risk clinical case where Assistive technology changed patient management.",
+      "why_asked": "Probes depth of hands-on experience with Assistive technology under real constraints.",
+      "skill_tag": "Assistive technology",
+      "question_id": "OCCUPATIONAL-THERAPI-ASSISTIVE-TE-SCEN-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Assistive technology",
+        "ADL training",
+        "Mental health support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Assistive Technology without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Occupational Therapist context, Assistive Technology starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support daily living skills stays reliable under real operational constraints.\n\nOn shift as Occupational Therapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Assistive Technology:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Assistive Technology directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Assistive Technology",
+            "definition": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Assistive Technology",
+            "explanation": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Assistive Technology directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Adl Training",
+            "explanation": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Assistive Technology",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Assistive Technology directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Occupational Therapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Assistive Technology without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Assistive Technology applies to: Support daily living skills.",
+          "List the standards that govern Assistive Technology in Occupational Therapist work.",
+          "Write out the verification steps after completing a Assistive Technology task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Assistive Technology",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Assistive Technology applies to: Support daily living skills.",
+        "List the standards that govern Assistive Technology in Occupational Therapist work.",
+        "Write out the verification steps after completing a Assistive Technology task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "What are the essential technical terms every Occupational Therapist must know when working with Assistive technology while handling 'Support daily living skills'? Define each precisely.",
+      "why_asked": "Core terminology separates practitioners who understand Assistive technology from those who only name-drop it.",
+      "skill_tag": "Assistive technology",
+      "terminology_terms": [
+        {
+          "term": "Assistive Technology",
+          "definition": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Assistive Technology: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Assistive Technology: Medication safety checks."
+        },
+        {
+          "term": "SBAR handover",
+          "definition": "Standard/framework governing Assistive Technology: SBAR handover."
+        },
+        {
+          "term": "Early escalation prevents preventable de",
+          "definition": "Early escalation prevents preventable deterioration."
+        },
+        {
+          "term": "Medication errors often occur at transit",
+          "definition": "Medication errors often occur at transition points and handovers."
+        },
+        {
+          "term": "Documentation quality is directly linked",
+          "definition": "Documentation quality is directly linked to continuity of care."
+        },
+        {
+          "term": "Early escalation prevents preventable deterioration.",
+          "definition": "Related concept used with Assistive Technology in professional practice."
+        }
+      ],
+      "question_id": "OCCUPATIONAL-THERAPI-ASSISTIVE-TE-TERM-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Assistive technology",
+        "ADL training",
+        "Mental health support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Assistive Technology: Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Assistive Technology: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Assistive Technology: Medication safety checks.",
+        "SBAR handover: Standard/framework governing Assistive Technology: SBAR handover.",
+        "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Occupational Therapist work, these terms are foundational:\n\n\n**Assistive Technology** \u2014 Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Assistive Technology: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Assistive Technology: Medication safety checks.\n\n**SBAR handover** \u2014 Standard/framework governing Assistive Technology: SBAR handover.\n\n**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.\n\n**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.\n\n**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.\n\n**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Assistive Technology in professional practice.",
+      "answer_explanation": "Definitions covered: Assistive Technology, Clinical guideline pathway, Medication safety checks, SBAR handover, Early escalation prevents preventable de, Medication errors often occur at transit",
+      "study_material": {
+        "overview": "Core terminology for Assistive Technology \u2014 precise definitions required for Occupational Therapist interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Assistive Technology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Assistive Technology",
+            "definition": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Assistive Technology: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Assistive Technology: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Standard/framework governing Assistive Technology: SBAR handover."
+          },
+          {
+            "term": "Early escalation prevents preventable de",
+            "definition": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "term": "Medication errors often occur at transit",
+            "definition": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "term": "Documentation quality is directly linked",
+            "definition": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "term": "Early escalation prevents preventable deterioration.",
+            "definition": "Related concept used with Assistive Technology in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Assistive Technology",
+            "explanation": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Assistive Technology: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Assistive Technology: Medication safety checks."
+          },
+          {
+            "skill": "SBAR handover",
+            "explanation": "Standard/framework governing Assistive Technology: SBAR handover."
+          },
+          {
+            "skill": "Early escalation prevents preventable de",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Medication errors often occur at transit",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Documentation quality is directly linked",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "skill": "Early escalation prevents preventable deterioration.",
+            "explanation": "Related concept used with Assistive Technology in professional practice."
+          }
+        ],
+        "principles": [
+          "Assistive Technology: Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Assistive Technology: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Assistive Technology: Medication safety checks.",
+          "SBAR handover: Standard/framework governing Assistive Technology: SBAR handover.",
+          "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+        ],
+        "key_concepts": [
+          "Assistive Technology",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Assistive Technology** \u2014 Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Assistive Technology: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Assistive Technology: Medication safety checks.",
+          "**SBAR handover** \u2014 Standard/framework governing Assistive Technology: SBAR handover.",
+          "**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.",
+          "**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.",
+          "**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.",
+          "**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Assistive Technology in professional practice."
+        ],
+        "practical_example": "\u2022 Assistive Technology: Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Assistive Technology: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Assistive Technology: Medication safety checks.\n\u2022 SBAR handover: Standard/framework governing Assistive Technology: SBAR handover.\n\u2022 Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Assistive Technology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Assistive Technology",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "related_concepts": [
+          "Assistive Technology",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Assistive Technology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Assistive Technology",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "SBAR handover",
+        "Early escalation prevents preventable de",
+        "Medication errors often occur at transit",
+        "Documentation quality is directly linked",
+        "Early escalation prevents preventable deterioration."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which clinical operating principles and protocol sequence govern Assistive technology in Occupational Therapist practice?",
+      "why_asked": "Tests whether you know how Assistive technology is actually executed to standard, not only what it is called.",
+      "skill_tag": "Assistive technology",
+      "question_id": "OCCUPATIONAL-THERAPI-ASSISTIVE-TE-PRIN-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Assistive technology",
+        "ADL training",
+        "Mental health support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Assistive Technology as a Occupational Therapist:\n\n1. Early escalation prevents preventable deterioration.\n2. Medication errors often occur at transition points and handovers.\n3. Documentation quality is directly linked to continuity of care.\n\nStandard workflow:\n1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Assistive Technology \u2014 how work is executed to standard in Occupational Therapist roles.",
+        "what_you_need_to_know_first": [
+          "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Assistive Technology",
+            "definition": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Assistive Technology",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Assistive Technology",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Assistive Technology",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "practical_example": "1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Assistive Technology workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Assistive Technology workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Calculation / quantitative question for Occupational Therapist (Assistive technology) while handling 'Support daily living skills': Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?",
+      "why_asked": "Tests numerical and analytical competence in Assistive technology \u2014 essential for Occupational Therapist roles.",
+      "skill_tag": "Assistive technology",
+      "calculation": {
+        "skill": "Assistive Technology",
+        "prompt": "Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?",
+        "answer": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+        "steps": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ]
+      },
+      "question_id": "OCCUPATIONAL-THERAPI-ASSISTIVE-TE-CALC-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Assistive technology",
+        "ADL training",
+        "Mental health support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Score each parameter",
+        "Sum NEWS2",
+        "Apply escalation pathway"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?\n\nWorking:\n1. Score each parameter\n2. Sum NEWS2\n3. Apply escalation pathway\n\nAnswer: Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.\n\nIn Occupational Therapist practice, I anchor this using: Score each parameter, Sum NEWS2, Given data.",
+      "answer_explanation": "Calculation: Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+      "study_material": {
+        "overview": "Quantitative problem for Assistive Technology: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "explanations": [
+          "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+          "Step: Score each parameter",
+          "Step: Sum NEWS2",
+          "Step: Apply escalation pathway"
+        ],
+        "practical_example": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Assistive Technology calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "related_concepts": [
+          "Assistive Technology",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Assistive Technology calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "Score each parameter",
+        "Sum NEWS2",
+        "Apply escalation pathway"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "As a Occupational Therapist, explain Mental health support to a newly qualified clinician and include clinical safety checks.",
+      "why_asked": "Tests genuine conceptual understanding of Mental health support, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Mental health support",
+      "question_id": "OCCUPATIONAL-THERAPI-MENTAL-HEALT-EXPL-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mental health support",
+        "ADL training",
+        "Assistive technology",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Mental Health Support without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Occupational Therapist context, Mental Health Support starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support daily living skills stays reliable under real operational constraints.\n\nOn shift as Occupational Therapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Mental Health Support:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Mental Health Support directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Mental Health Support",
+            "definition": "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Mental Health Support",
+            "explanation": "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Mental Health Support directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Adl Training",
+            "explanation": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Mental Health Support",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Mental Health Support directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Occupational Therapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Mental Health Support without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Mental Health Support applies to: Support daily living skills.",
+          "List the standards that govern Mental Health Support in Occupational Therapist work.",
+          "Write out the verification steps after completing a Mental Health Support task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Mental Health Support",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Mental Health Support applies to: Support daily living skills.",
+        "List the standards that govern Mental Health Support in Occupational Therapist work.",
+        "Write out the verification steps after completing a Mental Health Support task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a high-risk clinical case where Mental health support changed patient management.",
+      "why_asked": "Probes depth of hands-on experience with Mental health support under real constraints.",
+      "skill_tag": "Mental health support",
+      "question_id": "OCCUPATIONAL-THERAPI-MENTAL-HEALT-SCEN-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mental health support",
+        "ADL training",
+        "Assistive technology",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Mental Health Support without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Occupational Therapist context, Mental Health Support starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support daily living skills stays reliable under real operational constraints.\n\nOn shift as Occupational Therapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Mental Health Support:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Mental Health Support directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Mental Health Support",
+            "definition": "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Mental Health Support",
+            "explanation": "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Mental Health Support directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Adl Training",
+            "explanation": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Mental Health Support",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Occupational Therapist practice, Mental Health Support directly supports support daily living skills. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Occupational Therapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Mental Health Support without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Mental Health Support applies to: Support daily living skills.",
+          "List the standards that govern Mental Health Support in Occupational Therapist work.",
+          "Write out the verification steps after completing a Mental Health Support task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Mental Health Support",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Mental Health Support applies to: Support daily living skills.",
+        "List the standards that govern Mental Health Support in Occupational Therapist work.",
+        "Write out the verification steps after completing a Mental Health Support task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Occupational Therapist practitioner in Mental health support while handling 'Support daily living skills'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Mental health support from those who only name-drop it.",
+      "skill_tag": "Mental health support",
+      "terminology_terms": [
+        {
+          "term": "Mental Health Support",
+          "definition": "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Mental Health Support: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Mental Health Support: Medication safety checks."
+        },
+        {
+          "term": "SBAR handover",
+          "definition": "Standard/framework governing Mental Health Support: SBAR handover."
+        },
+        {
+          "term": "Early escalation prevents preventable de",
+          "definition": "Early escalation prevents preventable deterioration."
+        },
+        {
+          "term": "Medication errors often occur at transit",
+          "definition": "Medication errors often occur at transition points and handovers."
+        },
+        {
+          "term": "Documentation quality is directly linked",
+          "definition": "Documentation quality is directly linked to continuity of care."
+        },
+        {
+          "term": "Early escalation prevents preventable deterioration.",
+          "definition": "Related concept used with Mental Health Support in professional practice."
+        }
+      ],
+      "question_id": "OCCUPATIONAL-THERAPI-MENTAL-HEALT-TERM-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mental health support",
+        "ADL training",
+        "Assistive technology",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Mental Health Support: Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Mental Health Support: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Mental Health Support: Medication safety checks.",
+        "SBAR handover: Standard/framework governing Mental Health Support: SBAR handover.",
+        "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Occupational Therapist work, these terms are foundational:\n\n\n**Mental Health Support** \u2014 Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Mental Health Support: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Mental Health Support: Medication safety checks.\n\n**SBAR handover** \u2014 Standard/framework governing Mental Health Support: SBAR handover.\n\n**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.\n\n**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.\n\n**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.\n\n**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Mental Health Support in professional practice.",
+      "answer_explanation": "Definitions covered: Mental Health Support, Clinical guideline pathway, Medication safety checks, SBAR handover, Early escalation prevents preventable de, Medication errors often occur at transit",
+      "study_material": {
+        "overview": "Core terminology for Mental Health Support \u2014 precise definitions required for Occupational Therapist interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Mental Health Support terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Mental Health Support",
+            "definition": "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Mental Health Support: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Mental Health Support: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Standard/framework governing Mental Health Support: SBAR handover."
+          },
+          {
+            "term": "Early escalation prevents preventable de",
+            "definition": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "term": "Medication errors often occur at transit",
+            "definition": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "term": "Documentation quality is directly linked",
+            "definition": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "term": "Early escalation prevents preventable deterioration.",
+            "definition": "Related concept used with Mental Health Support in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Mental Health Support",
+            "explanation": "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Mental Health Support: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Mental Health Support: Medication safety checks."
+          },
+          {
+            "skill": "SBAR handover",
+            "explanation": "Standard/framework governing Mental Health Support: SBAR handover."
+          },
+          {
+            "skill": "Early escalation prevents preventable de",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Medication errors often occur at transit",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Documentation quality is directly linked",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "skill": "Early escalation prevents preventable deterioration.",
+            "explanation": "Related concept used with Mental Health Support in professional practice."
+          }
+        ],
+        "principles": [
+          "Mental Health Support: Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Mental Health Support: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Mental Health Support: Medication safety checks.",
+          "SBAR handover: Standard/framework governing Mental Health Support: SBAR handover.",
+          "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+        ],
+        "key_concepts": [
+          "Mental Health Support",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Mental Health Support** \u2014 Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Mental Health Support: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Mental Health Support: Medication safety checks.",
+          "**SBAR handover** \u2014 Standard/framework governing Mental Health Support: SBAR handover.",
+          "**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.",
+          "**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.",
+          "**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.",
+          "**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Mental Health Support in professional practice."
+        ],
+        "practical_example": "\u2022 Mental Health Support: Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Mental Health Support: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Mental Health Support: Medication safety checks.\n\u2022 SBAR handover: Standard/framework governing Mental Health Support: SBAR handover.\n\u2022 Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Mental Health Support terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Mental Health Support",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "related_concepts": [
+          "Mental Health Support",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Mental Health Support terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Mental Health Support",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "SBAR handover",
+        "Early escalation prevents preventable de",
+        "Medication errors often occur at transit",
+        "Documentation quality is directly linked",
+        "Early escalation prevents preventable deterioration."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which clinical operating principles and protocol sequence govern Mental health support in Occupational Therapist practice?",
+      "why_asked": "Tests whether you know how Mental health support is actually executed to standard, not only what it is called.",
+      "skill_tag": "Mental health support",
+      "question_id": "OCCUPATIONAL-THERAPI-MENTAL-HEALT-PRIN-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Mental health support",
+        "ADL training",
+        "Assistive technology",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Mental Health Support as a Occupational Therapist:\n\n1. Early escalation prevents preventable deterioration.\n2. Medication errors often occur at transition points and handovers.\n3. Documentation quality is directly linked to continuity of care.\n\nStandard workflow:\n1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Mental Health Support \u2014 how work is executed to standard in Occupational Therapist roles.",
+        "what_you_need_to_know_first": [
+          "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Mental Health Support",
+            "definition": "Mental Health Support in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Mental Health Support",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Mental Health Support",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Mental Health Support",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "practical_example": "1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Mental Health Support workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Mental Health Support workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Occupational Therapist, define and explain these core professional terms: Adl Training, Clinical guideline pathway, Medication safety checks, Assistive Technology, Clinical guideline pathway, Medication safety checks.",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Adl Training",
+          "definition": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Adl Training: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Adl Training: Medication safety checks."
+        },
+        {
+          "term": "Assistive Technology",
+          "definition": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Assistive Technology: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Assistive Technology: Medication safety checks."
+        }
+      ],
+      "question_id": "OCCUPATIONAL-THERAPI-CORE-TERMINO-TERM-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Adl Training: Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Adl Training: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Adl Training: Medication safety checks.",
+        "Assistive Technology: Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Assistive Technology: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Assistive Technology: Medication safety checks."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Occupational Therapist work, these terms are foundational:\n\n\n**Adl Training** \u2014 Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Adl Training: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Adl Training: Medication safety checks.\n\n**Assistive Technology** \u2014 Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Assistive Technology: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Assistive Technology: Medication safety checks.",
+      "answer_explanation": "Definitions covered: Adl Training, Clinical guideline pathway, Medication safety checks, Assistive Technology, Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Occupational Therapist interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Adl Training",
+            "definition": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Adl Training: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Adl Training: Medication safety checks."
+          },
+          {
+            "term": "Assistive Technology",
+            "definition": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Assistive Technology: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Assistive Technology: Medication safety checks."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Adl Training",
+            "explanation": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Adl Training: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Adl Training: Medication safety checks."
+          },
+          {
+            "skill": "Assistive Technology",
+            "explanation": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Assistive Technology: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Assistive Technology: Medication safety checks."
+          }
+        ],
+        "principles": [
+          "Adl Training: Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Adl Training: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Adl Training: Medication safety checks.",
+          "Assistive Technology: Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Assistive Technology: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Assistive Technology: Medication safety checks."
+        ],
+        "key_concepts": [
+          "Adl Training",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "Assistive Technology",
+          "Clinical guideline pathway",
+          "Medication safety checks"
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Adl Training** \u2014 Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Adl Training: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Adl Training: Medication safety checks.",
+          "**Assistive Technology** \u2014 Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Assistive Technology: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Assistive Technology: Medication safety checks."
+        ],
+        "practical_example": "\u2022 Adl Training: Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Adl Training: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Adl Training: Medication safety checks.\n\u2022 Assistive Technology: Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Assistive Technology: Clinical guideline pathway.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Adl Training",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "Assistive Technology",
+          "Clinical guideline pathway",
+          "Medication safety checks"
+        ],
+        "related_concepts": [
+          "Adl Training",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "Assistive Technology",
+          "Clinical guideline pathway",
+          "Medication safety checks"
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Adl Training",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "Assistive Technology",
+        "Clinical guideline pathway",
+        "Medication safety checks"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Support daily living skills'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "OCCUPATIONAL-THERAPI-BEHAVIORAL-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+      "answer_explanation": "This answer covers: In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Occupational Therapist handles when support daily living skills. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Occupational Therapist work involves support daily living skills under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Occupational Therapist",
+            "definition": "The Occupational Therapist role integrates ADL training, Assistive technology, Mental health support to deliver on responsibilities such as support daily living skills. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Patient safety",
+          "Escalation protocol",
+          "Clinical documentation",
+          "Multidisciplinary handover"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Occupational Therapist reference support daily living skills and relevant standards or tools."
+        ],
+        "practical_example": "In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Occupational Therapist challenge with numbers.",
+          "Link the story to: Support daily living skills."
+        ],
+        "revision_notes": [
+          "ADL training",
+          "Assistive technology",
+          "Mental health support"
+        ],
+        "related_concepts": [
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Occupational Therapist challenge with numbers.",
+        "Link the story to: Support daily living skills."
+      ],
+      "revision_notes": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Adapt environments for patients'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "OCCUPATIONAL-THERAPI-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+      "answer_explanation": "This answer covers: In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Occupational Therapist handles when support daily living skills. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Occupational Therapist work involves support daily living skills under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Occupational Therapist",
+            "definition": "The Occupational Therapist role integrates ADL training, Assistive technology, Mental health support to deliver on responsibilities such as support daily living skills. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Patient safety",
+          "Escalation protocol",
+          "Clinical documentation",
+          "Multidisciplinary handover"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Occupational Therapist reference support daily living skills and relevant standards or tools."
+        ],
+        "practical_example": "In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Occupational Therapist challenge with numbers.",
+          "Link the story to: Support daily living skills."
+        ],
+        "revision_notes": [
+          "ADL training",
+          "Assistive technology",
+          "Mental health support"
+        ],
+        "related_concepts": [
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Occupational Therapist challenge with numbers.",
+        "Link the story to: Support daily living skills."
+      ],
+      "revision_notes": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Work with multidisciplinary teams'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "OCCUPATIONAL-THERAPI-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+      "answer_explanation": "This answer covers: In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Occupational Therapist handles when support daily living skills. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Occupational Therapist work involves support daily living skills under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Occupational Therapist",
+            "definition": "The Occupational Therapist role integrates ADL training, Assistive technology, Mental health support to deliver on responsibilities such as support daily living skills. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Patient safety",
+          "Escalation protocol",
+          "Clinical documentation",
+          "Multidisciplinary handover"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Occupational Therapist reference support daily living skills and relevant standards or tools."
+        ],
+        "practical_example": "In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Occupational Therapist challenge with numbers.",
+          "Link the story to: Support daily living skills."
+        ],
+        "revision_notes": [
+          "ADL training",
+          "Assistive technology",
+          "Mental health support"
+        ],
+        "related_concepts": [
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Occupational Therapist challenge with numbers.",
+        "Link the story to: Support daily living skills."
+      ],
+      "revision_notes": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe a time you identified a patient safety risk in Occupational Therapist work while handling 'Support daily living skills' and how you escalated it.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "OCCUPATIONAL-THERAPI-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+      "answer_explanation": "This answer covers: In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Occupational Therapist handles when support daily living skills. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Occupational Therapist work involves support daily living skills under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Occupational Therapist",
+            "definition": "The Occupational Therapist role integrates ADL training, Assistive technology, Mental health support to deliver on responsibilities such as support daily living skills. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Patient safety",
+          "Escalation protocol",
+          "Clinical documentation",
+          "Multidisciplinary handover"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Occupational Therapist reference support daily living skills and relevant standards or tools."
+        ],
+        "practical_example": "In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Occupational Therapist challenge with numbers.",
+          "Link the story to: Support daily living skills."
+        ],
+        "revision_notes": [
+          "ADL training",
+          "Assistive technology",
+          "Mental health support"
+        ],
+        "related_concepts": [
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Occupational Therapist challenge with numbers.",
+        "Link the story to: Support daily living skills."
+      ],
+      "revision_notes": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Tell me about a situation in Occupational Therapist practice while handling 'Support daily living skills' where you had to prioritise multiple deteriorating patients.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "OCCUPATIONAL-THERAPI-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+      "answer_explanation": "This answer covers: In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Occupational Therapist handles when support daily living skills. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Occupational Therapist work involves support daily living skills under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Occupational Therapist",
+            "definition": "The Occupational Therapist role integrates ADL training, Assistive technology, Mental health support to deliver on responsibilities such as support daily living skills. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Patient safety",
+          "Escalation protocol",
+          "Clinical documentation",
+          "Multidisciplinary handover"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Occupational Therapist reference support daily living skills and relevant standards or tools."
+        ],
+        "practical_example": "In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Occupational Therapist challenge with numbers.",
+          "Link the story to: Support daily living skills."
+        ],
+        "revision_notes": [
+          "ADL training",
+          "Assistive technology",
+          "Mental health support"
+        ],
+        "related_concepts": [
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Occupational Therapist challenge with numbers.",
+        "Link the story to: Support daily living skills."
+      ],
+      "revision_notes": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Give a case from Occupational Therapist duties while handling 'Support daily living skills' where SBAR communication changed a clinical outcome.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "OCCUPATIONAL-THERAPI-BEHAVIORAL-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+      "answer_explanation": "This answer covers: In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Occupational Therapist handles when support daily living skills. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Occupational Therapist work involves support daily living skills under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Occupational Therapist",
+            "definition": "The Occupational Therapist role integrates ADL training, Assistive technology, Mental health support to deliver on responsibilities such as support daily living skills. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how ADL training supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Patient safety",
+          "Escalation protocol",
+          "Clinical documentation",
+          "Multidisciplinary handover"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Occupational Therapist reference support daily living skills and relevant standards or tools."
+        ],
+        "practical_example": "In one Occupational Therapist case related to support daily living skills, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Occupational Therapist challenge with numbers.",
+          "Link the story to: Support daily living skills."
+        ],
+        "revision_notes": [
+          "ADL training",
+          "Assistive technology",
+          "Mental health support"
+        ],
+        "related_concepts": [
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Occupational Therapist challenge with numbers.",
+        "Link the story to: Support daily living skills."
+      ],
+      "revision_notes": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Occupational Therapist position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "OCCUPATIONAL-THERAPI-ROLE-SPECIFI-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Occupational Therapist, my approach to support daily living skills is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Occupational Therapist practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Role Specific.",
+      "answer_explanation": "This answer covers: As Occupational Therapist, my approach to support daily living skills is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, docume\u2026",
+      "study_material": {
+        "overview": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Occupational Therapist professionals apply when performing support daily living skills. In Occupational Therapist practice, Role Specific directly supports support daily living skills. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Occupational Therapist professionals apply when performing support daily living skills."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Occupational Therapist professionals apply when performing support daily living skills. In Occupational Therapist practice, Role Specific directly supports support daily living skills. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Adl Training",
+            "explanation": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Assistive Technology",
+            "explanation": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for support daily living skills.",
+          "Apply Role Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Occupational Therapist professionals apply when performing support daily living skills. In Occupational Therapist practice, Role Specific directly supports support daily living skills. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Occupational Therapist professionals apply when performing support daily living skills."
+        ],
+        "practical_example": "In Occupational Therapist, I applied Role Specific to stabilize support daily living skills under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Support daily living skills.",
+          "List the standards that govern Role Specific in Occupational Therapist work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Support daily living skills.",
+        "List the standards that govern Role Specific in Occupational Therapist work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Occupational Therapist context: Support daily living skills. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Occupational Therapist context: Support daily living skills.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "OCCUPATIONAL-THERAPI-COMPANY-SPEC-023",
+      "difficulty": "Medium",
+      "related_skills": [
+        "ADL training",
+        "Assistive technology",
+        "Mental health support",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Occupational Therapist, my approach to support daily living skills is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Occupational Therapist practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Company Specific.",
+      "answer_explanation": "This answer covers: As Occupational Therapist, my approach to support daily living skills is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, docume\u2026",
+      "study_material": {
+        "overview": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Occupational Therapist professionals apply when performing support daily living skills. In Occupational Therapist practice, Company Specific directly supports support daily living skills. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Occupational Therapist professionals apply when performing support daily living skills."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Occupational Therapist professionals apply when performing support daily living skills. In Occupational Therapist practice, Company Specific directly supports support daily living skills. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Adl Training",
+            "explanation": "Adl Training in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Assistive Technology",
+            "explanation": "Assistive Technology in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for support daily living skills.",
+          "Apply Company Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Occupational Therapist professionals apply when performing support daily living skills. In Occupational Therapist practice, Company Specific directly supports support daily living skills. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Occupational Therapist professionals apply when performing support daily living skills."
+        ],
+        "practical_example": "In Occupational Therapist, I applied Company Specific to stabilize support daily living skills under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Support daily living skills.",
+          "List the standards that govern Company Specific in Occupational Therapist work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Support daily living skills.",
+        "List the standards that govern Company Specific in Occupational Therapist work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:28:27.959875+00:00",
+  "confidence_score": 0.9
+}

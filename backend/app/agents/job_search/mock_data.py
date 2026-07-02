@@ -162,7 +162,40 @@ def mock_parse_job(text: str) -> dict:
     }
 
 
-# --- Interview pack synthesis --------------------------------------------------------
+from app.agents.job_search.knowledge.content_engine import (
+    build_answer_explanation,
+    build_model_answer,
+    build_study_material,
+    is_generic_content,
+    must_use_contract_compiler,
+    polish_spoken_answer,
+)
+from app.agents.job_search.knowledge.core_technical_content import (
+    build_technical_questions_for_skill,
+    get_procedure_questions_for_role,
+    get_role_terminology_question,
+)
+from app.agents.job_search.knowledge.evidence_packs import resolve_role_family
+from app.agents.job_search.knowledge.question_contracts import create_question_contract
+from app.agents.job_search.knowledge.skill_cards import (
+    build_role_intelligence,
+    build_skill_card_bank,
+    map_question_to_skill_card,
+)
+from app.agents.job_search.quality.broken_template_audit import broken_template_count
+from app.agents.job_search.quality.compiler_boilerplate_audit import (
+    compiler_boilerplate_count,
+    universal_boilerplate_count,
+)
+from app.agents.job_search.quality.domain_contamination_audit import domain_contamination_count
+from app.agents.job_search.quality.domain_density_audit import domain_density_breakdown, domain_density_from_context
+from app.agents.job_search.quality.expert_naturalness_audit import (
+    expert_naturalness_score,
+    formulaic_spoken_label_count,
+)
+from app.agents.job_search.quality.generic_phrase_audit import generic_phrase_count
+from app.agents.job_search.quality.legacy_template_audit import legacy_template_count
+from app.agents.job_search.quality.study_depth_audit import study_depth_score
 
 _GENERIC_BEHAVIORAL_TEMPLATES = [
     "Tell me about a time you disagreed with a teammate's technical decision. How did you handle it?",
@@ -171,34 +204,447 @@ _GENERIC_BEHAVIORAL_TEMPLATES = [
     "Tell me about a mistake you made in a past role and what you learned from it.",
 ]
 
+_DIFFICULTY_MAP = {"entry": "Easy", "mid": "Medium", "senior": "Hard", "auto": "Medium"}
+_QUESTION_TYPE_SUFFIX = {
+    "terminology": "TERM",
+    "calculation": "CALC",
+    "principles": "PRIN",
+    "procedure": "PROC",
+    "explain": "EXPL",
+    "scenario": "SCEN",
+}
+_GLOBAL_QUESTION_FINGERPRINTS: dict[str, set[str]] = {}
+COMPILER_ONLY_TYPES = {
+    "technical",
+    "technical_explain",
+    "conceptual",
+    "scenario",
+    "complex_problem",
+    "problem_solving",
+    "case_study",
+    "practical_task",
+    "tools",
+    "software",
+    "standards",
+    "regulation",
+    "explain",
+    "explain_to_peer",
+}
 
-def _technical_questions_for_skill(skill: str) -> list[dict]:
+_ROLE_FAMILY_KEYWORDS: dict[str, tuple[str, ...]] = {
+    "healthcare": ("nurse", "pharmacist", "doctor", "gp", "physio", "radiograph", "clinical", "therapist"),
+    "engineering": ("engineer", "electrician", "mechanical", "civil engineer", "chemical", "structural", "maintenance"),
+    "technology": ("software", "developer", "data", "devops", "cyber", "cloud", "architect", "qa"),
+    "finance_legal": ("accountant", "finance", "investment", "analyst", "solicitor", "paralegal", "compliance"),
+    "education": ("teacher", "lecturer", "tutor", "teaching assistant"),
+    "public_admin": ("civil service", "policy", "administrator", "public"),
+}
+
+
+# --- Interview pack synthesis --------------------------------------------------------
+
+
+def _role_family(role_title: str) -> str:
+    role = (role_title or "").lower()
+    for family, keys in _ROLE_FAMILY_KEYWORDS.items():
+        if any(k in role for k in keys):
+            return family
+    return "general"
+
+
+def _role_family_for_pack(role_title: str) -> str:
+    return resolve_role_family(role_title)
+
+
+def _family_behavioral_templates(job: dict) -> list[str]:
+    role = job.get("title") or "this role"
+    resp = (job.get("responsibilities") or [None])[0]
+    if isinstance(resp, dict):
+        resp = resp.get("text")
+    ctx = f" while handling '{resp}'" if resp else ""
+    role_key = re.sub(r"[^a-z0-9]+", "-", role.lower()).strip("-")
+    selector = abs(hash(role_key)) % 3
+    family = _role_family(role)
+    if family == "healthcare":
+        variants = [
+            [
+                f"Describe a time you identified a patient safety risk in {role} work{ctx} and how you escalated it.",
+                f"Tell me about a situation in {role} practice{ctx} where you had to prioritise multiple deteriorating patients.",
+                f"Give a case from {role} duties{ctx} where SBAR communication changed a clinical outcome.",
+            ],
+            [
+                f"In {role} work{ctx}, describe a near-miss you intercepted through early risk recognition.",
+                f"Explain a shift in {role} practice{ctx} where triage prioritisation directly affected outcomes.",
+                f"Share an example from {role} care{ctx} where escalation timing was the deciding factor.",
+            ],
+            [
+                f"Describe a safety-critical judgement call you made as a {role}{ctx}.",
+                f"Tell me about a patient deterioration scenario you managed in {role} practice{ctx}.",
+                f"Provide an example where your documentation/hand-off in {role} work{ctx} prevented harm.",
+            ],
+        ]
+        return variants[selector]
+    if family == "engineering":
+        variants = [
+            [
+                f"Describe a time you stopped work due to a safety/compliance risk in a {role} task{ctx}.",
+                f"Tell me about a technical fault you diagnosed under time pressure in {role} work{ctx} and how you verified the fix.",
+                f"Give an example where your calculations or test results in {role} delivery{ctx} prevented rework or failure.",
+            ],
+            [
+                f"In {role} execution{ctx}, describe a decision where compliance overruled schedule pressure.",
+                f"Share a root-cause investigation from {role} work{ctx} where measured values contradicted assumptions.",
+                f"Describe a verification plan you designed in {role} practice{ctx} to prove technical integrity.",
+            ],
+            [
+                f"Tell me about a defect or hazard you discovered late in a {role} workflow{ctx} and how you contained it.",
+                f"Describe a constrained engineering problem in {role} work{ctx} where your method choice mattered most.",
+                f"Give one example of a standards-based check in {role} delivery{ctx} that changed the outcome.",
+            ],
+        ]
+        return variants[selector]
+    if family == "technology":
+        variants = [
+            [
+                f"Describe a production incident you handled in a {role} context{ctx} and your root-cause process.",
+                f"Tell me about a time in {role} delivery{ctx} you traded speed against reliability or security.",
+                f"Describe a system or query optimization you shipped as a {role}{ctx} and the measurable impact.",
+            ],
+            [
+                f"In {role} operations{ctx}, describe an outage response where you owned mitigation and follow-up.",
+                f"Give an example where a technical debt decision in {role} work{ctx} improved long-term stability.",
+                f"Describe a performance bottleneck you resolved in {role} systems{ctx} with before/after metrics.",
+            ],
+            [
+                f"Tell me about a rollback or hotfix decision you made in {role} production work{ctx}.",
+                f"Describe a security-reliability tradeoff you handled in {role} delivery{ctx}.",
+                f"Share one optimization you implemented in {role} practice{ctx} and how you measured success.",
+            ],
+        ]
+        return variants[selector]
+    if family == "finance_legal":
+        return [
+            f"Tell me about a time you caught a material risk/compliance issue in {role} work.",
+            "Describe a difficult stakeholder challenge where evidence and regulation guided your decision.",
+            "Give an example where your analysis changed a business or case outcome.",
+        ]
+    if family == "education":
+        return [
+            f"Describe a lesson/intervention that moved outcomes for underperforming learners in {role} work.",
+            "Tell me about a safeguarding or pastoral issue and how you handled it.",
+            "Give an example of adapting instruction based on assessment evidence.",
+        ]
+    if family == "public_admin":
+        return [
+            f"Describe a policy or service-delivery decision you supported with evidence in {role} work.",
+            "Tell me about a time you coordinated multiple stakeholders with conflicting priorities.",
+            "Give an example of improving process compliance without delaying delivery.",
+        ]
+    variants = [
+        [
+            f"Describe a difficult delivery challenge specific to {role} responsibilities{ctx} and how you resolved it.",
+            f"Tell me about a time you improved quality or outcomes in your {role} work{ctx} using measurable evidence.",
+            f"Describe a stakeholder conflict in {role} work{ctx} and the decision framework you used.",
+        ],
+        [
+            f"In {role} duties{ctx}, describe a deadline risk and the controls you used to keep delivery on track.",
+            f"Share an example from {role} work{ctx} where you improved process reliability or quality.",
+            f"Tell me about a cross-team disagreement in {role} practice{ctx} and how you reached alignment.",
+        ],
+        [
+            f"Describe one complex assignment in {role} work{ctx} where your planning prevented failure.",
+            f"Give an example where your evidence or metrics in {role} delivery{ctx} changed a decision.",
+            f"Explain a stakeholder-management challenge from {role} work{ctx} and the outcome.",
+        ],
+    ]
+    return variants[selector]
+
+
+def _question_dedupe_key(q: dict) -> str:
+    text = (q.get("question") or "").lower()
+    text = re.sub(r"\(.*?\)", "", text)
+    text = re.sub(r"\b(this|that|the|a|an|role|position|job)\b", " ", text)
+    text = re.sub(r"[^a-z0-9]+", " ", text).strip()
+    return " ".join(text.split()[:16])
+
+
+def _role_specific_context(job: dict) -> str:
+    role = job.get("title") or "this role"
+    resp = (job.get("responsibilities") or [None])[0]
+    if isinstance(resp, dict):
+        resp = resp.get("text")
+    if resp:
+        return f"{role} context: {resp}"
+    return role
+
+
+def _global_fingerprint(question: str, qtype: str) -> str:
+    text = (question or "").lower()
+    text = re.sub(r"\([^)]*\)", " ", text)
+    text = re.sub(r"\b(registered nurse|civil service administrator|electrical engineer|chemical engineer|software engineer|data scientist|general practitioner|clinical pharmacist|radiographer|physiotherapist)\b", " ", text)
+    text = re.sub(r"[^a-z0-9 ]+", " ", text)
+    text = " ".join(text.split()[:22])
+    return f"{qtype}:{text}"
+
+
+def _enforce_cross_role_uniqueness(enriched: dict, job: dict) -> None:
+    qtype = enriched.get("question_type") or enriched.get("category", "other")
+    qtext = enriched.get("question", "")
+    key = _global_fingerprint(qtext, qtype)
+    bucket = _GLOBAL_QUESTION_FINGERPRINTS.setdefault(qtype, set())
+    if key in bucket:
+        context = _role_specific_context(job)
+        if "In this role-specific case" not in qtext:
+            enriched["question"] = f"{qtext} In this role-specific case, address: {context}."
+            qtext = enriched["question"]
+            key = _global_fingerprint(qtext, qtype)
+            if key in bucket:
+                skill = enriched.get("skill_tag") or "core competency"
+                enriched["question"] = (
+                    f"{qtext} Include one concrete {skill} metric, one governing standard/protocol, "
+                    f"and one failure mode relevant to {context}."
+                )
+                key = _global_fingerprint(enriched["question"], qtype)
+    bucket.add(key)
+
+
+def _boost_specificity(enriched: dict, job: dict) -> None:
+    """Ensure answer/study mention role-specific technical anchors."""
+    role = job.get("title") or "this role"
+    model = enriched.get("model_answer", "")
+    study = enriched.get("study_material") or {}
+    principles = study.get("principles") or []
+    definitions = study.get("definitions") or []
+    anchors: list[str] = []
+    for p in principles[:2]:
+        if isinstance(p, str):
+            anchors.append(p)
+    for d in definitions[:2]:
+        if isinstance(d, dict):
+            term = d.get("term")
+            if term:
+                anchors.append(str(term))
+    if not anchors:
+        anchors = enriched.get("related_skills", [])[:2]
+
+    must_mention = role.lower() in model.lower()
+    has_anchor = any(a and a.lower() in model.lower() for a in anchors if isinstance(a, str))
+    if not must_mention or not has_anchor:
+        addendum = f"\n\nIn {role} practice, I anchor this using: {', '.join(str(a) for a in anchors[:3])}."
+        enriched["model_answer"] = (model + addendum).strip()
+
+
+def _study_material_for_question(q: dict, job: dict) -> dict:
+    """Delegate to PhD-level content engine."""
+    return build_study_material(q, job)
+
+
+def _answer_explanation(q: dict, job: dict) -> str:
+    """Delegate to content engine with model answer context."""
+    model = q.get("model_answer") or _model_answer_from_points(q, job)
+    return build_answer_explanation(q, job, model)
+
+
+def _related_skills_for(q: dict, job: dict) -> list[str]:
+    skills: list[str] = []
+    if q.get("skill_tag"):
+        skills.append(q["skill_tag"])
+    for s in job.get("extracted_skills", [])[:3]:
+        name = s.get("skill") if isinstance(s, dict) else s
+        if name and name not in skills:
+            skills.append(name)
+    cat = q.get("category", "")
+    if cat and cat not in skills:
+        skills.append(cat.replace("_", " ").title())
+    return skills
+
+
+def _role_baseline_questions(job: dict) -> list[dict]:
+    """When no skills were extracted, still generate role-specific questions from title/description."""
+    role = job.get("title") or "this role"
+    desc = (job.get("description_raw") or "")[:500]
+    reqs = job.get("requirements") or []
     return [
         {
-            "category": "technical",
-            "question": f"Walk me through how you would explain {skill} to a teammate who has never used it.",
-            "why_asked": f"Tests genuine conceptual understanding of {skill}, not just résumé familiarity.",
+            "category": "role_specific",
+            "question": f"What core competencies make someone successful as a {role}?",
+            "why_asked": "Tests whether the candidate understands the role beyond the job title.",
             "ideal_answer_points": [
-                f"Clear, jargon-light explanation of what {skill} is and the problem it solves",
-                "A concrete example from real experience, not a textbook definition",
-                "Honest acknowledgment of limitations or tradeoffs",
+                f"Names 3–5 competencies specific to {role}, not generic soft skills only",
+                "Connects each competency to real workplace outcomes",
+                "References responsibilities from the posting" if desc or reqs else "Uses concrete examples",
             ],
-            "follow_ups": [f"What's a situation where {skill} was the WRONG choice?"],
-            "skill_tag": skill,
+            "skill_tag": role,
         },
         {
-            "category": "technical",
-            "question": f"Describe the most complex problem you've solved using {skill}.",
-            "why_asked": f"Probes depth of hands-on, applied experience with {skill} under real constraints.",
+            "category": "behavioral",
+            "question": f"Describe a challenging situation you handled that is relevant to working as a {role}.",
+            "why_asked": "Assesses past behavior using STAR under role-relevant pressure.",
+            "ideal_answer_points": ["Situation", "Task", "Action", "Result (quantified)"],
+            "skill_tag": None,
+        },
+        {
+            "category": "technical" if any(w in role.lower() for w in ("engineer", "developer", "analyst", "scientist")) else "role_specific",
+            "question": f"How would you approach a typical day-one task in a {role} position?",
+            "why_asked": "Reveals practical readiness and structured thinking for the role.",
             "ideal_answer_points": [
-                "Specific, real scenario with concrete scale/constraints",
-                "Clear articulation of the approach and why it was chosen over alternatives",
-                "A measurable or observable result",
+                "Clarifies assumptions before acting",
+                "Outlines a step-by-step approach",
+                "Mentions tools, methods, or standards appropriate to the role",
             ],
-            "follow_ups": ["What would you do differently if you tackled it again today?"],
-            "skill_tag": skill,
+            "skill_tag": role,
         },
     ]
+
+
+def _model_answer_from_points(q: dict, job: dict) -> str:
+    """Synthesize a comprehensive PhD-level model answer via the content engine."""
+    return build_model_answer(q, job)
+
+
+def _common_mistakes_for(q: dict) -> list[str]:
+    category = q.get("category", "technical")
+    if category == "behavioral":
+        return [
+            "Answering hypothetically instead of citing a specific past example.",
+            "Spending too long on Situation and skipping measurable Result.",
+            "Blaming others without showing personal accountability.",
+        ]
+    return [
+        "Reciting jargon without explaining underlying concepts.",
+        "Claiming expertise without a concrete example.",
+        "Ignoring tradeoffs or failure modes.",
+    ]
+
+
+def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> dict:
+    """Enrich a draft question with model answer, study material, and evaluation metadata."""
+    enriched = dict(q)
+    slug = re.sub(r"[^A-Z0-9]+", "-", (job.get("title") or "ROLE").upper())[:20]
+    skill_part = re.sub(r"[^A-Z0-9]+", "-", (enriched.get("skill_tag") or enriched.get("category", "GEN")).upper())[:12]
+    type_suffix = _QUESTION_TYPE_SUFFIX.get(enriched.get("question_type", ""), "")
+    id_core = f"{slug}-{skill_part}"
+    if type_suffix:
+        id_core = f"{id_core}-{type_suffix}"
+    enriched.setdefault("question_id", f"{id_core}-{index + 1:03d}")
+    enriched.setdefault("difficulty", _DIFFICULTY_MAP.get(difficulty, "Medium"))
+    enriched.setdefault("related_skills", _related_skills_for(enriched, job))
+    enriched.setdefault("evaluation_criteria", list(enriched.get("ideal_answer_points") or []))
+    enriched.setdefault("common_mistakes", _common_mistakes_for(enriched))
+    follow_ups = enriched.get("follow_ups") or []
+    enriched.setdefault("follow_up_questions", list(follow_ups))
+    enriched.setdefault("estimated_answer_time_minutes", 5 if enriched.get("category") == "behavioral" else 8)
+    _enforce_cross_role_uniqueness(enriched, job)
+    enriched.setdefault("model_answer", _model_answer_from_points(enriched, job))
+    enriched.setdefault("expert_reference_answer", enriched.get("model_answer", ""))
+    contract = create_question_contract(enriched, job)
+    compiler_only = must_use_contract_compiler(enriched, contract)
+    if not compiler_only:
+        enriched["model_answer"] = polish_spoken_answer(enriched.get("model_answer", ""), enriched, job)
+        enriched["used_legacy_polisher"] = True
+    else:
+        enriched["used_legacy_polisher"] = False
+    enriched.setdefault("answer_explanation", _answer_explanation(enriched, job))
+    enriched.setdefault("study_material", _study_material_for_question(enriched, job))
+    # Upgrade thin or generic LLM content from live path
+    if is_generic_content(enriched.get("model_answer", "")):
+        enriched["model_answer"] = build_model_answer(enriched, job)
+    if not compiler_only:
+        enriched["model_answer"] = polish_spoken_answer(enriched.get("model_answer", ""), enriched, job)
+    # Force at least one role anchor in technical answers.
+    role_anchor = (job.get("title") or "").lower()
+    if role_anchor and enriched.get("category") in ("technical", "role_specific"):
+        if role_anchor not in enriched.get("model_answer", "").lower():
+            enriched["model_answer"] = build_model_answer(enriched, job)
+    study = enriched.get("study_material") or {}
+    if is_generic_content(study.get("overview", "")):
+        enriched["study_material"] = build_study_material(enriched, job)
+    if is_generic_content(enriched.get("answer_explanation", "")):
+        enriched["answer_explanation"] = build_answer_explanation(enriched, job, enriched["model_answer"])
+    quality = enriched.setdefault("quality_audit", {})
+    quality["generic_phrase_count"] = generic_phrase_count(enriched.get("model_answer", ""))
+    quality["broken_template_count"] = broken_template_count(enriched.get("model_answer", ""))
+    quality["legacy_template_count"] = legacy_template_count(enriched.get("model_answer", ""))
+    quality["compiler_boilerplate_count"] = compiler_boilerplate_count(enriched.get("model_answer", ""))
+    quality["universal_boilerplate_count"] = universal_boilerplate_count(enriched.get("model_answer", ""))
+    quality["domain_contamination_count"] = domain_contamination_count(
+        enriched.get("model_answer", ""), enriched.get("role_family", "default")
+    )
+    quality["domain_density"] = (enriched.get("quality_audit") or {}).get(
+        "domain_density",
+        domain_density_from_context(
+            enriched.get("model_answer", ""),
+            contract,
+            enriched.get("evidence_slots"),
+            card=enriched.get("skill_card"),
+        ),
+    )
+    quality["core_domain_term_coverage"] = (enriched.get("quality_audit") or {}).get("core_domain_term_coverage", 0.0)
+    quality["standard_tool_coverage"] = (enriched.get("quality_audit") or {}).get("standard_tool_coverage", 0.0)
+    quality["overlap_excluded_count"] = (enriched.get("quality_audit") or {}).get("overlap_excluded_count", 0.0)
+    quality["final_recalibrated_density"] = (enriched.get("quality_audit") or {}).get(
+        "final_recalibrated_density",
+        quality.get("domain_density", 0.0),
+    )
+    quality["expert_naturalness_score"] = (enriched.get("quality_audit") or {}).get(
+        "expert_naturalness_score",
+        expert_naturalness_score(enriched.get("model_answer", ""), contract, enriched.get("evidence_slots")),
+    )
+    quality["formulaic_spoken_label_count"] = (enriched.get("quality_audit") or {}).get(
+        "formulaic_spoken_label_count",
+        formulaic_spoken_label_count(enriched.get("model_answer", "")),
+    )
+    quality["study_depth_score"] = study_depth_score(enriched.get("study_material") or {})
+    quality["skill_card_consumption_score"] = (enriched.get("quality_audit") or {}).get(
+        "skill_card_consumption_score", 0.0
+    )
+    final_surface_failures = (enriched.get("quality_audit") or {}).get("final_surface_failures", [])
+    quality["final_surface_failure_count"] = len(final_surface_failures)
+    quality["empty_compliance_slot_count"] = final_surface_failures.count("empty_compliance_slot")
+    quality["invalid_key_term_count"] = final_surface_failures.count("invalid_key_term")
+    quality["truncated_example_count"] = final_surface_failures.count("truncated_example")
+    quality["paragraph_merge_count"] = final_surface_failures.count("paragraph_merge_detected")
+    quality["blocked_export_count"] = int(enriched.get("export_blocked", False))
+    answer_source = enriched.get("answer_source", "legacy_template")
+    enriched["answer_source"] = answer_source
+    if compiler_only and answer_source != "contract_compiler":
+        # Enforce compiler-only: regenerate through compiler and keep non-fallback source.
+        enriched["model_answer"] = build_model_answer(enriched, job)
+        enriched["answer_source"] = enriched.get("answer_source", "contract_compiler")
+        answer_source = enriched["answer_source"]
+    enriched["used_fallback_template"] = bool(compiler_only and answer_source != "contract_compiler")
+    quality["legacy_leakage"] = int(compiler_only and answer_source != "contract_compiler")
+    quality["slot_rejection_count"] = quality.get("slot_rejection_count", 0)
+    quality["slot_retry_count"] = quality.get("slot_retry_count", 0)
+    quality["quality_gate_status"] = enriched.get("quality_gate_status", "unknown")
+    if quality["domain_density"] < 15 and enriched.get("skill_card") and not enriched.get("export_blocked"):
+        enriched["model_answer"] = build_model_answer(enriched, job)
+        if not compiler_only:
+            enriched["model_answer"] = polish_spoken_answer(enriched.get("model_answer", ""), enriched, job)
+        quality["domain_density"] = (enriched.get("quality_audit") or {}).get(
+            "domain_density",
+            domain_density_from_context(
+                enriched.get("model_answer", ""),
+                contract,
+                None,
+                card=enriched.get("skill_card"),
+            ),
+        )
+        quality["generic_phrase_count"] = generic_phrase_count(enriched.get("model_answer", ""))
+    if enriched.get("export_blocked") or not enriched.get("model_answer"):
+        enriched["export_blocked"] = True
+        quality["blocked_export_count"] = 1
+        enriched.pop("model_answer", None)
+        enriched.pop("expert_reference_answer", None)
+    study = enriched.get("study_material") or {}
+    _boost_specificity(enriched, job)
+    enriched["evaluation_criteria"] = study.get("principles") or study.get("key_concepts") or enriched.get("evaluation_criteria", [])
+    enriched["common_mistakes"] = study.get("common_mistakes") or enriched.get("common_mistakes", [])
+    enriched["practice_tasks"] = study.get("practice_exercises") or [
+        f"Review the key facts for this topic and write a 200-word summary from memory.",
+    ]
+    enriched.setdefault("revision_notes", study.get("revision_notes") or [])
+    return enriched
 
 
 def mock_generate_questions(
@@ -216,15 +662,28 @@ def mock_generate_questions(
     count is hardcoded anywhere in this function.
     """
     questions: list[dict] = []
+    role_intelligence = build_role_intelligence(job)
+    role = job.get("title") or "Professional"
+    role_family_pack = _role_family_for_pack(role)
+    resp = (job.get("responsibilities") or [None])[0]
+    if isinstance(resp, dict):
+        resp = resp.get("text")
 
     skills = [s["skill"] for s in job.get("extracted_skills", [])]
     if focus_areas:
         # Focus areas the user explicitly asked about get priority placement and are
         # included even if the scraper/parser didn't independently detect them.
         skills = list(dict.fromkeys(focus_areas + skills))
+    skill_card_bank = build_skill_card_bank(job, skills)
 
     for skill in skills:
-        questions.extend(_technical_questions_for_skill(skill))
+        questions.extend(build_technical_questions_for_skill(skill, role, resp))
+
+    role_term = get_role_terminology_question(job)
+    if role_term:
+        questions.append(role_term)
+
+    questions.extend(get_procedure_questions_for_role(job))
 
     if any(s in ("System Design", "Distributed Systems", "Architecture") for s in skills):
         questions.append(
@@ -257,7 +716,7 @@ def mock_generate_questions(
             }
         )
 
-    for template in _GENERIC_BEHAVIORAL_TEMPLATES:
+    for template in _family_behavioral_templates(job):
         questions.append(
             {
                 "category": "behavioral",
@@ -292,7 +751,43 @@ def mock_generate_questions(
             }
         )
 
-    return questions
+    if not questions:
+        questions.extend(_role_baseline_questions(job))
+
+    unique_questions: list[dict] = []
+    seen: set[str] = set()
+    for q in questions:
+        q.setdefault("generation_stage_meta", {})
+        q["generation_stage_meta"]["stage_1_role_intelligence"] = {
+            "role": role_intelligence["role"],
+            "domain": role_intelligence["domain"],
+            "seniority": role_intelligence["seniority"],
+        }
+        q["role_family"] = role_family_pack
+        q["generation_stage_meta"]["stage_2_skill_map"] = {
+            "skill_count": len(skill_card_bank),
+        }
+        q["generation_stage_meta"]["stage_3_question_generation"] = {
+            "question_type": q.get("question_type") or q.get("category"),
+            "skill_tag": q.get("skill_tag"),
+        }
+        card = map_question_to_skill_card(q, skill_card_bank)
+        if card:
+            q["skill_card"] = card
+            q["mapped_skill"] = card.get("skill")
+            q["employer_expectation"] = card.get("employer_expectation")
+        key = _question_dedupe_key(q)
+        if key not in seen:
+            seen.add(key)
+            unique_questions.append(q)
+
+    return [_finalize_question(q, job, difficulty, i) for i, q in enumerate(unique_questions) if not q.get("export_blocked")]
+
+
+def finalize_questions_list(questions: list[dict], job: dict, difficulty: str) -> list[dict]:
+    """Ensure every question has model answers and study material (live + mock paths)."""
+    finalized = [_finalize_question(q, job, difficulty, i) for i, q in enumerate(questions)]
+    return [q for q in finalized if not q.get("export_blocked")]
 
 
 def mock_company_profile(company_name: str | None) -> dict:

@@ -1,0 +1,37 @@
+{
+  "role_name": "Journalist",
+  "normalized_role_slug": "journalist",
+  "category": "arts_media",
+  "stream_or_department": "arts_media",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 27,
+  "question_specific_study_material_count": 27,
+  "skill_count": 28,
+  "pdf_files": [
+    "journalist_interview_pack.pdf",
+    "journalist_study_material.pdf",
+    "journalist_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "journalist_interview_pack.md",
+    "journalist_study_material.md",
+    "journalist_questions_answers.md"
+  ],
+  "source_files": [
+    "journalist_interview_pack.md",
+    "journalist_study_material.md",
+    "journalist_questions_answers.md",
+    "journalist_interview_pack.pdf",
+    "journalist_study_material.pdf",
+    "journalist_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/arts_media/journalist",
+  "has_pdf": true,
+  "has_markdown": true
+}

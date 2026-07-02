@@ -130,7 +130,7 @@ async def _build_user_context_snapshot(db: AsyncSession, user: User) -> dict[str
         completed_skill_count  int | None
         total_skill_count      int | None
         cv_count               int
-        profile_completeness   float       0–100 from Profile.completeness_score()
+        profile_completeness   float       0–100 from Profile.calculate_completeness_score()
         missing_sections       list[str]   human-readable names of empty profile sections
         user_full_name         str | None
         user_email             str
@@ -184,7 +184,7 @@ async def _build_user_context_snapshot(db: AsyncSession, user: User) -> dict[str
 
     # --- Profile completeness + missing sections ----------------------------
     profile = await _get_or_create_profile(db, user)
-    snapshot["profile_completeness"] = profile.completeness_score()
+    snapshot["profile_completeness"] = profile.calculate_completeness_score()
     snapshot["missing_sections"] = _detect_missing_profile_sections(profile)
 
     return snapshot

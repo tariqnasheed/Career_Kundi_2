@@ -1,0 +1,3007 @@
+{
+  "role_name": "HR Advisor",
+  "role_slug": "hr_advisor",
+  "category": "business",
+  "role_overview": {
+    "role_name": "HR Advisor",
+    "summary": "The HR Advisor role integrates Employee relations, HR systems, Policy guidance to deliver on responsibilities such as answer hr queries. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Answer HR queries",
+      "Support recruitment",
+      "Assist with disciplinary processes"
+    ],
+    "required_skills": [
+      "Employee relations",
+      "HR systems",
+      "Policy guidance"
+    ],
+    "what_employers_expect": [
+      "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: CIPD qualification."
+    ],
+    "skill_clusters": [
+      "General Professional",
+      "Legal Finance"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "If a new hire joined your HR Advisor function while handling 'Answer HR queries', how would you break down Employee relations into practical steps?",
+      "why_asked": "Tests genuine conceptual understanding of Employee relations, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Employee relations",
+      "question_id": "HR-ADVISOR-EMPLOYEE-REL-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Employee Relations without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this HR Advisor context, Employee Relations starts with clarify required outcome, constraints, and stakeholders for answer hr queries. and continues through apply employee relations using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how answer hr queries stays reliable under real operational constraints.\n\nIn HR Advisor, I applied Employee Relations to stabilize answer hr queries under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Employee Relations:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Employee Relations directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Employee Relations",
+            "definition": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Employee Relations",
+            "explanation": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Employee Relations directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Hr Systems",
+            "explanation": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Employee Relations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for answer hr queries.",
+          "Apply Employee Relations using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Employee Relations directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+        ],
+        "practical_example": "In HR Advisor, I applied Employee Relations to stabilize answer hr queries under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Employee Relations without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Employee Relations applies to: Answer HR queries.",
+          "List the standards that govern Employee Relations in HR Advisor work.",
+          "Write out the verification steps after completing a Employee Relations task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Employee Relations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Employee Relations applies to: Answer HR queries.",
+        "List the standards that govern Employee Relations in HR Advisor work.",
+        "Write out the verification steps after completing a Employee Relations task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "In your HR Advisor experience while handling 'Answer HR queries', what high-stakes incident required deep use of Employee relations, and how did you resolve it?",
+      "why_asked": "Probes depth of hands-on experience with Employee relations under real constraints.",
+      "skill_tag": "Employee relations",
+      "question_id": "HR-ADVISOR-EMPLOYEE-REL-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Employee Relations without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this HR Advisor context, Employee Relations starts with clarify required outcome, constraints, and stakeholders for answer hr queries. and continues through apply employee relations using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how answer hr queries stays reliable under real operational constraints.\n\nIn HR Advisor, I applied Employee Relations to stabilize answer hr queries under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Employee Relations:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Employee Relations directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Employee Relations",
+            "definition": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Employee Relations",
+            "explanation": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Employee Relations directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Hr Systems",
+            "explanation": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Employee Relations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for answer hr queries.",
+          "Apply Employee Relations using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Employee Relations directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+        ],
+        "practical_example": "In HR Advisor, I applied Employee Relations to stabilize answer hr queries under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Employee Relations without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Employee Relations applies to: Answer HR queries.",
+          "List the standards that govern Employee Relations in HR Advisor work.",
+          "Write out the verification steps after completing a Employee Relations task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Employee Relations",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Employee Relations applies to: Answer HR queries.",
+        "List the standards that govern Employee Relations in HR Advisor work.",
+        "Write out the verification steps after completing a Employee Relations task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak HR Advisor practitioner in Employee relations while handling 'Answer HR queries'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Employee relations from those who only name-drop it.",
+      "skill_tag": "Employee relations",
+      "terminology_terms": [
+        {
+          "term": "Employee Relations",
+          "definition": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Employee Relations in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Employee Relations in professional practice."
+        }
+      ],
+      "question_id": "HR-ADVISOR-EMPLOYEE-REL-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Employee Relations: Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Employee Relations in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Employee Relations in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In HR Advisor work, these terms are foundational:\n\n\n**Employee Relations** \u2014 Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Employee Relations in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Employee Relations in professional practice.",
+      "answer_explanation": "Definitions covered: Employee Relations, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Employee Relations \u2014 precise definitions required for HR Advisor interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Employee Relations terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Employee Relations",
+            "definition": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Employee Relations in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Employee Relations in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Employee Relations",
+            "explanation": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Employee Relations in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Employee Relations in professional practice."
+          }
+        ],
+        "principles": [
+          "Employee Relations: Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Employee Relations in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Employee Relations in professional practice."
+        ],
+        "key_concepts": [
+          "Employee Relations",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Employee Relations** \u2014 Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Employee Relations in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Employee Relations in professional practice."
+        ],
+        "practical_example": "\u2022 Employee Relations: Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Employee Relations in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Employee Relations terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Employee Relations",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Employee Relations",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Employee Relations terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Employee Relations",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the core operating principles and standard workflow for applying Employee relations in a HR Advisor role while handling 'Answer HR queries'?",
+      "why_asked": "Tests whether you know how Employee relations is actually executed to standard, not only what it is called.",
+      "skill_tag": "Employee relations",
+      "question_id": "HR-ADVISOR-EMPLOYEE-REL-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Employee Relations as a HR Advisor:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for answer hr queries.\n2. Apply Employee Relations using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Employee Relations \u2014 how work is executed to standard in HR Advisor roles.",
+        "what_you_need_to_know_first": [
+          "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Employee Relations",
+            "definition": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Employee Relations",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Employee Relations",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Employee Relations",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for answer hr queries.",
+          "Apply Employee Relations using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for answer hr queries.\n2. Apply Employee Relations using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Employee Relations workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Employee Relations workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "For Employee relations in HR Advisor delivery while handling 'Answer HR queries', which numeric thresholds or KPIs determine whether work is acceptable?",
+      "why_asked": "Tests ability to work with numbers, metrics, or measurable outcomes in Employee relations.",
+      "skill_tag": "Employee relations",
+      "question_id": "HR-ADVISOR-EMPLOYEE-REL-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Hand-waving without numbers",
+        "Wrong precision for context"
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "On a typical HR Advisor task involving Employee Relations, I'd first identify what must be measured \u2014 for example load, flow, dose, or error rate. I'd gather inputs from site data or patient parameters, apply the appropriate formula or clinical calculation, show units, and compare against the limit before proceeding. I'd document the calculation on the test sheet or clinical record.",
+      "answer_explanation": "Quantitative method with formula, units, and limit check.",
+      "study_material": {
+        "overview": "For Employee Relations, identify measurable quantities on typical HR Advisor tasks \u2014 loads, doses, rates, margins.",
+        "what_you_need_to_know_first": [
+          "Name what you would measure on site or in clinic.",
+          "State how you would calculate or estimate it.",
+          "Explain how the number drives a decision."
+        ],
+        "definitions": [
+          {
+            "term": "Employee Relations",
+            "definition": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Measurement",
+          "Estimation",
+          "Thresholds",
+          "Verification"
+        ],
+        "step_by_step_breakdown": [
+          "Identify the quantity (load, dose, flow, cost, latency).",
+          "State data sources and instruments.",
+          "Apply formula or rule of thumb.",
+          "Compare to limit and document."
+        ],
+        "explanations": [],
+        "practical_example": "In HR Advisor, I applied Employee Relations to stabilize answer hr queries under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Hand-waving without numbers",
+          "Wrong precision for context"
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "List three numeric checks you perform when using Employee Relations."
+        ],
+        "revision_notes": [],
+        "related_concepts": [
+          "Employee Relations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "List three numeric checks you perform when using Employee Relations."
+      ],
+      "revision_notes": []
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "How would you teach HR systems to a new colleague in a HR Advisor team while handling 'Answer HR queries', including where beginners fail first?",
+      "why_asked": "Tests genuine conceptual understanding of HR systems, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "HR systems",
+      "question_id": "HR-ADVISOR-HR-SYSTEMS-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "HR systems",
+        "Employee relations",
+        "Policy guidance",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Hr Systems without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this HR Advisor context, Hr Systems starts with clarify required outcome, constraints, and stakeholders for answer hr queries. and continues through apply hr systems using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how answer hr queries stays reliable under real operational constraints.\n\nIn HR Advisor, I applied Hr Systems to stabilize answer hr queries under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Hr Systems:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Hr Systems directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Hr Systems",
+            "definition": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Hr Systems",
+            "explanation": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Hr Systems directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Employee Relations",
+            "explanation": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Hr Systems",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for answer hr queries.",
+          "Apply Hr Systems using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Hr Systems directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+        ],
+        "practical_example": "In HR Advisor, I applied Hr Systems to stabilize answer hr queries under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Hr Systems without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Hr Systems applies to: Answer HR queries.",
+          "List the standards that govern Hr Systems in HR Advisor work.",
+          "Write out the verification steps after completing a Hr Systems task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Hr Systems",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Hr Systems applies to: Answer HR queries.",
+        "List the standards that govern Hr Systems in HR Advisor work.",
+        "Write out the verification steps after completing a Hr Systems task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Give a detailed example where HR systems was critical to recovering a difficult HR Advisor outcome while handling 'Answer HR queries'.",
+      "why_asked": "Probes depth of hands-on experience with HR systems under real constraints.",
+      "skill_tag": "HR systems",
+      "question_id": "HR-ADVISOR-HR-SYSTEMS-SCEN-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "HR systems",
+        "Employee relations",
+        "Policy guidance",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Hr Systems without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this HR Advisor context, Hr Systems starts with clarify required outcome, constraints, and stakeholders for answer hr queries. and continues through apply hr systems using documented procedures and intermediate quality checks.. The critical discipline is evidence: outcome quality improves when assumptions are explicit and testable.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how answer hr queries stays reliable under real operational constraints.\n\nIn HR Advisor, I applied Hr Systems to stabilize answer hr queries under constraints, documented the control points, and reduced rework through structured verification.",
+      "answer_explanation": "Key knowledge demonstrated for Hr Systems:\n\u2022 Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into normal workflow, not bolted on later.",
+      "study_material": {
+        "overview": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Hr Systems directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Hr Systems",
+            "definition": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Hr Systems",
+            "explanation": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Hr Systems directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Employee Relations",
+            "explanation": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Hr Systems",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for answer hr queries.",
+          "Apply Hr Systems using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Hr Systems directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+        ],
+        "practical_example": "In HR Advisor, I applied Hr Systems to stabilize answer hr queries under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Hr Systems without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Hr Systems applies to: Answer HR queries.",
+          "List the standards that govern Hr Systems in HR Advisor work.",
+          "Write out the verification steps after completing a Hr Systems task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Hr Systems",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Hr Systems applies to: Answer HR queries.",
+        "List the standards that govern Hr Systems in HR Advisor work.",
+        "Write out the verification steps after completing a Hr Systems task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for HR systems in HR Advisor practice while handling 'Answer HR queries', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand HR systems from those who only name-drop it.",
+      "skill_tag": "HR systems",
+      "terminology_terms": [
+        {
+          "term": "Hr Systems",
+          "definition": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Risk controls must be integrated into no",
+          "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+        },
+        {
+          "term": "Outcome quality improves when assumptions are explicit and testable.",
+          "definition": "Related concept used with Hr Systems in professional practice."
+        },
+        {
+          "term": "Traceability prevents repeated failures in handoffs.",
+          "definition": "Related concept used with Hr Systems in professional practice."
+        }
+      ],
+      "question_id": "HR-ADVISOR-HR-SYSTEMS-TERM-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "HR systems",
+        "Employee relations",
+        "Policy guidance",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Hr Systems: Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+        "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Hr Systems in professional practice.",
+        "Traceability prevents repeated failures in handoffs.: Related concept used with Hr Systems in professional practice."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In HR Advisor work, these terms are foundational:\n\n\n**Hr Systems** \u2014 Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.\n\n**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Hr Systems in professional practice.\n\n**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Hr Systems in professional practice.",
+      "answer_explanation": "Definitions covered: Hr Systems, Outcome quality improves when assumption, Traceability prevents repeated failures , Risk controls must be integrated into no, Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs.",
+      "study_material": {
+        "overview": "Core terminology for Hr Systems \u2014 precise definitions required for HR Advisor interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Hr Systems terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Hr Systems",
+            "definition": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Risk controls must be integrated into no",
+            "definition": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "term": "Outcome quality improves when assumptions are explicit and testable.",
+            "definition": "Related concept used with Hr Systems in professional practice."
+          },
+          {
+            "term": "Traceability prevents repeated failures in handoffs.",
+            "definition": "Related concept used with Hr Systems in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Hr Systems",
+            "explanation": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Risk controls must be integrated into no",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          },
+          {
+            "skill": "Outcome quality improves when assumptions are explicit and testable.",
+            "explanation": "Related concept used with Hr Systems in professional practice."
+          },
+          {
+            "skill": "Traceability prevents repeated failures in handoffs.",
+            "explanation": "Related concept used with Hr Systems in professional practice."
+          }
+        ],
+        "principles": [
+          "Hr Systems: Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.",
+          "Outcome quality improves when assumptions are explicit and testable.: Related concept used with Hr Systems in professional practice.",
+          "Traceability prevents repeated failures in handoffs.: Related concept used with Hr Systems in professional practice."
+        ],
+        "key_concepts": [
+          "Hr Systems",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Hr Systems** \u2014 Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Risk controls must be integrated into no** \u2014 Risk controls must be integrated into normal workflow, not bolted on later.",
+          "**Outcome quality improves when assumptions are explicit and testable.** \u2014 Related concept used with Hr Systems in professional practice.",
+          "**Traceability prevents repeated failures in handoffs.** \u2014 Related concept used with Hr Systems in professional practice."
+        ],
+        "practical_example": "\u2022 Hr Systems: Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Risk controls must be integrated into no: Risk controls must be integrated into normal workflow, not bolted on later.\n\u2022 Outcome quality improves when assumptions are explicit and testable.: Related concept used with Hr Systems in professional practice.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Hr Systems terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Hr Systems",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "related_concepts": [
+          "Hr Systems",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Risk controls must be integrated into no",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Hr Systems terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Hr Systems",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Risk controls must be integrated into no",
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the core operating principles and standard workflow for applying HR systems in a HR Advisor role while handling 'Answer HR queries'?",
+      "why_asked": "Tests whether you know how HR systems is actually executed to standard, not only what it is called.",
+      "skill_tag": "HR systems",
+      "question_id": "HR-ADVISOR-HR-SYSTEMS-PRIN-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "HR systems",
+        "Employee relations",
+        "Policy guidance",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Hr Systems as a HR Advisor:\n\n1. Outcome quality improves when assumptions are explicit and testable.\n2. Traceability prevents repeated failures in handoffs.\n3. Risk controls must be integrated into normal workflow, not bolted on later.\n\nStandard workflow:\n1. Clarify required outcome, constraints, and stakeholders for answer hr queries.\n2. Apply Hr Systems using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Hr Systems \u2014 how work is executed to standard in HR Advisor roles.",
+        "what_you_need_to_know_first": [
+          "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Hr Systems",
+            "definition": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Hr Systems",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Hr Systems",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Hr Systems",
+            "explanation": "Risk controls must be integrated into normal workflow, not bolted on later."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for answer hr queries.",
+          "Apply Hr Systems using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "practical_example": "1. Clarify required outcome, constraints, and stakeholders for answer hr queries.\n2. Apply Hr Systems using documented procedures and intermediate quality checks.\n3. Validate output against acceptance criteria and applicable standards.\n4. Record decisions and handover notes for traceability.\n5. Review result and improve process for next cycle.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Hr Systems workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Hr Systems workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "For HR systems in HR Advisor delivery while handling 'Answer HR queries', which numeric thresholds or KPIs determine whether work is acceptable?",
+      "why_asked": "Tests ability to work with numbers, metrics, or measurable outcomes in HR systems.",
+      "skill_tag": "HR systems",
+      "question_id": "HR-ADVISOR-HR-SYSTEMS-CALC-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "HR systems",
+        "Employee relations",
+        "Policy guidance",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Hand-waving without numbers",
+        "Wrong precision for context"
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "On a typical HR Advisor task involving Hr Systems, I'd first identify what must be measured \u2014 for example load, flow, dose, or error rate. I'd gather inputs from site data or patient parameters, apply the appropriate formula or clinical calculation, show units, and compare against the limit before proceeding. I'd document the calculation on the test sheet or clinical record.",
+      "answer_explanation": "Quantitative method with formula, units, and limit check.",
+      "study_material": {
+        "overview": "For Hr Systems, identify measurable quantities on typical HR Advisor tasks \u2014 loads, doses, rates, margins.",
+        "what_you_need_to_know_first": [
+          "Name what you would measure on site or in clinic.",
+          "State how you would calculate or estimate it.",
+          "Explain how the number drives a decision."
+        ],
+        "definitions": [
+          {
+            "term": "Hr Systems",
+            "definition": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Measurement",
+          "Estimation",
+          "Thresholds",
+          "Verification"
+        ],
+        "step_by_step_breakdown": [
+          "Identify the quantity (load, dose, flow, cost, latency).",
+          "State data sources and instruments.",
+          "Apply formula or rule of thumb.",
+          "Compare to limit and document."
+        ],
+        "explanations": [],
+        "practical_example": "In HR Advisor, I applied Hr Systems to stabilize answer hr queries under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Hand-waving without numbers",
+          "Wrong precision for context"
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "List three numeric checks you perform when using Hr Systems."
+        ],
+        "revision_notes": [],
+        "related_concepts": [
+          "Hr Systems"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "List three numeric checks you perform when using Hr Systems."
+      ],
+      "revision_notes": []
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Explain Policy guidance to a new colleague and include compliance/evidence expectations.",
+      "why_asked": "Tests genuine conceptual understanding of Policy guidance, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Policy guidance",
+      "question_id": "HR-ADVISOR-POLICY-GUIDA-EXPL-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Policy guidance",
+        "Employee relations",
+        "HR systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ],
+      "common_mistakes": [
+        "Executing Policy Guidance without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this HR Advisor context, Policy Guidance starts with translate policy into a concrete workflow with eligibility rules and deadlines. and continues through create a complete case record trail: intake, decision evidence, approvals, and correspondence.. The critical discipline is evidence: most service delays come from incomplete case data and unclear ownership.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how answer hr queries stays reliable under real operational constraints.\n\nAs HR Advisor, I redesigned the answer hr queries workflow with mandatory data fields and decision templates; average processing time dropped 24% and audit queries reduced by half.",
+      "answer_explanation": "Key knowledge demonstrated for Policy Guidance:\n\u2022 Most service delays come from incomplete case data and unclear ownership.\n\u2022 Auditability matters as much as speed in public-facing administration.\n\u2022 Clear decision logs reduce appeals and repeat contacts.\nStandards referenced: Data protection policy, Records retention schedule",
+      "study_material": {
+        "overview": "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records. In HR Advisor practice, Policy Guidance directly supports answer hr queries. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "definitions": [
+          {
+            "term": "Policy Guidance",
+            "definition": "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records."
+          },
+          {
+            "term": "Data protection policy",
+            "definition": "Applicable standard/regulation: Data protection policy."
+          },
+          {
+            "term": "Records retention schedule",
+            "definition": "Applicable standard/regulation: Records retention schedule."
+          },
+          {
+            "term": "Service-level targets",
+            "definition": "Applicable standard/regulation: Service-level targets."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Policy Guidance",
+            "explanation": "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records. In HR Advisor practice, Policy Guidance directly supports answer hr queries. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Employee Relations",
+            "explanation": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "principles": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "key_concepts": [
+          "Policy Guidance",
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "legal finance",
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "step_by_step_breakdown": [
+          "Translate policy into a concrete workflow with eligibility rules and deadlines.",
+          "Create a complete case record trail: intake, decision evidence, approvals, and correspondence.",
+          "Run QA checks on completeness, lawful basis, and timeliness before closure.",
+          "Escalate exceptions early with written risk/impact notes.",
+          "Track cycle-time and rework rate to improve process reliability."
+        ],
+        "explanations": [
+          "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records. In HR Advisor practice, Policy Guidance directly supports answer hr queries. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records."
+        ],
+        "practical_example": "As HR Advisor, I redesigned the answer hr queries workflow with mandatory data fields and decision templates; average processing time dropped 24% and audit queries reduced by half.",
+        "common_mistakes": [
+          "Executing Policy Guidance without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Policy Guidance applies to: Answer HR queries.",
+          "List the standards that govern Policy Guidance in HR Advisor work.",
+          "Write out the verification steps after completing a Policy Guidance task."
+        ],
+        "revision_notes": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "related_concepts": [
+          "Policy Guidance",
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "legal finance"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Policy Guidance applies to: Answer HR queries.",
+        "List the standards that govern Policy Guidance in HR Advisor work.",
+        "Write out the verification steps after completing a Policy Guidance task."
+      ],
+      "revision_notes": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a complex case/analysis where Policy guidance changed risk or financial outcome.",
+      "why_asked": "Probes depth of hands-on experience with Policy guidance under real constraints.",
+      "skill_tag": "Policy guidance",
+      "question_id": "HR-ADVISOR-POLICY-GUIDA-SCEN-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Policy guidance",
+        "Employee relations",
+        "HR systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ],
+      "common_mistakes": [
+        "Executing Policy Guidance without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this HR Advisor context, Policy Guidance starts with translate policy into a concrete workflow with eligibility rules and deadlines. and continues through create a complete case record trail: intake, decision evidence, approvals, and correspondence.. The critical discipline is evidence: most service delays come from incomplete case data and unclear ownership.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how answer hr queries stays reliable under real operational constraints.\n\nAs HR Advisor, I redesigned the answer hr queries workflow with mandatory data fields and decision templates; average processing time dropped 24% and audit queries reduced by half.",
+      "answer_explanation": "Key knowledge demonstrated for Policy Guidance:\n\u2022 Most service delays come from incomplete case data and unclear ownership.\n\u2022 Auditability matters as much as speed in public-facing administration.\n\u2022 Clear decision logs reduce appeals and repeat contacts.\nStandards referenced: Data protection policy, Records retention schedule",
+      "study_material": {
+        "overview": "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records. In HR Advisor practice, Policy Guidance directly supports answer hr queries. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "definitions": [
+          {
+            "term": "Policy Guidance",
+            "definition": "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records."
+          },
+          {
+            "term": "Data protection policy",
+            "definition": "Applicable standard/regulation: Data protection policy."
+          },
+          {
+            "term": "Records retention schedule",
+            "definition": "Applicable standard/regulation: Records retention schedule."
+          },
+          {
+            "term": "Service-level targets",
+            "definition": "Applicable standard/regulation: Service-level targets."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Policy Guidance",
+            "explanation": "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records. In HR Advisor practice, Policy Guidance directly supports answer hr queries. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Employee Relations",
+            "explanation": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "principles": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "key_concepts": [
+          "Policy Guidance",
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "legal finance",
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "step_by_step_breakdown": [
+          "Translate policy into a concrete workflow with eligibility rules and deadlines.",
+          "Create a complete case record trail: intake, decision evidence, approvals, and correspondence.",
+          "Run QA checks on completeness, lawful basis, and timeliness before closure.",
+          "Escalate exceptions early with written risk/impact notes.",
+          "Track cycle-time and rework rate to improve process reliability."
+        ],
+        "explanations": [
+          "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records. In HR Advisor practice, Policy Guidance directly supports answer hr queries. Legal and financial professions operate under statutory frameworks, professional body rules, and fiduciary duties. Accuracy, confidentiality, and analytical rigour are essential because errors can cause material harm to clients, markets, or the rule of law. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records."
+        ],
+        "practical_example": "As HR Advisor, I redesigned the answer hr queries workflow with mandatory data fields and decision templates; average processing time dropped 24% and audit queries reduced by half.",
+        "common_mistakes": [
+          "Executing Policy Guidance without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Policy Guidance applies to: Answer HR queries.",
+          "List the standards that govern Policy Guidance in HR Advisor work.",
+          "Write out the verification steps after completing a Policy Guidance task."
+        ],
+        "revision_notes": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "related_concepts": [
+          "Policy Guidance",
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "legal finance"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Policy Guidance applies to: Answer HR queries.",
+        "List the standards that govern Policy Guidance in HR Advisor work.",
+        "Write out the verification steps after completing a Policy Guidance task."
+      ],
+      "revision_notes": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for Policy guidance in HR Advisor practice while handling 'Answer HR queries', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand Policy guidance from those who only name-drop it.",
+      "skill_tag": "Policy guidance",
+      "terminology_terms": [
+        {
+          "term": "Policy Guidance",
+          "definition": "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records."
+        },
+        {
+          "term": "Data protection policy",
+          "definition": "Standard/framework governing Policy Guidance: Data protection policy."
+        },
+        {
+          "term": "Records retention schedule",
+          "definition": "Standard/framework governing Policy Guidance: Records retention schedule."
+        },
+        {
+          "term": "Service-level targets",
+          "definition": "Standard/framework governing Policy Guidance: Service-level targets."
+        },
+        {
+          "term": "Most service delays come from incomplete",
+          "definition": "Most service delays come from incomplete case data and unclear ownership."
+        },
+        {
+          "term": "Auditability matters as much as speed in",
+          "definition": "Auditability matters as much as speed in public-facing administration."
+        },
+        {
+          "term": "Clear decision logs reduce appeals and r",
+          "definition": "Clear decision logs reduce appeals and repeat contacts."
+        },
+        {
+          "term": "Most service delays come from incomplete case data and unclear ownership.",
+          "definition": "Related concept used with Policy Guidance in professional practice."
+        }
+      ],
+      "question_id": "HR-ADVISOR-POLICY-GUIDA-TERM-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Policy guidance",
+        "Employee relations",
+        "HR systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Policy Guidance: Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records.",
+        "Data protection policy: Standard/framework governing Policy Guidance: Data protection policy.",
+        "Records retention schedule: Standard/framework governing Policy Guidance: Records retention schedule.",
+        "Service-level targets: Standard/framework governing Policy Guidance: Service-level targets.",
+        "Most service delays come from incomplete: Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in: Auditability matters as much as speed in public-facing administration."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In HR Advisor work, these terms are foundational:\n\n\n**Policy Guidance** \u2014 Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records.\n\n**Data protection policy** \u2014 Standard/framework governing Policy Guidance: Data protection policy.\n\n**Records retention schedule** \u2014 Standard/framework governing Policy Guidance: Records retention schedule.\n\n**Service-level targets** \u2014 Standard/framework governing Policy Guidance: Service-level targets.\n\n**Most service delays come from incomplete** \u2014 Most service delays come from incomplete case data and unclear ownership.\n\n**Auditability matters as much as speed in** \u2014 Auditability matters as much as speed in public-facing administration.\n\n**Clear decision logs reduce appeals and r** \u2014 Clear decision logs reduce appeals and repeat contacts.\n\n**Most service delays come from incomplete case data and unclear ownership.** \u2014 Related concept used with Policy Guidance in professional practice.",
+      "answer_explanation": "Definitions covered: Policy Guidance, Data protection policy, Records retention schedule, Service-level targets, Most service delays come from incomplete, Auditability matters as much as speed in",
+      "study_material": {
+        "overview": "Core terminology for Policy Guidance \u2014 precise definitions required for HR Advisor interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Policy Guidance terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Policy Guidance",
+            "definition": "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records."
+          },
+          {
+            "term": "Data protection policy",
+            "definition": "Standard/framework governing Policy Guidance: Data protection policy."
+          },
+          {
+            "term": "Records retention schedule",
+            "definition": "Standard/framework governing Policy Guidance: Records retention schedule."
+          },
+          {
+            "term": "Service-level targets",
+            "definition": "Standard/framework governing Policy Guidance: Service-level targets."
+          },
+          {
+            "term": "Most service delays come from incomplete",
+            "definition": "Most service delays come from incomplete case data and unclear ownership."
+          },
+          {
+            "term": "Auditability matters as much as speed in",
+            "definition": "Auditability matters as much as speed in public-facing administration."
+          },
+          {
+            "term": "Clear decision logs reduce appeals and r",
+            "definition": "Clear decision logs reduce appeals and repeat contacts."
+          },
+          {
+            "term": "Most service delays come from incomplete case data and unclear ownership.",
+            "definition": "Related concept used with Policy Guidance in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Policy Guidance",
+            "explanation": "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records."
+          },
+          {
+            "skill": "Data protection policy",
+            "explanation": "Standard/framework governing Policy Guidance: Data protection policy."
+          },
+          {
+            "skill": "Records retention schedule",
+            "explanation": "Standard/framework governing Policy Guidance: Records retention schedule."
+          },
+          {
+            "skill": "Service-level targets",
+            "explanation": "Standard/framework governing Policy Guidance: Service-level targets."
+          },
+          {
+            "skill": "Most service delays come from incomplete",
+            "explanation": "Most service delays come from incomplete case data and unclear ownership."
+          },
+          {
+            "skill": "Auditability matters as much as speed in",
+            "explanation": "Auditability matters as much as speed in public-facing administration."
+          },
+          {
+            "skill": "Clear decision logs reduce appeals and r",
+            "explanation": "Clear decision logs reduce appeals and repeat contacts."
+          },
+          {
+            "skill": "Most service delays come from incomplete case data and unclear ownership.",
+            "explanation": "Related concept used with Policy Guidance in professional practice."
+          }
+        ],
+        "principles": [
+          "Policy Guidance: Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records.",
+          "Data protection policy: Standard/framework governing Policy Guidance: Data protection policy.",
+          "Records retention schedule: Standard/framework governing Policy Guidance: Records retention schedule.",
+          "Service-level targets: Standard/framework governing Policy Guidance: Service-level targets.",
+          "Most service delays come from incomplete: Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in: Auditability matters as much as speed in public-facing administration."
+        ],
+        "key_concepts": [
+          "Policy Guidance",
+          "Data protection policy",
+          "Records retention schedule",
+          "Service-level targets",
+          "Most service delays come from incomplete",
+          "Auditability matters as much as speed in",
+          "Clear decision logs reduce appeals and r",
+          "Most service delays come from incomplete case data and unclear ownership."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Policy Guidance** \u2014 Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records.",
+          "**Data protection policy** \u2014 Standard/framework governing Policy Guidance: Data protection policy.",
+          "**Records retention schedule** \u2014 Standard/framework governing Policy Guidance: Records retention schedule.",
+          "**Service-level targets** \u2014 Standard/framework governing Policy Guidance: Service-level targets.",
+          "**Most service delays come from incomplete** \u2014 Most service delays come from incomplete case data and unclear ownership.",
+          "**Auditability matters as much as speed in** \u2014 Auditability matters as much as speed in public-facing administration.",
+          "**Clear decision logs reduce appeals and r** \u2014 Clear decision logs reduce appeals and repeat contacts.",
+          "**Most service delays come from incomplete case data and unclear ownership.** \u2014 Related concept used with Policy Guidance in professional practice."
+        ],
+        "practical_example": "\u2022 Policy Guidance: Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records.\n\u2022 Data protection policy: Standard/framework governing Policy Guidance: Data protection policy.\n\u2022 Records retention schedule: Standard/framework governing Policy Guidance: Records retention schedule.\n\u2022 Service-level targets: Standard/framework governing Policy Guidance: Service-level targets.\n\u2022 Most service delays come from incomplete: Most service delays come from incomplete case data and unclear ownership.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Policy Guidance terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Policy Guidance",
+          "Data protection policy",
+          "Records retention schedule",
+          "Service-level targets",
+          "Most service delays come from incomplete",
+          "Auditability matters as much as speed in",
+          "Clear decision logs reduce appeals and r",
+          "Most service delays come from incomplete case data and unclear ownership."
+        ],
+        "related_concepts": [
+          "Policy Guidance",
+          "Data protection policy",
+          "Records retention schedule",
+          "Service-level targets",
+          "Most service delays come from incomplete",
+          "Auditability matters as much as speed in",
+          "Clear decision logs reduce appeals and r",
+          "Most service delays come from incomplete case data and unclear ownership."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Policy Guidance terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Policy Guidance",
+        "Data protection policy",
+        "Records retention schedule",
+        "Service-level targets",
+        "Most service delays come from incomplete",
+        "Auditability matters as much as speed in",
+        "Clear decision logs reduce appeals and r",
+        "Most service delays come from incomplete case data and unclear ownership."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the governing principles and review workflow for Policy guidance in a HR Advisor role?",
+      "why_asked": "Tests whether you know how Policy guidance is actually executed to standard, not only what it is called.",
+      "skill_tag": "Policy guidance",
+      "question_id": "HR-ADVISOR-POLICY-GUIDA-PRIN-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Policy guidance",
+        "Employee relations",
+        "HR systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Policy Guidance as a HR Advisor:\n\n1. Most service delays come from incomplete case data and unclear ownership.\n2. Auditability matters as much as speed in public-facing administration.\n3. Clear decision logs reduce appeals and repeat contacts.\n\nStandard workflow:\n1. Translate policy into a concrete workflow with eligibility rules and deadlines.\n2. Create a complete case record trail: intake, decision evidence, approvals, and correspondence.\n3. Run QA checks on completeness, lawful basis, and timeliness before closure.\n4. Escalate exceptions early with written risk/impact notes.\n5. Track cycle-time and rework rate to improve process reliability.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Policy Guidance \u2014 how work is executed to standard in HR Advisor roles.",
+        "what_you_need_to_know_first": [
+          "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Policy Guidance",
+            "definition": "Policy Guidance in public administration is the design and execution of auditable workflows that deliver answer hr queries lawfully, on time, and with complete records."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Policy Guidance",
+            "explanation": "Most service delays come from incomplete case data and unclear ownership."
+          },
+          {
+            "skill": "Policy Guidance",
+            "explanation": "Auditability matters as much as speed in public-facing administration."
+          },
+          {
+            "skill": "Policy Guidance",
+            "explanation": "Clear decision logs reduce appeals and repeat contacts."
+          }
+        ],
+        "principles": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "key_concepts": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "step_by_step_breakdown": [
+          "Translate policy into a concrete workflow with eligibility rules and deadlines.",
+          "Create a complete case record trail: intake, decision evidence, approvals, and correspondence.",
+          "Run QA checks on completeness, lawful basis, and timeliness before closure.",
+          "Escalate exceptions early with written risk/impact notes.",
+          "Track cycle-time and rework rate to improve process reliability."
+        ],
+        "explanations": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "practical_example": "1. Translate policy into a concrete workflow with eligibility rules and deadlines.\n2. Create a complete case record trail: intake, decision evidence, approvals, and correspondence.\n3. Run QA checks on completeness, lawful basis, and timeliness before closure.\n4. Escalate exceptions early with written risk/impact notes.\n5. Track cycle-time and rework rate to improve process reliability.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Policy Guidance workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "related_concepts": [
+          "Most service delays come from incomplete case data and unclear ownership.",
+          "Auditability matters as much as speed in public-facing administration.",
+          "Clear decision logs reduce appeals and repeat contacts."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Policy Guidance workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Most service delays come from incomplete case data and unclear ownership.",
+        "Auditability matters as much as speed in public-facing administration.",
+        "Clear decision logs reduce appeals and repeat contacts."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Quantitative validation scenario (HR Advisor, Policy guidance) while handling 'Answer HR queries': Company EBITDA \u00a32m, multiple 8\u00d7, net debt \u00a33m. Estimate equity value.",
+      "why_asked": "Tests numerical and analytical competence in Policy guidance \u2014 essential for HR Advisor roles.",
+      "skill_tag": "Policy guidance",
+      "calculation": {
+        "skill": "Policy Guidance",
+        "prompt": "Company EBITDA \u00a32m, multiple 8\u00d7, net debt \u00a33m. Estimate equity value.",
+        "answer": "EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).",
+        "steps": [
+          "EV = EBITDA \u00d7 multiple",
+          "Subtract net debt",
+          "Note adjustment items"
+        ]
+      },
+      "question_id": "HR-ADVISOR-POLICY-GUIDA-CALC-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Policy guidance",
+        "Employee relations",
+        "HR systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "EV = EBITDA \u00d7 multiple",
+        "Subtract net debt",
+        "Note adjustment items"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Company EBITDA \u00a32m, multiple 8\u00d7, net debt \u00a33m. Estimate equity value.\n\nWorking:\n1. EV = EBITDA \u00d7 multiple\n2. Subtract net debt\n3. Note adjustment items\n\nAnswer: EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).\n\nIn HR Advisor practice, I anchor this using: EV = EBITDA \u00d7 multiple, Subtract net debt, Given data.",
+      "answer_explanation": "Calculation: EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).",
+      "study_material": {
+        "overview": "Quantitative problem for Policy Guidance: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Company EBITDA \u00a32m, multiple 8\u00d7, net debt \u00a33m. Estimate equity value."
+          },
+          {
+            "term": "Expected result",
+            "definition": "EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital)."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "EV = EBITDA \u00d7 multiple",
+          "Subtract net debt",
+          "Note adjustment items"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "EV = EBITDA \u00d7 multiple",
+          "Subtract net debt",
+          "Note adjustment items"
+        ],
+        "explanations": [
+          "EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).",
+          "Step: EV = EBITDA \u00d7 multiple",
+          "Step: Subtract net debt",
+          "Step: Note adjustment items"
+        ],
+        "practical_example": "EV = 2 \u00d7 8 = \u00a316m. Equity = EV \u2212 net debt = \u00a313m (before adjustments for cash, pensions, working capital).",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Policy Guidance calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "EV = EBITDA \u00d7 multiple",
+          "Subtract net debt",
+          "Note adjustment items"
+        ],
+        "related_concepts": [
+          "Policy Guidance",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Policy Guidance calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "EV = EBITDA \u00d7 multiple",
+        "Subtract net debt",
+        "Note adjustment items"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a HR Advisor, define and explain these core professional terms: Employee Relations, Outcome quality improves when assumption, Traceability prevents repeated failures , Hr Systems, Outcome quality improves when assumption, Traceability prevents repeated failures .",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Employee Relations",
+          "definition": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        },
+        {
+          "term": "Hr Systems",
+          "definition": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+        },
+        {
+          "term": "Outcome quality improves when assumption",
+          "definition": "Outcome quality improves when assumptions are explicit and testable."
+        },
+        {
+          "term": "Traceability prevents repeated failures ",
+          "definition": "Traceability prevents repeated failures in handoffs."
+        }
+      ],
+      "question_id": "HR-ADVISOR-CORE-TERMINO-TERM-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Employee Relations: Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+        "Hr Systems: Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+        "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In HR Advisor work, these terms are foundational:\n\n\n**Employee Relations** \u2014 Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.\n\n**Hr Systems** \u2014 Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.\n\n**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.\n\n**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+      "answer_explanation": "Definitions covered: Employee Relations, Outcome quality improves when assumption, Traceability prevents repeated failures , Hr Systems, Outcome quality improves when assumption, Traceability prevents repeated failures ",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for HR Advisor interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Employee Relations",
+            "definition": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "term": "Hr Systems",
+            "definition": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          },
+          {
+            "term": "Outcome quality improves when assumption",
+            "definition": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "term": "Traceability prevents repeated failures ",
+            "definition": "Traceability prevents repeated failures in handoffs."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Employee Relations",
+            "explanation": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          },
+          {
+            "skill": "Hr Systems",
+            "explanation": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          },
+          {
+            "skill": "Outcome quality improves when assumption",
+            "explanation": "Outcome quality improves when assumptions are explicit and testable."
+          },
+          {
+            "skill": "Traceability prevents repeated failures ",
+            "explanation": "Traceability prevents repeated failures in handoffs."
+          }
+        ],
+        "principles": [
+          "Employee Relations: Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.",
+          "Hr Systems: Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+          "Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs."
+        ],
+        "key_concepts": [
+          "Employee Relations",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Hr Systems",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Employee Relations** \u2014 Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs.",
+          "**Hr Systems** \u2014 Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.",
+          "**Outcome quality improves when assumption** \u2014 Outcome quality improves when assumptions are explicit and testable.",
+          "**Traceability prevents repeated failures ** \u2014 Traceability prevents repeated failures in handoffs."
+        ],
+        "practical_example": "\u2022 Employee Relations: Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.\n\u2022 Traceability prevents repeated failures : Traceability prevents repeated failures in handoffs.\n\u2022 Hr Systems: Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries.\n\u2022 Outcome quality improves when assumption: Outcome quality improves when assumptions are explicit and testable.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Employee Relations",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Hr Systems",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "related_concepts": [
+          "Employee Relations",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures ",
+          "Hr Systems",
+          "Outcome quality improves when assumption",
+          "Traceability prevents repeated failures "
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Employee Relations",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures ",
+        "Hr Systems",
+        "Outcome quality improves when assumption",
+        "Traceability prevents repeated failures "
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Answer HR queries'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "HR-ADVISOR-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The resul\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a HR Advisor handles when answer hr queries. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "HR Advisor work involves answer hr queries under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "HR Advisor",
+            "definition": "The HR Advisor role integrates Employee relations, HR systems, Policy guidance to deliver on responsibilities such as answer hr queries. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for HR Advisor reference answer hr queries and relevant standards or tools."
+        ],
+        "practical_example": "In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real HR Advisor challenge with numbers.",
+          "Link the story to: Answer HR queries."
+        ],
+        "revision_notes": [
+          "Employee relations",
+          "HR systems",
+          "Policy guidance"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Legal Finance"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real HR Advisor challenge with numbers.",
+        "Link the story to: Answer HR queries."
+      ],
+      "revision_notes": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Support recruitment'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "HR-ADVISOR-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The resul\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a HR Advisor handles when answer hr queries. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "HR Advisor work involves answer hr queries under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "HR Advisor",
+            "definition": "The HR Advisor role integrates Employee relations, HR systems, Policy guidance to deliver on responsibilities such as answer hr queries. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for HR Advisor reference answer hr queries and relevant standards or tools."
+        ],
+        "practical_example": "In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real HR Advisor challenge with numbers.",
+          "Link the story to: Answer HR queries."
+        ],
+        "revision_notes": [
+          "Employee relations",
+          "HR systems",
+          "Policy guidance"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Legal Finance"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real HR Advisor challenge with numbers.",
+        "Link the story to: Answer HR queries."
+      ],
+      "revision_notes": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Assist with disciplinary processes'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "HR-ADVISOR-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The resul\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a HR Advisor handles when answer hr queries. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "HR Advisor work involves answer hr queries under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "HR Advisor",
+            "definition": "The HR Advisor role integrates Employee relations, HR systems, Policy guidance to deliver on responsibilities such as answer hr queries. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for HR Advisor reference answer hr queries and relevant standards or tools."
+        ],
+        "practical_example": "In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real HR Advisor challenge with numbers.",
+          "Link the story to: Answer HR queries."
+        ],
+        "revision_notes": [
+          "Employee relations",
+          "HR systems",
+          "Policy guidance"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Legal Finance"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real HR Advisor challenge with numbers.",
+        "Link the story to: Answer HR queries."
+      ],
+      "revision_notes": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "In HR Advisor duties while handling 'Answer HR queries', describe a deadline risk and the controls you used to keep delivery on track.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "HR-ADVISOR-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The resul\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a HR Advisor handles when answer hr queries. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "HR Advisor work involves answer hr queries under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "HR Advisor",
+            "definition": "The HR Advisor role integrates Employee relations, HR systems, Policy guidance to deliver on responsibilities such as answer hr queries. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for HR Advisor reference answer hr queries and relevant standards or tools."
+        ],
+        "practical_example": "In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real HR Advisor challenge with numbers.",
+          "Link the story to: Answer HR queries."
+        ],
+        "revision_notes": [
+          "Employee relations",
+          "HR systems",
+          "Policy guidance"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Legal Finance"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real HR Advisor challenge with numbers.",
+        "Link the story to: Answer HR queries."
+      ],
+      "revision_notes": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Share an example from HR Advisor work while handling 'Answer HR queries' where you improved process reliability or quality.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "HR-ADVISOR-BEHAVIORAL-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The resul\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a HR Advisor handles when answer hr queries. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "HR Advisor work involves answer hr queries under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "HR Advisor",
+            "definition": "The HR Advisor role integrates Employee relations, HR systems, Policy guidance to deliver on responsibilities such as answer hr queries. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for HR Advisor reference answer hr queries and relevant standards or tools."
+        ],
+        "practical_example": "In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real HR Advisor challenge with numbers.",
+          "Link the story to: Answer HR queries."
+        ],
+        "revision_notes": [
+          "Employee relations",
+          "HR systems",
+          "Policy guidance"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Legal Finance"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real HR Advisor challenge with numbers.",
+        "Link the story to: Answer HR queries."
+      ],
+      "revision_notes": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Tell me about a cross-team disagreement in HR Advisor practice while handling 'Answer HR queries' and how you reached alignment.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "HR-ADVISOR-BEHAVIORAL-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The resul\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a HR Advisor handles when answer hr queries. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "HR Advisor work involves answer hr queries under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "HR Advisor",
+            "definition": "The HR Advisor role integrates Employee relations, HR systems, Policy guidance to deliver on responsibilities such as answer hr queries. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Employee relations supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for HR Advisor reference answer hr queries and relevant standards or tools."
+        ],
+        "practical_example": "In HR Advisor work involving answer hr queries, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real HR Advisor challenge with numbers.",
+          "Link the story to: Answer HR queries."
+        ],
+        "revision_notes": [
+          "Employee relations",
+          "HR systems",
+          "Policy guidance"
+        ],
+        "related_concepts": [
+          "General Professional",
+          "Legal Finance"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real HR Advisor challenge with numbers.",
+        "Link the story to: Answer HR queries."
+      ],
+      "revision_notes": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this HR Advisor position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "HR-ADVISOR-ROLE-SPECIFI-023",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As HR Advisor, my approach to answer hr queries is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn HR Advisor practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Role Specific.",
+      "answer_explanation": "This answer covers: As HR Advisor, my approach to answer hr queries is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I st\u2026",
+      "study_material": {
+        "overview": "Role Specific is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Role Specific directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Role Specific directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Employee Relations",
+            "explanation": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          },
+          {
+            "skill": "Hr Systems",
+            "explanation": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for answer hr queries.",
+          "Apply Role Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Role Specific directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+        ],
+        "practical_example": "In HR Advisor, I applied Role Specific to stabilize answer hr queries under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Answer HR queries.",
+          "List the standards that govern Role Specific in HR Advisor work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Answer HR queries.",
+        "List the standards that govern Role Specific in HR Advisor work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: HR Advisor context: Answer HR queries. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to HR Advisor context: Answer HR queries.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "HR-ADVISOR-COMPANY-SPEC-024",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Employee relations",
+        "HR systems",
+        "Policy guidance",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As HR Advisor, my approach to answer hr queries is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn HR Advisor practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Company Specific.",
+      "answer_explanation": "This answer covers: As HR Advisor, my approach to answer hr queries is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I st\u2026",
+      "study_material": {
+        "overview": "Company Specific is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Company Specific directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Company Specific directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Employee Relations",
+            "explanation": "Employee Relations is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          },
+          {
+            "skill": "Hr Systems",
+            "explanation": "Hr Systems is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for answer hr queries.",
+          "Apply Company Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries. In HR Advisor practice, Company Specific directly supports answer hr queries. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that HR Advisor professionals apply when performing answer hr queries."
+        ],
+        "practical_example": "In HR Advisor, I applied Company Specific to stabilize answer hr queries under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Answer HR queries.",
+          "List the standards that govern Company Specific in HR Advisor work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Answer HR queries.",
+        "List the standards that govern Company Specific in HR Advisor work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:30:27.384635+00:00",
+  "confidence_score": 0.9
+}

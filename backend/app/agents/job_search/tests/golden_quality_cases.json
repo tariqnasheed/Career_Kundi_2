@@ -1,0 +1,107 @@
+[
+  {
+    "role": "Clinical Pharmacist",
+    "role_family": "healthcare",
+    "skill": "Pharmacology",
+    "must_contain": ["contraindications", "dose", "monitor clinical response", "SBAR"],
+    "must_not_contain": ["conductor", "RCD", "consumer unit", "structured verification"]
+  },
+  {
+    "role": "Architect",
+    "role_family": "architecture",
+    "skill": "AutoCAD",
+    "must_contain": ["layers", "drawing scale", "revision control", "dimensions"],
+    "must_not_contain": ["contraindications", "RCD", "Outcome quality improves when assumption"]
+  },
+  {
+    "role": "Electrician",
+    "role_family": "electrical",
+    "skill": "Electrical Installation",
+    "must_contain": ["BS 7671", "safe isolation", "earthing", "insulation resistance", "RCD"],
+    "must_not_contain": ["patient baseline", "allergen controls", "case record trail"]
+  },
+  {
+    "role": "Civil Service Administrator",
+    "role_family": "public_administration",
+    "skill": "Administration",
+    "must_contain": ["case record", "lawful basis", "approval chain", "audit trail"],
+    "must_not_contain": ["RCD", "milk texture", "contraindications"]
+  },
+  {
+    "role": "Barista",
+    "role_family": "hospitality",
+    "skill": "Coffee Preparation",
+    "must_contain": ["HACCP", "allergen", "milk temperature", "equipment cleanliness"],
+    "must_not_contain": ["BS 7671", "SBAR", "case record trail"]
+  },
+  {
+    "role": "Solicitor",
+    "role_family": "legal",
+    "skill": "Legal Research",
+    "must_contain": ["case law", "statute", "precedent", "client advice"],
+    "must_not_contain": ["critical discipline is evidence", "structured verification", "RCD", "milk texture"]
+  },
+  {
+    "role": "DevOps Engineer",
+    "role_family": "technology",
+    "skill": "AWS",
+    "must_contain": ["IAM", "CloudWatch", "deployment pipeline", "rollback"],
+    "must_not_contain": ["structured verification", "case record trail", "contraindications", "milk texture"]
+  },
+  {
+    "role": "Laboratory Scientist",
+    "role_family": "science_laboratory",
+    "skill": "Lab Techniques",
+    "must_contain": ["SOP", "sample integrity", "calibration", "contamination control"],
+    "must_not_contain": ["RCBO", "planning drawings", "case record trail", "structured verification"]
+  },
+  {
+    "role": "University Lecturer",
+    "role_family": "education",
+    "skill": "Research",
+    "must_contain": ["learning outcomes", "formative assessment", "research methods", "academic integrity"],
+    "must_not_contain": ["structured verification", "RCD", "allergen controls", "consumer unit"]
+  },
+  {
+    "role": "Operations Manager",
+    "role_family": "operations",
+    "skill": "Process Improvement",
+    "must_contain": ["KPI", "bottleneck", "root cause", "standard operating procedure"],
+    "must_not_contain": ["structured verification", "contraindications", "RCD", "milk texture"]
+  },
+  {
+    "role": "Data Analyst",
+    "role_family": "data",
+    "skill": "SQL",
+    "must_contain": ["joins", "aggregation", "data quality", "query performance"],
+    "must_not_contain": ["RCD", "allergen", "case law", "milk texture"]
+  },
+  {
+    "role": "HR Advisor",
+    "role_family": "human_resources",
+    "skill": "Employee Relations",
+    "must_contain": ["grievance", "disciplinary", "policy", "confidentiality"],
+    "must_not_contain": ["RCD", "CloudWatch", "milk texture", "case law"]
+  },
+  {
+    "role": "Mechanical Engineer",
+    "role_family": "mechanical_engineering",
+    "skill": "HVAC",
+    "must_contain": ["heat load", "airflow", "duct sizing", "commissioning"],
+    "must_not_contain": ["contraindications", "case record trail", "milk texture", "SBAR"]
+  },
+  {
+    "role": "Financial Analyst",
+    "role_family": "finance",
+    "skill": "Financial Modelling",
+    "must_contain": ["assumptions", "cash flow", "sensitivity analysis", "variance"],
+    "must_not_contain": ["RCD", "allergen", "SBAR", "milk texture"]
+  },
+  {
+    "role": "Project Manager",
+    "role_family": "project_management",
+    "skill": "Risk Management",
+    "must_contain": ["risk register", "mitigation", "owner", "contingency"],
+    "must_not_contain": ["RCD", "contraindications", "milk texture", "case law"]
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "role_name": "Care Assistant",
+  "normalized_role_slug": "care_assistant",
+  "category": "custom_roles",
+  "stream_or_department": "care_community",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 29,
+  "question_specific_study_material_count": 29,
+  "skill_count": 35,
+  "pdf_files": [
+    "care_assistant_interview_pack.pdf",
+    "care_assistant_study_material.pdf",
+    "care_assistant_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "care_assistant_interview_pack.md",
+    "care_assistant_study_material.md",
+    "care_assistant_questions_answers.md"
+  ],
+  "source_files": [
+    "care_assistant_interview_pack.md",
+    "care_assistant_study_material.md",
+    "care_assistant_questions_answers.md",
+    "care_assistant_interview_pack.pdf",
+    "care_assistant_study_material.pdf",
+    "care_assistant_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/care_assistant",
+  "has_pdf": true,
+  "has_markdown": true
+}

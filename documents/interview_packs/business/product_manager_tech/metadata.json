@@ -1,0 +1,37 @@
+{
+  "role_name": "Product Manager (Tech)",
+  "normalized_role_slug": "product_manager_tech",
+  "category": "business",
+  "stream_or_department": "computer_science",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 28,
+  "question_specific_study_material_count": 28,
+  "skill_count": 32,
+  "pdf_files": [
+    "product_manager_tech_interview_pack.pdf",
+    "product_manager_tech_study_material.pdf",
+    "product_manager_tech_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "product_manager_tech_interview_pack.md",
+    "product_manager_tech_study_material.md",
+    "product_manager_tech_questions_answers.md"
+  ],
+  "source_files": [
+    "product_manager_tech_interview_pack.md",
+    "product_manager_tech_study_material.md",
+    "product_manager_tech_questions_answers.md",
+    "product_manager_tech_interview_pack.pdf",
+    "product_manager_tech_study_material.pdf",
+    "product_manager_tech_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/business/product_manager_tech",
+  "has_pdf": true,
+  "has_markdown": true
+}

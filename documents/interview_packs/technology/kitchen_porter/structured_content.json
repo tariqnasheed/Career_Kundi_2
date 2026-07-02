@@ -1,0 +1,3204 @@
+{
+  "role_name": "Kitchen Porter",
+  "role_slug": "kitchen_porter",
+  "category": "technology",
+  "role_overview": {
+    "role_name": "Kitchen Porter",
+    "summary": "The Kitchen Porter role integrates Food hygiene, Cleaning, Kitchen support to deliver on responsibilities such as wash dishes and equipment. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Wash dishes and equipment",
+      "Support chefs",
+      "Maintain hygiene standards"
+    ],
+    "required_skills": [
+      "Food hygiene",
+      "Cleaning",
+      "Kitchen support"
+    ],
+    "what_employers_expect": [
+      "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: Food hygiene certificate helpful."
+    ],
+    "skill_clusters": [
+      "Hospitality Operations"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "If a new hire joined your Kitchen Porter function while handling 'Wash dishes and equipment', how would you break down Food hygiene into practical steps?",
+      "why_asked": "Tests genuine conceptual understanding of Food hygiene, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Food hygiene",
+      "question_id": "KITCHEN-PORTER-FOOD-HYGIENE-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Food Hygiene without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Kitchen Porter context, Food Hygiene starts with set up station readiness, prep levels, and hygiene controls pre-service. and continues through execute service sop with quality checks at pass/dispatch.. The critical discipline is evidence: service recovery quality predicts repeat business better than perfect service rates.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how wash dishes and equipment stays reliable under real operational constraints.\n\nDuring peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+      "answer_explanation": "Key knowledge demonstrated for Food Hygiene:\n\u2022 Service recovery quality predicts repeat business better than perfect service rates.\n\u2022 Allergen communication failures are high-severity operational risks.\n\u2022 Prep discipline is the strongest predictor of peak-hour consistency.\nStandards referenced: HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Food Hygiene directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Food Hygiene",
+            "definition": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Food Hygiene directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Food Hygiene",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Food Hygiene directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Food Hygiene without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Food Hygiene applies to: Wash dishes and equipment.",
+          "List the standards that govern Food Hygiene in Kitchen Porter work.",
+          "Write out the verification steps after completing a Food Hygiene task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Food Hygiene",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Food Hygiene applies to: Wash dishes and equipment.",
+        "List the standards that govern Food Hygiene in Kitchen Porter work.",
+        "Write out the verification steps after completing a Food Hygiene task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "In your Kitchen Porter experience while handling 'Wash dishes and equipment', what high-stakes incident required deep use of Food hygiene, and how did you resolve it?",
+      "why_asked": "Probes depth of hands-on experience with Food hygiene under real constraints.",
+      "skill_tag": "Food hygiene",
+      "question_id": "KITCHEN-PORTER-FOOD-HYGIENE-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Food Hygiene without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Kitchen Porter context, Food Hygiene starts with set up station readiness, prep levels, and hygiene controls pre-service. and continues through execute service sop with quality checks at pass/dispatch.. The critical discipline is evidence: service recovery quality predicts repeat business better than perfect service rates.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how wash dishes and equipment stays reliable under real operational constraints.\n\nDuring peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+      "answer_explanation": "Key knowledge demonstrated for Food Hygiene:\n\u2022 Service recovery quality predicts repeat business better than perfect service rates.\n\u2022 Allergen communication failures are high-severity operational risks.\n\u2022 Prep discipline is the strongest predictor of peak-hour consistency.\nStandards referenced: HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Food Hygiene directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Food Hygiene",
+            "definition": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Food Hygiene directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Food Hygiene",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Food Hygiene directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Food Hygiene without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Food Hygiene applies to: Wash dishes and equipment.",
+          "List the standards that govern Food Hygiene in Kitchen Porter work.",
+          "Write out the verification steps after completing a Food Hygiene task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Food Hygiene",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Food Hygiene applies to: Wash dishes and equipment.",
+        "List the standards that govern Food Hygiene in Kitchen Porter work.",
+        "Write out the verification steps after completing a Food Hygiene task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Kitchen Porter practitioner in Food hygiene while handling 'Wash dishes and equipment'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Food hygiene from those who only name-drop it.",
+      "skill_tag": "Food hygiene",
+      "terminology_terms": [
+        {
+          "term": "Food Hygiene",
+          "definition": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        },
+        {
+          "term": "HACCP",
+          "definition": "Standard/framework governing Food Hygiene: HACCP."
+        },
+        {
+          "term": "Service SOPs",
+          "definition": "Standard/framework governing Food Hygiene: Service SOPs."
+        },
+        {
+          "term": "Allergen controls",
+          "definition": "Standard/framework governing Food Hygiene: Allergen controls."
+        },
+        {
+          "term": "Service recovery quality predicts repeat",
+          "definition": "Service recovery quality predicts repeat business better than perfect service rates."
+        },
+        {
+          "term": "Allergen communication failures are high",
+          "definition": "Allergen communication failures are high-severity operational risks."
+        },
+        {
+          "term": "Prep discipline is the strongest predict",
+          "definition": "Prep discipline is the strongest predictor of peak-hour consistency."
+        },
+        {
+          "term": "Service recovery quality predicts repeat business better than perfect service rates.",
+          "definition": "Related concept used with Food Hygiene in professional practice."
+        }
+      ],
+      "question_id": "KITCHEN-PORTER-FOOD-HYGIENE-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Food Hygiene: Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+        "HACCP: Standard/framework governing Food Hygiene: HACCP.",
+        "Service SOPs: Standard/framework governing Food Hygiene: Service SOPs.",
+        "Allergen controls: Standard/framework governing Food Hygiene: Allergen controls.",
+        "Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high: Allergen communication failures are high-severity operational risks."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Kitchen Porter work, these terms are foundational:\n\n\n**Food Hygiene** \u2014 Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\n**HACCP** \u2014 Standard/framework governing Food Hygiene: HACCP.\n\n**Service SOPs** \u2014 Standard/framework governing Food Hygiene: Service SOPs.\n\n**Allergen controls** \u2014 Standard/framework governing Food Hygiene: Allergen controls.\n\n**Service recovery quality predicts repeat** \u2014 Service recovery quality predicts repeat business better than perfect service rates.\n\n**Allergen communication failures are high** \u2014 Allergen communication failures are high-severity operational risks.\n\n**Prep discipline is the strongest predict** \u2014 Prep discipline is the strongest predictor of peak-hour consistency.\n\n**Service recovery quality predicts repeat business better than perfect service rates.** \u2014 Related concept used with Food Hygiene in professional practice.",
+      "answer_explanation": "Definitions covered: Food Hygiene, HACCP, Service SOPs, Allergen controls, Service recovery quality predicts repeat, Allergen communication failures are high",
+      "study_material": {
+        "overview": "Core terminology for Food Hygiene \u2014 precise definitions required for Kitchen Porter interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Food Hygiene terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Food Hygiene",
+            "definition": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Standard/framework governing Food Hygiene: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Standard/framework governing Food Hygiene: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Standard/framework governing Food Hygiene: Allergen controls."
+          },
+          {
+            "term": "Service recovery quality predicts repeat",
+            "definition": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "term": "Allergen communication failures are high",
+            "definition": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "term": "Prep discipline is the strongest predict",
+            "definition": "Prep discipline is the strongest predictor of peak-hour consistency."
+          },
+          {
+            "term": "Service recovery quality predicts repeat business better than perfect service rates.",
+            "definition": "Related concept used with Food Hygiene in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "HACCP",
+            "explanation": "Standard/framework governing Food Hygiene: HACCP."
+          },
+          {
+            "skill": "Service SOPs",
+            "explanation": "Standard/framework governing Food Hygiene: Service SOPs."
+          },
+          {
+            "skill": "Allergen controls",
+            "explanation": "Standard/framework governing Food Hygiene: Allergen controls."
+          },
+          {
+            "skill": "Service recovery quality predicts repeat",
+            "explanation": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "skill": "Allergen communication failures are high",
+            "explanation": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "skill": "Prep discipline is the strongest predict",
+            "explanation": "Prep discipline is the strongest predictor of peak-hour consistency."
+          },
+          {
+            "skill": "Service recovery quality predicts repeat business better than perfect service rates.",
+            "explanation": "Related concept used with Food Hygiene in professional practice."
+          }
+        ],
+        "principles": [
+          "Food Hygiene: Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "HACCP: Standard/framework governing Food Hygiene: HACCP.",
+          "Service SOPs: Standard/framework governing Food Hygiene: Service SOPs.",
+          "Allergen controls: Standard/framework governing Food Hygiene: Allergen controls.",
+          "Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high: Allergen communication failures are high-severity operational risks."
+        ],
+        "key_concepts": [
+          "Food Hygiene",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Food Hygiene** \u2014 Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "**HACCP** \u2014 Standard/framework governing Food Hygiene: HACCP.",
+          "**Service SOPs** \u2014 Standard/framework governing Food Hygiene: Service SOPs.",
+          "**Allergen controls** \u2014 Standard/framework governing Food Hygiene: Allergen controls.",
+          "**Service recovery quality predicts repeat** \u2014 Service recovery quality predicts repeat business better than perfect service rates.",
+          "**Allergen communication failures are high** \u2014 Allergen communication failures are high-severity operational risks.",
+          "**Prep discipline is the strongest predict** \u2014 Prep discipline is the strongest predictor of peak-hour consistency.",
+          "**Service recovery quality predicts repeat business better than perfect service rates.** \u2014 Related concept used with Food Hygiene in professional practice."
+        ],
+        "practical_example": "\u2022 Food Hygiene: Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\u2022 HACCP: Standard/framework governing Food Hygiene: HACCP.\n\u2022 Service SOPs: Standard/framework governing Food Hygiene: Service SOPs.\n\u2022 Allergen controls: Standard/framework governing Food Hygiene: Allergen controls.\n\u2022 Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Food Hygiene terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Food Hygiene",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "related_concepts": [
+          "Food Hygiene",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Food Hygiene terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Food Hygiene",
+        "HACCP",
+        "Service SOPs",
+        "Allergen controls",
+        "Service recovery quality predicts repeat",
+        "Allergen communication failures are high",
+        "Prep discipline is the strongest predict",
+        "Service recovery quality predicts repeat business better than perfect service rates."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the core operating principles and standard workflow for applying Food hygiene in a Kitchen Porter role while handling 'Wash dishes and equipment'?",
+      "why_asked": "Tests whether you know how Food hygiene is actually executed to standard, not only what it is called.",
+      "skill_tag": "Food hygiene",
+      "question_id": "KITCHEN-PORTER-FOOD-HYGIENE-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Food Hygiene as a Kitchen Porter:\n\n1. Service recovery quality predicts repeat business better than perfect service rates.\n2. Allergen communication failures are high-severity operational risks.\n3. Prep discipline is the strongest predictor of peak-hour consistency.\n\nStandard workflow:\n1. Set up station readiness, prep levels, and hygiene controls pre-service.\n2. Execute service SOP with quality checks at pass/dispatch.\n3. Manage guest communication and recovery when delays occur.\n4. Track waste, yield, and peak-period throughput.\n5. Close with sanitation, stock reconciliation, and handover notes.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Food Hygiene \u2014 how work is executed to standard in Kitchen Porter roles.",
+        "what_you_need_to_know_first": [
+          "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Food Hygiene",
+            "definition": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Prep discipline is the strongest predictor of peak-hour consistency."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "practical_example": "1. Set up station readiness, prep levels, and hygiene controls pre-service.\n2. Execute service SOP with quality checks at pass/dispatch.\n3. Manage guest communication and recovery when delays occur.\n4. Track waste, yield, and peak-period throughput.\n5. Close with sanitation, stock reconciliation, and handover notes.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Food Hygiene workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Food Hygiene workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Calculation / quantitative question for Kitchen Porter (Food hygiene) while handling 'Wash dishes and equipment': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Food hygiene \u2014 essential for Kitchen Porter roles.",
+      "skill_tag": "Food hygiene",
+      "calculation": {
+        "skill": "Food Hygiene",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "KITCHEN-PORTER-FOOD-HYGIENE-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Kitchen Porter practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Food Hygiene: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Food Hygiene calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Food Hygiene",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Food Hygiene calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Walk me through how you would explain Cleaning to a teammate who has never used it in a Kitchen Porter context while handling 'Wash dishes and equipment'.",
+      "why_asked": "Tests genuine conceptual understanding of Cleaning, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Cleaning",
+      "question_id": "KITCHEN-PORTER-CLEANING-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Food hygiene",
+        "Kitchen support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Cleaning without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Kitchen Porter context, Cleaning starts with set up station readiness, prep levels, and hygiene controls pre-service. and continues through execute service sop with quality checks at pass/dispatch.. The critical discipline is evidence: service recovery quality predicts repeat business better than perfect service rates.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how wash dishes and equipment stays reliable under real operational constraints.\n\nDuring peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+      "answer_explanation": "Key knowledge demonstrated for Cleaning:\n\u2022 Service recovery quality predicts repeat business better than perfect service rates.\n\u2022 Allergen communication failures are high-severity operational risks.\n\u2022 Prep discipline is the strongest predictor of peak-hour consistency.\nStandards referenced: HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Cleaning directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Cleaning",
+            "definition": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Cleaning directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Cleaning",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Cleaning directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Cleaning without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Cleaning applies to: Wash dishes and equipment.",
+          "List the standards that govern Cleaning in Kitchen Porter work.",
+          "Write out the verification steps after completing a Cleaning task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Cleaning",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Cleaning applies to: Wash dishes and equipment.",
+        "List the standards that govern Cleaning in Kitchen Porter work.",
+        "Write out the verification steps after completing a Cleaning task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe the most complex problem you've solved using Cleaning as a Kitchen Porter while handling 'Wash dishes and equipment'.",
+      "why_asked": "Probes depth of hands-on experience with Cleaning under real constraints.",
+      "skill_tag": "Cleaning",
+      "question_id": "KITCHEN-PORTER-CLEANING-SCEN-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Food hygiene",
+        "Kitchen support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Cleaning without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Kitchen Porter context, Cleaning starts with set up station readiness, prep levels, and hygiene controls pre-service. and continues through execute service sop with quality checks at pass/dispatch.. The critical discipline is evidence: service recovery quality predicts repeat business better than perfect service rates.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how wash dishes and equipment stays reliable under real operational constraints.\n\nDuring peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+      "answer_explanation": "Key knowledge demonstrated for Cleaning:\n\u2022 Service recovery quality predicts repeat business better than perfect service rates.\n\u2022 Allergen communication failures are high-severity operational risks.\n\u2022 Prep discipline is the strongest predictor of peak-hour consistency.\nStandards referenced: HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Cleaning directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Cleaning",
+            "definition": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Cleaning directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Cleaning",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Cleaning directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Cleaning without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Cleaning applies to: Wash dishes and equipment.",
+          "List the standards that govern Cleaning in Kitchen Porter work.",
+          "Write out the verification steps after completing a Cleaning task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Cleaning",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Cleaning applies to: Wash dishes and equipment.",
+        "List the standards that govern Cleaning in Kitchen Porter work.",
+        "Write out the verification steps after completing a Cleaning task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Kitchen Porter practitioner in Cleaning while handling 'Wash dishes and equipment'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Cleaning from those who only name-drop it.",
+      "skill_tag": "Cleaning",
+      "terminology_terms": [
+        {
+          "term": "Cleaning",
+          "definition": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        },
+        {
+          "term": "HACCP",
+          "definition": "Standard/framework governing Cleaning: HACCP."
+        },
+        {
+          "term": "Service SOPs",
+          "definition": "Standard/framework governing Cleaning: Service SOPs."
+        },
+        {
+          "term": "Allergen controls",
+          "definition": "Standard/framework governing Cleaning: Allergen controls."
+        },
+        {
+          "term": "Service recovery quality predicts repeat",
+          "definition": "Service recovery quality predicts repeat business better than perfect service rates."
+        },
+        {
+          "term": "Allergen communication failures are high",
+          "definition": "Allergen communication failures are high-severity operational risks."
+        },
+        {
+          "term": "Prep discipline is the strongest predict",
+          "definition": "Prep discipline is the strongest predictor of peak-hour consistency."
+        },
+        {
+          "term": "Service recovery quality predicts repeat business better than perfect service rates.",
+          "definition": "Related concept used with Cleaning in professional practice."
+        }
+      ],
+      "question_id": "KITCHEN-PORTER-CLEANING-TERM-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Food hygiene",
+        "Kitchen support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Cleaning: Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+        "HACCP: Standard/framework governing Cleaning: HACCP.",
+        "Service SOPs: Standard/framework governing Cleaning: Service SOPs.",
+        "Allergen controls: Standard/framework governing Cleaning: Allergen controls.",
+        "Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high: Allergen communication failures are high-severity operational risks."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Kitchen Porter work, these terms are foundational:\n\n\n**Cleaning** \u2014 Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\n**HACCP** \u2014 Standard/framework governing Cleaning: HACCP.\n\n**Service SOPs** \u2014 Standard/framework governing Cleaning: Service SOPs.\n\n**Allergen controls** \u2014 Standard/framework governing Cleaning: Allergen controls.\n\n**Service recovery quality predicts repeat** \u2014 Service recovery quality predicts repeat business better than perfect service rates.\n\n**Allergen communication failures are high** \u2014 Allergen communication failures are high-severity operational risks.\n\n**Prep discipline is the strongest predict** \u2014 Prep discipline is the strongest predictor of peak-hour consistency.\n\n**Service recovery quality predicts repeat business better than perfect service rates.** \u2014 Related concept used with Cleaning in professional practice.",
+      "answer_explanation": "Definitions covered: Cleaning, HACCP, Service SOPs, Allergen controls, Service recovery quality predicts repeat, Allergen communication failures are high",
+      "study_material": {
+        "overview": "Core terminology for Cleaning \u2014 precise definitions required for Kitchen Porter interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Cleaning terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Cleaning",
+            "definition": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Standard/framework governing Cleaning: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Standard/framework governing Cleaning: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Standard/framework governing Cleaning: Allergen controls."
+          },
+          {
+            "term": "Service recovery quality predicts repeat",
+            "definition": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "term": "Allergen communication failures are high",
+            "definition": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "term": "Prep discipline is the strongest predict",
+            "definition": "Prep discipline is the strongest predictor of peak-hour consistency."
+          },
+          {
+            "term": "Service recovery quality predicts repeat business better than perfect service rates.",
+            "definition": "Related concept used with Cleaning in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "HACCP",
+            "explanation": "Standard/framework governing Cleaning: HACCP."
+          },
+          {
+            "skill": "Service SOPs",
+            "explanation": "Standard/framework governing Cleaning: Service SOPs."
+          },
+          {
+            "skill": "Allergen controls",
+            "explanation": "Standard/framework governing Cleaning: Allergen controls."
+          },
+          {
+            "skill": "Service recovery quality predicts repeat",
+            "explanation": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "skill": "Allergen communication failures are high",
+            "explanation": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "skill": "Prep discipline is the strongest predict",
+            "explanation": "Prep discipline is the strongest predictor of peak-hour consistency."
+          },
+          {
+            "skill": "Service recovery quality predicts repeat business better than perfect service rates.",
+            "explanation": "Related concept used with Cleaning in professional practice."
+          }
+        ],
+        "principles": [
+          "Cleaning: Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "HACCP: Standard/framework governing Cleaning: HACCP.",
+          "Service SOPs: Standard/framework governing Cleaning: Service SOPs.",
+          "Allergen controls: Standard/framework governing Cleaning: Allergen controls.",
+          "Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high: Allergen communication failures are high-severity operational risks."
+        ],
+        "key_concepts": [
+          "Cleaning",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Cleaning** \u2014 Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "**HACCP** \u2014 Standard/framework governing Cleaning: HACCP.",
+          "**Service SOPs** \u2014 Standard/framework governing Cleaning: Service SOPs.",
+          "**Allergen controls** \u2014 Standard/framework governing Cleaning: Allergen controls.",
+          "**Service recovery quality predicts repeat** \u2014 Service recovery quality predicts repeat business better than perfect service rates.",
+          "**Allergen communication failures are high** \u2014 Allergen communication failures are high-severity operational risks.",
+          "**Prep discipline is the strongest predict** \u2014 Prep discipline is the strongest predictor of peak-hour consistency.",
+          "**Service recovery quality predicts repeat business better than perfect service rates.** \u2014 Related concept used with Cleaning in professional practice."
+        ],
+        "practical_example": "\u2022 Cleaning: Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\u2022 HACCP: Standard/framework governing Cleaning: HACCP.\n\u2022 Service SOPs: Standard/framework governing Cleaning: Service SOPs.\n\u2022 Allergen controls: Standard/framework governing Cleaning: Allergen controls.\n\u2022 Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Cleaning terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Cleaning",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "related_concepts": [
+          "Cleaning",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Cleaning terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Cleaning",
+        "HACCP",
+        "Service SOPs",
+        "Allergen controls",
+        "Service recovery quality predicts repeat",
+        "Allergen communication failures are high",
+        "Prep discipline is the strongest predict",
+        "Service recovery quality predicts repeat business better than perfect service rates."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which non-negotiable rules and execution sequence govern Cleaning for Kitchen Porter work while handling 'Wash dishes and equipment'?",
+      "why_asked": "Tests whether you know how Cleaning is actually executed to standard, not only what it is called.",
+      "skill_tag": "Cleaning",
+      "question_id": "KITCHEN-PORTER-CLEANING-PRIN-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Food hygiene",
+        "Kitchen support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Cleaning as a Kitchen Porter:\n\n1. Service recovery quality predicts repeat business better than perfect service rates.\n2. Allergen communication failures are high-severity operational risks.\n3. Prep discipline is the strongest predictor of peak-hour consistency.\n\nStandard workflow:\n1. Set up station readiness, prep levels, and hygiene controls pre-service.\n2. Execute service SOP with quality checks at pass/dispatch.\n3. Manage guest communication and recovery when delays occur.\n4. Track waste, yield, and peak-period throughput.\n5. Close with sanitation, stock reconciliation, and handover notes.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Cleaning \u2014 how work is executed to standard in Kitchen Porter roles.",
+        "what_you_need_to_know_first": [
+          "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Cleaning",
+            "definition": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Cleaning",
+            "explanation": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Prep discipline is the strongest predictor of peak-hour consistency."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "practical_example": "1. Set up station readiness, prep levels, and hygiene controls pre-service.\n2. Execute service SOP with quality checks at pass/dispatch.\n3. Manage guest communication and recovery when delays occur.\n4. Track waste, yield, and peak-period throughput.\n5. Close with sanitation, stock reconciliation, and handover notes.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Cleaning workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Cleaning workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Quantitative validation scenario (Kitchen Porter, Cleaning) while handling 'Wash dishes and equipment': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Cleaning \u2014 essential for Kitchen Porter roles.",
+      "skill_tag": "Cleaning",
+      "calculation": {
+        "skill": "Cleaning",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "KITCHEN-PORTER-CLEANING-CALC-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Cleaning",
+        "Food hygiene",
+        "Kitchen support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Kitchen Porter practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Cleaning: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Cleaning calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Cleaning",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Cleaning calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Walk me through how you would explain Kitchen support to a teammate who has never used it in a Kitchen Porter context while handling 'Wash dishes and equipment'.",
+      "why_asked": "Tests genuine conceptual understanding of Kitchen support, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Kitchen support",
+      "question_id": "KITCHEN-PORTER-KITCHEN-SUPP-EXPL-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Kitchen support",
+        "Food hygiene",
+        "Cleaning",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Kitchen Support without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Kitchen Porter context, Kitchen Support starts with set up station readiness, prep levels, and hygiene controls pre-service. and continues through execute service sop with quality checks at pass/dispatch.. The critical discipline is evidence: service recovery quality predicts repeat business better than perfect service rates.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how wash dishes and equipment stays reliable under real operational constraints.\n\nDuring peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+      "answer_explanation": "Key knowledge demonstrated for Kitchen Support:\n\u2022 Service recovery quality predicts repeat business better than perfect service rates.\n\u2022 Allergen communication failures are high-severity operational risks.\n\u2022 Prep discipline is the strongest predictor of peak-hour consistency.\nStandards referenced: HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Kitchen Support directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Kitchen Support",
+            "definition": "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Kitchen Support",
+            "explanation": "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Kitchen Support directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Kitchen Support",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Kitchen Support directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Kitchen Support without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Kitchen Support applies to: Wash dishes and equipment.",
+          "List the standards that govern Kitchen Support in Kitchen Porter work.",
+          "Write out the verification steps after completing a Kitchen Support task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Kitchen Support",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Kitchen Support applies to: Wash dishes and equipment.",
+        "List the standards that govern Kitchen Support in Kitchen Porter work.",
+        "Write out the verification steps after completing a Kitchen Support task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe the most complex problem you've solved using Kitchen support as a Kitchen Porter while handling 'Wash dishes and equipment'.",
+      "why_asked": "Probes depth of hands-on experience with Kitchen support under real constraints.",
+      "skill_tag": "Kitchen support",
+      "question_id": "KITCHEN-PORTER-KITCHEN-SUPP-SCEN-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Kitchen support",
+        "Food hygiene",
+        "Cleaning",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Kitchen Support without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Kitchen Porter context, Kitchen Support starts with set up station readiness, prep levels, and hygiene controls pre-service. and continues through execute service sop with quality checks at pass/dispatch.. The critical discipline is evidence: service recovery quality predicts repeat business better than perfect service rates.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how wash dishes and equipment stays reliable under real operational constraints.\n\nDuring peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+      "answer_explanation": "Key knowledge demonstrated for Kitchen Support:\n\u2022 Service recovery quality predicts repeat business better than perfect service rates.\n\u2022 Allergen communication failures are high-severity operational risks.\n\u2022 Prep discipline is the strongest predictor of peak-hour consistency.\nStandards referenced: HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Kitchen Support directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Kitchen Support",
+            "definition": "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Kitchen Support",
+            "explanation": "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Kitchen Support directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Kitchen Support",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Kitchen Support directly supports wash dishes and equipment. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Kitchen Support without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Kitchen Support applies to: Wash dishes and equipment.",
+          "List the standards that govern Kitchen Support in Kitchen Porter work.",
+          "Write out the verification steps after completing a Kitchen Support task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Kitchen Support",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Kitchen Support applies to: Wash dishes and equipment.",
+        "List the standards that govern Kitchen Support in Kitchen Porter work.",
+        "Write out the verification steps after completing a Kitchen Support task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Kitchen Porter practitioner in Kitchen support while handling 'Wash dishes and equipment'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Kitchen support from those who only name-drop it.",
+      "skill_tag": "Kitchen support",
+      "terminology_terms": [
+        {
+          "term": "Kitchen Support",
+          "definition": "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        },
+        {
+          "term": "HACCP",
+          "definition": "Standard/framework governing Kitchen Support: HACCP."
+        },
+        {
+          "term": "Service SOPs",
+          "definition": "Standard/framework governing Kitchen Support: Service SOPs."
+        },
+        {
+          "term": "Allergen controls",
+          "definition": "Standard/framework governing Kitchen Support: Allergen controls."
+        },
+        {
+          "term": "Service recovery quality predicts repeat",
+          "definition": "Service recovery quality predicts repeat business better than perfect service rates."
+        },
+        {
+          "term": "Allergen communication failures are high",
+          "definition": "Allergen communication failures are high-severity operational risks."
+        },
+        {
+          "term": "Prep discipline is the strongest predict",
+          "definition": "Prep discipline is the strongest predictor of peak-hour consistency."
+        },
+        {
+          "term": "Service recovery quality predicts repeat business better than perfect service rates.",
+          "definition": "Related concept used with Kitchen Support in professional practice."
+        }
+      ],
+      "question_id": "KITCHEN-PORTER-KITCHEN-SUPP-TERM-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Kitchen support",
+        "Food hygiene",
+        "Cleaning",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Kitchen Support: Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+        "HACCP: Standard/framework governing Kitchen Support: HACCP.",
+        "Service SOPs: Standard/framework governing Kitchen Support: Service SOPs.",
+        "Allergen controls: Standard/framework governing Kitchen Support: Allergen controls.",
+        "Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high: Allergen communication failures are high-severity operational risks."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Kitchen Porter work, these terms are foundational:\n\n\n**Kitchen Support** \u2014 Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\n**HACCP** \u2014 Standard/framework governing Kitchen Support: HACCP.\n\n**Service SOPs** \u2014 Standard/framework governing Kitchen Support: Service SOPs.\n\n**Allergen controls** \u2014 Standard/framework governing Kitchen Support: Allergen controls.\n\n**Service recovery quality predicts repeat** \u2014 Service recovery quality predicts repeat business better than perfect service rates.\n\n**Allergen communication failures are high** \u2014 Allergen communication failures are high-severity operational risks.\n\n**Prep discipline is the strongest predict** \u2014 Prep discipline is the strongest predictor of peak-hour consistency.\n\n**Service recovery quality predicts repeat business better than perfect service rates.** \u2014 Related concept used with Kitchen Support in professional practice.",
+      "answer_explanation": "Definitions covered: Kitchen Support, HACCP, Service SOPs, Allergen controls, Service recovery quality predicts repeat, Allergen communication failures are high",
+      "study_material": {
+        "overview": "Core terminology for Kitchen Support \u2014 precise definitions required for Kitchen Porter interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Kitchen Support terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Kitchen Support",
+            "definition": "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Standard/framework governing Kitchen Support: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Standard/framework governing Kitchen Support: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Standard/framework governing Kitchen Support: Allergen controls."
+          },
+          {
+            "term": "Service recovery quality predicts repeat",
+            "definition": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "term": "Allergen communication failures are high",
+            "definition": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "term": "Prep discipline is the strongest predict",
+            "definition": "Prep discipline is the strongest predictor of peak-hour consistency."
+          },
+          {
+            "term": "Service recovery quality predicts repeat business better than perfect service rates.",
+            "definition": "Related concept used with Kitchen Support in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Kitchen Support",
+            "explanation": "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "HACCP",
+            "explanation": "Standard/framework governing Kitchen Support: HACCP."
+          },
+          {
+            "skill": "Service SOPs",
+            "explanation": "Standard/framework governing Kitchen Support: Service SOPs."
+          },
+          {
+            "skill": "Allergen controls",
+            "explanation": "Standard/framework governing Kitchen Support: Allergen controls."
+          },
+          {
+            "skill": "Service recovery quality predicts repeat",
+            "explanation": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "skill": "Allergen communication failures are high",
+            "explanation": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "skill": "Prep discipline is the strongest predict",
+            "explanation": "Prep discipline is the strongest predictor of peak-hour consistency."
+          },
+          {
+            "skill": "Service recovery quality predicts repeat business better than perfect service rates.",
+            "explanation": "Related concept used with Kitchen Support in professional practice."
+          }
+        ],
+        "principles": [
+          "Kitchen Support: Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "HACCP: Standard/framework governing Kitchen Support: HACCP.",
+          "Service SOPs: Standard/framework governing Kitchen Support: Service SOPs.",
+          "Allergen controls: Standard/framework governing Kitchen Support: Allergen controls.",
+          "Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high: Allergen communication failures are high-severity operational risks."
+        ],
+        "key_concepts": [
+          "Kitchen Support",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Kitchen Support** \u2014 Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "**HACCP** \u2014 Standard/framework governing Kitchen Support: HACCP.",
+          "**Service SOPs** \u2014 Standard/framework governing Kitchen Support: Service SOPs.",
+          "**Allergen controls** \u2014 Standard/framework governing Kitchen Support: Allergen controls.",
+          "**Service recovery quality predicts repeat** \u2014 Service recovery quality predicts repeat business better than perfect service rates.",
+          "**Allergen communication failures are high** \u2014 Allergen communication failures are high-severity operational risks.",
+          "**Prep discipline is the strongest predict** \u2014 Prep discipline is the strongest predictor of peak-hour consistency.",
+          "**Service recovery quality predicts repeat business better than perfect service rates.** \u2014 Related concept used with Kitchen Support in professional practice."
+        ],
+        "practical_example": "\u2022 Kitchen Support: Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\u2022 HACCP: Standard/framework governing Kitchen Support: HACCP.\n\u2022 Service SOPs: Standard/framework governing Kitchen Support: Service SOPs.\n\u2022 Allergen controls: Standard/framework governing Kitchen Support: Allergen controls.\n\u2022 Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Kitchen Support terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Kitchen Support",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "related_concepts": [
+          "Kitchen Support",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Kitchen Support terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Kitchen Support",
+        "HACCP",
+        "Service SOPs",
+        "Allergen controls",
+        "Service recovery quality predicts repeat",
+        "Allergen communication failures are high",
+        "Prep discipline is the strongest predict",
+        "Service recovery quality predicts repeat business better than perfect service rates."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the core operating principles and standard workflow for applying Kitchen support in a Kitchen Porter role while handling 'Wash dishes and equipment'?",
+      "why_asked": "Tests whether you know how Kitchen support is actually executed to standard, not only what it is called.",
+      "skill_tag": "Kitchen support",
+      "question_id": "KITCHEN-PORTER-KITCHEN-SUPP-PRIN-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Kitchen support",
+        "Food hygiene",
+        "Cleaning",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Kitchen Support as a Kitchen Porter:\n\n1. Service recovery quality predicts repeat business better than perfect service rates.\n2. Allergen communication failures are high-severity operational risks.\n3. Prep discipline is the strongest predictor of peak-hour consistency.\n\nStandard workflow:\n1. Set up station readiness, prep levels, and hygiene controls pre-service.\n2. Execute service SOP with quality checks at pass/dispatch.\n3. Manage guest communication and recovery when delays occur.\n4. Track waste, yield, and peak-period throughput.\n5. Close with sanitation, stock reconciliation, and handover notes.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Kitchen Support \u2014 how work is executed to standard in Kitchen Porter roles.",
+        "what_you_need_to_know_first": [
+          "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Kitchen Support",
+            "definition": "Kitchen Support in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Kitchen Support",
+            "explanation": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "skill": "Kitchen Support",
+            "explanation": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "skill": "Kitchen Support",
+            "explanation": "Prep discipline is the strongest predictor of peak-hour consistency."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "practical_example": "1. Set up station readiness, prep levels, and hygiene controls pre-service.\n2. Execute service SOP with quality checks at pass/dispatch.\n3. Manage guest communication and recovery when delays occur.\n4. Track waste, yield, and peak-period throughput.\n5. Close with sanitation, stock reconciliation, and handover notes.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Kitchen Support workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Kitchen Support workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Numbers-driven check for Kitchen Porter work using Kitchen support while handling 'Wash dishes and equipment': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Kitchen support \u2014 essential for Kitchen Porter roles.",
+      "skill_tag": "Kitchen support",
+      "calculation": {
+        "skill": "Kitchen Support",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "KITCHEN-PORTER-KITCHEN-SUPP-CALC-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Kitchen support",
+        "Food hygiene",
+        "Cleaning",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Kitchen Porter practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Kitchen Support: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Kitchen Support calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Kitchen Support",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Kitchen Support calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Kitchen Porter, define and explain these core professional terms: Food Hygiene, HACCP, Service SOPs, Cleaning, HACCP, Service SOPs.",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Food Hygiene",
+          "definition": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        },
+        {
+          "term": "HACCP",
+          "definition": "Standard/framework governing Food Hygiene: HACCP."
+        },
+        {
+          "term": "Service SOPs",
+          "definition": "Standard/framework governing Food Hygiene: Service SOPs."
+        },
+        {
+          "term": "Cleaning",
+          "definition": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        },
+        {
+          "term": "HACCP",
+          "definition": "Standard/framework governing Cleaning: HACCP."
+        },
+        {
+          "term": "Service SOPs",
+          "definition": "Standard/framework governing Cleaning: Service SOPs."
+        }
+      ],
+      "question_id": "KITCHEN-PORTER-CORE-TERMINO-TERM-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Food Hygiene: Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+        "HACCP: Standard/framework governing Food Hygiene: HACCP.",
+        "Service SOPs: Standard/framework governing Food Hygiene: Service SOPs.",
+        "Cleaning: Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+        "HACCP: Standard/framework governing Cleaning: HACCP.",
+        "Service SOPs: Standard/framework governing Cleaning: Service SOPs."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Kitchen Porter work, these terms are foundational:\n\n\n**Food Hygiene** \u2014 Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\n**HACCP** \u2014 Standard/framework governing Food Hygiene: HACCP.\n\n**Service SOPs** \u2014 Standard/framework governing Food Hygiene: Service SOPs.\n\n**Cleaning** \u2014 Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\n**HACCP** \u2014 Standard/framework governing Cleaning: HACCP.\n\n**Service SOPs** \u2014 Standard/framework governing Cleaning: Service SOPs.",
+      "answer_explanation": "Definitions covered: Food Hygiene, HACCP, Service SOPs, Cleaning, HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Kitchen Porter interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Food Hygiene",
+            "definition": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Standard/framework governing Food Hygiene: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Standard/framework governing Food Hygiene: Service SOPs."
+          },
+          {
+            "term": "Cleaning",
+            "definition": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Standard/framework governing Cleaning: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Standard/framework governing Cleaning: Service SOPs."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "HACCP",
+            "explanation": "Standard/framework governing Food Hygiene: HACCP."
+          },
+          {
+            "skill": "Service SOPs",
+            "explanation": "Standard/framework governing Food Hygiene: Service SOPs."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "HACCP",
+            "explanation": "Standard/framework governing Cleaning: HACCP."
+          },
+          {
+            "skill": "Service SOPs",
+            "explanation": "Standard/framework governing Cleaning: Service SOPs."
+          }
+        ],
+        "principles": [
+          "Food Hygiene: Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "HACCP: Standard/framework governing Food Hygiene: HACCP.",
+          "Service SOPs: Standard/framework governing Food Hygiene: Service SOPs.",
+          "Cleaning: Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "HACCP: Standard/framework governing Cleaning: HACCP.",
+          "Service SOPs: Standard/framework governing Cleaning: Service SOPs."
+        ],
+        "key_concepts": [
+          "Food Hygiene",
+          "HACCP",
+          "Service SOPs",
+          "Cleaning",
+          "HACCP",
+          "Service SOPs"
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Food Hygiene** \u2014 Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "**HACCP** \u2014 Standard/framework governing Food Hygiene: HACCP.",
+          "**Service SOPs** \u2014 Standard/framework governing Food Hygiene: Service SOPs.",
+          "**Cleaning** \u2014 Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "**HACCP** \u2014 Standard/framework governing Cleaning: HACCP.",
+          "**Service SOPs** \u2014 Standard/framework governing Cleaning: Service SOPs."
+        ],
+        "practical_example": "\u2022 Food Hygiene: Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\u2022 HACCP: Standard/framework governing Food Hygiene: HACCP.\n\u2022 Service SOPs: Standard/framework governing Food Hygiene: Service SOPs.\n\u2022 Cleaning: Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\u2022 HACCP: Standard/framework governing Cleaning: HACCP.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Food Hygiene",
+          "HACCP",
+          "Service SOPs",
+          "Cleaning",
+          "HACCP",
+          "Service SOPs"
+        ],
+        "related_concepts": [
+          "Food Hygiene",
+          "HACCP",
+          "Service SOPs",
+          "Cleaning",
+          "HACCP",
+          "Service SOPs"
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Food Hygiene",
+        "HACCP",
+        "Service SOPs",
+        "Cleaning",
+        "HACCP",
+        "Service SOPs"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Wash dishes and equipment'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "KITCHEN-PORTER-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcome\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Kitchen Porter handles when wash dishes and equipment. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Kitchen Porter work involves wash dishes and equipment under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Kitchen Porter",
+            "definition": "The Kitchen Porter role integrates Food hygiene, Cleaning, Kitchen support to deliver on responsibilities such as wash dishes and equipment. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Kitchen Porter reference wash dishes and equipment and relevant standards or tools."
+        ],
+        "practical_example": "In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Kitchen Porter challenge with numbers.",
+          "Link the story to: Wash dishes and equipment."
+        ],
+        "revision_notes": [
+          "Food hygiene",
+          "Cleaning",
+          "Kitchen support"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Kitchen Porter challenge with numbers.",
+        "Link the story to: Wash dishes and equipment."
+      ],
+      "revision_notes": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Support chefs'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "KITCHEN-PORTER-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcome\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Kitchen Porter handles when wash dishes and equipment. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Kitchen Porter work involves wash dishes and equipment under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Kitchen Porter",
+            "definition": "The Kitchen Porter role integrates Food hygiene, Cleaning, Kitchen support to deliver on responsibilities such as wash dishes and equipment. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Kitchen Porter reference wash dishes and equipment and relevant standards or tools."
+        ],
+        "practical_example": "In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Kitchen Porter challenge with numbers.",
+          "Link the story to: Wash dishes and equipment."
+        ],
+        "revision_notes": [
+          "Food hygiene",
+          "Cleaning",
+          "Kitchen support"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Kitchen Porter challenge with numbers.",
+        "Link the story to: Wash dishes and equipment."
+      ],
+      "revision_notes": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Maintain hygiene standards'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "KITCHEN-PORTER-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcome\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Kitchen Porter handles when wash dishes and equipment. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Kitchen Porter work involves wash dishes and equipment under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Kitchen Porter",
+            "definition": "The Kitchen Porter role integrates Food hygiene, Cleaning, Kitchen support to deliver on responsibilities such as wash dishes and equipment. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Kitchen Porter reference wash dishes and equipment and relevant standards or tools."
+        ],
+        "practical_example": "In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Kitchen Porter challenge with numbers.",
+          "Link the story to: Wash dishes and equipment."
+        ],
+        "revision_notes": [
+          "Food hygiene",
+          "Cleaning",
+          "Kitchen support"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Kitchen Porter challenge with numbers.",
+        "Link the story to: Wash dishes and equipment."
+      ],
+      "revision_notes": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe a difficult delivery challenge specific to Kitchen Porter responsibilities while handling 'Wash dishes and equipment' and how you resolved it.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "KITCHEN-PORTER-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcome\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Kitchen Porter handles when wash dishes and equipment. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Kitchen Porter work involves wash dishes and equipment under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Kitchen Porter",
+            "definition": "The Kitchen Porter role integrates Food hygiene, Cleaning, Kitchen support to deliver on responsibilities such as wash dishes and equipment. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Kitchen Porter reference wash dishes and equipment and relevant standards or tools."
+        ],
+        "practical_example": "In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Kitchen Porter challenge with numbers.",
+          "Link the story to: Wash dishes and equipment."
+        ],
+        "revision_notes": [
+          "Food hygiene",
+          "Cleaning",
+          "Kitchen support"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Kitchen Porter challenge with numbers.",
+        "Link the story to: Wash dishes and equipment."
+      ],
+      "revision_notes": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Tell me about a time you improved quality or outcomes in your Kitchen Porter work while handling 'Wash dishes and equipment' using measurable evidence.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "KITCHEN-PORTER-BEHAVIORAL-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcome\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Kitchen Porter handles when wash dishes and equipment. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Kitchen Porter work involves wash dishes and equipment under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Kitchen Porter",
+            "definition": "The Kitchen Porter role integrates Food hygiene, Cleaning, Kitchen support to deliver on responsibilities such as wash dishes and equipment. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Kitchen Porter reference wash dishes and equipment and relevant standards or tools."
+        ],
+        "practical_example": "In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Kitchen Porter challenge with numbers.",
+          "Link the story to: Wash dishes and equipment."
+        ],
+        "revision_notes": [
+          "Food hygiene",
+          "Cleaning",
+          "Kitchen support"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Kitchen Porter challenge with numbers.",
+        "Link the story to: Wash dishes and equipment."
+      ],
+      "revision_notes": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe a stakeholder conflict in Kitchen Porter work while handling 'Wash dishes and equipment' and the decision framework you used.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "KITCHEN-PORTER-BEHAVIORAL-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcome\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Kitchen Porter handles when wash dishes and equipment. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Kitchen Porter work involves wash dishes and equipment under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Kitchen Porter",
+            "definition": "The Kitchen Porter role integrates Food hygiene, Cleaning, Kitchen support to deliver on responsibilities such as wash dishes and equipment. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Food hygiene supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Kitchen Porter reference wash dishes and equipment and relevant standards or tools."
+        ],
+        "practical_example": "In Kitchen Porter work involving wash dishes and equipment, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Kitchen Porter challenge with numbers.",
+          "Link the story to: Wash dishes and equipment."
+        ],
+        "revision_notes": [
+          "Food hygiene",
+          "Cleaning",
+          "Kitchen support"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Kitchen Porter challenge with numbers.",
+        "Link the story to: Wash dishes and equipment."
+      ],
+      "revision_notes": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Kitchen Porter position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "KITCHEN-PORTER-ROLE-SPECIFI-023",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Kitchen Porter, my approach to wash dishes and equipment is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Kitchen Porter practice, I anchor this using: Service recovery quality predicts repeat business better than perfect service rates., Allergen communication failures are high-severity operational risks., Role Specific.",
+      "answer_explanation": "This answer covers: As Kitchen Porter, my approach to wash dishes and equipment is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and han\u2026",
+      "study_material": {
+        "overview": "Role Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Role Specific directly supports wash dishes and equipment. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Role Specific directly supports wash dishes and equipment. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "general professional",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Role Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Role Specific directly supports wash dishes and equipment. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Wash dishes and equipment.",
+          "List the standards that govern Role Specific in Kitchen Porter work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Wash dishes and equipment.",
+        "List the standards that govern Role Specific in Kitchen Porter work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Kitchen Porter context: Wash dishes and equipment. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Kitchen Porter context: Wash dishes and equipment.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "KITCHEN-PORTER-COMPANY-SPEC-024",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Food hygiene",
+        "Cleaning",
+        "Kitchen support",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Kitchen Porter, my approach to wash dishes and equipment is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Kitchen Porter practice, I anchor this using: Service recovery quality predicts repeat business better than perfect service rates., Allergen communication failures are high-severity operational risks., Company Specific.",
+      "answer_explanation": "This answer covers: As Kitchen Porter, my approach to wash dishes and equipment is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and han\u2026",
+      "study_material": {
+        "overview": "Company Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Company Specific directly supports wash dishes and equipment. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Company Specific directly supports wash dishes and equipment. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Food Hygiene",
+            "explanation": "Food Hygiene in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "Cleaning",
+            "explanation": "Cleaning in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "general professional",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Company Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Kitchen Porter practice, Company Specific directly supports wash dishes and equipment. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Kitchen Porter, I adjusted prep cadence and station allocation for wash dishes and equipment; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Wash dishes and equipment.",
+          "List the standards that govern Company Specific in Kitchen Porter work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Wash dishes and equipment.",
+        "List the standards that govern Company Specific in Kitchen Porter work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:30:59.081684+00:00",
+  "confidence_score": 0.9
+}

@@ -1,0 +1,37 @@
+{
+  "role_name": "Social Worker",
+  "normalized_role_slug": "social_worker",
+  "category": "custom_roles",
+  "stream_or_department": "social_sciences",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 29,
+  "question_specific_study_material_count": 29,
+  "skill_count": 50,
+  "pdf_files": [
+    "social_worker_interview_pack.pdf",
+    "social_worker_study_material.pdf",
+    "social_worker_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "social_worker_interview_pack.md",
+    "social_worker_study_material.md",
+    "social_worker_questions_answers.md"
+  ],
+  "source_files": [
+    "social_worker_interview_pack.md",
+    "social_worker_study_material.md",
+    "social_worker_questions_answers.md",
+    "social_worker_interview_pack.pdf",
+    "social_worker_study_material.pdf",
+    "social_worker_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/social_worker",
+  "has_pdf": true,
+  "has_markdown": true
+}

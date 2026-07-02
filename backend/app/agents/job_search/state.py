@@ -44,3 +44,4 @@ class InterviewPackState(BaseAgentState, total=False):
     job_snapshot: dict[str, Any]  # the SavedJob fields the Executor generates questions from
     focus_areas: list[str]
     difficulty: str
+    include_study_material: bool

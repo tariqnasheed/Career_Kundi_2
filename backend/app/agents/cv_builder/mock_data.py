@@ -221,6 +221,116 @@ def _enhance_entry_bullets(entries: list[dict], bullets_field: str) -> list[dict
     return enhanced_entries
 
 
+def mock_generate_role_targeted_cv_content(
+    profile: dict,
+    target_role_title: str,
+    target_role_description: str | None,
+    target_job: dict | None,
+    section_ids: list[str],
+    tone: str,
+) -> dict:
+    """Role-targeted mock: synthesize plausible section payloads for the requested role."""
+    role = target_role_title.strip() or "Target Role"
+    jd_hint = (target_role_description or (target_job or {}).get("description_raw") or "")[:200]
+    skills_pool = [
+        s.get("name") for s in profile.get("skills", []) if s.get("name")
+    ] or ["Communication", "Problem solving", "Collaboration", "Technical aptitude"]
+
+    generated: dict[str, dict] = {}
+    if "summary" in section_ids:
+        generated["summary"] = {
+            "content": (
+                f"Motivated professional pursuing the {role} role"
+                + (f" with focus on {jd_hint[:80]}…" if jd_hint else "")
+                + ". Brings transferable experience and a commitment to delivering results in this capacity."
+            )
+        }
+    if "experience" in section_ids:
+        generated["experience"] = {
+            "entries": [
+                {
+                    "job_title": role,
+                    "company_name": "Previous Organization",
+                    "location": profile.get("address_city"),
+                    "start_date": "2022-01-01",
+                    "end_date": None,
+                    "is_current": True,
+                    "bullets": [
+                        f"Applied core competencies relevant to {role} in day-to-day responsibilities.",
+                        "Collaborated with cross-functional teams to deliver measurable outcomes.",
+                        "Continuously developed skills aligned with the target role requirements.",
+                    ],
+                }
+            ]
+        }
+    if "education" in section_ids:
+        edu = profile.get("educations") or []
+        if edu:
+            generated["education"] = {
+                "entries": [
+                    {
+                        "institution": e.get("institution"),
+                        "degree": e.get("degree"),
+                        "field_of_study": e.get("field_of_study"),
+                        "start_date": e.get("start_date"),
+                        "end_date": e.get("end_date"),
+                        "is_current": e.get("is_current", False),
+                    }
+                    for e in edu
+                ]
+            }
+        else:
+            generated["education"] = {
+                "entries": [{"institution": "University", "degree": "Bachelor's Degree", "field_of_study": "Relevant field"}]
+            }
+    if "skills" in section_ids:
+        generated["skills"] = {"items": skills_pool[:10]}
+    if "projects" in section_ids:
+        generated["projects"] = {
+            "entries": [
+                {
+                    "title": f"{role} Portfolio Project",
+                    "role": role,
+                    "description": f"Demonstration project showcasing abilities relevant to {role}.",
+                    "technologies": skills_pool[:4],
+                    "bullets": ["Designed and implemented a solution aligned with role expectations."],
+                }
+            ]
+        }
+    if "certifications" in section_ids:
+        generated["certifications"] = {
+            "entries": [{"name": f"{role} Foundations", "issuing_organization": "Professional Board"}]
+        }
+    if "publications" in section_ids:
+        generated["publications"] = {"entries": []}
+    if "languages" in section_ids:
+        langs = profile.get("languages") or []
+        generated["languages"] = {
+            "entries": langs or [{"name": "English", "proficiency": "Professional"}]
+        }
+    if "volunteer" in section_ids:
+        generated["volunteer"] = {"entries": []}
+    if "awards" in section_ids:
+        generated["awards"] = {"entries": []}
+    if "references" in section_ids:
+        generated["references"] = {"entries": []}
+
+    summary_text = (generated.get("summary") or {}).get("content", "")
+    return {
+        "professional_summary": summary_text,
+        "summary_rationale": f"Authored for target role '{role}' in role-targeted mode.",
+        "enhanced_work_experiences": [],
+        "enhanced_projects": [],
+        "prioritized_skills": (generated.get("skills") or {}).get("items", []),
+        "ats_keywords_matched": mock_ats_keywords_matched(profile, target_job),
+        "sections_included": section_ids,
+        "generation_mode": "role_targeted",
+        "generated_sections": generated,
+        "needs_manual_input": False,
+        "manual_input_reason": None,
+    }
+
+
 def mock_generate_cv_content(
     profile: dict,
     target_job: dict | None,

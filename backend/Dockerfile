@@ -18,13 +18,18 @@ WORKDIR /app
 # skip re-resolving dependencies when only application code changes.
 COPY pyproject.toml uv.lock ./
 
-# Create a venv and install dependencies from pyproject.toml directly.
-# The -e (editable) flag is excluded to avoid building the local package.
+# Create a venv and install all production dependencies via uv.
 RUN uv venv /app/.venv && \
-    touch README.md && \
-    /usr/local/bin/uv pip install --python /app/.venv/bin/python \
-        $(python -c "import tomllib; f=open('pyproject.toml'); cfg=tomllib.loads(f.read()); print(' '.join(cfg['project']['dependencies']))") && \
-    rm README.md
+    uv pip install --python /app/.venv/bin/python \
+        fastapi uvicorn python-multipart pydantic pydantic-settings email-validator \
+        sqlalchemy alembic asyncpg psycopg2-binary redis \
+        langchain langchain-community langgraph langchain-google-genai google-generativeai \
+        faiss-cpu networkx sentence-transformers \
+        playwright beautifulsoup4 lxml httpx \
+        weasyprint python-docx markdown2 \
+        python-jose bcrypt slowapi \
+        structlog opentelemetry-api opentelemetry-sdk prometheus-client \
+        tenacity python-slugify
 
 # --- Stage 2: runtime -----------------------------------------------------------
 FROM python:3.11-slim AS runtime

@@ -1,0 +1,950 @@
+{
+  "civil_engineer": {
+    "role_name": "Civil Engineer",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/civil_engineer",
+    "question_count": 29,
+    "pdf_files": [
+      "civil_engineer_interview_pack.pdf",
+      "civil_engineer_study_material.pdf",
+      "civil_engineer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "mechanical_engineer": {
+    "role_name": "Mechanical Engineer",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/mechanical_engineer",
+    "question_count": 28,
+    "pdf_files": [
+      "mechanical_engineer_interview_pack.pdf",
+      "mechanical_engineer_study_material.pdf",
+      "mechanical_engineer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "electrical_engineer": {
+    "role_name": "Electrical Engineer",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/electrical_engineer",
+    "question_count": 28,
+    "pdf_files": [
+      "electrical_engineer_interview_pack.pdf",
+      "electrical_engineer_study_material.pdf",
+      "electrical_engineer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "chemical_engineer": {
+    "role_name": "Chemical Engineer",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/chemical_engineer",
+    "question_count": 29,
+    "pdf_files": [
+      "chemical_engineer_interview_pack.pdf",
+      "chemical_engineer_study_material.pdf",
+      "chemical_engineer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "software_engineer": {
+    "role_name": "Software Engineer",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/software_engineer",
+    "question_count": 33,
+    "pdf_files": [
+      "software_engineer_interview_pack.pdf",
+      "software_engineer_study_material.pdf",
+      "software_engineer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "data_scientist": {
+    "role_name": "Data Scientist",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/data_scientist",
+    "question_count": 34,
+    "pdf_files": [
+      "data_scientist_interview_pack.pdf",
+      "data_scientist_study_material.pdf",
+      "data_scientist_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "cybersecurity_analyst": {
+    "role_name": "Cybersecurity Analyst",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/cybersecurity_analyst",
+    "question_count": 29,
+    "pdf_files": [
+      "cybersecurity_analyst_interview_pack.pdf",
+      "cybersecurity_analyst_study_material.pdf",
+      "cybersecurity_analyst_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "product_manager_tech": {
+    "role_name": "Product Manager (Tech)",
+    "category": "business",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/business/product_manager_tech",
+    "question_count": 28,
+    "pdf_files": [
+      "product_manager_tech_interview_pack.pdf",
+      "product_manager_tech_study_material.pdf",
+      "product_manager_tech_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "devops_engineer": {
+    "role_name": "DevOps Engineer",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/devops_engineer",
+    "question_count": 31,
+    "pdf_files": [
+      "devops_engineer_interview_pack.pdf",
+      "devops_engineer_study_material.pdf",
+      "devops_engineer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "general_practitioner": {
+    "role_name": "General Practitioner",
+    "category": "healthcare",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/general_practitioner",
+    "question_count": 29,
+    "pdf_files": [
+      "general_practitioner_interview_pack.pdf",
+      "general_practitioner_study_material.pdf",
+      "general_practitioner_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "clinical_pharmacist": {
+    "role_name": "Clinical Pharmacist",
+    "category": "healthcare",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/clinical_pharmacist",
+    "question_count": 25,
+    "pdf_files": [
+      "clinical_pharmacist_interview_pack.pdf",
+      "clinical_pharmacist_study_material.pdf",
+      "clinical_pharmacist_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "radiographer": {
+    "role_name": "Radiographer",
+    "category": "healthcare",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/radiographer",
+    "question_count": 24,
+    "pdf_files": [
+      "radiographer_interview_pack.pdf",
+      "radiographer_study_material.pdf",
+      "radiographer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "registered_nurse": {
+    "role_name": "Registered Nurse",
+    "category": "healthcare",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/registered_nurse",
+    "question_count": 31,
+    "pdf_files": [
+      "registered_nurse_interview_pack.pdf",
+      "registered_nurse_study_material.pdf",
+      "registered_nurse_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "physiotherapist": {
+    "role_name": "Physiotherapist",
+    "category": "healthcare",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/physiotherapist",
+    "question_count": 23,
+    "pdf_files": [
+      "physiotherapist_interview_pack.pdf",
+      "physiotherapist_study_material.pdf",
+      "physiotherapist_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "occupational_therapist": {
+    "role_name": "Occupational Therapist",
+    "category": "healthcare",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/occupational_therapist",
+    "question_count": 23,
+    "pdf_files": [
+      "occupational_therapist_interview_pack.pdf",
+      "occupational_therapist_study_material.pdf",
+      "occupational_therapist_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "marketing_manager": {
+    "role_name": "Marketing Manager",
+    "category": "business",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/business/marketing_manager",
+    "question_count": 29,
+    "pdf_files": [
+      "marketing_manager_interview_pack.pdf",
+      "marketing_manager_study_material.pdf",
+      "marketing_manager_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "hr_business_partner": {
+    "role_name": "HR Business Partner",
+    "category": "business",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/business/hr_business_partner",
+    "question_count": 29,
+    "pdf_files": [
+      "hr_business_partner_interview_pack.pdf",
+      "hr_business_partner_study_material.pdf",
+      "hr_business_partner_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "operations_manager": {
+    "role_name": "Operations Manager",
+    "category": "business",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/business/operations_manager",
+    "question_count": 29,
+    "pdf_files": [
+      "operations_manager_interview_pack.pdf",
+      "operations_manager_study_material.pdf",
+      "operations_manager_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "management_consultant": {
+    "role_name": "Management Consultant",
+    "category": "business",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/business/management_consultant",
+    "question_count": 28,
+    "pdf_files": [
+      "management_consultant_interview_pack.pdf",
+      "management_consultant_study_material.pdf",
+      "management_consultant_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "chartered_accountant": {
+    "role_name": "Chartered Accountant",
+    "category": "finance",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/finance/chartered_accountant",
+    "question_count": 32,
+    "pdf_files": [
+      "chartered_accountant_interview_pack.pdf",
+      "chartered_accountant_study_material.pdf",
+      "chartered_accountant_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "financial_analyst": {
+    "role_name": "Financial Analyst",
+    "category": "finance",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/finance/financial_analyst",
+    "question_count": 28,
+    "pdf_files": [
+      "financial_analyst_interview_pack.pdf",
+      "financial_analyst_study_material.pdf",
+      "financial_analyst_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "investment_analyst": {
+    "role_name": "Investment Analyst",
+    "category": "finance",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/finance/investment_analyst",
+    "question_count": 29,
+    "pdf_files": [
+      "investment_analyst_interview_pack.pdf",
+      "investment_analyst_study_material.pdf",
+      "investment_analyst_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "solicitor": {
+    "role_name": "Solicitor",
+    "category": "law",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/law/solicitor",
+    "question_count": 28,
+    "pdf_files": [
+      "solicitor_interview_pack.pdf",
+      "solicitor_study_material.pdf",
+      "solicitor_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "paralegal": {
+    "role_name": "Paralegal",
+    "category": "law",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/law/paralegal",
+    "question_count": 24,
+    "pdf_files": [
+      "paralegal_interview_pack.pdf",
+      "paralegal_study_material.pdf",
+      "paralegal_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "compliance_officer": {
+    "role_name": "Compliance Officer",
+    "category": "law",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/law/compliance_officer",
+    "question_count": 23,
+    "pdf_files": [
+      "compliance_officer_interview_pack.pdf",
+      "compliance_officer_study_material.pdf",
+      "compliance_officer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "primary_school_teacher": {
+    "role_name": "Primary School Teacher",
+    "category": "education",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/education/primary_school_teacher",
+    "question_count": 29,
+    "pdf_files": [
+      "primary_school_teacher_interview_pack.pdf",
+      "primary_school_teacher_study_material.pdf",
+      "primary_school_teacher_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "secondary_maths_teacher": {
+    "role_name": "Secondary Maths Teacher",
+    "category": "education",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/education/secondary_maths_teacher",
+    "question_count": 23,
+    "pdf_files": [
+      "secondary_maths_teacher_interview_pack.pdf",
+      "secondary_maths_teacher_study_material.pdf",
+      "secondary_maths_teacher_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "university_lecturer": {
+    "role_name": "University Lecturer",
+    "category": "education",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/education/university_lecturer",
+    "question_count": 29,
+    "pdf_files": [
+      "university_lecturer_interview_pack.pdf",
+      "university_lecturer_study_material.pdf",
+      "university_lecturer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "graphic_designer": {
+    "role_name": "Graphic Designer",
+    "category": "arts_media",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/arts_media/graphic_designer",
+    "question_count": 28,
+    "pdf_files": [
+      "graphic_designer_interview_pack.pdf",
+      "graphic_designer_study_material.pdf",
+      "graphic_designer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "journalist": {
+    "role_name": "Journalist",
+    "category": "arts_media",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/arts_media/journalist",
+    "question_count": 27,
+    "pdf_files": [
+      "journalist_interview_pack.pdf",
+      "journalist_study_material.pdf",
+      "journalist_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "video_editor": {
+    "role_name": "Video Editor",
+    "category": "arts_media",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/arts_media/video_editor",
+    "question_count": 29,
+    "pdf_files": [
+      "video_editor_interview_pack.pdf",
+      "video_editor_study_material.pdf",
+      "video_editor_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "laboratory_scientist": {
+    "role_name": "Laboratory Scientist",
+    "category": "science",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/science/laboratory_scientist",
+    "question_count": 29,
+    "pdf_files": [
+      "laboratory_scientist_interview_pack.pdf",
+      "laboratory_scientist_study_material.pdf",
+      "laboratory_scientist_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "research_biologist": {
+    "role_name": "Research Biologist",
+    "category": "science",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/science/research_biologist",
+    "question_count": 28,
+    "pdf_files": [
+      "research_biologist_interview_pack.pdf",
+      "research_biologist_study_material.pdf",
+      "research_biologist_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "environmental_scientist": {
+    "role_name": "Environmental Scientist",
+    "category": "science",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/science/environmental_scientist",
+    "question_count": 29,
+    "pdf_files": [
+      "environmental_scientist_interview_pack.pdf",
+      "environmental_scientist_study_material.pdf",
+      "environmental_scientist_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "hotel_manager": {
+    "role_name": "Hotel Manager",
+    "category": "healthcare",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/hotel_manager",
+    "question_count": 28,
+    "pdf_files": [
+      "hotel_manager_interview_pack.pdf",
+      "hotel_manager_study_material.pdf",
+      "hotel_manager_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "head_chef": {
+    "role_name": "Head Chef",
+    "category": "healthcare",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/head_chef",
+    "question_count": 28,
+    "pdf_files": [
+      "head_chef_interview_pack.pdf",
+      "head_chef_study_material.pdf",
+      "head_chef_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "travel_consultant": {
+    "role_name": "Travel Consultant",
+    "category": "healthcare",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/travel_consultant",
+    "question_count": 29,
+    "pdf_files": [
+      "travel_consultant_interview_pack.pdf",
+      "travel_consultant_study_material.pdf",
+      "travel_consultant_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "retail_store_manager": {
+    "role_name": "Retail Store Manager",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/retail_store_manager",
+    "question_count": 27,
+    "pdf_files": [
+      "retail_store_manager_interview_pack.pdf",
+      "retail_store_manager_study_material.pdf",
+      "retail_store_manager_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "account_executive": {
+    "role_name": "Account Executive",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/account_executive",
+    "question_count": 29,
+    "pdf_files": [
+      "account_executive_interview_pack.pdf",
+      "account_executive_study_material.pdf",
+      "account_executive_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "e_commerce_manager": {
+    "role_name": "E-commerce Manager",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/e_commerce_manager",
+    "question_count": 27,
+    "pdf_files": [
+      "e_commerce_manager_interview_pack.pdf",
+      "e_commerce_manager_study_material.pdf",
+      "e_commerce_manager_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "construction_site_manager": {
+    "role_name": "Construction Site Manager",
+    "category": "business",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/business/construction_site_manager",
+    "question_count": 29,
+    "pdf_files": [
+      "construction_site_manager_interview_pack.pdf",
+      "construction_site_manager_study_material.pdf",
+      "construction_site_manager_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "architect": {
+    "role_name": "Architect",
+    "category": "arts_media",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/arts_media/architect",
+    "question_count": 27,
+    "pdf_files": [
+      "architect_interview_pack.pdf",
+      "architect_study_material.pdf",
+      "architect_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "electrician": {
+    "role_name": "Electrician",
+    "category": "construction",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/construction/electrician",
+    "question_count": 30,
+    "pdf_files": [
+      "electrician_interview_pack.pdf",
+      "electrician_study_material.pdf",
+      "electrician_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "farm_manager": {
+    "role_name": "Farm Manager",
+    "category": "business",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/business/farm_manager",
+    "question_count": 28,
+    "pdf_files": [
+      "farm_manager_interview_pack.pdf",
+      "farm_manager_study_material.pdf",
+      "farm_manager_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "environmental_consultant": {
+    "role_name": "Environmental Consultant",
+    "category": "business",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/business/environmental_consultant",
+    "question_count": 29,
+    "pdf_files": [
+      "environmental_consultant_interview_pack.pdf",
+      "environmental_consultant_study_material.pdf",
+      "environmental_consultant_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "social_worker": {
+    "role_name": "Social Worker",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/social_worker",
+    "question_count": 29,
+    "pdf_files": [
+      "social_worker_interview_pack.pdf",
+      "social_worker_study_material.pdf",
+      "social_worker_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "clinical_psychologist": {
+    "role_name": "Clinical Psychologist",
+    "category": "healthcare",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/clinical_psychologist",
+    "question_count": 29,
+    "pdf_files": [
+      "clinical_psychologist_interview_pack.pdf",
+      "clinical_psychologist_study_material.pdf",
+      "clinical_psychologist_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "hr_advisor": {
+    "role_name": "HR Advisor",
+    "category": "business",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/business/hr_advisor",
+    "question_count": 24,
+    "pdf_files": [
+      "hr_advisor_interview_pack.pdf",
+      "hr_advisor_study_material.pdf",
+      "hr_advisor_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "policy_officer": {
+    "role_name": "Policy Officer",
+    "category": "public_service",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/public_service/policy_officer",
+    "question_count": 29,
+    "pdf_files": [
+      "policy_officer_interview_pack.pdf",
+      "policy_officer_study_material.pdf",
+      "policy_officer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "civil_service_administrator": {
+    "role_name": "Civil Service Administrator",
+    "category": "engineering",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/engineering/civil_service_administrator",
+    "question_count": 29,
+    "pdf_files": [
+      "civil_service_administrator_interview_pack.pdf",
+      "civil_service_administrator_study_material.pdf",
+      "civil_service_administrator_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "emergency_services_coordinator": {
+    "role_name": "Emergency Services Coordinator",
+    "category": "public_service",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/public_service/emergency_services_coordinator",
+    "question_count": 24,
+    "pdf_files": [
+      "emergency_services_coordinator_interview_pack.pdf",
+      "emergency_services_coordinator_study_material.pdf",
+      "emergency_services_coordinator_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "food_delivery_driver": {
+    "role_name": "Food Delivery Driver",
+    "category": "construction",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/construction/food_delivery_driver",
+    "question_count": 24,
+    "pdf_files": [
+      "food_delivery_driver_interview_pack.pdf",
+      "food_delivery_driver_study_material.pdf",
+      "food_delivery_driver_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "rideshare_driver": {
+    "role_name": "Rideshare Driver",
+    "category": "construction",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/construction/rideshare_driver",
+    "question_count": 23,
+    "pdf_files": [
+      "rideshare_driver_interview_pack.pdf",
+      "rideshare_driver_study_material.pdf",
+      "rideshare_driver_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "parcel_courier": {
+    "role_name": "Parcel Courier",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/parcel_courier",
+    "question_count": 22,
+    "pdf_files": [
+      "parcel_courier_interview_pack.pdf",
+      "parcel_courier_study_material.pdf",
+      "parcel_courier_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "barista": {
+    "role_name": "Barista",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/barista",
+    "question_count": 22,
+    "pdf_files": [
+      "barista_interview_pack.pdf",
+      "barista_study_material.pdf",
+      "barista_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "retail_sales_associate": {
+    "role_name": "Retail Sales Associate",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/retail_sales_associate",
+    "question_count": 22,
+    "pdf_files": [
+      "retail_sales_associate_interview_pack.pdf",
+      "retail_sales_associate_study_material.pdf",
+      "retail_sales_associate_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "waiter_waitress": {
+    "role_name": "Waiter / Waitress",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/waiter_waitress",
+    "question_count": 22,
+    "pdf_files": [
+      "waiter_waitress_interview_pack.pdf",
+      "waiter_waitress_study_material.pdf",
+      "waiter_waitress_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "kitchen_porter": {
+    "role_name": "Kitchen Porter",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/kitchen_porter",
+    "question_count": 24,
+    "pdf_files": [
+      "kitchen_porter_interview_pack.pdf",
+      "kitchen_porter_study_material.pdf",
+      "kitchen_porter_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "private_maths_tutor": {
+    "role_name": "Private Maths Tutor",
+    "category": "education",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/education/private_maths_tutor",
+    "question_count": 27,
+    "pdf_files": [
+      "private_maths_tutor_interview_pack.pdf",
+      "private_maths_tutor_study_material.pdf",
+      "private_maths_tutor_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "english_language_tutor": {
+    "role_name": "English Language Tutor",
+    "category": "education",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/education/english_language_tutor",
+    "question_count": 28,
+    "pdf_files": [
+      "english_language_tutor_interview_pack.pdf",
+      "english_language_tutor_study_material.pdf",
+      "english_language_tutor_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "teaching_assistant": {
+    "role_name": "Teaching Assistant",
+    "category": "education",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/education/teaching_assistant",
+    "question_count": 24,
+    "pdf_files": [
+      "teaching_assistant_interview_pack.pdf",
+      "teaching_assistant_study_material.pdf",
+      "teaching_assistant_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "freelance_graphic_designer": {
+    "role_name": "Freelance Graphic Designer",
+    "category": "arts_media",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/arts_media/freelance_graphic_designer",
+    "question_count": 29,
+    "pdf_files": [
+      "freelance_graphic_designer_interview_pack.pdf",
+      "freelance_graphic_designer_study_material.pdf",
+      "freelance_graphic_designer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "freelance_content_writer": {
+    "role_name": "Freelance Content Writer",
+    "category": "arts_media",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/arts_media/freelance_content_writer",
+    "question_count": 28,
+    "pdf_files": [
+      "freelance_content_writer_interview_pack.pdf",
+      "freelance_content_writer_study_material.pdf",
+      "freelance_content_writer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "event_photographer": {
+    "role_name": "Event Photographer",
+    "category": "arts_media",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/arts_media/event_photographer",
+    "question_count": 24,
+    "pdf_files": [
+      "event_photographer_interview_pack.pdf",
+      "event_photographer_study_material.pdf",
+      "event_photographer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "care_assistant": {
+    "role_name": "Care Assistant",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/care_assistant",
+    "question_count": 29,
+    "pdf_files": [
+      "care_assistant_interview_pack.pdf",
+      "care_assistant_study_material.pdf",
+      "care_assistant_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "babysitter_nanny": {
+    "role_name": "Babysitter / Nanny",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/babysitter_nanny",
+    "question_count": 24,
+    "pdf_files": [
+      "babysitter_nanny_interview_pack.pdf",
+      "babysitter_nanny_study_material.pdf",
+      "babysitter_nanny_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "dog_walker_pet_sitter": {
+    "role_name": "Dog Walker / Pet Sitter",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/dog_walker_pet_sitter",
+    "question_count": 22,
+    "pdf_files": [
+      "dog_walker_pet_sitter_interview_pack.pdf",
+      "dog_walker_pet_sitter_study_material.pdf",
+      "dog_walker_pet_sitter_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "data_entry_clerk": {
+    "role_name": "Data Entry Clerk",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/data_entry_clerk",
+    "question_count": 28,
+    "pdf_files": [
+      "data_entry_clerk_interview_pack.pdf",
+      "data_entry_clerk_study_material.pdf",
+      "data_entry_clerk_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "virtual_assistant": {
+    "role_name": "Virtual Assistant",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/virtual_assistant",
+    "question_count": 25,
+    "pdf_files": [
+      "virtual_assistant_interview_pack.pdf",
+      "virtual_assistant_study_material.pdf",
+      "virtual_assistant_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "transcriptionist": {
+    "role_name": "Transcriptionist",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/transcriptionist",
+    "question_count": 28,
+    "pdf_files": [
+      "transcriptionist_interview_pack.pdf",
+      "transcriptionist_study_material.pdf",
+      "transcriptionist_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "event_staff": {
+    "role_name": "Event Staff",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/event_staff",
+    "question_count": 24,
+    "pdf_files": [
+      "event_staff_interview_pack.pdf",
+      "event_staff_study_material.pdf",
+      "event_staff_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "brand_promoter": {
+    "role_name": "Brand Promoter",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/brand_promoter",
+    "question_count": 21,
+    "pdf_files": [
+      "brand_promoter_interview_pack.pdf",
+      "brand_promoter_study_material.pdf",
+      "brand_promoter_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "warehouse_picker_packer": {
+    "role_name": "Warehouse Picker / Packer",
+    "category": "construction",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/construction/warehouse_picker_packer",
+    "question_count": 23,
+    "pdf_files": [
+      "warehouse_picker_packer_interview_pack.pdf",
+      "warehouse_picker_packer_study_material.pdf",
+      "warehouse_picker_packer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "handyman_odd_jobs": {
+    "role_name": "Handyman / Odd Jobs",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/handyman_odd_jobs",
+    "question_count": 29,
+    "pdf_files": [
+      "handyman_odd_jobs_interview_pack.pdf",
+      "handyman_odd_jobs_study_material.pdf",
+      "handyman_odd_jobs_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "domestic_cleaner": {
+    "role_name": "Domestic Cleaner",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/domestic_cleaner",
+    "question_count": 22,
+    "pdf_files": [
+      "domestic_cleaner_interview_pack.pdf",
+      "domestic_cleaner_study_material.pdf",
+      "domestic_cleaner_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "gardener_landscaping_helper": {
+    "role_name": "Gardener / Landscaping Helper",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/gardener_landscaping_helper",
+    "question_count": 24,
+    "pdf_files": [
+      "gardener_landscaping_helper_interview_pack.pdf",
+      "gardener_landscaping_helper_study_material.pdf",
+      "gardener_landscaping_helper_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "removal_moving_helper": {
+    "role_name": "Removal / Moving Helper",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/removal_moving_helper",
+    "question_count": 24,
+    "pdf_files": [
+      "removal_moving_helper_interview_pack.pdf",
+      "removal_moving_helper_study_material.pdf",
+      "removal_moving_helper_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "call_center_agent_part_time": {
+    "role_name": "Call Center Agent (Part-time)",
+    "category": "custom_roles",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/call_center_agent_part_time",
+    "question_count": 23,
+    "pdf_files": [
+      "call_center_agent_part_time_interview_pack.pdf",
+      "call_center_agent_part_time_study_material.pdf",
+      "call_center_agent_part_time_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  },
+  "salesforce_devops_engineer": {
+    "role_name": "Salesforce DevOps Engineer",
+    "category": "technology",
+    "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/salesforce_devops_engineer",
+    "question_count": 5,
+    "pdf_files": [
+      "salesforce_devops_engineer_interview_pack.pdf",
+      "salesforce_devops_engineer_study_material.pdf",
+      "salesforce_devops_engineer_questions_answers.pdf"
+    ],
+    "last_updated": "2026-07-02"
+  }
+}

@@ -44,7 +44,7 @@ export default function RegisterPage() {
       await register(email, password, name);
       navigate("/dashboard", { replace: true });
     } catch (err: any) {
-      const msg = err?.response?.data?.detail || "Registration failed. Please try again.";
+      const msg = err?.message || err?.response?.data?.message || err?.response?.data?.detail || "Registration failed. Please try again.";
       setErrors({ form: msg });
       addToast({ type: "error", message: msg });
     } finally {

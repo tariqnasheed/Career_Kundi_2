@@ -1,0 +1,1784 @@
+[
+  {
+    "id": "ft-civil-eng",
+    "title": "Civil Engineer",
+    "stream_id": "engineering",
+    "category": "full_time",
+    "skills": [
+      "AutoCAD",
+      "Structural analysis",
+      "Project management",
+      "Site supervision"
+    ],
+    "responsibilities": [
+      "Design infrastructure plans",
+      "Oversee construction compliance",
+      "Coordinate with contractors"
+    ],
+    "requirements": [
+      "BEng Civil Engineering",
+      "Professional accreditation",
+      "2+ years site experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-mech-eng",
+    "title": "Mechanical Engineer",
+    "stream_id": "engineering",
+    "category": "full_time",
+    "skills": [
+      "CAD",
+      "Thermodynamics",
+      "Manufacturing processes",
+      "FEA"
+    ],
+    "responsibilities": [
+      "Design mechanical systems",
+      "Run simulations and tests",
+      "Improve production efficiency"
+    ],
+    "requirements": [
+      "Mechanical engineering degree",
+      "CAD proficiency",
+      "Problem-solving skills"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-electrical-eng",
+    "title": "Electrical Engineer",
+    "stream_id": "engineering",
+    "category": "full_time",
+    "skills": [
+      "Circuit design",
+      "PLC programming",
+      "Power systems",
+      "Safety standards"
+    ],
+    "responsibilities": [
+      "Design electrical layouts",
+      "Troubleshoot systems",
+      "Ensure regulatory compliance"
+    ],
+    "requirements": [
+      "Electrical engineering degree",
+      "Licensed engineer preferred"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-chemical-eng",
+    "title": "Chemical Engineer",
+    "stream_id": "engineering",
+    "category": "full_time",
+    "skills": [
+      "Process design",
+      "Hazmat safety",
+      "Quality control",
+      "Lab analysis"
+    ],
+    "responsibilities": [
+      "Optimize chemical processes",
+      "Monitor plant operations",
+      "Document SOPs"
+    ],
+    "requirements": [
+      "Chemical engineering degree",
+      "Plant experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-software-eng",
+    "title": "Software Engineer",
+    "stream_id": "computer_science",
+    "category": "full_time",
+    "skills": [
+      "JavaScript",
+      "Python",
+      "System design",
+      "Git",
+      "APIs"
+    ],
+    "responsibilities": [
+      "Build and ship features",
+      "Write tests and documentation",
+      "Participate in code reviews"
+    ],
+    "requirements": [
+      "CS degree or bootcamp",
+      "2+ years development",
+      "Strong problem solving"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-data-scientist",
+    "title": "Data Scientist",
+    "stream_id": "computer_science",
+    "category": "full_time",
+    "skills": [
+      "Python",
+      "SQL",
+      "Machine learning",
+      "Statistics",
+      "Visualization"
+    ],
+    "responsibilities": [
+      "Build predictive models",
+      "Analyze business datasets",
+      "Present insights to stakeholders"
+    ],
+    "requirements": [
+      "Statistics or CS background",
+      "ML project portfolio"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-cyber-analyst",
+    "title": "Cybersecurity Analyst",
+    "stream_id": "computer_science",
+    "category": "full_time",
+    "skills": [
+      "SIEM",
+      "Incident response",
+      "Network security",
+      "Risk assessment"
+    ],
+    "responsibilities": [
+      "Monitor security alerts",
+      "Investigate incidents",
+      "Recommend hardening measures"
+    ],
+    "requirements": [
+      "Security certifications",
+      "IT operations experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-product-manager",
+    "title": "Product Manager (Tech)",
+    "stream_id": "computer_science",
+    "category": "full_time",
+    "skills": [
+      "Roadmapping",
+      "Agile",
+      "User research",
+      "Stakeholder management"
+    ],
+    "responsibilities": [
+      "Define product vision",
+      "Prioritize backlog",
+      "Align engineering and design"
+    ],
+    "requirements": [
+      "Product management experience",
+      "Technical literacy"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-devops",
+    "title": "DevOps Engineer",
+    "stream_id": "computer_science",
+    "category": "full_time",
+    "skills": [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Terraform"
+    ],
+    "responsibilities": [
+      "Maintain deployment pipelines",
+      "Improve system reliability",
+      "Automate infrastructure"
+    ],
+    "requirements": [
+      "Cloud platform experience",
+      "Scripting skills"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-gp",
+    "title": "General Practitioner",
+    "stream_id": "medicine",
+    "category": "full_time",
+    "skills": [
+      "Clinical diagnosis",
+      "Patient care",
+      "EMR systems",
+      "Communication"
+    ],
+    "responsibilities": [
+      "Consult patients",
+      "Refer to specialists",
+      "Maintain medical records"
+    ],
+    "requirements": [
+      "Medical degree",
+      "License to practice",
+      "Residency completed"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-pharmacist",
+    "title": "Clinical Pharmacist",
+    "stream_id": "medicine",
+    "category": "full_time",
+    "skills": [
+      "Pharmacology",
+      "Patient counseling",
+      "Inventory management"
+    ],
+    "responsibilities": [
+      "Dispense medications safely",
+      "Advise on drug interactions",
+      "Manage pharmacy operations"
+    ],
+    "requirements": [
+      "Pharmacy degree",
+      "Registered pharmacist"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-radiographer",
+    "title": "Radiographer",
+    "stream_id": "medicine",
+    "category": "full_time",
+    "skills": [
+      "Medical imaging",
+      "Radiation safety",
+      "Patient positioning"
+    ],
+    "responsibilities": [
+      "Operate imaging equipment",
+      "Prepare patients for scans",
+      "Collaborate with radiologists"
+    ],
+    "requirements": [
+      "Radiography qualification",
+      "Hospital experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-registered-nurse",
+    "title": "Registered Nurse",
+    "stream_id": "nursing",
+    "category": "full_time",
+    "skills": [
+      "Patient assessment",
+      "Medication administration",
+      "Care planning",
+      "CPR"
+    ],
+    "responsibilities": [
+      "Deliver bedside care",
+      "Coordinate with physicians",
+      "Document patient progress"
+    ],
+    "requirements": [
+      "Nursing degree",
+      "NMC registration",
+      "Ward experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-physio",
+    "title": "Physiotherapist",
+    "stream_id": "nursing",
+    "category": "full_time",
+    "skills": [
+      "Rehabilitation",
+      "Manual therapy",
+      "Exercise prescription"
+    ],
+    "responsibilities": [
+      "Assess mobility needs",
+      "Design treatment plans",
+      "Track recovery outcomes"
+    ],
+    "requirements": [
+      "Physiotherapy degree",
+      "HCPC registered"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-occupational",
+    "title": "Occupational Therapist",
+    "stream_id": "nursing",
+    "category": "full_time",
+    "skills": [
+      "ADL training",
+      "Assistive technology",
+      "Mental health support"
+    ],
+    "responsibilities": [
+      "Support daily living skills",
+      "Adapt environments for patients",
+      "Work with multidisciplinary teams"
+    ],
+    "requirements": [
+      "OT degree",
+      "Clinical placement experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "ft-marketing-mgr",
+    "title": "Marketing Manager",
+    "stream_id": "business",
+    "category": "full_time",
+    "skills": [
+      "Digital marketing",
+      "Campaign strategy",
+      "Analytics",
+      "Brand management"
+    ],
+    "responsibilities": [
+      "Plan marketing campaigns",
+      "Manage budgets",
+      "Report on KPIs"
+    ],
+    "requirements": [
+      "Marketing degree or equivalent",
+      "3+ years experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-hr-bp",
+    "title": "HR Business Partner",
+    "stream_id": "business",
+    "category": "full_time",
+    "skills": [
+      "Employee relations",
+      "Talent acquisition",
+      "HR policy",
+      "Coaching"
+    ],
+    "responsibilities": [
+      "Support people strategy",
+      "Handle employee issues",
+      "Partner with leadership"
+    ],
+    "requirements": [
+      "HR certification",
+      "Stakeholder management"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-ops-mgr",
+    "title": "Operations Manager",
+    "stream_id": "business",
+    "category": "full_time",
+    "skills": [
+      "Process improvement",
+      "KPI tracking",
+      "Team leadership",
+      "Budgeting"
+    ],
+    "responsibilities": [
+      "Optimize daily operations",
+      "Lead operational teams",
+      "Drive efficiency initiatives"
+    ],
+    "requirements": [
+      "Operations or business degree",
+      "Leadership experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-consultant",
+    "title": "Management Consultant",
+    "stream_id": "business",
+    "category": "full_time",
+    "skills": [
+      "Strategy",
+      "Financial modelling",
+      "Presentation",
+      "Client management"
+    ],
+    "responsibilities": [
+      "Analyze client problems",
+      "Develop recommendations",
+      "Facilitate workshops"
+    ],
+    "requirements": [
+      "Top-tier analytical skills",
+      "Consulting or industry experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-accountant",
+    "title": "Chartered Accountant",
+    "stream_id": "finance",
+    "category": "full_time",
+    "skills": [
+      "Financial reporting",
+      "Tax",
+      "Audit",
+      "Excel",
+      "IFRS"
+    ],
+    "responsibilities": [
+      "Prepare financial statements",
+      "Support audits",
+      "Advise on compliance"
+    ],
+    "requirements": [
+      "Accounting qualification",
+      "Practice experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-fin-analyst",
+    "title": "Financial Analyst",
+    "stream_id": "finance",
+    "category": "full_time",
+    "skills": [
+      "Financial modelling",
+      "Forecasting",
+      "Excel",
+      "Power BI"
+    ],
+    "responsibilities": [
+      "Build financial models",
+      "Analyze variances",
+      "Support investment decisions"
+    ],
+    "requirements": [
+      "Finance or economics degree",
+      "Analytical mindset"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "ft-investment",
+    "title": "Investment Analyst",
+    "stream_id": "finance",
+    "category": "full_time",
+    "skills": [
+      "Equity research",
+      "Valuation",
+      "Market analysis",
+      "Bloomberg"
+    ],
+    "responsibilities": [
+      "Research securities",
+      "Write investment memos",
+      "Monitor portfolio risk"
+    ],
+    "requirements": [
+      "Finance degree",
+      "Strong numeracy"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "ft-solicitor",
+    "title": "Solicitor",
+    "stream_id": "law",
+    "category": "full_time",
+    "skills": [
+      "Legal research",
+      "Contract drafting",
+      "Client advisory",
+      "Litigation support"
+    ],
+    "responsibilities": [
+      "Manage client cases",
+      "Draft legal documents",
+      "Represent clients where permitted"
+    ],
+    "requirements": [
+      "Law degree",
+      "Qualified solicitor"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-paralegal",
+    "title": "Paralegal",
+    "stream_id": "law",
+    "category": "full_time",
+    "skills": [
+      "Case management",
+      "Legal documentation",
+      "E-discovery"
+    ],
+    "responsibilities": [
+      "Support attorneys",
+      "Organize case files",
+      "Conduct legal research"
+    ],
+    "requirements": [
+      "Paralegal certificate",
+      "Attention to detail"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "ft-compliance",
+    "title": "Compliance Officer",
+    "stream_id": "law",
+    "category": "full_time",
+    "skills": [
+      "Regulatory compliance",
+      "Risk assessment",
+      "Policy writing"
+    ],
+    "responsibilities": [
+      "Monitor regulatory changes",
+      "Conduct internal audits",
+      "Train staff on compliance"
+    ],
+    "requirements": [
+      "Law or finance background",
+      "Regulatory knowledge"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-primary-teacher",
+    "title": "Primary School Teacher",
+    "stream_id": "education",
+    "category": "full_time",
+    "skills": [
+      "Lesson planning",
+      "Classroom management",
+      "Safeguarding",
+      "Assessment"
+    ],
+    "responsibilities": [
+      "Teach core subjects",
+      "Support pupil development",
+      "Communicate with parents"
+    ],
+    "requirements": [
+      "Teaching qualification",
+      "DBS clearance"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-secondary-maths",
+    "title": "Secondary Maths Teacher",
+    "stream_id": "education",
+    "category": "full_time",
+    "skills": [
+      "Mathematics curriculum",
+      "Differentiated instruction",
+      "Exam preparation"
+    ],
+    "responsibilities": [
+      "Deliver maths lessons",
+      "Mark and assess work",
+      "Support extracurricular activities"
+    ],
+    "requirements": [
+      "PGCE or equivalent",
+      "Subject degree"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-lecturer",
+    "title": "University Lecturer",
+    "stream_id": "education",
+    "category": "full_time",
+    "skills": [
+      "Research",
+      "Academic writing",
+      "Lecture delivery",
+      "Mentoring"
+    ],
+    "responsibilities": [
+      "Teach undergraduate modules",
+      "Publish research",
+      "Supervise dissertations"
+    ],
+    "requirements": [
+      "PhD or masters with teaching exp",
+      "Subject expertise"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-graphic-designer",
+    "title": "Graphic Designer",
+    "stream_id": "arts_media",
+    "category": "full_time",
+    "skills": [
+      "Adobe Creative Suite",
+      "Typography",
+      "Brand identity",
+      "UI basics"
+    ],
+    "responsibilities": [
+      "Create visual assets",
+      "Collaborate with marketing",
+      "Maintain brand guidelines"
+    ],
+    "requirements": [
+      "Design portfolio",
+      "Creative degree preferred"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-journalist",
+    "title": "Journalist",
+    "stream_id": "arts_media",
+    "category": "full_time",
+    "skills": [
+      "Reporting",
+      "Interviewing",
+      "Fact-checking",
+      "Digital publishing"
+    ],
+    "responsibilities": [
+      "Research and write stories",
+      "Meet deadlines",
+      "Engage audiences online"
+    ],
+    "requirements": [
+      "Journalism degree or portfolio",
+      "Strong writing"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-film-editor",
+    "title": "Video Editor",
+    "stream_id": "arts_media",
+    "category": "full_time",
+    "skills": [
+      "Premiere Pro",
+      "After Effects",
+      "Storytelling",
+      "Color grading"
+    ],
+    "responsibilities": [
+      "Edit video content",
+      "Sync audio and graphics",
+      "Deliver final cuts"
+    ],
+    "requirements": [
+      "Editing portfolio",
+      "Production experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-lab-scientist",
+    "title": "Laboratory Scientist",
+    "stream_id": "science",
+    "category": "full_time",
+    "skills": [
+      "Lab techniques",
+      "Data analysis",
+      "Quality control",
+      "Safety protocols"
+    ],
+    "responsibilities": [
+      "Run experiments",
+      "Record results accurately",
+      "Maintain lab equipment"
+    ],
+    "requirements": [
+      "Science degree",
+      "Lab experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "ft-biologist",
+    "title": "Research Biologist",
+    "stream_id": "science",
+    "category": "full_time",
+    "skills": [
+      "Molecular biology",
+      "PCR",
+      "Scientific writing",
+      "Statistics"
+    ],
+    "responsibilities": [
+      "Design experiments",
+      "Analyze biological data",
+      "Publish findings"
+    ],
+    "requirements": [
+      "Biology masters or PhD",
+      "Research experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-environmental",
+    "title": "Environmental Scientist",
+    "stream_id": "science",
+    "category": "full_time",
+    "skills": [
+      "Environmental impact assessment",
+      "GIS",
+      "Field sampling",
+      "Regulations"
+    ],
+    "responsibilities": [
+      "Assess environmental risks",
+      "Prepare reports",
+      "Support sustainability projects"
+    ],
+    "requirements": [
+      "Environmental science degree",
+      "Field work experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-hotel-mgr",
+    "title": "Hotel Manager",
+    "stream_id": "hospitality",
+    "category": "full_time",
+    "skills": [
+      "Guest services",
+      "Revenue management",
+      "Team leadership",
+      "Hospitality software"
+    ],
+    "responsibilities": [
+      "Oversee daily hotel operations",
+      "Ensure guest satisfaction",
+      "Manage staff schedules"
+    ],
+    "requirements": [
+      "Hospitality management degree",
+      "Hotel experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-chef",
+    "title": "Head Chef",
+    "stream_id": "hospitality",
+    "category": "full_time",
+    "skills": [
+      "Menu development",
+      "Food safety",
+      "Kitchen management",
+      "Cost control"
+    ],
+    "responsibilities": [
+      "Lead kitchen brigade",
+      "Maintain quality standards",
+      "Manage inventory"
+    ],
+    "requirements": [
+      "Culinary qualification",
+      "Kitchen leadership"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-travel-consult",
+    "title": "Travel Consultant",
+    "stream_id": "hospitality",
+    "category": "full_time",
+    "skills": [
+      "Itinerary planning",
+      "GDS systems",
+      "Customer service",
+      "Sales"
+    ],
+    "responsibilities": [
+      "Book travel packages",
+      "Advise clients on destinations",
+      "Handle bookings and changes"
+    ],
+    "requirements": [
+      "Travel industry experience",
+      "Sales skills"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "ft-store-mgr",
+    "title": "Retail Store Manager",
+    "stream_id": "retail_sales",
+    "category": "full_time",
+    "skills": [
+      "Retail operations",
+      "Merchandising",
+      "Sales targets",
+      "Staff training"
+    ],
+    "responsibilities": [
+      "Hit sales KPIs",
+      "Manage inventory",
+      "Lead store team"
+    ],
+    "requirements": [
+      "Retail management experience",
+      "Customer focus"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-account-exec",
+    "title": "Account Executive",
+    "stream_id": "retail_sales",
+    "category": "full_time",
+    "skills": [
+      "B2B sales",
+      "CRM",
+      "Negotiation",
+      "Pipeline management"
+    ],
+    "responsibilities": [
+      "Prospect new clients",
+      "Close deals",
+      "Maintain relationships"
+    ],
+    "requirements": [
+      "Sales track record",
+      "Communication skills"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-ecommerce",
+    "title": "E-commerce Manager",
+    "stream_id": "retail_sales",
+    "category": "full_time",
+    "skills": [
+      "Shopify",
+      "SEO",
+      "Conversion optimization",
+      "Analytics"
+    ],
+    "responsibilities": [
+      "Grow online revenue",
+      "Manage product listings",
+      "Optimize checkout funnel"
+    ],
+    "requirements": [
+      "Digital commerce experience",
+      "Analytical skills"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-site-mgr",
+    "title": "Construction Site Manager",
+    "stream_id": "construction",
+    "category": "full_time",
+    "skills": [
+      "Site safety",
+      "Project scheduling",
+      "Subcontractor coordination",
+      "Blueprints"
+    ],
+    "responsibilities": [
+      "Supervise construction sites",
+      "Ensure health and safety",
+      "Track project milestones"
+    ],
+    "requirements": [
+      "Construction management",
+      "CSCS card",
+      "Site experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-architect",
+    "title": "Architect",
+    "stream_id": "construction",
+    "category": "full_time",
+    "skills": [
+      "AutoCAD",
+      "Revit",
+      "Building regulations",
+      "Client presentations"
+    ],
+    "responsibilities": [
+      "Develop architectural designs",
+      "Coordinate with engineers",
+      "Manage planning submissions"
+    ],
+    "requirements": [
+      "Architecture degree",
+      "ARB registered"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-electrician",
+    "title": "Electrician",
+    "stream_id": "construction",
+    "category": "full_time",
+    "skills": [
+      "Electrical installation",
+      "Testing",
+      "Wiring regulations",
+      "Fault finding"
+    ],
+    "responsibilities": [
+      "Install electrical systems",
+      "Test and certify work",
+      "Troubleshoot faults"
+    ],
+    "requirements": [
+      "Electrician apprenticeship",
+      "Qualified tradesperson"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-farm-mgr",
+    "title": "Farm Manager",
+    "stream_id": "agriculture",
+    "category": "full_time",
+    "skills": [
+      "Crop management",
+      "Livestock care",
+      "Machinery operation",
+      "Sustainability"
+    ],
+    "responsibilities": [
+      "Plan planting cycles",
+      "Manage farm workers",
+      "Monitor yields and costs"
+    ],
+    "requirements": [
+      "Agricultural degree or experience",
+      "Practical farming skills"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-env-consultant",
+    "title": "Environmental Consultant",
+    "stream_id": "agriculture",
+    "category": "full_time",
+    "skills": [
+      "Ecology",
+      "Environmental law",
+      "Report writing",
+      "Field surveys"
+    ],
+    "responsibilities": [
+      "Conduct site assessments",
+      "Advise on sustainability",
+      "Prepare compliance reports"
+    ],
+    "requirements": [
+      "Environmental science background",
+      "Consulting experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-social-worker",
+    "title": "Social Worker",
+    "stream_id": "social_sciences",
+    "category": "full_time",
+    "skills": [
+      "Case management",
+      "Safeguarding",
+      "Counselling",
+      "Multi-agency working"
+    ],
+    "responsibilities": [
+      "Support vulnerable individuals",
+      "Conduct assessments",
+      "Develop care plans"
+    ],
+    "requirements": [
+      "Social work degree",
+      "Registered social worker"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-psychologist",
+    "title": "Clinical Psychologist",
+    "stream_id": "social_sciences",
+    "category": "full_time",
+    "skills": [
+      "CBT",
+      "Assessment",
+      "Therapeutic interventions",
+      "Ethics"
+    ],
+    "responsibilities": [
+      "Deliver therapy sessions",
+      "Conduct psychological assessments",
+      "Maintain clinical records"
+    ],
+    "requirements": [
+      "Doctorate in clinical psychology",
+      "HCPC registered"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Senior (5\u20138 years)"
+  },
+  {
+    "id": "ft-hr-advisor",
+    "title": "HR Advisor",
+    "stream_id": "social_sciences",
+    "category": "full_time",
+    "skills": [
+      "Employee relations",
+      "HR systems",
+      "Policy guidance"
+    ],
+    "responsibilities": [
+      "Answer HR queries",
+      "Support recruitment",
+      "Assist with disciplinary processes"
+    ],
+    "requirements": [
+      "CIPD qualification",
+      "HR experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-policy-officer",
+    "title": "Policy Officer",
+    "stream_id": "public_service",
+    "category": "full_time",
+    "skills": [
+      "Policy analysis",
+      "Stakeholder engagement",
+      "Report writing",
+      "Research"
+    ],
+    "responsibilities": [
+      "Draft policy briefs",
+      "Consult stakeholders",
+      "Evaluate programme impact"
+    ],
+    "requirements": [
+      "Public policy degree",
+      "Government experience"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "ft-civil-servant",
+    "title": "Civil Service Administrator",
+    "stream_id": "public_service",
+    "category": "full_time",
+    "skills": [
+      "Administration",
+      "Project support",
+      "Data handling",
+      "Communication"
+    ],
+    "responsibilities": [
+      "Support departmental programmes",
+      "Process applications",
+      "Coordinate meetings"
+    ],
+    "requirements": [
+      "Admin experience",
+      "Security clearance may apply"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "ft-emergency",
+    "title": "Emergency Services Coordinator",
+    "stream_id": "public_service",
+    "category": "full_time",
+    "skills": [
+      "Incident coordination",
+      "Radio communications",
+      "Crisis management"
+    ],
+    "responsibilities": [
+      "Coordinate emergency responses",
+      "Log incidents",
+      "Liaise with services"
+    ],
+    "requirements": [
+      "Emergency services training",
+      "Calm under pressure"
+    ],
+    "employment_type": "Full-time",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "pt-delivery",
+    "title": "Food Delivery Driver",
+    "stream_id": "gig_delivery",
+    "category": "part_time_odd",
+    "skills": [
+      "Navigation",
+      "Customer service",
+      "Time management"
+    ],
+    "responsibilities": [
+      "Pick up and deliver orders",
+      "Follow app routing",
+      "Maintain delivery standards"
+    ],
+    "requirements": [
+      "Valid driving license",
+      "Smartphone",
+      "Flexible availability"
+    ],
+    "employment_type": "Part-time / Gig",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-rideshare",
+    "title": "Rideshare Driver",
+    "stream_id": "gig_delivery",
+    "category": "part_time_odd",
+    "skills": [
+      "Safe driving",
+      "Navigation",
+      "Customer service"
+    ],
+    "responsibilities": [
+      "Transport passengers",
+      "Maintain vehicle cleanliness",
+      "Follow platform policies"
+    ],
+    "requirements": [
+      "Driving license",
+      "Background check",
+      "Own vehicle"
+    ],
+    "employment_type": "Gig",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-courier",
+    "title": "Parcel Courier",
+    "stream_id": "gig_delivery",
+    "category": "part_time_odd",
+    "skills": [
+      "Route planning",
+      "Package handling",
+      "Punctuality"
+    ],
+    "responsibilities": [
+      "Deliver parcels on schedule",
+      "Scan packages",
+      "Report issues"
+    ],
+    "requirements": [
+      "Driving license",
+      "Physical fitness"
+    ],
+    "employment_type": "Part-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-barista",
+    "title": "Barista",
+    "stream_id": "retail_hospitality",
+    "category": "part_time_odd",
+    "skills": [
+      "Coffee preparation",
+      "Cash handling",
+      "Customer service"
+    ],
+    "responsibilities": [
+      "Prepare drinks to standard",
+      "Operate POS",
+      "Keep workspace clean"
+    ],
+    "requirements": [
+      "Hospitality experience helpful",
+      "Friendly manner"
+    ],
+    "employment_type": "Part-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-retail",
+    "title": "Retail Sales Associate",
+    "stream_id": "retail_hospitality",
+    "category": "part_time_odd",
+    "skills": [
+      "Customer service",
+      "Merchandising",
+      "POS systems"
+    ],
+    "responsibilities": [
+      "Assist shoppers",
+      "Restock shelves",
+      "Process transactions"
+    ],
+    "requirements": [
+      "Retail experience preferred",
+      "Weekend availability"
+    ],
+    "employment_type": "Part-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-waiter",
+    "title": "Waiter / Waitress",
+    "stream_id": "retail_hospitality",
+    "category": "part_time_odd",
+    "skills": [
+      "Table service",
+      "Order taking",
+      "Upselling"
+    ],
+    "responsibilities": [
+      "Serve guests",
+      "Take orders accurately",
+      "Handle payments"
+    ],
+    "requirements": [
+      "Food service experience",
+      "Team player"
+    ],
+    "employment_type": "Part-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-kitchen",
+    "title": "Kitchen Porter",
+    "stream_id": "retail_hospitality",
+    "category": "part_time_odd",
+    "skills": [
+      "Food hygiene",
+      "Cleaning",
+      "Kitchen support"
+    ],
+    "responsibilities": [
+      "Wash dishes and equipment",
+      "Support chefs",
+      "Maintain hygiene standards"
+    ],
+    "requirements": [
+      "Food hygiene certificate helpful"
+    ],
+    "employment_type": "Part-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-tutor-maths",
+    "title": "Private Maths Tutor",
+    "stream_id": "tutoring",
+    "category": "part_time_odd",
+    "skills": [
+      "Mathematics",
+      "Lesson planning",
+      "Patience",
+      "Communication"
+    ],
+    "responsibilities": [
+      "Tutor students 1:1 or small groups",
+      "Prepare practice materials",
+      "Track progress"
+    ],
+    "requirements": [
+      "Strong maths grades",
+      "DBS check",
+      "Teaching aptitude"
+    ],
+    "employment_type": "Part-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-tutor-english",
+    "title": "English Language Tutor",
+    "stream_id": "tutoring",
+    "category": "part_time_odd",
+    "skills": [
+      "English",
+      "ESL",
+      "Communication",
+      "Lesson planning"
+    ],
+    "responsibilities": [
+      "Teach reading and writing",
+      "Support exam preparation",
+      "Give constructive feedback"
+    ],
+    "requirements": [
+      "English qualification",
+      "Tutoring experience"
+    ],
+    "employment_type": "Part-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-teaching-asst",
+    "title": "Teaching Assistant",
+    "stream_id": "tutoring",
+    "category": "part_time_odd",
+    "skills": [
+      "Classroom support",
+      "Safeguarding",
+      "Behaviour management"
+    ],
+    "responsibilities": [
+      "Support lead teacher",
+      "Help pupils with tasks",
+      "Supervise activities"
+    ],
+    "requirements": [
+      "DBS clearance",
+      "Experience with children"
+    ],
+    "employment_type": "Part-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-freelance-design",
+    "title": "Freelance Graphic Designer",
+    "stream_id": "creative_freelance",
+    "category": "part_time_odd",
+    "skills": [
+      "Illustrator",
+      "Photoshop",
+      "Branding",
+      "Client communication"
+    ],
+    "responsibilities": [
+      "Deliver design projects",
+      "Revise based on feedback",
+      "Meet deadlines"
+    ],
+    "requirements": [
+      "Portfolio",
+      "Self-employed setup"
+    ],
+    "employment_type": "Freelance",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "pt-content-writer",
+    "title": "Freelance Content Writer",
+    "stream_id": "creative_freelance",
+    "category": "part_time_odd",
+    "skills": [
+      "Copywriting",
+      "SEO",
+      "Research",
+      "Editing"
+    ],
+    "responsibilities": [
+      "Write blog posts and web copy",
+      "Optimize for SEO",
+      "Meet client briefs"
+    ],
+    "requirements": [
+      "Writing samples",
+      "Reliable internet"
+    ],
+    "employment_type": "Freelance",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-photographer",
+    "title": "Event Photographer",
+    "stream_id": "creative_freelance",
+    "category": "part_time_odd",
+    "skills": [
+      "Photography",
+      "Lightroom",
+      "Client relations"
+    ],
+    "responsibilities": [
+      "Shoot events",
+      "Edit and deliver photos",
+      "Manage bookings"
+    ],
+    "requirements": [
+      "Camera equipment",
+      "Portfolio"
+    ],
+    "employment_type": "Freelance / Gig",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "pt-care-assistant",
+    "title": "Care Assistant",
+    "stream_id": "care_community",
+    "category": "part_time_odd",
+    "skills": [
+      "Personal care",
+      "Empathy",
+      "Safeguarding",
+      "Medication prompts"
+    ],
+    "responsibilities": [
+      "Support daily living",
+      "Accompany clients",
+      "Report concerns"
+    ],
+    "requirements": [
+      "Care certificate helpful",
+      "DBS check"
+    ],
+    "employment_type": "Part-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-babysitter",
+    "title": "Babysitter / Nanny",
+    "stream_id": "care_community",
+    "category": "part_time_odd",
+    "skills": [
+      "Childcare",
+      "First aid",
+      "Reliability"
+    ],
+    "responsibilities": [
+      "Supervise children",
+      "Follow routines",
+      "Communicate with parents"
+    ],
+    "requirements": [
+      "Childcare experience",
+      "References",
+      "DBS"
+    ],
+    "employment_type": "Part-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-dog-walker",
+    "title": "Dog Walker / Pet Sitter",
+    "stream_id": "care_community",
+    "category": "part_time_odd",
+    "skills": [
+      "Animal care",
+      "Reliability",
+      "Communication"
+    ],
+    "responsibilities": [
+      "Walk dogs safely",
+      "Feed and check on pets",
+      "Send updates to owners"
+    ],
+    "requirements": [
+      "Animal experience",
+      "Insurance recommended"
+    ],
+    "employment_type": "Gig",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-data-entry",
+    "title": "Data Entry Clerk",
+    "stream_id": "admin_remote",
+    "category": "part_time_odd",
+    "skills": [
+      "Typing",
+      "Excel",
+      "Attention to detail",
+      "Accuracy"
+    ],
+    "responsibilities": [
+      "Enter data into systems",
+      "Verify records",
+      "Meet daily targets"
+    ],
+    "requirements": [
+      "Fast typing",
+      "Basic computer skills"
+    ],
+    "employment_type": "Part-time / Remote",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-virtual-asst",
+    "title": "Virtual Assistant",
+    "stream_id": "admin_remote",
+    "category": "part_time_odd",
+    "skills": [
+      "Email management",
+      "Scheduling",
+      "Microsoft Office",
+      "Communication"
+    ],
+    "responsibilities": [
+      "Manage calendars",
+      "Handle admin tasks",
+      "Coordinate meetings"
+    ],
+    "requirements": [
+      "Remote work experience",
+      "Organized"
+    ],
+    "employment_type": "Part-time / Remote",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-transcription",
+    "title": "Transcriptionist",
+    "stream_id": "admin_remote",
+    "category": "part_time_odd",
+    "skills": [
+      "Typing",
+      "Listening",
+      "Grammar",
+      "Confidentiality"
+    ],
+    "responsibilities": [
+      "Transcribe audio accurately",
+      "Format documents",
+      "Meet deadlines"
+    ],
+    "requirements": [
+      "Fast typing WPM",
+      "Headphones"
+    ],
+    "employment_type": "Freelance / Remote",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-event-staff",
+    "title": "Event Staff",
+    "stream_id": "events_seasonal",
+    "category": "part_time_odd",
+    "skills": [
+      "Customer service",
+      "Teamwork",
+      "Stamina"
+    ],
+    "responsibilities": [
+      "Register attendees",
+      "Direct guests",
+      "Support event logistics"
+    ],
+    "requirements": [
+      "Flexible hours",
+      "Smart appearance"
+    ],
+    "employment_type": "Casual / Seasonal",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-promoter",
+    "title": "Brand Promoter",
+    "stream_id": "events_seasonal",
+    "category": "part_time_odd",
+    "skills": [
+      "Sales",
+      "Communication",
+      "Product knowledge"
+    ],
+    "responsibilities": [
+      "Promote products at events",
+      "Engage passers-by",
+      "Distribute samples"
+    ],
+    "requirements": [
+      "Outgoing personality",
+      "Weekend availability"
+    ],
+    "employment_type": "Casual",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-warehouse",
+    "title": "Warehouse Picker / Packer",
+    "stream_id": "events_seasonal",
+    "category": "part_time_odd",
+    "skills": [
+      "Order picking",
+      "Physical fitness",
+      "Accuracy"
+    ],
+    "responsibilities": [
+      "Pick and pack orders",
+      "Operate handheld scanners",
+      "Meet pick rates"
+    ],
+    "requirements": [
+      "Warehouse experience helpful",
+      "Safety boots"
+    ],
+    "employment_type": "Part-time / Shift",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-handyman",
+    "title": "Handyman / Odd Jobs",
+    "stream_id": "odd_jobs",
+    "category": "part_time_odd",
+    "skills": [
+      "Basic repairs",
+      "Painting",
+      "Assembly",
+      "Tool use"
+    ],
+    "responsibilities": [
+      "Complete small home repairs",
+      "Assemble furniture",
+      "Quote for jobs"
+    ],
+    "requirements": [
+      "Practical skills",
+      "Own tools",
+      "Reliable transport"
+    ],
+    "employment_type": "Gig / Self-employed",
+    "experience_level": "Mid level (3\u20135 years)"
+  },
+  {
+    "id": "pt-cleaner",
+    "title": "Domestic Cleaner",
+    "stream_id": "odd_jobs",
+    "category": "part_time_odd",
+    "skills": [
+      "Cleaning",
+      "Time management",
+      "Trustworthiness"
+    ],
+    "responsibilities": [
+      "Clean homes or offices",
+      "Follow checklists",
+      "Bring supplies if required"
+    ],
+    "requirements": [
+      "Cleaning experience",
+      "References"
+    ],
+    "employment_type": "Part-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-gardener",
+    "title": "Gardener / Landscaping Helper",
+    "stream_id": "odd_jobs",
+    "category": "part_time_odd",
+    "skills": [
+      "Gardening",
+      "Physical work",
+      "Tool use"
+    ],
+    "responsibilities": [
+      "Mow lawns and trim hedges",
+      "Clear garden waste",
+      "Maintain outdoor spaces"
+    ],
+    "requirements": [
+      "Outdoor work experience",
+      "Own transport helpful"
+    ],
+    "employment_type": "Part-time / Seasonal",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-mover",
+    "title": "Removal / Moving Helper",
+    "stream_id": "odd_jobs",
+    "category": "part_time_odd",
+    "skills": [
+      "Heavy lifting",
+      "Teamwork",
+      "Care with belongings"
+    ],
+    "responsibilities": [
+      "Load and unload vans",
+      "Protect furniture",
+      "Follow move schedules"
+    ],
+    "requirements": [
+      "Physical fitness",
+      "Reliable"
+    ],
+    "employment_type": "Casual / Gig",
+    "experience_level": "Entry level (0\u20132 years)"
+  },
+  {
+    "id": "pt-call-center",
+    "title": "Call Center Agent (Part-time)",
+    "stream_id": "admin_remote",
+    "category": "part_time_odd",
+    "skills": [
+      "Phone manner",
+      "CRM",
+      "Problem solving"
+    ],
+    "responsibilities": [
+      "Handle inbound calls",
+      "Log interactions",
+      "Follow scripts"
+    ],
+    "requirements": [
+      "Clear communication",
+      "Headset",
+      "Shift flexibility"
+    ],
+    "employment_type": "Part-time",
+    "experience_level": "Entry level (0\u20132 years)"
+  }
+]

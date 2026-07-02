@@ -220,7 +220,7 @@ async def get_profile(user: User = Depends(get_current_user), db: AsyncSession =
     """Full nested profile — the exact payload the CV Builder's section-toggle panel consumes."""
     profile = await _get_or_create_profile(db, user)
     data = ProfileRead.model_validate(profile)
-    data.completeness_score = profile.completeness_score()
+    data.completeness_score = profile.calculate_completeness_score()
     return data
 
 
@@ -237,7 +237,7 @@ async def update_profile(
     await db.commit()
     await db.refresh(profile)
     data = ProfileRead.model_validate(profile)
-    data.completeness_score = profile.completeness_score()
+    data.completeness_score = profile.calculate_completeness_score()
     return data
 
 
@@ -246,7 +246,7 @@ async def export_profile(user: User = Depends(get_current_user), db: AsyncSessio
     """GDPR-friendly full profile export as a downloadable JSON document."""
     profile = await _get_or_create_profile(db, user)
     data = ProfileRead.model_validate(profile)
-    data.completeness_score = profile.completeness_score()
+    data.completeness_score = profile.calculate_completeness_score()
     return data.model_dump(mode="json")
 
 

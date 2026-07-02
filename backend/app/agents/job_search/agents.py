@@ -201,15 +201,30 @@ class JobReflectorAgent(BaseReflectorAgent):
 # --- Interview pack pipeline ----------------------------------------------------------------
 
 _INTERVIEW_ROLE = """
-You are the Interview Pack agent for Careerkundi. Given a job's structured
-fields (title, responsibilities, requirements, extracted skills) and
-numbered interview-methodology context, generate a complete interview
-preparation pack: behavioral questions grounded in the STAR method and
-tailored to this role's actual responsibilities, technical questions for
-EVERY extracted skill (not just a sample), a system-design question if the
-role's skills warrant one, and role/company-specific closing questions.
-Generate as many questions as the input genuinely supports — do not stop
-at a round number.
+You are a patient PhD-level scholar and master teacher generating interview preparation
+packs for Careerkundi. You have deep expertise across professions and explain concepts
+with real definitions, established principles, advanced theory, and concrete examples.
+
+Given a job's structured fields (title, responsibilities, requirements, extracted skills)
+and numbered interview-methodology context, generate a COMPLETE interview preparation
+pack for a candidate with ZERO prior knowledge.
+
+TEACHING STANDARDS (mandatory):
+- Write as the world's foremost expert IN THE ROOM — first person, direct, substantive.
+- model_answer must be the ACTUAL spoken answer (300–800 words) — NOT coaching ("you should",
+  "interviewers look for", "I'd start by asking what they know").
+- study_material teaches SUBJECT MATTER ONLY — definitions, how things work, standards, facts,
+  worked examples. NO "how to answer better" or interview technique sections.
+- answer_explanation summarises key facts/concepts covered — NOT why the answer structure works.
+- Never use placeholders like [specific problem] or generic "deliver reliable outcomes" text.
+
+For EVERY question provide: comprehensive model_answer, rich study_material,
+evaluation_criteria, common_mistakes, follow_up_questions, difficulty,
+estimated_answer_time_minutes.
+
+Include behavioral (STAR), technical (one question per extracted skill), system-design
+if warranted, and role/company-specific closing questions. Generate as many questions
+as the input genuinely supports.
 """.strip()
 
 
@@ -288,7 +303,8 @@ class InterviewPackExecutorAgent(BaseAgent):
             user_prompt = (
                 f"Numbered interview-methodology context:\n{context}\n\n"
                 f"Job fields:\n{job}\n\nFocus areas requested: {state.get('focus_areas') or 'none specified'}\n"
-                f"Difficulty: {state.get('difficulty', 'auto')}"
+                f"Difficulty: {state.get('difficulty', 'auto')}\n"
+                f"Include study material for zero-prior-knowledge candidates: {state.get('include_study_material', True)}"
             )
             if revision_issues:
                 user_prompt += "\n\nThe previous pack had these issues — fix them:\n" + "\n".join(
@@ -301,9 +317,21 @@ class InterviewPackExecutorAgent(BaseAgent):
                 temperature=0.5,
                 max_output_tokens=8192,  # interview packs can be long — no artificial truncation
             )
-            response = await llm.generate(spec)
-            self.cost_monitor.record(response, tier=tier)
-            questions = (response.parsed_json or {}).get("questions", [])
+            try:
+                response = await llm.generate(spec)
+                self.cost_monitor.record(response, tier=tier)
+                questions = (response.parsed_json or {}).get("questions", [])
+            except Exception as exc:  # noqa: BLE001 — fall back to deterministic mock pack
+                self.logger.warning("interview_pack_llm_failed", error=str(exc))
+                questions = []
+            if not questions:
+                questions = mock_data.mock_generate_questions(
+                    job, focus_areas=state.get("focus_areas", []), difficulty=state.get("difficulty", "auto")
+                )
+            else:
+                questions = mock_data.finalize_questions_list(
+                    questions, job, state.get("difficulty", "auto")
+                )
 
         return {
             "draft_output": {"questions": questions},
@@ -341,5 +369,20 @@ class InterviewPackReflectorAgent(BaseReflectorAgent):
             seen.add(text)
             if not q.get("why_asked"):
                 issues.append(f"Question missing 'why_asked' rationale: '{q.get('question', '')[:80]}'")
+            if not (q.get("model_answer") or "").strip():
+                issues.append(f"Question missing comprehensive model_answer: '{q.get('question', '')[:80]}'")
+            study = q.get("study_material") or {}
+            if not (study.get("overview") or "").strip():
+                issues.append(f"Question missing study_material overview: '{q.get('question', '')[:80]}'")
+            if q.get("category") == "technical" and not study.get("definitions"):
+                issues.append(f"Technical question missing study_material definitions: '{q.get('question', '')[:80]}'")
+            from app.agents.job_search.knowledge.content_engine import is_generic_content
+
+            model = (q.get("model_answer") or "").strip()
+            if model and is_generic_content(model):
+                issues.append(f"Model answer appears generic/template — needs real definitions and examples: '{q.get('question', '')[:60]}'")
+            overview = (study.get("overview") or "").strip()
+            if overview and is_generic_content(overview):
+                issues.append(f"Study material appears generic — needs PhD-level teaching content: '{q.get('question', '')[:60]}'")
 
         return issues

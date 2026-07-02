@@ -105,7 +105,7 @@ async def refresh(payload: RefreshRequest) -> TokenPair:
 
     jti = claims.get("jti")
     if jti:
-        cache = get_cache()
+        cache = await get_cache()
         if await cache.get(f"blacklist:{jti}"):
             raise AuthenticationError("Refresh token has been revoked.")
 
@@ -126,7 +126,7 @@ async def logout(
     Redis blacklist until they expire, preventing them from being reused
     if intercepted.
     """
-    cache = get_cache()
+    cache = await get_cache()
     now = datetime.now(timezone.utc).timestamp()
 
     # Blacklist the access token

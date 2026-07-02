@@ -10,6 +10,7 @@ behavior lives in its own router (app/api/routes/*.py) backed by its own
 LangGraph agent team (app/agents/<feature>/graph.py).
 """
 
+import asyncio
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
 
@@ -19,7 +20,7 @@ from prometheus_client import make_asgi_app
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 
-from app.api.routes import auth, chatbot, cv_builder, health, job_search, profile, roadmap
+from app.api.routes import auth, chatbot, cv_builder, health, job_search, profile, roadmap, role_packs
 from app.api.routes import apply as apply_router
 from app.api.routes import badges as badges_router
 from app.api.routes import queue as queue_router
@@ -37,6 +38,32 @@ logger = get_logger(__name__)
 limiter = Limiter(key_func=get_remote_address)
 
 
+def _is_transient_network_future_error(context: dict) -> bool:
+    """
+    Detect known noisy async transport failures that can be emitted by
+    third-party client internals as "Future exception was never retrieved"
+    when network routes flap.
+    """
+    message = str(context.get("message") or "").lower()
+    exc = context.get("exception")
+    exc_text = str(exc).lower() if exc else ""
+    return (
+        "future exception was never retrieved" in message
+        and ("no route to host" in exc_text or "connection lost" in exc_text)
+    )
+
+
+def _asyncio_exception_handler(loop: asyncio.AbstractEventLoop, context: dict) -> None:
+    if _is_transient_network_future_error(context):
+        logger.warning(
+            "suppressed_async_transport_warning",
+            message=context.get("message"),
+            exception=str(context.get("exception") or ""),
+        )
+        return
+    loop.default_exception_handler(context)
+
+
 @asynccontextmanager
 async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
     """
@@ -46,6 +73,7 @@ async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
     Everything after the `yield` runs when the server stops.
     """
     logger.info("starting_careerkundi_backend")
+    asyncio.get_running_loop().set_exception_handler(_asyncio_exception_handler)
 
     # We import these here (inside the function) rather than at the top of the file
     # to avoid "circular imports" where two files try to import each other at the same time.
@@ -58,7 +86,13 @@ async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
     get_vector_store()
     get_knowledge_graph()
 
-    # Seed static badge definitions into the database.
+    from app.services import role_pack_library
+
+    role_pack_library.ensure_library_layout()
+    if settings.app_env == "development" and not role_pack_library.list_library_roles():
+        logger.info("role_pack_library_empty_seeding_catalog")
+        role_pack_library.seed_catalog_role_packs(only_missing=True)
+
     # Badges are achievements users can earn. We ensure they exist in the DB on boot.
     from app.db.session import AsyncSessionLocal
     from app.services.badges import seed_badge_definitions
@@ -122,6 +156,7 @@ def create_app() -> FastAPI:
     app.include_router(auth.router, prefix=api_v1_prefix)
     app.include_router(profile.router, prefix=api_v1_prefix)
     app.include_router(job_search.router, prefix=api_v1_prefix)
+    app.include_router(role_packs.router, prefix=api_v1_prefix)
     app.include_router(cv_builder.router, prefix=api_v1_prefix)
     app.include_router(roadmap.router, prefix=api_v1_prefix)
     app.include_router(chatbot.router, prefix=api_v1_prefix)

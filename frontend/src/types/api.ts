@@ -34,28 +34,66 @@ export interface UserRead {
 
 export interface SavedJobRead {
   id: string;
-  user_id: string;
+  source_url: string | null;
+  source_site: string | null;
+  import_method: string;
+  status: "saved" | "applied" | "interviewing" | "offered" | "rejected";
   title: string;
-  company_name: string;
+  company_name: string | null;
+  company_url: string | null;
   location: string | null;
   employment_type: string | null;
-  salary_range: string | null;
-  job_description: string | null;
-  source_url: string | null;
-  status: "saved" | "applied" | "interviewing" | "offered" | "rejected";
+  is_remote: boolean | null;
+  salary_min: number | null;
+  salary_max: number | null;
+  salary_currency: string | null;
+  description_raw: string | null;
+  responsibilities: string[];
+  requirements: string[];
+  benefits: string[];
+  extracted_skills: ExtractedSkill[];
+  company_profile: Record<string, unknown>;
+  verification_status: "verified" | "partial" | "unverified";
+  verification_sources: Record<string, unknown>[];
   match_score: number | null;
+  interview_pack_confidence: number | null;
+  interview_pack_generated_at: string | null;
+  has_interview_pack: boolean;
   created_at: string;
   updated_at: string;
 }
 
+export interface ExtractedSkill {
+  skill: string;
+  category?: "technical" | "soft" | "tool" | "domain";
+  importance?: "critical" | "high" | "medium" | "nice-to-have";
+}
+
+/** Preview card from live web job discovery (not yet saved). */
+export interface JobDiscoveryResult {
+  title: string;
+  company_name: string | null;
+  location: string | null;
+  employment_type: string | null;
+  is_remote: boolean | null;
+  snippet: string;
+  source_url: string;
+  source_site: string | null;
+  salary_hint: string | null;
+  verified: boolean;
+}
+
 export interface InterviewPackRead {
-  id: string;
   job_id: string;
-  skill_clusters: SkillCluster[];
-  generation_confidence: number | null;
-  generation_citations: Citation[];
-  created_at: string;
-  updated_at: string;
+  questions: InterviewQuestion[];
+  confidence_score: number | null;
+  generated_at: string | null;
+  role_slug?: string | null;
+  role_overview?: RoleOverview | null;
+  library_status?: "generated" | "library_reused" | "library_fallback" | "none";
+  saved_documents?: string[];
+  fallback_message?: string | null;
+  from_library?: boolean;
 }
 
 export interface SkillCluster {
@@ -64,14 +102,49 @@ export interface SkillCluster {
 }
 
 export interface InterviewQuestion {
+  question_id?: string | null;
   question: string;
   category: string;
   difficulty: "Easy" | "Medium" | "Hard" | "Expert";
+  related_skills?: string[];
   model_answer: string;
+  answer_explanation?: string;
+  why_asked?: string;
   evaluation_criteria: string[];
   common_mistakes: string[];
   follow_up_questions: string[];
   estimated_answer_time_minutes: number;
+  skill_tag?: string | null;
+  study_material?: InterviewStudyMaterial;
+  practice_tasks?: string[];
+  revision_notes?: string[];
+}
+
+export interface InterviewStudyMaterial {
+  overview: string;
+  what_you_need_to_know_first?: string[];
+  definitions: { term: string; definition: string }[];
+  skill_explanations?: { skill: string; explanation: string }[];
+  principles: string[];
+  key_concepts: string[];
+  step_by_step_breakdown?: string[];
+  explanations: string[];
+  practical_example?: string;
+  common_mistakes?: string[];
+  how_to_answer_better?: string[];
+  practice_exercises?: string[];
+  revision_notes?: string[];
+  related_concepts?: string[];
+  estimated_reading_time_minutes?: number | null;
+}
+
+export interface RoleOverview {
+  role_name: string;
+  summary: string;
+  responsibilities: string[];
+  required_skills: string[];
+  what_employers_expect: string[];
+  skill_clusters: string[];
 }
 
 // ---------------------------------------------------------------------------
@@ -81,13 +154,12 @@ export interface InterviewQuestion {
 export interface GeneratedCVRead {
   id: string;
   user_id: string;
+  target_job_id: string | null;
   name: string;
   template: string;
-  enabled_sections: string[];
-  target_job_title: string | null;
-  target_company: string | null;
-  generation_confidence: number | null;
-  pdf_url: string | null;
+  section_config: { section_id: string; enabled: boolean }[];
+  rendered_content: Record<string, unknown>;
+  export_format_last_used: string | null;
   created_at: string;
   updated_at: string;
 }

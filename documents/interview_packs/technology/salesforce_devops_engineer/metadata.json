@@ -1,0 +1,37 @@
+{
+  "role_name": "Salesforce DevOps Engineer",
+  "normalized_role_slug": "salesforce_devops_engineer",
+  "category": "technology",
+  "stream_or_department": "technology",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Gemini-powered multi-agent workflow",
+  "question_count": 5,
+  "question_specific_study_material_count": 5,
+  "skill_count": 11,
+  "pdf_files": [
+    "salesforce_devops_engineer_interview_pack.pdf",
+    "salesforce_devops_engineer_study_material.pdf",
+    "salesforce_devops_engineer_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "salesforce_devops_engineer_interview_pack.md",
+    "salesforce_devops_engineer_study_material.md",
+    "salesforce_devops_engineer_questions_answers.md"
+  ],
+  "source_files": [
+    "salesforce_devops_engineer_interview_pack.md",
+    "salesforce_devops_engineer_study_material.md",
+    "salesforce_devops_engineer_questions_answers.md",
+    "salesforce_devops_engineer_interview_pack.pdf",
+    "salesforce_devops_engineer_study_material.pdf",
+    "salesforce_devops_engineer_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/salesforce_devops_engineer",
+  "has_pdf": true,
+  "has_markdown": true
+}

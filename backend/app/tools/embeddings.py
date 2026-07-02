@@ -69,12 +69,18 @@ def get_embeddings() -> Embeddings:
     global _EMBEDDINGS_CACHE
     if _EMBEDDINGS_CACHE is None:
         if settings.llm_mode == "live":
-            from langchain_google_genai import GoogleGenerativeAIEmbeddings
+            try:
+                from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
-            _EMBEDDINGS_CACHE = GoogleGenerativeAIEmbeddings(
-                model=f"models/{settings.gemini_embedding_model}",
-                google_api_key=settings.gemini_api_key,
-            )
+                _EMBEDDINGS_CACHE = GoogleGenerativeAIEmbeddings(
+                    model=f"models/{settings.gemini_embedding_model}",
+                    google_api_key=settings.gemini_api_key,
+                )
+            except Exception as exc:  # noqa: BLE001
+                from app.core.logging import get_logger
+
+                get_logger(__name__).warning("gemini_embeddings_unavailable_using_local", error=str(exc))
+                _EMBEDDINGS_CACHE = LocalHashEmbeddings()
         else:
             _EMBEDDINGS_CACHE = LocalHashEmbeddings()
     return _EMBEDDINGS_CACHE

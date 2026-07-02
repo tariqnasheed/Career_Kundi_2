@@ -1,0 +1,2956 @@
+{
+  "role_name": "Retail Sales Associate",
+  "role_slug": "retail_sales_associate",
+  "category": "technology",
+  "role_overview": {
+    "role_name": "Retail Sales Associate",
+    "summary": "The Retail Sales Associate role integrates Customer service, Merchandising, POS systems to deliver on responsibilities such as assist shoppers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Assist shoppers",
+      "Restock shelves",
+      "Process transactions"
+    ],
+    "required_skills": [
+      "Customer service",
+      "Merchandising",
+      "POS systems"
+    ],
+    "what_employers_expect": [
+      "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: Retail experience preferred."
+    ],
+    "skill_clusters": [
+      "Hospitality Operations"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Walk me through how you would explain Customer service to a teammate who has never used it in a Retail Sales Associate context while handling 'Assist shoppers'.",
+      "why_asked": "Tests genuine conceptual understanding of Customer service, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Customer service",
+      "question_id": "RETAIL-SALES-ASSOCIA-CUSTOMER-SER-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ],
+      "common_mistakes": [
+        "Executing Customer Service without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Retail Sales Associate context, Customer Service starts with define icp/audience segment and objective metric (pipeline, roas, conversion). and continues through design offer/message variant and channel plan.. The critical discipline is evidence: measurement design quality determines campaign learning quality.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how assist shoppers stays reliable under real operational constraints.\n\nIn Retail Sales Associate, I rebuilt the assist shoppers funnel with tighter audience segmentation and experiment design; qualified lead rate improved by 31% in one quarter.",
+      "answer_explanation": "Key knowledge demonstrated for Customer Service:\n\u2022 Measurement design quality determines campaign learning quality.\n\u2022 Lead quality matters more than top-of-funnel volume.\n\u2022 Consistency between messaging and landing experience lifts conversion.\nStandards referenced: Campaign KPI framework, CRM hygiene policy",
+      "study_material": {
+        "overview": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Customer Service directly supports assist shoppers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "definitions": [
+          {
+            "term": "Customer Service",
+            "definition": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "term": "Campaign KPI framework",
+            "definition": "Applicable standard/regulation: Campaign KPI framework."
+          },
+          {
+            "term": "CRM hygiene policy",
+            "definition": "Applicable standard/regulation: CRM hygiene policy."
+          },
+          {
+            "term": "Conversion measurement model",
+            "definition": "Applicable standard/regulation: Conversion measurement model."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Customer Service",
+            "explanation": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Customer Service directly supports assist shoppers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Merchandising",
+            "explanation": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          }
+        ],
+        "principles": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "key_concepts": [
+          "Customer Service",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "hospitality operations",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "step_by_step_breakdown": [
+          "Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).",
+          "Design offer/message variant and channel plan.",
+          "Instrument tracking (UTM, attribution, CRM stage rules).",
+          "Run controlled test and analyze cohort performance.",
+          "Scale winning variant and archive learnings."
+        ],
+        "explanations": [
+          "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Customer Service directly supports assist shoppers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+        ],
+        "practical_example": "In Retail Sales Associate, I rebuilt the assist shoppers funnel with tighter audience segmentation and experiment design; qualified lead rate improved by 31% in one quarter.",
+        "common_mistakes": [
+          "Executing Customer Service without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Customer Service applies to: Assist shoppers.",
+          "List the standards that govern Customer Service in Retail Sales Associate work.",
+          "Write out the verification steps after completing a Customer Service task."
+        ],
+        "revision_notes": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "related_concepts": [
+          "Customer Service",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Customer Service applies to: Assist shoppers.",
+        "List the standards that govern Customer Service in Retail Sales Associate work.",
+        "Write out the verification steps after completing a Customer Service task."
+      ],
+      "revision_notes": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "In your Retail Sales Associate experience while handling 'Assist shoppers', what high-stakes incident required deep use of Customer service, and how did you resolve it?",
+      "why_asked": "Probes depth of hands-on experience with Customer service under real constraints.",
+      "skill_tag": "Customer service",
+      "question_id": "RETAIL-SALES-ASSOCIA-CUSTOMER-SER-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ],
+      "common_mistakes": [
+        "Executing Customer Service without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Retail Sales Associate context, Customer Service starts with define icp/audience segment and objective metric (pipeline, roas, conversion). and continues through design offer/message variant and channel plan.. The critical discipline is evidence: measurement design quality determines campaign learning quality.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how assist shoppers stays reliable under real operational constraints.\n\nIn Retail Sales Associate, I rebuilt the assist shoppers funnel with tighter audience segmentation and experiment design; qualified lead rate improved by 31% in one quarter.",
+      "answer_explanation": "Key knowledge demonstrated for Customer Service:\n\u2022 Measurement design quality determines campaign learning quality.\n\u2022 Lead quality matters more than top-of-funnel volume.\n\u2022 Consistency between messaging and landing experience lifts conversion.\nStandards referenced: Campaign KPI framework, CRM hygiene policy",
+      "study_material": {
+        "overview": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Customer Service directly supports assist shoppers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "definitions": [
+          {
+            "term": "Customer Service",
+            "definition": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "term": "Campaign KPI framework",
+            "definition": "Applicable standard/regulation: Campaign KPI framework."
+          },
+          {
+            "term": "CRM hygiene policy",
+            "definition": "Applicable standard/regulation: CRM hygiene policy."
+          },
+          {
+            "term": "Conversion measurement model",
+            "definition": "Applicable standard/regulation: Conversion measurement model."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Customer Service",
+            "explanation": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Customer Service directly supports assist shoppers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Merchandising",
+            "explanation": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          }
+        ],
+        "principles": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "key_concepts": [
+          "Customer Service",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "hospitality operations",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "step_by_step_breakdown": [
+          "Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).",
+          "Design offer/message variant and channel plan.",
+          "Instrument tracking (UTM, attribution, CRM stage rules).",
+          "Run controlled test and analyze cohort performance.",
+          "Scale winning variant and archive learnings."
+        ],
+        "explanations": [
+          "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Customer Service directly supports assist shoppers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+        ],
+        "practical_example": "In Retail Sales Associate, I rebuilt the assist shoppers funnel with tighter audience segmentation and experiment design; qualified lead rate improved by 31% in one quarter.",
+        "common_mistakes": [
+          "Executing Customer Service without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Customer Service applies to: Assist shoppers.",
+          "List the standards that govern Customer Service in Retail Sales Associate work.",
+          "Write out the verification steps after completing a Customer Service task."
+        ],
+        "revision_notes": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "related_concepts": [
+          "Customer Service",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Customer Service applies to: Assist shoppers.",
+        "List the standards that govern Customer Service in Retail Sales Associate work.",
+        "Write out the verification steps after completing a Customer Service task."
+      ],
+      "revision_notes": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Retail Sales Associate practitioner in Customer service while handling 'Assist shoppers'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Customer service from those who only name-drop it.",
+      "skill_tag": "Customer service",
+      "terminology_terms": [
+        {
+          "term": "Customer Service",
+          "definition": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+        },
+        {
+          "term": "Campaign KPI framework",
+          "definition": "Standard/framework governing Customer Service: Campaign KPI framework."
+        },
+        {
+          "term": "CRM hygiene policy",
+          "definition": "Standard/framework governing Customer Service: CRM hygiene policy."
+        },
+        {
+          "term": "Conversion measurement model",
+          "definition": "Standard/framework governing Customer Service: Conversion measurement model."
+        },
+        {
+          "term": "Measurement design quality determines ca",
+          "definition": "Measurement design quality determines campaign learning quality."
+        },
+        {
+          "term": "Lead quality matters more than top-of-fu",
+          "definition": "Lead quality matters more than top-of-funnel volume."
+        },
+        {
+          "term": "Consistency between messaging and landin",
+          "definition": "Consistency between messaging and landing experience lifts conversion."
+        },
+        {
+          "term": "Measurement design quality determines campaign learning quality.",
+          "definition": "Related concept used with Customer Service in professional practice."
+        }
+      ],
+      "question_id": "RETAIL-SALES-ASSOCIA-CUSTOMER-SER-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Customer Service: Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+        "Campaign KPI framework: Standard/framework governing Customer Service: Campaign KPI framework.",
+        "CRM hygiene policy: Standard/framework governing Customer Service: CRM hygiene policy.",
+        "Conversion measurement model: Standard/framework governing Customer Service: Conversion measurement model.",
+        "Measurement design quality determines ca: Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-fu: Lead quality matters more than top-of-funnel volume."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Retail Sales Associate work, these terms are foundational:\n\n\n**Customer Service** \u2014 Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.\n\n**Campaign KPI framework** \u2014 Standard/framework governing Customer Service: Campaign KPI framework.\n\n**CRM hygiene policy** \u2014 Standard/framework governing Customer Service: CRM hygiene policy.\n\n**Conversion measurement model** \u2014 Standard/framework governing Customer Service: Conversion measurement model.\n\n**Measurement design quality determines ca** \u2014 Measurement design quality determines campaign learning quality.\n\n**Lead quality matters more than top-of-fu** \u2014 Lead quality matters more than top-of-funnel volume.\n\n**Consistency between messaging and landin** \u2014 Consistency between messaging and landing experience lifts conversion.\n\n**Measurement design quality determines campaign learning quality.** \u2014 Related concept used with Customer Service in professional practice.",
+      "answer_explanation": "Definitions covered: Customer Service, Campaign KPI framework, CRM hygiene policy, Conversion measurement model, Measurement design quality determines ca, Lead quality matters more than top-of-fu",
+      "study_material": {
+        "overview": "Core terminology for Customer Service \u2014 precise definitions required for Retail Sales Associate interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Customer Service terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Customer Service",
+            "definition": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "term": "Campaign KPI framework",
+            "definition": "Standard/framework governing Customer Service: Campaign KPI framework."
+          },
+          {
+            "term": "CRM hygiene policy",
+            "definition": "Standard/framework governing Customer Service: CRM hygiene policy."
+          },
+          {
+            "term": "Conversion measurement model",
+            "definition": "Standard/framework governing Customer Service: Conversion measurement model."
+          },
+          {
+            "term": "Measurement design quality determines ca",
+            "definition": "Measurement design quality determines campaign learning quality."
+          },
+          {
+            "term": "Lead quality matters more than top-of-fu",
+            "definition": "Lead quality matters more than top-of-funnel volume."
+          },
+          {
+            "term": "Consistency between messaging and landin",
+            "definition": "Consistency between messaging and landing experience lifts conversion."
+          },
+          {
+            "term": "Measurement design quality determines campaign learning quality.",
+            "definition": "Related concept used with Customer Service in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Customer Service",
+            "explanation": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "skill": "Campaign KPI framework",
+            "explanation": "Standard/framework governing Customer Service: Campaign KPI framework."
+          },
+          {
+            "skill": "CRM hygiene policy",
+            "explanation": "Standard/framework governing Customer Service: CRM hygiene policy."
+          },
+          {
+            "skill": "Conversion measurement model",
+            "explanation": "Standard/framework governing Customer Service: Conversion measurement model."
+          },
+          {
+            "skill": "Measurement design quality determines ca",
+            "explanation": "Measurement design quality determines campaign learning quality."
+          },
+          {
+            "skill": "Lead quality matters more than top-of-fu",
+            "explanation": "Lead quality matters more than top-of-funnel volume."
+          },
+          {
+            "skill": "Consistency between messaging and landin",
+            "explanation": "Consistency between messaging and landing experience lifts conversion."
+          },
+          {
+            "skill": "Measurement design quality determines campaign learning quality.",
+            "explanation": "Related concept used with Customer Service in professional practice."
+          }
+        ],
+        "principles": [
+          "Customer Service: Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "Campaign KPI framework: Standard/framework governing Customer Service: Campaign KPI framework.",
+          "CRM hygiene policy: Standard/framework governing Customer Service: CRM hygiene policy.",
+          "Conversion measurement model: Standard/framework governing Customer Service: Conversion measurement model.",
+          "Measurement design quality determines ca: Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-fu: Lead quality matters more than top-of-funnel volume."
+        ],
+        "key_concepts": [
+          "Customer Service",
+          "Campaign KPI framework",
+          "CRM hygiene policy",
+          "Conversion measurement model",
+          "Measurement design quality determines ca",
+          "Lead quality matters more than top-of-fu",
+          "Consistency between messaging and landin",
+          "Measurement design quality determines campaign learning quality."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Customer Service** \u2014 Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "**Campaign KPI framework** \u2014 Standard/framework governing Customer Service: Campaign KPI framework.",
+          "**CRM hygiene policy** \u2014 Standard/framework governing Customer Service: CRM hygiene policy.",
+          "**Conversion measurement model** \u2014 Standard/framework governing Customer Service: Conversion measurement model.",
+          "**Measurement design quality determines ca** \u2014 Measurement design quality determines campaign learning quality.",
+          "**Lead quality matters more than top-of-fu** \u2014 Lead quality matters more than top-of-funnel volume.",
+          "**Consistency between messaging and landin** \u2014 Consistency between messaging and landing experience lifts conversion.",
+          "**Measurement design quality determines campaign learning quality.** \u2014 Related concept used with Customer Service in professional practice."
+        ],
+        "practical_example": "\u2022 Customer Service: Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.\n\u2022 Campaign KPI framework: Standard/framework governing Customer Service: Campaign KPI framework.\n\u2022 CRM hygiene policy: Standard/framework governing Customer Service: CRM hygiene policy.\n\u2022 Conversion measurement model: Standard/framework governing Customer Service: Conversion measurement model.\n\u2022 Measurement design quality determines ca: Measurement design quality determines campaign learning quality.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Customer Service terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Customer Service",
+          "Campaign KPI framework",
+          "CRM hygiene policy",
+          "Conversion measurement model",
+          "Measurement design quality determines ca",
+          "Lead quality matters more than top-of-fu",
+          "Consistency between messaging and landin",
+          "Measurement design quality determines campaign learning quality."
+        ],
+        "related_concepts": [
+          "Customer Service",
+          "Campaign KPI framework",
+          "CRM hygiene policy",
+          "Conversion measurement model",
+          "Measurement design quality determines ca",
+          "Lead quality matters more than top-of-fu",
+          "Consistency between messaging and landin",
+          "Measurement design quality determines campaign learning quality."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Customer Service terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Customer Service",
+        "Campaign KPI framework",
+        "CRM hygiene policy",
+        "Conversion measurement model",
+        "Measurement design quality determines ca",
+        "Lead quality matters more than top-of-fu",
+        "Consistency between messaging and landin",
+        "Measurement design quality determines campaign learning quality."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the core operating principles and standard workflow for applying Customer service in a Retail Sales Associate role while handling 'Assist shoppers'?",
+      "why_asked": "Tests whether you know how Customer service is actually executed to standard, not only what it is called.",
+      "skill_tag": "Customer service",
+      "question_id": "RETAIL-SALES-ASSOCIA-CUSTOMER-SER-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Customer Service as a Retail Sales Associate:\n\n1. Measurement design quality determines campaign learning quality.\n2. Lead quality matters more than top-of-funnel volume.\n3. Consistency between messaging and landing experience lifts conversion.\n\nStandard workflow:\n1. Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).\n2. Design offer/message variant and channel plan.\n3. Instrument tracking (UTM, attribution, CRM stage rules).\n4. Run controlled test and analyze cohort performance.\n5. Scale winning variant and archive learnings.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Customer Service \u2014 how work is executed to standard in Retail Sales Associate roles.",
+        "what_you_need_to_know_first": [
+          "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Customer Service",
+            "definition": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Customer Service",
+            "explanation": "Measurement design quality determines campaign learning quality."
+          },
+          {
+            "skill": "Customer Service",
+            "explanation": "Lead quality matters more than top-of-funnel volume."
+          },
+          {
+            "skill": "Customer Service",
+            "explanation": "Consistency between messaging and landing experience lifts conversion."
+          }
+        ],
+        "principles": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "key_concepts": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "step_by_step_breakdown": [
+          "Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).",
+          "Design offer/message variant and channel plan.",
+          "Instrument tracking (UTM, attribution, CRM stage rules).",
+          "Run controlled test and analyze cohort performance.",
+          "Scale winning variant and archive learnings."
+        ],
+        "explanations": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "practical_example": "1. Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).\n2. Design offer/message variant and channel plan.\n3. Instrument tracking (UTM, attribution, CRM stage rules).\n4. Run controlled test and analyze cohort performance.\n5. Scale winning variant and archive learnings.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Customer Service workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "related_concepts": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Customer Service workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Numbers-driven check for Retail Sales Associate work using Customer service while handling 'Assist shoppers': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Customer service \u2014 essential for Retail Sales Associate roles.",
+      "skill_tag": "Customer service",
+      "calculation": {
+        "skill": "Customer Service",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "RETAIL-SALES-ASSOCIA-CUSTOMER-SER-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Retail Sales Associate practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Customer Service: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Customer Service calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Customer Service",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Customer Service calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "If a new hire joined your Retail Sales Associate function while handling 'Assist shoppers', how would you break down Merchandising into practical steps?",
+      "why_asked": "Tests genuine conceptual understanding of Merchandising, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Merchandising",
+      "question_id": "RETAIL-SALES-ASSOCIA-MERCHANDISIN-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Merchandising",
+        "Customer service",
+        "POS systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ],
+      "common_mistakes": [
+        "Executing Merchandising without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Retail Sales Associate context, Merchandising starts with define icp/audience segment and objective metric (pipeline, roas, conversion). and continues through design offer/message variant and channel plan.. The critical discipline is evidence: measurement design quality determines campaign learning quality.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how assist shoppers stays reliable under real operational constraints.\n\nIn Retail Sales Associate, I rebuilt the assist shoppers funnel with tighter audience segmentation and experiment design; qualified lead rate improved by 31% in one quarter.",
+      "answer_explanation": "Key knowledge demonstrated for Merchandising:\n\u2022 Measurement design quality determines campaign learning quality.\n\u2022 Lead quality matters more than top-of-funnel volume.\n\u2022 Consistency between messaging and landing experience lifts conversion.\nStandards referenced: Campaign KPI framework, CRM hygiene policy",
+      "study_material": {
+        "overview": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Merchandising directly supports assist shoppers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "definitions": [
+          {
+            "term": "Merchandising",
+            "definition": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "term": "Campaign KPI framework",
+            "definition": "Applicable standard/regulation: Campaign KPI framework."
+          },
+          {
+            "term": "CRM hygiene policy",
+            "definition": "Applicable standard/regulation: CRM hygiene policy."
+          },
+          {
+            "term": "Conversion measurement model",
+            "definition": "Applicable standard/regulation: Conversion measurement model."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Merchandising",
+            "explanation": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Merchandising directly supports assist shoppers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Customer Service",
+            "explanation": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          }
+        ],
+        "principles": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "key_concepts": [
+          "Merchandising",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "hospitality operations",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "step_by_step_breakdown": [
+          "Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).",
+          "Design offer/message variant and channel plan.",
+          "Instrument tracking (UTM, attribution, CRM stage rules).",
+          "Run controlled test and analyze cohort performance.",
+          "Scale winning variant and archive learnings."
+        ],
+        "explanations": [
+          "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Merchandising directly supports assist shoppers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+        ],
+        "practical_example": "In Retail Sales Associate, I rebuilt the assist shoppers funnel with tighter audience segmentation and experiment design; qualified lead rate improved by 31% in one quarter.",
+        "common_mistakes": [
+          "Executing Merchandising without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Merchandising applies to: Assist shoppers.",
+          "List the standards that govern Merchandising in Retail Sales Associate work.",
+          "Write out the verification steps after completing a Merchandising task."
+        ],
+        "revision_notes": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "related_concepts": [
+          "Merchandising",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Merchandising applies to: Assist shoppers.",
+        "List the standards that govern Merchandising in Retail Sales Associate work.",
+        "Write out the verification steps after completing a Merchandising task."
+      ],
+      "revision_notes": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Retail Sales Associate practitioner in Merchandising while handling 'Assist shoppers'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Merchandising from those who only name-drop it.",
+      "skill_tag": "Merchandising",
+      "terminology_terms": [
+        {
+          "term": "Merchandising",
+          "definition": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+        },
+        {
+          "term": "Campaign KPI framework",
+          "definition": "Standard/framework governing Merchandising: Campaign KPI framework."
+        },
+        {
+          "term": "CRM hygiene policy",
+          "definition": "Standard/framework governing Merchandising: CRM hygiene policy."
+        },
+        {
+          "term": "Conversion measurement model",
+          "definition": "Standard/framework governing Merchandising: Conversion measurement model."
+        },
+        {
+          "term": "Measurement design quality determines ca",
+          "definition": "Measurement design quality determines campaign learning quality."
+        },
+        {
+          "term": "Lead quality matters more than top-of-fu",
+          "definition": "Lead quality matters more than top-of-funnel volume."
+        },
+        {
+          "term": "Consistency between messaging and landin",
+          "definition": "Consistency between messaging and landing experience lifts conversion."
+        },
+        {
+          "term": "Measurement design quality determines campaign learning quality.",
+          "definition": "Related concept used with Merchandising in professional practice."
+        }
+      ],
+      "question_id": "RETAIL-SALES-ASSOCIA-MERCHANDISIN-TERM-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Merchandising",
+        "Customer service",
+        "POS systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Merchandising: Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+        "Campaign KPI framework: Standard/framework governing Merchandising: Campaign KPI framework.",
+        "CRM hygiene policy: Standard/framework governing Merchandising: CRM hygiene policy.",
+        "Conversion measurement model: Standard/framework governing Merchandising: Conversion measurement model.",
+        "Measurement design quality determines ca: Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-fu: Lead quality matters more than top-of-funnel volume."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Retail Sales Associate work, these terms are foundational:\n\n\n**Merchandising** \u2014 Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.\n\n**Campaign KPI framework** \u2014 Standard/framework governing Merchandising: Campaign KPI framework.\n\n**CRM hygiene policy** \u2014 Standard/framework governing Merchandising: CRM hygiene policy.\n\n**Conversion measurement model** \u2014 Standard/framework governing Merchandising: Conversion measurement model.\n\n**Measurement design quality determines ca** \u2014 Measurement design quality determines campaign learning quality.\n\n**Lead quality matters more than top-of-fu** \u2014 Lead quality matters more than top-of-funnel volume.\n\n**Consistency between messaging and landin** \u2014 Consistency between messaging and landing experience lifts conversion.\n\n**Measurement design quality determines campaign learning quality.** \u2014 Related concept used with Merchandising in professional practice.",
+      "answer_explanation": "Definitions covered: Merchandising, Campaign KPI framework, CRM hygiene policy, Conversion measurement model, Measurement design quality determines ca, Lead quality matters more than top-of-fu",
+      "study_material": {
+        "overview": "Core terminology for Merchandising \u2014 precise definitions required for Retail Sales Associate interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Merchandising terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Merchandising",
+            "definition": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "term": "Campaign KPI framework",
+            "definition": "Standard/framework governing Merchandising: Campaign KPI framework."
+          },
+          {
+            "term": "CRM hygiene policy",
+            "definition": "Standard/framework governing Merchandising: CRM hygiene policy."
+          },
+          {
+            "term": "Conversion measurement model",
+            "definition": "Standard/framework governing Merchandising: Conversion measurement model."
+          },
+          {
+            "term": "Measurement design quality determines ca",
+            "definition": "Measurement design quality determines campaign learning quality."
+          },
+          {
+            "term": "Lead quality matters more than top-of-fu",
+            "definition": "Lead quality matters more than top-of-funnel volume."
+          },
+          {
+            "term": "Consistency between messaging and landin",
+            "definition": "Consistency between messaging and landing experience lifts conversion."
+          },
+          {
+            "term": "Measurement design quality determines campaign learning quality.",
+            "definition": "Related concept used with Merchandising in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Merchandising",
+            "explanation": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "skill": "Campaign KPI framework",
+            "explanation": "Standard/framework governing Merchandising: Campaign KPI framework."
+          },
+          {
+            "skill": "CRM hygiene policy",
+            "explanation": "Standard/framework governing Merchandising: CRM hygiene policy."
+          },
+          {
+            "skill": "Conversion measurement model",
+            "explanation": "Standard/framework governing Merchandising: Conversion measurement model."
+          },
+          {
+            "skill": "Measurement design quality determines ca",
+            "explanation": "Measurement design quality determines campaign learning quality."
+          },
+          {
+            "skill": "Lead quality matters more than top-of-fu",
+            "explanation": "Lead quality matters more than top-of-funnel volume."
+          },
+          {
+            "skill": "Consistency between messaging and landin",
+            "explanation": "Consistency between messaging and landing experience lifts conversion."
+          },
+          {
+            "skill": "Measurement design quality determines campaign learning quality.",
+            "explanation": "Related concept used with Merchandising in professional practice."
+          }
+        ],
+        "principles": [
+          "Merchandising: Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "Campaign KPI framework: Standard/framework governing Merchandising: Campaign KPI framework.",
+          "CRM hygiene policy: Standard/framework governing Merchandising: CRM hygiene policy.",
+          "Conversion measurement model: Standard/framework governing Merchandising: Conversion measurement model.",
+          "Measurement design quality determines ca: Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-fu: Lead quality matters more than top-of-funnel volume."
+        ],
+        "key_concepts": [
+          "Merchandising",
+          "Campaign KPI framework",
+          "CRM hygiene policy",
+          "Conversion measurement model",
+          "Measurement design quality determines ca",
+          "Lead quality matters more than top-of-fu",
+          "Consistency between messaging and landin",
+          "Measurement design quality determines campaign learning quality."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Merchandising** \u2014 Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "**Campaign KPI framework** \u2014 Standard/framework governing Merchandising: Campaign KPI framework.",
+          "**CRM hygiene policy** \u2014 Standard/framework governing Merchandising: CRM hygiene policy.",
+          "**Conversion measurement model** \u2014 Standard/framework governing Merchandising: Conversion measurement model.",
+          "**Measurement design quality determines ca** \u2014 Measurement design quality determines campaign learning quality.",
+          "**Lead quality matters more than top-of-fu** \u2014 Lead quality matters more than top-of-funnel volume.",
+          "**Consistency between messaging and landin** \u2014 Consistency between messaging and landing experience lifts conversion.",
+          "**Measurement design quality determines campaign learning quality.** \u2014 Related concept used with Merchandising in professional practice."
+        ],
+        "practical_example": "\u2022 Merchandising: Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.\n\u2022 Campaign KPI framework: Standard/framework governing Merchandising: Campaign KPI framework.\n\u2022 CRM hygiene policy: Standard/framework governing Merchandising: CRM hygiene policy.\n\u2022 Conversion measurement model: Standard/framework governing Merchandising: Conversion measurement model.\n\u2022 Measurement design quality determines ca: Measurement design quality determines campaign learning quality.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Merchandising terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Merchandising",
+          "Campaign KPI framework",
+          "CRM hygiene policy",
+          "Conversion measurement model",
+          "Measurement design quality determines ca",
+          "Lead quality matters more than top-of-fu",
+          "Consistency between messaging and landin",
+          "Measurement design quality determines campaign learning quality."
+        ],
+        "related_concepts": [
+          "Merchandising",
+          "Campaign KPI framework",
+          "CRM hygiene policy",
+          "Conversion measurement model",
+          "Measurement design quality determines ca",
+          "Lead quality matters more than top-of-fu",
+          "Consistency between messaging and landin",
+          "Measurement design quality determines campaign learning quality."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Merchandising terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Merchandising",
+        "Campaign KPI framework",
+        "CRM hygiene policy",
+        "Conversion measurement model",
+        "Measurement design quality determines ca",
+        "Lead quality matters more than top-of-fu",
+        "Consistency between messaging and landin",
+        "Measurement design quality determines campaign learning quality."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the core operating principles and standard workflow for applying Merchandising in a Retail Sales Associate role while handling 'Assist shoppers'?",
+      "why_asked": "Tests whether you know how Merchandising is actually executed to standard, not only what it is called.",
+      "skill_tag": "Merchandising",
+      "question_id": "RETAIL-SALES-ASSOCIA-MERCHANDISIN-PRIN-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Merchandising",
+        "Customer service",
+        "POS systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Merchandising as a Retail Sales Associate:\n\n1. Measurement design quality determines campaign learning quality.\n2. Lead quality matters more than top-of-funnel volume.\n3. Consistency between messaging and landing experience lifts conversion.\n\nStandard workflow:\n1. Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).\n2. Design offer/message variant and channel plan.\n3. Instrument tracking (UTM, attribution, CRM stage rules).\n4. Run controlled test and analyze cohort performance.\n5. Scale winning variant and archive learnings.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Merchandising \u2014 how work is executed to standard in Retail Sales Associate roles.",
+        "what_you_need_to_know_first": [
+          "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Merchandising",
+            "definition": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Merchandising",
+            "explanation": "Measurement design quality determines campaign learning quality."
+          },
+          {
+            "skill": "Merchandising",
+            "explanation": "Lead quality matters more than top-of-funnel volume."
+          },
+          {
+            "skill": "Merchandising",
+            "explanation": "Consistency between messaging and landing experience lifts conversion."
+          }
+        ],
+        "principles": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "key_concepts": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "step_by_step_breakdown": [
+          "Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).",
+          "Design offer/message variant and channel plan.",
+          "Instrument tracking (UTM, attribution, CRM stage rules).",
+          "Run controlled test and analyze cohort performance.",
+          "Scale winning variant and archive learnings."
+        ],
+        "explanations": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "practical_example": "1. Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).\n2. Design offer/message variant and channel plan.\n3. Instrument tracking (UTM, attribution, CRM stage rules).\n4. Run controlled test and analyze cohort performance.\n5. Scale winning variant and archive learnings.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Merchandising workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "related_concepts": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Merchandising workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Numbers-driven check for Retail Sales Associate work using Merchandising while handling 'Assist shoppers': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Merchandising \u2014 essential for Retail Sales Associate roles.",
+      "skill_tag": "Merchandising",
+      "calculation": {
+        "skill": "Merchandising",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "RETAIL-SALES-ASSOCIA-MERCHANDISIN-CALC-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Merchandising",
+        "Customer service",
+        "POS systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Retail Sales Associate practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Merchandising: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Merchandising calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Merchandising",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Merchandising calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "How would you teach POS systems to a new colleague in a Retail Sales Associate team while handling 'Assist shoppers', including where beginners fail first?",
+      "why_asked": "Tests genuine conceptual understanding of POS systems, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "POS systems",
+      "question_id": "RETAIL-SALES-ASSOCIA-POS-SYSTEMS-EXPL-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "POS systems",
+        "Customer service",
+        "Merchandising",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ],
+      "common_mistakes": [
+        "Executing Pos Systems without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Retail Sales Associate context, Pos Systems starts with define icp/audience segment and objective metric (pipeline, roas, conversion). and continues through design offer/message variant and channel plan.. The critical discipline is evidence: measurement design quality determines campaign learning quality.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how assist shoppers stays reliable under real operational constraints.\n\nIn Retail Sales Associate, I rebuilt the assist shoppers funnel with tighter audience segmentation and experiment design; qualified lead rate improved by 31% in one quarter.",
+      "answer_explanation": "Key knowledge demonstrated for Pos Systems:\n\u2022 Measurement design quality determines campaign learning quality.\n\u2022 Lead quality matters more than top-of-funnel volume.\n\u2022 Consistency between messaging and landing experience lifts conversion.\nStandards referenced: Campaign KPI framework, CRM hygiene policy",
+      "study_material": {
+        "overview": "Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Pos Systems directly supports assist shoppers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "definitions": [
+          {
+            "term": "Pos Systems",
+            "definition": "Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "term": "Campaign KPI framework",
+            "definition": "Applicable standard/regulation: Campaign KPI framework."
+          },
+          {
+            "term": "CRM hygiene policy",
+            "definition": "Applicable standard/regulation: CRM hygiene policy."
+          },
+          {
+            "term": "Conversion measurement model",
+            "definition": "Applicable standard/regulation: Conversion measurement model."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Pos Systems",
+            "explanation": "Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Pos Systems directly supports assist shoppers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Customer Service",
+            "explanation": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          }
+        ],
+        "principles": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "key_concepts": [
+          "Pos Systems",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "hospitality operations",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "step_by_step_breakdown": [
+          "Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).",
+          "Design offer/message variant and channel plan.",
+          "Instrument tracking (UTM, attribution, CRM stage rules).",
+          "Run controlled test and analyze cohort performance.",
+          "Scale winning variant and archive learnings."
+        ],
+        "explanations": [
+          "Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Pos Systems directly supports assist shoppers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+        ],
+        "practical_example": "In Retail Sales Associate, I rebuilt the assist shoppers funnel with tighter audience segmentation and experiment design; qualified lead rate improved by 31% in one quarter.",
+        "common_mistakes": [
+          "Executing Pos Systems without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Pos Systems applies to: Assist shoppers.",
+          "List the standards that govern Pos Systems in Retail Sales Associate work.",
+          "Write out the verification steps after completing a Pos Systems task."
+        ],
+        "revision_notes": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "related_concepts": [
+          "Pos Systems",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Pos Systems applies to: Assist shoppers.",
+        "List the standards that govern Pos Systems in Retail Sales Associate work.",
+        "Write out the verification steps after completing a Pos Systems task."
+      ],
+      "revision_notes": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for POS systems in Retail Sales Associate practice while handling 'Assist shoppers', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand POS systems from those who only name-drop it.",
+      "skill_tag": "POS systems",
+      "terminology_terms": [
+        {
+          "term": "Pos Systems",
+          "definition": "Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+        },
+        {
+          "term": "Campaign KPI framework",
+          "definition": "Standard/framework governing Pos Systems: Campaign KPI framework."
+        },
+        {
+          "term": "CRM hygiene policy",
+          "definition": "Standard/framework governing Pos Systems: CRM hygiene policy."
+        },
+        {
+          "term": "Conversion measurement model",
+          "definition": "Standard/framework governing Pos Systems: Conversion measurement model."
+        },
+        {
+          "term": "Measurement design quality determines ca",
+          "definition": "Measurement design quality determines campaign learning quality."
+        },
+        {
+          "term": "Lead quality matters more than top-of-fu",
+          "definition": "Lead quality matters more than top-of-funnel volume."
+        },
+        {
+          "term": "Consistency between messaging and landin",
+          "definition": "Consistency between messaging and landing experience lifts conversion."
+        },
+        {
+          "term": "Measurement design quality determines campaign learning quality.",
+          "definition": "Related concept used with Pos Systems in professional practice."
+        }
+      ],
+      "question_id": "RETAIL-SALES-ASSOCIA-POS-SYSTEMS-TERM-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "POS systems",
+        "Customer service",
+        "Merchandising",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Pos Systems: Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+        "Campaign KPI framework: Standard/framework governing Pos Systems: Campaign KPI framework.",
+        "CRM hygiene policy: Standard/framework governing Pos Systems: CRM hygiene policy.",
+        "Conversion measurement model: Standard/framework governing Pos Systems: Conversion measurement model.",
+        "Measurement design quality determines ca: Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-fu: Lead quality matters more than top-of-funnel volume."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Retail Sales Associate work, these terms are foundational:\n\n\n**Pos Systems** \u2014 Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.\n\n**Campaign KPI framework** \u2014 Standard/framework governing Pos Systems: Campaign KPI framework.\n\n**CRM hygiene policy** \u2014 Standard/framework governing Pos Systems: CRM hygiene policy.\n\n**Conversion measurement model** \u2014 Standard/framework governing Pos Systems: Conversion measurement model.\n\n**Measurement design quality determines ca** \u2014 Measurement design quality determines campaign learning quality.\n\n**Lead quality matters more than top-of-fu** \u2014 Lead quality matters more than top-of-funnel volume.\n\n**Consistency between messaging and landin** \u2014 Consistency between messaging and landing experience lifts conversion.\n\n**Measurement design quality determines campaign learning quality.** \u2014 Related concept used with Pos Systems in professional practice.",
+      "answer_explanation": "Definitions covered: Pos Systems, Campaign KPI framework, CRM hygiene policy, Conversion measurement model, Measurement design quality determines ca, Lead quality matters more than top-of-fu",
+      "study_material": {
+        "overview": "Core terminology for Pos Systems \u2014 precise definitions required for Retail Sales Associate interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Pos Systems terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Pos Systems",
+            "definition": "Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "term": "Campaign KPI framework",
+            "definition": "Standard/framework governing Pos Systems: Campaign KPI framework."
+          },
+          {
+            "term": "CRM hygiene policy",
+            "definition": "Standard/framework governing Pos Systems: CRM hygiene policy."
+          },
+          {
+            "term": "Conversion measurement model",
+            "definition": "Standard/framework governing Pos Systems: Conversion measurement model."
+          },
+          {
+            "term": "Measurement design quality determines ca",
+            "definition": "Measurement design quality determines campaign learning quality."
+          },
+          {
+            "term": "Lead quality matters more than top-of-fu",
+            "definition": "Lead quality matters more than top-of-funnel volume."
+          },
+          {
+            "term": "Consistency between messaging and landin",
+            "definition": "Consistency between messaging and landing experience lifts conversion."
+          },
+          {
+            "term": "Measurement design quality determines campaign learning quality.",
+            "definition": "Related concept used with Pos Systems in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Pos Systems",
+            "explanation": "Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "skill": "Campaign KPI framework",
+            "explanation": "Standard/framework governing Pos Systems: Campaign KPI framework."
+          },
+          {
+            "skill": "CRM hygiene policy",
+            "explanation": "Standard/framework governing Pos Systems: CRM hygiene policy."
+          },
+          {
+            "skill": "Conversion measurement model",
+            "explanation": "Standard/framework governing Pos Systems: Conversion measurement model."
+          },
+          {
+            "skill": "Measurement design quality determines ca",
+            "explanation": "Measurement design quality determines campaign learning quality."
+          },
+          {
+            "skill": "Lead quality matters more than top-of-fu",
+            "explanation": "Lead quality matters more than top-of-funnel volume."
+          },
+          {
+            "skill": "Consistency between messaging and landin",
+            "explanation": "Consistency between messaging and landing experience lifts conversion."
+          },
+          {
+            "skill": "Measurement design quality determines campaign learning quality.",
+            "explanation": "Related concept used with Pos Systems in professional practice."
+          }
+        ],
+        "principles": [
+          "Pos Systems: Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "Campaign KPI framework: Standard/framework governing Pos Systems: Campaign KPI framework.",
+          "CRM hygiene policy: Standard/framework governing Pos Systems: CRM hygiene policy.",
+          "Conversion measurement model: Standard/framework governing Pos Systems: Conversion measurement model.",
+          "Measurement design quality determines ca: Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-fu: Lead quality matters more than top-of-funnel volume."
+        ],
+        "key_concepts": [
+          "Pos Systems",
+          "Campaign KPI framework",
+          "CRM hygiene policy",
+          "Conversion measurement model",
+          "Measurement design quality determines ca",
+          "Lead quality matters more than top-of-fu",
+          "Consistency between messaging and landin",
+          "Measurement design quality determines campaign learning quality."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Pos Systems** \u2014 Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "**Campaign KPI framework** \u2014 Standard/framework governing Pos Systems: Campaign KPI framework.",
+          "**CRM hygiene policy** \u2014 Standard/framework governing Pos Systems: CRM hygiene policy.",
+          "**Conversion measurement model** \u2014 Standard/framework governing Pos Systems: Conversion measurement model.",
+          "**Measurement design quality determines ca** \u2014 Measurement design quality determines campaign learning quality.",
+          "**Lead quality matters more than top-of-fu** \u2014 Lead quality matters more than top-of-funnel volume.",
+          "**Consistency between messaging and landin** \u2014 Consistency between messaging and landing experience lifts conversion.",
+          "**Measurement design quality determines campaign learning quality.** \u2014 Related concept used with Pos Systems in professional practice."
+        ],
+        "practical_example": "\u2022 Pos Systems: Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.\n\u2022 Campaign KPI framework: Standard/framework governing Pos Systems: Campaign KPI framework.\n\u2022 CRM hygiene policy: Standard/framework governing Pos Systems: CRM hygiene policy.\n\u2022 Conversion measurement model: Standard/framework governing Pos Systems: Conversion measurement model.\n\u2022 Measurement design quality determines ca: Measurement design quality determines campaign learning quality.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Pos Systems terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Pos Systems",
+          "Campaign KPI framework",
+          "CRM hygiene policy",
+          "Conversion measurement model",
+          "Measurement design quality determines ca",
+          "Lead quality matters more than top-of-fu",
+          "Consistency between messaging and landin",
+          "Measurement design quality determines campaign learning quality."
+        ],
+        "related_concepts": [
+          "Pos Systems",
+          "Campaign KPI framework",
+          "CRM hygiene policy",
+          "Conversion measurement model",
+          "Measurement design quality determines ca",
+          "Lead quality matters more than top-of-fu",
+          "Consistency between messaging and landin",
+          "Measurement design quality determines campaign learning quality."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Pos Systems terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Pos Systems",
+        "Campaign KPI framework",
+        "CRM hygiene policy",
+        "Conversion measurement model",
+        "Measurement design quality determines ca",
+        "Lead quality matters more than top-of-fu",
+        "Consistency between messaging and landin",
+        "Measurement design quality determines campaign learning quality."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "When performing POS systems as a Retail Sales Associate while handling 'Assist shoppers', what are the governing principles, checkpoints, and sign-off criteria?",
+      "why_asked": "Tests whether you know how POS systems is actually executed to standard, not only what it is called.",
+      "skill_tag": "POS systems",
+      "question_id": "RETAIL-SALES-ASSOCIA-POS-SYSTEMS-PRIN-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "POS systems",
+        "Customer service",
+        "Merchandising",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Pos Systems as a Retail Sales Associate:\n\n1. Measurement design quality determines campaign learning quality.\n2. Lead quality matters more than top-of-funnel volume.\n3. Consistency between messaging and landing experience lifts conversion.\n\nStandard workflow:\n1. Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).\n2. Design offer/message variant and channel plan.\n3. Instrument tracking (UTM, attribution, CRM stage rules).\n4. Run controlled test and analyze cohort performance.\n5. Scale winning variant and archive learnings.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Pos Systems \u2014 how work is executed to standard in Retail Sales Associate roles.",
+        "what_you_need_to_know_first": [
+          "Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Pos Systems",
+            "definition": "Pos Systems in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Pos Systems",
+            "explanation": "Measurement design quality determines campaign learning quality."
+          },
+          {
+            "skill": "Pos Systems",
+            "explanation": "Lead quality matters more than top-of-funnel volume."
+          },
+          {
+            "skill": "Pos Systems",
+            "explanation": "Consistency between messaging and landing experience lifts conversion."
+          }
+        ],
+        "principles": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "key_concepts": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "step_by_step_breakdown": [
+          "Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).",
+          "Design offer/message variant and channel plan.",
+          "Instrument tracking (UTM, attribution, CRM stage rules).",
+          "Run controlled test and analyze cohort performance.",
+          "Scale winning variant and archive learnings."
+        ],
+        "explanations": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "practical_example": "1. Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).\n2. Design offer/message variant and channel plan.\n3. Instrument tracking (UTM, attribution, CRM stage rules).\n4. Run controlled test and analyze cohort performance.\n5. Scale winning variant and archive learnings.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Pos Systems workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "related_concepts": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Pos Systems workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Quantitative validation scenario (Retail Sales Associate, POS systems) while handling 'Assist shoppers': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in POS systems \u2014 essential for Retail Sales Associate roles.",
+      "skill_tag": "POS systems",
+      "calculation": {
+        "skill": "Pos Systems",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "RETAIL-SALES-ASSOCIA-POS-SYSTEMS-CALC-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "POS systems",
+        "Customer service",
+        "Merchandising",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Retail Sales Associate practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Pos Systems: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Pos Systems calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Pos Systems",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Pos Systems calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Retail Sales Associate, define and explain these core professional terms: Customer Service, Campaign KPI framework, CRM hygiene policy, Merchandising, Campaign KPI framework, CRM hygiene policy.",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Customer Service",
+          "definition": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+        },
+        {
+          "term": "Campaign KPI framework",
+          "definition": "Standard/framework governing Customer Service: Campaign KPI framework."
+        },
+        {
+          "term": "CRM hygiene policy",
+          "definition": "Standard/framework governing Customer Service: CRM hygiene policy."
+        },
+        {
+          "term": "Merchandising",
+          "definition": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+        },
+        {
+          "term": "Campaign KPI framework",
+          "definition": "Standard/framework governing Merchandising: Campaign KPI framework."
+        },
+        {
+          "term": "CRM hygiene policy",
+          "definition": "Standard/framework governing Merchandising: CRM hygiene policy."
+        }
+      ],
+      "question_id": "RETAIL-SALES-ASSOCIA-CORE-TERMINO-TERM-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Customer Service: Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+        "Campaign KPI framework: Standard/framework governing Customer Service: Campaign KPI framework.",
+        "CRM hygiene policy: Standard/framework governing Customer Service: CRM hygiene policy.",
+        "Merchandising: Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+        "Campaign KPI framework: Standard/framework governing Merchandising: Campaign KPI framework.",
+        "CRM hygiene policy: Standard/framework governing Merchandising: CRM hygiene policy."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Retail Sales Associate work, these terms are foundational:\n\n\n**Customer Service** \u2014 Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.\n\n**Campaign KPI framework** \u2014 Standard/framework governing Customer Service: Campaign KPI framework.\n\n**CRM hygiene policy** \u2014 Standard/framework governing Customer Service: CRM hygiene policy.\n\n**Merchandising** \u2014 Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.\n\n**Campaign KPI framework** \u2014 Standard/framework governing Merchandising: Campaign KPI framework.\n\n**CRM hygiene policy** \u2014 Standard/framework governing Merchandising: CRM hygiene policy.",
+      "answer_explanation": "Definitions covered: Customer Service, Campaign KPI framework, CRM hygiene policy, Merchandising, Campaign KPI framework, CRM hygiene policy",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Retail Sales Associate interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Customer Service",
+            "definition": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "term": "Campaign KPI framework",
+            "definition": "Standard/framework governing Customer Service: Campaign KPI framework."
+          },
+          {
+            "term": "CRM hygiene policy",
+            "definition": "Standard/framework governing Customer Service: CRM hygiene policy."
+          },
+          {
+            "term": "Merchandising",
+            "definition": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "term": "Campaign KPI framework",
+            "definition": "Standard/framework governing Merchandising: Campaign KPI framework."
+          },
+          {
+            "term": "CRM hygiene policy",
+            "definition": "Standard/framework governing Merchandising: CRM hygiene policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Customer Service",
+            "explanation": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "skill": "Campaign KPI framework",
+            "explanation": "Standard/framework governing Customer Service: Campaign KPI framework."
+          },
+          {
+            "skill": "CRM hygiene policy",
+            "explanation": "Standard/framework governing Customer Service: CRM hygiene policy."
+          },
+          {
+            "skill": "Merchandising",
+            "explanation": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "skill": "Campaign KPI framework",
+            "explanation": "Standard/framework governing Merchandising: Campaign KPI framework."
+          },
+          {
+            "skill": "CRM hygiene policy",
+            "explanation": "Standard/framework governing Merchandising: CRM hygiene policy."
+          }
+        ],
+        "principles": [
+          "Customer Service: Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "Campaign KPI framework: Standard/framework governing Customer Service: Campaign KPI framework.",
+          "CRM hygiene policy: Standard/framework governing Customer Service: CRM hygiene policy.",
+          "Merchandising: Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "Campaign KPI framework: Standard/framework governing Merchandising: Campaign KPI framework.",
+          "CRM hygiene policy: Standard/framework governing Merchandising: CRM hygiene policy."
+        ],
+        "key_concepts": [
+          "Customer Service",
+          "Campaign KPI framework",
+          "CRM hygiene policy",
+          "Merchandising",
+          "Campaign KPI framework",
+          "CRM hygiene policy"
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Customer Service** \u2014 Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "**Campaign KPI framework** \u2014 Standard/framework governing Customer Service: Campaign KPI framework.",
+          "**CRM hygiene policy** \u2014 Standard/framework governing Customer Service: CRM hygiene policy.",
+          "**Merchandising** \u2014 Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.",
+          "**Campaign KPI framework** \u2014 Standard/framework governing Merchandising: Campaign KPI framework.",
+          "**CRM hygiene policy** \u2014 Standard/framework governing Merchandising: CRM hygiene policy."
+        ],
+        "practical_example": "\u2022 Customer Service: Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.\n\u2022 Campaign KPI framework: Standard/framework governing Customer Service: Campaign KPI framework.\n\u2022 CRM hygiene policy: Standard/framework governing Customer Service: CRM hygiene policy.\n\u2022 Merchandising: Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value.\n\u2022 Campaign KPI framework: Standard/framework governing Merchandising: Campaign KPI framework.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Customer Service",
+          "Campaign KPI framework",
+          "CRM hygiene policy",
+          "Merchandising",
+          "Campaign KPI framework",
+          "CRM hygiene policy"
+        ],
+        "related_concepts": [
+          "Customer Service",
+          "Campaign KPI framework",
+          "CRM hygiene policy",
+          "Merchandising",
+          "Campaign KPI framework",
+          "CRM hygiene policy"
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Customer Service",
+        "Campaign KPI framework",
+        "CRM hygiene policy",
+        "Merchandising",
+        "Campaign KPI framework",
+        "CRM hygiene policy"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Assist shoppers'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "RETAIL-SALES-ASSOCIA-BEHAVIORAL-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes.\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Retail Sales Associate handles when assist shoppers. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Retail Sales Associate work involves assist shoppers under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Retail Sales Associate",
+            "definition": "The Retail Sales Associate role integrates Customer service, Merchandising, POS systems to deliver on responsibilities such as assist shoppers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Retail Sales Associate reference assist shoppers and relevant standards or tools."
+        ],
+        "practical_example": "In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Retail Sales Associate challenge with numbers.",
+          "Link the story to: Assist shoppers."
+        ],
+        "revision_notes": [
+          "Customer service",
+          "Merchandising",
+          "POS systems"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Retail Sales Associate challenge with numbers.",
+        "Link the story to: Assist shoppers."
+      ],
+      "revision_notes": [
+        "Customer service",
+        "Merchandising",
+        "POS systems"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Restock shelves'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "RETAIL-SALES-ASSOCIA-BEHAVIORAL-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes.\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Retail Sales Associate handles when assist shoppers. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Retail Sales Associate work involves assist shoppers under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Retail Sales Associate",
+            "definition": "The Retail Sales Associate role integrates Customer service, Merchandising, POS systems to deliver on responsibilities such as assist shoppers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Retail Sales Associate reference assist shoppers and relevant standards or tools."
+        ],
+        "practical_example": "In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Retail Sales Associate challenge with numbers.",
+          "Link the story to: Assist shoppers."
+        ],
+        "revision_notes": [
+          "Customer service",
+          "Merchandising",
+          "POS systems"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Retail Sales Associate challenge with numbers.",
+        "Link the story to: Assist shoppers."
+      ],
+      "revision_notes": [
+        "Customer service",
+        "Merchandising",
+        "POS systems"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Process transactions'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "RETAIL-SALES-ASSOCIA-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes.\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Retail Sales Associate handles when assist shoppers. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Retail Sales Associate work involves assist shoppers under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Retail Sales Associate",
+            "definition": "The Retail Sales Associate role integrates Customer service, Merchandising, POS systems to deliver on responsibilities such as assist shoppers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Retail Sales Associate reference assist shoppers and relevant standards or tools."
+        ],
+        "practical_example": "In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Retail Sales Associate challenge with numbers.",
+          "Link the story to: Assist shoppers."
+        ],
+        "revision_notes": [
+          "Customer service",
+          "Merchandising",
+          "POS systems"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Retail Sales Associate challenge with numbers.",
+        "Link the story to: Assist shoppers."
+      ],
+      "revision_notes": [
+        "Customer service",
+        "Merchandising",
+        "POS systems"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe one complex assignment in Retail Sales Associate work while handling 'Assist shoppers' where your planning prevented failure.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "RETAIL-SALES-ASSOCIA-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes.\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Retail Sales Associate handles when assist shoppers. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Retail Sales Associate work involves assist shoppers under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Retail Sales Associate",
+            "definition": "The Retail Sales Associate role integrates Customer service, Merchandising, POS systems to deliver on responsibilities such as assist shoppers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Retail Sales Associate reference assist shoppers and relevant standards or tools."
+        ],
+        "practical_example": "In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Retail Sales Associate challenge with numbers.",
+          "Link the story to: Assist shoppers."
+        ],
+        "revision_notes": [
+          "Customer service",
+          "Merchandising",
+          "POS systems"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Retail Sales Associate challenge with numbers.",
+        "Link the story to: Assist shoppers."
+      ],
+      "revision_notes": [
+        "Customer service",
+        "Merchandising",
+        "POS systems"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Give an example where your evidence or metrics in Retail Sales Associate delivery while handling 'Assist shoppers' changed a decision.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "RETAIL-SALES-ASSOCIA-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes.\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Retail Sales Associate handles when assist shoppers. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Retail Sales Associate work involves assist shoppers under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Retail Sales Associate",
+            "definition": "The Retail Sales Associate role integrates Customer service, Merchandising, POS systems to deliver on responsibilities such as assist shoppers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Retail Sales Associate reference assist shoppers and relevant standards or tools."
+        ],
+        "practical_example": "In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Retail Sales Associate challenge with numbers.",
+          "Link the story to: Assist shoppers."
+        ],
+        "revision_notes": [
+          "Customer service",
+          "Merchandising",
+          "POS systems"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Retail Sales Associate challenge with numbers.",
+        "Link the story to: Assist shoppers."
+      ],
+      "revision_notes": [
+        "Customer service",
+        "Merchandising",
+        "POS systems"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Explain a stakeholder-management challenge from Retail Sales Associate work while handling 'Assist shoppers' and the outcome.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "RETAIL-SALES-ASSOCIA-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes.\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Retail Sales Associate handles when assist shoppers. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Retail Sales Associate work involves assist shoppers under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Retail Sales Associate",
+            "definition": "The Retail Sales Associate role integrates Customer service, Merchandising, POS systems to deliver on responsibilities such as assist shoppers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Customer service supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Retail Sales Associate reference assist shoppers and relevant standards or tools."
+        ],
+        "practical_example": "In Retail Sales Associate work involving assist shoppers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Retail Sales Associate challenge with numbers.",
+          "Link the story to: Assist shoppers."
+        ],
+        "revision_notes": [
+          "Customer service",
+          "Merchandising",
+          "POS systems"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Retail Sales Associate challenge with numbers.",
+        "Link the story to: Assist shoppers."
+      ],
+      "revision_notes": [
+        "Customer service",
+        "Merchandising",
+        "POS systems"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Retail Sales Associate position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "RETAIL-SALES-ASSOCIA-ROLE-SPECIFI-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Retail Sales Associate, my approach to assist shoppers is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Retail Sales Associate practice, I anchor this using: Measurement design quality determines campaign learning quality., Lead quality matters more than top-of-funnel volume., Role Specific.",
+      "answer_explanation": "This answer covers: As Retail Sales Associate, my approach to assist shoppers is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand \u2026",
+      "study_material": {
+        "overview": "Role Specific in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Role Specific directly supports assist shoppers. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "term": "Campaign KPI framework",
+            "definition": "Applicable standard/regulation: Campaign KPI framework."
+          },
+          {
+            "term": "CRM hygiene policy",
+            "definition": "Applicable standard/regulation: CRM hygiene policy."
+          },
+          {
+            "term": "Conversion measurement model",
+            "definition": "Applicable standard/regulation: Conversion measurement model."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Role Specific directly supports assist shoppers. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Customer Service",
+            "explanation": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "skill": "Merchandising",
+            "explanation": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          }
+        ],
+        "principles": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "general professional",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "step_by_step_breakdown": [
+          "Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).",
+          "Design offer/message variant and channel plan.",
+          "Instrument tracking (UTM, attribution, CRM stage rules).",
+          "Run controlled test and analyze cohort performance.",
+          "Scale winning variant and archive learnings."
+        ],
+        "explanations": [
+          "Role Specific in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Role Specific directly supports assist shoppers. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+        ],
+        "practical_example": "In Retail Sales Associate, I rebuilt the assist shoppers funnel with tighter audience segmentation and experiment design; qualified lead rate improved by 31% in one quarter.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Assist shoppers.",
+          "List the standards that govern Role Specific in Retail Sales Associate work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Assist shoppers.",
+        "List the standards that govern Role Specific in Retail Sales Associate work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Retail Sales Associate context: Assist shoppers. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Retail Sales Associate context: Assist shoppers.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "RETAIL-SALES-ASSOCIA-COMPANY-SPEC-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Merchandising",
+        "POS systems",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Retail Sales Associate, my approach to assist shoppers is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Retail Sales Associate practice, I anchor this using: Measurement design quality determines campaign learning quality., Lead quality matters more than top-of-funnel volume., Company Specific.",
+      "answer_explanation": "This answer covers: As Retail Sales Associate, my approach to assist shoppers is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand \u2026",
+      "study_material": {
+        "overview": "Company Specific in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Company Specific directly supports assist shoppers. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "term": "Campaign KPI framework",
+            "definition": "Applicable standard/regulation: Campaign KPI framework."
+          },
+          {
+            "term": "CRM hygiene policy",
+            "definition": "Applicable standard/regulation: CRM hygiene policy."
+          },
+          {
+            "term": "Conversion measurement model",
+            "definition": "Applicable standard/regulation: Conversion measurement model."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Company Specific directly supports assist shoppers. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Customer Service",
+            "explanation": "Customer Service in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          },
+          {
+            "skill": "Merchandising",
+            "explanation": "Merchandising in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+          }
+        ],
+        "principles": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "general professional",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "step_by_step_breakdown": [
+          "Define ICP/audience segment and objective metric (pipeline, ROAS, conversion).",
+          "Design offer/message variant and channel plan.",
+          "Instrument tracking (UTM, attribution, CRM stage rules).",
+          "Run controlled test and analyze cohort performance.",
+          "Scale winning variant and archive learnings."
+        ],
+        "explanations": [
+          "Company Specific in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value. In Retail Sales Associate practice, Company Specific directly supports assist shoppers. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific in commercial functions is the disciplined execution of market-facing activities that improve qualified demand, conversion quality, and customer value."
+        ],
+        "practical_example": "In Retail Sales Associate, I rebuilt the assist shoppers funnel with tighter audience segmentation and experiment design; qualified lead rate improved by 31% in one quarter.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Assist shoppers.",
+          "List the standards that govern Company Specific in Retail Sales Associate work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "Consistency between messaging and landing experience lifts conversion."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Measurement design quality determines campaign learning quality.",
+          "Lead quality matters more than top-of-funnel volume.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Assist shoppers.",
+        "List the standards that govern Company Specific in Retail Sales Associate work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Measurement design quality determines campaign learning quality.",
+        "Lead quality matters more than top-of-funnel volume.",
+        "Consistency between messaging and landing experience lifts conversion."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:30:53.290481+00:00",
+  "confidence_score": 0.9
+}

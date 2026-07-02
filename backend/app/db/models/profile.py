@@ -101,7 +101,7 @@ class Profile(UUIDPrimaryKeyMixin, TimestampMixin, Base):
         back_populates="profile", cascade="all, delete-orphan", order_by="CustomSection.order_index"
     )
 
-    def completeness_score(self) -> float:
+    def calculate_completeness_score(self) -> float:
         """
         Compute the "Profile Strength Meter" (§4.4 Profile Management).
 

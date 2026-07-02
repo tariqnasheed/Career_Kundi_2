@@ -6,7 +6,8 @@
  * difficulty badges, follow-up questions, and evaluation criteria.
  */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -19,7 +20,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card"
 import { Badge } from "../components/ui/Badge";
 import { Spinner } from "../components/ui/Spinner";
 import { useUIStore } from "../store/ui";
-import type { InterviewPackRead, SavedJobRead, InterviewQuestion } from "../types/api";
+import { normalizeInterviewPack } from "../components/features/InterviewPackView";
+import type { SavedJobRead, InterviewQuestion } from "../types/api";
 
 // ─── Difficulty config ─────────────────────────────────────────────────────
 const DIFF_COLOR: Record<string, string> = {
@@ -206,7 +208,13 @@ function SkillCluster({ cluster, startIndex }: { cluster: { skill_name: string; 
 export default function InterviewPackPage() {
   const { addToast } = useUIStore();
   const qc = useQueryClient();
-  const [selectedJobId, setSelectedJobId] = useState<string | null>(null);
+  const [searchParams] = useSearchParams();
+  const [selectedJobId, setSelectedJobId] = useState<string | null>(searchParams.get("jobId"));
+
+  useEffect(() => {
+    const id = searchParams.get("jobId");
+    if (id) setSelectedJobId(id);
+  }, [searchParams]);
 
   const { data: jobs, isLoading: jobsLoading } = useQuery({
     queryKey: ["jobs"],
@@ -228,7 +236,9 @@ export default function InterviewPackPage() {
     onError: () => addToast({ type: "error", message: "Generation failed. Try again." }),
   });
 
-  const totalQuestions = pack?.skill_clusters?.reduce((a: number, c: any) => a + c.questions.length, 0) ?? 0;
+  const normalizedPack = normalizeInterviewPack(pack as Record<string, unknown> | null | undefined);
+  const skillClusters = normalizedPack?.skill_clusters ?? [];
+  const totalQuestions = skillClusters.reduce((a, c) => a + c.questions.length, 0);
   let questionIndex = 0;
 
   if (jobsLoading) return <div style={{ display: "flex", justifyContent: "center", padding: "4rem" }}><Spinner size="lg" /></div>;
@@ -283,13 +293,13 @@ export default function InterviewPackPage() {
             >
               {pack ? "Regenerate interview pack" : "Generate interview pack"}
             </Button>
-            {pack && (
+            {normalizedPack && (
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                 <Badge color="violet">{totalQuestions} questions</Badge>
-                <Badge color="default">{pack.skill_clusters?.length ?? 0} skill areas</Badge>
-                {pack.generation_confidence && (
-                  <Badge color={pack.generation_confidence > 0.8 ? "emerald" : "amber"}>
-                    {Math.round(pack.generation_confidence * 100)}% confidence
+                <Badge color="default">{skillClusters.length} skill areas</Badge>
+                {normalizedPack.confidence != null && (
+                  <Badge color={normalizedPack.confidence > 0.8 ? "emerald" : "amber"}>
+                    {Math.round(normalizedPack.confidence * 100)}% confidence
                   </Badge>
                 )}
               </div>
@@ -300,9 +310,9 @@ export default function InterviewPackPage() {
         {/* Interview pack content */}
         {packLoading && <div style={{ textAlign: "center", padding: "3rem" }}><Spinner size="lg" /></div>}
 
-        {pack && !packLoading && (
+        {normalizedPack && !packLoading && (
           <AnimatePresence>
-            {pack.skill_clusters?.map((cluster: any) => {
+            {skillClusters.map((cluster) => {
               const node = <SkillCluster key={cluster.skill_name} cluster={cluster} startIndex={questionIndex} />;
               questionIndex += cluster.questions.length;
               return node;
@@ -310,7 +320,7 @@ export default function InterviewPackPage() {
           </AnimatePresence>
         )}
 
-        {!pack && !packLoading && selectedJobId && (
+        {!normalizedPack && !packLoading && selectedJobId && (
           <div style={{ textAlign: "center", padding: "4rem", color: "var(--text-secondary)" }}>
             <BookOpen size={48} style={{ margin: "0 auto 1rem", opacity: 0.3 }} />
             <p>No interview pack yet for this job.</p>

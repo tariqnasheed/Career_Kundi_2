@@ -21,7 +21,7 @@
  */
 
 import { useEffect } from "react";
-import { Routes, Route, Navigate, Outlet } from "react-router-dom";
+import { Routes, Route, Navigate, Outlet, useSearchParams } from "react-router-dom";
 import { AppShell } from "./components/layout/AppShell";
 import { useAuthStore } from "./store/auth";
 import { Spinner } from "./components/ui/Spinner";
@@ -34,7 +34,6 @@ const LoginPage        = lazy(() => import("./pages/LoginPage"));
 const RegisterPage     = lazy(() => import("./pages/RegisterPage"));
 const DashboardPage    = lazy(() => import("./pages/DashboardPage"));
 const JobSearchPage    = lazy(() => import("./pages/JobSearchPage"));
-const InterviewPackPage = lazy(() => import("./pages/InterviewPackPage"));
 const CVBuilderPage    = lazy(() => import("./pages/CVBuilderPage"));
 const RoadmapPage      = lazy(() => import("./pages/RoadmapPage"));
 const AchievementsPage = lazy(() => import("./pages/AchievementsPage"));
@@ -82,6 +81,13 @@ function PublicRoute() {
   return <Outlet />;
 }
 
+/* ── Redirect legacy interview-pack URLs ─────────────────────────── */
+function InterviewPackRedirect() {
+  const [params] = useSearchParams();
+  const jobId = params.get("jobId");
+  return <Navigate to={jobId ? `/jobs?jobId=${jobId}` : "/jobs"} replace />;
+}
+
 /* ── Root App ───────────────────────────────────────────────────── */
 export default function App() {
   // We call init() once when the app starts. This checks localStorage for 
@@ -106,7 +112,7 @@ export default function App() {
           <Route element={<AppShell />}>
             <Route path="/dashboard"       element={<DashboardPage />} />
             <Route path="/jobs"            element={<JobSearchPage />} />
-            <Route path="/interview-pack"  element={<InterviewPackPage />} />
+            <Route path="/interview-pack"  element={<InterviewPackRedirect />} />
             <Route path="/cv-builder"      element={<CVBuilderPage />} />
             <Route path="/roadmap"         element={<RoadmapPage />} />
             <Route path="/achievements"    element={<AchievementsPage />} />

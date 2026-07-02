@@ -44,7 +44,7 @@ async def get_current_user(
     # 4. Check if this specific token was revoked (logged out)
     jti = payload.get("jti")
     if jti:
-        cache = get_cache()
+        cache = await get_cache()
         if await cache.get(f"blacklist:{jti}"):
             raise AuthenticationError("Token has been revoked.")
 

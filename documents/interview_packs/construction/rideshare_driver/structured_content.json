@@ -1,0 +1,3093 @@
+{
+  "role_name": "Rideshare Driver",
+  "role_slug": "rideshare_driver",
+  "category": "construction",
+  "role_overview": {
+    "role_name": "Rideshare Driver",
+    "summary": "The Rideshare Driver role integrates Safe driving, Navigation, Customer service to deliver on responsibilities such as transport passengers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Transport passengers",
+      "Maintain vehicle cleanliness",
+      "Follow platform policies"
+    ],
+    "required_skills": [
+      "Safe driving",
+      "Navigation",
+      "Customer service"
+    ],
+    "what_employers_expect": [
+      "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: Driving license."
+    ],
+    "skill_clusters": [
+      "Hospitality Operations"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Walk me through how you would explain Safe driving to a teammate who has never used it in a Rideshare Driver context while handling 'Transport passengers'.",
+      "why_asked": "Tests genuine conceptual understanding of Safe driving, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Safe driving",
+      "question_id": "RIDESHARE-DRIVER-SAFE-DRIVING-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ],
+      "common_mistakes": [
+        "Executing Safe Driving without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Rideshare Driver context, Safe Driving starts with plan route with constraints: time windows, capacity, and risk points. and continues through perform pre-shift safety and documentation checks.. The critical discipline is evidence: on-time performance depends on exception handling, not only route planning.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how transport passengers stays reliable under real operational constraints.\n\nAs Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+      "answer_explanation": "Key knowledge demonstrated for Safe Driving:\n\u2022 On-time performance depends on exception handling, not only route planning.\n\u2022 Proof-of-delivery integrity reduces disputes and write-offs.\n\u2022 Pre-shift checks prevent high-cost roadside failures.\nStandards referenced: Route compliance policy, Vehicle/asset safety checks",
+      "study_material": {
+        "overview": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Safe Driving directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "definitions": [
+          {
+            "term": "Safe Driving",
+            "definition": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Applicable standard/regulation: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Applicable standard/regulation: Vehicle/asset safety checks."
+          },
+          {
+            "term": "Proof-of-delivery controls",
+            "definition": "Applicable standard/regulation: Proof-of-delivery controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Safe Driving",
+            "explanation": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Safe Driving directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Navigation",
+            "explanation": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          }
+        ],
+        "principles": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "key_concepts": [
+          "Safe Driving",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "hospitality operations",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "step_by_step_breakdown": [
+          "Plan route with constraints: time windows, capacity, and risk points.",
+          "Perform pre-shift safety and documentation checks.",
+          "Execute deliveries with scan/PoD discipline and exception logging.",
+          "Handle disruptions with dynamic rerouting and customer updates.",
+          "Reconcile manifests and incident reports end of shift."
+        ],
+        "explanations": [
+          "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Safe Driving directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        ],
+        "practical_example": "As Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+        "common_mistakes": [
+          "Executing Safe Driving without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Safe Driving applies to: Transport passengers.",
+          "List the standards that govern Safe Driving in Rideshare Driver work.",
+          "Write out the verification steps after completing a Safe Driving task."
+        ],
+        "revision_notes": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "related_concepts": [
+          "Safe Driving",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Safe Driving applies to: Transport passengers.",
+        "List the standards that govern Safe Driving in Rideshare Driver work.",
+        "Write out the verification steps after completing a Safe Driving task."
+      ],
+      "revision_notes": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "In your Rideshare Driver experience while handling 'Transport passengers', what high-stakes incident required deep use of Safe driving, and how did you resolve it?",
+      "why_asked": "Probes depth of hands-on experience with Safe driving under real constraints.",
+      "skill_tag": "Safe driving",
+      "question_id": "RIDESHARE-DRIVER-SAFE-DRIVING-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ],
+      "common_mistakes": [
+        "Executing Safe Driving without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Rideshare Driver context, Safe Driving starts with plan route with constraints: time windows, capacity, and risk points. and continues through perform pre-shift safety and documentation checks.. The critical discipline is evidence: on-time performance depends on exception handling, not only route planning.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how transport passengers stays reliable under real operational constraints.\n\nAs Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+      "answer_explanation": "Key knowledge demonstrated for Safe Driving:\n\u2022 On-time performance depends on exception handling, not only route planning.\n\u2022 Proof-of-delivery integrity reduces disputes and write-offs.\n\u2022 Pre-shift checks prevent high-cost roadside failures.\nStandards referenced: Route compliance policy, Vehicle/asset safety checks",
+      "study_material": {
+        "overview": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Safe Driving directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "definitions": [
+          {
+            "term": "Safe Driving",
+            "definition": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Applicable standard/regulation: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Applicable standard/regulation: Vehicle/asset safety checks."
+          },
+          {
+            "term": "Proof-of-delivery controls",
+            "definition": "Applicable standard/regulation: Proof-of-delivery controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Safe Driving",
+            "explanation": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Safe Driving directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Navigation",
+            "explanation": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          }
+        ],
+        "principles": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "key_concepts": [
+          "Safe Driving",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "hospitality operations",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "step_by_step_breakdown": [
+          "Plan route with constraints: time windows, capacity, and risk points.",
+          "Perform pre-shift safety and documentation checks.",
+          "Execute deliveries with scan/PoD discipline and exception logging.",
+          "Handle disruptions with dynamic rerouting and customer updates.",
+          "Reconcile manifests and incident reports end of shift."
+        ],
+        "explanations": [
+          "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Safe Driving directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        ],
+        "practical_example": "As Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+        "common_mistakes": [
+          "Executing Safe Driving without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Safe Driving applies to: Transport passengers.",
+          "List the standards that govern Safe Driving in Rideshare Driver work.",
+          "Write out the verification steps after completing a Safe Driving task."
+        ],
+        "revision_notes": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "related_concepts": [
+          "Safe Driving",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Safe Driving applies to: Transport passengers.",
+        "List the standards that govern Safe Driving in Rideshare Driver work.",
+        "Write out the verification steps after completing a Safe Driving task."
+      ],
+      "revision_notes": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Rideshare Driver practitioner in Safe driving while handling 'Transport passengers'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Safe driving from those who only name-drop it.",
+      "skill_tag": "Safe driving",
+      "terminology_terms": [
+        {
+          "term": "Safe Driving",
+          "definition": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        },
+        {
+          "term": "Route compliance policy",
+          "definition": "Standard/framework governing Safe Driving: Route compliance policy."
+        },
+        {
+          "term": "Vehicle/asset safety checks",
+          "definition": "Standard/framework governing Safe Driving: Vehicle/asset safety checks."
+        },
+        {
+          "term": "Proof-of-delivery controls",
+          "definition": "Standard/framework governing Safe Driving: Proof-of-delivery controls."
+        },
+        {
+          "term": "On-time performance depends on exception",
+          "definition": "On-time performance depends on exception handling, not only route planning."
+        },
+        {
+          "term": "Proof-of-delivery integrity reduces disp",
+          "definition": "Proof-of-delivery integrity reduces disputes and write-offs."
+        },
+        {
+          "term": "Pre-shift checks prevent high-cost roads",
+          "definition": "Pre-shift checks prevent high-cost roadside failures."
+        },
+        {
+          "term": "On-time performance depends on exception handling, not only route planning.",
+          "definition": "Related concept used with Safe Driving in professional practice."
+        }
+      ],
+      "question_id": "RIDESHARE-DRIVER-SAFE-DRIVING-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Safe Driving: Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+        "Route compliance policy: Standard/framework governing Safe Driving: Route compliance policy.",
+        "Vehicle/asset safety checks: Standard/framework governing Safe Driving: Vehicle/asset safety checks.",
+        "Proof-of-delivery controls: Standard/framework governing Safe Driving: Proof-of-delivery controls.",
+        "On-time performance depends on exception: On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disp: Proof-of-delivery integrity reduces disputes and write-offs."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Rideshare Driver work, these terms are foundational:\n\n\n**Safe Driving** \u2014 Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.\n\n**Route compliance policy** \u2014 Standard/framework governing Safe Driving: Route compliance policy.\n\n**Vehicle/asset safety checks** \u2014 Standard/framework governing Safe Driving: Vehicle/asset safety checks.\n\n**Proof-of-delivery controls** \u2014 Standard/framework governing Safe Driving: Proof-of-delivery controls.\n\n**On-time performance depends on exception** \u2014 On-time performance depends on exception handling, not only route planning.\n\n**Proof-of-delivery integrity reduces disp** \u2014 Proof-of-delivery integrity reduces disputes and write-offs.\n\n**Pre-shift checks prevent high-cost roads** \u2014 Pre-shift checks prevent high-cost roadside failures.\n\n**On-time performance depends on exception handling, not only route planning.** \u2014 Related concept used with Safe Driving in professional practice.",
+      "answer_explanation": "Definitions covered: Safe Driving, Route compliance policy, Vehicle/asset safety checks, Proof-of-delivery controls, On-time performance depends on exception, Proof-of-delivery integrity reduces disp",
+      "study_material": {
+        "overview": "Core terminology for Safe Driving \u2014 precise definitions required for Rideshare Driver interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Safe Driving terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Safe Driving",
+            "definition": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Standard/framework governing Safe Driving: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Standard/framework governing Safe Driving: Vehicle/asset safety checks."
+          },
+          {
+            "term": "Proof-of-delivery controls",
+            "definition": "Standard/framework governing Safe Driving: Proof-of-delivery controls."
+          },
+          {
+            "term": "On-time performance depends on exception",
+            "definition": "On-time performance depends on exception handling, not only route planning."
+          },
+          {
+            "term": "Proof-of-delivery integrity reduces disp",
+            "definition": "Proof-of-delivery integrity reduces disputes and write-offs."
+          },
+          {
+            "term": "Pre-shift checks prevent high-cost roads",
+            "definition": "Pre-shift checks prevent high-cost roadside failures."
+          },
+          {
+            "term": "On-time performance depends on exception handling, not only route planning.",
+            "definition": "Related concept used with Safe Driving in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Safe Driving",
+            "explanation": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "skill": "Route compliance policy",
+            "explanation": "Standard/framework governing Safe Driving: Route compliance policy."
+          },
+          {
+            "skill": "Vehicle/asset safety checks",
+            "explanation": "Standard/framework governing Safe Driving: Vehicle/asset safety checks."
+          },
+          {
+            "skill": "Proof-of-delivery controls",
+            "explanation": "Standard/framework governing Safe Driving: Proof-of-delivery controls."
+          },
+          {
+            "skill": "On-time performance depends on exception",
+            "explanation": "On-time performance depends on exception handling, not only route planning."
+          },
+          {
+            "skill": "Proof-of-delivery integrity reduces disp",
+            "explanation": "Proof-of-delivery integrity reduces disputes and write-offs."
+          },
+          {
+            "skill": "Pre-shift checks prevent high-cost roads",
+            "explanation": "Pre-shift checks prevent high-cost roadside failures."
+          },
+          {
+            "skill": "On-time performance depends on exception handling, not only route planning.",
+            "explanation": "Related concept used with Safe Driving in professional practice."
+          }
+        ],
+        "principles": [
+          "Safe Driving: Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "Route compliance policy: Standard/framework governing Safe Driving: Route compliance policy.",
+          "Vehicle/asset safety checks: Standard/framework governing Safe Driving: Vehicle/asset safety checks.",
+          "Proof-of-delivery controls: Standard/framework governing Safe Driving: Proof-of-delivery controls.",
+          "On-time performance depends on exception: On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disp: Proof-of-delivery integrity reduces disputes and write-offs."
+        ],
+        "key_concepts": [
+          "Safe Driving",
+          "Route compliance policy",
+          "Vehicle/asset safety checks",
+          "Proof-of-delivery controls",
+          "On-time performance depends on exception",
+          "Proof-of-delivery integrity reduces disp",
+          "Pre-shift checks prevent high-cost roads",
+          "On-time performance depends on exception handling, not only route planning."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Safe Driving** \u2014 Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "**Route compliance policy** \u2014 Standard/framework governing Safe Driving: Route compliance policy.",
+          "**Vehicle/asset safety checks** \u2014 Standard/framework governing Safe Driving: Vehicle/asset safety checks.",
+          "**Proof-of-delivery controls** \u2014 Standard/framework governing Safe Driving: Proof-of-delivery controls.",
+          "**On-time performance depends on exception** \u2014 On-time performance depends on exception handling, not only route planning.",
+          "**Proof-of-delivery integrity reduces disp** \u2014 Proof-of-delivery integrity reduces disputes and write-offs.",
+          "**Pre-shift checks prevent high-cost roads** \u2014 Pre-shift checks prevent high-cost roadside failures.",
+          "**On-time performance depends on exception handling, not only route planning.** \u2014 Related concept used with Safe Driving in professional practice."
+        ],
+        "practical_example": "\u2022 Safe Driving: Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.\n\u2022 Route compliance policy: Standard/framework governing Safe Driving: Route compliance policy.\n\u2022 Vehicle/asset safety checks: Standard/framework governing Safe Driving: Vehicle/asset safety checks.\n\u2022 Proof-of-delivery controls: Standard/framework governing Safe Driving: Proof-of-delivery controls.\n\u2022 On-time performance depends on exception: On-time performance depends on exception handling, not only route planning.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Safe Driving terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Safe Driving",
+          "Route compliance policy",
+          "Vehicle/asset safety checks",
+          "Proof-of-delivery controls",
+          "On-time performance depends on exception",
+          "Proof-of-delivery integrity reduces disp",
+          "Pre-shift checks prevent high-cost roads",
+          "On-time performance depends on exception handling, not only route planning."
+        ],
+        "related_concepts": [
+          "Safe Driving",
+          "Route compliance policy",
+          "Vehicle/asset safety checks",
+          "Proof-of-delivery controls",
+          "On-time performance depends on exception",
+          "Proof-of-delivery integrity reduces disp",
+          "Pre-shift checks prevent high-cost roads",
+          "On-time performance depends on exception handling, not only route planning."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Safe Driving terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Safe Driving",
+        "Route compliance policy",
+        "Vehicle/asset safety checks",
+        "Proof-of-delivery controls",
+        "On-time performance depends on exception",
+        "Proof-of-delivery integrity reduces disp",
+        "Pre-shift checks prevent high-cost roads",
+        "On-time performance depends on exception handling, not only route planning."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "When performing Safe driving as a Rideshare Driver while handling 'Transport passengers', what are the governing principles, checkpoints, and sign-off criteria?",
+      "why_asked": "Tests whether you know how Safe driving is actually executed to standard, not only what it is called.",
+      "skill_tag": "Safe driving",
+      "question_id": "RIDESHARE-DRIVER-SAFE-DRIVING-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Safe Driving as a Rideshare Driver:\n\n1. On-time performance depends on exception handling, not only route planning.\n2. Proof-of-delivery integrity reduces disputes and write-offs.\n3. Pre-shift checks prevent high-cost roadside failures.\n\nStandard workflow:\n1. Plan route with constraints: time windows, capacity, and risk points.\n2. Perform pre-shift safety and documentation checks.\n3. Execute deliveries with scan/PoD discipline and exception logging.\n4. Handle disruptions with dynamic rerouting and customer updates.\n5. Reconcile manifests and incident reports end of shift.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Safe Driving \u2014 how work is executed to standard in Rideshare Driver roles.",
+        "what_you_need_to_know_first": [
+          "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Safe Driving",
+            "definition": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Safe Driving",
+            "explanation": "On-time performance depends on exception handling, not only route planning."
+          },
+          {
+            "skill": "Safe Driving",
+            "explanation": "Proof-of-delivery integrity reduces disputes and write-offs."
+          },
+          {
+            "skill": "Safe Driving",
+            "explanation": "Pre-shift checks prevent high-cost roadside failures."
+          }
+        ],
+        "principles": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "key_concepts": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "step_by_step_breakdown": [
+          "Plan route with constraints: time windows, capacity, and risk points.",
+          "Perform pre-shift safety and documentation checks.",
+          "Execute deliveries with scan/PoD discipline and exception logging.",
+          "Handle disruptions with dynamic rerouting and customer updates.",
+          "Reconcile manifests and incident reports end of shift."
+        ],
+        "explanations": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "practical_example": "1. Plan route with constraints: time windows, capacity, and risk points.\n2. Perform pre-shift safety and documentation checks.\n3. Execute deliveries with scan/PoD discipline and exception logging.\n4. Handle disruptions with dynamic rerouting and customer updates.\n5. Reconcile manifests and incident reports end of shift.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Safe Driving workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "related_concepts": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Safe Driving workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Calculation / quantitative question for Rideshare Driver (Safe driving) while handling 'Transport passengers': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Safe driving \u2014 essential for Rideshare Driver roles.",
+      "skill_tag": "Safe driving",
+      "calculation": {
+        "skill": "Safe Driving",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "RIDESHARE-DRIVER-SAFE-DRIVING-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Rideshare Driver practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Safe Driving: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Safe Driving calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Safe Driving",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Safe Driving calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Walk me through how you would explain Navigation to a teammate who has never used it in a Rideshare Driver context while handling 'Transport passengers'.",
+      "why_asked": "Tests genuine conceptual understanding of Navigation, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Navigation",
+      "question_id": "RIDESHARE-DRIVER-NAVIGATION-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Navigation",
+        "Safe driving",
+        "Customer service",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ],
+      "common_mistakes": [
+        "Executing Navigation without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Rideshare Driver context, Navigation starts with plan route with constraints: time windows, capacity, and risk points. and continues through perform pre-shift safety and documentation checks.. The critical discipline is evidence: on-time performance depends on exception handling, not only route planning.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how transport passengers stays reliable under real operational constraints.\n\nAs Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+      "answer_explanation": "Key knowledge demonstrated for Navigation:\n\u2022 On-time performance depends on exception handling, not only route planning.\n\u2022 Proof-of-delivery integrity reduces disputes and write-offs.\n\u2022 Pre-shift checks prevent high-cost roadside failures.\nStandards referenced: Route compliance policy, Vehicle/asset safety checks",
+      "study_material": {
+        "overview": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Navigation directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "definitions": [
+          {
+            "term": "Navigation",
+            "definition": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Applicable standard/regulation: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Applicable standard/regulation: Vehicle/asset safety checks."
+          },
+          {
+            "term": "Proof-of-delivery controls",
+            "definition": "Applicable standard/regulation: Proof-of-delivery controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Navigation",
+            "explanation": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Navigation directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Safe Driving",
+            "explanation": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          }
+        ],
+        "principles": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "key_concepts": [
+          "Navigation",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "hospitality operations",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "step_by_step_breakdown": [
+          "Plan route with constraints: time windows, capacity, and risk points.",
+          "Perform pre-shift safety and documentation checks.",
+          "Execute deliveries with scan/PoD discipline and exception logging.",
+          "Handle disruptions with dynamic rerouting and customer updates.",
+          "Reconcile manifests and incident reports end of shift."
+        ],
+        "explanations": [
+          "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Navigation directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        ],
+        "practical_example": "As Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+        "common_mistakes": [
+          "Executing Navigation without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Navigation applies to: Transport passengers.",
+          "List the standards that govern Navigation in Rideshare Driver work.",
+          "Write out the verification steps after completing a Navigation task."
+        ],
+        "revision_notes": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "related_concepts": [
+          "Navigation",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Navigation applies to: Transport passengers.",
+        "List the standards that govern Navigation in Rideshare Driver work.",
+        "Write out the verification steps after completing a Navigation task."
+      ],
+      "revision_notes": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe the most complex problem you've solved using Navigation as a Rideshare Driver while handling 'Transport passengers'.",
+      "why_asked": "Probes depth of hands-on experience with Navigation under real constraints.",
+      "skill_tag": "Navigation",
+      "question_id": "RIDESHARE-DRIVER-NAVIGATION-SCEN-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Navigation",
+        "Safe driving",
+        "Customer service",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ],
+      "common_mistakes": [
+        "Executing Navigation without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Rideshare Driver context, Navigation starts with plan route with constraints: time windows, capacity, and risk points. and continues through perform pre-shift safety and documentation checks.. The critical discipline is evidence: on-time performance depends on exception handling, not only route planning.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how transport passengers stays reliable under real operational constraints.\n\nAs Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+      "answer_explanation": "Key knowledge demonstrated for Navigation:\n\u2022 On-time performance depends on exception handling, not only route planning.\n\u2022 Proof-of-delivery integrity reduces disputes and write-offs.\n\u2022 Pre-shift checks prevent high-cost roadside failures.\nStandards referenced: Route compliance policy, Vehicle/asset safety checks",
+      "study_material": {
+        "overview": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Navigation directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "definitions": [
+          {
+            "term": "Navigation",
+            "definition": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Applicable standard/regulation: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Applicable standard/regulation: Vehicle/asset safety checks."
+          },
+          {
+            "term": "Proof-of-delivery controls",
+            "definition": "Applicable standard/regulation: Proof-of-delivery controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Navigation",
+            "explanation": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Navigation directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Safe Driving",
+            "explanation": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          }
+        ],
+        "principles": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "key_concepts": [
+          "Navigation",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "hospitality operations",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "step_by_step_breakdown": [
+          "Plan route with constraints: time windows, capacity, and risk points.",
+          "Perform pre-shift safety and documentation checks.",
+          "Execute deliveries with scan/PoD discipline and exception logging.",
+          "Handle disruptions with dynamic rerouting and customer updates.",
+          "Reconcile manifests and incident reports end of shift."
+        ],
+        "explanations": [
+          "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Navigation directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        ],
+        "practical_example": "As Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+        "common_mistakes": [
+          "Executing Navigation without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Navigation applies to: Transport passengers.",
+          "List the standards that govern Navigation in Rideshare Driver work.",
+          "Write out the verification steps after completing a Navigation task."
+        ],
+        "revision_notes": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "related_concepts": [
+          "Navigation",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Navigation applies to: Transport passengers.",
+        "List the standards that govern Navigation in Rideshare Driver work.",
+        "Write out the verification steps after completing a Navigation task."
+      ],
+      "revision_notes": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Rideshare Driver practitioner in Navigation while handling 'Transport passengers'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Navigation from those who only name-drop it.",
+      "skill_tag": "Navigation",
+      "terminology_terms": [
+        {
+          "term": "Navigation",
+          "definition": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        },
+        {
+          "term": "Route compliance policy",
+          "definition": "Standard/framework governing Navigation: Route compliance policy."
+        },
+        {
+          "term": "Vehicle/asset safety checks",
+          "definition": "Standard/framework governing Navigation: Vehicle/asset safety checks."
+        },
+        {
+          "term": "Proof-of-delivery controls",
+          "definition": "Standard/framework governing Navigation: Proof-of-delivery controls."
+        },
+        {
+          "term": "On-time performance depends on exception",
+          "definition": "On-time performance depends on exception handling, not only route planning."
+        },
+        {
+          "term": "Proof-of-delivery integrity reduces disp",
+          "definition": "Proof-of-delivery integrity reduces disputes and write-offs."
+        },
+        {
+          "term": "Pre-shift checks prevent high-cost roads",
+          "definition": "Pre-shift checks prevent high-cost roadside failures."
+        },
+        {
+          "term": "On-time performance depends on exception handling, not only route planning.",
+          "definition": "Related concept used with Navigation in professional practice."
+        }
+      ],
+      "question_id": "RIDESHARE-DRIVER-NAVIGATION-TERM-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Navigation",
+        "Safe driving",
+        "Customer service",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Navigation: Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+        "Route compliance policy: Standard/framework governing Navigation: Route compliance policy.",
+        "Vehicle/asset safety checks: Standard/framework governing Navigation: Vehicle/asset safety checks.",
+        "Proof-of-delivery controls: Standard/framework governing Navigation: Proof-of-delivery controls.",
+        "On-time performance depends on exception: On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disp: Proof-of-delivery integrity reduces disputes and write-offs."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Rideshare Driver work, these terms are foundational:\n\n\n**Navigation** \u2014 Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.\n\n**Route compliance policy** \u2014 Standard/framework governing Navigation: Route compliance policy.\n\n**Vehicle/asset safety checks** \u2014 Standard/framework governing Navigation: Vehicle/asset safety checks.\n\n**Proof-of-delivery controls** \u2014 Standard/framework governing Navigation: Proof-of-delivery controls.\n\n**On-time performance depends on exception** \u2014 On-time performance depends on exception handling, not only route planning.\n\n**Proof-of-delivery integrity reduces disp** \u2014 Proof-of-delivery integrity reduces disputes and write-offs.\n\n**Pre-shift checks prevent high-cost roads** \u2014 Pre-shift checks prevent high-cost roadside failures.\n\n**On-time performance depends on exception handling, not only route planning.** \u2014 Related concept used with Navigation in professional practice.",
+      "answer_explanation": "Definitions covered: Navigation, Route compliance policy, Vehicle/asset safety checks, Proof-of-delivery controls, On-time performance depends on exception, Proof-of-delivery integrity reduces disp",
+      "study_material": {
+        "overview": "Core terminology for Navigation \u2014 precise definitions required for Rideshare Driver interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Navigation terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Navigation",
+            "definition": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Standard/framework governing Navigation: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Standard/framework governing Navigation: Vehicle/asset safety checks."
+          },
+          {
+            "term": "Proof-of-delivery controls",
+            "definition": "Standard/framework governing Navigation: Proof-of-delivery controls."
+          },
+          {
+            "term": "On-time performance depends on exception",
+            "definition": "On-time performance depends on exception handling, not only route planning."
+          },
+          {
+            "term": "Proof-of-delivery integrity reduces disp",
+            "definition": "Proof-of-delivery integrity reduces disputes and write-offs."
+          },
+          {
+            "term": "Pre-shift checks prevent high-cost roads",
+            "definition": "Pre-shift checks prevent high-cost roadside failures."
+          },
+          {
+            "term": "On-time performance depends on exception handling, not only route planning.",
+            "definition": "Related concept used with Navigation in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Navigation",
+            "explanation": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "skill": "Route compliance policy",
+            "explanation": "Standard/framework governing Navigation: Route compliance policy."
+          },
+          {
+            "skill": "Vehicle/asset safety checks",
+            "explanation": "Standard/framework governing Navigation: Vehicle/asset safety checks."
+          },
+          {
+            "skill": "Proof-of-delivery controls",
+            "explanation": "Standard/framework governing Navigation: Proof-of-delivery controls."
+          },
+          {
+            "skill": "On-time performance depends on exception",
+            "explanation": "On-time performance depends on exception handling, not only route planning."
+          },
+          {
+            "skill": "Proof-of-delivery integrity reduces disp",
+            "explanation": "Proof-of-delivery integrity reduces disputes and write-offs."
+          },
+          {
+            "skill": "Pre-shift checks prevent high-cost roads",
+            "explanation": "Pre-shift checks prevent high-cost roadside failures."
+          },
+          {
+            "skill": "On-time performance depends on exception handling, not only route planning.",
+            "explanation": "Related concept used with Navigation in professional practice."
+          }
+        ],
+        "principles": [
+          "Navigation: Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "Route compliance policy: Standard/framework governing Navigation: Route compliance policy.",
+          "Vehicle/asset safety checks: Standard/framework governing Navigation: Vehicle/asset safety checks.",
+          "Proof-of-delivery controls: Standard/framework governing Navigation: Proof-of-delivery controls.",
+          "On-time performance depends on exception: On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disp: Proof-of-delivery integrity reduces disputes and write-offs."
+        ],
+        "key_concepts": [
+          "Navigation",
+          "Route compliance policy",
+          "Vehicle/asset safety checks",
+          "Proof-of-delivery controls",
+          "On-time performance depends on exception",
+          "Proof-of-delivery integrity reduces disp",
+          "Pre-shift checks prevent high-cost roads",
+          "On-time performance depends on exception handling, not only route planning."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Navigation** \u2014 Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "**Route compliance policy** \u2014 Standard/framework governing Navigation: Route compliance policy.",
+          "**Vehicle/asset safety checks** \u2014 Standard/framework governing Navigation: Vehicle/asset safety checks.",
+          "**Proof-of-delivery controls** \u2014 Standard/framework governing Navigation: Proof-of-delivery controls.",
+          "**On-time performance depends on exception** \u2014 On-time performance depends on exception handling, not only route planning.",
+          "**Proof-of-delivery integrity reduces disp** \u2014 Proof-of-delivery integrity reduces disputes and write-offs.",
+          "**Pre-shift checks prevent high-cost roads** \u2014 Pre-shift checks prevent high-cost roadside failures.",
+          "**On-time performance depends on exception handling, not only route planning.** \u2014 Related concept used with Navigation in professional practice."
+        ],
+        "practical_example": "\u2022 Navigation: Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.\n\u2022 Route compliance policy: Standard/framework governing Navigation: Route compliance policy.\n\u2022 Vehicle/asset safety checks: Standard/framework governing Navigation: Vehicle/asset safety checks.\n\u2022 Proof-of-delivery controls: Standard/framework governing Navigation: Proof-of-delivery controls.\n\u2022 On-time performance depends on exception: On-time performance depends on exception handling, not only route planning.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Navigation terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Navigation",
+          "Route compliance policy",
+          "Vehicle/asset safety checks",
+          "Proof-of-delivery controls",
+          "On-time performance depends on exception",
+          "Proof-of-delivery integrity reduces disp",
+          "Pre-shift checks prevent high-cost roads",
+          "On-time performance depends on exception handling, not only route planning."
+        ],
+        "related_concepts": [
+          "Navigation",
+          "Route compliance policy",
+          "Vehicle/asset safety checks",
+          "Proof-of-delivery controls",
+          "On-time performance depends on exception",
+          "Proof-of-delivery integrity reduces disp",
+          "Pre-shift checks prevent high-cost roads",
+          "On-time performance depends on exception handling, not only route planning."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Navigation terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Navigation",
+        "Route compliance policy",
+        "Vehicle/asset safety checks",
+        "Proof-of-delivery controls",
+        "On-time performance depends on exception",
+        "Proof-of-delivery integrity reduces disp",
+        "Pre-shift checks prevent high-cost roads",
+        "On-time performance depends on exception handling, not only route planning."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "When performing Navigation as a Rideshare Driver while handling 'Transport passengers', what are the governing principles, checkpoints, and sign-off criteria?",
+      "why_asked": "Tests whether you know how Navigation is actually executed to standard, not only what it is called.",
+      "skill_tag": "Navigation",
+      "question_id": "RIDESHARE-DRIVER-NAVIGATION-PRIN-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Navigation",
+        "Safe driving",
+        "Customer service",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Navigation as a Rideshare Driver:\n\n1. On-time performance depends on exception handling, not only route planning.\n2. Proof-of-delivery integrity reduces disputes and write-offs.\n3. Pre-shift checks prevent high-cost roadside failures.\n\nStandard workflow:\n1. Plan route with constraints: time windows, capacity, and risk points.\n2. Perform pre-shift safety and documentation checks.\n3. Execute deliveries with scan/PoD discipline and exception logging.\n4. Handle disruptions with dynamic rerouting and customer updates.\n5. Reconcile manifests and incident reports end of shift.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Navigation \u2014 how work is executed to standard in Rideshare Driver roles.",
+        "what_you_need_to_know_first": [
+          "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Navigation",
+            "definition": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Navigation",
+            "explanation": "On-time performance depends on exception handling, not only route planning."
+          },
+          {
+            "skill": "Navigation",
+            "explanation": "Proof-of-delivery integrity reduces disputes and write-offs."
+          },
+          {
+            "skill": "Navigation",
+            "explanation": "Pre-shift checks prevent high-cost roadside failures."
+          }
+        ],
+        "principles": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "key_concepts": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "step_by_step_breakdown": [
+          "Plan route with constraints: time windows, capacity, and risk points.",
+          "Perform pre-shift safety and documentation checks.",
+          "Execute deliveries with scan/PoD discipline and exception logging.",
+          "Handle disruptions with dynamic rerouting and customer updates.",
+          "Reconcile manifests and incident reports end of shift."
+        ],
+        "explanations": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "practical_example": "1. Plan route with constraints: time windows, capacity, and risk points.\n2. Perform pre-shift safety and documentation checks.\n3. Execute deliveries with scan/PoD discipline and exception logging.\n4. Handle disruptions with dynamic rerouting and customer updates.\n5. Reconcile manifests and incident reports end of shift.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Navigation workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "related_concepts": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Navigation workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Walk me through how you would explain Customer service to a teammate who has never used it in a Rideshare Driver context while handling 'Transport passengers'.",
+      "why_asked": "Tests genuine conceptual understanding of Customer service, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Customer service",
+      "question_id": "RIDESHARE-DRIVER-CUSTOMER-SER-EXPL-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Safe driving",
+        "Navigation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ],
+      "common_mistakes": [
+        "Executing Customer Service without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Rideshare Driver context, Customer Service starts with plan route with constraints: time windows, capacity, and risk points. and continues through perform pre-shift safety and documentation checks.. The critical discipline is evidence: on-time performance depends on exception handling, not only route planning.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how transport passengers stays reliable under real operational constraints.\n\nAs Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+      "answer_explanation": "Key knowledge demonstrated for Customer Service:\n\u2022 On-time performance depends on exception handling, not only route planning.\n\u2022 Proof-of-delivery integrity reduces disputes and write-offs.\n\u2022 Pre-shift checks prevent high-cost roadside failures.\nStandards referenced: Route compliance policy, Vehicle/asset safety checks",
+      "study_material": {
+        "overview": "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Customer Service directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "definitions": [
+          {
+            "term": "Customer Service",
+            "definition": "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Applicable standard/regulation: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Applicable standard/regulation: Vehicle/asset safety checks."
+          },
+          {
+            "term": "Proof-of-delivery controls",
+            "definition": "Applicable standard/regulation: Proof-of-delivery controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Customer Service",
+            "explanation": "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Customer Service directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Safe Driving",
+            "explanation": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          }
+        ],
+        "principles": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "key_concepts": [
+          "Customer Service",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "hospitality operations",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "step_by_step_breakdown": [
+          "Plan route with constraints: time windows, capacity, and risk points.",
+          "Perform pre-shift safety and documentation checks.",
+          "Execute deliveries with scan/PoD discipline and exception logging.",
+          "Handle disruptions with dynamic rerouting and customer updates.",
+          "Reconcile manifests and incident reports end of shift."
+        ],
+        "explanations": [
+          "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Customer Service directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        ],
+        "practical_example": "As Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+        "common_mistakes": [
+          "Executing Customer Service without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Customer Service applies to: Transport passengers.",
+          "List the standards that govern Customer Service in Rideshare Driver work.",
+          "Write out the verification steps after completing a Customer Service task."
+        ],
+        "revision_notes": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "related_concepts": [
+          "Customer Service",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Customer Service applies to: Transport passengers.",
+        "List the standards that govern Customer Service in Rideshare Driver work.",
+        "Write out the verification steps after completing a Customer Service task."
+      ],
+      "revision_notes": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Give a detailed example where Customer service was critical to recovering a difficult Rideshare Driver outcome while handling 'Transport passengers'.",
+      "why_asked": "Probes depth of hands-on experience with Customer service under real constraints.",
+      "skill_tag": "Customer service",
+      "question_id": "RIDESHARE-DRIVER-CUSTOMER-SER-SCEN-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Safe driving",
+        "Navigation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ],
+      "common_mistakes": [
+        "Executing Customer Service without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Rideshare Driver context, Customer Service starts with plan route with constraints: time windows, capacity, and risk points. and continues through perform pre-shift safety and documentation checks.. The critical discipline is evidence: on-time performance depends on exception handling, not only route planning.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how transport passengers stays reliable under real operational constraints.\n\nAs Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+      "answer_explanation": "Key knowledge demonstrated for Customer Service:\n\u2022 On-time performance depends on exception handling, not only route planning.\n\u2022 Proof-of-delivery integrity reduces disputes and write-offs.\n\u2022 Pre-shift checks prevent high-cost roadside failures.\nStandards referenced: Route compliance policy, Vehicle/asset safety checks",
+      "study_material": {
+        "overview": "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Customer Service directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "definitions": [
+          {
+            "term": "Customer Service",
+            "definition": "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Applicable standard/regulation: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Applicable standard/regulation: Vehicle/asset safety checks."
+          },
+          {
+            "term": "Proof-of-delivery controls",
+            "definition": "Applicable standard/regulation: Proof-of-delivery controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Customer Service",
+            "explanation": "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Customer Service directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Safe Driving",
+            "explanation": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          }
+        ],
+        "principles": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "key_concepts": [
+          "Customer Service",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "hospitality operations",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "step_by_step_breakdown": [
+          "Plan route with constraints: time windows, capacity, and risk points.",
+          "Perform pre-shift safety and documentation checks.",
+          "Execute deliveries with scan/PoD discipline and exception logging.",
+          "Handle disruptions with dynamic rerouting and customer updates.",
+          "Reconcile manifests and incident reports end of shift."
+        ],
+        "explanations": [
+          "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Customer Service directly supports transport passengers. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        ],
+        "practical_example": "As Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+        "common_mistakes": [
+          "Executing Customer Service without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Customer Service applies to: Transport passengers.",
+          "List the standards that govern Customer Service in Rideshare Driver work.",
+          "Write out the verification steps after completing a Customer Service task."
+        ],
+        "revision_notes": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "related_concepts": [
+          "Customer Service",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Customer Service applies to: Transport passengers.",
+        "List the standards that govern Customer Service in Rideshare Driver work.",
+        "Write out the verification steps after completing a Customer Service task."
+      ],
+      "revision_notes": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "What are the essential technical terms every Rideshare Driver must know when working with Customer service while handling 'Transport passengers'? Define each precisely.",
+      "why_asked": "Core terminology separates practitioners who understand Customer service from those who only name-drop it.",
+      "skill_tag": "Customer service",
+      "terminology_terms": [
+        {
+          "term": "Customer Service",
+          "definition": "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        },
+        {
+          "term": "Route compliance policy",
+          "definition": "Standard/framework governing Customer Service: Route compliance policy."
+        },
+        {
+          "term": "Vehicle/asset safety checks",
+          "definition": "Standard/framework governing Customer Service: Vehicle/asset safety checks."
+        },
+        {
+          "term": "Proof-of-delivery controls",
+          "definition": "Standard/framework governing Customer Service: Proof-of-delivery controls."
+        },
+        {
+          "term": "On-time performance depends on exception",
+          "definition": "On-time performance depends on exception handling, not only route planning."
+        },
+        {
+          "term": "Proof-of-delivery integrity reduces disp",
+          "definition": "Proof-of-delivery integrity reduces disputes and write-offs."
+        },
+        {
+          "term": "Pre-shift checks prevent high-cost roads",
+          "definition": "Pre-shift checks prevent high-cost roadside failures."
+        },
+        {
+          "term": "On-time performance depends on exception handling, not only route planning.",
+          "definition": "Related concept used with Customer Service in professional practice."
+        }
+      ],
+      "question_id": "RIDESHARE-DRIVER-CUSTOMER-SER-TERM-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Safe driving",
+        "Navigation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Customer Service: Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+        "Route compliance policy: Standard/framework governing Customer Service: Route compliance policy.",
+        "Vehicle/asset safety checks: Standard/framework governing Customer Service: Vehicle/asset safety checks.",
+        "Proof-of-delivery controls: Standard/framework governing Customer Service: Proof-of-delivery controls.",
+        "On-time performance depends on exception: On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disp: Proof-of-delivery integrity reduces disputes and write-offs."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Rideshare Driver work, these terms are foundational:\n\n\n**Customer Service** \u2014 Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.\n\n**Route compliance policy** \u2014 Standard/framework governing Customer Service: Route compliance policy.\n\n**Vehicle/asset safety checks** \u2014 Standard/framework governing Customer Service: Vehicle/asset safety checks.\n\n**Proof-of-delivery controls** \u2014 Standard/framework governing Customer Service: Proof-of-delivery controls.\n\n**On-time performance depends on exception** \u2014 On-time performance depends on exception handling, not only route planning.\n\n**Proof-of-delivery integrity reduces disp** \u2014 Proof-of-delivery integrity reduces disputes and write-offs.\n\n**Pre-shift checks prevent high-cost roads** \u2014 Pre-shift checks prevent high-cost roadside failures.\n\n**On-time performance depends on exception handling, not only route planning.** \u2014 Related concept used with Customer Service in professional practice.",
+      "answer_explanation": "Definitions covered: Customer Service, Route compliance policy, Vehicle/asset safety checks, Proof-of-delivery controls, On-time performance depends on exception, Proof-of-delivery integrity reduces disp",
+      "study_material": {
+        "overview": "Core terminology for Customer Service \u2014 precise definitions required for Rideshare Driver interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Customer Service terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Customer Service",
+            "definition": "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Standard/framework governing Customer Service: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Standard/framework governing Customer Service: Vehicle/asset safety checks."
+          },
+          {
+            "term": "Proof-of-delivery controls",
+            "definition": "Standard/framework governing Customer Service: Proof-of-delivery controls."
+          },
+          {
+            "term": "On-time performance depends on exception",
+            "definition": "On-time performance depends on exception handling, not only route planning."
+          },
+          {
+            "term": "Proof-of-delivery integrity reduces disp",
+            "definition": "Proof-of-delivery integrity reduces disputes and write-offs."
+          },
+          {
+            "term": "Pre-shift checks prevent high-cost roads",
+            "definition": "Pre-shift checks prevent high-cost roadside failures."
+          },
+          {
+            "term": "On-time performance depends on exception handling, not only route planning.",
+            "definition": "Related concept used with Customer Service in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Customer Service",
+            "explanation": "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "skill": "Route compliance policy",
+            "explanation": "Standard/framework governing Customer Service: Route compliance policy."
+          },
+          {
+            "skill": "Vehicle/asset safety checks",
+            "explanation": "Standard/framework governing Customer Service: Vehicle/asset safety checks."
+          },
+          {
+            "skill": "Proof-of-delivery controls",
+            "explanation": "Standard/framework governing Customer Service: Proof-of-delivery controls."
+          },
+          {
+            "skill": "On-time performance depends on exception",
+            "explanation": "On-time performance depends on exception handling, not only route planning."
+          },
+          {
+            "skill": "Proof-of-delivery integrity reduces disp",
+            "explanation": "Proof-of-delivery integrity reduces disputes and write-offs."
+          },
+          {
+            "skill": "Pre-shift checks prevent high-cost roads",
+            "explanation": "Pre-shift checks prevent high-cost roadside failures."
+          },
+          {
+            "skill": "On-time performance depends on exception handling, not only route planning.",
+            "explanation": "Related concept used with Customer Service in professional practice."
+          }
+        ],
+        "principles": [
+          "Customer Service: Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "Route compliance policy: Standard/framework governing Customer Service: Route compliance policy.",
+          "Vehicle/asset safety checks: Standard/framework governing Customer Service: Vehicle/asset safety checks.",
+          "Proof-of-delivery controls: Standard/framework governing Customer Service: Proof-of-delivery controls.",
+          "On-time performance depends on exception: On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disp: Proof-of-delivery integrity reduces disputes and write-offs."
+        ],
+        "key_concepts": [
+          "Customer Service",
+          "Route compliance policy",
+          "Vehicle/asset safety checks",
+          "Proof-of-delivery controls",
+          "On-time performance depends on exception",
+          "Proof-of-delivery integrity reduces disp",
+          "Pre-shift checks prevent high-cost roads",
+          "On-time performance depends on exception handling, not only route planning."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Customer Service** \u2014 Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "**Route compliance policy** \u2014 Standard/framework governing Customer Service: Route compliance policy.",
+          "**Vehicle/asset safety checks** \u2014 Standard/framework governing Customer Service: Vehicle/asset safety checks.",
+          "**Proof-of-delivery controls** \u2014 Standard/framework governing Customer Service: Proof-of-delivery controls.",
+          "**On-time performance depends on exception** \u2014 On-time performance depends on exception handling, not only route planning.",
+          "**Proof-of-delivery integrity reduces disp** \u2014 Proof-of-delivery integrity reduces disputes and write-offs.",
+          "**Pre-shift checks prevent high-cost roads** \u2014 Pre-shift checks prevent high-cost roadside failures.",
+          "**On-time performance depends on exception handling, not only route planning.** \u2014 Related concept used with Customer Service in professional practice."
+        ],
+        "practical_example": "\u2022 Customer Service: Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.\n\u2022 Route compliance policy: Standard/framework governing Customer Service: Route compliance policy.\n\u2022 Vehicle/asset safety checks: Standard/framework governing Customer Service: Vehicle/asset safety checks.\n\u2022 Proof-of-delivery controls: Standard/framework governing Customer Service: Proof-of-delivery controls.\n\u2022 On-time performance depends on exception: On-time performance depends on exception handling, not only route planning.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Customer Service terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Customer Service",
+          "Route compliance policy",
+          "Vehicle/asset safety checks",
+          "Proof-of-delivery controls",
+          "On-time performance depends on exception",
+          "Proof-of-delivery integrity reduces disp",
+          "Pre-shift checks prevent high-cost roads",
+          "On-time performance depends on exception handling, not only route planning."
+        ],
+        "related_concepts": [
+          "Customer Service",
+          "Route compliance policy",
+          "Vehicle/asset safety checks",
+          "Proof-of-delivery controls",
+          "On-time performance depends on exception",
+          "Proof-of-delivery integrity reduces disp",
+          "Pre-shift checks prevent high-cost roads",
+          "On-time performance depends on exception handling, not only route planning."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Customer Service terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Customer Service",
+        "Route compliance policy",
+        "Vehicle/asset safety checks",
+        "Proof-of-delivery controls",
+        "On-time performance depends on exception",
+        "Proof-of-delivery integrity reduces disp",
+        "Pre-shift checks prevent high-cost roads",
+        "On-time performance depends on exception handling, not only route planning."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the core operating principles and standard workflow for applying Customer service in a Rideshare Driver role while handling 'Transport passengers'?",
+      "why_asked": "Tests whether you know how Customer service is actually executed to standard, not only what it is called.",
+      "skill_tag": "Customer service",
+      "question_id": "RIDESHARE-DRIVER-CUSTOMER-SER-PRIN-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Safe driving",
+        "Navigation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Customer Service as a Rideshare Driver:\n\n1. On-time performance depends on exception handling, not only route planning.\n2. Proof-of-delivery integrity reduces disputes and write-offs.\n3. Pre-shift checks prevent high-cost roadside failures.\n\nStandard workflow:\n1. Plan route with constraints: time windows, capacity, and risk points.\n2. Perform pre-shift safety and documentation checks.\n3. Execute deliveries with scan/PoD discipline and exception logging.\n4. Handle disruptions with dynamic rerouting and customer updates.\n5. Reconcile manifests and incident reports end of shift.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Customer Service \u2014 how work is executed to standard in Rideshare Driver roles.",
+        "what_you_need_to_know_first": [
+          "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Customer Service",
+            "definition": "Customer Service in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Customer Service",
+            "explanation": "On-time performance depends on exception handling, not only route planning."
+          },
+          {
+            "skill": "Customer Service",
+            "explanation": "Proof-of-delivery integrity reduces disputes and write-offs."
+          },
+          {
+            "skill": "Customer Service",
+            "explanation": "Pre-shift checks prevent high-cost roadside failures."
+          }
+        ],
+        "principles": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "key_concepts": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "step_by_step_breakdown": [
+          "Plan route with constraints: time windows, capacity, and risk points.",
+          "Perform pre-shift safety and documentation checks.",
+          "Execute deliveries with scan/PoD discipline and exception logging.",
+          "Handle disruptions with dynamic rerouting and customer updates.",
+          "Reconcile manifests and incident reports end of shift."
+        ],
+        "explanations": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "practical_example": "1. Plan route with constraints: time windows, capacity, and risk points.\n2. Perform pre-shift safety and documentation checks.\n3. Execute deliveries with scan/PoD discipline and exception logging.\n4. Handle disruptions with dynamic rerouting and customer updates.\n5. Reconcile manifests and incident reports end of shift.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Customer Service workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "related_concepts": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Customer Service workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Quantitative validation scenario (Rideshare Driver, Customer service) while handling 'Transport passengers': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Customer service \u2014 essential for Rideshare Driver roles.",
+      "skill_tag": "Customer service",
+      "calculation": {
+        "skill": "Customer Service",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "RIDESHARE-DRIVER-CUSTOMER-SER-CALC-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Customer service",
+        "Safe driving",
+        "Navigation",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Rideshare Driver practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Customer Service: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Customer Service calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Customer Service",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Customer Service calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Rideshare Driver, define and explain these core professional terms: Safe Driving, Route compliance policy, Vehicle/asset safety checks, Navigation, Route compliance policy, Vehicle/asset safety checks.",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Safe Driving",
+          "definition": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        },
+        {
+          "term": "Route compliance policy",
+          "definition": "Standard/framework governing Safe Driving: Route compliance policy."
+        },
+        {
+          "term": "Vehicle/asset safety checks",
+          "definition": "Standard/framework governing Safe Driving: Vehicle/asset safety checks."
+        },
+        {
+          "term": "Navigation",
+          "definition": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        },
+        {
+          "term": "Route compliance policy",
+          "definition": "Standard/framework governing Navigation: Route compliance policy."
+        },
+        {
+          "term": "Vehicle/asset safety checks",
+          "definition": "Standard/framework governing Navigation: Vehicle/asset safety checks."
+        }
+      ],
+      "question_id": "RIDESHARE-DRIVER-CORE-TERMINO-TERM-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Safe Driving: Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+        "Route compliance policy: Standard/framework governing Safe Driving: Route compliance policy.",
+        "Vehicle/asset safety checks: Standard/framework governing Safe Driving: Vehicle/asset safety checks.",
+        "Navigation: Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+        "Route compliance policy: Standard/framework governing Navigation: Route compliance policy.",
+        "Vehicle/asset safety checks: Standard/framework governing Navigation: Vehicle/asset safety checks."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Rideshare Driver work, these terms are foundational:\n\n\n**Safe Driving** \u2014 Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.\n\n**Route compliance policy** \u2014 Standard/framework governing Safe Driving: Route compliance policy.\n\n**Vehicle/asset safety checks** \u2014 Standard/framework governing Safe Driving: Vehicle/asset safety checks.\n\n**Navigation** \u2014 Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.\n\n**Route compliance policy** \u2014 Standard/framework governing Navigation: Route compliance policy.\n\n**Vehicle/asset safety checks** \u2014 Standard/framework governing Navigation: Vehicle/asset safety checks.",
+      "answer_explanation": "Definitions covered: Safe Driving, Route compliance policy, Vehicle/asset safety checks, Navigation, Route compliance policy, Vehicle/asset safety checks",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Rideshare Driver interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Safe Driving",
+            "definition": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Standard/framework governing Safe Driving: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Standard/framework governing Safe Driving: Vehicle/asset safety checks."
+          },
+          {
+            "term": "Navigation",
+            "definition": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Standard/framework governing Navigation: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Standard/framework governing Navigation: Vehicle/asset safety checks."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Safe Driving",
+            "explanation": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "skill": "Route compliance policy",
+            "explanation": "Standard/framework governing Safe Driving: Route compliance policy."
+          },
+          {
+            "skill": "Vehicle/asset safety checks",
+            "explanation": "Standard/framework governing Safe Driving: Vehicle/asset safety checks."
+          },
+          {
+            "skill": "Navigation",
+            "explanation": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "skill": "Route compliance policy",
+            "explanation": "Standard/framework governing Navigation: Route compliance policy."
+          },
+          {
+            "skill": "Vehicle/asset safety checks",
+            "explanation": "Standard/framework governing Navigation: Vehicle/asset safety checks."
+          }
+        ],
+        "principles": [
+          "Safe Driving: Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "Route compliance policy: Standard/framework governing Safe Driving: Route compliance policy.",
+          "Vehicle/asset safety checks: Standard/framework governing Safe Driving: Vehicle/asset safety checks.",
+          "Navigation: Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "Route compliance policy: Standard/framework governing Navigation: Route compliance policy.",
+          "Vehicle/asset safety checks: Standard/framework governing Navigation: Vehicle/asset safety checks."
+        ],
+        "key_concepts": [
+          "Safe Driving",
+          "Route compliance policy",
+          "Vehicle/asset safety checks",
+          "Navigation",
+          "Route compliance policy",
+          "Vehicle/asset safety checks"
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Safe Driving** \u2014 Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "**Route compliance policy** \u2014 Standard/framework governing Safe Driving: Route compliance policy.",
+          "**Vehicle/asset safety checks** \u2014 Standard/framework governing Safe Driving: Vehicle/asset safety checks.",
+          "**Navigation** \u2014 Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.",
+          "**Route compliance policy** \u2014 Standard/framework governing Navigation: Route compliance policy.",
+          "**Vehicle/asset safety checks** \u2014 Standard/framework governing Navigation: Vehicle/asset safety checks."
+        ],
+        "practical_example": "\u2022 Safe Driving: Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.\n\u2022 Route compliance policy: Standard/framework governing Safe Driving: Route compliance policy.\n\u2022 Vehicle/asset safety checks: Standard/framework governing Safe Driving: Vehicle/asset safety checks.\n\u2022 Navigation: Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently.\n\u2022 Route compliance policy: Standard/framework governing Navigation: Route compliance policy.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Safe Driving",
+          "Route compliance policy",
+          "Vehicle/asset safety checks",
+          "Navigation",
+          "Route compliance policy",
+          "Vehicle/asset safety checks"
+        ],
+        "related_concepts": [
+          "Safe Driving",
+          "Route compliance policy",
+          "Vehicle/asset safety checks",
+          "Navigation",
+          "Route compliance policy",
+          "Vehicle/asset safety checks"
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Safe Driving",
+        "Route compliance policy",
+        "Vehicle/asset safety checks",
+        "Navigation",
+        "Route compliance policy",
+        "Vehicle/asset safety checks"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Transport passengers'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "RIDESHARE-DRIVER-BEHAVIORAL-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. \u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Rideshare Driver handles when transport passengers. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Rideshare Driver work involves transport passengers under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Rideshare Driver",
+            "definition": "The Rideshare Driver role integrates Safe driving, Navigation, Customer service to deliver on responsibilities such as transport passengers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Rideshare Driver reference transport passengers and relevant standards or tools."
+        ],
+        "practical_example": "In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Rideshare Driver challenge with numbers.",
+          "Link the story to: Transport passengers."
+        ],
+        "revision_notes": [
+          "Safe driving",
+          "Navigation",
+          "Customer service"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Rideshare Driver challenge with numbers.",
+        "Link the story to: Transport passengers."
+      ],
+      "revision_notes": [
+        "Safe driving",
+        "Navigation",
+        "Customer service"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Maintain vehicle cleanliness'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "RIDESHARE-DRIVER-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. \u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Rideshare Driver handles when transport passengers. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Rideshare Driver work involves transport passengers under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Rideshare Driver",
+            "definition": "The Rideshare Driver role integrates Safe driving, Navigation, Customer service to deliver on responsibilities such as transport passengers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Rideshare Driver reference transport passengers and relevant standards or tools."
+        ],
+        "practical_example": "In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Rideshare Driver challenge with numbers.",
+          "Link the story to: Transport passengers."
+        ],
+        "revision_notes": [
+          "Safe driving",
+          "Navigation",
+          "Customer service"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Rideshare Driver challenge with numbers.",
+        "Link the story to: Transport passengers."
+      ],
+      "revision_notes": [
+        "Safe driving",
+        "Navigation",
+        "Customer service"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Follow platform policies'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "RIDESHARE-DRIVER-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. \u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Rideshare Driver handles when transport passengers. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Rideshare Driver work involves transport passengers under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Rideshare Driver",
+            "definition": "The Rideshare Driver role integrates Safe driving, Navigation, Customer service to deliver on responsibilities such as transport passengers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Rideshare Driver reference transport passengers and relevant standards or tools."
+        ],
+        "practical_example": "In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Rideshare Driver challenge with numbers.",
+          "Link the story to: Transport passengers."
+        ],
+        "revision_notes": [
+          "Safe driving",
+          "Navigation",
+          "Customer service"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Rideshare Driver challenge with numbers.",
+        "Link the story to: Transport passengers."
+      ],
+      "revision_notes": [
+        "Safe driving",
+        "Navigation",
+        "Customer service"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "In Rideshare Driver duties while handling 'Transport passengers', describe a deadline risk and the controls you used to keep delivery on track.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "RIDESHARE-DRIVER-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. \u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Rideshare Driver handles when transport passengers. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Rideshare Driver work involves transport passengers under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Rideshare Driver",
+            "definition": "The Rideshare Driver role integrates Safe driving, Navigation, Customer service to deliver on responsibilities such as transport passengers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Rideshare Driver reference transport passengers and relevant standards or tools."
+        ],
+        "practical_example": "In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Rideshare Driver challenge with numbers.",
+          "Link the story to: Transport passengers."
+        ],
+        "revision_notes": [
+          "Safe driving",
+          "Navigation",
+          "Customer service"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Rideshare Driver challenge with numbers.",
+        "Link the story to: Transport passengers."
+      ],
+      "revision_notes": [
+        "Safe driving",
+        "Navigation",
+        "Customer service"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Share an example from Rideshare Driver work while handling 'Transport passengers' where you improved process reliability or quality.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "RIDESHARE-DRIVER-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. \u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Rideshare Driver handles when transport passengers. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Rideshare Driver work involves transport passengers under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Rideshare Driver",
+            "definition": "The Rideshare Driver role integrates Safe driving, Navigation, Customer service to deliver on responsibilities such as transport passengers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Rideshare Driver reference transport passengers and relevant standards or tools."
+        ],
+        "practical_example": "In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Rideshare Driver challenge with numbers.",
+          "Link the story to: Transport passengers."
+        ],
+        "revision_notes": [
+          "Safe driving",
+          "Navigation",
+          "Customer service"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Rideshare Driver challenge with numbers.",
+        "Link the story to: Transport passengers."
+      ],
+      "revision_notes": [
+        "Safe driving",
+        "Navigation",
+        "Customer service"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Tell me about a cross-team disagreement in Rideshare Driver practice while handling 'Transport passengers' and how you reached alignment.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "RIDESHARE-DRIVER-BEHAVIORAL-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. \u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Rideshare Driver handles when transport passengers. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Rideshare Driver work involves transport passengers under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Rideshare Driver",
+            "definition": "The Rideshare Driver role integrates Safe driving, Navigation, Customer service to deliver on responsibilities such as transport passengers. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Safe driving supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Rideshare Driver reference transport passengers and relevant standards or tools."
+        ],
+        "practical_example": "In Rideshare Driver work involving transport passengers, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Rideshare Driver challenge with numbers.",
+          "Link the story to: Transport passengers."
+        ],
+        "revision_notes": [
+          "Safe driving",
+          "Navigation",
+          "Customer service"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Rideshare Driver challenge with numbers.",
+        "Link the story to: Transport passengers."
+      ],
+      "revision_notes": [
+        "Safe driving",
+        "Navigation",
+        "Customer service"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Rideshare Driver position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "RIDESHARE-DRIVER-ROLE-SPECIFI-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Rideshare Driver, my approach to transport passengers is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Rideshare Driver practice, I anchor this using: On-time performance depends on exception handling, not only route planning., Proof-of-delivery integrity reduces disputes and write-offs., Role Specific.",
+      "answer_explanation": "This answer covers: As Rideshare Driver, my approach to transport passengers is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand o\u2026",
+      "study_material": {
+        "overview": "Role Specific in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Role Specific directly supports transport passengers. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Applicable standard/regulation: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Applicable standard/regulation: Vehicle/asset safety checks."
+          },
+          {
+            "term": "Proof-of-delivery controls",
+            "definition": "Applicable standard/regulation: Proof-of-delivery controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Role Specific directly supports transport passengers. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Safe Driving",
+            "explanation": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "skill": "Navigation",
+            "explanation": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          }
+        ],
+        "principles": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "general professional",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "step_by_step_breakdown": [
+          "Plan route with constraints: time windows, capacity, and risk points.",
+          "Perform pre-shift safety and documentation checks.",
+          "Execute deliveries with scan/PoD discipline and exception logging.",
+          "Handle disruptions with dynamic rerouting and customer updates.",
+          "Reconcile manifests and incident reports end of shift."
+        ],
+        "explanations": [
+          "Role Specific in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Role Specific directly supports transport passengers. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        ],
+        "practical_example": "As Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Transport passengers.",
+          "List the standards that govern Role Specific in Rideshare Driver work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Transport passengers.",
+        "List the standards that govern Role Specific in Rideshare Driver work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Rideshare Driver context: Transport passengers. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Rideshare Driver context: Transport passengers.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "RIDESHARE-DRIVER-COMPANY-SPEC-023",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safe driving",
+        "Navigation",
+        "Customer service",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Rideshare Driver, my approach to transport passengers is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Rideshare Driver practice, I anchor this using: On-time performance depends on exception handling, not only route planning., Proof-of-delivery integrity reduces disputes and write-offs., Company Specific.",
+      "answer_explanation": "This answer covers: As Rideshare Driver, my approach to transport passengers is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand o\u2026",
+      "study_material": {
+        "overview": "Company Specific in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Company Specific directly supports transport passengers. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "term": "Route compliance policy",
+            "definition": "Applicable standard/regulation: Route compliance policy."
+          },
+          {
+            "term": "Vehicle/asset safety checks",
+            "definition": "Applicable standard/regulation: Vehicle/asset safety checks."
+          },
+          {
+            "term": "Proof-of-delivery controls",
+            "definition": "Applicable standard/regulation: Proof-of-delivery controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Company Specific directly supports transport passengers. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Safe Driving",
+            "explanation": "Safe Driving in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          },
+          {
+            "skill": "Navigation",
+            "explanation": "Navigation in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+          }
+        ],
+        "principles": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "general professional",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "step_by_step_breakdown": [
+          "Plan route with constraints: time windows, capacity, and risk points.",
+          "Perform pre-shift safety and documentation checks.",
+          "Execute deliveries with scan/PoD discipline and exception logging.",
+          "Handle disruptions with dynamic rerouting and customer updates.",
+          "Reconcile manifests and incident reports end of shift."
+        ],
+        "explanations": [
+          "Company Specific in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently. In Rideshare Driver practice, Company Specific directly supports transport passengers. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific in logistics is the operational control of routing, handoffs, and proof-of-delivery to meet service windows safely and efficiently."
+        ],
+        "practical_example": "As Rideshare Driver, I re-sequenced high-risk stops and improved live exception reporting; first-attempt delivery success increased while overtime hours dropped.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Transport passengers.",
+          "List the standards that govern Company Specific in Rideshare Driver work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "Pre-shift checks prevent high-cost roadside failures."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "On-time performance depends on exception handling, not only route planning.",
+          "Proof-of-delivery integrity reduces disputes and write-offs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Transport passengers.",
+        "List the standards that govern Company Specific in Rideshare Driver work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "On-time performance depends on exception handling, not only route planning.",
+        "Proof-of-delivery integrity reduces disputes and write-offs.",
+        "Pre-shift checks prevent high-cost roadside failures."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:30:44.286004+00:00",
+  "confidence_score": 0.9
+}

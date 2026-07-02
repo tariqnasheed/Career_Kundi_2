@@ -1,0 +1,37 @@
+{
+  "role_name": "HR Business Partner",
+  "normalized_role_slug": "hr_business_partner",
+  "category": "business",
+  "stream_or_department": "business",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 29,
+  "question_specific_study_material_count": 29,
+  "skill_count": 36,
+  "pdf_files": [
+    "hr_business_partner_interview_pack.pdf",
+    "hr_business_partner_study_material.pdf",
+    "hr_business_partner_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "hr_business_partner_interview_pack.md",
+    "hr_business_partner_study_material.md",
+    "hr_business_partner_questions_answers.md"
+  ],
+  "source_files": [
+    "hr_business_partner_interview_pack.md",
+    "hr_business_partner_study_material.md",
+    "hr_business_partner_questions_answers.md",
+    "hr_business_partner_interview_pack.pdf",
+    "hr_business_partner_study_material.pdf",
+    "hr_business_partner_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/business/hr_business_partner",
+  "has_pdf": true,
+  "has_markdown": true
+}

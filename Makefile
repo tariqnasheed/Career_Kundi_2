@@ -8,7 +8,8 @@
 # The .PHONY list tells Make that these aren't real files. For example, when you run 
 # `make build`, it won't look for a file named "build", it will just run the command.
 .PHONY: help install sync lock build test test-backend test-frontend test-e2e \
-        test-coverage lint format migrate seed dev dev-backend dev-frontend \
+        test-coverage lint format migrate seed seed-role-packs build-skill-knowledge sync-role-catalog \
+        dev dev-backend dev-frontend \
         docker-build docker-up docker-down docker-logs clean
 
 help: ## Show this help message
@@ -51,6 +52,24 @@ migration: ## Create a new Alembic migration (usage: make migration name="add_x"
 
 seed: ## Populate the database with demo data (user, jobs, roadmaps, CVs)
 	cd backend && uv run python scripts/seed.py
+
+seed-role-packs: ## Pre-generate interview packs + PDFs for all popular roles
+	cd backend && uv run python -m scripts.seed_role_packs
+
+seed-role-packs-force: ## Regenerate all pre-seeded role packs (overwrite)
+	cd backend && uv run python -m scripts.seed_role_packs --force
+
+seed-role-packs-pdf: ## Regenerate PDFs only from existing structured JSON
+	cd backend && uv run python -m scripts.seed_role_packs --pdf-only
+
+seed-role-packs-pdf-force: ## Regenerate all PDFs (overwrite existing)
+	cd backend && uv run python -m scripts.seed_role_packs --pdf-only --force
+
+build-skill-knowledge: ## Build PhD-level skill/role knowledge JSON
+	cd backend && uv run python scripts/build_skill_knowledge.py
+
+sync-role-catalog: ## Sync popular_roles_catalog.json from frontend TS definitions
+	python3 scripts/sync_role_catalog.py
 
 # --- Testing & Code Quality -------------------------------------------------
 

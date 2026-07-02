@@ -351,3 +351,343 @@ def export_docx(rendered_content: dict[str, Any]) -> bytes:
     buffer = io.BytesIO()
     doc.save(buffer)
     return buffer.getvalue()
+
+
+# --- Interview pack export (PDF) -------------------------------------------------------
+
+_INTERVIEW_PACK_CSS = """
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1f2937; margin: 36px; line-height: 1.55; font-size: 11pt; }
+    h1 { font-size: 22px; color: #5b21b6; margin-bottom: 4px; }
+    h2 { font-size: 14px; color: #ffffff; background: #7c3aed; display: inline-block; padding: 3px 10px; border-radius: 4px; margin-top: 22px; }
+    h3 { font-size: 13px; color: #374151; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px; margin-top: 16px; }
+    h4 { font-size: 12px; color: #6d28d9; margin-top: 12px; margin-bottom: 4px; }
+    .meta { color: #6b7280; font-size: 10pt; margin-bottom: 16px; }
+    .study-box { background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 12px 14px; margin: 10px 0; }
+    ul { margin: 4px 0 10px 18px; }
+    li { margin-bottom: 4px; }
+    .answer { background: #fafafa; border-left: 3px solid #8b5cf6; padding: 10px 12px; margin: 8px 0; }
+"""
+
+
+def build_interview_pack_markdown(
+    *,
+    job_title: str,
+    company_name: str | None,
+    questions: list[dict],
+    generated_at=None,
+    confidence_score: float | None = None,
+    role_overview: dict | None = None,
+) -> str:
+    """Deterministic Markdown for a full interview pack including study material per question."""
+    lines = [f"# Interview Pack — {job_title}"]
+    if company_name:
+        lines.append(f"**Company:** {company_name}")
+    meta_bits = []
+    if generated_at:
+        meta_bits.append(f"Generated: {generated_at}")
+    if confidence_score is not None:
+        meta_bits.append(f"Confidence: {int(confidence_score * 100)}%")
+    if meta_bits:
+        lines.append(" | ".join(str(b) for b in meta_bits))
+    lines.append("")
+    lines.append("> Comprehensive Q&A with zero-prior-knowledge study material for each question.")
+    lines.append("")
+
+    if role_overview:
+        lines.append("## Role overview")
+        if role_overview.get("summary"):
+            lines.append(role_overview["summary"])
+        if role_overview.get("responsibilities"):
+            lines.append("**Key responsibilities**")
+            for r in role_overview["responsibilities"][:12]:
+                lines.append(f"- {r}")
+        if role_overview.get("required_skills"):
+            lines.append("**Required skills:** " + ", ".join(role_overview["required_skills"][:20]))
+        if role_overview.get("what_employers_expect"):
+            lines.append("")
+            lines.append("## Employer expectations")
+            for item in role_overview["what_employers_expect"][:12]:
+                lines.append(f"- {item}")
+        if role_overview.get("skill_clusters"):
+            lines.append("")
+            lines.append("## Skill map")
+            for cluster in role_overview["skill_clusters"][:20]:
+                lines.append(f"- {cluster}")
+        lines.append("")
+
+    for i, q in enumerate(questions, start=1):
+        if q.get("export_blocked"):
+            continue
+        qid = q.get("question_id") or f"Q{i:03d}"
+        skill = q.get("skill_tag") or q.get("category", "General")
+        lines.append(f"## {qid}: {q.get('question', '')}")
+        lines.append(f"**Category:** {q.get('category', 'n/a')} · **Skill:** {skill} · **Difficulty:** {q.get('difficulty', 'Medium')}")
+        if q.get("related_skills"):
+            lines.append("**Related skills:** " + ", ".join(q["related_skills"]))
+        lines.append("")
+        lines.extend(_study_material_md_sections(q.get("study_material") or {}))
+        lines.append("### Model answer")
+        lines.append(q.get("model_answer") or "\n".join(f"- {p}" for p in (q.get("ideal_answer_points") or [])))
+        if q.get("answer_explanation"):
+            lines.append("")
+            lines.append("### Answer explanation")
+            lines.append(q["answer_explanation"])
+        lines.append("")
+        criteria = q.get("evaluation_criteria") or q.get("ideal_answer_points") or []
+        if criteria:
+            lines.append("**What interviewers look for**")
+            for c in criteria:
+                lines.append(f"- {c}")
+        mistakes = q.get("common_mistakes") or []
+        if mistakes:
+            lines.append("**Common mistakes**")
+            for m in mistakes:
+                lines.append(f"- {m}")
+        follow_ups = q.get("follow_up_questions") or q.get("follow_ups") or []
+        if follow_ups:
+            lines.append("**Follow-up questions**")
+            for f in follow_ups:
+                lines.append(f"- {f}")
+        if q.get("practice_tasks"):
+            lines.append("**Practice tasks**")
+            for p in q["practice_tasks"]:
+                lines.append(f"- {p}")
+        lines.append("")
+        lines.append("---")
+        lines.append("")
+
+    return "\n".join(lines).strip() + "\n"
+
+
+def _study_material_md_sections(study: dict) -> list[str]:
+    """Render structured study material blocks for markdown/PDF export."""
+    if not study:
+        return []
+    lines: list[str] = []
+    lines.append("### Study material")
+    lines.append("")
+
+    core_parts: list[str] = []
+    if study.get("what_this_question_tests"):
+        core_parts.append(study["what_this_question_tests"])
+    if study.get("overview"):
+        core_parts.append(study["overview"])
+    if study.get("beginner_explanation"):
+        core_parts.append(study["beginner_explanation"])
+    if study.get("intermediate_explanation"):
+        core_parts.append(study["intermediate_explanation"])
+    if study.get("definitions"):
+        for definition in study["definitions"]:
+            core_parts.append(
+                f"**{definition.get('term', 'Term')}** means {definition.get('definition', '')}"
+            )
+    if study.get("key_concepts"):
+        core_parts.append("Key concepts: " + ", ".join(study["key_concepts"]))
+    if study.get("explanations"):
+        core_parts.extend(str(item) for item in study["explanations"])
+    if study.get("principles"):
+        core_parts.extend(f"Principle: {item}" for item in study["principles"])
+    if core_parts:
+        lines.append("**Core idea:**")
+        lines.extend(core_parts)
+        lines.append("")
+
+    apply_lines: list[str] = []
+    if study.get("step_by_step_method"):
+        for index, step in enumerate(study["step_by_step_method"], 1):
+            apply_lines.append(f"{index}. {step}")
+    elif study.get("step_by_step_breakdown"):
+        for index, step in enumerate(study["step_by_step_breakdown"], 1):
+            apply_lines.append(f"{index}. {step}")
+    if study.get("practical_example"):
+        apply_lines.append(study["practical_example"])
+    if study.get("worked_example"):
+        apply_lines.append(study["worked_example"])
+    if study.get("skill_explanations"):
+        for item in study["skill_explanations"]:
+            apply_lines.append(f"{item.get('skill', 'Skill')}: {item.get('explanation', '')}")
+    if study.get("what_you_need_to_know_first"):
+        for item in study["what_you_need_to_know_first"]:
+            apply_lines.append(f"- {item}")
+    if study.get("key_terms"):
+        apply_lines.append("Key checks: " + ", ".join(str(term) for term in study["key_terms"][:8]))
+    if apply_lines:
+        lines.append("**How to apply it:**")
+        lines.extend(apply_lines)
+        lines.append("")
+
+    mistakes = study.get("common_mistakes") or []
+    if mistakes:
+        lines.append("**Common mistakes:**")
+        for mistake in mistakes:
+            lines.append(f"- {mistake}")
+        lines.append("")
+
+    tips: list[str] = []
+    for key in ("how_to_answer_better", "interview_traps", "mini_practice_task"):
+        value = study.get(key)
+        if isinstance(value, list):
+            tips.extend(str(item) for item in value)
+        elif value:
+            tips.append(str(value))
+    if study.get("practice_exercises"):
+        tips.extend(f"Practice: {item}" for item in study["practice_exercises"])
+    if study.get("revision_notes"):
+        tips.extend(str(item) for item in study["revision_notes"])
+    if tips:
+        lines.append("**Interview tip:**")
+        for tip in tips[:5]:
+            lines.append(f"- {tip}")
+        lines.append("")
+
+    standards = study.get("formula_or_framework") or []
+    if isinstance(standards, str):
+        standards = [standards]
+    checklist = study.get("troubleshooting_checklist") or []
+    compliance_notes = [str(item) for item in standards if item]
+    compliance_notes.extend(
+        str(item)
+        for item in checklist
+        if item
+        and any(
+            token in str(item).lower()
+            for token in ("standard", "regulation", "compliance", "safety", "haccp", "bs ", "sop")
+        )
+    )
+    if compliance_notes:
+        lines.append("**Standards / safety / compliance note:**")
+        for note in compliance_notes[:5]:
+            lines.append(f"- {note}")
+        lines.append("")
+
+    if study.get("related_concepts"):
+        lines.append("**Related concepts to study next:** " + ", ".join(study["related_concepts"]))
+        lines.append("")
+    return lines
+
+
+def build_study_material_markdown(
+    *,
+    job_title: str,
+    questions: list[dict],
+    generated_at=None,
+    role_overview: dict | None = None,
+) -> str:
+    """Study-material-only PDF — one deep module per question."""
+    lines = [f"# Study Material — {job_title}", ""]
+    if generated_at:
+        lines.append(f"*Generated: {generated_at}*")
+    lines.append("")
+    if role_overview and role_overview.get("summary"):
+        lines.append(role_overview["summary"])
+        lines.append("")
+    for i, q in enumerate(questions, start=1):
+        if q.get("export_blocked"):
+            continue
+        qid = q.get("question_id") or f"Q{i:03d}"
+        lines.append(f"## {qid}: Study guide for this question")
+        lines.append(f"*Question:* {q.get('question', '')}")
+        lines.append("")
+        lines.extend(_study_material_md_sections(q.get("study_material") or {}))
+        lines.append("---")
+        lines.append("")
+    return "\n".join(lines).strip() + "\n"
+
+
+def build_questions_answers_markdown(
+    *,
+    job_title: str,
+    company_name: str | None,
+    questions: list[dict],
+    generated_at=None,
+) -> str:
+    """Q&A-only PDF without study sections."""
+    lines = [f"# Questions & Answers — {job_title}"]
+    if company_name:
+        lines.append(f"**Company:** {company_name}")
+    if generated_at:
+        lines.append(f"*Generated: {generated_at}*")
+    lines.append("")
+    for i, q in enumerate(questions, start=1):
+        if q.get("export_blocked"):
+            continue
+        qid = q.get("question_id") or f"Q{i:03d}"
+        lines.append(f"## {qid}")
+        lines.append(f"**Q:** {q.get('question', '')}")
+        lines.append("")
+        lines.append("**Model answer:**")
+        lines.append(q.get("model_answer") or "")
+        if q.get("answer_explanation"):
+            lines.append("")
+            lines.append("**Explanation:**")
+            lines.append(q["answer_explanation"])
+        lines.append("")
+        lines.append("---")
+        lines.append("")
+    return "\n".join(lines).strip() + "\n"
+
+
+def _render_pdf(md: str, css: str = _INTERVIEW_PACK_CSS) -> bytes:
+    from weasyprint import HTML
+
+    body_html = markdown2.markdown(md, extras=["fenced-code-blocks", "tables"])
+    html = f"<html><head><meta charset='utf-8'><style>{css}</style></head><body>{body_html}</body></html>"
+    return HTML(string=html).write_pdf()
+
+
+def export_interview_pack_pdf(
+    *,
+    job_title: str,
+    company_name: str | None,
+    questions: list[dict],
+    generated_at=None,
+    confidence_score: float | None = None,
+    role_overview: dict | None = None,
+) -> bytes:
+    md = build_interview_pack_markdown(
+        job_title=job_title,
+        company_name=company_name,
+        questions=questions,
+        generated_at=generated_at,
+        confidence_score=confidence_score,
+        role_overview=role_overview,
+    )
+    return _render_pdf(md)
+
+
+def export_study_material_pdf(
+    *,
+    job_title: str,
+    company_name: str | None = None,
+    questions: list[dict],
+    generated_at=None,
+    confidence_score: float | None = None,
+    role_overview: dict | None = None,
+) -> bytes:
+    del company_name, confidence_score  # study PDF is role-focused
+    md = build_study_material_markdown(
+        job_title=job_title,
+        questions=questions,
+        generated_at=generated_at,
+        role_overview=role_overview,
+    )
+    return _render_pdf(md)
+
+
+def export_questions_answers_pdf(
+    *,
+    job_title: str,
+    company_name: str | None,
+    questions: list[dict],
+    generated_at=None,
+    confidence_score: float | None = None,
+    role_overview: dict | None = None,
+) -> bytes:
+    del confidence_score, role_overview
+    md = build_questions_answers_markdown(
+        job_title=job_title,
+        company_name=company_name,
+        questions=questions,
+        generated_at=generated_at,
+    )
+    return _render_pdf(md)

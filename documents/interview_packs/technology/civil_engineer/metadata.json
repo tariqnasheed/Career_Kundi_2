@@ -1,0 +1,37 @@
+{
+  "role_name": "Civil Engineer",
+  "normalized_role_slug": "civil_engineer",
+  "category": "technology",
+  "stream_or_department": "engineering",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 29,
+  "question_specific_study_material_count": 29,
+  "skill_count": 28,
+  "pdf_files": [
+    "civil_engineer_interview_pack.pdf",
+    "civil_engineer_study_material.pdf",
+    "civil_engineer_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "civil_engineer_interview_pack.md",
+    "civil_engineer_study_material.md",
+    "civil_engineer_questions_answers.md"
+  ],
+  "source_files": [
+    "civil_engineer_interview_pack.md",
+    "civil_engineer_study_material.md",
+    "civil_engineer_questions_answers.md",
+    "civil_engineer_interview_pack.pdf",
+    "civil_engineer_study_material.pdf",
+    "civil_engineer_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/civil_engineer",
+  "has_pdf": true,
+  "has_markdown": true
+}

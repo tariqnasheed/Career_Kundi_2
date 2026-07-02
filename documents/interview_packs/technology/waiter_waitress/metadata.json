@@ -1,0 +1,37 @@
+{
+  "role_name": "Waiter / Waitress",
+  "normalized_role_slug": "waiter_waitress",
+  "category": "technology",
+  "stream_or_department": "retail_hospitality",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 22,
+  "question_specific_study_material_count": 22,
+  "skill_count": 29,
+  "pdf_files": [
+    "waiter_waitress_interview_pack.pdf",
+    "waiter_waitress_study_material.pdf",
+    "waiter_waitress_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "waiter_waitress_interview_pack.md",
+    "waiter_waitress_study_material.md",
+    "waiter_waitress_questions_answers.md"
+  ],
+  "source_files": [
+    "waiter_waitress_interview_pack.md",
+    "waiter_waitress_study_material.md",
+    "waiter_waitress_questions_answers.md",
+    "waiter_waitress_interview_pack.pdf",
+    "waiter_waitress_study_material.pdf",
+    "waiter_waitress_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/waiter_waitress",
+  "has_pdf": true,
+  "has_markdown": true
+}

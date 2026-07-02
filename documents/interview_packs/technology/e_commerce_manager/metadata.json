@@ -1,0 +1,37 @@
+{
+  "role_name": "E-commerce Manager",
+  "normalized_role_slug": "e_commerce_manager",
+  "category": "technology",
+  "stream_or_department": "retail_sales",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 27,
+  "question_specific_study_material_count": 27,
+  "skill_count": 29,
+  "pdf_files": [
+    "e_commerce_manager_interview_pack.pdf",
+    "e_commerce_manager_study_material.pdf",
+    "e_commerce_manager_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "e_commerce_manager_interview_pack.md",
+    "e_commerce_manager_study_material.md",
+    "e_commerce_manager_questions_answers.md"
+  ],
+  "source_files": [
+    "e_commerce_manager_interview_pack.md",
+    "e_commerce_manager_study_material.md",
+    "e_commerce_manager_questions_answers.md",
+    "e_commerce_manager_interview_pack.pdf",
+    "e_commerce_manager_study_material.pdf",
+    "e_commerce_manager_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/e_commerce_manager",
+  "has_pdf": true,
+  "has_markdown": true
+}

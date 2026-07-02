@@ -1,0 +1,37 @@
+{
+  "role_name": "Clinical Psychologist",
+  "normalized_role_slug": "clinical_psychologist",
+  "category": "healthcare",
+  "stream_or_department": "social_sciences",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 29,
+  "question_specific_study_material_count": 29,
+  "skill_count": 35,
+  "pdf_files": [
+    "clinical_psychologist_interview_pack.pdf",
+    "clinical_psychologist_study_material.pdf",
+    "clinical_psychologist_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "clinical_psychologist_interview_pack.md",
+    "clinical_psychologist_study_material.md",
+    "clinical_psychologist_questions_answers.md"
+  ],
+  "source_files": [
+    "clinical_psychologist_interview_pack.md",
+    "clinical_psychologist_study_material.md",
+    "clinical_psychologist_questions_answers.md",
+    "clinical_psychologist_interview_pack.pdf",
+    "clinical_psychologist_study_material.pdf",
+    "clinical_psychologist_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/clinical_psychologist",
+  "has_pdf": true,
+  "has_markdown": true
+}

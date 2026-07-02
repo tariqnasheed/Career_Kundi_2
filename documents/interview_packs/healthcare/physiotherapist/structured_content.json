@@ -1,0 +1,3066 @@
+{
+  "role_name": "Physiotherapist",
+  "role_slug": "physiotherapist",
+  "category": "healthcare",
+  "role_overview": {
+    "role_name": "Physiotherapist",
+    "summary": "The Physiotherapist role integrates Rehabilitation, Manual therapy, Exercise prescription to deliver on responsibilities such as assess mobility needs. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Assess mobility needs",
+      "Design treatment plans",
+      "Track recovery outcomes"
+    ],
+    "required_skills": [
+      "Rehabilitation",
+      "Manual therapy",
+      "Exercise prescription"
+    ],
+    "what_employers_expect": [
+      "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: Physiotherapy degree."
+    ],
+    "skill_clusters": [
+      "Healthcare"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "As a Physiotherapist, explain Rehabilitation to a newly qualified clinician and include clinical safety checks.",
+      "why_asked": "Tests genuine conceptual understanding of Rehabilitation, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Rehabilitation",
+      "question_id": "PHYSIOTHERAPIST-REHABILITATI-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Rehabilitation without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Physiotherapist context, Rehabilitation starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how assess mobility needs stays reliable under real operational constraints.\n\nOn shift as Physiotherapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Rehabilitation:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Rehabilitation directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Rehabilitation",
+            "definition": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Rehabilitation directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Manual Therapy",
+            "explanation": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Rehabilitation",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Rehabilitation directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Physiotherapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Rehabilitation without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Rehabilitation applies to: Assess mobility needs.",
+          "List the standards that govern Rehabilitation in Physiotherapist work.",
+          "Write out the verification steps after completing a Rehabilitation task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Rehabilitation",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Rehabilitation applies to: Assess mobility needs.",
+        "List the standards that govern Rehabilitation in Physiotherapist work.",
+        "Write out the verification steps after completing a Rehabilitation task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a high-risk clinical case where Rehabilitation changed patient management.",
+      "why_asked": "Probes depth of hands-on experience with Rehabilitation under real constraints.",
+      "skill_tag": "Rehabilitation",
+      "question_id": "PHYSIOTHERAPIST-REHABILITATI-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Rehabilitation without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Physiotherapist context, Rehabilitation starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how assess mobility needs stays reliable under real operational constraints.\n\nOn shift as Physiotherapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Rehabilitation:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Rehabilitation directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Rehabilitation",
+            "definition": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Rehabilitation directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Manual Therapy",
+            "explanation": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Rehabilitation",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Rehabilitation directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Physiotherapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Rehabilitation without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Rehabilitation applies to: Assess mobility needs.",
+          "List the standards that govern Rehabilitation in Physiotherapist work.",
+          "Write out the verification steps after completing a Rehabilitation task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Rehabilitation",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Rehabilitation applies to: Assess mobility needs.",
+        "List the standards that govern Rehabilitation in Physiotherapist work.",
+        "Write out the verification steps after completing a Rehabilitation task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "What are the essential technical terms every Physiotherapist must know when working with Rehabilitation while handling 'Assess mobility needs'? Define each precisely.",
+      "why_asked": "Core terminology separates practitioners who understand Rehabilitation from those who only name-drop it.",
+      "skill_tag": "Rehabilitation",
+      "terminology_terms": [
+        {
+          "term": "Rehabilitation",
+          "definition": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Rehabilitation: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Rehabilitation: Medication safety checks."
+        },
+        {
+          "term": "SBAR handover",
+          "definition": "Standard/framework governing Rehabilitation: SBAR handover."
+        },
+        {
+          "term": "Early escalation prevents preventable de",
+          "definition": "Early escalation prevents preventable deterioration."
+        },
+        {
+          "term": "Medication errors often occur at transit",
+          "definition": "Medication errors often occur at transition points and handovers."
+        },
+        {
+          "term": "Documentation quality is directly linked",
+          "definition": "Documentation quality is directly linked to continuity of care."
+        },
+        {
+          "term": "Early escalation prevents preventable deterioration.",
+          "definition": "Related concept used with Rehabilitation in professional practice."
+        }
+      ],
+      "question_id": "PHYSIOTHERAPIST-REHABILITATI-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Rehabilitation: Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Rehabilitation: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Rehabilitation: Medication safety checks.",
+        "SBAR handover: Standard/framework governing Rehabilitation: SBAR handover.",
+        "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Physiotherapist work, these terms are foundational:\n\n\n**Rehabilitation** \u2014 Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Rehabilitation: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Rehabilitation: Medication safety checks.\n\n**SBAR handover** \u2014 Standard/framework governing Rehabilitation: SBAR handover.\n\n**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.\n\n**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.\n\n**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.\n\n**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Rehabilitation in professional practice.",
+      "answer_explanation": "Definitions covered: Rehabilitation, Clinical guideline pathway, Medication safety checks, SBAR handover, Early escalation prevents preventable de, Medication errors often occur at transit",
+      "study_material": {
+        "overview": "Core terminology for Rehabilitation \u2014 precise definitions required for Physiotherapist interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Rehabilitation terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Rehabilitation",
+            "definition": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Rehabilitation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Rehabilitation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Standard/framework governing Rehabilitation: SBAR handover."
+          },
+          {
+            "term": "Early escalation prevents preventable de",
+            "definition": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "term": "Medication errors often occur at transit",
+            "definition": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "term": "Documentation quality is directly linked",
+            "definition": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "term": "Early escalation prevents preventable deterioration.",
+            "definition": "Related concept used with Rehabilitation in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Rehabilitation: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Rehabilitation: Medication safety checks."
+          },
+          {
+            "skill": "SBAR handover",
+            "explanation": "Standard/framework governing Rehabilitation: SBAR handover."
+          },
+          {
+            "skill": "Early escalation prevents preventable de",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Medication errors often occur at transit",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Documentation quality is directly linked",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "skill": "Early escalation prevents preventable deterioration.",
+            "explanation": "Related concept used with Rehabilitation in professional practice."
+          }
+        ],
+        "principles": [
+          "Rehabilitation: Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Rehabilitation: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Rehabilitation: Medication safety checks.",
+          "SBAR handover: Standard/framework governing Rehabilitation: SBAR handover.",
+          "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+        ],
+        "key_concepts": [
+          "Rehabilitation",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Rehabilitation** \u2014 Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Rehabilitation: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Rehabilitation: Medication safety checks.",
+          "**SBAR handover** \u2014 Standard/framework governing Rehabilitation: SBAR handover.",
+          "**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.",
+          "**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.",
+          "**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.",
+          "**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Rehabilitation in professional practice."
+        ],
+        "practical_example": "\u2022 Rehabilitation: Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Rehabilitation: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Rehabilitation: Medication safety checks.\n\u2022 SBAR handover: Standard/framework governing Rehabilitation: SBAR handover.\n\u2022 Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Rehabilitation terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Rehabilitation",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "related_concepts": [
+          "Rehabilitation",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Rehabilitation terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Rehabilitation",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "SBAR handover",
+        "Early escalation prevents preventable de",
+        "Medication errors often occur at transit",
+        "Documentation quality is directly linked",
+        "Early escalation prevents preventable deterioration."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which clinical operating principles and protocol sequence govern Rehabilitation in Physiotherapist practice?",
+      "why_asked": "Tests whether you know how Rehabilitation is actually executed to standard, not only what it is called.",
+      "skill_tag": "Rehabilitation",
+      "question_id": "PHYSIOTHERAPIST-REHABILITATI-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Rehabilitation as a Physiotherapist:\n\n1. Early escalation prevents preventable deterioration.\n2. Medication errors often occur at transition points and handovers.\n3. Documentation quality is directly linked to continuity of care.\n\nStandard workflow:\n1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Rehabilitation \u2014 how work is executed to standard in Physiotherapist roles.",
+        "what_you_need_to_know_first": [
+          "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Rehabilitation",
+            "definition": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "practical_example": "1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Rehabilitation workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Rehabilitation workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Calculation / quantitative question for Physiotherapist (Rehabilitation) while handling 'Assess mobility needs': Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?",
+      "why_asked": "Tests numerical and analytical competence in Rehabilitation \u2014 essential for Physiotherapist roles.",
+      "skill_tag": "Rehabilitation",
+      "calculation": {
+        "skill": "Rehabilitation",
+        "prompt": "Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?",
+        "answer": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+        "steps": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ]
+      },
+      "question_id": "PHYSIOTHERAPIST-REHABILITATI-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Score each parameter",
+        "Sum NEWS2",
+        "Apply escalation pathway"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?\n\nWorking:\n1. Score each parameter\n2. Sum NEWS2\n3. Apply escalation pathway\n\nAnswer: Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.\n\nIn Physiotherapist practice, I anchor this using: Score each parameter, Sum NEWS2, Given data.",
+      "answer_explanation": "Calculation: Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+      "study_material": {
+        "overview": "Quantitative problem for Rehabilitation: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Patient heart rate 110, BP 100/60, RR 24, SpO2 91% on room air. Why might NEWS2 trigger escalation?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "explanations": [
+          "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+          "Step: Score each parameter",
+          "Step: Sum NEWS2",
+          "Step: Apply escalation pathway"
+        ],
+        "practical_example": "Tachycardia, tachypnoea, hypoxia each add points in NEWS2. Combined score likely \u22655 \u2192 urgent medical review per local escalation protocol.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Rehabilitation calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "Score each parameter",
+          "Sum NEWS2",
+          "Apply escalation pathway"
+        ],
+        "related_concepts": [
+          "Rehabilitation",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Rehabilitation calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "Score each parameter",
+        "Sum NEWS2",
+        "Apply escalation pathway"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "As a Physiotherapist, explain Manual therapy to a newly qualified clinician and include clinical safety checks.",
+      "why_asked": "Tests genuine conceptual understanding of Manual therapy, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Manual therapy",
+      "question_id": "PHYSIOTHERAPIST-MANUAL-THERA-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Manual therapy",
+        "Rehabilitation",
+        "Exercise prescription",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Manual Therapy without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Physiotherapist context, Manual Therapy starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how assess mobility needs stays reliable under real operational constraints.\n\nOn shift as Physiotherapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Manual Therapy:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Manual Therapy directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Manual Therapy",
+            "definition": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Manual Therapy",
+            "explanation": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Manual Therapy directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Manual Therapy",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Manual Therapy directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Physiotherapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Manual Therapy without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Manual Therapy applies to: Assess mobility needs.",
+          "List the standards that govern Manual Therapy in Physiotherapist work.",
+          "Write out the verification steps after completing a Manual Therapy task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Manual Therapy",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Manual Therapy applies to: Assess mobility needs.",
+        "List the standards that govern Manual Therapy in Physiotherapist work.",
+        "Write out the verification steps after completing a Manual Therapy task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a high-risk clinical case where Manual therapy changed patient management.",
+      "why_asked": "Probes depth of hands-on experience with Manual therapy under real constraints.",
+      "skill_tag": "Manual therapy",
+      "question_id": "PHYSIOTHERAPIST-MANUAL-THERA-SCEN-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Manual therapy",
+        "Rehabilitation",
+        "Exercise prescription",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Manual Therapy without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Physiotherapist context, Manual Therapy starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how assess mobility needs stays reliable under real operational constraints.\n\nOn shift as Physiotherapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Manual Therapy:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Manual Therapy directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Manual Therapy",
+            "definition": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Manual Therapy",
+            "explanation": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Manual Therapy directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Manual Therapy",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Manual Therapy directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Physiotherapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Manual Therapy without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Manual Therapy applies to: Assess mobility needs.",
+          "List the standards that govern Manual Therapy in Physiotherapist work.",
+          "Write out the verification steps after completing a Manual Therapy task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Manual Therapy",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Manual Therapy applies to: Assess mobility needs.",
+        "List the standards that govern Manual Therapy in Physiotherapist work.",
+        "Write out the verification steps after completing a Manual Therapy task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Physiotherapist practitioner in Manual therapy while handling 'Assess mobility needs'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Manual therapy from those who only name-drop it.",
+      "skill_tag": "Manual therapy",
+      "terminology_terms": [
+        {
+          "term": "Manual Therapy",
+          "definition": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Manual Therapy: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Manual Therapy: Medication safety checks."
+        },
+        {
+          "term": "SBAR handover",
+          "definition": "Standard/framework governing Manual Therapy: SBAR handover."
+        },
+        {
+          "term": "Early escalation prevents preventable de",
+          "definition": "Early escalation prevents preventable deterioration."
+        },
+        {
+          "term": "Medication errors often occur at transit",
+          "definition": "Medication errors often occur at transition points and handovers."
+        },
+        {
+          "term": "Documentation quality is directly linked",
+          "definition": "Documentation quality is directly linked to continuity of care."
+        },
+        {
+          "term": "Early escalation prevents preventable deterioration.",
+          "definition": "Related concept used with Manual Therapy in professional practice."
+        }
+      ],
+      "question_id": "PHYSIOTHERAPIST-MANUAL-THERA-TERM-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Manual therapy",
+        "Rehabilitation",
+        "Exercise prescription",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Manual Therapy: Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Manual Therapy: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Manual Therapy: Medication safety checks.",
+        "SBAR handover: Standard/framework governing Manual Therapy: SBAR handover.",
+        "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Physiotherapist work, these terms are foundational:\n\n\n**Manual Therapy** \u2014 Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Manual Therapy: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Manual Therapy: Medication safety checks.\n\n**SBAR handover** \u2014 Standard/framework governing Manual Therapy: SBAR handover.\n\n**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.\n\n**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.\n\n**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.\n\n**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Manual Therapy in professional practice.",
+      "answer_explanation": "Definitions covered: Manual Therapy, Clinical guideline pathway, Medication safety checks, SBAR handover, Early escalation prevents preventable de, Medication errors often occur at transit",
+      "study_material": {
+        "overview": "Core terminology for Manual Therapy \u2014 precise definitions required for Physiotherapist interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Manual Therapy terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Manual Therapy",
+            "definition": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Manual Therapy: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Manual Therapy: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Standard/framework governing Manual Therapy: SBAR handover."
+          },
+          {
+            "term": "Early escalation prevents preventable de",
+            "definition": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "term": "Medication errors often occur at transit",
+            "definition": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "term": "Documentation quality is directly linked",
+            "definition": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "term": "Early escalation prevents preventable deterioration.",
+            "definition": "Related concept used with Manual Therapy in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Manual Therapy",
+            "explanation": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Manual Therapy: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Manual Therapy: Medication safety checks."
+          },
+          {
+            "skill": "SBAR handover",
+            "explanation": "Standard/framework governing Manual Therapy: SBAR handover."
+          },
+          {
+            "skill": "Early escalation prevents preventable de",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Medication errors often occur at transit",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Documentation quality is directly linked",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "skill": "Early escalation prevents preventable deterioration.",
+            "explanation": "Related concept used with Manual Therapy in professional practice."
+          }
+        ],
+        "principles": [
+          "Manual Therapy: Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Manual Therapy: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Manual Therapy: Medication safety checks.",
+          "SBAR handover: Standard/framework governing Manual Therapy: SBAR handover.",
+          "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+        ],
+        "key_concepts": [
+          "Manual Therapy",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Manual Therapy** \u2014 Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Manual Therapy: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Manual Therapy: Medication safety checks.",
+          "**SBAR handover** \u2014 Standard/framework governing Manual Therapy: SBAR handover.",
+          "**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.",
+          "**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.",
+          "**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.",
+          "**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Manual Therapy in professional practice."
+        ],
+        "practical_example": "\u2022 Manual Therapy: Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Manual Therapy: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Manual Therapy: Medication safety checks.\n\u2022 SBAR handover: Standard/framework governing Manual Therapy: SBAR handover.\n\u2022 Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Manual Therapy terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Manual Therapy",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "related_concepts": [
+          "Manual Therapy",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Manual Therapy terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Manual Therapy",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "SBAR handover",
+        "Early escalation prevents preventable de",
+        "Medication errors often occur at transit",
+        "Documentation quality is directly linked",
+        "Early escalation prevents preventable deterioration."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which clinical operating principles and protocol sequence govern Manual therapy in Physiotherapist practice?",
+      "why_asked": "Tests whether you know how Manual therapy is actually executed to standard, not only what it is called.",
+      "skill_tag": "Manual therapy",
+      "question_id": "PHYSIOTHERAPIST-MANUAL-THERA-PRIN-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Manual therapy",
+        "Rehabilitation",
+        "Exercise prescription",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Manual Therapy as a Physiotherapist:\n\n1. Early escalation prevents preventable deterioration.\n2. Medication errors often occur at transition points and handovers.\n3. Documentation quality is directly linked to continuity of care.\n\nStandard workflow:\n1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Manual Therapy \u2014 how work is executed to standard in Physiotherapist roles.",
+        "what_you_need_to_know_first": [
+          "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Manual Therapy",
+            "definition": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Manual Therapy",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Manual Therapy",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Manual Therapy",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "practical_example": "1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Manual Therapy workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Manual Therapy workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "As a Physiotherapist, explain Exercise prescription to a newly qualified clinician and include clinical safety checks.",
+      "why_asked": "Tests genuine conceptual understanding of Exercise prescription, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Exercise prescription",
+      "question_id": "PHYSIOTHERAPIST-EXERCISE-PRE-EXPL-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Exercise prescription",
+        "Rehabilitation",
+        "Manual therapy",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Exercise Prescription without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Physiotherapist context, Exercise Prescription starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how assess mobility needs stays reliable under real operational constraints.\n\nOn shift as Physiotherapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Exercise Prescription:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Exercise Prescription directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Exercise Prescription",
+            "definition": "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Exercise Prescription",
+            "explanation": "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Exercise Prescription directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Exercise Prescription",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Exercise Prescription directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Physiotherapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Exercise Prescription without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Exercise Prescription applies to: Assess mobility needs.",
+          "List the standards that govern Exercise Prescription in Physiotherapist work.",
+          "Write out the verification steps after completing a Exercise Prescription task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Exercise Prescription",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Exercise Prescription applies to: Assess mobility needs.",
+        "List the standards that govern Exercise Prescription in Physiotherapist work.",
+        "Write out the verification steps after completing a Exercise Prescription task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a high-risk clinical case where Exercise prescription changed patient management.",
+      "why_asked": "Probes depth of hands-on experience with Exercise prescription under real constraints.",
+      "skill_tag": "Exercise prescription",
+      "question_id": "PHYSIOTHERAPIST-EXERCISE-PRE-SCEN-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Exercise prescription",
+        "Rehabilitation",
+        "Manual therapy",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Executing Exercise Prescription without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Physiotherapist context, Exercise Prescription starts with assess patient baseline and immediate risk flags. and continues through apply protocol-driven intervention and verify contraindications.. The critical discipline is evidence: early escalation prevents preventable deterioration.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how assess mobility needs stays reliable under real operational constraints.\n\nOn shift as Physiotherapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+      "answer_explanation": "Key knowledge demonstrated for Exercise Prescription:\n\u2022 Early escalation prevents preventable deterioration.\n\u2022 Medication errors often occur at transition points and handovers.\n\u2022 Documentation quality is directly linked to continuity of care.\nStandards referenced: Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Exercise Prescription directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "definitions": [
+          {
+            "term": "Exercise Prescription",
+            "definition": "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Applicable standard/regulation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Applicable standard/regulation: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Applicable standard/regulation: SBAR handover."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Exercise Prescription",
+            "explanation": "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Exercise Prescription directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Exercise Prescription",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care. In Physiotherapist practice, Exercise Prescription directly supports assess mobility needs. Healthcare practice integrates biomedical science, clinical guidelines, and professional ethics. Every intervention must balance evidence-based efficacy, patient autonomy, confidentiality, and regulatory frameworks (GMC, NMC, HCPC, CQC) that protect vulnerable populations. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        ],
+        "practical_example": "On shift as Physiotherapist, I identified a subtle deterioration pattern, escalated with SBAR, and intervention was initiated within minutes, preventing critical care transfer.",
+        "common_mistakes": [
+          "Executing Exercise Prescription without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Exercise Prescription applies to: Assess mobility needs.",
+          "List the standards that govern Exercise Prescription in Physiotherapist work.",
+          "Write out the verification steps after completing a Exercise Prescription task."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Exercise Prescription",
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "healthcare"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Exercise Prescription applies to: Assess mobility needs.",
+        "List the standards that govern Exercise Prescription in Physiotherapist work.",
+        "Write out the verification steps after completing a Exercise Prescription task."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Physiotherapist practitioner in Exercise prescription while handling 'Assess mobility needs'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Exercise prescription from those who only name-drop it.",
+      "skill_tag": "Exercise prescription",
+      "terminology_terms": [
+        {
+          "term": "Exercise Prescription",
+          "definition": "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Exercise Prescription: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Exercise Prescription: Medication safety checks."
+        },
+        {
+          "term": "SBAR handover",
+          "definition": "Standard/framework governing Exercise Prescription: SBAR handover."
+        },
+        {
+          "term": "Early escalation prevents preventable de",
+          "definition": "Early escalation prevents preventable deterioration."
+        },
+        {
+          "term": "Medication errors often occur at transit",
+          "definition": "Medication errors often occur at transition points and handovers."
+        },
+        {
+          "term": "Documentation quality is directly linked",
+          "definition": "Documentation quality is directly linked to continuity of care."
+        },
+        {
+          "term": "Early escalation prevents preventable deterioration.",
+          "definition": "Related concept used with Exercise Prescription in professional practice."
+        }
+      ],
+      "question_id": "PHYSIOTHERAPIST-EXERCISE-PRE-TERM-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Exercise prescription",
+        "Rehabilitation",
+        "Manual therapy",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Exercise Prescription: Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Exercise Prescription: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Exercise Prescription: Medication safety checks.",
+        "SBAR handover: Standard/framework governing Exercise Prescription: SBAR handover.",
+        "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Physiotherapist work, these terms are foundational:\n\n\n**Exercise Prescription** \u2014 Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Exercise Prescription: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Exercise Prescription: Medication safety checks.\n\n**SBAR handover** \u2014 Standard/framework governing Exercise Prescription: SBAR handover.\n\n**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.\n\n**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.\n\n**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.\n\n**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Exercise Prescription in professional practice.",
+      "answer_explanation": "Definitions covered: Exercise Prescription, Clinical guideline pathway, Medication safety checks, SBAR handover, Early escalation prevents preventable de, Medication errors often occur at transit",
+      "study_material": {
+        "overview": "Core terminology for Exercise Prescription \u2014 precise definitions required for Physiotherapist interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Exercise Prescription terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Exercise Prescription",
+            "definition": "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Exercise Prescription: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Exercise Prescription: Medication safety checks."
+          },
+          {
+            "term": "SBAR handover",
+            "definition": "Standard/framework governing Exercise Prescription: SBAR handover."
+          },
+          {
+            "term": "Early escalation prevents preventable de",
+            "definition": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "term": "Medication errors often occur at transit",
+            "definition": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "term": "Documentation quality is directly linked",
+            "definition": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "term": "Early escalation prevents preventable deterioration.",
+            "definition": "Related concept used with Exercise Prescription in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Exercise Prescription",
+            "explanation": "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Exercise Prescription: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Exercise Prescription: Medication safety checks."
+          },
+          {
+            "skill": "SBAR handover",
+            "explanation": "Standard/framework governing Exercise Prescription: SBAR handover."
+          },
+          {
+            "skill": "Early escalation prevents preventable de",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Medication errors often occur at transit",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Documentation quality is directly linked",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          },
+          {
+            "skill": "Early escalation prevents preventable deterioration.",
+            "explanation": "Related concept used with Exercise Prescription in professional practice."
+          }
+        ],
+        "principles": [
+          "Exercise Prescription: Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Exercise Prescription: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Exercise Prescription: Medication safety checks.",
+          "SBAR handover: Standard/framework governing Exercise Prescription: SBAR handover.",
+          "Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transit: Medication errors often occur at transition points and handovers."
+        ],
+        "key_concepts": [
+          "Exercise Prescription",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Exercise Prescription** \u2014 Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Exercise Prescription: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Exercise Prescription: Medication safety checks.",
+          "**SBAR handover** \u2014 Standard/framework governing Exercise Prescription: SBAR handover.",
+          "**Early escalation prevents preventable de** \u2014 Early escalation prevents preventable deterioration.",
+          "**Medication errors often occur at transit** \u2014 Medication errors often occur at transition points and handovers.",
+          "**Documentation quality is directly linked** \u2014 Documentation quality is directly linked to continuity of care.",
+          "**Early escalation prevents preventable deterioration.** \u2014 Related concept used with Exercise Prescription in professional practice."
+        ],
+        "practical_example": "\u2022 Exercise Prescription: Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Exercise Prescription: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Exercise Prescription: Medication safety checks.\n\u2022 SBAR handover: Standard/framework governing Exercise Prescription: SBAR handover.\n\u2022 Early escalation prevents preventable de: Early escalation prevents preventable deterioration.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Exercise Prescription terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Exercise Prescription",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "related_concepts": [
+          "Exercise Prescription",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "SBAR handover",
+          "Early escalation prevents preventable de",
+          "Medication errors often occur at transit",
+          "Documentation quality is directly linked",
+          "Early escalation prevents preventable deterioration."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Exercise Prescription terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Exercise Prescription",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "SBAR handover",
+        "Early escalation prevents preventable de",
+        "Medication errors often occur at transit",
+        "Documentation quality is directly linked",
+        "Early escalation prevents preventable deterioration."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which clinical operating principles and protocol sequence govern Exercise prescription in Physiotherapist practice?",
+      "why_asked": "Tests whether you know how Exercise prescription is actually executed to standard, not only what it is called.",
+      "skill_tag": "Exercise prescription",
+      "question_id": "PHYSIOTHERAPIST-EXERCISE-PRE-PRIN-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Exercise prescription",
+        "Rehabilitation",
+        "Manual therapy",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Exercise Prescription as a Physiotherapist:\n\n1. Early escalation prevents preventable deterioration.\n2. Medication errors often occur at transition points and handovers.\n3. Documentation quality is directly linked to continuity of care.\n\nStandard workflow:\n1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Exercise Prescription \u2014 how work is executed to standard in Physiotherapist roles.",
+        "what_you_need_to_know_first": [
+          "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Exercise Prescription",
+            "definition": "Exercise Prescription in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Exercise Prescription",
+            "explanation": "Early escalation prevents preventable deterioration."
+          },
+          {
+            "skill": "Exercise Prescription",
+            "explanation": "Medication errors often occur at transition points and handovers."
+          },
+          {
+            "skill": "Exercise Prescription",
+            "explanation": "Documentation quality is directly linked to continuity of care."
+          }
+        ],
+        "principles": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "key_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "step_by_step_breakdown": [
+          "Assess patient baseline and immediate risk flags.",
+          "Apply protocol-driven intervention and verify contraindications.",
+          "Document observations and response to treatment in real time.",
+          "Escalate deterioration using structured handover (SBAR).",
+          "Review outcomes and update care plan with MDT input."
+        ],
+        "explanations": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "practical_example": "1. Assess patient baseline and immediate risk flags.\n2. Apply protocol-driven intervention and verify contraindications.\n3. Document observations and response to treatment in real time.\n4. Escalate deterioration using structured handover (SBAR).\n5. Review outcomes and update care plan with MDT input.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Exercise Prescription workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "related_concepts": [
+          "Early escalation prevents preventable deterioration.",
+          "Medication errors often occur at transition points and handovers.",
+          "Documentation quality is directly linked to continuity of care."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Exercise Prescription workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Early escalation prevents preventable deterioration.",
+        "Medication errors often occur at transition points and handovers.",
+        "Documentation quality is directly linked to continuity of care."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Physiotherapist, define and explain these core professional terms: Rehabilitation, Clinical guideline pathway, Medication safety checks, Manual Therapy, Clinical guideline pathway, Medication safety checks.",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Rehabilitation",
+          "definition": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Rehabilitation: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Rehabilitation: Medication safety checks."
+        },
+        {
+          "term": "Manual Therapy",
+          "definition": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+        },
+        {
+          "term": "Clinical guideline pathway",
+          "definition": "Standard/framework governing Manual Therapy: Clinical guideline pathway."
+        },
+        {
+          "term": "Medication safety checks",
+          "definition": "Standard/framework governing Manual Therapy: Medication safety checks."
+        }
+      ],
+      "question_id": "PHYSIOTHERAPIST-CORE-TERMINO-TERM-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Rehabilitation: Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Rehabilitation: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Rehabilitation: Medication safety checks.",
+        "Manual Therapy: Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+        "Clinical guideline pathway: Standard/framework governing Manual Therapy: Clinical guideline pathway.",
+        "Medication safety checks: Standard/framework governing Manual Therapy: Medication safety checks."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Physiotherapist work, these terms are foundational:\n\n\n**Rehabilitation** \u2014 Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Rehabilitation: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Rehabilitation: Medication safety checks.\n\n**Manual Therapy** \u2014 Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\n**Clinical guideline pathway** \u2014 Standard/framework governing Manual Therapy: Clinical guideline pathway.\n\n**Medication safety checks** \u2014 Standard/framework governing Manual Therapy: Medication safety checks.",
+      "answer_explanation": "Definitions covered: Rehabilitation, Clinical guideline pathway, Medication safety checks, Manual Therapy, Clinical guideline pathway, Medication safety checks",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Physiotherapist interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Rehabilitation",
+            "definition": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Rehabilitation: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Rehabilitation: Medication safety checks."
+          },
+          {
+            "term": "Manual Therapy",
+            "definition": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "term": "Clinical guideline pathway",
+            "definition": "Standard/framework governing Manual Therapy: Clinical guideline pathway."
+          },
+          {
+            "term": "Medication safety checks",
+            "definition": "Standard/framework governing Manual Therapy: Medication safety checks."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Rehabilitation: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Rehabilitation: Medication safety checks."
+          },
+          {
+            "skill": "Manual Therapy",
+            "explanation": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Clinical guideline pathway",
+            "explanation": "Standard/framework governing Manual Therapy: Clinical guideline pathway."
+          },
+          {
+            "skill": "Medication safety checks",
+            "explanation": "Standard/framework governing Manual Therapy: Medication safety checks."
+          }
+        ],
+        "principles": [
+          "Rehabilitation: Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Rehabilitation: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Rehabilitation: Medication safety checks.",
+          "Manual Therapy: Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "Clinical guideline pathway: Standard/framework governing Manual Therapy: Clinical guideline pathway.",
+          "Medication safety checks: Standard/framework governing Manual Therapy: Medication safety checks."
+        ],
+        "key_concepts": [
+          "Rehabilitation",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "Manual Therapy",
+          "Clinical guideline pathway",
+          "Medication safety checks"
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Rehabilitation** \u2014 Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Rehabilitation: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Rehabilitation: Medication safety checks.",
+          "**Manual Therapy** \u2014 Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.",
+          "**Clinical guideline pathway** \u2014 Standard/framework governing Manual Therapy: Clinical guideline pathway.",
+          "**Medication safety checks** \u2014 Standard/framework governing Manual Therapy: Medication safety checks."
+        ],
+        "practical_example": "\u2022 Rehabilitation: Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Rehabilitation: Clinical guideline pathway.\n\u2022 Medication safety checks: Standard/framework governing Rehabilitation: Medication safety checks.\n\u2022 Manual Therapy: Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care.\n\u2022 Clinical guideline pathway: Standard/framework governing Manual Therapy: Clinical guideline pathway.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Rehabilitation",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "Manual Therapy",
+          "Clinical guideline pathway",
+          "Medication safety checks"
+        ],
+        "related_concepts": [
+          "Rehabilitation",
+          "Clinical guideline pathway",
+          "Medication safety checks",
+          "Manual Therapy",
+          "Clinical guideline pathway",
+          "Medication safety checks"
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Rehabilitation",
+        "Clinical guideline pathway",
+        "Medication safety checks",
+        "Manual Therapy",
+        "Clinical guideline pathway",
+        "Medication safety checks"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "procedure",
+      "question": "Describe subjective and objective assessment structure for a new musculoskeletal patient.",
+      "why_asked": "Tests ability to execute standard Manual therapy procedure safely and in correct order.",
+      "skill_tag": "Manual therapy",
+      "procedure_steps": [
+        "Subjective: history, aggravating/easing, red flags",
+        "Objective: ROM, strength, special tests, functional tasks",
+        "Clinical impression and SMART goals",
+        "Treatment plan and outcome measures"
+      ],
+      "question_id": "PHYSIOTHERAPIST-MANUAL-THERA-PROC-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Manual therapy",
+        "Rehabilitation",
+        "Exercise prescription",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Subjective: history, aggravating/easing, red flags",
+        "Objective: ROM, strength, special tests, functional tasks",
+        "Clinical impression and SMART goals",
+        "Treatment plan and outcome measures"
+      ],
+      "common_mistakes": [
+        "Reordering safety-critical steps.",
+        "Failing to escalate when findings exceed protocol thresholds.",
+        "Incomplete documentation of times, doses, or observations."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "I follow this structured sequence for Manual Therapy:\n\n1. Subjective: history, aggravating/easing, red flags\n2. Objective: ROM, strength, special tests, functional tasks\n3. Clinical impression and SMART goals\n4. Treatment plan and outcome measures\n\nThroughout I communicate clearly with the team, escalate if any step fails thresholds, and document times, observations, and actions contemporaneously.\n\nIn Physiotherapist practice, I anchor this using: Subjective: history, aggravating/easing, red flags, Objective: ROM, strength, special tests, functional tasks, Manual Therapy.",
+      "answer_explanation": "Procedure steps (4): Subjective: history, aggravating/easing, red flags; Objective: ROM, strength, special tests, functional tasks; Clinical impression and SMART goals; Treatment plan and outcome measures",
+      "study_material": {
+        "overview": "Structured procedure for Manual Therapy \u2014 sequence and safety checks for Physiotherapist.",
+        "what_you_need_to_know_first": [
+          "Procedures must be performed in order; skipping steps risks harm or invalid results.",
+          "Communication and documentation are part of the procedure, not afterthoughts."
+        ],
+        "definitions": [
+          {
+            "term": "Manual Therapy",
+            "definition": "Standardised sequence for Manual therapy in professional practice."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Subjective: history, aggravating/easing, red flags",
+          "Objective: ROM, strength, special tests, functional tasks",
+          "Clinical impression and SMART goals",
+          "Treatment plan and outcome measures"
+        ],
+        "key_concepts": [
+          "Subjective: history, aggravating/easing, red flags",
+          "Objective: ROM, strength, special tests, functional tasks",
+          "Clinical impression and SMART goals",
+          "Treatment plan and outcome measures"
+        ],
+        "step_by_step_breakdown": [
+          "Subjective: history, aggravating/easing, red flags",
+          "Objective: ROM, strength, special tests, functional tasks",
+          "Clinical impression and SMART goals",
+          "Treatment plan and outcome measures"
+        ],
+        "explanations": [
+          "Step 1: Subjective: history, aggravating/easing, red flags",
+          "Step 2: Objective: ROM, strength, special tests, functional tasks",
+          "Step 3: Clinical impression and SMART goals",
+          "Step 4: Treatment plan and outcome measures"
+        ],
+        "practical_example": "1. Subjective: history, aggravating/easing, red flags\n2. Objective: ROM, strength, special tests, functional tasks\n3. Clinical impression and SMART goals\n4. Treatment plan and outcome measures",
+        "common_mistakes": [
+          "Reordering safety-critical steps.",
+          "Failing to escalate when findings exceed protocol thresholds.",
+          "Incomplete documentation of times, doses, or observations."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Recite the procedure from memory; time yourself.",
+          "Identify which step triggers escalation to senior staff."
+        ],
+        "revision_notes": [
+          "Subjective: history, aggravating/easing, red flags",
+          "Objective: ROM, strength, special tests, functional tasks",
+          "Clinical impression and SMART goals",
+          "Treatment plan and outcome measures"
+        ],
+        "related_concepts": [
+          "SBAR",
+          "NEWS2",
+          "Five rights",
+          "Permit to work"
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Recite the procedure from memory; time yourself.",
+        "Identify which step triggers escalation to senior staff."
+      ],
+      "revision_notes": [
+        "Subjective: history, aggravating/easing, red flags",
+        "Objective: ROM, strength, special tests, functional tasks",
+        "Clinical impression and SMART goals",
+        "Treatment plan and outcome measures"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Assess mobility needs'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "PHYSIOTHERAPIST-BEHAVIORAL-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+      "answer_explanation": "This answer covers: In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and co\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Physiotherapist handles when assess mobility needs. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Physiotherapist work involves assess mobility needs under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Physiotherapist",
+            "definition": "The Physiotherapist role integrates Rehabilitation, Manual therapy, Exercise prescription to deliver on responsibilities such as assess mobility needs. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Patient safety",
+          "Escalation protocol",
+          "Clinical documentation",
+          "Multidisciplinary handover"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Physiotherapist reference assess mobility needs and relevant standards or tools."
+        ],
+        "practical_example": "In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Physiotherapist challenge with numbers.",
+          "Link the story to: Assess mobility needs."
+        ],
+        "revision_notes": [
+          "Rehabilitation",
+          "Manual therapy",
+          "Exercise prescription"
+        ],
+        "related_concepts": [
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Physiotherapist challenge with numbers.",
+        "Link the story to: Assess mobility needs."
+      ],
+      "revision_notes": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Design treatment plans'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "PHYSIOTHERAPIST-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+      "answer_explanation": "This answer covers: In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and co\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Physiotherapist handles when assess mobility needs. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Physiotherapist work involves assess mobility needs under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Physiotherapist",
+            "definition": "The Physiotherapist role integrates Rehabilitation, Manual therapy, Exercise prescription to deliver on responsibilities such as assess mobility needs. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Patient safety",
+          "Escalation protocol",
+          "Clinical documentation",
+          "Multidisciplinary handover"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Physiotherapist reference assess mobility needs and relevant standards or tools."
+        ],
+        "practical_example": "In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Physiotherapist challenge with numbers.",
+          "Link the story to: Assess mobility needs."
+        ],
+        "revision_notes": [
+          "Rehabilitation",
+          "Manual therapy",
+          "Exercise prescription"
+        ],
+        "related_concepts": [
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Physiotherapist challenge with numbers.",
+        "Link the story to: Assess mobility needs."
+      ],
+      "revision_notes": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Track recovery outcomes'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "PHYSIOTHERAPIST-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+      "answer_explanation": "This answer covers: In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and co\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Physiotherapist handles when assess mobility needs. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Physiotherapist work involves assess mobility needs under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Physiotherapist",
+            "definition": "The Physiotherapist role integrates Rehabilitation, Manual therapy, Exercise prescription to deliver on responsibilities such as assess mobility needs. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Patient safety",
+          "Escalation protocol",
+          "Clinical documentation",
+          "Multidisciplinary handover"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Physiotherapist reference assess mobility needs and relevant standards or tools."
+        ],
+        "practical_example": "In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Physiotherapist challenge with numbers.",
+          "Link the story to: Assess mobility needs."
+        ],
+        "revision_notes": [
+          "Rehabilitation",
+          "Manual therapy",
+          "Exercise prescription"
+        ],
+        "related_concepts": [
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Physiotherapist challenge with numbers.",
+        "Link the story to: Assess mobility needs."
+      ],
+      "revision_notes": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe a safety-critical judgement call you made as a Physiotherapist while handling 'Assess mobility needs'.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "PHYSIOTHERAPIST-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+      "answer_explanation": "This answer covers: In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and co\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Physiotherapist handles when assess mobility needs. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Physiotherapist work involves assess mobility needs under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Physiotherapist",
+            "definition": "The Physiotherapist role integrates Rehabilitation, Manual therapy, Exercise prescription to deliver on responsibilities such as assess mobility needs. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Patient safety",
+          "Escalation protocol",
+          "Clinical documentation",
+          "Multidisciplinary handover"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Physiotherapist reference assess mobility needs and relevant standards or tools."
+        ],
+        "practical_example": "In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Physiotherapist challenge with numbers.",
+          "Link the story to: Assess mobility needs."
+        ],
+        "revision_notes": [
+          "Rehabilitation",
+          "Manual therapy",
+          "Exercise prescription"
+        ],
+        "related_concepts": [
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Physiotherapist challenge with numbers.",
+        "Link the story to: Assess mobility needs."
+      ],
+      "revision_notes": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Tell me about a patient deterioration scenario you managed in Physiotherapist practice while handling 'Assess mobility needs'.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "PHYSIOTHERAPIST-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+      "answer_explanation": "This answer covers: In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and co\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Physiotherapist handles when assess mobility needs. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Physiotherapist work involves assess mobility needs under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Physiotherapist",
+            "definition": "The Physiotherapist role integrates Rehabilitation, Manual therapy, Exercise prescription to deliver on responsibilities such as assess mobility needs. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Patient safety",
+          "Escalation protocol",
+          "Clinical documentation",
+          "Multidisciplinary handover"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Physiotherapist reference assess mobility needs and relevant standards or tools."
+        ],
+        "practical_example": "In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Physiotherapist challenge with numbers.",
+          "Link the story to: Assess mobility needs."
+        ],
+        "revision_notes": [
+          "Rehabilitation",
+          "Manual therapy",
+          "Exercise prescription"
+        ],
+        "related_concepts": [
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Physiotherapist challenge with numbers.",
+        "Link the story to: Assess mobility needs."
+      ],
+      "revision_notes": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Provide an example where your documentation/hand-off in Physiotherapist work while handling 'Assess mobility needs' prevented harm.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "PHYSIOTHERAPIST-BEHAVIORAL-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+      "answer_explanation": "This answer covers: In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and co\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Physiotherapist handles when assess mobility needs. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Physiotherapist work involves assess mobility needs under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Physiotherapist",
+            "definition": "The Physiotherapist role integrates Rehabilitation, Manual therapy, Exercise prescription to deliver on responsibilities such as assess mobility needs. Employers at the Mid level (3\u20135 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Rehabilitation supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Patient safety",
+          "Escalation protocol",
+          "Clinical documentation",
+          "Multidisciplinary handover"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Physiotherapist reference assess mobility needs and relevant standards or tools."
+        ],
+        "practical_example": "In one Physiotherapist case related to assess mobility needs, I identified early deterioration from repeated obs trends. I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; our audit recorded full compliance with escalation policy.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Physiotherapist challenge with numbers.",
+          "Link the story to: Assess mobility needs."
+        ],
+        "revision_notes": [
+          "Rehabilitation",
+          "Manual therapy",
+          "Exercise prescription"
+        ],
+        "related_concepts": [
+          "Healthcare"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Physiotherapist challenge with numbers.",
+        "Link the story to: Assess mobility needs."
+      ],
+      "revision_notes": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Physiotherapist position, based on what you've read? In this role-specific case, address: Physiotherapist context: Assess mobility needs.",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "PHYSIOTHERAPIST-ROLE-SPECIFI-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Physiotherapist, my approach to assess mobility needs is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Physiotherapist practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Role Specific.",
+      "answer_explanation": "This answer covers: As Physiotherapist, my approach to assess mobility needs is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand o\u2026",
+      "study_material": {
+        "overview": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Physiotherapist professionals apply when performing assess mobility needs. In Physiotherapist practice, Role Specific directly supports assess mobility needs. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Physiotherapist professionals apply when performing assess mobility needs."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific is the body of knowledge, tools, standards, and verified procedures that Physiotherapist professionals apply when performing assess mobility needs. In Physiotherapist practice, Role Specific directly supports assess mobility needs. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Manual Therapy",
+            "explanation": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for assess mobility needs.",
+          "Apply Role Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Physiotherapist professionals apply when performing assess mobility needs. In Physiotherapist practice, Role Specific directly supports assess mobility needs. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific is the body of knowledge, tools, standards, and verified procedures that Physiotherapist professionals apply when performing assess mobility needs."
+        ],
+        "practical_example": "In Physiotherapist, I applied Role Specific to stabilize assess mobility needs under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Assess mobility needs.",
+          "List the standards that govern Role Specific in Physiotherapist work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Assess mobility needs.",
+        "List the standards that govern Role Specific in Physiotherapist work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Physiotherapist context: Assess mobility needs. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Physiotherapist context: Assess mobility needs.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "PHYSIOTHERAPIST-COMPANY-SPEC-023",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Rehabilitation",
+        "Manual therapy",
+        "Exercise prescription",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Physiotherapist, my approach to assess mobility needs is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Physiotherapist practice, I anchor this using: Outcome quality improves when assumptions are explicit and testable., Traceability prevents repeated failures in handoffs., Company Specific.",
+      "answer_explanation": "This answer covers: As Physiotherapist, my approach to assess mobility needs is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand o\u2026",
+      "study_material": {
+        "overview": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Physiotherapist professionals apply when performing assess mobility needs. In Physiotherapist practice, Company Specific directly supports assess mobility needs. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Physiotherapist professionals apply when performing assess mobility needs."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific is the body of knowledge, tools, standards, and verified procedures that Physiotherapist professionals apply when performing assess mobility needs. In Physiotherapist practice, Company Specific directly supports assess mobility needs. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Rehabilitation",
+            "explanation": "Rehabilitation in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          },
+          {
+            "skill": "Manual Therapy",
+            "explanation": "Manual Therapy in healthcare is the clinically governed practice of delivering interventions that improve patient outcomes while maintaining safety, consent, and continuity of care."
+          }
+        ],
+        "principles": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "step_by_step_breakdown": [
+          "Clarify required outcome, constraints, and stakeholders for assess mobility needs.",
+          "Apply Company Specific using documented procedures and intermediate quality checks.",
+          "Validate output against acceptance criteria and applicable standards.",
+          "Record decisions and handover notes for traceability.",
+          "Review result and improve process for next cycle."
+        ],
+        "explanations": [
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Physiotherapist professionals apply when performing assess mobility needs. In Physiotherapist practice, Company Specific directly supports assess mobility needs. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific is the body of knowledge, tools, standards, and verified procedures that Physiotherapist professionals apply when performing assess mobility needs."
+        ],
+        "practical_example": "In Physiotherapist, I applied Company Specific to stabilize assess mobility needs under constraints, documented the control points, and reduced rework through structured verification.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Assess mobility needs.",
+          "List the standards that govern Company Specific in Physiotherapist work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "Risk controls must be integrated into normal workflow, not bolted on later."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Outcome quality improves when assumptions are explicit and testable.",
+          "Traceability prevents repeated failures in handoffs.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Assess mobility needs.",
+        "List the standards that govern Company Specific in Physiotherapist work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Outcome quality improves when assumptions are explicit and testable.",
+        "Traceability prevents repeated failures in handoffs.",
+        "Risk controls must be integrated into normal workflow, not bolted on later."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:28:24.781793+00:00",
+  "confidence_score": 0.9
+}

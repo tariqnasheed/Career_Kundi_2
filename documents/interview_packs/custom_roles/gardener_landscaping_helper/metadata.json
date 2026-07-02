@@ -1,0 +1,37 @@
+{
+  "role_name": "Gardener / Landscaping Helper",
+  "normalized_role_slug": "gardener_landscaping_helper",
+  "category": "custom_roles",
+  "stream_or_department": "odd_jobs",
+  "generated_at": "2026-07-02",
+  "last_updated": "2026-07-02",
+  "generated_by": "Careerkundi catalog pre-seed (offline pipeline)",
+  "question_count": 24,
+  "question_specific_study_material_count": 24,
+  "skill_count": 31,
+  "pdf_files": [
+    "gardener_landscaping_helper_interview_pack.pdf",
+    "gardener_landscaping_helper_study_material.pdf",
+    "gardener_landscaping_helper_questions_answers.pdf"
+  ],
+  "markdown_files": [
+    "gardener_landscaping_helper_interview_pack.md",
+    "gardener_landscaping_helper_study_material.md",
+    "gardener_landscaping_helper_questions_answers.md"
+  ],
+  "source_files": [
+    "gardener_landscaping_helper_interview_pack.md",
+    "gardener_landscaping_helper_study_material.md",
+    "gardener_landscaping_helper_questions_answers.md",
+    "gardener_landscaping_helper_interview_pack.pdf",
+    "gardener_landscaping_helper_study_material.pdf",
+    "gardener_landscaping_helper_questions_answers.pdf"
+  ],
+  "web_sources": [],
+  "related_roles": [],
+  "status": "complete",
+  "version": "1.0",
+  "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/gardener_landscaping_helper",
+  "has_pdf": true,
+  "has_markdown": true
+}

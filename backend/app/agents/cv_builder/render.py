@@ -29,6 +29,71 @@ from datetime import datetime, timezone
 from typing import Any
 
 
+_SECTION_TITLES: dict[str, str] = {
+    "summary": "Professional Summary",
+    "experience": "Work Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "projects": "Projects",
+    "certifications": "Certifications",
+    "publications": "Publications",
+    "languages": "Languages",
+    "volunteer": "Volunteer Experience",
+    "awards": "Awards",
+    "references": "References",
+}
+
+
+def _render_generated_section(section_id: str, payload: dict) -> dict | None:
+    """Turn one role-targeted generated_sections entry into rendered_content section shape."""
+    title = _SECTION_TITLES.get(section_id, section_id.replace("_", " ").title())
+    if section_id == "summary":
+        content = payload.get("content")
+        if not content:
+            return None
+        return {"section_id": "summary", "title": title, "content": content}
+    if section_id == "skills":
+        items = payload.get("items") or []
+        if not items:
+            return None
+        return {"section_id": "skills", "title": title, "items": items}
+    entries = payload.get("entries")
+    if entries is None:
+        return None
+    return {"section_id": section_id, "title": title, "entries": entries}
+
+
+def _render_role_targeted_sections(draft: dict, section_ids: list[str]) -> list[dict]:
+    generated = draft.get("generated_sections") or {}
+    sections: list[dict] = []
+    for section_id in section_ids:
+        if section_id == "summary":
+            content = (generated.get("summary") or {}).get("content") or draft.get("professional_summary")
+            if content:
+                sections.append({"section_id": "summary", "title": _SECTION_TITLES["summary"], "content": content})
+            continue
+        if section_id == "custom":
+            for custom in generated.get("custom", {}).get("sections", []):
+                sections.append(
+                    {
+                        "section_id": f"custom-{custom.get('id', 'generated')}",
+                        "title": custom.get("title", "Custom Section"),
+                        "section_type": custom.get("section_type", "list"),
+                        "free_text_content": custom.get("free_text_content"),
+                        "tags": custom.get("tags", []),
+                        "entries": custom.get("entries", []),
+                    }
+                )
+            continue
+        payload = generated.get(section_id)
+        if not payload:
+            continue
+        rendered = _render_generated_section(section_id, payload)
+        if rendered:
+            sections.append(rendered)
+    return sections
+
+
 def _bullets_for_entry(entry: dict, enhanced_groups: list[dict], original_field: str) -> list[str]:
     """Prefer the Reflector-approved enhanced bullets for this entry (matched by its real ORM id); fall back to the original, unenhanced bullets if none were produced (e.g. the entry had no bullets to begin with)."""
     entry_id = str(entry.get("id"))
@@ -201,28 +266,32 @@ def render_cv(
     section — never anything generated outside the agent pipeline.
     """
     sections: list[dict] = []
+    generation_mode = draft.get("generation_mode", "profile")
 
-    if "summary" in section_ids and draft.get("professional_summary"):
-        sections.append(
-            {"section_id": "summary", "title": "Professional Summary", "content": draft["professional_summary"]}
-        )
-    if "experience" in section_ids:
-        sections.append(_render_experience_section(profile, draft))
-    if "education" in section_ids:
-        sections.append(_render_education_section(profile))
-    if "skills" in section_ids:
-        sections.append(_render_skills_section(draft))
-    if "projects" in section_ids:
-        sections.append(_render_projects_section(profile, draft))
-
-    for section_id, spec in _SIMPLE_SECTION_SPECS.items():
-        if section_id in section_ids:
+    if generation_mode == "role_targeted":
+        sections = _render_role_targeted_sections(draft, section_ids)
+    else:
+        if "summary" in section_ids and draft.get("professional_summary"):
             sections.append(
-                _render_simple_list_section(profile, spec["profile_field"], section_id, spec["title"], spec["field_names"])
+                {"section_id": "summary", "title": "Professional Summary", "content": draft["professional_summary"]}
             )
+        if "experience" in section_ids:
+            sections.append(_render_experience_section(profile, draft))
+        if "education" in section_ids:
+            sections.append(_render_education_section(profile))
+        if "skills" in section_ids:
+            sections.append(_render_skills_section(draft))
+        if "projects" in section_ids:
+            sections.append(_render_projects_section(profile, draft))
 
-    if "custom" in section_ids:
-        sections.extend(_render_custom_sections(profile))
+        for section_id, spec in _SIMPLE_SECTION_SPECS.items():
+            if section_id in section_ids:
+                sections.append(
+                    _render_simple_list_section(profile, spec["profile_field"], section_id, spec["title"], spec["field_names"])
+                )
+
+        if "custom" in section_ids:
+            sections.extend(_render_custom_sections(profile))
 
     personal_info = {
         # `full_name`/`email` come from the User row, not Profile — the route
@@ -244,6 +313,8 @@ def render_cv(
         "meta": {
             "template": template,
             "tone": tone,
+            "generation_mode": generation_mode,
+            "target_role_title": draft.get("target_role_title") or (target_job or {}).get("title"),
             "target_job_title": (target_job or {}).get("title"),
             "ats_keywords_matched": draft.get("ats_keywords_matched", []),
             "citations": citations,

@@ -1,0 +1,2969 @@
+{
+  "role_name": "Waiter / Waitress",
+  "role_slug": "waiter_waitress",
+  "category": "technology",
+  "role_overview": {
+    "role_name": "Waiter / Waitress",
+    "summary": "The Waiter / Waitress role integrates Table service, Order taking, Upselling to deliver on responsibilities such as serve guests. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Serve guests",
+      "Take orders accurately",
+      "Handle payments"
+    ],
+    "required_skills": [
+      "Table service",
+      "Order taking",
+      "Upselling"
+    ],
+    "what_employers_expect": [
+      "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: Food service experience."
+    ],
+    "skill_clusters": [
+      "Hospitality Operations"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "If a new hire joined your Waiter / Waitress function while handling 'Serve guests', how would you break down Table service into practical steps?",
+      "why_asked": "Tests genuine conceptual understanding of Table service, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Table service",
+      "question_id": "WAITER-WAITRESS-TABLE-SERVIC-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Table Service without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Waiter / Waitress context, Table Service starts with set up station readiness, prep levels, and hygiene controls pre-service. and continues through execute service sop with quality checks at pass/dispatch.. The critical discipline is evidence: service recovery quality predicts repeat business better than perfect service rates.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how serve guests stays reliable under real operational constraints.\n\nDuring peak as Waiter / Waitress, I adjusted prep cadence and station allocation for serve guests; ticket times stabilized and complaint rate decreased materially.",
+      "answer_explanation": "Key knowledge demonstrated for Table Service:\n\u2022 Service recovery quality predicts repeat business better than perfect service rates.\n\u2022 Allergen communication failures are high-severity operational risks.\n\u2022 Prep discipline is the strongest predictor of peak-hour consistency.\nStandards referenced: HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Table Service directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Table Service",
+            "definition": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Table Service",
+            "explanation": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Table Service directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Order Taking",
+            "explanation": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Table Service",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Table Service directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Waiter / Waitress, I adjusted prep cadence and station allocation for serve guests; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Table Service without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Table Service applies to: Serve guests.",
+          "List the standards that govern Table Service in Waiter / Waitress work.",
+          "Write out the verification steps after completing a Table Service task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Table Service",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Table Service applies to: Serve guests.",
+        "List the standards that govern Table Service in Waiter / Waitress work.",
+        "Write out the verification steps after completing a Table Service task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Give a detailed example where Table service was critical to recovering a difficult Waiter / Waitress outcome while handling 'Serve guests'.",
+      "why_asked": "Probes depth of hands-on experience with Table service under real constraints.",
+      "skill_tag": "Table service",
+      "question_id": "WAITER-WAITRESS-TABLE-SERVIC-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Table Service without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Waiter / Waitress context, Table Service starts with set up station readiness, prep levels, and hygiene controls pre-service. and continues through execute service sop with quality checks at pass/dispatch.. The critical discipline is evidence: service recovery quality predicts repeat business better than perfect service rates.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how serve guests stays reliable under real operational constraints.\n\nDuring peak as Waiter / Waitress, I adjusted prep cadence and station allocation for serve guests; ticket times stabilized and complaint rate decreased materially.",
+      "answer_explanation": "Key knowledge demonstrated for Table Service:\n\u2022 Service recovery quality predicts repeat business better than perfect service rates.\n\u2022 Allergen communication failures are high-severity operational risks.\n\u2022 Prep discipline is the strongest predictor of peak-hour consistency.\nStandards referenced: HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Table Service directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Table Service",
+            "definition": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Table Service",
+            "explanation": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Table Service directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Order Taking",
+            "explanation": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Table Service",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Table Service directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Waiter / Waitress, I adjusted prep cadence and station allocation for serve guests; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Table Service without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Table Service applies to: Serve guests.",
+          "List the standards that govern Table Service in Waiter / Waitress work.",
+          "Write out the verification steps after completing a Table Service task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Table Service",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Table Service applies to: Serve guests.",
+        "List the standards that govern Table Service in Waiter / Waitress work.",
+        "Write out the verification steps after completing a Table Service task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "What are the essential technical terms every Waiter / Waitress must know when working with Table service while handling 'Serve guests'? Define each precisely.",
+      "why_asked": "Core terminology separates practitioners who understand Table service from those who only name-drop it.",
+      "skill_tag": "Table service",
+      "terminology_terms": [
+        {
+          "term": "Table Service",
+          "definition": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        },
+        {
+          "term": "HACCP",
+          "definition": "Standard/framework governing Table Service: HACCP."
+        },
+        {
+          "term": "Service SOPs",
+          "definition": "Standard/framework governing Table Service: Service SOPs."
+        },
+        {
+          "term": "Allergen controls",
+          "definition": "Standard/framework governing Table Service: Allergen controls."
+        },
+        {
+          "term": "Service recovery quality predicts repeat",
+          "definition": "Service recovery quality predicts repeat business better than perfect service rates."
+        },
+        {
+          "term": "Allergen communication failures are high",
+          "definition": "Allergen communication failures are high-severity operational risks."
+        },
+        {
+          "term": "Prep discipline is the strongest predict",
+          "definition": "Prep discipline is the strongest predictor of peak-hour consistency."
+        },
+        {
+          "term": "Service recovery quality predicts repeat business better than perfect service rates.",
+          "definition": "Related concept used with Table Service in professional practice."
+        }
+      ],
+      "question_id": "WAITER-WAITRESS-TABLE-SERVIC-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Table Service: Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+        "HACCP: Standard/framework governing Table Service: HACCP.",
+        "Service SOPs: Standard/framework governing Table Service: Service SOPs.",
+        "Allergen controls: Standard/framework governing Table Service: Allergen controls.",
+        "Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high: Allergen communication failures are high-severity operational risks."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Waiter / Waitress work, these terms are foundational:\n\n\n**Table Service** \u2014 Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\n**HACCP** \u2014 Standard/framework governing Table Service: HACCP.\n\n**Service SOPs** \u2014 Standard/framework governing Table Service: Service SOPs.\n\n**Allergen controls** \u2014 Standard/framework governing Table Service: Allergen controls.\n\n**Service recovery quality predicts repeat** \u2014 Service recovery quality predicts repeat business better than perfect service rates.\n\n**Allergen communication failures are high** \u2014 Allergen communication failures are high-severity operational risks.\n\n**Prep discipline is the strongest predict** \u2014 Prep discipline is the strongest predictor of peak-hour consistency.\n\n**Service recovery quality predicts repeat business better than perfect service rates.** \u2014 Related concept used with Table Service in professional practice.",
+      "answer_explanation": "Definitions covered: Table Service, HACCP, Service SOPs, Allergen controls, Service recovery quality predicts repeat, Allergen communication failures are high",
+      "study_material": {
+        "overview": "Core terminology for Table Service \u2014 precise definitions required for Waiter / Waitress interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Table Service terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Table Service",
+            "definition": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Standard/framework governing Table Service: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Standard/framework governing Table Service: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Standard/framework governing Table Service: Allergen controls."
+          },
+          {
+            "term": "Service recovery quality predicts repeat",
+            "definition": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "term": "Allergen communication failures are high",
+            "definition": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "term": "Prep discipline is the strongest predict",
+            "definition": "Prep discipline is the strongest predictor of peak-hour consistency."
+          },
+          {
+            "term": "Service recovery quality predicts repeat business better than perfect service rates.",
+            "definition": "Related concept used with Table Service in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Table Service",
+            "explanation": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "HACCP",
+            "explanation": "Standard/framework governing Table Service: HACCP."
+          },
+          {
+            "skill": "Service SOPs",
+            "explanation": "Standard/framework governing Table Service: Service SOPs."
+          },
+          {
+            "skill": "Allergen controls",
+            "explanation": "Standard/framework governing Table Service: Allergen controls."
+          },
+          {
+            "skill": "Service recovery quality predicts repeat",
+            "explanation": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "skill": "Allergen communication failures are high",
+            "explanation": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "skill": "Prep discipline is the strongest predict",
+            "explanation": "Prep discipline is the strongest predictor of peak-hour consistency."
+          },
+          {
+            "skill": "Service recovery quality predicts repeat business better than perfect service rates.",
+            "explanation": "Related concept used with Table Service in professional practice."
+          }
+        ],
+        "principles": [
+          "Table Service: Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "HACCP: Standard/framework governing Table Service: HACCP.",
+          "Service SOPs: Standard/framework governing Table Service: Service SOPs.",
+          "Allergen controls: Standard/framework governing Table Service: Allergen controls.",
+          "Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high: Allergen communication failures are high-severity operational risks."
+        ],
+        "key_concepts": [
+          "Table Service",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Table Service** \u2014 Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "**HACCP** \u2014 Standard/framework governing Table Service: HACCP.",
+          "**Service SOPs** \u2014 Standard/framework governing Table Service: Service SOPs.",
+          "**Allergen controls** \u2014 Standard/framework governing Table Service: Allergen controls.",
+          "**Service recovery quality predicts repeat** \u2014 Service recovery quality predicts repeat business better than perfect service rates.",
+          "**Allergen communication failures are high** \u2014 Allergen communication failures are high-severity operational risks.",
+          "**Prep discipline is the strongest predict** \u2014 Prep discipline is the strongest predictor of peak-hour consistency.",
+          "**Service recovery quality predicts repeat business better than perfect service rates.** \u2014 Related concept used with Table Service in professional practice."
+        ],
+        "practical_example": "\u2022 Table Service: Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\u2022 HACCP: Standard/framework governing Table Service: HACCP.\n\u2022 Service SOPs: Standard/framework governing Table Service: Service SOPs.\n\u2022 Allergen controls: Standard/framework governing Table Service: Allergen controls.\n\u2022 Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Table Service terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Table Service",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "related_concepts": [
+          "Table Service",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Table Service terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Table Service",
+        "HACCP",
+        "Service SOPs",
+        "Allergen controls",
+        "Service recovery quality predicts repeat",
+        "Allergen communication failures are high",
+        "Prep discipline is the strongest predict",
+        "Service recovery quality predicts repeat business better than perfect service rates."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which non-negotiable rules and execution sequence govern Table service for Waiter / Waitress work while handling 'Serve guests'?",
+      "why_asked": "Tests whether you know how Table service is actually executed to standard, not only what it is called.",
+      "skill_tag": "Table service",
+      "question_id": "WAITER-WAITRESS-TABLE-SERVIC-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Table Service as a Waiter / Waitress:\n\n1. Service recovery quality predicts repeat business better than perfect service rates.\n2. Allergen communication failures are high-severity operational risks.\n3. Prep discipline is the strongest predictor of peak-hour consistency.\n\nStandard workflow:\n1. Set up station readiness, prep levels, and hygiene controls pre-service.\n2. Execute service SOP with quality checks at pass/dispatch.\n3. Manage guest communication and recovery when delays occur.\n4. Track waste, yield, and peak-period throughput.\n5. Close with sanitation, stock reconciliation, and handover notes.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Table Service \u2014 how work is executed to standard in Waiter / Waitress roles.",
+        "what_you_need_to_know_first": [
+          "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Table Service",
+            "definition": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Table Service",
+            "explanation": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "skill": "Table Service",
+            "explanation": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "skill": "Table Service",
+            "explanation": "Prep discipline is the strongest predictor of peak-hour consistency."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "practical_example": "1. Set up station readiness, prep levels, and hygiene controls pre-service.\n2. Execute service SOP with quality checks at pass/dispatch.\n3. Manage guest communication and recovery when delays occur.\n4. Track waste, yield, and peak-period throughput.\n5. Close with sanitation, stock reconciliation, and handover notes.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Table Service workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Table Service workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Calculation / quantitative question for Waiter / Waitress (Table service) while handling 'Serve guests': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Table service \u2014 essential for Waiter / Waitress roles.",
+      "skill_tag": "Table service",
+      "calculation": {
+        "skill": "Table Service",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "WAITER-WAITRESS-TABLE-SERVIC-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Waiter / Waitress practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Table Service: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Table Service calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Table Service",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Table Service calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe the most complex problem you've solved using Order taking as a Waiter / Waitress while handling 'Serve guests'.",
+      "why_asked": "Probes depth of hands-on experience with Order taking under real constraints.",
+      "skill_tag": "Order taking",
+      "question_id": "WAITER-WAITRESS-ORDER-TAKING-SCEN-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Order taking",
+        "Table service",
+        "Upselling",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Order Taking without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Waiter / Waitress context, Order Taking starts with set up station readiness, prep levels, and hygiene controls pre-service. and continues through execute service sop with quality checks at pass/dispatch.. The critical discipline is evidence: service recovery quality predicts repeat business better than perfect service rates.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how serve guests stays reliable under real operational constraints.\n\nDuring peak as Waiter / Waitress, I adjusted prep cadence and station allocation for serve guests; ticket times stabilized and complaint rate decreased materially.",
+      "answer_explanation": "Key knowledge demonstrated for Order Taking:\n\u2022 Service recovery quality predicts repeat business better than perfect service rates.\n\u2022 Allergen communication failures are high-severity operational risks.\n\u2022 Prep discipline is the strongest predictor of peak-hour consistency.\nStandards referenced: HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Order Taking directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Order Taking",
+            "definition": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Order Taking",
+            "explanation": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Order Taking directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Table Service",
+            "explanation": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Order Taking",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Order Taking directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Waiter / Waitress, I adjusted prep cadence and station allocation for serve guests; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Order Taking without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Order Taking applies to: Serve guests.",
+          "List the standards that govern Order Taking in Waiter / Waitress work.",
+          "Write out the verification steps after completing a Order Taking task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Order Taking",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Order Taking applies to: Serve guests.",
+        "List the standards that govern Order Taking in Waiter / Waitress work.",
+        "Write out the verification steps after completing a Order Taking task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "What are the essential technical terms every Waiter / Waitress must know when working with Order taking while handling 'Serve guests'? Define each precisely.",
+      "why_asked": "Core terminology separates practitioners who understand Order taking from those who only name-drop it.",
+      "skill_tag": "Order taking",
+      "terminology_terms": [
+        {
+          "term": "Order Taking",
+          "definition": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        },
+        {
+          "term": "HACCP",
+          "definition": "Standard/framework governing Order Taking: HACCP."
+        },
+        {
+          "term": "Service SOPs",
+          "definition": "Standard/framework governing Order Taking: Service SOPs."
+        },
+        {
+          "term": "Allergen controls",
+          "definition": "Standard/framework governing Order Taking: Allergen controls."
+        },
+        {
+          "term": "Service recovery quality predicts repeat",
+          "definition": "Service recovery quality predicts repeat business better than perfect service rates."
+        },
+        {
+          "term": "Allergen communication failures are high",
+          "definition": "Allergen communication failures are high-severity operational risks."
+        },
+        {
+          "term": "Prep discipline is the strongest predict",
+          "definition": "Prep discipline is the strongest predictor of peak-hour consistency."
+        },
+        {
+          "term": "Service recovery quality predicts repeat business better than perfect service rates.",
+          "definition": "Related concept used with Order Taking in professional practice."
+        }
+      ],
+      "question_id": "WAITER-WAITRESS-ORDER-TAKING-TERM-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Order taking",
+        "Table service",
+        "Upselling",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Order Taking: Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+        "HACCP: Standard/framework governing Order Taking: HACCP.",
+        "Service SOPs: Standard/framework governing Order Taking: Service SOPs.",
+        "Allergen controls: Standard/framework governing Order Taking: Allergen controls.",
+        "Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high: Allergen communication failures are high-severity operational risks."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Waiter / Waitress work, these terms are foundational:\n\n\n**Order Taking** \u2014 Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\n**HACCP** \u2014 Standard/framework governing Order Taking: HACCP.\n\n**Service SOPs** \u2014 Standard/framework governing Order Taking: Service SOPs.\n\n**Allergen controls** \u2014 Standard/framework governing Order Taking: Allergen controls.\n\n**Service recovery quality predicts repeat** \u2014 Service recovery quality predicts repeat business better than perfect service rates.\n\n**Allergen communication failures are high** \u2014 Allergen communication failures are high-severity operational risks.\n\n**Prep discipline is the strongest predict** \u2014 Prep discipline is the strongest predictor of peak-hour consistency.\n\n**Service recovery quality predicts repeat business better than perfect service rates.** \u2014 Related concept used with Order Taking in professional practice.",
+      "answer_explanation": "Definitions covered: Order Taking, HACCP, Service SOPs, Allergen controls, Service recovery quality predicts repeat, Allergen communication failures are high",
+      "study_material": {
+        "overview": "Core terminology for Order Taking \u2014 precise definitions required for Waiter / Waitress interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Order Taking terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Order Taking",
+            "definition": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Standard/framework governing Order Taking: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Standard/framework governing Order Taking: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Standard/framework governing Order Taking: Allergen controls."
+          },
+          {
+            "term": "Service recovery quality predicts repeat",
+            "definition": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "term": "Allergen communication failures are high",
+            "definition": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "term": "Prep discipline is the strongest predict",
+            "definition": "Prep discipline is the strongest predictor of peak-hour consistency."
+          },
+          {
+            "term": "Service recovery quality predicts repeat business better than perfect service rates.",
+            "definition": "Related concept used with Order Taking in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Order Taking",
+            "explanation": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "HACCP",
+            "explanation": "Standard/framework governing Order Taking: HACCP."
+          },
+          {
+            "skill": "Service SOPs",
+            "explanation": "Standard/framework governing Order Taking: Service SOPs."
+          },
+          {
+            "skill": "Allergen controls",
+            "explanation": "Standard/framework governing Order Taking: Allergen controls."
+          },
+          {
+            "skill": "Service recovery quality predicts repeat",
+            "explanation": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "skill": "Allergen communication failures are high",
+            "explanation": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "skill": "Prep discipline is the strongest predict",
+            "explanation": "Prep discipline is the strongest predictor of peak-hour consistency."
+          },
+          {
+            "skill": "Service recovery quality predicts repeat business better than perfect service rates.",
+            "explanation": "Related concept used with Order Taking in professional practice."
+          }
+        ],
+        "principles": [
+          "Order Taking: Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "HACCP: Standard/framework governing Order Taking: HACCP.",
+          "Service SOPs: Standard/framework governing Order Taking: Service SOPs.",
+          "Allergen controls: Standard/framework governing Order Taking: Allergen controls.",
+          "Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high: Allergen communication failures are high-severity operational risks."
+        ],
+        "key_concepts": [
+          "Order Taking",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Order Taking** \u2014 Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "**HACCP** \u2014 Standard/framework governing Order Taking: HACCP.",
+          "**Service SOPs** \u2014 Standard/framework governing Order Taking: Service SOPs.",
+          "**Allergen controls** \u2014 Standard/framework governing Order Taking: Allergen controls.",
+          "**Service recovery quality predicts repeat** \u2014 Service recovery quality predicts repeat business better than perfect service rates.",
+          "**Allergen communication failures are high** \u2014 Allergen communication failures are high-severity operational risks.",
+          "**Prep discipline is the strongest predict** \u2014 Prep discipline is the strongest predictor of peak-hour consistency.",
+          "**Service recovery quality predicts repeat business better than perfect service rates.** \u2014 Related concept used with Order Taking in professional practice."
+        ],
+        "practical_example": "\u2022 Order Taking: Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\u2022 HACCP: Standard/framework governing Order Taking: HACCP.\n\u2022 Service SOPs: Standard/framework governing Order Taking: Service SOPs.\n\u2022 Allergen controls: Standard/framework governing Order Taking: Allergen controls.\n\u2022 Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Order Taking terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Order Taking",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "related_concepts": [
+          "Order Taking",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Order Taking terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Order Taking",
+        "HACCP",
+        "Service SOPs",
+        "Allergen controls",
+        "Service recovery quality predicts repeat",
+        "Allergen communication failures are high",
+        "Prep discipline is the strongest predict",
+        "Service recovery quality predicts repeat business better than perfect service rates."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which non-negotiable rules and execution sequence govern Order taking for Waiter / Waitress work while handling 'Serve guests'?",
+      "why_asked": "Tests whether you know how Order taking is actually executed to standard, not only what it is called.",
+      "skill_tag": "Order taking",
+      "question_id": "WAITER-WAITRESS-ORDER-TAKING-PRIN-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Order taking",
+        "Table service",
+        "Upselling",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Order Taking as a Waiter / Waitress:\n\n1. Service recovery quality predicts repeat business better than perfect service rates.\n2. Allergen communication failures are high-severity operational risks.\n3. Prep discipline is the strongest predictor of peak-hour consistency.\n\nStandard workflow:\n1. Set up station readiness, prep levels, and hygiene controls pre-service.\n2. Execute service SOP with quality checks at pass/dispatch.\n3. Manage guest communication and recovery when delays occur.\n4. Track waste, yield, and peak-period throughput.\n5. Close with sanitation, stock reconciliation, and handover notes.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Order Taking \u2014 how work is executed to standard in Waiter / Waitress roles.",
+        "what_you_need_to_know_first": [
+          "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Order Taking",
+            "definition": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Order Taking",
+            "explanation": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "skill": "Order Taking",
+            "explanation": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "skill": "Order Taking",
+            "explanation": "Prep discipline is the strongest predictor of peak-hour consistency."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "practical_example": "1. Set up station readiness, prep levels, and hygiene controls pre-service.\n2. Execute service SOP with quality checks at pass/dispatch.\n3. Manage guest communication and recovery when delays occur.\n4. Track waste, yield, and peak-period throughput.\n5. Close with sanitation, stock reconciliation, and handover notes.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Order Taking workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Order Taking workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Quantitative validation scenario (Waiter / Waitress, Order taking) while handling 'Serve guests': Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+      "why_asked": "Tests numerical and analytical competence in Order taking \u2014 essential for Waiter / Waitress roles.",
+      "skill_tag": "Order taking",
+      "calculation": {
+        "skill": "Order Taking",
+        "prompt": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?",
+        "answer": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "steps": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ]
+      },
+      "question_id": "WAITER-WAITRESS-ORDER-TAKING-CALC-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Order taking",
+        "Table service",
+        "Upselling",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?\n\nWorking:\n1. (Price \u2212 cost) / price\n2. Express as %\n3. Link to total GP\n\nAnswer: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.\n\nIn Waiter / Waitress practice, I anchor this using: (Price \u2212 cost) / price, Express as %, Given data.",
+      "answer_explanation": "Calculation: Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+      "study_material": {
+        "overview": "Quantitative problem for Order Taking: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Food cost \u00a34.50, selling price \u00a314. What is gross food margin %?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "explanations": [
+          "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+          "Step: (Price \u2212 cost) / price",
+          "Step: Express as %",
+          "Step: Link to total GP"
+        ],
+        "practical_example": "Margin = (14 \u2212 4.50) / 14 \u00d7 100 = 67.9%. Monitor against target; if labour is high, contribution still may be insufficient.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Order Taking calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "(Price \u2212 cost) / price",
+          "Express as %",
+          "Link to total GP"
+        ],
+        "related_concepts": [
+          "Order Taking",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Order Taking calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "(Price \u2212 cost) / price",
+        "Express as %",
+        "Link to total GP"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "How would you teach Upselling to a new colleague in a Waiter / Waitress team while handling 'Serve guests', including where beginners fail first?",
+      "why_asked": "Tests genuine conceptual understanding of Upselling, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Upselling",
+      "question_id": "WAITER-WAITRESS-UPSELLING-EXPL-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Upselling",
+        "Table service",
+        "Order taking",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Upselling without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Waiter / Waitress context, Upselling starts with set up station readiness, prep levels, and hygiene controls pre-service. and continues through execute service sop with quality checks at pass/dispatch.. The critical discipline is evidence: service recovery quality predicts repeat business better than perfect service rates.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how serve guests stays reliable under real operational constraints.\n\nDuring peak as Waiter / Waitress, I adjusted prep cadence and station allocation for serve guests; ticket times stabilized and complaint rate decreased materially.",
+      "answer_explanation": "Key knowledge demonstrated for Upselling:\n\u2022 Service recovery quality predicts repeat business better than perfect service rates.\n\u2022 Allergen communication failures are high-severity operational risks.\n\u2022 Prep discipline is the strongest predictor of peak-hour consistency.\nStandards referenced: HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Upselling directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Upselling",
+            "definition": "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Upselling",
+            "explanation": "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Upselling directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Table Service",
+            "explanation": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Upselling",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Upselling directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Waiter / Waitress, I adjusted prep cadence and station allocation for serve guests; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Upselling without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Upselling applies to: Serve guests.",
+          "List the standards that govern Upselling in Waiter / Waitress work.",
+          "Write out the verification steps after completing a Upselling task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Upselling",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Upselling applies to: Serve guests.",
+        "List the standards that govern Upselling in Waiter / Waitress work.",
+        "Write out the verification steps after completing a Upselling task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Give a detailed example where Upselling was critical to recovering a difficult Waiter / Waitress outcome while handling 'Serve guests'.",
+      "why_asked": "Probes depth of hands-on experience with Upselling under real constraints.",
+      "skill_tag": "Upselling",
+      "question_id": "WAITER-WAITRESS-UPSELLING-SCEN-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Upselling",
+        "Table service",
+        "Order taking",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Upselling without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Waiter / Waitress context, Upselling starts with set up station readiness, prep levels, and hygiene controls pre-service. and continues through execute service sop with quality checks at pass/dispatch.. The critical discipline is evidence: service recovery quality predicts repeat business better than perfect service rates.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how serve guests stays reliable under real operational constraints.\n\nDuring peak as Waiter / Waitress, I adjusted prep cadence and station allocation for serve guests; ticket times stabilized and complaint rate decreased materially.",
+      "answer_explanation": "Key knowledge demonstrated for Upselling:\n\u2022 Service recovery quality predicts repeat business better than perfect service rates.\n\u2022 Allergen communication failures are high-severity operational risks.\n\u2022 Prep discipline is the strongest predictor of peak-hour consistency.\nStandards referenced: HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Upselling directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Upselling",
+            "definition": "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Upselling",
+            "explanation": "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Upselling directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Table Service",
+            "explanation": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Upselling",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Upselling directly supports serve guests. Hospitality and operations management optimises guest experience, throughput, and margin under real-time pressure. Success depends on standard operating procedures, inventory control, staff coordination, and service recovery when things go wrong. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Waiter / Waitress, I adjusted prep cadence and station allocation for serve guests; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Upselling without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Upselling applies to: Serve guests.",
+          "List the standards that govern Upselling in Waiter / Waitress work.",
+          "Write out the verification steps after completing a Upselling task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Upselling",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "hospitality operations"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Upselling applies to: Serve guests.",
+        "List the standards that govern Upselling in Waiter / Waitress work.",
+        "Write out the verification steps after completing a Upselling task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for Upselling in Waiter / Waitress practice while handling 'Serve guests', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand Upselling from those who only name-drop it.",
+      "skill_tag": "Upselling",
+      "terminology_terms": [
+        {
+          "term": "Upselling",
+          "definition": "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        },
+        {
+          "term": "HACCP",
+          "definition": "Standard/framework governing Upselling: HACCP."
+        },
+        {
+          "term": "Service SOPs",
+          "definition": "Standard/framework governing Upselling: Service SOPs."
+        },
+        {
+          "term": "Allergen controls",
+          "definition": "Standard/framework governing Upselling: Allergen controls."
+        },
+        {
+          "term": "Service recovery quality predicts repeat",
+          "definition": "Service recovery quality predicts repeat business better than perfect service rates."
+        },
+        {
+          "term": "Allergen communication failures are high",
+          "definition": "Allergen communication failures are high-severity operational risks."
+        },
+        {
+          "term": "Prep discipline is the strongest predict",
+          "definition": "Prep discipline is the strongest predictor of peak-hour consistency."
+        },
+        {
+          "term": "Service recovery quality predicts repeat business better than perfect service rates.",
+          "definition": "Related concept used with Upselling in professional practice."
+        }
+      ],
+      "question_id": "WAITER-WAITRESS-UPSELLING-TERM-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Upselling",
+        "Table service",
+        "Order taking",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Upselling: Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+        "HACCP: Standard/framework governing Upselling: HACCP.",
+        "Service SOPs: Standard/framework governing Upselling: Service SOPs.",
+        "Allergen controls: Standard/framework governing Upselling: Allergen controls.",
+        "Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high: Allergen communication failures are high-severity operational risks."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Waiter / Waitress work, these terms are foundational:\n\n\n**Upselling** \u2014 Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\n**HACCP** \u2014 Standard/framework governing Upselling: HACCP.\n\n**Service SOPs** \u2014 Standard/framework governing Upselling: Service SOPs.\n\n**Allergen controls** \u2014 Standard/framework governing Upselling: Allergen controls.\n\n**Service recovery quality predicts repeat** \u2014 Service recovery quality predicts repeat business better than perfect service rates.\n\n**Allergen communication failures are high** \u2014 Allergen communication failures are high-severity operational risks.\n\n**Prep discipline is the strongest predict** \u2014 Prep discipline is the strongest predictor of peak-hour consistency.\n\n**Service recovery quality predicts repeat business better than perfect service rates.** \u2014 Related concept used with Upselling in professional practice.",
+      "answer_explanation": "Definitions covered: Upselling, HACCP, Service SOPs, Allergen controls, Service recovery quality predicts repeat, Allergen communication failures are high",
+      "study_material": {
+        "overview": "Core terminology for Upselling \u2014 precise definitions required for Waiter / Waitress interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Upselling terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Upselling",
+            "definition": "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Standard/framework governing Upselling: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Standard/framework governing Upselling: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Standard/framework governing Upselling: Allergen controls."
+          },
+          {
+            "term": "Service recovery quality predicts repeat",
+            "definition": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "term": "Allergen communication failures are high",
+            "definition": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "term": "Prep discipline is the strongest predict",
+            "definition": "Prep discipline is the strongest predictor of peak-hour consistency."
+          },
+          {
+            "term": "Service recovery quality predicts repeat business better than perfect service rates.",
+            "definition": "Related concept used with Upselling in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Upselling",
+            "explanation": "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "HACCP",
+            "explanation": "Standard/framework governing Upselling: HACCP."
+          },
+          {
+            "skill": "Service SOPs",
+            "explanation": "Standard/framework governing Upselling: Service SOPs."
+          },
+          {
+            "skill": "Allergen controls",
+            "explanation": "Standard/framework governing Upselling: Allergen controls."
+          },
+          {
+            "skill": "Service recovery quality predicts repeat",
+            "explanation": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "skill": "Allergen communication failures are high",
+            "explanation": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "skill": "Prep discipline is the strongest predict",
+            "explanation": "Prep discipline is the strongest predictor of peak-hour consistency."
+          },
+          {
+            "skill": "Service recovery quality predicts repeat business better than perfect service rates.",
+            "explanation": "Related concept used with Upselling in professional practice."
+          }
+        ],
+        "principles": [
+          "Upselling: Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "HACCP: Standard/framework governing Upselling: HACCP.",
+          "Service SOPs: Standard/framework governing Upselling: Service SOPs.",
+          "Allergen controls: Standard/framework governing Upselling: Allergen controls.",
+          "Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high: Allergen communication failures are high-severity operational risks."
+        ],
+        "key_concepts": [
+          "Upselling",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Upselling** \u2014 Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "**HACCP** \u2014 Standard/framework governing Upselling: HACCP.",
+          "**Service SOPs** \u2014 Standard/framework governing Upselling: Service SOPs.",
+          "**Allergen controls** \u2014 Standard/framework governing Upselling: Allergen controls.",
+          "**Service recovery quality predicts repeat** \u2014 Service recovery quality predicts repeat business better than perfect service rates.",
+          "**Allergen communication failures are high** \u2014 Allergen communication failures are high-severity operational risks.",
+          "**Prep discipline is the strongest predict** \u2014 Prep discipline is the strongest predictor of peak-hour consistency.",
+          "**Service recovery quality predicts repeat business better than perfect service rates.** \u2014 Related concept used with Upselling in professional practice."
+        ],
+        "practical_example": "\u2022 Upselling: Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\u2022 HACCP: Standard/framework governing Upselling: HACCP.\n\u2022 Service SOPs: Standard/framework governing Upselling: Service SOPs.\n\u2022 Allergen controls: Standard/framework governing Upselling: Allergen controls.\n\u2022 Service recovery quality predicts repeat: Service recovery quality predicts repeat business better than perfect service rates.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Upselling terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Upselling",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "related_concepts": [
+          "Upselling",
+          "HACCP",
+          "Service SOPs",
+          "Allergen controls",
+          "Service recovery quality predicts repeat",
+          "Allergen communication failures are high",
+          "Prep discipline is the strongest predict",
+          "Service recovery quality predicts repeat business better than perfect service rates."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Upselling terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Upselling",
+        "HACCP",
+        "Service SOPs",
+        "Allergen controls",
+        "Service recovery quality predicts repeat",
+        "Allergen communication failures are high",
+        "Prep discipline is the strongest predict",
+        "Service recovery quality predicts repeat business better than perfect service rates."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What are the core operating principles and standard workflow for applying Upselling in a Waiter / Waitress role while handling 'Serve guests'?",
+      "why_asked": "Tests whether you know how Upselling is actually executed to standard, not only what it is called.",
+      "skill_tag": "Upselling",
+      "question_id": "WAITER-WAITRESS-UPSELLING-PRIN-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Upselling",
+        "Table service",
+        "Order taking",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Upselling as a Waiter / Waitress:\n\n1. Service recovery quality predicts repeat business better than perfect service rates.\n2. Allergen communication failures are high-severity operational risks.\n3. Prep discipline is the strongest predictor of peak-hour consistency.\n\nStandard workflow:\n1. Set up station readiness, prep levels, and hygiene controls pre-service.\n2. Execute service SOP with quality checks at pass/dispatch.\n3. Manage guest communication and recovery when delays occur.\n4. Track waste, yield, and peak-period throughput.\n5. Close with sanitation, stock reconciliation, and handover notes.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Upselling \u2014 how work is executed to standard in Waiter / Waitress roles.",
+        "what_you_need_to_know_first": [
+          "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Upselling",
+            "definition": "Upselling in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Upselling",
+            "explanation": "Service recovery quality predicts repeat business better than perfect service rates."
+          },
+          {
+            "skill": "Upselling",
+            "explanation": "Allergen communication failures are high-severity operational risks."
+          },
+          {
+            "skill": "Upselling",
+            "explanation": "Prep discipline is the strongest predictor of peak-hour consistency."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "practical_example": "1. Set up station readiness, prep levels, and hygiene controls pre-service.\n2. Execute service SOP with quality checks at pass/dispatch.\n3. Manage guest communication and recovery when delays occur.\n4. Track waste, yield, and peak-period throughput.\n5. Close with sanitation, stock reconciliation, and handover notes.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Upselling workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Upselling workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Waiter / Waitress, define and explain these core professional terms: Table Service, HACCP, Service SOPs, Order Taking, HACCP, Service SOPs.",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Table Service",
+          "definition": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        },
+        {
+          "term": "HACCP",
+          "definition": "Standard/framework governing Table Service: HACCP."
+        },
+        {
+          "term": "Service SOPs",
+          "definition": "Standard/framework governing Table Service: Service SOPs."
+        },
+        {
+          "term": "Order Taking",
+          "definition": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        },
+        {
+          "term": "HACCP",
+          "definition": "Standard/framework governing Order Taking: HACCP."
+        },
+        {
+          "term": "Service SOPs",
+          "definition": "Standard/framework governing Order Taking: Service SOPs."
+        }
+      ],
+      "question_id": "WAITER-WAITRESS-CORE-TERMINO-TERM-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Table Service: Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+        "HACCP: Standard/framework governing Table Service: HACCP.",
+        "Service SOPs: Standard/framework governing Table Service: Service SOPs.",
+        "Order Taking: Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+        "HACCP: Standard/framework governing Order Taking: HACCP.",
+        "Service SOPs: Standard/framework governing Order Taking: Service SOPs."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Waiter / Waitress work, these terms are foundational:\n\n\n**Table Service** \u2014 Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\n**HACCP** \u2014 Standard/framework governing Table Service: HACCP.\n\n**Service SOPs** \u2014 Standard/framework governing Table Service: Service SOPs.\n\n**Order Taking** \u2014 Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\n**HACCP** \u2014 Standard/framework governing Order Taking: HACCP.\n\n**Service SOPs** \u2014 Standard/framework governing Order Taking: Service SOPs.",
+      "answer_explanation": "Definitions covered: Table Service, HACCP, Service SOPs, Order Taking, HACCP, Service SOPs",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Waiter / Waitress interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Table Service",
+            "definition": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Standard/framework governing Table Service: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Standard/framework governing Table Service: Service SOPs."
+          },
+          {
+            "term": "Order Taking",
+            "definition": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Standard/framework governing Order Taking: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Standard/framework governing Order Taking: Service SOPs."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Table Service",
+            "explanation": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "HACCP",
+            "explanation": "Standard/framework governing Table Service: HACCP."
+          },
+          {
+            "skill": "Service SOPs",
+            "explanation": "Standard/framework governing Table Service: Service SOPs."
+          },
+          {
+            "skill": "Order Taking",
+            "explanation": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "HACCP",
+            "explanation": "Standard/framework governing Order Taking: HACCP."
+          },
+          {
+            "skill": "Service SOPs",
+            "explanation": "Standard/framework governing Order Taking: Service SOPs."
+          }
+        ],
+        "principles": [
+          "Table Service: Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "HACCP: Standard/framework governing Table Service: HACCP.",
+          "Service SOPs: Standard/framework governing Table Service: Service SOPs.",
+          "Order Taking: Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "HACCP: Standard/framework governing Order Taking: HACCP.",
+          "Service SOPs: Standard/framework governing Order Taking: Service SOPs."
+        ],
+        "key_concepts": [
+          "Table Service",
+          "HACCP",
+          "Service SOPs",
+          "Order Taking",
+          "HACCP",
+          "Service SOPs"
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Table Service** \u2014 Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "**HACCP** \u2014 Standard/framework governing Table Service: HACCP.",
+          "**Service SOPs** \u2014 Standard/framework governing Table Service: Service SOPs.",
+          "**Order Taking** \u2014 Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.",
+          "**HACCP** \u2014 Standard/framework governing Order Taking: HACCP.",
+          "**Service SOPs** \u2014 Standard/framework governing Order Taking: Service SOPs."
+        ],
+        "practical_example": "\u2022 Table Service: Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\u2022 HACCP: Standard/framework governing Table Service: HACCP.\n\u2022 Service SOPs: Standard/framework governing Table Service: Service SOPs.\n\u2022 Order Taking: Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls.\n\u2022 HACCP: Standard/framework governing Order Taking: HACCP.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Table Service",
+          "HACCP",
+          "Service SOPs",
+          "Order Taking",
+          "HACCP",
+          "Service SOPs"
+        ],
+        "related_concepts": [
+          "Table Service",
+          "HACCP",
+          "Service SOPs",
+          "Order Taking",
+          "HACCP",
+          "Service SOPs"
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Table Service",
+        "HACCP",
+        "Service SOPs",
+        "Order Taking",
+        "HACCP",
+        "Service SOPs"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Serve guests'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "WAITER-WAITRESS-BEHAVIORAL-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The res\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Waiter / Waitress handles when serve guests. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Waiter / Waitress work involves serve guests under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Waiter / Waitress",
+            "definition": "The Waiter / Waitress role integrates Table service, Order taking, Upselling to deliver on responsibilities such as serve guests. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Waiter / Waitress reference serve guests and relevant standards or tools."
+        ],
+        "practical_example": "In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Waiter / Waitress challenge with numbers.",
+          "Link the story to: Serve guests."
+        ],
+        "revision_notes": [
+          "Table service",
+          "Order taking",
+          "Upselling"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Waiter / Waitress challenge with numbers.",
+        "Link the story to: Serve guests."
+      ],
+      "revision_notes": [
+        "Table service",
+        "Order taking",
+        "Upselling"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Take orders accurately'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "WAITER-WAITRESS-BEHAVIORAL-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The res\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Waiter / Waitress handles when serve guests. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Waiter / Waitress work involves serve guests under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Waiter / Waitress",
+            "definition": "The Waiter / Waitress role integrates Table service, Order taking, Upselling to deliver on responsibilities such as serve guests. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Waiter / Waitress reference serve guests and relevant standards or tools."
+        ],
+        "practical_example": "In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Waiter / Waitress challenge with numbers.",
+          "Link the story to: Serve guests."
+        ],
+        "revision_notes": [
+          "Table service",
+          "Order taking",
+          "Upselling"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Waiter / Waitress challenge with numbers.",
+        "Link the story to: Serve guests."
+      ],
+      "revision_notes": [
+        "Table service",
+        "Order taking",
+        "Upselling"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Handle payments'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "WAITER-WAITRESS-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The res\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Waiter / Waitress handles when serve guests. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Waiter / Waitress work involves serve guests under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Waiter / Waitress",
+            "definition": "The Waiter / Waitress role integrates Table service, Order taking, Upselling to deliver on responsibilities such as serve guests. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Waiter / Waitress reference serve guests and relevant standards or tools."
+        ],
+        "practical_example": "In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Waiter / Waitress challenge with numbers.",
+          "Link the story to: Serve guests."
+        ],
+        "revision_notes": [
+          "Table service",
+          "Order taking",
+          "Upselling"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Waiter / Waitress challenge with numbers.",
+        "Link the story to: Serve guests."
+      ],
+      "revision_notes": [
+        "Table service",
+        "Order taking",
+        "Upselling"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe one complex assignment in Waiter / Waitress work while handling 'Serve guests' where your planning prevented failure.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "WAITER-WAITRESS-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The res\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Waiter / Waitress handles when serve guests. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Waiter / Waitress work involves serve guests under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Waiter / Waitress",
+            "definition": "The Waiter / Waitress role integrates Table service, Order taking, Upselling to deliver on responsibilities such as serve guests. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Waiter / Waitress reference serve guests and relevant standards or tools."
+        ],
+        "practical_example": "In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Waiter / Waitress challenge with numbers.",
+          "Link the story to: Serve guests."
+        ],
+        "revision_notes": [
+          "Table service",
+          "Order taking",
+          "Upselling"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Waiter / Waitress challenge with numbers.",
+        "Link the story to: Serve guests."
+      ],
+      "revision_notes": [
+        "Table service",
+        "Order taking",
+        "Upselling"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Give an example where your evidence or metrics in Waiter / Waitress delivery while handling 'Serve guests' changed a decision.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "WAITER-WAITRESS-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The res\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Waiter / Waitress handles when serve guests. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Waiter / Waitress work involves serve guests under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Waiter / Waitress",
+            "definition": "The Waiter / Waitress role integrates Table service, Order taking, Upselling to deliver on responsibilities such as serve guests. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Waiter / Waitress reference serve guests and relevant standards or tools."
+        ],
+        "practical_example": "In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Waiter / Waitress challenge with numbers.",
+          "Link the story to: Serve guests."
+        ],
+        "revision_notes": [
+          "Table service",
+          "Order taking",
+          "Upselling"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Waiter / Waitress challenge with numbers.",
+        "Link the story to: Serve guests."
+      ],
+      "revision_notes": [
+        "Table service",
+        "Order taking",
+        "Upselling"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Explain a stakeholder-management challenge from Waiter / Waitress work while handling 'Serve guests' and the outcome.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "WAITER-WAITRESS-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+      "answer_explanation": "This answer covers: In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The res\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Waiter / Waitress handles when serve guests. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Waiter / Waitress work involves serve guests under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Waiter / Waitress",
+            "definition": "The Waiter / Waitress role integrates Table service, Order taking, Upselling to deliver on responsibilities such as serve guests. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Table service supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Accountability",
+          "Communication",
+          "Judgement",
+          "Execution discipline"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Waiter / Waitress reference serve guests and relevant standards or tools."
+        ],
+        "practical_example": "In Waiter / Waitress work involving serve guests, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable process documented for future teams.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Waiter / Waitress challenge with numbers.",
+          "Link the story to: Serve guests."
+        ],
+        "revision_notes": [
+          "Table service",
+          "Order taking",
+          "Upselling"
+        ],
+        "related_concepts": [
+          "Hospitality Operations"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Waiter / Waitress challenge with numbers.",
+        "Link the story to: Serve guests."
+      ],
+      "revision_notes": [
+        "Table service",
+        "Order taking",
+        "Upselling"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Waiter / Waitress position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "WAITER-WAITRESS-ROLE-SPECIFI-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Waiter / Waitress, my approach to serve guests is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Waiter / Waitress practice, I anchor this using: Service recovery quality predicts repeat business better than perfect service rates., Allergen communication failures are high-severity operational risks., Role Specific.",
+      "answer_explanation": "This answer covers: As Waiter / Waitress, my approach to serve guests is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I \u2026",
+      "study_material": {
+        "overview": "Role Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Role Specific directly supports serve guests. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Role Specific directly supports serve guests. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Table Service",
+            "explanation": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "Order Taking",
+            "explanation": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "general professional",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Role Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Role Specific directly supports serve guests. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Waiter / Waitress, I adjusted prep cadence and station allocation for serve guests; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Serve guests.",
+          "List the standards that govern Role Specific in Waiter / Waitress work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Serve guests.",
+        "List the standards that govern Role Specific in Waiter / Waitress work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Waiter / Waitress context: Serve guests. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Waiter / Waitress context: Serve guests.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "WAITER-WAITRESS-COMPANY-SPEC-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Table service",
+        "Order taking",
+        "Upselling",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Waiter / Waitress, my approach to serve guests is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Waiter / Waitress practice, I anchor this using: Service recovery quality predicts repeat business better than perfect service rates., Allergen communication failures are high-severity operational risks., Company Specific.",
+      "answer_explanation": "This answer covers: As Waiter / Waitress, my approach to serve guests is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I \u2026",
+      "study_material": {
+        "overview": "Company Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Company Specific directly supports serve guests. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "term": "HACCP",
+            "definition": "Applicable standard/regulation: HACCP."
+          },
+          {
+            "term": "Service SOPs",
+            "definition": "Applicable standard/regulation: Service SOPs."
+          },
+          {
+            "term": "Allergen controls",
+            "definition": "Applicable standard/regulation: Allergen controls."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Company Specific directly supports serve guests. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Table Service",
+            "explanation": "Table Service in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          },
+          {
+            "skill": "Order Taking",
+            "explanation": "Order Taking in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+          }
+        ],
+        "principles": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "general professional",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "step_by_step_breakdown": [
+          "Set up station readiness, prep levels, and hygiene controls pre-service.",
+          "Execute service SOP with quality checks at pass/dispatch.",
+          "Manage guest communication and recovery when delays occur.",
+          "Track waste, yield, and peak-period throughput.",
+          "Close with sanitation, stock reconciliation, and handover notes."
+        ],
+        "explanations": [
+          "Company Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls. In Waiter / Waitress practice, Company Specific directly supports serve guests. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific in hospitality is the repeatable delivery of safe, high-quality service under time pressure, with hygiene and guest-experience controls."
+        ],
+        "practical_example": "During peak as Waiter / Waitress, I adjusted prep cadence and station allocation for serve guests; ticket times stabilized and complaint rate decreased materially.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Serve guests.",
+          "List the standards that govern Company Specific in Waiter / Waitress work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "Prep discipline is the strongest predictor of peak-hour consistency."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Service recovery quality predicts repeat business better than perfect service rates.",
+          "Allergen communication failures are high-severity operational risks.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Serve guests.",
+        "List the standards that govern Company Specific in Waiter / Waitress work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Service recovery quality predicts repeat business better than perfect service rates.",
+        "Allergen communication failures are high-severity operational risks.",
+        "Prep discipline is the strongest predictor of peak-hour consistency."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:30:56.187418+00:00",
+  "confidence_score": 0.9
+}

@@ -1,0 +1,3179 @@
+{
+  "role_name": "Teaching Assistant",
+  "role_slug": "teaching_assistant",
+  "category": "education",
+  "role_overview": {
+    "role_name": "Teaching Assistant",
+    "summary": "The Teaching Assistant role integrates Classroom support, Safeguarding, Behaviour management to deliver on responsibilities such as support lead teacher. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords.",
+    "responsibilities": [
+      "Support lead teacher",
+      "Help pupils with tasks",
+      "Supervise activities"
+    ],
+    "required_skills": [
+      "Classroom support",
+      "Safeguarding",
+      "Behaviour management"
+    ],
+    "what_employers_expect": [
+      "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+      "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+      "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+      "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority.",
+      "Connect answers to stated requirements such as: DBS clearance."
+    ],
+    "skill_clusters": [
+      "Education",
+      "Social Care"
+    ]
+  },
+  "questions": [
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Explain Classroom support to a new teacher and include how you evidence learner progress.",
+      "why_asked": "Tests genuine conceptual understanding of Classroom support, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Classroom support",
+      "question_id": "TEACHING-ASSISTANT-CLASSROOM-SU-EXPL-001",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Classroom Support without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Teaching Assistant context, Classroom Support starts with map lesson objective to curriculum standard and success criteria. and continues through diagnose baseline understanding with a short formative check.. The critical discipline is evidence: formative assessment has larger impact than one-off summative testing.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support lead teacher stays reliable under real operational constraints.\n\nIn a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+      "answer_explanation": "Key knowledge demonstrated for Classroom Support:\n\u2022 Formative assessment has larger impact than one-off summative testing.\n\u2022 Differentiation is about access route, not lower expectations.\n\u2022 Safeguarding responsibilities apply during every teaching activity.\nStandards referenced: Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Classroom Support directly supports support lead teacher. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Classroom Support",
+            "definition": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Classroom Support",
+            "explanation": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Classroom Support directly supports support lead teacher. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Safeguarding",
+            "explanation": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Classroom Support",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Classroom Support directly supports support lead teacher. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Classroom Support without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Classroom Support applies to: Support lead teacher.",
+          "List the standards that govern Classroom Support in Teaching Assistant work.",
+          "Write out the verification steps after completing a Classroom Support task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Classroom Support",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Classroom Support applies to: Support lead teacher.",
+        "List the standards that govern Classroom Support in Teaching Assistant work.",
+        "Write out the verification steps after completing a Classroom Support task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a difficult classroom/learning challenge where Classroom support improved outcomes.",
+      "why_asked": "Probes depth of hands-on experience with Classroom support under real constraints.",
+      "skill_tag": "Classroom support",
+      "question_id": "TEACHING-ASSISTANT-CLASSROOM-SU-SCEN-002",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Classroom Support without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Teaching Assistant context, Classroom Support starts with map lesson objective to curriculum standard and success criteria. and continues through diagnose baseline understanding with a short formative check.. The critical discipline is evidence: formative assessment has larger impact than one-off summative testing.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support lead teacher stays reliable under real operational constraints.\n\nIn a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+      "answer_explanation": "Key knowledge demonstrated for Classroom Support:\n\u2022 Formative assessment has larger impact than one-off summative testing.\n\u2022 Differentiation is about access route, not lower expectations.\n\u2022 Safeguarding responsibilities apply during every teaching activity.\nStandards referenced: Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Classroom Support directly supports support lead teacher. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Classroom Support",
+            "definition": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Classroom Support",
+            "explanation": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Classroom Support directly supports support lead teacher. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Safeguarding",
+            "explanation": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Classroom Support",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Classroom Support directly supports support lead teacher. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Classroom Support without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Classroom Support applies to: Support lead teacher.",
+          "List the standards that govern Classroom Support in Teaching Assistant work.",
+          "Write out the verification steps after completing a Classroom Support task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Classroom Support",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Classroom Support applies to: Support lead teacher.",
+        "List the standards that govern Classroom Support in Teaching Assistant work.",
+        "Write out the verification steps after completing a Classroom Support task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "What are the essential technical terms every Teaching Assistant must know when working with Classroom support while handling 'Support lead teacher'? Define each precisely.",
+      "why_asked": "Core terminology separates practitioners who understand Classroom support from those who only name-drop it.",
+      "skill_tag": "Classroom support",
+      "terminology_terms": [
+        {
+          "term": "Classroom Support",
+          "definition": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        },
+        {
+          "term": "Curriculum outcomes",
+          "definition": "Standard/framework governing Classroom Support: Curriculum outcomes."
+        },
+        {
+          "term": "Safeguarding policy",
+          "definition": "Standard/framework governing Classroom Support: Safeguarding policy."
+        },
+        {
+          "term": "Assessment policy",
+          "definition": "Standard/framework governing Classroom Support: Assessment policy."
+        },
+        {
+          "term": "Formative assessment has larger impact t",
+          "definition": "Formative assessment has larger impact than one-off summative testing."
+        },
+        {
+          "term": "Differentiation is about access route, n",
+          "definition": "Differentiation is about access route, not lower expectations."
+        },
+        {
+          "term": "Safeguarding responsibilities apply duri",
+          "definition": "Safeguarding responsibilities apply during every teaching activity."
+        },
+        {
+          "term": "Formative assessment has larger impact than one-off summative testing.",
+          "definition": "Related concept used with Classroom Support in professional practice."
+        }
+      ],
+      "question_id": "TEACHING-ASSISTANT-CLASSROOM-SU-TERM-003",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Classroom Support: Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+        "Curriculum outcomes: Standard/framework governing Classroom Support: Curriculum outcomes.",
+        "Safeguarding policy: Standard/framework governing Classroom Support: Safeguarding policy.",
+        "Assessment policy: Standard/framework governing Classroom Support: Assessment policy.",
+        "Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, n: Differentiation is about access route, not lower expectations."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Teaching Assistant work, these terms are foundational:\n\n\n**Classroom Support** \u2014 Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\n**Curriculum outcomes** \u2014 Standard/framework governing Classroom Support: Curriculum outcomes.\n\n**Safeguarding policy** \u2014 Standard/framework governing Classroom Support: Safeguarding policy.\n\n**Assessment policy** \u2014 Standard/framework governing Classroom Support: Assessment policy.\n\n**Formative assessment has larger impact t** \u2014 Formative assessment has larger impact than one-off summative testing.\n\n**Differentiation is about access route, n** \u2014 Differentiation is about access route, not lower expectations.\n\n**Safeguarding responsibilities apply duri** \u2014 Safeguarding responsibilities apply during every teaching activity.\n\n**Formative assessment has larger impact than one-off summative testing.** \u2014 Related concept used with Classroom Support in professional practice.",
+      "answer_explanation": "Definitions covered: Classroom Support, Curriculum outcomes, Safeguarding policy, Assessment policy, Formative assessment has larger impact t, Differentiation is about access route, n",
+      "study_material": {
+        "overview": "Core terminology for Classroom Support \u2014 precise definitions required for Teaching Assistant interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Classroom Support terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Classroom Support",
+            "definition": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Standard/framework governing Classroom Support: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Standard/framework governing Classroom Support: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Standard/framework governing Classroom Support: Assessment policy."
+          },
+          {
+            "term": "Formative assessment has larger impact t",
+            "definition": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "term": "Differentiation is about access route, n",
+            "definition": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "term": "Safeguarding responsibilities apply duri",
+            "definition": "Safeguarding responsibilities apply during every teaching activity."
+          },
+          {
+            "term": "Formative assessment has larger impact than one-off summative testing.",
+            "definition": "Related concept used with Classroom Support in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Classroom Support",
+            "explanation": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Curriculum outcomes",
+            "explanation": "Standard/framework governing Classroom Support: Curriculum outcomes."
+          },
+          {
+            "skill": "Safeguarding policy",
+            "explanation": "Standard/framework governing Classroom Support: Safeguarding policy."
+          },
+          {
+            "skill": "Assessment policy",
+            "explanation": "Standard/framework governing Classroom Support: Assessment policy."
+          },
+          {
+            "skill": "Formative assessment has larger impact t",
+            "explanation": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "skill": "Differentiation is about access route, n",
+            "explanation": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "skill": "Safeguarding responsibilities apply duri",
+            "explanation": "Safeguarding responsibilities apply during every teaching activity."
+          },
+          {
+            "skill": "Formative assessment has larger impact than one-off summative testing.",
+            "explanation": "Related concept used with Classroom Support in professional practice."
+          }
+        ],
+        "principles": [
+          "Classroom Support: Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Curriculum outcomes: Standard/framework governing Classroom Support: Curriculum outcomes.",
+          "Safeguarding policy: Standard/framework governing Classroom Support: Safeguarding policy.",
+          "Assessment policy: Standard/framework governing Classroom Support: Assessment policy.",
+          "Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, n: Differentiation is about access route, not lower expectations."
+        ],
+        "key_concepts": [
+          "Classroom Support",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Classroom Support** \u2014 Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "**Curriculum outcomes** \u2014 Standard/framework governing Classroom Support: Curriculum outcomes.",
+          "**Safeguarding policy** \u2014 Standard/framework governing Classroom Support: Safeguarding policy.",
+          "**Assessment policy** \u2014 Standard/framework governing Classroom Support: Assessment policy.",
+          "**Formative assessment has larger impact t** \u2014 Formative assessment has larger impact than one-off summative testing.",
+          "**Differentiation is about access route, n** \u2014 Differentiation is about access route, not lower expectations.",
+          "**Safeguarding responsibilities apply duri** \u2014 Safeguarding responsibilities apply during every teaching activity.",
+          "**Formative assessment has larger impact than one-off summative testing.** \u2014 Related concept used with Classroom Support in professional practice."
+        ],
+        "practical_example": "\u2022 Classroom Support: Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\u2022 Curriculum outcomes: Standard/framework governing Classroom Support: Curriculum outcomes.\n\u2022 Safeguarding policy: Standard/framework governing Classroom Support: Safeguarding policy.\n\u2022 Assessment policy: Standard/framework governing Classroom Support: Assessment policy.\n\u2022 Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Classroom Support terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Classroom Support",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "related_concepts": [
+          "Classroom Support",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Classroom Support terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Classroom Support",
+        "Curriculum outcomes",
+        "Safeguarding policy",
+        "Assessment policy",
+        "Formative assessment has larger impact t",
+        "Differentiation is about access route, n",
+        "Safeguarding responsibilities apply duri",
+        "Formative assessment has larger impact than one-off summative testing."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What instructional principles and lesson workflow guide Classroom support in Teaching Assistant practice?",
+      "why_asked": "Tests whether you know how Classroom support is actually executed to standard, not only what it is called.",
+      "skill_tag": "Classroom support",
+      "question_id": "TEACHING-ASSISTANT-CLASSROOM-SU-PRIN-004",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Classroom Support as a Teaching Assistant:\n\n1. Formative assessment has larger impact than one-off summative testing.\n2. Differentiation is about access route, not lower expectations.\n3. Safeguarding responsibilities apply during every teaching activity.\n\nStandard workflow:\n1. Map lesson objective to curriculum standard and success criteria.\n2. Diagnose baseline understanding with a short formative check.\n3. Deliver scaffolded instruction with differentiated tasks.\n4. Assess understanding in-class and adapt pacing immediately.\n5. Record attainment evidence and next-step intervention.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Classroom Support \u2014 how work is executed to standard in Teaching Assistant roles.",
+        "what_you_need_to_know_first": [
+          "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Classroom Support",
+            "definition": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Classroom Support",
+            "explanation": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "skill": "Classroom Support",
+            "explanation": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "skill": "Classroom Support",
+            "explanation": "Safeguarding responsibilities apply during every teaching activity."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "practical_example": "1. Map lesson objective to curriculum standard and success criteria.\n2. Diagnose baseline understanding with a short formative check.\n3. Deliver scaffolded instruction with differentiated tasks.\n4. Assess understanding in-class and adapt pacing immediately.\n5. Record attainment evidence and next-step intervention.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Classroom Support workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Classroom Support workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Numbers-driven check for Teaching Assistant work using Classroom support while handling 'Support lead teacher': Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?",
+      "why_asked": "Tests numerical and analytical competence in Classroom support \u2014 essential for Teaching Assistant roles.",
+      "skill_tag": "Classroom support",
+      "calculation": {
+        "skill": "Classroom Support",
+        "prompt": "Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?",
+        "answer": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+        "steps": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ]
+      },
+      "question_id": "TEACHING-ASSISTANT-CLASSROOM-SU-CALC-005",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Calculate percentage",
+        "Compare to target",
+        "Plan intervention"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?\n\nWorking:\n1. Calculate percentage\n2. Compare to target\n3. Plan intervention\n\nAnswer: 18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.\n\nIn Teaching Assistant practice, I anchor this using: Calculate percentage, Compare to target, Given data.",
+      "answer_explanation": "Calculation: 18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+      "study_material": {
+        "overview": "Quantitative problem for Classroom Support: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "explanations": [
+          "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+          "Step: Calculate percentage",
+          "Step: Compare to target",
+          "Step: Plan intervention"
+        ],
+        "practical_example": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Classroom Support calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "related_concepts": [
+          "Classroom Support",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Classroom Support calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "Calculate percentage",
+        "Compare to target",
+        "Plan intervention"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "If a new hire joined your Teaching Assistant function while handling 'Support lead teacher', how would you break down Safeguarding into practical steps?",
+      "why_asked": "Tests genuine conceptual understanding of Safeguarding, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Safeguarding",
+      "question_id": "TEACHING-ASSISTANT-SAFEGUARDING-EXPL-006",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safeguarding",
+        "Classroom support",
+        "Behaviour management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Safeguarding without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Teaching Assistant context, Safeguarding starts with map lesson objective to curriculum standard and success criteria. and continues through diagnose baseline understanding with a short formative check.. The critical discipline is evidence: formative assessment has larger impact than one-off summative testing.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support lead teacher stays reliable under real operational constraints.\n\nIn a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+      "answer_explanation": "Key knowledge demonstrated for Safeguarding:\n\u2022 Formative assessment has larger impact than one-off summative testing.\n\u2022 Differentiation is about access route, not lower expectations.\n\u2022 Safeguarding responsibilities apply during every teaching activity.\nStandards referenced: Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Safeguarding directly supports support lead teacher. Social care and psychology apply ethical frameworks, statutory duties, and therapeutic models to support individuals and communities. Practitioners navigate complexity, trauma, and multi-agency systems while maintaining professional boundaries and safeguarding duties. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Safeguarding",
+            "definition": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Safeguarding",
+            "explanation": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Safeguarding directly supports support lead teacher. Social care and psychology apply ethical frameworks, statutory duties, and therapeutic models to support individuals and communities. Practitioners navigate complexity, trauma, and multi-agency systems while maintaining professional boundaries and safeguarding duties. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Classroom Support",
+            "explanation": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Safeguarding",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "social care",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Safeguarding directly supports support lead teacher. Social care and psychology apply ethical frameworks, statutory duties, and therapeutic models to support individuals and communities. Practitioners navigate complexity, trauma, and multi-agency systems while maintaining professional boundaries and safeguarding duties. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Safeguarding without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Safeguarding applies to: Support lead teacher.",
+          "List the standards that govern Safeguarding in Teaching Assistant work.",
+          "Write out the verification steps after completing a Safeguarding task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Safeguarding",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "social care"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Safeguarding applies to: Support lead teacher.",
+        "List the standards that govern Safeguarding in Teaching Assistant work.",
+        "Write out the verification steps after completing a Safeguarding task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "In your Teaching Assistant experience while handling 'Support lead teacher', what high-stakes incident required deep use of Safeguarding, and how did you resolve it?",
+      "why_asked": "Probes depth of hands-on experience with Safeguarding under real constraints.",
+      "skill_tag": "Safeguarding",
+      "question_id": "TEACHING-ASSISTANT-SAFEGUARDING-SCEN-007",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safeguarding",
+        "Classroom support",
+        "Behaviour management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Safeguarding without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Teaching Assistant context, Safeguarding starts with map lesson objective to curriculum standard and success criteria. and continues through diagnose baseline understanding with a short formative check.. The critical discipline is evidence: formative assessment has larger impact than one-off summative testing.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support lead teacher stays reliable under real operational constraints.\n\nIn a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+      "answer_explanation": "Key knowledge demonstrated for Safeguarding:\n\u2022 Formative assessment has larger impact than one-off summative testing.\n\u2022 Differentiation is about access route, not lower expectations.\n\u2022 Safeguarding responsibilities apply during every teaching activity.\nStandards referenced: Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Safeguarding directly supports support lead teacher. Social care and psychology apply ethical frameworks, statutory duties, and therapeutic models to support individuals and communities. Practitioners navigate complexity, trauma, and multi-agency systems while maintaining professional boundaries and safeguarding duties. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Safeguarding",
+            "definition": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Safeguarding",
+            "explanation": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Safeguarding directly supports support lead teacher. Social care and psychology apply ethical frameworks, statutory duties, and therapeutic models to support individuals and communities. Practitioners navigate complexity, trauma, and multi-agency systems while maintaining professional boundaries and safeguarding duties. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Classroom Support",
+            "explanation": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Safeguarding",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "social care",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Safeguarding directly supports support lead teacher. Social care and psychology apply ethical frameworks, statutory duties, and therapeutic models to support individuals and communities. Practitioners navigate complexity, trauma, and multi-agency systems while maintaining professional boundaries and safeguarding duties. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Safeguarding without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Safeguarding applies to: Support lead teacher.",
+          "List the standards that govern Safeguarding in Teaching Assistant work.",
+          "Write out the verification steps after completing a Safeguarding task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Safeguarding",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "social care"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Safeguarding applies to: Support lead teacher.",
+        "List the standards that govern Safeguarding in Teaching Assistant work.",
+        "Write out the verification steps after completing a Safeguarding task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "List the critical terminology for Safeguarding in Teaching Assistant practice while handling 'Support lead teacher', and define each term with precision.",
+      "why_asked": "Core terminology separates practitioners who understand Safeguarding from those who only name-drop it.",
+      "skill_tag": "Safeguarding",
+      "terminology_terms": [
+        {
+          "term": "Safeguarding",
+          "definition": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        },
+        {
+          "term": "Curriculum outcomes",
+          "definition": "Standard/framework governing Safeguarding: Curriculum outcomes."
+        },
+        {
+          "term": "Safeguarding policy",
+          "definition": "Standard/framework governing Safeguarding: Safeguarding policy."
+        },
+        {
+          "term": "Assessment policy",
+          "definition": "Standard/framework governing Safeguarding: Assessment policy."
+        },
+        {
+          "term": "Formative assessment has larger impact t",
+          "definition": "Formative assessment has larger impact than one-off summative testing."
+        },
+        {
+          "term": "Differentiation is about access route, n",
+          "definition": "Differentiation is about access route, not lower expectations."
+        },
+        {
+          "term": "Safeguarding responsibilities apply duri",
+          "definition": "Safeguarding responsibilities apply during every teaching activity."
+        },
+        {
+          "term": "Formative assessment has larger impact than one-off summative testing.",
+          "definition": "Related concept used with Safeguarding in professional practice."
+        }
+      ],
+      "question_id": "TEACHING-ASSISTANT-SAFEGUARDING-TERM-008",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safeguarding",
+        "Classroom support",
+        "Behaviour management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Safeguarding: Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+        "Curriculum outcomes: Standard/framework governing Safeguarding: Curriculum outcomes.",
+        "Safeguarding policy: Standard/framework governing Safeguarding: Safeguarding policy.",
+        "Assessment policy: Standard/framework governing Safeguarding: Assessment policy.",
+        "Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, n: Differentiation is about access route, not lower expectations."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Teaching Assistant work, these terms are foundational:\n\n\n**Safeguarding** \u2014 Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\n**Curriculum outcomes** \u2014 Standard/framework governing Safeguarding: Curriculum outcomes.\n\n**Safeguarding policy** \u2014 Standard/framework governing Safeguarding: Safeguarding policy.\n\n**Assessment policy** \u2014 Standard/framework governing Safeguarding: Assessment policy.\n\n**Formative assessment has larger impact t** \u2014 Formative assessment has larger impact than one-off summative testing.\n\n**Differentiation is about access route, n** \u2014 Differentiation is about access route, not lower expectations.\n\n**Safeguarding responsibilities apply duri** \u2014 Safeguarding responsibilities apply during every teaching activity.\n\n**Formative assessment has larger impact than one-off summative testing.** \u2014 Related concept used with Safeguarding in professional practice.",
+      "answer_explanation": "Definitions covered: Safeguarding, Curriculum outcomes, Safeguarding policy, Assessment policy, Formative assessment has larger impact t, Differentiation is about access route, n",
+      "study_material": {
+        "overview": "Core terminology for Safeguarding \u2014 precise definitions required for Teaching Assistant interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Safeguarding terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Safeguarding",
+            "definition": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Standard/framework governing Safeguarding: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Standard/framework governing Safeguarding: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Standard/framework governing Safeguarding: Assessment policy."
+          },
+          {
+            "term": "Formative assessment has larger impact t",
+            "definition": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "term": "Differentiation is about access route, n",
+            "definition": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "term": "Safeguarding responsibilities apply duri",
+            "definition": "Safeguarding responsibilities apply during every teaching activity."
+          },
+          {
+            "term": "Formative assessment has larger impact than one-off summative testing.",
+            "definition": "Related concept used with Safeguarding in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Safeguarding",
+            "explanation": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Curriculum outcomes",
+            "explanation": "Standard/framework governing Safeguarding: Curriculum outcomes."
+          },
+          {
+            "skill": "Safeguarding policy",
+            "explanation": "Standard/framework governing Safeguarding: Safeguarding policy."
+          },
+          {
+            "skill": "Assessment policy",
+            "explanation": "Standard/framework governing Safeguarding: Assessment policy."
+          },
+          {
+            "skill": "Formative assessment has larger impact t",
+            "explanation": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "skill": "Differentiation is about access route, n",
+            "explanation": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "skill": "Safeguarding responsibilities apply duri",
+            "explanation": "Safeguarding responsibilities apply during every teaching activity."
+          },
+          {
+            "skill": "Formative assessment has larger impact than one-off summative testing.",
+            "explanation": "Related concept used with Safeguarding in professional practice."
+          }
+        ],
+        "principles": [
+          "Safeguarding: Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Curriculum outcomes: Standard/framework governing Safeguarding: Curriculum outcomes.",
+          "Safeguarding policy: Standard/framework governing Safeguarding: Safeguarding policy.",
+          "Assessment policy: Standard/framework governing Safeguarding: Assessment policy.",
+          "Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, n: Differentiation is about access route, not lower expectations."
+        ],
+        "key_concepts": [
+          "Safeguarding",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Safeguarding** \u2014 Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "**Curriculum outcomes** \u2014 Standard/framework governing Safeguarding: Curriculum outcomes.",
+          "**Safeguarding policy** \u2014 Standard/framework governing Safeguarding: Safeguarding policy.",
+          "**Assessment policy** \u2014 Standard/framework governing Safeguarding: Assessment policy.",
+          "**Formative assessment has larger impact t** \u2014 Formative assessment has larger impact than one-off summative testing.",
+          "**Differentiation is about access route, n** \u2014 Differentiation is about access route, not lower expectations.",
+          "**Safeguarding responsibilities apply duri** \u2014 Safeguarding responsibilities apply during every teaching activity.",
+          "**Formative assessment has larger impact than one-off summative testing.** \u2014 Related concept used with Safeguarding in professional practice."
+        ],
+        "practical_example": "\u2022 Safeguarding: Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\u2022 Curriculum outcomes: Standard/framework governing Safeguarding: Curriculum outcomes.\n\u2022 Safeguarding policy: Standard/framework governing Safeguarding: Safeguarding policy.\n\u2022 Assessment policy: Standard/framework governing Safeguarding: Assessment policy.\n\u2022 Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Safeguarding terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Safeguarding",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "related_concepts": [
+          "Safeguarding",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Safeguarding terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Safeguarding",
+        "Curriculum outcomes",
+        "Safeguarding policy",
+        "Assessment policy",
+        "Formative assessment has larger impact t",
+        "Differentiation is about access route, n",
+        "Safeguarding responsibilities apply duri",
+        "Formative assessment has larger impact than one-off summative testing."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "Which non-negotiable rules and execution sequence govern Safeguarding for Teaching Assistant work while handling 'Support lead teacher'?",
+      "why_asked": "Tests whether you know how Safeguarding is actually executed to standard, not only what it is called.",
+      "skill_tag": "Safeguarding",
+      "question_id": "TEACHING-ASSISTANT-SAFEGUARDING-PRIN-009",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safeguarding",
+        "Classroom support",
+        "Behaviour management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Safeguarding as a Teaching Assistant:\n\n1. Formative assessment has larger impact than one-off summative testing.\n2. Differentiation is about access route, not lower expectations.\n3. Safeguarding responsibilities apply during every teaching activity.\n\nStandard workflow:\n1. Map lesson objective to curriculum standard and success criteria.\n2. Diagnose baseline understanding with a short formative check.\n3. Deliver scaffolded instruction with differentiated tasks.\n4. Assess understanding in-class and adapt pacing immediately.\n5. Record attainment evidence and next-step intervention.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Safeguarding \u2014 how work is executed to standard in Teaching Assistant roles.",
+        "what_you_need_to_know_first": [
+          "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Safeguarding",
+            "definition": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Safeguarding",
+            "explanation": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "skill": "Safeguarding",
+            "explanation": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "skill": "Safeguarding",
+            "explanation": "Safeguarding responsibilities apply during every teaching activity."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "practical_example": "1. Map lesson objective to curriculum standard and success criteria.\n2. Diagnose baseline understanding with a short formative check.\n3. Deliver scaffolded instruction with differentiated tasks.\n4. Assess understanding in-class and adapt pacing immediately.\n5. Record attainment evidence and next-step intervention.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Safeguarding workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Safeguarding workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Give a quantitative example related to Safeguarding: what would you measure, calculate, or estimate on a typical Teaching Assistant task while handling 'Support lead teacher'?",
+      "why_asked": "Tests ability to work with numbers, metrics, or measurable outcomes in Safeguarding.",
+      "skill_tag": "Safeguarding",
+      "question_id": "TEACHING-ASSISTANT-SAFEGUARDING-CALC-010",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Safeguarding",
+        "Classroom support",
+        "Behaviour management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Hand-waving without numbers",
+        "Wrong precision for context"
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "On a typical Teaching Assistant task involving Safeguarding, I'd first identify what must be measured \u2014 for example load, flow, dose, or error rate. I'd gather inputs from Curriculum outcomes, apply the appropriate formula or clinical calculation, show units, and compare against the limit before proceeding. I'd document the calculation on the test sheet or clinical record.",
+      "answer_explanation": "Quantitative method with formula, units, and limit check.",
+      "study_material": {
+        "overview": "For Safeguarding, identify measurable quantities on typical Teaching Assistant tasks \u2014 loads, doses, rates, margins.",
+        "what_you_need_to_know_first": [
+          "Name what you would measure on site or in clinic.",
+          "State how you would calculate or estimate it.",
+          "Explain how the number drives a decision."
+        ],
+        "definitions": [
+          {
+            "term": "Safeguarding",
+            "definition": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Measurement",
+          "Estimation",
+          "Thresholds",
+          "Verification"
+        ],
+        "step_by_step_breakdown": [
+          "Identify the quantity (load, dose, flow, cost, latency).",
+          "State data sources and instruments.",
+          "Apply formula or rule of thumb.",
+          "Compare to limit and document."
+        ],
+        "explanations": [],
+        "practical_example": "In a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Hand-waving without numbers",
+          "Wrong precision for context"
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "List three numeric checks you perform when using Safeguarding."
+        ],
+        "revision_notes": [],
+        "related_concepts": [
+          "Safeguarding"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "List three numeric checks you perform when using Safeguarding."
+      ],
+      "revision_notes": []
+    },
+    {
+      "category": "technical",
+      "question_type": "explain",
+      "question": "Explain Behaviour management to a new teacher and include how you evidence learner progress.",
+      "why_asked": "Tests genuine conceptual understanding of Behaviour management, not just r\u00e9sum\u00e9 familiarity.",
+      "skill_tag": "Behaviour management",
+      "question_id": "TEACHING-ASSISTANT-BEHAVIOUR-MA-EXPL-011",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Behaviour management",
+        "Classroom support",
+        "Safeguarding",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Behaviour Management without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Teaching Assistant context, Behaviour Management starts with map lesson objective to curriculum standard and success criteria. and continues through diagnose baseline understanding with a short formative check.. The critical discipline is evidence: formative assessment has larger impact than one-off summative testing.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support lead teacher stays reliable under real operational constraints.\n\nIn a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+      "answer_explanation": "Key knowledge demonstrated for Behaviour Management:\n\u2022 Formative assessment has larger impact than one-off summative testing.\n\u2022 Differentiation is about access route, not lower expectations.\n\u2022 Safeguarding responsibilities apply during every teaching activity.\nStandards referenced: Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Behaviour Management directly supports support lead teacher. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Behaviour Management",
+            "definition": "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Behaviour Management",
+            "explanation": "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Behaviour Management directly supports support lead teacher. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Classroom Support",
+            "explanation": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Behaviour Management",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Behaviour Management directly supports support lead teacher. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Behaviour Management without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Behaviour Management applies to: Support lead teacher.",
+          "List the standards that govern Behaviour Management in Teaching Assistant work.",
+          "Write out the verification steps after completing a Behaviour Management task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Behaviour Management",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Behaviour Management applies to: Support lead teacher.",
+        "List the standards that govern Behaviour Management in Teaching Assistant work.",
+        "Write out the verification steps after completing a Behaviour Management task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "scenario",
+      "question": "Describe a difficult classroom/learning challenge where Behaviour management improved outcomes.",
+      "why_asked": "Probes depth of hands-on experience with Behaviour management under real constraints.",
+      "skill_tag": "Behaviour management",
+      "question_id": "TEACHING-ASSISTANT-BEHAVIOUR-MA-SCEN-012",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Behaviour management",
+        "Classroom support",
+        "Safeguarding",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Behaviour Management without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In this Teaching Assistant context, Behaviour Management starts with map lesson objective to curriculum standard and success criteria. and continues through diagnose baseline understanding with a short formative check.. The critical discipline is evidence: formative assessment has larger impact than one-off summative testing.. When conditions change, I revalidate assumptions before proceeding \u2014 that is how support lead teacher stays reliable under real operational constraints.\n\nIn a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+      "answer_explanation": "Key knowledge demonstrated for Behaviour Management:\n\u2022 Formative assessment has larger impact than one-off summative testing.\n\u2022 Differentiation is about access route, not lower expectations.\n\u2022 Safeguarding responsibilities apply during every teaching activity.\nStandards referenced: Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Behaviour Management directly supports support lead teacher. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Behaviour Management",
+            "definition": "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Behaviour Management",
+            "explanation": "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Behaviour Management directly supports support lead teacher. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Classroom Support",
+            "explanation": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Behaviour Management",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Behaviour Management directly supports support lead teacher. Education science draws on pedagogy, developmental psychology, and curriculum theory. Effective teaching aligns learning objectives, instructional methods, and assessment to move learners from novice to competent performance through deliberate practice and feedback. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Behaviour Management without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Behaviour Management applies to: Support lead teacher.",
+          "List the standards that govern Behaviour Management in Teaching Assistant work.",
+          "Write out the verification steps after completing a Behaviour Management task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Behaviour Management",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "education"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Behaviour Management applies to: Support lead teacher.",
+        "List the standards that govern Behaviour Management in Teaching Assistant work.",
+        "Write out the verification steps after completing a Behaviour Management task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "Which professional vocabulary separates a competent vs weak Teaching Assistant practitioner in Behaviour management while handling 'Support lead teacher'? Define each term.",
+      "why_asked": "Core terminology separates practitioners who understand Behaviour management from those who only name-drop it.",
+      "skill_tag": "Behaviour management",
+      "terminology_terms": [
+        {
+          "term": "Behaviour Management",
+          "definition": "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        },
+        {
+          "term": "Curriculum outcomes",
+          "definition": "Standard/framework governing Behaviour Management: Curriculum outcomes."
+        },
+        {
+          "term": "Safeguarding policy",
+          "definition": "Standard/framework governing Behaviour Management: Safeguarding policy."
+        },
+        {
+          "term": "Assessment policy",
+          "definition": "Standard/framework governing Behaviour Management: Assessment policy."
+        },
+        {
+          "term": "Formative assessment has larger impact t",
+          "definition": "Formative assessment has larger impact than one-off summative testing."
+        },
+        {
+          "term": "Differentiation is about access route, n",
+          "definition": "Differentiation is about access route, not lower expectations."
+        },
+        {
+          "term": "Safeguarding responsibilities apply duri",
+          "definition": "Safeguarding responsibilities apply during every teaching activity."
+        },
+        {
+          "term": "Formative assessment has larger impact than one-off summative testing.",
+          "definition": "Related concept used with Behaviour Management in professional practice."
+        }
+      ],
+      "question_id": "TEACHING-ASSISTANT-BEHAVIOUR-MA-TERM-013",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Behaviour management",
+        "Classroom support",
+        "Safeguarding",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Behaviour Management: Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+        "Curriculum outcomes: Standard/framework governing Behaviour Management: Curriculum outcomes.",
+        "Safeguarding policy: Standard/framework governing Behaviour Management: Safeguarding policy.",
+        "Assessment policy: Standard/framework governing Behaviour Management: Assessment policy.",
+        "Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, n: Differentiation is about access route, not lower expectations."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Teaching Assistant work, these terms are foundational:\n\n\n**Behaviour Management** \u2014 Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\n**Curriculum outcomes** \u2014 Standard/framework governing Behaviour Management: Curriculum outcomes.\n\n**Safeguarding policy** \u2014 Standard/framework governing Behaviour Management: Safeguarding policy.\n\n**Assessment policy** \u2014 Standard/framework governing Behaviour Management: Assessment policy.\n\n**Formative assessment has larger impact t** \u2014 Formative assessment has larger impact than one-off summative testing.\n\n**Differentiation is about access route, n** \u2014 Differentiation is about access route, not lower expectations.\n\n**Safeguarding responsibilities apply duri** \u2014 Safeguarding responsibilities apply during every teaching activity.\n\n**Formative assessment has larger impact than one-off summative testing.** \u2014 Related concept used with Behaviour Management in professional practice.",
+      "answer_explanation": "Definitions covered: Behaviour Management, Curriculum outcomes, Safeguarding policy, Assessment policy, Formative assessment has larger impact t, Differentiation is about access route, n",
+      "study_material": {
+        "overview": "Core terminology for Behaviour Management \u2014 precise definitions required for Teaching Assistant interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Behaviour Management terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Behaviour Management",
+            "definition": "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Standard/framework governing Behaviour Management: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Standard/framework governing Behaviour Management: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Standard/framework governing Behaviour Management: Assessment policy."
+          },
+          {
+            "term": "Formative assessment has larger impact t",
+            "definition": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "term": "Differentiation is about access route, n",
+            "definition": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "term": "Safeguarding responsibilities apply duri",
+            "definition": "Safeguarding responsibilities apply during every teaching activity."
+          },
+          {
+            "term": "Formative assessment has larger impact than one-off summative testing.",
+            "definition": "Related concept used with Behaviour Management in professional practice."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Behaviour Management",
+            "explanation": "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Curriculum outcomes",
+            "explanation": "Standard/framework governing Behaviour Management: Curriculum outcomes."
+          },
+          {
+            "skill": "Safeguarding policy",
+            "explanation": "Standard/framework governing Behaviour Management: Safeguarding policy."
+          },
+          {
+            "skill": "Assessment policy",
+            "explanation": "Standard/framework governing Behaviour Management: Assessment policy."
+          },
+          {
+            "skill": "Formative assessment has larger impact t",
+            "explanation": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "skill": "Differentiation is about access route, n",
+            "explanation": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "skill": "Safeguarding responsibilities apply duri",
+            "explanation": "Safeguarding responsibilities apply during every teaching activity."
+          },
+          {
+            "skill": "Formative assessment has larger impact than one-off summative testing.",
+            "explanation": "Related concept used with Behaviour Management in professional practice."
+          }
+        ],
+        "principles": [
+          "Behaviour Management: Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Curriculum outcomes: Standard/framework governing Behaviour Management: Curriculum outcomes.",
+          "Safeguarding policy: Standard/framework governing Behaviour Management: Safeguarding policy.",
+          "Assessment policy: Standard/framework governing Behaviour Management: Assessment policy.",
+          "Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, n: Differentiation is about access route, not lower expectations."
+        ],
+        "key_concepts": [
+          "Behaviour Management",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Behaviour Management** \u2014 Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "**Curriculum outcomes** \u2014 Standard/framework governing Behaviour Management: Curriculum outcomes.",
+          "**Safeguarding policy** \u2014 Standard/framework governing Behaviour Management: Safeguarding policy.",
+          "**Assessment policy** \u2014 Standard/framework governing Behaviour Management: Assessment policy.",
+          "**Formative assessment has larger impact t** \u2014 Formative assessment has larger impact than one-off summative testing.",
+          "**Differentiation is about access route, n** \u2014 Differentiation is about access route, not lower expectations.",
+          "**Safeguarding responsibilities apply duri** \u2014 Safeguarding responsibilities apply during every teaching activity.",
+          "**Formative assessment has larger impact than one-off summative testing.** \u2014 Related concept used with Behaviour Management in professional practice."
+        ],
+        "practical_example": "\u2022 Behaviour Management: Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\u2022 Curriculum outcomes: Standard/framework governing Behaviour Management: Curriculum outcomes.\n\u2022 Safeguarding policy: Standard/framework governing Behaviour Management: Safeguarding policy.\n\u2022 Assessment policy: Standard/framework governing Behaviour Management: Assessment policy.\n\u2022 Formative assessment has larger impact t: Formative assessment has larger impact than one-off summative testing.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Behaviour Management terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Behaviour Management",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "related_concepts": [
+          "Behaviour Management",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Assessment policy",
+          "Formative assessment has larger impact t",
+          "Differentiation is about access route, n",
+          "Safeguarding responsibilities apply duri",
+          "Formative assessment has larger impact than one-off summative testing."
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Behaviour Management terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Behaviour Management",
+        "Curriculum outcomes",
+        "Safeguarding policy",
+        "Assessment policy",
+        "Formative assessment has larger impact t",
+        "Differentiation is about access route, n",
+        "Safeguarding responsibilities apply duri",
+        "Formative assessment has larger impact than one-off summative testing."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "principles",
+      "question": "What instructional principles and lesson workflow guide Behaviour management in Teaching Assistant practice?",
+      "why_asked": "Tests whether you know how Behaviour management is actually executed to standard, not only what it is called.",
+      "skill_tag": "Behaviour management",
+      "question_id": "TEACHING-ASSISTANT-BEHAVIOUR-MA-PRIN-014",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Behaviour management",
+        "Classroom support",
+        "Safeguarding",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Skipping verification or documentation steps.",
+        "Applying method without checking prerequisites.",
+        "Treating principles as optional under time pressure."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Core principles for Behaviour Management as a Teaching Assistant:\n\n1. Formative assessment has larger impact than one-off summative testing.\n2. Differentiation is about access route, not lower expectations.\n3. Safeguarding responsibilities apply during every teaching activity.\n\nStandard workflow:\n1. Map lesson objective to curriculum standard and success criteria.\n2. Diagnose baseline understanding with a short formative check.\n3. Deliver scaffolded instruction with differentiated tasks.\n4. Assess understanding in-class and adapt pacing immediately.\n5. Record attainment evidence and next-step intervention.",
+      "answer_explanation": "Core operating principles and ordered workflow for the skill.",
+      "study_material": {
+        "overview": "Operating principles for Behaviour Management \u2014 how work is executed to standard in Teaching Assistant roles.",
+        "what_you_need_to_know_first": [
+          "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Principles are non-negotiable rules; workflow is the ordered application of those rules."
+        ],
+        "definitions": [
+          {
+            "term": "Behaviour Management",
+            "definition": "Behaviour Management in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Behaviour Management",
+            "explanation": "Formative assessment has larger impact than one-off summative testing."
+          },
+          {
+            "skill": "Behaviour Management",
+            "explanation": "Differentiation is about access route, not lower expectations."
+          },
+          {
+            "skill": "Behaviour Management",
+            "explanation": "Safeguarding responsibilities apply during every teaching activity."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "practical_example": "1. Map lesson objective to curriculum standard and success criteria.\n2. Diagnose baseline understanding with a short formative check.\n3. Deliver scaffolded instruction with differentiated tasks.\n4. Assess understanding in-class and adapt pacing immediately.\n5. Record attainment evidence and next-step intervention.",
+        "common_mistakes": [
+          "Skipping verification or documentation steps.",
+          "Applying method without checking prerequisites.",
+          "Treating principles as optional under time pressure."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a flowchart of Behaviour Management workflow from start to sign-off.",
+          "List stop-work triggers at each stage."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a flowchart of Behaviour Management workflow from start to sign-off.",
+        "List stop-work triggers at each stage."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "calculation",
+      "question": "Numbers-driven check for Teaching Assistant work using Behaviour management while handling 'Support lead teacher': Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?",
+      "why_asked": "Tests numerical and analytical competence in Behaviour management \u2014 essential for Teaching Assistant roles.",
+      "skill_tag": "Behaviour management",
+      "calculation": {
+        "skill": "Behaviour Management",
+        "prompt": "Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?",
+        "answer": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+        "steps": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ]
+      },
+      "question_id": "TEACHING-ASSISTANT-BEHAVIOUR-MA-CALC-015",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Behaviour management",
+        "Classroom support",
+        "Safeguarding",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Calculate percentage",
+        "Compare to target",
+        "Plan intervention"
+      ],
+      "common_mistakes": [
+        "Unit conversion errors (kN vs N, mg vs g).",
+        "Using wrong formula for support/loading conditions.",
+        "Quoting tabulated values without verifying edition/date of standard."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "Problem: Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?\n\nWorking:\n1. Calculate percentage\n2. Compare to target\n3. Plan intervention\n\nAnswer: 18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.\n\nIn Teaching Assistant practice, I anchor this using: Calculate percentage, Compare to target, Given data.",
+      "answer_explanation": "Calculation: 18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+      "study_material": {
+        "overview": "Quantitative problem for Behaviour Management: show working, state units, verify against limits.",
+        "what_you_need_to_know_first": [
+          "Write given values before calculating.",
+          "State formula, substitute, show units.",
+          "Compare result to standard limits or business targets."
+        ],
+        "definitions": [
+          {
+            "term": "Given data",
+            "definition": "Class 30 pupils, 18 met learning objective. What is attainment percentage and one intervention if below 70% target?"
+          },
+          {
+            "term": "Expected result",
+            "definition": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "key_concepts": [
+          "Formula selection",
+          "Unit consistency",
+          "Sanity check",
+          "Documentation"
+        ],
+        "step_by_step_breakdown": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "explanations": [
+          "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+          "Step: Calculate percentage",
+          "Step: Compare to target",
+          "Step: Plan intervention"
+        ],
+        "practical_example": "18/30 = 60%. Below 70% target \u2014 run re-teach with hinge questions, small-group support, and reassessment next lesson.",
+        "common_mistakes": [
+          "Unit conversion errors (kN vs N, mg vs g).",
+          "Using wrong formula for support/loading conditions.",
+          "Quoting tabulated values without verifying edition/date of standard."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Re-derive this Behaviour Management calculation from memory with different input values.",
+          "Identify which variable has most sensitivity if estimate is wrong."
+        ],
+        "revision_notes": [
+          "Calculate percentage",
+          "Compare to target",
+          "Plan intervention"
+        ],
+        "related_concepts": [
+          "Behaviour Management",
+          "Dimensional analysis",
+          "Factor of safety"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Re-derive this Behaviour Management calculation from memory with different input values.",
+        "Identify which variable has most sensitivity if estimate is wrong."
+      ],
+      "revision_notes": [
+        "Calculate percentage",
+        "Compare to target",
+        "Plan intervention"
+      ]
+    },
+    {
+      "category": "technical",
+      "question_type": "terminology",
+      "question": "As a Teaching Assistant, define and explain these core professional terms: Classroom Support, Curriculum outcomes, Safeguarding policy, Safeguarding, Curriculum outcomes, Safeguarding policy.",
+      "why_asked": "Tests foundational vocabulary \u2014 interviewers expect precise definitions, not vague familiarity.",
+      "skill_tag": "Core terminology",
+      "terminology_terms": [
+        {
+          "term": "Classroom Support",
+          "definition": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        },
+        {
+          "term": "Curriculum outcomes",
+          "definition": "Standard/framework governing Classroom Support: Curriculum outcomes."
+        },
+        {
+          "term": "Safeguarding policy",
+          "definition": "Standard/framework governing Classroom Support: Safeguarding policy."
+        },
+        {
+          "term": "Safeguarding",
+          "definition": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        },
+        {
+          "term": "Curriculum outcomes",
+          "definition": "Standard/framework governing Safeguarding: Curriculum outcomes."
+        },
+        {
+          "term": "Safeguarding policy",
+          "definition": "Standard/framework governing Safeguarding: Safeguarding policy."
+        }
+      ],
+      "question_id": "TEACHING-ASSISTANT-CORE-TERMINO-TERM-016",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Core terminology",
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Technical"
+      ],
+      "evaluation_criteria": [
+        "Classroom Support: Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+        "Curriculum outcomes: Standard/framework governing Classroom Support: Curriculum outcomes.",
+        "Safeguarding policy: Standard/framework governing Classroom Support: Safeguarding policy.",
+        "Safeguarding: Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+        "Curriculum outcomes: Standard/framework governing Safeguarding: Curriculum outcomes.",
+        "Safeguarding policy: Standard/framework governing Safeguarding: Safeguarding policy."
+      ],
+      "common_mistakes": [
+        "Confusing similar-sounding terms (e.g. capacity vs capability).",
+        "Defining acronyms without expanding them first.",
+        "Using jargon without explaining underlying mechanism."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "In Teaching Assistant work, these terms are foundational:\n\n\n**Classroom Support** \u2014 Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\n**Curriculum outcomes** \u2014 Standard/framework governing Classroom Support: Curriculum outcomes.\n\n**Safeguarding policy** \u2014 Standard/framework governing Classroom Support: Safeguarding policy.\n\n**Safeguarding** \u2014 Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\n**Curriculum outcomes** \u2014 Standard/framework governing Safeguarding: Curriculum outcomes.\n\n**Safeguarding policy** \u2014 Standard/framework governing Safeguarding: Safeguarding policy.",
+      "answer_explanation": "Definitions covered: Classroom Support, Curriculum outcomes, Safeguarding policy, Safeguarding, Curriculum outcomes, Safeguarding policy",
+      "study_material": {
+        "overview": "Core terminology for Core Terminology \u2014 precise definitions required for Teaching Assistant interviews.",
+        "what_you_need_to_know_first": [
+          "Interviewers expect exact definitions, not vague paraphrases.",
+          "Link each term to when you use it in daily work.",
+          "Know how Core Terminology terms relate to applicable standards and workflows."
+        ],
+        "definitions": [
+          {
+            "term": "Classroom Support",
+            "definition": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Standard/framework governing Classroom Support: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Standard/framework governing Classroom Support: Safeguarding policy."
+          },
+          {
+            "term": "Safeguarding",
+            "definition": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Standard/framework governing Safeguarding: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Standard/framework governing Safeguarding: Safeguarding policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Classroom Support",
+            "explanation": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Curriculum outcomes",
+            "explanation": "Standard/framework governing Classroom Support: Curriculum outcomes."
+          },
+          {
+            "skill": "Safeguarding policy",
+            "explanation": "Standard/framework governing Classroom Support: Safeguarding policy."
+          },
+          {
+            "skill": "Safeguarding",
+            "explanation": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Curriculum outcomes",
+            "explanation": "Standard/framework governing Safeguarding: Curriculum outcomes."
+          },
+          {
+            "skill": "Safeguarding policy",
+            "explanation": "Standard/framework governing Safeguarding: Safeguarding policy."
+          }
+        ],
+        "principles": [
+          "Classroom Support: Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Curriculum outcomes: Standard/framework governing Classroom Support: Curriculum outcomes.",
+          "Safeguarding policy: Standard/framework governing Classroom Support: Safeguarding policy.",
+          "Safeguarding: Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "Curriculum outcomes: Standard/framework governing Safeguarding: Curriculum outcomes.",
+          "Safeguarding policy: Standard/framework governing Safeguarding: Safeguarding policy."
+        ],
+        "key_concepts": [
+          "Classroom Support",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Safeguarding",
+          "Curriculum outcomes",
+          "Safeguarding policy"
+        ],
+        "step_by_step_breakdown": [
+          "State the term clearly.",
+          "Give a one-sentence definition.",
+          "Add one practical example from professional use.",
+          "Note any standard, regulation, or metric tied to the term."
+        ],
+        "explanations": [
+          "**Classroom Support** \u2014 Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "**Curriculum outcomes** \u2014 Standard/framework governing Classroom Support: Curriculum outcomes.",
+          "**Safeguarding policy** \u2014 Standard/framework governing Classroom Support: Safeguarding policy.",
+          "**Safeguarding** \u2014 Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.",
+          "**Curriculum outcomes** \u2014 Standard/framework governing Safeguarding: Curriculum outcomes.",
+          "**Safeguarding policy** \u2014 Standard/framework governing Safeguarding: Safeguarding policy."
+        ],
+        "practical_example": "\u2022 Classroom Support: Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\u2022 Curriculum outcomes: Standard/framework governing Classroom Support: Curriculum outcomes.\n\u2022 Safeguarding policy: Standard/framework governing Classroom Support: Safeguarding policy.\n\u2022 Safeguarding: Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding.\n\u2022 Curriculum outcomes: Standard/framework governing Safeguarding: Curriculum outcomes.",
+        "common_mistakes": [
+          "Confusing similar-sounding terms (e.g. capacity vs capability).",
+          "Defining acronyms without expanding them first.",
+          "Using jargon without explaining underlying mechanism."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+          "Explain each term to a non-specialist in one sentence.",
+          "Group terms into categories (safety, measurement, process, documentation)."
+        ],
+        "revision_notes": [
+          "Classroom Support",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Safeguarding",
+          "Curriculum outcomes",
+          "Safeguarding policy"
+        ],
+        "related_concepts": [
+          "Classroom Support",
+          "Curriculum outcomes",
+          "Safeguarding policy",
+          "Safeguarding",
+          "Curriculum outcomes",
+          "Safeguarding policy"
+        ],
+        "estimated_reading_time_minutes": 10
+      },
+      "practice_tasks": [
+        "Write flashcards for all Core Terminology terms \u2014 term on front, definition + example on back.",
+        "Explain each term to a non-specialist in one sentence.",
+        "Group terms into categories (safety, measurement, process, documentation)."
+      ],
+      "revision_notes": [
+        "Classroom Support",
+        "Curriculum outcomes",
+        "Safeguarding policy",
+        "Safeguarding",
+        "Curriculum outcomes",
+        "Safeguarding policy"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Support lead teacher'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "TEACHING-ASSISTANT-BEHAVIORAL-017",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+      "answer_explanation": "This answer covers: In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interven\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Teaching Assistant handles when support lead teacher. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Teaching Assistant work involves support lead teacher under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Teaching Assistant",
+            "definition": "The Teaching Assistant role integrates Classroom support, Safeguarding, Behaviour management to deliver on responsibilities such as support lead teacher. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Learning outcomes",
+          "Assessment evidence",
+          "Safeguarding",
+          "Differentiation"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Teaching Assistant reference support lead teacher and relevant standards or tools."
+        ],
+        "practical_example": "In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Teaching Assistant challenge with numbers.",
+          "Link the story to: Support lead teacher."
+        ],
+        "revision_notes": [
+          "Classroom support",
+          "Safeguarding",
+          "Behaviour management"
+        ],
+        "related_concepts": [
+          "Education",
+          "Social Care"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Teaching Assistant challenge with numbers.",
+        "Link the story to: Support lead teacher."
+      ],
+      "revision_notes": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Help pupils with tasks'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "TEACHING-ASSISTANT-BEHAVIORAL-018",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+      "answer_explanation": "This answer covers: In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interven\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Teaching Assistant handles when support lead teacher. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Teaching Assistant work involves support lead teacher under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Teaching Assistant",
+            "definition": "The Teaching Assistant role integrates Classroom support, Safeguarding, Behaviour management to deliver on responsibilities such as support lead teacher. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Learning outcomes",
+          "Assessment evidence",
+          "Safeguarding",
+          "Differentiation"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Teaching Assistant reference support lead teacher and relevant standards or tools."
+        ],
+        "practical_example": "In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Teaching Assistant challenge with numbers.",
+          "Link the story to: Support lead teacher."
+        ],
+        "revision_notes": [
+          "Classroom support",
+          "Safeguarding",
+          "Behaviour management"
+        ],
+        "related_concepts": [
+          "Education",
+          "Social Care"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Teaching Assistant challenge with numbers.",
+        "Link the story to: Support lead teacher."
+      ],
+      "revision_notes": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "This role involves 'Supervise activities'. Tell me about a time you did something similar.",
+      "why_asked": "Behavioral question tailored to a specific responsibility actually listed in this posting, using the STAR structure.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [
+        "What would you do differently with more time or resources?"
+      ],
+      "skill_tag": null,
+      "question_id": "TEACHING-ASSISTANT-BEHAVIORAL-019",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [
+        "What would you do differently with more time or resources?"
+      ],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+      "answer_explanation": "This answer covers: In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interven\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Teaching Assistant handles when support lead teacher. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Teaching Assistant work involves support lead teacher under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Teaching Assistant",
+            "definition": "The Teaching Assistant role integrates Classroom support, Safeguarding, Behaviour management to deliver on responsibilities such as support lead teacher. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Learning outcomes",
+          "Assessment evidence",
+          "Safeguarding",
+          "Differentiation"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Teaching Assistant reference support lead teacher and relevant standards or tools."
+        ],
+        "practical_example": "In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Teaching Assistant challenge with numbers.",
+          "Link the story to: Support lead teacher."
+        ],
+        "revision_notes": [
+          "Classroom support",
+          "Safeguarding",
+          "Behaviour management"
+        ],
+        "related_concepts": [
+          "Education",
+          "Social Care"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Teaching Assistant challenge with numbers.",
+        "Link the story to: Support lead teacher."
+      ],
+      "revision_notes": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Describe a lesson/intervention that moved outcomes for underperforming learners in Teaching Assistant work.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "TEACHING-ASSISTANT-BEHAVIORAL-020",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+      "answer_explanation": "This answer covers: In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interven\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Teaching Assistant handles when support lead teacher. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Teaching Assistant work involves support lead teacher under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Teaching Assistant",
+            "definition": "The Teaching Assistant role integrates Classroom support, Safeguarding, Behaviour management to deliver on responsibilities such as support lead teacher. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Learning outcomes",
+          "Assessment evidence",
+          "Safeguarding",
+          "Differentiation"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Teaching Assistant reference support lead teacher and relevant standards or tools."
+        ],
+        "practical_example": "In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Teaching Assistant challenge with numbers.",
+          "Link the story to: Support lead teacher."
+        ],
+        "revision_notes": [
+          "Classroom support",
+          "Safeguarding",
+          "Behaviour management"
+        ],
+        "related_concepts": [
+          "Education",
+          "Social Care"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Teaching Assistant challenge with numbers.",
+        "Link the story to: Support lead teacher."
+      ],
+      "revision_notes": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Tell me about a safeguarding or pastoral issue and how you handled it. In this role-specific case, address: Teaching Assistant context: Support lead teacher.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "TEACHING-ASSISTANT-BEHAVIORAL-021",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+      "answer_explanation": "This answer covers: In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interven\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Teaching Assistant handles when support lead teacher. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Teaching Assistant work involves support lead teacher under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Teaching Assistant",
+            "definition": "The Teaching Assistant role integrates Classroom support, Safeguarding, Behaviour management to deliver on responsibilities such as support lead teacher. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Learning outcomes",
+          "Assessment evidence",
+          "Safeguarding",
+          "Differentiation"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Teaching Assistant reference support lead teacher and relevant standards or tools."
+        ],
+        "practical_example": "In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Teaching Assistant challenge with numbers.",
+          "Link the story to: Support lead teacher."
+        ],
+        "revision_notes": [
+          "Classroom support",
+          "Safeguarding",
+          "Behaviour management"
+        ],
+        "related_concepts": [
+          "Education",
+          "Social Care"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Teaching Assistant challenge with numbers.",
+        "Link the story to: Support lead teacher."
+      ],
+      "revision_notes": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management"
+      ]
+    },
+    {
+      "category": "behavioral",
+      "question": "Give an example of adapting instruction based on assessment evidence. In this role-specific case, address: Teaching Assistant context: Support lead teacher.",
+      "why_asked": "Standard behavioral probe using the STAR method, included regardless of job specifics.",
+      "ideal_answer_points": [
+        "Situation",
+        "Task",
+        "Action (most detail here)",
+        "Result (quantified)"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "TEACHING-ASSISTANT-BEHAVIORAL-022",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Behavioral"
+      ],
+      "evaluation_criteria": [
+        "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+        "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+        "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+        "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+      ],
+      "common_mistakes": [
+        "Vague timelines and no numbers.",
+        "Hypothetical answers instead of real events.",
+        "Blaming others without showing personal action."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 5,
+      "model_answer": "In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+      "answer_explanation": "This answer covers: In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interven\u2026",
+      "study_material": {
+        "overview": "This topic covers professional situations a Teaching Assistant handles when support lead teacher. Understanding typical challenges, regulations, and teamwork patterns in this field helps you recognise strong examples from your own experience.",
+        "what_you_need_to_know_first": [
+          "Teaching Assistant work involves support lead teacher under time, safety, and quality constraints.",
+          "Employers look for evidence of judgement, communication, and ownership in past events.",
+          "Specific details \u2014 dates, scale, names of standards, measurable results \u2014 distinguish strong candidates."
+        ],
+        "definitions": [
+          {
+            "term": "Teaching Assistant",
+            "definition": "The Teaching Assistant role integrates Classroom support, Safeguarding, Behaviour management to deliver on responsibilities such as support lead teacher. Employers at the Entry level (0\u20132 years) level expect candidates to demonstrate both conceptual depth and applied experience \u2014 not surface familiarity with keywords."
+          },
+          {
+            "term": "Accountability",
+            "definition": "Personal ownership of decisions and outcomes, not passive participation."
+          }
+        ],
+        "skill_explanations": [],
+        "principles": [
+          "Explain how Classroom support supports daily responsibilities when asked technical or scenario questions.",
+          "Use concrete examples with scale, constraints, stakeholders, and measurable outcomes.",
+          "Reference professional standards, regulations, or best-practice frameworks appropriate to this field.",
+          "Acknowledge tradeoffs, errors, and lessons learned \u2014 intellectual honesty signals seniority."
+        ],
+        "key_concepts": [
+          "Learning outcomes",
+          "Assessment evidence",
+          "Safeguarding",
+          "Differentiation"
+        ],
+        "step_by_step_breakdown": [
+          "Identify a real situation with clear stakes in this field.",
+          "State your specific responsibility \u2014 not the group's generic goal.",
+          "Walk through actions in sequence: decisions, tools, communication.",
+          "Close with quantified results and what changed afterwards."
+        ],
+        "explanations": [
+          "Strong examples for Teaching Assistant reference support lead teacher and relevant standards or tools."
+        ],
+        "practical_example": "In my Teaching Assistant role for support lead teacher, one cohort was underperforming against target outcomes. I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard.",
+        "common_mistakes": [
+          "Vague timelines and no numbers.",
+          "Hypothetical answers instead of real events.",
+          "Blaming others without showing personal action."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Write a 300-word account of a real Teaching Assistant challenge with numbers.",
+          "Link the story to: Support lead teacher."
+        ],
+        "revision_notes": [
+          "Classroom support",
+          "Safeguarding",
+          "Behaviour management"
+        ],
+        "related_concepts": [
+          "Education",
+          "Social Care"
+        ],
+        "estimated_reading_time_minutes": 8
+      },
+      "practice_tasks": [
+        "Write a 300-word account of a real Teaching Assistant challenge with numbers.",
+        "Link the story to: Support lead teacher."
+      ],
+      "revision_notes": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management"
+      ]
+    },
+    {
+      "category": "role_specific",
+      "question": "What excites you specifically about this Teaching Assistant position, based on what you've read?",
+      "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
+      "ideal_answer_points": [
+        "References specific responsibilities or requirements from the real posting"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "TEACHING-ASSISTANT-ROLE-SPECIFI-023",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Role Specific"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Role Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Teaching Assistant, my approach to support lead teacher is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Teaching Assistant practice, I anchor this using: Formative assessment has larger impact than one-off summative testing., Differentiation is about access route, not lower expectations., Role Specific.",
+      "answer_explanation": "This answer covers: As Teaching Assistant, my approach to support lead teacher is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand\u2026",
+      "study_material": {
+        "overview": "Role Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Role Specific directly supports support lead teacher. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Role Specific",
+            "definition": "Role Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Role Specific",
+            "explanation": "Role Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Role Specific directly supports support lead teacher. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Classroom Support",
+            "explanation": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Safeguarding",
+            "explanation": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Role Specific",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "general professional",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Role Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Role Specific directly supports support lead teacher. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Role Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Role Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Role Specific applies to: Support lead teacher.",
+          "List the standards that govern Role Specific in Teaching Assistant work.",
+          "Write out the verification steps after completing a Role Specific task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Role Specific",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Role Specific applies to: Support lead teacher.",
+        "List the standards that govern Role Specific in Teaching Assistant work.",
+        "Write out the verification steps after completing a Role Specific task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    },
+    {
+      "category": "company_specific",
+      "question": "What do you know about Various employers, and why do you want to work there specifically? In this role-specific case, address: Teaching Assistant context: Support lead teacher. Include one concrete core competency metric, one governing standard/protocol, and one failure mode relevant to Teaching Assistant context: Support lead teacher.",
+      "why_asked": "Tests genuine research into the company rather than a generic answer that could apply anywhere.",
+      "ideal_answer_points": [
+        "Specific, verifiable facts about the company, not guesses"
+      ],
+      "follow_ups": [],
+      "skill_tag": null,
+      "question_id": "TEACHING-ASSISTANT-COMPANY-SPEC-024",
+      "difficulty": "Medium",
+      "related_skills": [
+        "Classroom support",
+        "Safeguarding",
+        "Behaviour management",
+        "Company Specific"
+      ],
+      "evaluation_criteria": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ],
+      "common_mistakes": [
+        "Executing Company Specific without validating prerequisites and constraints.",
+        "Relying on habit instead of current procedures and controls.",
+        "Incomplete records that break traceability and handover."
+      ],
+      "follow_up_questions": [],
+      "estimated_answer_time_minutes": 8,
+      "model_answer": "As Teaching Assistant, my approach to support lead teacher is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand over. I stay current with regulations and learn from every job \u2014 especially when something unexpected forces a change of method.\n\nIn Teaching Assistant practice, I anchor this using: Formative assessment has larger impact than one-off summative testing., Differentiation is about access route, not lower expectations., Company Specific.",
+      "answer_explanation": "This answer covers: As Teaching Assistant, my approach to support lead teacher is systematic: confirm requirements and safety, plan resources and sequence, execute to standard with checks at each stage, document and hand\u2026",
+      "study_material": {
+        "overview": "Company Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Company Specific directly supports support lead teacher. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+        "what_you_need_to_know_first": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "definitions": [
+          {
+            "term": "Company Specific",
+            "definition": "Company Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "term": "Curriculum outcomes",
+            "definition": "Applicable standard/regulation: Curriculum outcomes."
+          },
+          {
+            "term": "Safeguarding policy",
+            "definition": "Applicable standard/regulation: Safeguarding policy."
+          },
+          {
+            "term": "Assessment policy",
+            "definition": "Applicable standard/regulation: Assessment policy."
+          }
+        ],
+        "skill_explanations": [
+          {
+            "skill": "Company Specific",
+            "explanation": "Company Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Company Specific directly supports support lead teacher. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points."
+          },
+          {
+            "skill": "Classroom Support",
+            "explanation": "Classroom Support in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          },
+          {
+            "skill": "Safeguarding",
+            "explanation": "Safeguarding in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+          }
+        ],
+        "principles": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "key_concepts": [
+          "Company Specific",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "general professional",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "step_by_step_breakdown": [
+          "Map lesson objective to curriculum standard and success criteria.",
+          "Diagnose baseline understanding with a short formative check.",
+          "Deliver scaffolded instruction with differentiated tasks.",
+          "Assess understanding in-class and adapt pacing immediately.",
+          "Record attainment evidence and next-step intervention."
+        ],
+        "explanations": [
+          "Company Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding. In Teaching Assistant practice, Company Specific directly supports support lead teacher. Professional work in any field requires structured communication, reliability, and continuous improvement. Interviewers assess whether you can translate abstract competencies into observable behaviours that deliver outcomes for employers and customers. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
+          "Company Specific in education is the structured practice of turning curriculum goals into measurable learning outcomes through instruction, assessment, and safeguarding."
+        ],
+        "practical_example": "In a Teaching Assistant class, I used hinge questions to detect misconceptions mid-lesson and regrouped learners on the spot; attainment on exit tasks improved from 43% to 79%.",
+        "common_mistakes": [
+          "Executing Company Specific without validating prerequisites and constraints.",
+          "Relying on habit instead of current procedures and controls.",
+          "Incomplete records that break traceability and handover."
+        ],
+        "how_to_answer_better": [],
+        "practice_exercises": [
+          "Draw a diagram showing how Company Specific applies to: Support lead teacher.",
+          "List the standards that govern Company Specific in Teaching Assistant work.",
+          "Write out the verification steps after completing a Company Specific task."
+        ],
+        "revision_notes": [
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "Safeguarding responsibilities apply during every teaching activity."
+        ],
+        "related_concepts": [
+          "Company Specific",
+          "Formative assessment has larger impact than one-off summative testing.",
+          "Differentiation is about access route, not lower expectations.",
+          "general professional"
+        ],
+        "estimated_reading_time_minutes": 12
+      },
+      "practice_tasks": [
+        "Draw a diagram showing how Company Specific applies to: Support lead teacher.",
+        "List the standards that govern Company Specific in Teaching Assistant work.",
+        "Write out the verification steps after completing a Company Specific task."
+      ],
+      "revision_notes": [
+        "Formative assessment has larger impact than one-off summative testing.",
+        "Differentiation is about access route, not lower expectations.",
+        "Safeguarding responsibilities apply during every teaching activity."
+      ]
+    }
+  ],
+  "generated_at": "2026-07-02T07:31:09.300677+00:00",
+  "confidence_score": 0.9
+}

@@ -21,10 +21,9 @@ import { jobApi, roadmapApi, badgeApi } from "../lib/api";
 
 // ─── Quick-action tiles ───────────────────────────────────────────────────
 const QUICK_ACTIONS = [
-  { label: "Search Jobs",        icon: <Search size={20} />,   to: "/jobs",            color: "#06B6D4" },
+  { label: "Jobs & Interview Prep", icon: <Search size={20} />,   to: "/jobs",            color: "#06B6D4" },
   { label: "Build CV",           icon: <FileText size={20} />, to: "/cv-builder",      color: "#8B5CF6" },
   { label: "Career Roadmap",     icon: <Map size={20} />,      to: "/roadmap",         color: "#10B981" },
-  { label: "Interview Pack",     icon: <BookOpen size={20} />, to: "/interview-pack",  color: "#F59E0B" },
 ];
 
 // ─── Progress ring ────────────────────────────────────────────────────────
