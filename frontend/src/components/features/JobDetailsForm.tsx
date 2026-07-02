@@ -32,7 +32,7 @@ export function JobDetailsForm({
         Job details
       </h2>
       <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", marginBottom: "1.25rem" }}>
-        Auto-filled when you pick a <strong>popular role</strong>, click <strong>Use this job</strong>, or load a saved job — then generate your interview pack or CV.
+        Step 2 — Review extracted job fields. Company is optional. Save the job, then generate your interview pack in step 3.
       </p>
 
       <div className="feature-grid-2" style={{ marginBottom: "1rem" }}>

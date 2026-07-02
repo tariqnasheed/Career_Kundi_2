@@ -195,7 +195,7 @@ export function getRolesForStream(streamId: string, category: EmploymentCategory
 export function popularRoleToForm(role: PopularJobRole): JobFormState {
   return {
     title: role.title,
-    company_name: categoryLabel(role.category),
+    company_name: "",
     company_url: "",
     location: "Flexible / Various",
     employment_type: role.employment_type,
@@ -213,9 +213,6 @@ export function popularRoleToForm(role: PopularJobRole): JobFormState {
   };
 }
 
-function categoryLabel(category: EmploymentCategory): string {
-  return category === "part_time_odd" ? "Various employers (part-time / gig)" : "Various employers";
-}
 
 export function savePayloadFromPopularRole(form: JobFormState): Record<string, unknown> {
   return { ...formToSavePayload(form), import_method: "popular_role" };

@@ -45,7 +45,7 @@ export function PopularJobRolesPanel({ onSelectRole, selectingRoleId }: PopularJ
             Popular job roles
           </h2>
           <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", maxWidth: 560 }}>
-            Browse roles across educational streams. Select any role to auto-fill job details, generate an interview pack, and prepare your CV.
+            Browse roles across educational streams. Select a role to auto-fill job details — then review, save, and generate your interview pack when you are ready.
           </p>
         </div>
         <div className="popular-roles-panel__category-toggle">
@@ -132,7 +132,7 @@ export function PopularJobRolesPanel({ onSelectRole, selectingRoleId }: PopularJ
 
       <p style={{ fontSize: "0.68rem", color: "var(--text-muted)", marginTop: "1rem", display: "flex", alignItems: "center", gap: "0.35rem" }}>
         <Sparkles size={12} />
-        Selecting a role saves it, generates an interview pack, and unlocks CV Builder for that role.
+        Selecting a role fills the job form only. Click <strong>Generate interview pack</strong> when you are ready — company name is optional.
       </p>
     </div>
   );

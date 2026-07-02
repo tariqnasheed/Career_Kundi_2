@@ -378,9 +378,18 @@ async def generate_interview_pack(
         "title": job.title,
         "company_name": job.company_name,
         "description_raw": job.description_raw,
+        "location": job.location,
+        "employment_type": job.employment_type,
+        "is_remote": job.is_remote,
+        "salary_min": job.salary_min,
+        "salary_max": job.salary_max,
+        "salary_currency": job.salary_currency,
         "responsibilities": job.responsibilities,
         "requirements": job.requirements,
+        "benefits": job.benefits,
         "extracted_skills": job.extracted_skills,
+        "company_profile": job.company_profile,
+        "experience_level": getattr(job, "experience_level", None),
     }
 
     library_status = "generated"

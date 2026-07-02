@@ -288,7 +288,15 @@ class RoleOverview(BaseModel):
 
 class InterviewQuestion(BaseModel):
     question_id: str | None = None
-    category: Literal["behavioral", "technical", "system_design", "role_specific", "company_specific"]
+    category: Literal[
+        "behavioral",
+        "technical",
+        "system_design",
+        "role_specific",
+        "company_specific",
+        "hr",
+        "daily_routine",
+    ]
     question: str
     why_asked: str
     difficulty: Literal["Easy", "Medium", "Hard", "Expert"] = "Medium"

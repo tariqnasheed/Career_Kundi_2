@@ -162,6 +162,11 @@ def mock_parse_job(text: str) -> dict:
     }
 
 
+from app.agents.job_search.knowledge.coverage_planner import apply_coverage_plan
+from app.agents.job_search.quality.surface_text_normalize import (
+    normalize_study_material_dict,
+    normalize_surface_text,
+)
 from app.agents.job_search.knowledge.content_engine import (
     build_answer_explanation,
     build_model_answer,
@@ -410,6 +415,20 @@ def _enforce_cross_role_uniqueness(enriched: dict, job: dict) -> None:
 
 def _boost_specificity(enriched: dict, job: dict) -> None:
     """Ensure answer/study mention role-specific technical anchors."""
+    if enriched.get("category") in ("hr", "daily_routine", "behavioral"):
+        return
+    if enriched.get("question_type") in {
+        "case_study",
+        "practical_task",
+        "hr_motivation",
+        "hr_logistics",
+        "hr_development",
+        "seniority",
+        "daily_routine",
+        "day_one",
+        "responsibility",
+    }:
+        return
     role = job.get("title") or "this role"
     model = enriched.get("model_answer", "")
     study = enriched.get("study_material") or {}
@@ -644,6 +663,14 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
         f"Review the key facts for this topic and write a 200-word summary from memory.",
     ]
     enriched.setdefault("revision_notes", study.get("revision_notes") or [])
+    enriched["question"] = normalize_surface_text(enriched.get("question", ""))
+    if enriched.get("model_answer"):
+        enriched["model_answer"] = normalize_surface_text(enriched["model_answer"])
+        enriched["expert_reference_answer"] = enriched["model_answer"]
+    if enriched.get("answer_explanation"):
+        enriched["answer_explanation"] = normalize_surface_text(enriched["answer_explanation"])
+    if enriched.get("study_material"):
+        enriched["study_material"] = normalize_study_material_dict(enriched["study_material"])
     return enriched
 
 
@@ -754,6 +781,8 @@ def mock_generate_questions(
     if not questions:
         questions.extend(_role_baseline_questions(job))
 
+    questions = apply_coverage_plan(job, questions, difficulty=difficulty)
+
     unique_questions: list[dict] = []
     seen: set[str] = set()
     for q in questions:
@@ -785,8 +814,17 @@ def mock_generate_questions(
 
 
 def finalize_questions_list(questions: list[dict], job: dict, difficulty: str) -> list[dict]:
-    """Ensure every question has model answers and study material (live + mock paths)."""
-    finalized = [_finalize_question(q, job, difficulty, i) for i, q in enumerate(questions)]
+    """Ensure every question has model answers, study material, and coverage (live + mock paths)."""
+    expanded = apply_coverage_plan(job, list(questions), difficulty=difficulty)
+    unique: list[dict] = []
+    seen: set[str] = set()
+    for q in expanded:
+        key = _question_dedupe_key(q)
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(q)
+    finalized = [_finalize_question(q, job, difficulty, i) for i, q in enumerate(unique)]
     return [q for q in finalized if not q.get("export_blocked")]
 
 

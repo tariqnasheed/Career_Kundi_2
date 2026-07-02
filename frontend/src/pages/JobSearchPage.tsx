@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { applyApi, jobApi, cvApi, profileApi } from "../lib/api";
 import { EMPTY_JOB_FORM, formToSavePayload, jobToForm } from "../lib/jobForm";
-import { popularRoleToForm, savePayloadFromPopularRole, type PopularJobRole } from "../lib/popularJobRoles";
+import { popularRoleToForm, type PopularJobRole } from "../lib/popularJobRoles";
 import type { JobFormState } from "../lib/jobForm";
 import { Button } from "../components/ui/Button";
 import { Input } from "../components/ui/Input";
@@ -486,19 +486,20 @@ export default function JobSearchPage() {
     onError: () => addToast({ type: "error", message: "PDF download failed. Generate a pack first." }),
   });
 
-  const selectPopularRole = async (role: PopularJobRole) => {
+  const selectPopularRole = (role: PopularJobRole) => {
     setSelectingRoleId(role.id);
     try {
       const form = popularRoleToForm(role);
+      setActiveJobId(null);
+      setPackOverride(null);
       setJobForm(form);
-      const saved = await jobApi.save(savePayloadFromPopularRole(form));
-      setActiveJobId(saved.id);
-      qc.invalidateQueries({ queryKey: ["jobs"] });
-      qc.invalidateQueries({ queryKey: ["job", saved.id] });
-      await generatePackMutation.mutateAsync(saved.id);
-      setTimeout(() => packSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 200);
+      addToast({
+        type: "success",
+        message: `${role.title} loaded — review the job details, then click Generate interview pack when ready.`,
+      });
+      setTimeout(() => jobFormRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 150);
     } catch {
-      addToast({ type: "error", message: "Could not prepare this role. Try again." });
+      addToast({ type: "error", message: "Could not load this role. Try again." });
     } finally {
       setSelectingRoleId(null);
     }
@@ -559,14 +560,16 @@ export default function JobSearchPage() {
         usingUrl={null}
       />
 
-      <PopularJobRolesPanel
-        onSelectRole={selectPopularRole}
-        selectingRoleId={selectingRoleId}
-      />
+      <section aria-label="Role selection" style={{ marginBottom: "1.5rem" }}>
+        <PopularJobRolesPanel
+          onSelectRole={selectPopularRole}
+          selectingRoleId={selectingRoleId}
+        />
+      </section>
 
       <DefaultCVSelector value={defaultCvId} onChange={setDefaultCvId} />
 
-      <div ref={jobFormRef} style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: "1.5rem", marginBottom: "1.5rem" }} className="job-prep-layout">
+      <section aria-label="Job details and review" ref={jobFormRef} style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: "1.5rem", marginBottom: "1.5rem" }} className="job-prep-layout">
         <JobDetailsForm
           form={jobForm}
           onChange={setJobForm}
@@ -622,9 +625,9 @@ export default function JobSearchPage() {
             </div>
           )}
         </div>
-      </div>
+      </section>
 
-      <div ref={packSectionRef} id="interview-pack-section">
+      <section aria-label="Interview pack preview and export" ref={packSectionRef} id="interview-pack-section">
         <InterviewPackView
           pack={displayPack}
           loading={packLoading && !packOverride}
@@ -635,7 +638,7 @@ export default function JobSearchPage() {
           onDownloadPdf={(fmt) => downloadPackMutation.mutate(fmt ?? "pdf")}
           downloadingPdf={downloadPackMutation.isPending}
         />
-      </div>
+      </section>
 
       <div className="feature-glass feature-panel">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem", flexWrap: "wrap", gap: "0.75rem" }}>

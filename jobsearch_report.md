@@ -1491,10 +1491,10 @@ Intent alignment was validated on six representative cases only, exported study 
 - Expert naturalness score average: 90.0%
 - Formulaic spoken-label count: 0
 - Study depth score: 100.0%
-- Average answer length: 169.3 words
+- Average answer length: 169.5 words
 - Golden regression pass rate: 100.0%
 - Broad-role regression pass rate: 100.0%
-- Compliance/workflow paragraph overlap (avg): 0.046 (display rounded: 0.05)
+- Compliance/workflow paragraph overlap (avg): 0.048 (display rounded: 0.05)
 
 ### Remaining risks
 - Sixty generated answers are below 150 words (mostly behavioral STAR responses); they pass intent alignment but remain visually short in export — acceptable under the flexible bracket.

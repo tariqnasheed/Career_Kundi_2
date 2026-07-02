@@ -9,7 +9,7 @@
 | **Current commit** | `7303e015` (pre-iteration-002 capture) |
 | **Date** | 2026-07-03 |
 | **Test command** | `cd backend && uv run pytest app/agents/job_search/tests -q` |
-| **Test result** | **12 passed** in 30.43s |
+| **Test result** | **75 passed** in 81.24s |
 
 ## Confirmed backend baseline (job-search)
 
@@ -168,10 +168,192 @@ git status
 
 ---
 
+## Iteration 003 — 2026-07-03
+
+**Goal:** First implementation pass after baseline — expand interview-pack category coverage, fix frontend generate/download flow, lengthen behavioral answers, add tests and comparison samples.
+
+**Feature area:** Job Search + Interview Pack Generator (backend coverage + frontend workflow).
+
+**Files changed (backend):**
+- `backend/app/agents/job_search/knowledge/coverage_planner.py` (new)
+- `backend/app/agents/job_search/mock_data.py`
+- `backend/app/agents/job_search/knowledge/content_engine.py`
+- `backend/app/agents/job_search/knowledge/question_intent.py`
+- `backend/app/schemas/job_search.py`
+- `backend/app/api/routes/job_search.py`
+- `backend/app/agents/job_search/tests/test_interview_pack_coverage_expansion.py` (new)
+- `backend/scripts/generate_iteration_003_samples.py` (new)
+
+**Files changed (frontend):**
+- `frontend/src/pages/JobSearchPage.tsx`
+- `frontend/src/components/features/PopularJobRolesPanel.tsx`
+- `frontend/src/components/features/JobDetailsForm.tsx`
+- `frontend/src/lib/popularJobRoles.ts`
+
+**Files updated (review):**
+- `project_review/00_iteration_log.md`
+- `project_review/01_job_search_and_interview_pack.md`
+- `project_review/02_study_material.md`
+
+**Commands run:**
+```bash
+cd backend && uv run pytest app/agents/job_search/tests -q
+cd backend && uv run python scripts/generate_iteration_003_samples.py
+cd frontend && npm test -- --run
+git status
+```
+
+**Sample outputs generated:**
+- `project_review/samples/iteration_003_interview_pack_fix/*_interview_pack.md` (5 roles)
+- `project_review/samples/iteration_003_interview_pack_fix/iteration_003_summary.md`
+- `project_review/samples/iteration_003_interview_pack_fix/metrics.json`
+
+**Tests run:**
+- Backend: **54 passed** in 76.11s
+- Frontend: **2 passed** (api surface tests only)
+
+**What passed:**
+- HR, daily-routine, seniority, case/practical coverage for five representative roles
+- Study material on every exportable question
+- All answers ≤ 500 words
+- Popular role selection fills form only (no auto-generate)
+- Company optional for generation
+
+**What failed:**
+- None in automated suites
+
+**Production logic changed:** Yes (coverage planner, new categories, behavioral answer expansion, job snapshot fields, frontend flow)
+
+**Remaining risks:**
+- Study material still compiler/deterministic only (no source ladder)
+- HR salary answer uses bracket placeholder for notice period
+- Pasted job URL extraction not fully validated in this iteration
+- Download UI still only inside pack preview section
+
+**Next recommended step:** Implementation order step 4 — Study Material multi-source architecture.
+
+---
+
+## Iteration 003A — 2026-07-03
+
+**Goal:** Stabilize Iteration 003 interview-pack output — fix spacing artifacts, role-specific HR questions, bracket placeholders, clinical domain contamination, and live/mock coverage parity.
+
+**Feature area:** Interview-pack surface quality stabilization (no study-material source ladder).
+
+**Files changed (backend):**
+- `backend/app/agents/job_search/quality/surface_text_normalize.py` (new)
+- `backend/app/agents/job_search/knowledge/coverage_planner.py`
+- `backend/app/agents/job_search/knowledge/content_engine.py`
+- `backend/app/agents/job_search/knowledge/core_technical_content.py`
+- `backend/app/agents/job_search/knowledge/expert_content_library.py`
+- `backend/app/agents/job_search/quality/domain_contamination_audit.py`
+- `backend/app/agents/job_search/mock_data.py`
+- `backend/app/agents/job_search/tests/test_interview_pack_surface_stability.py` (new)
+- `backend/scripts/generate_iteration_003a_samples.py` (new)
+- `jobsearch_report.md` (metric sync)
+
+**Files updated (review):**
+- `project_review/00_iteration_log.md`
+- `project_review/01_job_search_and_interview_pack.md`
+- `project_review/02_study_material.md`
+
+**Commands run:**
+```bash
+rm -rf frontend/node_modules/.vite/vitest
+cd backend && uv run pytest app/agents/job_search/tests -q
+cd backend && uv run python scripts/generate_iteration_003a_samples.py
+cd frontend && npm run build
+cd frontend && npm test -- --run
+git status
+```
+
+**Sample outputs generated:**
+- `project_review/samples/iteration_003a_interview_pack_stabilization/` (5 packs + summary + metrics)
+
+**Tests run:**
+- Backend: **72 passed** in 79.20s
+
+**What passed:**
+- No joined-word artifacts in regenerated samples
+- No unresolved bracket placeholders in answers
+- Role-specific HR motivation questions (unique per role)
+- Clinical Pharmacist packs free of GHS/CLP contamination
+- `finalize_questions_list` applies coverage planner (live path parity)
+
+**What failed:**
+- None
+
+**Production logic changed:** Yes (stabilization fixes only)
+
+**Remaining risks:**
+- Study-material source ladder still not implemented
+- Secondary skill depth still uneven
+- Job URL paste extraction not fully QA’d
+
+**Next recommended step:** Implementation order step 4 — Study Material multi-source architecture.
+
+---
+
+## Iteration 003B — 2026-07-03
+
+**Goal:** Final interview-pack surface cleanup before commit — eliminate remaining joined-word artifacts (especially `operationaldata`), fix summary truncation cutoffs, and confirm role-specific HR question keywords.
+
+**Feature area:** Interview-pack surface normalization and review sample regeneration (no study-material source ladder).
+
+**Files changed (backend):**
+- `backend/app/agents/job_search/quality/surface_text_normalize.py` — added `operationaldata`, `sitecoordination`, and related compound fixes; `truncate_at_word` now appends ellipsis
+- `backend/app/agents/job_search/knowledge/coverage_planner.py` — Data Analyst HR question mentions data quality checks
+- `backend/app/agents/job_search/tests/test_interview_pack_surface_stability.py` — HR keyword checks, normalization tests, truncation test
+- `backend/scripts/generate_iteration_003b_samples.py` (new)
+- `backend/scripts/generate_iteration_003a_samples.py` — word-boundary truncation in summary
+
+**Files updated (review):**
+- `project_review/00_iteration_log.md`
+- `project_review/01_job_search_and_interview_pack.md`
+- `project_review/02_study_material.md`
+
+**Commands run:**
+```bash
+git restore frontend/dist && git clean -fd frontend/dist/assets
+cd backend && uv run pytest app/agents/job_search/tests -q
+cd backend && uv run python scripts/generate_iteration_003b_samples.py
+cd frontend && npm run build
+git restore frontend/dist && git clean -fd frontend/dist/assets
+find . -type d -name "__pycache__" -prune -exec rm -rf {} +
+git status
+```
+
+**Sample outputs generated:**
+- `project_review/samples/iteration_003b_interview_pack_surface_cleanup/` (5 packs + summary + metrics)
+
+**Tests run:**
+- Backend: **75 passed** in 81.24s
+
+**What passed:**
+- No `operationaldata`, `systemsand`, `milksteaming`, or `strongfit` in regenerated samples
+- Summary weak-example previews truncate at word boundaries with ellipsis (no `site coordi` / `using tools` cutoffs)
+- Role-specific HR questions include required domain keywords per role
+- All answers ≤ 500 words; no bracket placeholders; Clinical Pharmacist free of GHS/CLP
+
+**What failed:**
+- None
+
+**Production logic changed:** Yes (surface normalization + HR copy tweak only)
+
+**Remaining risks:**
+- Study-material source ladder still not implemented
+- Secondary skill depth still uneven
+- Job URL paste extraction not fully QA’d
+
+**Next recommended step:** Implementation order step 4 — Study Material multi-source architecture.
+
+---
+
 ## Test result (latest)
 
 ```
 cd backend && uv run pytest app/agents/job_search/tests -q
-............                                                             [100%]
-12 passed in 30.43s
+........................................................................ [ 96%]
+...                                                                      [100%]
+75 passed in 81.24s
 ```

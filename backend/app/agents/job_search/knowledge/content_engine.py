@@ -60,6 +60,7 @@ from app.agents.job_search.quality.study_depth_audit import (
     study_depth_score,
     validate_study_material,
 )
+from app.agents.job_search.quality.surface_text_normalize import truncate_at_word
 
 _KNOWLEDGE_PATH = Path(__file__).parent / "skill_knowledge.json"
 
@@ -419,6 +420,10 @@ def _question_archetype(question: str, category: str, q: dict | None = None) -> 
     qtext = (question or "").lower()
     if category == "behavioral":
         return "behavioral"
+    if category == "hr":
+        return "hr"
+    if category == "daily_routine":
+        return "daily_routine"
     if category == "system_design":
         return "system_design"
     if "calculation" in qtext or "quantitative" in qtext:
@@ -435,8 +440,12 @@ def _question_archetype(question: str, category: str, q: dict | None = None) -> 
         return "complex_problem"
     if "design a system" in qtext or "walk through your approach" in qtext:
         return "system_design"
-    if "day-one" in qtext or "typical task" in qtext:
-        return "day_one"
+    if "first day" in qtext or "day-one" in qtext or "typical working day" in qtext:
+        return "daily_routine"
+    if "junior" in qtext or "senior" in qtext or "mid-level" in qtext:
+        return "seniority"
+    if "case study" in qtext or "practical task" in qtext:
+        return "case_study"
     if "core competencies" in qtext or "successful as" in qtext:
         return "role_competencies"
     if "excites you" in qtext or "why do you want" in qtext:
@@ -513,6 +522,18 @@ def build_study_material(q: dict, job: dict) -> dict:
     if category == "behavioral" or archetype == "behavioral":
         return _behavioral_study(q, job, role_ctx)
 
+    if category == "hr" or archetype == "hr":
+        return _hr_study(q, job, role_ctx)
+
+    if category == "daily_routine" or archetype in {"daily_routine", "day_one"}:
+        return _daily_routine_study(q, job, role_ctx)
+
+    if archetype == "seniority" or q.get("question_type") == "seniority":
+        return _seniority_study(q, job, role_ctx)
+
+    if archetype in {"case_study", "practical_task", "problem_solving", "tools", "standards", "responsibility"}:
+        return _coverage_question_study(q, job, role_ctx)
+
     if archetype in {"motivation", "company_research"}:
         return _motivation_study(q, job, role_ctx)
 
@@ -570,9 +591,9 @@ def _behavioral_study(q: dict, job: dict, role_ctx: dict) -> dict:
         "general": ["Accountability", "Communication", "Judgement", "Execution discipline"],
     }
     return {
-        "what_this_question_tests": f"How to structure a STAR response for: {qtext[:120]}",
+        "what_this_question_tests": f"How to structure a STAR response for: {truncate_at_word(qtext, 120)}",
         "overview": (
-            f"This module supports the interview prompt: {qtext[:120]}. "
+            f"This module supports the interview prompt: {truncate_at_word(qtext, 120)}. "
             f"It covers professional situations a {role_title} handles when {resp.lower()}."
         ),
         "what_you_need_to_know_first": [
@@ -624,7 +645,7 @@ def _motivation_study(q: dict, job: dict, role_ctx: dict) -> dict:
     skill_hint = skills[0] if skills else "core role skills"
     return {
         "what_this_question_tests": (
-            f"Whether you can connect genuine motivation to this {role_title} posting: {qtext[:120]}"
+            f"Whether you can connect genuine motivation to this {role_title} posting: {truncate_at_word(qtext, 120)}"
         ),
         "beginner_explanation": (
             f"Employers expect specifics about {role_title} duties such as {resp.lower()}, "
@@ -1062,6 +1083,49 @@ def build_model_answer(q: dict, job: dict) -> str:
         q["answer_source"] = "legacy_template"
         return _behavioral_answer(q, job, role_ctx)
 
+    if category == "hr" or archetype == "hr":
+        q["answer_source"] = "legacy_template"
+        return _hr_answer(q, job, role_ctx)
+
+    if category == "daily_routine" or archetype in {"daily_routine", "day_one"}:
+        q["answer_source"] = "legacy_template"
+        return _daily_routine_answer(q, job, role_ctx)
+
+    if archetype == "seniority" or q.get("question_type") == "seniority":
+        q["answer_source"] = "legacy_template"
+        return _seniority_answer(q, job, role_ctx)
+
+    if archetype in {"case_study", "practical_task", "problem_solving"} and skill:
+        q["answer_source"] = "legacy_template"
+        evidence = _retrieve_evidence_pack(skill, job, q)
+        return _compose_scenario_answer(skill, evidence)
+
+    if archetype == "tools" and skill:
+        q["answer_source"] = "legacy_template"
+        exp = _expert(skill, job)
+        skill_t = title_case_skill(skill)
+        return (
+            f"As {role_title}, I use {skill_t} daily for {resp.lower()}. "
+            f"I rely on {exp['how_it_works'][0].lower() if exp.get('how_it_works') else 'documented workflows'} "
+            f"and verify outputs with peer review or automated checks before release. "
+            f"A concrete example: I configured {skill_t} for a recurring deliverable, added validation gates, "
+            f"and reduced rework after stakeholders signed off the template. "
+            f"I avoid tool sprawl — I master the features that affect quality and traceability, "
+            f"and I document version, owner, and rollback steps for anything production-facing."
+        )
+
+    if archetype == "standards" and skill:
+        q["answer_source"] = "legacy_template"
+        exp = _expert(skill, job)
+        std = exp.get("standards", ["applicable standards"])[0] if exp.get("standards") else "applicable standards"
+        return (
+            f"In {role_title} work on {resp.lower()}, I treat {std} as the baseline for every {title_case_skill(skill)} task. "
+            f"Before starting I confirm scope, hazards, and permit/isolation requirements; during execution I record "
+            f"measurements and deviations; before handover I complete checklists and escalate anything outside tolerance. "
+            f"If a standard is unclear I stop and obtain written clarification — I do not improvise on safety or governance. "
+            f"That discipline keeps audits clean and prevents repeat incidents."
+        )
+
     if category == "system_design" or archetype == "system_design":
         q["answer_source"] = "legacy_template"
         return _system_design_answer(job, role_ctx)
@@ -1216,72 +1280,323 @@ def _procedure_answer(q: dict) -> str:
 
 def _behavioral_answer(q: dict, job: dict, role_ctx: dict) -> str:
     role_title = job.get("title") or "Professional"
-    resp = (role_ctx.get("responsibilities") or ["the work"])[0]
+    resp_raw = (job.get("responsibilities") or role_ctx.get("responsibilities") or ["the work"])[0]
+    if isinstance(resp_raw, dict):
+        resp_raw = resp_raw.get("text")
+    resp = str(resp_raw or "core duties")
     q_lower = (q.get("question") or "").lower()
     family = _role_family(role_title)
+    skills = ", ".join(
+        title_case_skill(s.get("skill") if isinstance(s, dict) else s)
+        for s in (job.get("extracted_skills") or [])[:3]
+    ) or "relevant methods"
+
+    situation = (
+        f"In a previous {role_title} assignment focused on {resp.lower()}, we faced a situation where "
+        f"quality, timing, and stakeholder expectations were all under pressure at once."
+    )
+    task = (
+        f"My responsibility was to deliver the {resp.lower()} work to standard without compromising "
+        f"safety, accuracy, or team communication."
+    )
 
     if family == "healthcare":
         if "disagreed" in q_lower or "conflict" in q_lower:
-            return (
-                f"During a busy {role_title} shift involving {resp.lower()}, there was disagreement about whether to delay review "
-                f"for a patient with rising NEWS2. I escalated using SBAR with current observations and trend data, "
-                f"and requested urgent clinician assessment. We reviewed within 10 minutes, started treatment promptly, "
-                f"and avoided ICU transfer. The key was using objective deterioration criteria, not opinion."
+            action = (
+                f"I gathered objective clinical observations and trend data, then escalated using SBAR with a clear "
+                f"recommendation and timeframe. I facilitated a brief multidisciplinary review, documented decisions "
+                f"contemporaneously, and ensured the patient pathway was updated before handover."
             )
-        return (
-            f"In one {role_title} case related to {resp.lower()}, I identified early deterioration from repeated obs trends. "
-            f"I completed ABCDE, initiated escalation protocol, communicated via SBAR, and coordinated immediate interventions. "
-            f"Documentation was completed in real time with timestamps. The patient stabilised and was stepped down next day; "
-            f"our audit recorded full compliance with escalation policy."
-        )
-
-    if family == "engineering":
+            result = (
+                f"The review completed within ten minutes, treatment started promptly, and deterioration was avoided. "
+                f"Our audit recorded full escalation-policy compliance, and the team adopted the same evidence format "
+                f"for similar cases."
+            )
+        else:
+            action = (
+                f"I completed structured assessment, initiated the escalation protocol when thresholds were met, "
+                f"communicated via SBAR to the responsible clinician, and coordinated immediate interventions while "
+                f"maintaining real-time documentation with timestamps."
+            )
+            result = (
+                f"The patient stabilised and was stepped down the following day. Governance review found complete "
+                f"documentation, and I used the case in team learning on early recognition."
+            )
+    elif family == "engineering":
         if "mistake" in q_lower or "learned" in q_lower:
-            return (
-                f"On an early {role_title} project within {resp.lower()}, I used an outdated table value during initial checks. "
-                f"The peer review caught it before energisation/commissioning. I corrected calculations, reissued records, and "
-                f"introduced a checklist requiring edition/date verification of standards before sign-off. We had zero repeat issues "
-                f"in subsequent projects."
+            action = (
+                f"I stopped work, corrected calculations using the current standard edition, reissued records, and "
+                f"introduced a pre-sign-off checklist requiring version/date verification. I walked the team through "
+                f"the error mode so it would not repeat on similar {skills} tasks."
             )
-        return (
-            f"As {role_title}, I handled a high-pressure fault during {resp.lower()} where downtime penalties were severe. "
-            f"I isolated safely, traced root cause through measured values against design assumptions, and implemented a controlled fix "
-            f"with verification testing. We restored service within SLA and documented corrective actions in the maintenance closeout."
+            result = (
+                f"We energised/commissioned with verified values, had zero repeat issues on subsequent projects, and "
+                f"the checklist became standard practice for {role_title} closeout."
+            )
+        else:
+            action = (
+                f"I isolated safely, traced root cause through measured values against design assumptions, implemented "
+                f"a controlled fix with verification testing, and kept site coordination informed at each stage."
+            )
+            result = (
+                f"Service was restored within SLA, corrective actions were logged in the maintenance closeout, and "
+                f"follow-up sampling confirmed the fix held under load."
+            )
+    elif family == "technology":
+        action = (
+            f"I led triage on a production regression affecting {skills} workflows, executed a safe rollback, "
+            f"identified root cause from logs and traces, and shipped a guarded fix with automated tests and "
+            f"monitoring thresholds."
         )
-
-    if family == "technology":
-        return (
-            f"In my {role_title} work tied to {resp.lower()}, I led response to a production regression that raised error rate to 7%. "
-            f"I coordinated triage, rolled back safely, identified root cause from logs and traces, and shipped a guarded fix with tests. "
-            f"Error rate returned below 0.2%, and we added a release gate plus alert threshold to prevent recurrence."
+        result = (
+            f"Error rate returned below 0.2%, we added a release gate to prevent recurrence, and post-incident review "
+            f"actions were completed within the sprint."
         )
-
-    if family == "finance_legal":
-        return (
-            f"While working as {role_title} on {resp.lower()}, I identified a material compliance/control gap during review. "
-            f"I gathered supporting evidence, quantified exposure, and escalated with a remediation plan and owner deadlines. "
-            f"Controls were implemented before period close/case milestone, and external review found no major findings."
+    else:
+        action = (
+            f"I clarified priorities with stakeholders, broke the work into verifiable stages using {skills}, "
+            f"executed with documented checks at each handoff, and escalated early when assumptions changed."
         )
-
-    if family == "education":
-        return (
-            f"In my {role_title} role for {resp.lower()}, one cohort was underperforming against target outcomes. "
-            f"I diagnosed gaps using formative assessment, adjusted instruction with targeted interventions, and tracked weekly progress. "
-            f"Attainment improved from 58% to 76% over six weeks, with strongest gains in students previously below expected standard."
-        )
-
-    if family == "public_admin":
-        return (
-            f"As {role_title} supporting {resp.lower()}, I managed a cross-team deadline with conflicting stakeholder requirements. "
-            f"I mapped decision dependencies, created a risk log, and aligned owners against policy and service standards. "
-            f"We delivered on schedule, reduced rework from late changes, and passed governance review without exceptions."
+        result = (
+            f"We delivered on time with improved quality controls, measurable outcomes improved versus baseline, "
+            f"and the approach was documented for future {role_title} teams."
         )
 
     return (
-        f"In {role_title} work involving {resp.lower()}, I handled a complex delivery issue by clarifying priorities, assigning clear ownership, "
-        f"executing in stages, and tracking measurable outcomes. The result was on-time completion with improved quality controls and a repeatable "
-        f"process documented for future teams."
+        f"**Situation:** {situation}\n\n"
+        f"**Task:** {task}\n\n"
+        f"**Action:** {action}\n\n"
+        f"**Result:** {result}\n\n"
+        f"What I would adapt in a new {role_title} role is the specific tooling and local procedures — "
+        f"but the discipline of evidence, communication, and verification stays the same."
     )
+
+
+def _hr_answer(q: dict, job: dict, role_ctx: dict) -> str:
+    role_title = job.get("title") or "this role"
+    resp = (job.get("responsibilities") or role_ctx.get("responsibilities") or ["core duties"])[0]
+    if isinstance(resp, dict):
+        resp = resp.get("text")
+    resp = str(resp or "core duties")
+    skills = ", ".join(
+        title_case_skill(s.get("skill") if isinstance(s, dict) else s)
+        for s in (job.get("extracted_skills") or [])[:3]
+    ) or "role-relevant skills"
+    q_lower = (q.get("question") or "").lower()
+    company = job.get("company_name")
+
+    if "salary" in q_lower or "notice" in q_lower:
+        return (
+            f"For a {role_title} role I have researched typical market ranges for this level and location, "
+            f"and I am open to discussing a fair package based on scope, benefits, and progression. "
+            f"I would discuss my notice period honestly and align my start date with the employer's onboarding plan. "
+            f"I am flexible on start date for the right opportunity and would confirm the working pattern "
+            f"described in the job specification, especially where the work centres on {resp.lower()}. "
+            f"I would confirm exact figures after understanding the full role specification, on-call expectations, "
+            f"and development support — rather than anchoring on a number without context."
+        )
+
+    if "feedback" in q_lower or "development" in q_lower:
+        return (
+            f"In my {role_title} career I treat feedback as operational data, not personal criticism. "
+            f"After a recent review on {resp.lower()}, I agreed three development actions with my manager: "
+            f"deepen {skills}, improve handover documentation, and lead one small improvement project. "
+            f"I track progress monthly with evidence — completed courses, audited outputs, or stakeholder comments — "
+            f"and I ask for mid-cycle check-ins so adjustments happen early. "
+            f"That approach keeps my {role_title} practice current without waiting for annual reviews."
+        )
+
+    motivation = (
+        f"I am applying for this {role_title} role because the posting aligns with work I have already delivered "
+        f"in {resp.lower()} and with the skills I want to deepen next — especially {skills}. "
+    )
+    if company:
+        motivation += (
+            f"I have looked at {company}'s work in this sector and I am motivated by the chance to contribute "
+            f"to that standard of delivery from week one. "
+        )
+    motivation += (
+        f"I bring structured habits: clarify requirements, execute with verification, communicate risks early, "
+        f"and document outcomes so the team can rely on my work. "
+        f"I am not claiming to know every local process on day one, but I am ready to learn quickly and add value "
+        f"through dependable execution on the responsibilities listed."
+    )
+    return motivation
+
+
+def _daily_routine_answer(q: dict, job: dict, role_ctx: dict) -> str:
+    role_title = job.get("title") or "Professional"
+    resp_list = job.get("responsibilities") or role_ctx.get("responsibilities") or ["core duties"]
+    primary = resp_list[0]
+    if isinstance(primary, dict):
+        primary = primary.get("text")
+    primary = str(primary or "core duties")
+    skills = ", ".join(
+        title_case_skill(s.get("skill") if isinstance(s, dict) else s)
+        for s in (job.get("extracted_skills") or [])[:2]
+    ) or "standard methods"
+    q_lower = (q.get("question") or "").lower()
+
+    if "first day" in q_lower or "day-one" in q_lower or "first day" in q_lower:
+        return (
+            f"On day one as {role_title} I would arrive early, read handover notes and any safety briefings, "
+            f"and introduce myself to the people I will work with on {primary.lower()}. "
+            f"I would shadow a colleague through one complete cycle of the work, noting checkpoints, tools ({skills}), "
+            f"and escalation paths before attempting anything independently. "
+            f"My first independent tasks would be low-risk verification or preparation work with sign-off, "
+            f"while I build familiarity with local documentation and naming conventions. "
+            f"By end of day I would summarise what I learned, confirm tomorrow's priorities, and flag any gaps "
+            f"in access, training, or equipment before they become blockers."
+        )
+
+    return (
+        f"A typical day as {role_title} starts with a brief planning check: outstanding tasks, safety or quality "
+        f"alerts, and priorities for {primary.lower()}. "
+        f"Morning work usually focuses on scheduled delivery using {skills}, with verification before handoff. "
+        f"Midday I handle ad-hoc issues, stakeholder questions, and documentation updates while keeping traceability "
+        f"for audit or continuity. "
+        f"Afternoon I complete remaining core tasks, prepare handover notes, restock or reset anything needed for "
+        f"the next shift, and close out actions from earlier escalations. "
+        f"Throughout I communicate early when timelines slip and I never skip compliance checks to save time — "
+        f"that rhythm is what keeps {role_title} work predictable under pressure."
+    )
+
+
+def _seniority_answer(q: dict, job: dict, role_ctx: dict) -> str:
+    role_title = job.get("title") or "Professional"
+    resp = (job.get("responsibilities") or role_ctx.get("responsibilities") or ["core duties"])[0]
+    if isinstance(resp, dict):
+        resp = resp.get("text")
+    resp = str(resp or "core duties")
+    q_lower = (q.get("question") or "").lower()
+
+    if "junior" in q_lower:
+        return (
+            f"As a junior {role_title} I assume I will encounter tasks in {resp.lower()} that I have not done "
+            f"in exactly this environment before. My approach is to read the procedure, identify safety-critical "
+            f"steps, and ask for a brief walkthrough before starting. "
+            f"I execute in small verifiable stages, record measurements or outputs as I go, and request review "
+            f"before sign-off on anything that affects quality or compliance. "
+            f"If I am blocked I escalate early with specific questions rather than guessing — that protects the "
+            f"team and speeds up my learning curve. "
+            f"Within the first weeks I also keep a personal log of methods, tools, and contacts so repeat tasks "
+            f"become faster without cutting corners."
+        )
+
+    if "senior" in q_lower or "mentor" in q_lower:
+        return (
+            f"As a senior {role_title} I balance hands-on delivery on {resp.lower()} with structured support for "
+            f"juniors. I set clear review criteria before work starts, do spot-checks at defined checkpoints, "
+            f"and reserve time for coaching questions without taking over execution. "
+            f"When quality risk is high I pair on the critical steps, then let the junior complete supervised "
+            f"sections to build competence. "
+            f"I also own escalation to stakeholders, standards interpretation, and cross-team coordination so "
+            f"juniors can focus on learning the method. "
+            f"That division keeps throughput high while maintaining audit-ready documentation and consistent outcomes."
+        )
+
+    return (
+        f"At mid-level as {role_title} I deliver {resp.lower()} independently but stay deliberate about when to "
+        f"involve seniors — usually when assumptions change, safety margins tighten, or stakeholder impact widens. "
+        f"I document decisions, share progress proactively, and offer help to newer colleagues on routine tasks "
+        f"so the team capacity stays balanced. "
+        f"My goal is reliable execution plus judgement: knowing which shortcuts are acceptable and which require "
+        f"full verification or escalation."
+    )
+
+
+def _hr_study(q: dict, job: dict, role_ctx: dict) -> dict:
+    base = _behavioral_study(q, job, role_ctx)
+    base["overview"] = (
+        f"HR interview questions for {job.get('title') or 'this role'} test motivation, logistics, and "
+        f"professionalism — not deep technical knowledge. Prepare honest, specific answers you can adapt."
+    )
+    base["key_concepts"] = ["Motivation fit", "Salary research", "Notice period", "Development planning"]
+    return base
+
+
+def _daily_routine_study(q: dict, job: dict, role_ctx: dict) -> dict:
+    role_title = job.get("title") or "this role"
+    resp = (job.get("responsibilities") or ["core duties"])[0]
+    if isinstance(resp, dict):
+        resp = resp.get("text")
+    return {
+        "overview": f"Daily-routine questions check whether you understand real {role_title} workflow — not theory alone.",
+        "what_you_need_to_know_first": [
+            f"Typical sequence for {resp}",
+            "Opening and closing checks",
+            "Handover and documentation habits",
+        ],
+        "principles": [
+            "Describe a realistic day with timings, not a generic list.",
+            "Mention safety/quality checkpoints explicitly.",
+            "Show how you handle interruptions without losing control.",
+        ],
+        "step_by_step_breakdown": [
+            "Start-of-shift: brief, priorities, equipment/system checks.",
+            "Core work blocks tied to posting responsibilities.",
+            "Ad-hoc issues and communication.",
+            "Close-down: documentation, handover, reset for next shift.",
+        ],
+        "common_mistakes": [
+            "Answering with only abstract values ('I am organised').",
+            "Ignoring compliance or safety steps in the routine.",
+            "Forgetting handover/documentation.",
+        ],
+        "practice_exercises": [
+            f"Write a one-page hour-by-hour plan for a {role_title} shift.",
+            "List three escalation triggers you would watch for daily.",
+        ],
+        "estimated_reading_time_minutes": 8,
+    }
+
+
+def _coverage_question_study(q: dict, job: dict, role_ctx: dict) -> dict:
+    role_title = job.get("title") or "this role"
+    skill = q.get("skill_tag") or "core work"
+    skill_t = title_case_skill(skill)
+    qtext = q.get("question") or ""
+    return {
+        "overview": (
+            f"Preparation for: {truncate_at_word(qtext, 140)}. "
+            f"Covers how {skill_t} work is planned, executed, and verified in {role_title} practice."
+        ),
+        "what_you_need_to_know_first": [
+            f"Typical {skill_t} workflow in this role",
+            "Risk and compliance triggers",
+            "Evidence to collect before sign-off",
+        ],
+        "principles": [
+            f"Stage {skill_t} tasks with explicit entry/exit checks.",
+            "Record assumptions, measurements, and owner decisions.",
+            "Separate interim containment from permanent fixes.",
+        ],
+        "step_by_step_breakdown": [
+            "Confirm scope, constraints, and stakeholders.",
+            f"Plan {skill_t} execution with role-appropriate tools.",
+            "Run verification against spec or SOP.",
+            "Communicate results, risks, and follow-up actions.",
+        ],
+        "common_mistakes": [
+            "Rushing verification when deadlines tighten.",
+            "Describing tools without linking them to outcomes.",
+            "Omitting escalation when results are borderline.",
+        ],
+        "practice_exercises": [
+            f"Write a one-page runbook for a {skill_t} task.",
+            "List three escalation triggers for this scenario.",
+        ],
+        "estimated_reading_time_minutes": 10,
+    }
+
+
+def _seniority_study(q: dict, job: dict, role_ctx: dict) -> dict:
+    base = _behavioral_study(q, job, role_ctx)
+    base["overview"] = (
+        f"Seniority questions calibrate expectations for {job.get('title') or 'this role'} — "
+        f"junior learning discipline, mid-level judgement, or senior coaching ownership."
+    )
+    return base
 
 
 def _system_design_answer(job: dict, role_ctx: dict) -> str:

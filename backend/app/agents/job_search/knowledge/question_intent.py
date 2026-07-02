@@ -28,6 +28,8 @@ _NON_TECHNICAL_CATEGORIES = {
     "role_specific",
     "company_specific",
     "system_design",
+    "hr",
+    "daily_routine",
 }
 
 _BEHAVIORAL_MARKERS = (

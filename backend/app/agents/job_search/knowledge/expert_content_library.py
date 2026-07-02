@@ -7,6 +7,8 @@ an expert would speak in the interview room.
 
 from __future__ import annotations
 
+import re
+
 from app.agents.job_search.knowledge.normalize import normalize_key, title_case_skill
 
 # ---------------------------------------------------------------------------
@@ -447,14 +449,28 @@ _ROLE_SKILL_OVERRIDES: dict[str, dict[str, dict]] = {
 
 def _infer_profile(skill_t: str, role: str, duty: str, domain: str) -> str:
     text = f"{skill_t} {role} {duty}".lower()
-    if any(k in text for k in ("hazmat", "process design", "lab", "chemical", "safety", "qc", "gmp")):
+    if any(
+        k in text
+        for k in (
+            "patient", "clinical", "pharmac", "radi", "diagnosis", "care",
+            "medication", "nurse", "gp ", "therapist", "counselling",
+        )
+    ):
+        return "healthcare"
+    if any(
+        k in text
+        for k in (
+            "hazmat", "process design", "reactor", "solvent", "chemical engineer",
+            "laboratory scientist", "lab scientist", "chemical process",
+        )
+    ):
+        return "chemical_process"
+    if "lab" in text and "laboratory" in text:
         return "chemical_process"
     if any(k in text for k in ("policy", "administration", "civil service", "report writing", "case management")):
         return "public_admin"
     if any(k in text for k in ("lesson", "teaching", "classroom", "curriculum", "tutor", "lecturer")):
         return "education"
-    if any(k in text for k in ("patient", "clinical", "pharmac", "radi", "diagnosis", "care")):
-        return "healthcare"
     if any(k in text for k in ("finance", "valuation", "tax", "ifrs", "audit", "legal", "compliance")):
         return "finance_legal"
     if any(k in text for k in ("sales", "crm", "marketing", "seo", "brand", "e-commerce")):
@@ -530,7 +546,12 @@ def _profile_scaffold(profile: str, skill_t: str, role: str, duty: str) -> dict:
         }
     if profile == "healthcare":
         return {
-            "standards": ["Clinical guideline pathway", "Medication safety checks", "SBAR handover"],
+            "standards": [
+                "BNF and local formulary",
+                "NICE clinical guidelines",
+                "Medicines optimisation governance",
+                "SBAR escalation and handover",
+            ],
             "steps": [
                 "Assess patient baseline and immediate risk flags.",
                 "Apply protocol-driven intervention and verify contraindications.",
@@ -747,22 +768,67 @@ def _generate_fallback(skill: str, role_title: str, responsibility: str | None) 
     }
 
 
+_CLINICAL_BANNED_TERMS = (
+    "ghs/clp",
+    "reach/coshh",
+    "hazop",
+    "sds sections",
+    "lel permissive",
+    "reach",
+    "coshh",
+)
+
+
+def _is_clinical_healthcare_role(role_title: str | None) -> bool:
+    role_l = (role_title or "").lower()
+    return any(k in role_l for k in ("pharmac", "clinical", "nurse", "gp", "therapist", "radiograph"))
+
+
+def _sanitize_expert_for_clinical_role(content: dict, role_title: str | None) -> dict:
+    if not _is_clinical_healthcare_role(role_title):
+        return content
+    out = dict(content)
+    out["standards"] = [
+        s for s in out.get("standards", [])
+        if not any(b in str(s).lower() for b in _CLINICAL_BANNED_TERMS)
+    ]
+    for field in ("definition", "teaching_body", "explain_answer", "complex_answer"):
+        text = str(out.get(field) or "")
+        for banned in _CLINICAL_BANNED_TERMS:
+            text = re.sub(re.escape(banned), "", text, flags=re.I)
+        out[field] = re.sub(r"\s{2,}", " ", text).strip(" ,;.")
+    out["key_facts"] = [
+        f for f in out.get("key_facts", [])
+        if not any(b in str(f).lower() for b in _CLINICAL_BANNED_TERMS)
+    ]
+    out["related_topics"] = [
+        t for t in out.get("related_topics", [])
+        if not any(b in str(t).lower() for b in _CLINICAL_BANNED_TERMS)
+    ]
+    if not out.get("standards"):
+        out["standards"] = ["BNF and local formulary", "NICE clinical guidelines", "Medicines optimisation governance"]
+    return out
+
+
 def resolve_expert_content(skill: str, role_title: str | None = None, responsibility: str | None = None) -> dict:
     """Return substantive expert content for skill, with role overrides."""
     sk = normalize_key(skill)
     role_k = normalize_key(role_title or "")
 
     if role_k in _ROLE_SKILL_OVERRIDES and sk in _ROLE_SKILL_OVERRIDES[role_k]:
-        return _ROLE_SKILL_OVERRIDES[role_k][sk]
+        return _sanitize_expert_for_clinical_role(_ROLE_SKILL_OVERRIDES[role_k][sk], role_title)
 
     if sk in _SKILL:
         content = dict(_SKILL[sk])
         # Personalise complex answer with role if generic
         if role_title and role_k:
             content["complex_answer"] = content["complex_answer"].replace("On a", f"As {role_title}, on a", 1) if content["complex_answer"].startswith("On a") else content["complex_answer"]
-        return content
+        return _sanitize_expert_for_clinical_role(content, role_title)
 
-    return _generate_fallback(skill, role_title or "Professional", responsibility)
+    return _sanitize_expert_for_clinical_role(
+        _generate_fallback(skill, role_title or "Professional", responsibility),
+        role_title,
+    )
 
 
 def list_curated_skills() -> list[str]:

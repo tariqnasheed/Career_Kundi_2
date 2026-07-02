@@ -152,27 +152,96 @@ Summary: [baseline_summary.md](../samples/iteration_002_baseline/baseline_summar
 
 ---
 
-## Current issues found (baseline inspection)
+## Iteration 003 changes (2026-07-03)
+
+### Backend
+
+- Added `coverage_planner.apply_coverage_plan()` — minimum HR, daily-routine, seniority, scenario, case/practical, tool, standards, responsibility, and skill-gap coverage.
+- New categories: `hr`, `daily_routine` in schema and generator.
+- Expanded behavioral/HR/daily-routine/seniority answers to structured STAR-style responses (typically 120+ words).
+- Interview-pack API job snapshot now passes location, employment type, remote, salary, benefits, company profile.
+- New test file: `test_interview_pack_coverage_expansion.py`.
+
+### Frontend
+
+- Popular role click → fills form only; clears stale job/pack; scrolls to job form.
+- Company name no longer auto-filled with “Various employers”.
+- Section layout: role selection → job review → pack preview/export.
+- Generate remains explicit button; download remains separate (in pack view).
+
+### Before / after (question counts)
+
+| Role | Iteration 002 | Iteration 003 |
+|------|---------------|---------------|
+| Data Analyst | 29 | 35 |
+| Electrical Engineer | 28 | 36 |
+| Clinical Pharmacist | 28 | 36 |
+| Barista | 24 | 34 |
+| DevOps Engineer | 32 | 37 |
+
+Samples: [iteration_003_summary.md](../samples/iteration_003_interview_pack_fix/iteration_003_summary.md)
+
+### Iteration 003A stabilization (2026-07-03)
+
+| Role | Iter 003 | Iter 003A | Joined artifacts | Bracket placeholders | GHS/CLP (pharmacist) |
+|------|----------|-----------|------------------|----------------------|----------------------|
+| Data Analyst | 35 | 35 | 0 | 0 | n/a |
+| Electrical Engineer | 36 | 36 | 0 | 0 | n/a |
+| Clinical Pharmacist | 36 | 36 | 0 | 0 | 0 |
+| Barista | 34 | 34 | 0 | 0 | n/a |
+| DevOps Engineer | 37 | 36 | 0 | 0 | n/a |
+
+Samples: [iteration_003a_summary.md](../samples/iteration_003a_interview_pack_stabilization/iteration_003a_summary.md)
+
+### Iteration 003B surface cleanup (2026-07-03)
+
+| Role | Iter 003A | Iter 003B | Joined artifacts | Bracket placeholders | GHS/CLP (pharmacist) |
+|------|-----------|-----------|------------------|----------------------|----------------------|
+| Data Analyst | 35 | 35 | 0 | 0 | n/a |
+| Electrical Engineer | 36 | 35 | 0 | 0 | n/a |
+| Clinical Pharmacist | 36 | 36 | 0 | 0 | 0 |
+| Barista | 34 | 34 | 0 | 0 | n/a |
+| DevOps Engineer | 36 | 35 | 0 | 0 | n/a |
+
+**003B fixes:** `operationaldata` normalization rule, word-boundary summary truncation, Data Analyst HR data-quality keyword.
+
+Samples: [iteration_003b_summary.md](../samples/iteration_003b_interview_pack_surface_cleanup/iteration_003b_summary.md)
+
+### Frontend manual verification notes
+
+1. Open `/jobs` → click a popular role → confirm form fills, **no** pack generates, **no** download.
+2. Leave company blank → click **Generate interview pack** → pack should generate successfully.
+3. After generation → use **Full pack PDF** / **Study PDF** in pack section only.
+4. Click **Save job** before or with generate — job should persist with optional company null.
+
+---
+
+## Current issues found (post–Iteration 003)
 
 | ID | Area | Issue | Severity | Status |
 |----|------|-------|----------|--------|
-| JS-001 | Coverage | No explicit HR question category in generated packs | high | open |
-| JS-002 | Coverage | No daily-routine / day-one question category | medium | open |
-| JS-003 | Coverage | No case-study category; seniority tiers sparse | medium | open |
-| JS-004 | Answers | Behavioral STAR answers ~40–80 words vs richer technical answers | medium | open |
-| JS-005 | Skills | Secondary requirement skills get fewer technical questions than primary focus skill | medium | open |
-| JS-006 | Frontend | Popular-role selection / generate / download workflow not yet separated | high | open |
-| JS-007 | Import | Pasted job link/description field extraction not validated in this baseline | high | open |
-| JS-008 | Company | Company-specific questions absent without company profile data | low | expected |
+| JS-001 | Coverage | HR category | high | **fixed** |
+| JS-002 | Coverage | Daily-routine category | medium | **fixed** |
+| JS-003 | Coverage | Seniority + case/practical | medium | **fixed** |
+| JS-004 | Answers | Short behavioral answers | medium | **improved** |
+| JS-005 | Skills | Secondary skill depth | medium | open |
+| JS-006 | Frontend | Auto-generate on role select | high | **fixed** |
+| JS-007 | Import | Pasted job link extraction QA | high | open |
+| JS-008 | Company | Company-specific without data | low | expected |
+| JS-009 | UX | Download only in pack preview | low | open |
+| JS-010 | Surface | Joined-word artifacts | medium | **fixed (003B)** |
+| JS-011 | HR | Generic motivation copy | medium | **fixed (003A)** |
+| JS-012 | Answers | Bracket placeholders | medium | **fixed (003A)** |
+| JS-013 | Domain | Clinical GHS/CLP contamination | high | **fixed (003A)** |
+| JS-014 | Pipeline | Live path coverage parity | medium | **fixed (003A)** |
 
 ---
 
 ## Next implementation notes
 
-**Next Cursor task:** Implementation order step 3 — Job Search + Interview Pack Generator fixes.
+**Next Cursor task:** Implementation order step 4 — Study Material multi-source architecture.
 
-- [ ] Add HR and daily-routine question templates to generation pipeline
-- [ ] Expand seniority-variant prompts (junior / senior / lead)
-- [ ] Decouple popular-role auto-generate/export on frontend
-- [ ] Validate pasted job link/description fills all required fields
-- [ ] Lengthen behavioral answers without generic padding (separate pass after workflow fixes)
+- [ ] Implement source ladder orchestrator (web → model → library → fallback)
+- [ ] Add `source/fallback status` to study modules
+- [ ] Validate pasted job URL/description field extraction (remaining step 3 item)
+- [ ] Optional: surface download actions in job form quick actions after pack exists

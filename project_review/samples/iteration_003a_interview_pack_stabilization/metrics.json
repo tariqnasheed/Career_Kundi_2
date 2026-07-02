@@ -1,0 +1,52 @@
+[
+  {
+    "role": "Data Analyst",
+    "questions": 35,
+    "hr_role_specific": "Why do you want this Data Analyst role, and how would you turn messy operational data into trusted SQL queries, dashboards, and KPI reporting that stakeholders can act on?",
+    "joined_artifacts": [],
+    "bracket_placeholders": 0,
+    "healthcare_contamination": 0,
+    "answers_over_500": 0,
+    "weak_example": "Why do you want this Data Analyst role, and how would you turn messy operational data into trusted SQL queries, dashboards, and KPI reporting that stakeholders can act on?"
+  },
+  {
+    "role": "Electrical Engineer",
+    "questions": 36,
+    "hr_role_specific": "Why are you pursuing this Electrical Engineer role, and how would you deliver safe, compliant electrical work across load calculations, cable sizing, commissioning, and site coordination?",
+    "joined_artifacts": [],
+    "bracket_placeholders": 0,
+    "healthcare_contamination": 0,
+    "answers_over_500": 0,
+    "weak_example": "Why are you pursuing this Electrical Engineer role, and how would you deliver safe, compliant electrical work across load calculations, cable sizing, commissioning, and site coordination?"
+  },
+  {
+    "role": "Clinical Pharmacist",
+    "questions": 36,
+    "hr_role_specific": "Why do you want this Clinical Pharmacist role, and how would you contribute to medicines optimisation through medication review, prescribing safety checks, patient counselling, and clinical governance?",
+    "joined_artifacts": [],
+    "bracket_placeholders": 0,
+    "healthcare_contamination": 0,
+    "answers_over_500": 0,
+    "weak_example": "Why do you want this Clinical Pharmacist role, and how would you contribute to medicines optimisation through medication review, prescribing safety checks, patient counselling, and clinical governance?"
+  },
+  {
+    "role": "Barista",
+    "questions": 34,
+    "hr_role_specific": "Why do you want this Barista role, and how would you keep drink quality, hygiene, allergen control, and customer service consistent during busy rush periods?",
+    "joined_artifacts": [],
+    "bracket_placeholders": 0,
+    "healthcare_contamination": 0,
+    "answers_over_500": 0,
+    "weak_example": "Why do you want this Barista role, and how would you keep drink quality, hygiene, allergen control, and customer service consistent during busy rush periods?"
+  },
+  {
+    "role": "DevOps Engineer",
+    "questions": 36,
+    "hr_role_specific": "Why are you interested in this DevOps Engineer role, and how would you improve reliable deployments, monitoring, incident response, and secure infrastructure automation using tools such as AWS, CI/CD, Docker, Kubernetes?",
+    "joined_artifacts": [],
+    "bracket_placeholders": 0,
+    "healthcare_contamination": 0,
+    "answers_over_500": 0,
+    "weak_example": "Why are you interested in this DevOps Engineer role, and how would you improve reliable deployments, monitoring, incident response, and secure infrastructure automation using tools such as AWS, CI/CD, Docker, Kubernetes?"
+  }
+]

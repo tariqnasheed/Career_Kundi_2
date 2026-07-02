@@ -8,6 +8,11 @@ DOMAIN_CONTAMINATION_RULES = {
         "rcd",
         "consumer unit",
         "cable route",
+        "ghs/clp",
+        "reach/coshh",
+        "hazop",
+        "sds sections",
+        "lel permissive",
     ],
     "hospitality": [
         "conductor",

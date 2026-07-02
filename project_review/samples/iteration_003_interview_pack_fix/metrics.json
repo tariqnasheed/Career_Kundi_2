@@ -1,0 +1,67 @@
+[
+  {
+    "role": "Data Analyst",
+    "questions": 35,
+    "hr_present": true,
+    "daily_routine_present": true,
+    "seniority_present": true,
+    "case_practical_present": true,
+    "skills_covered_better": true,
+    "answers_over_500": 0,
+    "avg_words": 177.5,
+    "strong_example": "Explain SQL to a junior engineer and include trade-offs in production systems and one measurable quality signal.",
+    "weak_example": "Why are you applying for this Data Analyst position, and what makes you a strong fit for our team?"
+  },
+  {
+    "role": "Electrical Engineer",
+    "questions": 36,
+    "hr_present": true,
+    "daily_routine_present": true,
+    "seniority_present": true,
+    "case_practical_present": true,
+    "skills_covered_better": true,
+    "answers_over_500": 0,
+    "avg_words": 170.6,
+    "strong_example": "Explain Electrical Installation to an apprentice and include how you verify compliance to standards (e.g. BS 7671 (IET Wiring Regulations)).",
+    "weak_example": "Why are you applying for this Electrical Engineer position, and what makes you a strong fit for our team?"
+  },
+  {
+    "role": "Clinical Pharmacist",
+    "questions": 36,
+    "hr_present": true,
+    "daily_routine_present": true,
+    "seniority_present": true,
+    "case_practical_present": true,
+    "skills_covered_better": true,
+    "answers_over_500": 0,
+    "avg_words": 158.1,
+    "strong_example": "As a Clinical Pharmacist, explain Pharmacology to a newly qualified clinician and include clinical safety checks tied to GHS/CLP.",
+    "weak_example": "Why are you applying for this Clinical Pharmacist position, and what makes you a strong fit for our team? In this role-specific case, address: Clinical Pharmacist context: Medication review, prescribing safety, and patient counselling."
+  },
+  {
+    "role": "Barista",
+    "questions": 34,
+    "hr_present": true,
+    "daily_routine_present": true,
+    "seniority_present": true,
+    "case_practical_present": true,
+    "skills_covered_better": true,
+    "answers_over_500": 0,
+    "avg_words": 161.9,
+    "strong_example": "If a new hire joined your Barista function while handling 'Espresso preparation, milk steaming, and drink consistency during rush hours', how would you break down Coffee Preparation into practical steps with reference to HACCP?",
+    "weak_example": "Why are you applying for this Barista position, and what makes you a strong fit for our team?"
+  },
+  {
+    "role": "DevOps Engineer",
+    "questions": 37,
+    "hr_present": true,
+    "daily_routine_present": true,
+    "seniority_present": true,
+    "case_practical_present": true,
+    "skills_covered_better": true,
+    "answers_over_500": 0,
+    "avg_words": 173.8,
+    "strong_example": "Explain AWS to a junior engineer and include trade-offs in production systems and one measurable quality signal.",
+    "weak_example": "Why are you applying for this DevOps Engineer position, and what makes you a strong fit for our team?"
+  }
+]

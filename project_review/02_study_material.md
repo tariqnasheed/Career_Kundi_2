@@ -126,24 +126,41 @@ Full analysis: [baseline_summary.md](../samples/iteration_002_baseline/baseline_
 
 ---
 
-## Current issues found (baseline inspection)
+## Iteration 003 note (2026-07-03)
+
+**Source ladder:** Still **not implemented** — study modules remain local/deterministic/compiler-backed.
+
+**New categories:** HR, daily-routine, seniority, case-study, practical-task, tools, and standards questions all receive study modules via `_coverage_question_study`, `_hr_study`, `_daily_routine_study`, and existing behavioral/compiler paths.
+
+**Quality gates:** Existing `study_material_quality_audit` and export audits still pass with expanded packs (54 backend tests).
+
+**Comparison samples:** [iteration_003a_interview_pack_stabilization](../samples/iteration_003a_interview_pack_stabilization/) · [iteration_003b_interview_pack_surface_cleanup](../samples/iteration_003b_interview_pack_surface_cleanup/)
+
+New HR/daily-routine/seniority/case-study categories still receive study modules via deterministic paths. Source ladder remains deferred.
+
+**Iteration 003B (2026-07-03):** No study-material architecture changes. Surface normalization now repairs `operationaldata` and related compound joins; review summaries use word-boundary ellipsis truncation.
+
+---
+
+## Current issues found (post–Iteration 003)
 
 | ID | Area | Issue | Severity | Status |
 |----|------|-------|----------|--------|
-| SM-001 | Architecture | Multi-source ladder not implemented (compiler/fallback only) | high | open |
-| SM-002 | Depth | Behavioral/motivation modules are STAR-framed but thin vs technical modules | medium | open |
-| SM-003 | Sources | No `source/fallback status` field in study modules | high | open |
-| SM-004 | Export | Beginner/intermediate/advanced fields exist in structured data but export compresses visual depth | medium | open |
-| SM-005 | Learning | No cited web/PDF/library sources — not yet real research-backed study material | high | open |
-| SM-006 | Skills | Secondary skills get study modules but less technical depth than primary focus skill | medium | open |
+| SM-001 | Architecture | Multi-source ladder not implemented | high | open |
+| SM-002 | Depth | HR/daily-routine modules improved but not research-backed | medium | open |
+| SM-003 | Sources | No `source/fallback status` field | high | open |
+| SM-004 | Export | Beginner/intermediate/advanced compression in export | medium | open |
+| SM-005 | Learning | No cited web/PDF/library sources | high | open |
+| SM-006 | Skills | Secondary skill depth uneven | medium | open |
+| SM-007 | Coverage | New categories have study blocks | medium | **fixed** |
 
 ---
 
 ## Next implementation notes
 
-**Next Cursor task:** After Job Search workflow fixes (step 3), proceed to step 4 — Study Material multi-source architecture.
+**Next Cursor task:** Implementation order step 4 — Study Material multi-source architecture.
 
-- [ ] Add `source/fallback status` to every study module
-- [ ] Implement `StudyMaterialOrchestrator` skeleton with web/model/library/fallback ladder
-- [ ] Preserve existing `study_material_quality_audit` as hard gate
-- [ ] Re-capture Iteration 003 samples after architecture lands
+- [ ] `StudyMaterialOrchestrator` skeleton
+- [ ] `source/fallback status` on every module
+- [ ] Wire `PDFLibraryRetrieverAgent` to `documents/interview_packs/`
+- [ ] Re-capture Iteration 004 samples after ladder lands

@@ -376,7 +376,15 @@ def build_technical_questions_for_skill(skill: str, role: str, responsibility: s
     ], role, skill, "calc")
 
     if domain == "healthcare":
-        explain_q = f"As a {role}, explain {skill} to a newly qualified clinician and include clinical safety checks tied to {anchor_std}."
+        role_l = (role or "").lower()
+        if "pharmac" in role_l:
+            clinical_anchor = "BNF, NICE, and local formulary governance"
+        else:
+            clinical_anchor = "clinical guidelines and medicines safety policy"
+        explain_q = (
+            f"As a {role}, explain {skill} to a newly qualified clinician and include clinical safety checks "
+            f"tied to {clinical_anchor}."
+        )
         scenario_q = f"Describe a high-risk clinical case where {skill} changed patient management."
         principles_q = f"Which clinical operating principles and protocol sequence govern {skill} in {role} practice?"
         calc_fallback_q = f"For {skill}, which clinical observations or dose metrics do you calculate before acting?"
