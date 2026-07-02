@@ -132,3 +132,36 @@ _Next Cursor task: Roadmap page rebuild (Implementation order step 8)._
 - [ ] Add per-milestone study material with source ladder
 - [ ] Add Markdown/PDF export for roadmaps
 - [ ] Capture sample roadmaps in `project_review/samples/`
+
+---
+
+## Final Content Library Regeneration (pre-cleanup gate)
+
+**Status:** Documented only — not executed yet.
+
+Before final cleanup, after roadmap generator and roadmap study-material corrections are complete, regenerate and persist all final roadmap exports alongside interview-pack content.
+
+### Required roadmap outputs
+
+4. Roadmap PDFs
+5. Roadmap study-material PDFs
+6. Matching Markdown/JSON structured files used for fallback, indexing, or download
+
+### Required behavior
+
+- Remove outdated roadmap PDFs only after new final PDFs are successfully generated
+- Do **not** delete source templates, code, seed data, or `.env.example`
+- Rebuild document indexes after regeneration so roadmap entries appear in `documents/indexes/`
+- Ensure database/document-library metadata references the latest roadmap files
+- Ensure fallback retrieval and frontend download buttons use the latest regenerated roadmap PDFs
+
+### Planned verification (to document in `project_review/`)
+
+- Roadmap export smoke test per representative role category (technical, healthcare, creator)
+- Download-button check for roadmap PDF and roadmap study-material PDF
+- Index/metadata spot-check after regeneration
+- Sample notes under `project_review/samples/final_content_library_regeneration/` (created during the phase)
+
+Roadmap-specific regeneration commands will be added when the export pipeline is finalized. Interview-pack regeneration commands are documented in `project_review/00_iteration_log.md` and `project_review/02_study_material.md`.
+
+**This phase must complete before final cleanup** (`project_review/05_cleanup_plan.md`).

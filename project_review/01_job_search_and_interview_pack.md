@@ -213,6 +213,12 @@ Interview-pack Markdown/PDF export now includes a per-question **`### Source / f
 
 Samples: [iteration_004a_summary.md](../samples/iteration_004a_study_source_metadata/iteration_004a_summary.md)
 
+### Iteration 004B export note (2026-07-03)
+
+Interview-pack Markdown now includes **`### Document-library support`** under study material when saved pack material matches a question. Source/fallback status shows document-library `used` with relative `documents/interview_packs/...` paths.
+
+Samples: [iteration_004b_summary.md](../samples/iteration_004b_document_library_retrieval/iteration_004b_summary.md)
+
 ### Frontend manual verification notes
 
 1. Open `/jobs` → click a popular role → confirm form fills, **no** pack generates, **no** download.

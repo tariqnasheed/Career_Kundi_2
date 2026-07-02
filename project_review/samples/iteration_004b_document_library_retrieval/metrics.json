@@ -1,0 +1,57 @@
+[
+  {
+    "role": "Data Analyst",
+    "questions": 35,
+    "study_material_present": 35,
+    "source_metadata_present": 35,
+    "document_library_used": 0,
+    "document_library_available_not_used": 0,
+    "local_fallback_used": 35,
+    "fake_urls_found": 0,
+    "answers_over_500": 0
+  },
+  {
+    "role": "Electrical Engineer",
+    "questions": 35,
+    "study_material_present": 35,
+    "source_metadata_present": 35,
+    "document_library_used": 0,
+    "document_library_available_not_used": 35,
+    "local_fallback_used": 35,
+    "fake_urls_found": 0,
+    "answers_over_500": 0
+  },
+  {
+    "role": "Clinical Pharmacist",
+    "questions": 36,
+    "study_material_present": 36,
+    "source_metadata_present": 36,
+    "document_library_used": 26,
+    "document_library_available_not_used": 10,
+    "local_fallback_used": 36,
+    "fake_urls_found": 0,
+    "answers_over_500": 0
+  },
+  {
+    "role": "Barista",
+    "questions": 32,
+    "study_material_present": 32,
+    "source_metadata_present": 32,
+    "document_library_used": 23,
+    "document_library_available_not_used": 9,
+    "local_fallback_used": 32,
+    "fake_urls_found": 0,
+    "answers_over_500": 0
+  },
+  {
+    "role": "DevOps Engineer",
+    "questions": 36,
+    "study_material_present": 36,
+    "source_metadata_present": 36,
+    "document_library_used": 0,
+    "document_library_available_not_used": 36,
+    "local_fallback_used": 36,
+    "fake_urls_found": 0,
+    "answers_over_500": 0
+  }
+]

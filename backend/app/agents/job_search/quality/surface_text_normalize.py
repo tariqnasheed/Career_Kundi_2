@@ -128,6 +128,7 @@ def normalize_surface_text(text: str) -> str:
     out = re.sub(r"\.([A-Za-z])", r". \1", out)
     for pattern, replacement in _JOINED_WORD_FIXES:
         out = re.sub(pattern, replacement, out, flags=re.I)
+    out = re.sub(r"\.\s+(json|md|pdf|txt)\b", r".\1", out, flags=re.I)
     out = re.sub(r"\s{2,}", " ", out)
     out = strip_unresolved_placeholders(out)
     return out.strip()

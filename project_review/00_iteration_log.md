@@ -9,7 +9,7 @@
 | **Current commit** | `7303e015` (pre-iteration-002 capture) |
 | **Date** | 2026-07-03 |
 | **Test command** | `cd backend && uv run pytest app/agents/job_search/tests -q` |
-| **Test result** | **105 passed** in 92.28s |
+| **Test result** | **144 passed** in 134.93s |
 
 ## Confirmed backend baseline (job-search)
 
@@ -36,7 +36,8 @@
 8. Roadmap page rebuild
 9. Roadmap study material and exports
 10. Final regression testing
-11. Final cleanup
+11. **Final content library regeneration** (required before cleanup — see below)
+12. Final cleanup
 
 ---
 
@@ -427,11 +428,246 @@ git status
 
 ---
 
+## Iteration 004B — 2026-07-03
+
+**Goal:** Retrieve saved role-pack material from `documents/interview_packs/` and attach it as supporting document-library study sources with honest metadata.
+
+**Feature area:** Document-library retrieval for study modules (local deterministic only).
+
+**Files changed (backend):**
+- `backend/app/agents/job_search/knowledge/document_library_retriever.py` (new)
+- `backend/app/agents/job_search/knowledge/study_sources.py` — per-question retrieval + updated source ladder
+- `backend/app/tools/document_export.py` — `Document-library support` section in study export
+- `backend/app/agents/job_search/quality/surface_text_normalize.py` — preserve `.json` paths in normalized text
+- `backend/app/agents/job_search/tests/test_document_library_study_retrieval.py` (new)
+- `backend/scripts/generate_iteration_004b_samples.py` (new)
+
+**Files updated (review):**
+- `project_review/00_iteration_log.md`
+- `project_review/02_study_material.md`
+- `project_review/01_job_search_and_interview_pack.md`
+
+**Commands run:**
+```bash
+cd backend && uv run pytest app/agents/job_search/tests -q
+cd backend && uv run python scripts/generate_iteration_004b_samples.py
+find . -type d -name "__pycache__" -prune -exec rm -rf {} +
+git status
+```
+
+**Sample outputs generated:**
+- `project_review/samples/iteration_004b_document_library_retrieval/`
+
+**Tests run:**
+- Backend: **131 passed** in 106.10s
+
+**What passed:**
+- Document-library retrieval from structured JSON for saved roles
+- Skill/question overlap matching; no fake URLs
+- `document_library` marked `used` only when useful matches found
+- Data Analyst (no saved pack) remains `not_configured`
+- Study material + source metadata preserved; answers ≤ 500 words
+
+**Production logic changed:** Yes (document-library retrieval + export support sections)
+
+**Next recommended step:** Iteration 004C — model-knowledge study synthesis behind a feature flag.
+
+---
+
+## Iteration 004B-S — 2026-07-03
+
+**Goal:** Stabilize document-library retrieval so `used` is not applied broadly to every question when a role pack exists.
+
+**Feature area:** Document-library matching threshold, snippet quality filtering, supporting-focus generation.
+
+**Files changed (backend):**
+- `backend/app/agents/job_search/knowledge/document_library_retriever.py` — tightened matching, HR/generic handling, snippet/focus filters
+- `backend/app/agents/job_search/tests/test_document_library_study_retrieval.py` — 7 new stabilization tests
+- `backend/scripts/generate_iteration_004b_samples.py` — 004B-S summary notes
+
+**Files updated (review):**
+- `project_review/00_iteration_log.md`
+- `project_review/02_study_material.md`
+- `project_review/samples/iteration_004b_document_library_retrieval/` (regenerated)
+
+**Commands run:**
+```bash
+cd backend && uv run pytest app/agents/job_search/tests -q
+cd backend && uv run python scripts/generate_iteration_004b_samples.py
+find . -type d -name "__pycache__" -prune -exec rm -rf {} +
+git status
+```
+
+**What passed:**
+- Matching requires strong skill-tag overlap, two or more meaningful skill overlaps, or meaningful question-text overlap — not job-level skill inflation
+- HR/behavioral/role-specific prompts remain `available_not_used` with explicit note
+- Short, heading-only, and generic process snippets filtered (≥ 80 chars for body snippets)
+- Supporting focus generated from matched skills and question terms
+- **138 passed** in 110.11s
+
+**004B-S sample metrics (document library used / questions):**
+
+| Role | Used | Available not used |
+|------|-----:|-------------------:|
+| Data Analyst | 0/35 | 0 (not_configured) |
+| Electrical Engineer | 1/37 | 36 |
+| Clinical Pharmacist | 26/36 | 10 |
+| Barista | 25/34 | 9 |
+| DevOps Engineer | 29/37 | 8 |
+
+**Why broad matching was corrected:** Saved-question matching previously inflated overlap using job-level extracted skills, so nearly every question matched when a role folder existed.
+
+**Current limitations:** Electrical Engineer saved pack skills (e.g. Circuit design) often do not align with generated question skills (e.g. Cable sizing), so library use stays low despite pack presence. Legacy saved snippets can still be templated.
+
+**Next recommended step:** Iteration 004C — model-knowledge study synthesis behind a feature flag.
+
+**Production logic changed:** Yes (document-library matching and export support quality only)
+
+---
+
+## Iteration 004B-F — 2026-07-03
+
+**Goal:** Filter generic Core Terminology-only document-library matches and weak vocabulary snippets.
+
+**Feature area:** Document-library retrieval polish (local deterministic only).
+
+**Files changed (backend):**
+- `backend/app/agents/job_search/knowledge/document_library_retriever.py` — core-terminology-only gate, snippet filtering, quality-ranked snippet source selection
+- `backend/app/agents/job_search/tests/test_document_library_study_retrieval.py` — 4 new/strengthened tests
+- `backend/scripts/generate_iteration_004b_samples.py` — showcase block picker prefers substantive technical matches
+
+**Commands run:**
+```bash
+cd backend && uv run pytest app/agents/job_search/tests -q
+cd backend && uv run python scripts/generate_iteration_004b_samples.py
+```
+
+**004B-F sample metrics (document library used / questions):**
+
+| Role | Used | Available not used |
+|------|-----:|-------------------:|
+| Data Analyst | 0/35 | 0 (`not_configured`) |
+| Electrical Engineer | 0/36 | 36 |
+| Clinical Pharmacist | 26/36 | 10 |
+| Barista | 23/32 | 9 |
+| DevOps Engineer | 29/37 | 8 |
+
+**What passed:**
+- `Core Terminology` alone no longer marks document library as `used`
+- Generic core-terminology snippets filtered (`Core terminology for Core Terminology`, interview-definition boilerplate)
+- Substantive technical matches (AWS/CI/CD/Docker/Kubernetes, medication review, espresso/hygiene) still mark `used`
+- **142 passed** in 126.05s
+
+**Next recommended step:** Iteration 004C — model-knowledge study synthesis behind a feature flag.
+
+**Production logic changed:** Yes (document-library matching/snippet quality only)
+
+---
+
+## Iteration 004B-G — 2026-07-03
+
+**Goal:** Filter generic Role Specific snippets and normalize technical skill label casing in document-library support blocks.
+
+**Feature area:** Document-library snippet filtering + skill label polish (local deterministic only).
+
+**Files changed (backend):**
+- `backend/app/agents/job_search/knowledge/document_library_retriever.py` — Role Specific / procedure boilerplate filters; substantive-skill snippet requirement; `title_case_skill` labels
+- `backend/app/agents/job_search/knowledge/normalize.py` — extended abbreviation map (`KPIs`, `LV`, `HV`, `BIM`)
+- `backend/app/tools/document_export.py` — skip empty snippet lines
+- `backend/app/agents/job_search/tests/test_document_library_study_retrieval.py` — 004B-G tests
+- `backend/scripts/generate_iteration_004b_samples.py` — showcase picker rejects generic placeholders
+
+**004B-G sample metrics (document library used / questions):**
+
+| Role | Used | Available not used |
+|------|-----:|-------------------:|
+| Data Analyst | 0/35 | 0 (`not_configured`) |
+| Electrical Engineer | 0/35 | 35 |
+| Clinical Pharmacist | 26/36 | 10 |
+| Barista | 23/32 | 9 |
+| DevOps Engineer | 0/36 | 36 |
+
+**What passed:**
+- Generic Role Specific / intermediate quality checks / structured verification snippets filtered
+- Matched skill labels render as `AWS`, `CI/CD`, `SQL`, `HACCP`, etc.
+- Clinical Pharmacist and Barista substantive matches still mark `used`; DevOps saved pack has no non-generic snippets under current filters (conservative `available_not_used`)
+- **144 passed** in 134.93s
+
+**Next recommended step:** Iteration 004C — model-knowledge study synthesis behind a feature flag.
+
+**Production logic changed:** Yes (document-library snippet filtering and skill label display)
+
+---
+
+**Status:** Documented requirement only — **not executed yet**. No deletions performed in this iteration.
+
+This phase must run **after** all corrections are complete for:
+
+- Interview Pack Generator
+- Interview Question and Answer quality
+- Interview Study Material
+- Roadmap Generator
+- Roadmap Study Material
+
+…and **before** final cleanup (Implementation order step 12).
+
+### Required generated final outputs
+
+1. Interview question-and-answer PDFs
+2. Interview study-material PDFs
+3. Full interview-pack PDFs
+4. Roadmap PDFs
+5. Roadmap study-material PDFs
+6. Matching Markdown/JSON structured files used by the backend for fallback or indexing
+
+### Required behavior
+
+- Remove outdated previously generated PDFs **only after** new final PDFs are successfully generated
+- Do **not** delete source templates, code, seed data, or `.env.example`
+- Rebuild document indexes after regeneration (`documents/indexes/role_index.json`, `skill_index.json`, `document_index.json`)
+- Ensure database/document-library metadata points to the latest regenerated files
+- Ensure fallback retrieval uses the latest generated material, not stale PDFs
+- Ensure frontend download buttons serve the latest final PDFs
+
+### Planned verification commands (to run during regeneration phase)
+
+```bash
+# Full interview-pack library regeneration (structured JSON + Markdown + PDFs + indexes)
+make seed-role-packs-force
+
+# PDF-only rebuild from existing structured JSON (when content JSON is already final)
+make seed-role-packs-pdf-force
+
+# Skill/role knowledge rebuild after catalog or knowledge-engine changes
+make build-skill-knowledge
+
+# Backend regression after regeneration
+cd backend && uv run pytest app/agents/job_search/tests -q
+cd backend && uv run pytest -q
+
+# Inspect library layout and index freshness
+cd backend && uv run python -c "from app.services.role_pack_library import list_library_roles; print(len(list_library_roles()))"
+ls -la documents/indexes/
+```
+
+Roadmap regeneration commands will be added to this section when the roadmap export pipeline is finalized (see `project_review/04_roadmap_page.md`).
+
+### Sample output notes (to capture in `project_review/`)
+
+- Regeneration run log with role counts, PDF success/failure counts, and timestamp
+- Spot-check notes for download buttons (interview pack + study material + Q&A + roadmap exports)
+- Index verification snippet showing updated `role_index.json` / `document_index.json` entries
+- Before/after file-count summary under `project_review/samples/final_content_library_regeneration/` (to be created during the phase)
+
+**Next recommended step:** Continue feature iterations (004C+); execute this regeneration gate immediately before final cleanup.
+
+---
+
 ## Test result (latest)
 
 ```
 cd backend && uv run pytest app/agents/job_search/tests -q
-........................................................................ [ 68%]
-.................................                                        [100%]
-105 passed in 92.28s
+........................................................................ [ 50%]
+........................................................................ [100%]
+144 passed in 134.93s
 ```

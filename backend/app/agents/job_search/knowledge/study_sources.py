@@ -104,15 +104,43 @@ def build_default_study_source_bundle(
     *,
     role_title: str,
     generation_mode: str = "deterministic",
+    document_retrieval: Any | None = None,
 ) -> StudySourceBundle:
     """
     Build the default four-step source ladder for deterministic generation.
 
     Web and model retrieval are not enabled in this iteration; local compiler
-    content is marked as used. Document library is marked available when a
-    saved pack exists but is not consumed yet.
+    content is marked as used. Document library status reflects retrieval result
+    when provided.
     """
-    has_library, library_path = _role_has_document_library_pack(role_title)
+    from app.agents.job_search.knowledge.document_library_retriever import (
+        DocumentLibraryRetrievalResult,
+    )
+
+    retrieval = document_retrieval
+    if retrieval is None:
+        has_library, library_path = _role_has_document_library_pack(role_title)
+        pack_exists = has_library
+        doc_status: StudySourceStatus = "available_not_used" if has_library else "not_configured"
+        doc_path = _relative_library_path_for_display(library_path) if library_path else None
+        doc_note = (
+            "Saved role pack exists in the document library but is not used for this question yet."
+            if has_library
+            else "No saved role pack found in the document library for this role."
+        )
+        doc_score = None
+    elif isinstance(retrieval, DocumentLibraryRetrievalResult):
+        pack_exists = retrieval.pack_exists
+        doc_status = retrieval.status
+        doc_path = retrieval.document_path
+        doc_note = retrieval.note
+        doc_score = retrieval.relevance_score if retrieval.matched else None
+    else:
+        pack_exists = bool(getattr(retrieval, "pack_exists", False))
+        doc_status = getattr(retrieval, "status", "not_configured")
+        doc_path = getattr(retrieval, "document_path", None)
+        doc_note = getattr(retrieval, "note", "")
+        doc_score = getattr(retrieval, "relevance_score", None)
 
     web = StudySource(
         source_type="web",
@@ -134,13 +162,14 @@ def build_default_study_source_bundle(
             status="not_configured",
             note="Model knowledge retrieval is not enabled in deterministic mode.",
         )
-    if has_library:
+    if pack_exists or doc_path:
         document = StudySource(
             source_type="document_library",
             label=_SOURCE_LABELS["document_library"],
-            status="available_not_used",
-            document_path=library_path,
-            note="Saved role pack exists in the document library but is not used for this question yet.",
+            status=doc_status,
+            document_path=doc_path,
+            confidence=doc_score,
+            note=doc_note,
         )
     else:
         document = StudySource(
@@ -162,14 +191,36 @@ def build_default_study_source_bundle(
     return StudySourceBundle(sources=sources, summary=summary)
 
 
+def _relative_library_path_for_display(path: str | None) -> str | None:
+    if not path:
+        return None
+    from pathlib import Path
+
+    from app.core.config import settings
+
+    root = Path(settings.resolved_documents_root)
+    p = Path(path)
+    try:
+        return str(Path("documents") / p.relative_to(root)).replace("\\", "/")
+    except ValueError:
+        return str(p).replace("\\", "/")
+
+
 def summarize_source_status(sources: list[StudySource]) -> str:
     used = [s.label for s in sources if s.status == "used"]
     if used:
         used_text = ", ".join(used)
-        return (
-            f"Generated from {used_text.lower()}. "
-            "Web, model, and document-library source ladder is not fully enabled yet."
+        unused_ladder = [
+            s.label.lower()
+            for s in sources
+            if s.source_type in {"web", "model"} and s.status == "not_configured"
+        ]
+        tail = (
+            f" {' and '.join(unused_ladder)} retrieval are not configured."
+            if unused_ladder
+            else " Web and model retrieval are not fully enabled yet."
         )
+        return f"Generated from {used_text.lower()}.{tail}"
     return "No study sources marked as used; content may be incomplete."
 
 
@@ -180,11 +231,20 @@ def attach_study_source_metadata(
     generation_mode: str = "deterministic",
 ) -> dict[str, Any]:
     """Attach backward-compatible study source metadata to a question dict."""
+    from app.agents.job_search.knowledge.document_library_retriever import (
+        apply_document_library_support,
+    )
+
     role_title = job.get("title") or "this role"
     mode = generation_mode
     if question.get("answer_source") in {"llm", "live_llm"}:
         mode = "llm"
-    bundle = build_default_study_source_bundle(role_title=role_title, generation_mode=mode)
+    retrieval = apply_document_library_support(question, job)
+    bundle = build_default_study_source_bundle(
+        role_title=role_title,
+        generation_mode=mode,
+        document_retrieval=retrieval,
+    )
     question["study_sources"] = bundle.to_dict()
     return question
 
@@ -205,12 +265,18 @@ def render_study_source_markdown(study_sources: dict[str, Any] | None) -> list[s
     lines = ["### Source / fallback status", ""]
     sources = study_sources.get("sources") or []
 
-    used_labels = [s.get("label", "") for s in sources if s.get("status") == "used" and s.get("label")]
-    if not used_labels:
-        used_types = study_sources.get("used_source_types") or []
-        used_labels = [t.replace("_", " ").title() for t in used_types]
-    if used_labels:
-        lines.append(f"- **Used:** {', '.join(used_labels)}")
+    used_parts: list[str] = []
+    for entry in sources:
+        if entry.get("status") != "used":
+            continue
+        if entry.get("source_type") == "document_library":
+            used_parts.append("Document-library role material")
+        else:
+            label = entry.get("label") or entry.get("source_type", "").replace("_", " ").title()
+            if label:
+                used_parts.append(label)
+    if used_parts:
+        lines.append(f"- **Used:** {'; '.join(used_parts)}")
 
     status_labels = {
         "not_configured": "Not configured in this iteration",
@@ -219,15 +285,24 @@ def render_study_source_markdown(study_sources: dict[str, Any] | None) -> list[s
         "used": "Used",
     }
     for entry in sources:
-        if entry.get("status") == "used":
+        source_type = entry.get("source_type")
+        if source_type == "local_fallback":
             continue
-        label = entry.get("label") or str(entry.get("source_type", "Source")).replace("_", " ").title()
+        label = entry.get("label") or str(source_type or "Source").replace("_", " ").title()
         status = entry.get("status", "not_configured")
         status_text = status_labels.get(status, status.replace("_", " ").title())
         note = _normalize_source_text((entry.get("note") or "").strip())
-        line = f"- **{label}:** {status_text}"
-        if note:
-            line += f" — {note}"
+        doc_path = entry.get("document_path")
+        if source_type == "document_library" and status == "used" and doc_path:
+            line = f"- **{label}:** Used — matched saved role-pack material from `{doc_path}`"
+            if note:
+                line += f" — {note}"
+        elif status == "used":
+            continue
+        else:
+            line = f"- **{label}:** {status_text}"
+            if note:
+                line += f" — {note}"
         lines.append(_normalize_source_text(line))
 
     summary = _normalize_source_text((study_sources.get("summary") or "").strip())

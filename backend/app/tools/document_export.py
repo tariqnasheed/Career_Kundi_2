@@ -566,6 +566,29 @@ def _study_material_md_sections(study: dict) -> list[str]:
     if study.get("related_concepts"):
         lines.append("**Related concepts to study next:** " + ", ".join(study["related_concepts"]))
         lines.append("")
+
+    doc_support = study.get("document_library_support") or {}
+    if doc_support:
+        lines.append("### Document-library support")
+        lines.append("")
+        summary = doc_support.get("summary") or (
+            "Saved project material matched this question through role/skill overlap."
+        )
+        lines.append(summary)
+        lines.append("")
+        if doc_support.get("source_path"):
+            lines.append(f"- Source: `{doc_support['source_path']}`")
+        if doc_support.get("matched_skills"):
+            lines.append("- Matched skills: " + ", ".join(str(s) for s in doc_support["matched_skills"]))
+        if doc_support.get("supporting_focus"):
+            lines.append(
+                "- Supporting focus: " + ", ".join(str(s) for s in doc_support["supporting_focus"])
+            )
+        for snippet in doc_support.get("snippets") or []:
+            if snippet and snippet.strip():
+                lines.append(f"- Snippet: {snippet}")
+        lines.append("")
+
     return lines
 
 

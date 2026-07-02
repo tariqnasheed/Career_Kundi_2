@@ -189,18 +189,185 @@ _Generated from local deterministic study material. Web, model, and document-lib
 
 **004A-S (2026-07-03):** Fixed source-status wording (`deterministic mode`); added normalization for joined source-status artifacts; regenerated samples with 003B snapshot parity and coverage confirmation.
 
-### Remaining limitations
+### Next implementation notes (Iteration 004B) — completed in 004B
 
-- No web URLs or external citations are fabricated
-- Document library packs are detected but not merged into study modules
-- Model-knowledge and web-research agents not wired
-
-### Next implementation notes (Iteration 004B)
-
-- [ ] Consume document-library content for matching role/skill questions
-- [ ] Add model-knowledge draft step behind feature flag
+- [x] Consume document-library content for matching role/skill questions
+- [ ] Add model-knowledge draft step behind feature flag (004C)
 - [ ] Add web-research stub with real URL capture only
-- [ ] Persist `study_sources` in saved role packs and API responses
+- [x] Persist `study_sources` through saved role packs (via full question JSON on save)
+
+---
+
+## Iteration 004B — Document-library retrieval (2026-07-03)
+
+**Goal:** Use saved `documents/interview_packs/` material as a real supporting source for generated study modules.
+
+### Retrieval design
+
+- **Module:** `document_library_retriever.py`
+- **Lookup:** `find_role_pack()` + `structured_content.json` (Markdown fallback metadata only)
+- **Matching:** question `skill_tag` / `related_skills` overlap with saved pack questions; category and token overlap as secondary signals
+- **Threshold:** minimum score with question-level skills required; generic skills filtered
+- **Output:** compact `document_library_support` block on `study_material` + updated `study_sources`
+
+### Source metadata behavior (004B)
+
+| Step | Status |
+|------|--------|
+| Web research | `not_configured` |
+| Model knowledge | `not_configured` in deterministic mode |
+| Document library | **`used`** when strong skill/question overlap and quality snippets exist; `available_not_used` when pack exists but no match; `not_configured` when no pack |
+| Local fallback | **`used`** (compiler content remains primary) |
+
+### Example source/fallback block
+
+```markdown
+### Source / fallback status
+- **Used:** Document-library role material; Local deterministic study material
+- **Web research:** Not configured in this iteration
+- **Model knowledge:** Not configured in deterministic mode
+- **Document library:** Used — matched saved role-pack material from `documents/interview_packs/technology/devops_engineer/structured_content.json`
+```
+
+**Samples:** [iteration_004b_summary.md](../samples/iteration_004b_document_library_retrieval/iteration_004b_summary.md)
+
+### Limitations
+
+- No PDF parsing, web calls, or LLM retrieval
+- Snippets are short supporting excerpts, not full pack rewrites
+- Data Analyst lacks a saved pack in the library
+- HR/generic prompts usually do not match saved technical questions
+
+### Next step (Iteration 004C)
+
+- Model-knowledge study synthesis behind a feature flag (recommended)
+- Optional later: web-research stub with real URL capture only
+
+---
+
+## Iteration 004B-S — Document-library stabilization (2026-07-03)
+
+**Goal:** Fix overly broad document-library matching and weak support snippets introduced in 004B.
+
+### Stabilization changes
+
+- **Matching tightened:** saved-question skills only (no job-level skill inflation); requires skill-tag match, two or more meaningful skill overlaps, or meaningful question-text overlap
+- **HR/generic handling:** `hr`, `behavioral`, and `role_specific` categories always remain `available_not_used` unless future exact-prompt matching is added
+- **Snippet filtering:** minimum 80 characters; heading-only, skill-name-only, and generic process boilerplate removed
+- **Supporting focus:** skill-linked phrases (e.g. deployment reliability, rollback planning) instead of random principle sentences
+
+### 004B-S sample metrics
+
+| Role | Doc library used | Available not used |
+|------|----------------:|-------------------:|
+| Data Analyst | 0/35 | 0 (`not_configured`) |
+| Electrical Engineer | 1/37 | 36 |
+| Clinical Pharmacist | 26/36 | 10 |
+| Barista | 25/34 | 9 |
+| DevOps Engineer | 29/37 | 8 |
+
+### Limitations (post–004B-S)
+
+- Saved pack skill tags may not align with generated interview-pack skills (Electrical Engineer is the clearest example)
+- Legacy saved study material can still produce templated snippets above the quality threshold
+- No PDF parsing, web calls, or LLM retrieval
+
+### Next step (Iteration 004C)
+
+- Model-knowledge study synthesis behind a feature flag (recommended)
+
+---
+
+## Iteration 004B-F — Core Terminology polish (2026-07-03)
+
+**Goal:** Stop generic vocabulary-only matches from marking document library as `used`.
+
+### Changes
+
+- **`Core Terminology` alone** → `available_not_used` with note: only generic core-terminology overlap was found
+- **Secondary use allowed:** Core Terminology may appear alongside substantive skills but is excluded from supporting-focus generation
+- **Snippet filters:** reject `Core terminology for Core Terminology`, `precise definitions required for … interviews`, operating-principles boilerplate
+- **Snippet source selection:** quality-ranked fallback across saved questions with the same substantive skill overlap
+
+### 004B-F sample metrics
+
+| Role | Doc library used | Available not used |
+|------|----------------:|-------------------:|
+| Data Analyst | 0/35 | 0 (`not_configured`) |
+| Electrical Engineer | 0/36 | 36 |
+| Clinical Pharmacist | 26/36 | 10 |
+| Barista | 23/32 | 9 |
+| DevOps Engineer | 29/37 | 8 |
+
+Document-library retrieval is now more conservative and useful; Electrical Engineer remains low because saved pack skills rarely align with generated question skills.
+
+### Next step (Iteration 004C)
+
+- Model-knowledge study synthesis behind a feature flag (recommended)
+
+---
+
+## Iteration 004B-G — Role Specific snippet filter + skill labels (2026-07-03)
+
+**Goal:** Remove generic Role Specific placeholder snippets and fix technical abbreviation casing in document-library support exports.
+
+### Changes
+
+- **Snippet filters:** reject `Apply/applied Role Specific`, `intermediate quality checks`, `structured verification`, and snippets that do not mention a substantive matched skill
+- **Skill labels:** use shared `title_case_skill()` so `aws` → `AWS`, `ci/cd` → `CI/CD`, `haccp` → `HACCP`
+- **Conservative behavior:** if only generic snippets remain, status stays `available_not_used` and no support snippets are exported
+- **Showcase:** summary example uses Barista/Clinical Pharmacist blocks with substantive skill terms (not Role Specific placeholders)
+
+### 004B-G sample metrics
+
+| Role | Doc library used | Available not used |
+|------|----------------:|-------------------:|
+| Data Analyst | 0/35 | 0 (`not_configured`) |
+| Electrical Engineer | 0/35 | 35 |
+| Clinical Pharmacist | 26/36 | 10 |
+| Barista | 23/32 | 9 |
+| DevOps Engineer | 0/36 | 36 |
+
+Document-library retrieval is conservative and source-transparent; DevOps/Electrical saved packs currently lack non-generic snippets under the quality filters.
+
+### Next step (Iteration 004C)
+
+- Model-knowledge study synthesis behind a feature flag (recommended)
+
+---
+
+**Status:** Documented only — not executed yet.
+
+Before final cleanup, after interview-pack and study-material corrections are complete (and again after roadmap study-material corrections), the system must regenerate all final downloadable content and persist it to project storage/database.
+
+### Required outputs (interview study material scope)
+
+1. Interview question-and-answer PDFs
+2. Interview study-material PDFs
+3. Full interview-pack PDFs
+4. Matching Markdown/JSON structured files (`structured_content.json`, study/Q&A Markdown mirrors, indexes)
+
+Roadmap PDFs and roadmap study-material PDFs are covered in `project_review/04_roadmap_page.md`.
+
+### Required behavior
+
+- Delete outdated PDFs only after new final PDFs succeed
+- Preserve source templates, code, seed data, and `.env.example`
+- Rebuild `documents/indexes/` after regeneration
+- Point document-library metadata and fallback retrieval at the latest files
+- Ensure frontend downloads serve regenerated PDFs
+- Capture verification notes under `project_review/samples/final_content_library_regeneration/` during the phase
+
+### Planned commands
+
+```bash
+make seed-role-packs-force          # full library regen
+make seed-role-packs-pdf-force      # PDF-only from final JSON
+make build-skill-knowledge          # skill index refresh if needed
+cd backend && uv run pytest app/agents/job_search/tests -q
+```
+
+See also: `project_review/05_cleanup_plan.md` (this phase runs **before** cleanup).
 
 ---
 
@@ -212,7 +379,7 @@ _Generated from local deterministic study material. Web, model, and document-lib
 | SM-002 | Depth | HR/daily-routine modules improved but not research-backed | medium | open |
 | SM-003 | Sources | No `source/fallback status` field | high | **fixed (004A)** |
 | SM-004 | Export | Beginner/intermediate/advanced compression in export | medium | open |
-| SM-005 | Learning | No cited web/PDF/library sources | high | open |
+| SM-005 | Learning | No cited web/PDF/library sources | high | **improved (004B local library)** |
 | SM-006 | Skills | Secondary skill depth uneven | medium | open |
 | SM-007 | Coverage | New categories have study blocks | medium | **fixed** |
 
@@ -220,9 +387,13 @@ _Generated from local deterministic study material. Web, model, and document-lib
 
 ## Next implementation notes
 
-**Next Cursor task:** Iteration 004B — document-library retrieval + model draft behind feature flags.
+**Next Cursor task:** Iteration 004C — model-knowledge study synthesis behind a feature flag.
 
 - [ ] `StudyMaterialOrchestrator` skeleton
 - [x] `source/fallback status` on every module (004A metadata + export)
-- [ ] Wire `PDFLibraryRetrieverAgent` to `documents/interview_packs/`
-- [ ] Re-capture Iteration 004B samples after library retrieval lands
+- [x] Wire document-library retrieval to `documents/interview_packs/` (004B)
+- [x] Re-capture Iteration 004B samples after library retrieval lands
+- [x] **004B-F:** filter Core Terminology-only matches and generic vocabulary snippets
+- [x] **004B-G:** filter Role Specific/generic procedure snippets; normalize skill label casing
+- [ ] **Final content library regeneration** (pre-cleanup gate — regenerate interview PDFs/JSON/indexes before cleanup)
+- [ ] **Final content library regeneration** (pre-cleanup gate — regenerate all interview PDFs/JSON/indexes before cleanup)
