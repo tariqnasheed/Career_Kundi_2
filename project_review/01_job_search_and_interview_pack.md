@@ -136,52 +136,43 @@ cd backend && uv run pytest app/agents/job_search/tests -q
 
 ---
 
-## Baseline sample placeholder
+## Baseline sample (Iteration 002)
 
-_Paste or link representative generated output here after Iteration 002._
+Captured 2026-07-03 via `backend/scripts/generate_baseline_interview_samples.py`.
 
-**Sample paths (to be filled):**
+| Role | Full pack | Study only | Questions |
+|------|-----------|------------|-----------|
+| Data Analyst | [data_analyst_interview_pack.md](../samples/iteration_002_baseline/data_analyst_interview_pack.md) | [data_analyst_study_only.md](../samples/iteration_002_baseline/data_analyst_study_only.md) | 29 |
+| Electrical Engineer | [electrical_engineer_interview_pack.md](../samples/iteration_002_baseline/electrical_engineer_interview_pack.md) | [electrical_engineer_study_only.md](../samples/iteration_002_baseline/electrical_engineer_study_only.md) | 28 |
+| Clinical Pharmacist | [clinical_pharmacist_interview_pack.md](../samples/iteration_002_baseline/clinical_pharmacist_interview_pack.md) | [clinical_pharmacist_study_only.md](../samples/iteration_002_baseline/clinical_pharmacist_study_only.md) | 28 |
+| Barista | [barista_interview_pack.md](../samples/iteration_002_baseline/barista_interview_pack.md) | [barista_study_only.md](../samples/iteration_002_baseline/barista_study_only.md) | 24 |
+| DevOps Engineer | [devops_engineer_interview_pack.md](../samples/iteration_002_baseline/devops_engineer_interview_pack.md) | [devops_engineer_study_only.md](../samples/iteration_002_baseline/devops_engineer_study_only.md) | 32 |
 
-| Role | Markdown | PDF | Notes |
-|------|----------|-----|-------|
-| _e.g. Data Analyst_ | `samples/job_search/data_analyst_pack.md` | `samples/job_search/data_analyst_pack.pdf` | |
-| _e.g. DevOps Engineer_ | | | |
-| _e.g. Barista_ | | | |
-
-**Sample question block (template):**
-
-```markdown
-## Q001: [Question text]
-
-**Category:** technical  
-**Skill:** SQL  
-**Why asked:** …
-
-### Model answer
-…
-
-### Study material
-**Core idea:** …
-```
+Summary: [baseline_summary.md](../samples/iteration_002_baseline/baseline_summary.md)
 
 ---
 
-## Current issues placeholder
-
-_Document issues found during baseline inspection._
+## Current issues found (baseline inspection)
 
 | ID | Area | Issue | Severity | Status |
 |----|------|-------|----------|--------|
-| JS-001 | _TBD_ | | | open |
+| JS-001 | Coverage | No explicit HR question category in generated packs | high | open |
+| JS-002 | Coverage | No daily-routine / day-one question category | medium | open |
+| JS-003 | Coverage | No case-study category; seniority tiers sparse | medium | open |
+| JS-004 | Answers | Behavioral STAR answers ~40–80 words vs richer technical answers | medium | open |
+| JS-005 | Skills | Secondary requirement skills get fewer technical questions than primary focus skill | medium | open |
+| JS-006 | Frontend | Popular-role selection / generate / download workflow not yet separated | high | open |
+| JS-007 | Import | Pasted job link/description field extraction not validated in this baseline | high | open |
+| JS-008 | Company | Company-specific questions absent without company profile data | low | expected |
 
 ---
 
-## Next implementation notes placeholder
+## Next implementation notes
 
-_Next Cursor task: Job Search + Interview Pack Generator fixes (Implementation order step 3)._
+**Next Cursor task:** Implementation order step 3 — Job Search + Interview Pack Generator fixes.
 
-- [ ] Verify pasted-link extraction fills all required fields
-- [ ] Decouple popular-role selection from auto-generate/export
-- [ ] Implement explicit Generate vs Download UX on frontend
-- [ ] Rearrange page into five workflow sections above
-- [ ] Capture baseline samples into `project_review/samples/`
+- [ ] Add HR and daily-routine question templates to generation pipeline
+- [ ] Expand seniority-variant prompts (junior / senior / lead)
+- [ ] Decouple popular-role auto-generate/export on frontend
+- [ ] Validate pasted job link/description fills all required fields
+- [ ] Lengthen behavioral answers without generic padding (separate pass after workflow fixes)

@@ -6,10 +6,10 @@
 |-------|-------|
 | **Project name** | Career Kundi (`Career_Kundi_2`) |
 | **Current branch** | `main` |
-| **Current commit** | `556178fe` |
-| **Date** | 2026-07-02 |
+| **Current commit** | `7303e015` (pre-iteration-002 capture) |
+| **Date** | 2026-07-03 |
 | **Test command** | `cd backend && uv run pytest app/agents/job_search/tests -q` |
-| **Test result** | **12 passed** in 30.42s (`cd backend && uv run pytest app/agents/job_search/tests -q`) |
+| **Test result** | **12 passed** in 30.43s |
 
 ## Confirmed backend baseline (job-search)
 
@@ -115,10 +115,63 @@ cd backend && uv run pytest app/agents/job_search/tests -q
 
 ---
 
-## Test result (Iteration 001)
+## Iteration 002 — 2026-07-03
+
+**Goal:** Capture honest baseline evidence from the current interview-pack generator without changing production logic.
+
+**Feature area:** Baseline output capture (Job Search + Interview Pack + Study Material).
+
+**Files created:**
+- `backend/scripts/generate_baseline_interview_samples.py`
+- `project_review/samples/iteration_002_baseline/data_analyst_interview_pack.md`
+- `project_review/samples/iteration_002_baseline/electrical_engineer_interview_pack.md`
+- `project_review/samples/iteration_002_baseline/clinical_pharmacist_interview_pack.md`
+- `project_review/samples/iteration_002_baseline/barista_interview_pack.md`
+- `project_review/samples/iteration_002_baseline/devops_engineer_interview_pack.md`
+- `project_review/samples/iteration_002_baseline/*_study_only.md` (5 files)
+- `project_review/samples/iteration_002_baseline/baseline_summary.md`
+- `project_review/samples/iteration_002_baseline/metrics.json`
+
+**Files updated:**
+- `project_review/00_iteration_log.md`
+- `project_review/01_job_search_and_interview_pack.md`
+- `project_review/02_study_material.md`
+
+**Commands run:**
+```bash
+cd backend && uv run python scripts/generate_baseline_interview_samples.py
+cd backend && uv run pytest app/agents/job_search/tests -q
+git status
+```
+
+**Sample outputs generated:**
+- 5 full interview-pack Markdown files + 5 study-only Markdown files + `baseline_summary.md`
+
+**Tests run:**
+- `cd backend && uv run pytest app/agents/job_search/tests -q` — **12 passed** in 30.43s
+
+**What passed:**
+- All job-search quality tests unchanged
+- All five baseline packs generated with study material on every question
+
+**What failed:**
+- None (capture-only iteration)
+
+**Production logic changed:** No
+
+**Remaining risks:**
+- Baseline shows missing HR/daily-routine/seniority/company-specific coverage
+- Behavioral answers remain much shorter than technical answers
+- Study material is compiler-only with no source ladder metadata
+
+**Next recommended step:** Implementation order step 3 — Job Search + Interview Pack Generator fixes (frontend workflow, job import fields, expanded question categories).
+
+---
+
+## Test result (latest)
 
 ```
 cd backend && uv run pytest app/agents/job_search/tests -q
 ............                                                             [100%]
-12 passed in 30.42s
+12 passed in 30.43s
 ```

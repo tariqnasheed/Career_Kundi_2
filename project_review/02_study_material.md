@@ -110,54 +110,40 @@ Each question must have its own study module containing:
 
 ---
 
-## Baseline sample placeholder
+## Baseline sample (Iteration 002)
 
-_Paste or link study-module samples after Iteration 002._
+| Role | Study-only export | Notes |
+|------|-------------------|-------|
+| Data Analyst | [data_analyst_study_only.md](../samples/iteration_002_baseline/data_analyst_study_only.md) | 29 modules, all with visible sections |
+| Electrical Engineer | [electrical_engineer_study_only.md](../samples/iteration_002_baseline/electrical_engineer_study_only.md) | 28 modules |
+| Clinical Pharmacist | [clinical_pharmacist_study_only.md](../samples/iteration_002_baseline/clinical_pharmacist_study_only.md) | 28 modules |
+| Barista | [barista_study_only.md](../samples/iteration_002_baseline/barista_study_only.md) | 24 modules |
+| DevOps Engineer | [devops_engineer_study_only.md](../samples/iteration_002_baseline/devops_engineer_study_only.md) | 32 modules |
 
-**Sample paths (to be filled):**
+Full analysis: [baseline_summary.md](../samples/iteration_002_baseline/baseline_summary.md)
 
-| Role | Question topic | File |
-|------|----------------|------|
-| _e.g. Electrician_ | Electrical Installation | `samples/study_material/electrician_installation.md` |
-| _e.g. Data Analyst_ | SQL diagnostic | |
-
-**Sample module (template):**
-
-```markdown
-**Core idea:** Whether you can answer this [skill] interview question for [role]: …
-
-**How to apply it:**
-1. …
-
-**Common mistakes:**
-- …
-
-**Interview tip:**
-- …
-
-**Source/fallback status:** web+model | model+library | library-only | local-fallback
-```
+**Exported section pattern (technical questions):** `Core idea` → `How to apply it` → `Common mistakes` → `Interview tip` (+ standards note when evidence exists).
 
 ---
 
-## Current issues placeholder
-
-_Document study-material weaknesses found during review._
+## Current issues found (baseline inspection)
 
 | ID | Area | Issue | Severity | Status |
 |----|------|-------|----------|--------|
-| SM-001 | Architecture | Multi-source ladder not yet implemented (deterministic compiler path only) | high | open |
-| SM-002 | Export | Some behavioral answers remain visually short in export | low | known |
-| SM-003 | Sources | No web-research or source-verification agents yet | high | open |
+| SM-001 | Architecture | Multi-source ladder not implemented (compiler/fallback only) | high | open |
+| SM-002 | Depth | Behavioral/motivation modules are STAR-framed but thin vs technical modules | medium | open |
+| SM-003 | Sources | No `source/fallback status` field in study modules | high | open |
+| SM-004 | Export | Beginner/intermediate/advanced fields exist in structured data but export compresses visual depth | medium | open |
+| SM-005 | Learning | No cited web/PDF/library sources — not yet real research-backed study material | high | open |
+| SM-006 | Skills | Secondary skills get study modules but less technical depth than primary focus skill | medium | open |
 
 ---
 
-## Next implementation notes placeholder
+## Next implementation notes
 
-_Next Cursor task: Study Material multi-source architecture (Implementation order step 4)._
+**Next Cursor task:** After Job Search workflow fixes (step 3), proceed to step 4 — Study Material multi-source architecture.
 
-- [ ] Implement `StudyMaterialOrchestrator` skeleton
-- [ ] Wire `PDFLibraryRetrieverAgent` to `documents/interview_packs/`
-- [ ] Add `source/fallback status` field to every study module
-- [ ] Preserve existing quality audits as hard gates
-- [ ] Save iteration samples to `project_review/samples/`
+- [ ] Add `source/fallback status` to every study module
+- [ ] Implement `StudyMaterialOrchestrator` skeleton with web/model/library/fallback ladder
+- [ ] Preserve existing `study_material_quality_audit` as hard gate
+- [ ] Re-capture Iteration 003 samples after architecture lands
