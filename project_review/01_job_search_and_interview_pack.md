@@ -207,6 +207,12 @@ Samples: [iteration_003a_summary.md](../samples/iteration_003a_interview_pack_st
 
 Samples: [iteration_003b_summary.md](../samples/iteration_003b_interview_pack_surface_cleanup/iteration_003b_summary.md)
 
+### Iteration 004A export note (2026-07-03)
+
+Interview-pack Markdown/PDF export now includes a per-question **`### Source / fallback status`** section after study material, driven by `question.study_sources` metadata. No fake URLs or citations are added.
+
+Samples: [iteration_004a_summary.md](../samples/iteration_004a_study_source_metadata/iteration_004a_summary.md)
+
 ### Frontend manual verification notes
 
 1. Open `/jobs` → click a popular role → confirm form fills, **no** pack generates, **no** download.

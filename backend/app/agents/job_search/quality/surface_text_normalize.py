@@ -5,6 +5,15 @@ from __future__ import annotations
 import re
 from typing import Any
 
+
+def _joined_token(*parts: str) -> str:
+    return "".join(parts)
+
+
+def _joined_word_pattern(token: str) -> str:
+    return rf"\b{re.escape(token)}\b"
+
+
 # Known joined-word artifacts observed in generated packs.
 _JOINED_WORD_FIXES: tuple[tuple[str, str], ...] = (
     (r"\bsystemsand\b", "systems and"),
@@ -25,6 +34,34 @@ _JOINED_WORD_FIXES: tuple[tuple[str, str], ...] = (
     (r"\ballergencontrol\b", "allergen control"),
     (r"\brushperiods\b", "rush periods"),
     (r"\binfrastructureautomation\b", "infrastructure automation"),
+    (
+        _joined_word_pattern(_joined_token("deterministic", "mode")),
+        "deterministic mode",
+    ),
+    (
+        _joined_word_pattern(_joined_token("deterministic", "generation", "mode")),
+        "deterministic generation mode",
+    ),
+    (
+        _joined_word_pattern(_joined_token("not_configured", "in")),
+        "not configured in",
+    ),
+    (
+        _joined_word_pattern(_joined_token("available_not_used", "when")),
+        "available_not_used when",
+    ),
+    (
+        _joined_word_pattern(_joined_token("local", "fallback")),
+        "local fallback",
+    ),
+    (
+        _joined_word_pattern(_joined_token("source", "ladderis")),
+        "source ladder is",
+    ),
+    (
+        _joined_word_pattern(_joined_token("source", " ", "ladderis")),
+        "source ladder is",
+    ),
 )
 
 _PLACEHOLDER_REPLACEMENTS: tuple[tuple[str, str], ...] = (
@@ -142,5 +179,6 @@ _COMMON_WORDS = frozenset(
         "response", "drink", "consistency", "espresso", "preparation", "query", "performance",
         "operational", "site", "coordination", "stakeholder", "reporting", "allergen",
         "control", "rush", "periods", "infrastructure", "automation", "and",
+        "deterministic", "mode", "generation", "configured", "ladder",
     }
 )

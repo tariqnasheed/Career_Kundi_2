@@ -167,6 +167,7 @@ from app.agents.job_search.quality.surface_text_normalize import (
     normalize_study_material_dict,
     normalize_surface_text,
 )
+from app.agents.job_search.knowledge.study_sources import attach_study_source_metadata
 from app.agents.job_search.knowledge.content_engine import (
     build_answer_explanation,
     build_model_answer,
@@ -671,6 +672,7 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
         enriched["answer_explanation"] = normalize_surface_text(enriched["answer_explanation"])
     if enriched.get("study_material"):
         enriched["study_material"] = normalize_study_material_dict(enriched["study_material"])
+    attach_study_source_metadata(enriched, job)
     return enriched
 
 

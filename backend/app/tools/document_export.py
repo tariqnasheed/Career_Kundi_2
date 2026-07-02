@@ -25,6 +25,8 @@ from typing import Any
 
 import markdown2
 
+from app.agents.job_search.knowledge.study_sources import render_study_source_markdown
+
 _MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 
@@ -426,6 +428,7 @@ def build_interview_pack_markdown(
             lines.append("**Related skills:** " + ", ".join(q["related_skills"]))
         lines.append("")
         lines.extend(_study_material_md_sections(q.get("study_material") or {}))
+        lines.extend(render_study_source_markdown(q.get("study_sources")))
         lines.append("### Model answer")
         lines.append(q.get("model_answer") or "\n".join(f"- {p}" for p in (q.get("ideal_answer_points") or [])))
         if q.get("answer_explanation"):
@@ -589,6 +592,7 @@ def build_study_material_markdown(
         lines.append(f"*Question:* {q.get('question', '')}")
         lines.append("")
         lines.extend(_study_material_md_sections(q.get("study_material") or {}))
+        lines.extend(render_study_source_markdown(q.get("study_sources")))
         lines.append("---")
         lines.append("")
     return "\n".join(lines).strip() + "\n"

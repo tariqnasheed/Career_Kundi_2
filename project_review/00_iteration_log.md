@@ -9,7 +9,7 @@
 | **Current commit** | `7303e015` (pre-iteration-002 capture) |
 | **Date** | 2026-07-03 |
 | **Test command** | `cd backend && uv run pytest app/agents/job_search/tests -q` |
-| **Test result** | **75 passed** in 81.24s |
+| **Test result** | **105 passed** in 92.28s |
 
 ## Confirmed backend baseline (job-search)
 
@@ -349,11 +349,89 @@ git status
 
 ---
 
+## Iteration 004A — 2026-07-03
+
+**Goal:** Add study-material source metadata architecture foundation and render honest source/fallback status in exports — without enabling live web, model, or PDF retrieval.
+
+**Feature area:** Study Material source ladder foundation (metadata + Markdown export).
+
+**Files changed (backend):**
+- `backend/app/agents/job_search/knowledge/study_sources.py` (new)
+- `backend/app/agents/job_search/mock_data.py` — attach metadata during `_finalize_question`
+- `backend/app/schemas/job_search.py` — `StudySourceEntry`, `StudySourcesMetadata`, `InterviewQuestion.study_sources`
+- `backend/app/tools/document_export.py` — render `### Source / fallback status` per question
+- `backend/app/agents/job_search/tests/test_study_material_source_metadata.py` (new)
+- `backend/scripts/generate_iteration_004a_samples.py` (new)
+
+**Files updated (review):**
+- `project_review/00_iteration_log.md`
+- `project_review/02_study_material.md`
+- `project_review/01_job_search_and_interview_pack.md` (export structure note)
+
+**Commands run:**
+```bash
+cd backend && uv run pytest app/agents/job_search/tests -q
+cd backend && uv run python scripts/generate_iteration_004a_samples.py
+find . -type d -name "__pycache__" -prune -exec rm -rf {} +
+git status
+```
+
+**Sample outputs generated:**
+- `project_review/samples/iteration_004a_study_source_metadata/` (5 packs + summary + metrics)
+
+**Tests run:**
+- Backend: **99 passed** in 86.75s
+
+**What passed:**
+- Every generated question has `study_sources` metadata with web/model/document_library/local_fallback ladder
+- Deterministic generation marks `local_fallback` as used; web/model not faked
+- Markdown/PDF export includes source/fallback status section per question
+- Study material still present; answers ≤ 500 words; existing coverage tests pass
+
+**What failed:**
+- None
+
+**Production logic changed:** Yes (metadata attachment + export section; generation content unchanged)
+
+**Remaining risks:**
+- Document library detected but not consumed for study synthesis yet
+- Web/model retrieval not implemented
+- Saved role packs do not yet persist `study_sources`
+
+**Next recommended step:** Iteration 004B — wire document-library retrieval and model-knowledge draft behind feature flags.
+
+---
+
+## Iteration 004A-S — 2026-07-03
+
+**Goal:** Stabilize Iteration 004A source-status surface wording before commit — fix joined-word artifact in `deterministic` + `mode` phrasing and verify 003B coverage parity.
+
+**Files changed (backend):**
+- `backend/app/agents/job_search/knowledge/study_sources.py` — reword model note to `deterministic mode`; normalize source metadata text on export
+- `backend/app/agents/job_search/quality/surface_text_normalize.py` — joined-word fixes for source-status phrases
+- `backend/app/agents/job_search/tests/test_study_material_source_metadata.py` — coverage + artifact checks
+- `backend/scripts/generate_iteration_004a_samples.py` — align with 003B snapshots; coverage + artifact metrics
+
+**Sample outputs regenerated:**
+- `project_review/samples/iteration_004a_study_source_metadata/`
+
+**Tests run:**
+- Backend: **105 passed** in 92.28s
+
+**What passed:**
+- No joined source-status word artifacts in backend or regenerated samples
+- HR, daily routine, seniority, case/practical coverage present for all five roles
+- Study material + source metadata on every question; local fallback marked used
+
+**Production logic changed:** Yes (source-status wording + text normalization only)
+
+---
+
 ## Test result (latest)
 
 ```
 cd backend && uv run pytest app/agents/job_search/tests -q
-........................................................................ [ 96%]
-...                                                                      [100%]
-75 passed in 81.24s
+........................................................................ [ 68%]
+.................................                                        [100%]
+105 passed in 92.28s
 ```

@@ -277,6 +277,26 @@ class InterviewStudyMaterial(BaseModel):
     estimated_reading_time_minutes: int | None = None
 
 
+class StudySourceEntry(BaseModel):
+    """One step in the study-material source ladder."""
+
+    source_type: Literal["web", "model", "document_library", "local_fallback"]
+    label: str = ""
+    status: Literal["used", "available_not_used", "failed", "not_configured"] = "not_configured"
+    url: str | None = None
+    document_path: str | None = None
+    confidence: float | None = None
+    note: str = ""
+
+
+class StudySourcesMetadata(BaseModel):
+    """Source/fallback metadata attached to each question's study module."""
+
+    used_source_types: list[str] = Field(default_factory=list)
+    sources: list[StudySourceEntry] = Field(default_factory=list)
+    summary: str = ""
+
+
 class RoleOverview(BaseModel):
     role_name: str = ""
     summary: str = ""
@@ -309,6 +329,7 @@ class InterviewQuestion(BaseModel):
     follow_ups: list[str] = Field(default_factory=list)
     follow_up_questions: list[str] = Field(default_factory=list)
     study_material: InterviewStudyMaterial = Field(default_factory=InterviewStudyMaterial)
+    study_sources: StudySourcesMetadata | None = None
     practice_tasks: list[str] = Field(default_factory=list)
     revision_notes: list[str] = Field(default_factory=list)
     citations: list[dict] = Field(default_factory=list)

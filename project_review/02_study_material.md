@@ -142,13 +142,75 @@ New HR/daily-routine/seniority/case-study categories still receive study modules
 
 ---
 
+## Iteration 004A — Study source metadata foundation (2026-07-03)
+
+**Goal:** Introduce a stable source metadata model and honest source/fallback export without live web/model/PDF retrieval.
+
+### Source metadata structure
+
+Each question now carries `study_sources`:
+
+```json
+{
+  "used_source_types": ["local_fallback"],
+  "sources": [
+    {"source_type": "web", "label": "Web research", "status": "not_configured", "note": "..."},
+    {"source_type": "model", "label": "Model knowledge", "status": "not_configured", "note": "..."},
+    {"source_type": "document_library", "label": "Document library", "status": "not_configured|available_not_used", "document_path": "...", "note": "..."},
+    {"source_type": "local_fallback", "label": "Local deterministic study material", "status": "used", "note": "..."}
+  ],
+  "summary": "Generated from local deterministic study material. Web/model/document-library source ladder is not fully enabled yet."
+}
+```
+
+### Source ladder status (004A)
+
+| Step | Status |
+|------|--------|
+| Web research | `not_configured` — no live browsing |
+| Model knowledge | `not_configured` in deterministic mode |
+| Document library | `available_not_used` when `find_role_pack()` finds saved material; otherwise `not_configured` |
+| Local fallback | **`used`** — current compiler/template study modules |
+
+### Example source/fallback status block (Markdown export)
+
+```markdown
+### Source / fallback status
+
+- **Used:** Local deterministic study material
+- **Web research:** Not configured in this iteration — Web research retrieval is not configured in this iteration.
+- **Model knowledge:** Not configured in this iteration — Model knowledge retrieval is not enabled in deterministic mode.
+- **Document library:** Not configured in this iteration — No saved role pack found in the document library for this role.
+
+_Generated from local deterministic study material. Web, model, and document-library source ladder is not fully enabled yet._
+```
+
+**Samples:** [iteration_004a_summary.md](../samples/iteration_004a_study_source_metadata/iteration_004a_summary.md)
+
+**004A-S (2026-07-03):** Fixed source-status wording (`deterministic mode`); added normalization for joined source-status artifacts; regenerated samples with 003B snapshot parity and coverage confirmation.
+
+### Remaining limitations
+
+- No web URLs or external citations are fabricated
+- Document library packs are detected but not merged into study modules
+- Model-knowledge and web-research agents not wired
+
+### Next implementation notes (Iteration 004B)
+
+- [ ] Consume document-library content for matching role/skill questions
+- [ ] Add model-knowledge draft step behind feature flag
+- [ ] Add web-research stub with real URL capture only
+- [ ] Persist `study_sources` in saved role packs and API responses
+
+---
+
 ## Current issues found (post–Iteration 003)
 
 | ID | Area | Issue | Severity | Status |
 |----|------|-------|----------|--------|
 | SM-001 | Architecture | Multi-source ladder not implemented | high | open |
 | SM-002 | Depth | HR/daily-routine modules improved but not research-backed | medium | open |
-| SM-003 | Sources | No `source/fallback status` field | high | open |
+| SM-003 | Sources | No `source/fallback status` field | high | **fixed (004A)** |
 | SM-004 | Export | Beginner/intermediate/advanced compression in export | medium | open |
 | SM-005 | Learning | No cited web/PDF/library sources | high | open |
 | SM-006 | Skills | Secondary skill depth uneven | medium | open |
@@ -158,9 +220,9 @@ New HR/daily-routine/seniority/case-study categories still receive study modules
 
 ## Next implementation notes
 
-**Next Cursor task:** Implementation order step 4 — Study Material multi-source architecture.
+**Next Cursor task:** Iteration 004B — document-library retrieval + model draft behind feature flags.
 
 - [ ] `StudyMaterialOrchestrator` skeleton
-- [ ] `source/fallback status` on every module
+- [x] `source/fallback status` on every module (004A metadata + export)
 - [ ] Wire `PDFLibraryRetrieverAgent` to `documents/interview_packs/`
-- [ ] Re-capture Iteration 004 samples after ladder lands
+- [ ] Re-capture Iteration 004B samples after library retrieval lands
