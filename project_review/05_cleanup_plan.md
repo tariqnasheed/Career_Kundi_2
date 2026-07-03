@@ -2,9 +2,13 @@
 
 Cleanup happens **after** project completion, not during active feature development unless generated cache files pollute git status.
 
-**Important:** Final cleanup (step 13) must **not** run until **Final Content Library Regeneration** (step 12) completes successfully.
+**Important:** Final cleanup (step 14) must **not** run until **Final Content Library Regeneration** (step 13) completes successfully.
 
-**Gate before regeneration:** Iteration **004E** must be complete (**004E-A foundation done**; 004E-B link/web phases still required), along with interview Q&A quality, interview study material, roadmap generator, and roadmap study material corrections (see `01_job_search_and_interview_pack.md`).
+**Do not run final cleanup or Final Content Library Regeneration yet** unless explicitly instructed. Complete the Interview Pack + Study Material system first (004E-B through 004E-F).
+
+**Gate before regeneration:** **004E-B through 004E-F** must be complete, along with interview Q&A quality, interview study material, roadmap generator, and roadmap study material corrections (see `01_job_search_and_interview_pack.md`).
+
+> **004F Global Job Search Agent is intentionally deferred until Interview Pack Generator and Interview Study Material are fully completed.**
 
 ---
 
@@ -18,9 +22,11 @@ Major iterations may use web research to improve design, reliability, and UX —
 
 **004E-B onward:** research job-posting extraction and company-profile capture patterns before implementation so final regeneration and cleanup phases inherit sound storage, indexing, and citation practices.
 
-**004F (planned):** Global Job Search Agent — apply research-assisted development before job provider integration (Adzuna, USAJOBS, SerpApi, etc.). 004F does not change the final cleanup gate; it adds location-aware search UX and configured-provider crawling on the Job Search page. See `01_job_search_and_interview_pack.md` § Iteration 004F.
+**004E-B–004E-F (active):** Complete interview pack link extraction, company research, source ladder, study material finalization, and regression gate before any Job Search work.
 
-**Job Search page roadmap (004F):**
+**004F (DEFERRED):** Global Job Search Agent — requirements preserved in `01_job_search_and_interview_pack.md` § Iteration 004F. **Do not implement** until 004E-F gate passes. When eventually started, apply research-assisted development before job provider integration (Adzuna, USAJOBS, SerpApi, etc.). 004F does not change the final cleanup gate.
+
+**Job Search page roadmap (004F — deferred):**
 
 - City and country filters; full-time, part-time, contract, internship, freelance, and odd/gig job types
 - `Search around the world` checkbox (default **unchecked**); default search deeply targets selected/nearest location
@@ -34,18 +40,20 @@ Major iterations may use web research to improve design, reliability, and UX —
 
 ## Final Content Library Regeneration (required before cleanup)
 
-**Status:** Documented requirement only — **no deletions or regeneration performed yet**.
+**Status:** Documented requirement only — **no deletions or regeneration performed yet**. **Do not run unless explicitly instructed.**
 
 ### When to run
 
 After all corrections are completed for:
 
-- **004E — Job Posting Intelligence and Interview Pack Source Ladder**
-- Interview Pack Generator (job intelligence, coverage audit, source ladder)
+- **004E-B through 004E-F** — Interview Pack + Study Material completion track
+- Interview Pack Generator (job intelligence, link extraction, company research, coverage audit, full source ladder)
 - Interview Question and Answer quality
-- Interview Study Material (per-question, profile-connected)
+- Interview Study Material (per-question, profile-connected — 004E-E)
 - Roadmap Generator
 - Roadmap Study Material
+
+**Not a substitute for 004E-F:** The regression gate (004E-F) validates samples and metrics before Job Search. Full library regeneration runs later, after roadmap work is also complete.
 
 ### Required generated final outputs
 
@@ -113,7 +121,7 @@ Save under `project_review/samples/final_content_library_regeneration/` (create 
 
 ## Final cleanup checklist
 
-- [ ] **Confirm 004E and dependent interview/roadmap corrections completed**
+- [ ] **Confirm 004E-B through 004E-F and dependent interview/roadmap corrections completed**
 - [ ] **Confirm Final Content Library Regeneration completed** (step 12 gate)
 - [ ] Remove `__pycache__/`
 - [ ] Remove `*.pyc`

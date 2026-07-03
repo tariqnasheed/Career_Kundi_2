@@ -6,10 +6,10 @@
 |-------|-------|
 | **Project name** | Career Kundi (`Career_Kundi_2`) |
 | **Current branch** | `main` |
-| **Current commit** | `7303e015` (pre-iteration-002 capture) |
+| **Current commit** | `1fb45af5` — Add job intelligence profile and coverage audit foundation |
 | **Date** | 2026-07-03 |
 | **Test command** | `cd backend && uv run pytest app/agents/job_search/tests -q` |
-| **Test result** | **186 passed** in 221.91s |
+| **Test result** | **219 passed** |
 
 ## Confirmed backend baseline (job-search)
 
@@ -79,20 +79,29 @@ This applies especially when implementing complex features such as:
 
 ## Implementation order
 
+**Reprioritized 2026-07-03:** Complete Interview Pack Generator and Interview Study Material fully **before** starting Job Search (004F).
+
 1. Project review/reporting system
 2. Baseline output capture
-3. Job Search + Interview Pack Generator fixes
-4. Study Material multi-source architecture
-5. Study Material export/fallback improvements
-6. **004E — Job Posting Intelligence and Interview Pack Source Ladder** (004E-A implemented; 004E-B planned)
-7. **004F — Global Job Search Agent and Location-Aware Search Page** (planned — after 004E-A commit; see below)
+3. Job Search + Interview Pack Generator fixes (003A–003B)
+4. Study Material multi-source architecture (004A–004D)
+5. **004E-A — Job Intelligence Profile + coverage audit foundation** (committed `1fb45af5`)
+6. **Interview Pack + Study Material completion track** (active — implement in order):
+   - **004E-B** — Job posting link extraction for interview packs
+   - **004E-C** — Company profile and source-cited web research for interview packs
+   - **004E-D** — Full interview pack source ladder integration
+   - **004E-E** — Study material finalization for interview packs
+   - **004E-F** — Final interview pack and study material regression gate
+7. **004F — Global Job Search Agent and Location-Aware Search Page** (**DEFERRED** — do not implement until steps 1–6 above are fully complete)
 8. CV Builder redesign
 9. CV template expansion and section-level AI
 10. Roadmap page rebuild
 11. Roadmap study material and exports
 12. Final regression testing
-13. **Final content library regeneration** (required before cleanup — see `05_cleanup_plan.md`)
+13. **Final content library regeneration** (required before cleanup — see `05_cleanup_plan.md`; **do not run yet** unless explicitly instructed)
 14. Final cleanup
+
+> **004F Global Job Search Agent is intentionally deferred until Interview Pack Generator and Interview Study Material are fully completed.**
 
 ---
 
@@ -912,9 +921,9 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 **Dependency:** Final Content Library Regeneration runs only after 004E plus interview Q&A/study-material and roadmap corrections are complete (`05_cleanup_plan.md`).
 
-**Planned task list:** see `project_review/01_job_search_and_interview_pack.md` § Iteration 004E.
+**Planned task list:** see `project_review/01_job_search_and_interview_pack.md` § Iteration 004E and § Interview Pack + Study Material Completion Track (004E-B–004E-F).
 
-**Next recommended step:** Implement 004E when explicitly instructed.
+**Next recommended step:** Implement **004E-B** (job posting link extraction) when explicitly instructed. **Do not start 004F** until 004E-B through 004E-F are complete.
 
 ---
 
@@ -936,28 +945,47 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 ---
 
-## Iteration 004F — Global Job Search Agent and Location-Aware Search Page (PLANNED)
+## Iteration 004F — Global Job Search Agent and Location-Aware Search Page (DEFERRED)
 
-**Status:** Documented only — **not implemented**. **Gate:** 004E-A stabilized and committed before implementation starts.
+**Status:** Documented only — **not implemented** and **intentionally deferred**. **Baseline:** `1fb45af5` (004E-A committed).
+
+> **004F Global Job Search Agent is intentionally deferred until Interview Pack Generator and Interview Study Material are fully completed.**
+
+**Gate:** Do not implement 004F, global job search, job-search web provider architecture, provider APIs, or Job Search page redesign until **004E-B through 004E-F** are complete. Apply Research-Assisted Development Rule before provider work when 004F eventually starts.
 
 **Goal:** Rigorous location-aware web job search on the Job Search page — structured `JobSearchIntent`, multi-agent provider pipeline, deduplication/ranking, and result actions that feed the Job Intelligence Profile.
 
-**Recommended sequence:** After **004E-A commit**; coordinate with **004E-B** (link/company extraction) so **Use this job** maps cleanly into intelligence fields.
-
-**Full specification:** `project_review/01_job_search_and_interview_pack.md` § Iteration 004F.
-
-**Key requirements (summary):**
-
-- City/country filters; job types (full-time, part-time, contract, internship, freelance, odd/gig)
-- Work mode (remote/hybrid/onsite); date posted filters
-- **`Search around the world` checkbox — default unchecked**; deep local/nearest search by default
-- Exhaustive **configured-provider** crawling (not fake “every job on the internet”)
-- Multi-agent pipeline under `backend/app/agents/job_search/web_search/`
-- Preserve **Use this job** and **Open original link** on every result card
-- Mock providers for tests; no API keys required for default test suite
-- Apply **Research-Assisted Development Rule** before provider implementation (Adzuna, USAJOBS, SerpApi Google Jobs, etc.)
+**Full specification:** `project_review/01_job_search_and_interview_pack.md` § Iteration 004F (requirements preserved for future implementation).
 
 **Samples (when implemented):** `project_review/samples/iteration_004f_global_job_search_agent/`
+
+---
+
+## Interview Pack + Study Material Completion Track (004E-B–004E-F)
+
+**Status:** Planned — **active next work** after 004E-A. Implement in order; do not skip to 004F.
+
+| Phase | Goal |
+|-------|------|
+| **004E-B** | Job posting link extraction for interview packs (mocked HTML tests; no live internet) |
+| **004E-C** | Company profile + source-cited web research for interview packs (real URLs only; no invented facts) |
+| **004E-D** | Full interview pack source ladder integration into Q&A generation |
+| **004E-E** | Study material finalization — dedicated per-question modules connected to profile |
+| **004E-F** | Final regression samples and gate before Job Search |
+
+**Full specifications:** `project_review/01_job_search_and_interview_pack.md` § 004E-B–004E-F; study-material scope in `02_study_material.md`.
+
+**Do not run Final Content Library Regeneration or final cleanup yet** unless explicitly instructed. Regeneration remains scheduled after interview pack, interview study material, roadmap generator, and roadmap study material are all complete.
+
+---
+
+## Documentation — Roadmap reprioritization (2026-07-03)
+
+**Goal:** Defer 004F; focus next work on Interview Pack + Study Material completion track (004E-B–004E-F).
+
+**Baseline commit:** `1fb45af5` (004E-A committed).
+
+**Changes:** Updated implementation order in `00_iteration_log.md`; added 004E-B–004E-F in `01_job_search_and_interview_pack.md`; aligned `02_study_material.md` and `05_cleanup_plan.md`. No production code changed.
 
 ---
 

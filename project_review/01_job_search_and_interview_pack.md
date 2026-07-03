@@ -292,28 +292,39 @@ Samples: [iteration_004b_summary.md](../samples/iteration_004b_document_library_
 
 ## Next implementation notes
 
-**Next major phase:** **Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder** (**004E-A foundation implemented**; 004E-B for link extraction + web research).
+**Active focus:** Complete **Interview Pack Generator** and **Interview Study Material** before any Job Search work.
 
-**Following major phase (planned):** **Iteration 004F — Global Job Search Agent and Location-Aware Search Page** (after 004E-A commit — see § Iteration 004F).
+**Next major phases (in order):**
 
-See full specification and task checklist in [§ Iteration 004E](#iteration-004e--job-posting-intelligence-and-interview-pack-source-ladder-in-progress) and [§ Iteration 004F](#iteration-004f--global-job-search-agent-and-location-aware-search-page-planned) below.
+1. **004E-B** — Job posting link extraction for interview packs
+2. **004E-C** — Company profile + source-cited web research for interview packs
+3. **004E-D** — Full interview pack source ladder integration
+4. **004E-E** — Study material finalization for interview packs
+5. **004E-F** — Final regression gate (samples + metrics)
+6. **Then** — **004F — Global Job Search Agent** (deferred)
 
-Deferred until after 004E:
+> **004F Global Job Search Agent is intentionally deferred until Interview Pack Generator and Interview Study Material are fully completed.**
 
-- [ ] Final content library regeneration (pre-cleanup gate)
+See [§ Interview Pack + Study Material Completion Track (004E-B–004E-F)](#interview-pack--study-material-completion-track-004e-b004e-f) and [§ Iteration 004F](#iteration-004f--global-job-search-agent-and-location-aware-search-page-deferred) below.
+
+**Do not implement yet:** 004F, global job search, job-search web provider architecture, provider APIs, Job Search page redesign.
+
+Deferred until after 004E-B–004E-F:
+
+- [ ] Final content library regeneration (pre-cleanup gate — **do not run unless explicitly instructed**)
 - [ ] Optional: surface download actions in job form quick actions after pack exists
 
 ---
 
 ## Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder (IN PROGRESS)
 
-**004E-A (implemented):** Job Intelligence Profile, completeness warnings, coverage audit, missing-coverage questions, silly-question guard, API metadata fields, minimal frontend hint.
+**004E-A (implemented, `1fb45af5`):** Job Intelligence Profile, completeness warnings, coverage audit, missing-coverage questions, silly-question guard, API metadata fields, minimal frontend hint.
 
-**004E-B (planned):** Job posting link extraction, company web research with real URLs only, extracted-field review/edit UI.
+**Active completion track:** **004E-B → 004E-C → 004E-D → 004E-E → 004E-F** (see [§ Interview Pack + Study Material Completion Track](#interview-pack--study-material-completion-track-004e-b004e-f)). **004F is deferred** until this track is complete.
 
-**004E-B research expectation:** Before implementation, apply the [Research-Assisted Development Rule](#research-assisted-development-rule) — review official docs and reputable open-source examples for job-posting parsers, HTML extraction, company-profile capture, and source-citation patterns. Document chosen approach and rejected alternatives in `project_review/`.
+**004E-B research expectation:** Before 004E-B implementation, apply the [Research-Assisted Development Rule](#research-assisted-development-rule) — review official docs and reputable open-source examples for job-posting parsers, HTML extraction, company-profile capture, and source-citation patterns. Document chosen approach and rejected alternatives in `project_review/`.
 
-**Status:** Documented requirement and task list only — **do not implement until explicitly instructed.**
+**Status:** 004E-A foundation done; 004E-B–004E-F documented — implement when explicitly instructed.
 
 ### Problem statement
 
@@ -527,15 +538,164 @@ See `project_review/05_cleanup_plan.md`.
 - [x] Requirement: web + model + document-library source ladder  
 - [x] Requirement: sample count vs real user coverage-driven generation distinguished  
 - [x] Requirement: final PDF/database regeneration before cleanup documented  
-- [ ] Roadmap includes 004F as planned major phase after 004E-A commit
+- [x] Roadmap includes 004F as planned major phase (deferred until 004E-B–004E-F complete)
 
 ---
 
-## Iteration 004F — Global Job Search Agent and Location-Aware Search Page (PLANNED)
+## Interview Pack + Study Material Completion Track (004E-B–004E-F)
 
-**Status:** Documented requirement only — **do not implement until 004E-A is committed and explicitly instructed.**
+**Priority:** Complete this track **before** starting Job Search / 004F.
 
-**Gate:** 004E-A stabilization committed. Apply [Research-Assisted Development Rule](#research-assisted-development-rule) before provider implementation.
+> **004F Global Job Search Agent is intentionally deferred until Interview Pack Generator and Interview Study Material are fully completed.**
+
+### 004E-B — Job Posting Link Extraction for Interview Packs
+
+**Goal:** If the user provides a job posting URL for interview-pack generation, extract posting content before generation.
+
+**Scope (extracted fields):**
+
+- job title, company name, company profile (where present on page)
+- job description, responsibilities, requirements, preferred qualifications
+- tools/software, skills, location, seniority, employment type
+- source URL, extraction confidence, extraction warnings
+
+**Rules:**
+
+- Apply [Research-Assisted Development Rule](#research-assisted-development-rule) before implementation
+- Prefer official docs and reliable open-source patterns
+- Do not scrape sites that disallow scraping
+- Do not fake extracted content or URLs
+- If extraction is partial, warn the user and allow manual paste/edit
+- Tests must not require live internet — use mocked HTML/pages
+
+**Planned touchpoints:** scraper/import agents, `JobIntelligenceProfile` population from link, frontend extracted-field review/edit UI, `test_job_posting_link_extraction.py`
+
+---
+
+### 004E-C — Company Profile and Source-Cited Web Research for Interview Packs
+
+**Goal:** When company name/domain is available, capture reliable company context for interview-pack generation.
+
+**Scope:**
+
+- company overview, what the company does, products/services
+- industry/domain, company market/scope
+- relevant company context for interview questions
+- real captured URLs only; source/fallback status
+
+**Rules:**
+
+- Do not invent company facts or fake citations
+- Do not claim web research was used unless it actually was
+- Model knowledge must not be treated as a factual cited source
+- If company research is unavailable, say so transparently
+- Tests use mocked/captured sources — no live internet in default suite
+
+**Planned touchpoints:** company research agent/module, source metadata on profile, transparent `source_status` in pack output
+
+---
+
+### 004E-D — Full Interview Pack Source Ladder Integration
+
+**Goal:** Connect all source layers directly into interview-pack question and answer generation.
+
+**Source priority:**
+
+1. User-provided job posting fields
+2. Extracted job posting link content
+3. Company profile from reliable web research
+4. Model knowledge where enabled
+5. Saved document-library / project database material
+6. Local deterministic fallback
+
+**Required behavior:**
+
+- Every responsibility, required skill, preferred skill (where relevant), and tool/software item is considered
+- Company profile and daily duties affect questions
+- Easy-to-hard progression exists
+- No silly/filler questions
+- Real user packs are coverage-driven — not capped to small sample counts
+- Coverage audit runs before export; gaps trigger supplemental questions where safe
+
+**Planned touchpoints:** `mock_data.py` / generation pipeline, `coverage_planner.py`, `silly_question_guard.py`, source ladder wiring
+
+---
+
+### 004E-E — Study Material Finalization for Interview Packs
+
+**Goal:** Ensure every generated interview question has dedicated study material directly connected to that exact question and answer.
+
+**Each question's study module must include:**
+
+- core idea; technical/workflow skills covered; key definitions; principles
+- step-by-step method
+- beginner, intermediate, and advanced explanations
+- practical example; common mistakes; interview application
+- saved material insight where available; model insight where enabled; web/source insight where available
+- source/fallback status
+
+**Rules:**
+
+- No generic study notes disconnected from the question
+- No one-size-fits-all study material for the whole role
+- No fake citations; no vague filler; no user-facing internal labels like `Role Specific`
+
+**Planned touchpoints:** study synthesis layer (`study_sources.py`, model-knowledge flag path), per-question export in `document_export.py`, coverage audit study-material checks
+
+**Study-material detail:** `project_review/02_study_material.md` § 004E-E.
+
+---
+
+### 004E-F — Final Interview Pack and Study Material Regression Gate
+
+**Goal:** Create final regression samples and checks **before** moving to Job Search (004F).
+
+**Required sample scenarios:**
+
+| Scenario | Purpose |
+|----------|---------|
+| Role-title-only | Warning path; limited coverage |
+| Rich pasted job posting | Full profile-driven pack |
+| Job posting URL extraction (mocked source) | 004E-B path |
+| Company web research (mocked/captured source) | 004E-C path |
+| Technical role | Deep skill/tool coverage |
+| Healthcare/compliance role | Ethics/safety clues |
+| Creative/trending role | Random-validation parity |
+| Non-technical / odd-job style role | Safe odd-job coverage |
+
+**Metrics to capture:**
+
+- extracted items, covered items, coverage score, missing coverage, added coverage questions
+- study material present; source status present
+- web source URLs where used; model source status; document-library status
+- silly question hits; generic phrase hits; fake URL hits; answers over 500
+
+**Acceptance (gate before 004F):**
+
+- [ ] No silly/filler questions
+- [ ] No fake URLs/citations
+- [ ] No blocked generic phrases
+- [ ] No `Role Specific` leaks
+- [ ] Every question has study material
+- [ ] Every source status is transparent
+- [ ] Backend tests pass
+- [ ] Frontend build passes if frontend changed
+
+**Planned samples folder:** `project_review/samples/iteration_004e_final_regression_gate/`
+
+**Do not run Final Content Library Regeneration** as part of 004E-F unless explicitly instructed. Full library regeneration remains after roadmap generator + roadmap study material completion (`05_cleanup_plan.md`).
+
+---
+
+## Iteration 004F — Global Job Search Agent and Location-Aware Search Page (DEFERRED)
+
+**Status:** Documented requirement only — **do not implement**. **Intentionally deferred** until Interview Pack Generator and Interview Study Material are fully completed (004E-B through 004E-F).
+
+> **004F Global Job Search Agent is intentionally deferred until Interview Pack Generator and Interview Study Material are fully completed.**
+
+**Do not implement yet:** global job search, `backend/app/agents/job_search/web_search/` provider architecture, job-search provider APIs, or Job Search page redesign.
+
+**004E-A is committed** (`1fb45af5`). When 004F eventually starts, apply [Research-Assisted Development Rule](#research-assisted-development-rule) before provider implementation.
 
 **Current codebase touchpoints (inspect before editing):**
 
@@ -550,7 +710,14 @@ See `project_review/05_cleanup_plan.md`.
 
 ### 1. Product requirement
 
-The Job Search page must support a rigorous web job search experience. The user searches any job role and optionally specifies location, job type, work mode, date posted, and whether to expand worldwide.
+The Job Search page must support a rigorous web job search experience. The user searches any job role and optionally specifies:
+
+- city, country
+- remote / hybrid / onsite preference
+- full-time, part-time, contract, internship, freelance, odd/gig jobs
+- entry-level or senior roles where available
+- date posted window
+- whether to search only the selected/nearest location or expand worldwide (`search_worldwide`)
 
 The page must **not** search only by vague job title. It builds a structured **`JobSearchIntent`** and runs a multi-source search agent to retrieve, deduplicate, rank, and display results.
 
@@ -616,7 +783,7 @@ When checked: local/nearest first, then broader results — label by location/so
 
 > Showing results from configured job sources. Continue loading to search deeper.
 
-**Backend exposes:** `total_fetched`, `total_after_deduplication`, `providers_searched`, `provider_statuses`, `has_more`, `next_cursor`, `warnings`, `coverage_note`. Never fake searching the entire internet.
+**Backend exposes:** `total_fetched`, `total_after_deduplication`, `providers_searched`, `providers_failed`, `provider_page_depth_reached`, `has_more`, `next_cursor`, `warnings`, `coverage_note` (whether more results may be available). Never fake searching the entire internet.
 
 ### 5. Location-aware search rule
 
@@ -626,39 +793,72 @@ When checked: local/nearest first, then broader results — label by location/so
 
 ### 6. Job type and odd/gig job support
 
-Support standard roles (Software Engineer, Nurse, …), part-time/hourly (Barista, Tutor, …), and safe odd/gig jobs (Dog Walker, Event Staff, Handyman, Freelance Creative, …).
+**Standard jobs:** Software Engineer, Electrical Engineer, Data Analyst, Nurse, Teacher, Accountant.
 
-**Query expansion** for odd jobs → safe categories (cleaning, event staff, dog walking, gardening, moving help, etc.).
+**Part-time / hourly:** Barista, Cashier, Delivery Driver, Tutor, Retail Assistant.
 
-**Block unsafe categories:** weapons, illegal drugs, adult services, gambling, dangerous stunts, illegal hacking, scams, extremist activity.
+**Odd / gig (safe categories only):** Dog Walker, Babysitter/Nanny, Event Staff, Domestic Cleaner, Handyman/Odd Jobs, Gardening Helper, Moving Helper, Freelance Content Writer, Freelance Graphic Designer.
+
+**Query expansion** for odd jobs → safe categories (handyman, cleaning, event staff, dog walking, gardening, moving help, delivery, freelance creative, etc.).
+
+**Block unsafe categories:** weapons, illegal drugs, pornography/adult sexual services, gambling/betting, dangerous challenges/stunts, illegal hacking/cybercrime, scams/fraud, extremist activity.
 
 ### 7. Multi-agent search architecture
 
-Suggested module: `backend/app/agents/job_search/web_search/`
+Planned module: `backend/app/agents/job_search/web_search/`
 
-| Agent | Responsibility |
-|-------|----------------|
-| `SearchIntentParserAgent` | Build `JobSearchIntent` (role, job type, location, remote mode, date posted, worldwide flag, odd-job intent, unsafe exclusions) |
-| `LocationResolverAgent` | Resolve city/country, coordinates, country codes, distance fields — graceful fallback without requiring permission |
-| `QueryExpansionAgent` | Provider-specific query strings |
-| `ProviderSearchAgent` | Call configured providers (Adzuna, SerpApi Google Jobs if keyed, USAJOBS if keyed, remote provider, **mock provider for tests**) |
-| `PaginationCrawlerAgent` | Page until exhausted/limited; track pages, tokens, errors |
-| `JobNormalizerAgent` | `NormalizedJobResult` schema (title, company, location, remote_mode, job_type, salary, descriptions, posted_at, source_provider, original_url, apply_url, scores, …) |
-| `DeduplicationAgent` | By title, company, location, URL, provider ID, text similarity |
-| `RankingAgent` | Role match, proximity, freshness, job type, source confidence, filters; local dominance when worldwide off |
-| `ResultActionAgent` | Use this job → Job Intelligence Profile fields; Open original link |
-| `SearchAuditAgent` | Provider statuses, pages, warnings, rate limits, worldwide flag |
+| # | Agent | Responsibility |
+|---|-------|----------------|
+| 1 | `SearchIntentParserAgent` | Parse user input into `JobSearchIntent`: role keywords, job type, city/country, work mode, date posted, salary if provided, user location, `search_worldwide`, odd-job intent, seniority hints, excluded unsafe categories |
+| 2 | `LocationResolverAgent` | Resolve city/country text, user coordinates, country codes, distance/ranking fields, nearest-first sorting — graceful fallback without requiring location permission |
+| 3 | `QueryExpansionAgent` | Build provider-specific queries (e.g. `data analyst Power BI SQL London`, `part time barista Hyderabad`, `freelance content writer remote`, `dog walker part time Dubai`) |
+| 4 | `ProviderSearchAgent` | Call configured providers: Adzuna, SerpApi Google Jobs (if API key), USAJOBS (if configured), remote jobs provider (later), **local deterministic mock provider for tests** |
+| 5 | `PaginationCrawlerAgent` | Fetch pages until exhausted or limit; track pages fetched, provider limits, `has_more`, `next_page_token`, timeouts, errors |
+| 6 | `JobNormalizerAgent` | Map provider payloads to `NormalizedJobResult` (see below) |
+| 7 | `DeduplicationAgent` | Dedupe by title, company, location, normalized URL, provider job ID, text similarity |
+| 8 | `RankingAgent` | Rank by role match, location proximity, date posted, job type match, source confidence, description quality, remote preference; local dominance when `search_worldwide=False` |
+| 9 | `ResultActionAgent` | Attach **Use this job** (→ Job Intelligence Profile / interview-pack fields) and **Open original link** (real `original_url` or provider redirect) |
+| 10 | `SearchAuditAgent` | Transparent metadata: providers searched/failed, pages fetched, dedup counts, coverage limits, warnings, rate-limit notes, worldwide flag status |
 
-**Provider rules:** official APIs only; no scraping where disallowed; API keys via env; tests use mocks.
+**Provider rules:** prefer official APIs and compliant providers; do not scrape sites that disallow scraping; API keys via environment variables only; tests use mock providers with no real API keys.
+
+#### Planned `NormalizedJobResult`
+
+```python
+class NormalizedJobResult:
+    id: str
+    title: str
+    company: str | None
+    location: str | None
+    city: str | None
+    country: str | None
+    remote_mode: str | None
+    job_type: str | None
+    salary: str | None
+    description_snippet: str | None
+    full_description: str | None
+    posted_at: str | None
+    source_provider: str
+    original_url: str
+    apply_url: str | None
+    distance_km: float | None
+    relevance_score: float
+    freshness_score: float
+    location_score: float
+    source_confidence: str
+```
 
 ### 8. Provider research notes (pre-implementation)
 
-Apply Research-Assisted Development Rule. Document sources in `project_review/` when they influence design.
+Apply [Research-Assisted Development Rule](#research-assisted-development-rule). Document sources in `project_review/` when they influence design.
 
-- **Adzuna** — keywords, location, pagination, contract type, redirect URL
-- **USAJOBS** — keyword, location, schedule, page, radius
-- **SerpApi Google Jobs** — location param, `next_page_token` pagination (page-limited)
-- Browser geolocation — permission-gated nearest-first only
+- **Adzuna** — job keyword/location search, pagination-style access, metadata (title, company, location, salary, contract type, redirect URL)
+- **USAJOBS** — U.S. federal roles; keyword/title, location, schedule type, page, results per page, radius
+- **SerpApi Google Jobs** — location parameter; pagination via `next_page_token` (page-limited — must be explicit)
+- **Remote jobs provider** — consider later where compliant APIs exist
+- **Mock provider** — required for deterministic tests; no real API keys in default test suite
+- **Browser geolocation** — permission-gated nearest-first only; never silent tracking
+- Do not scrape sites that disallow scraping
 
 ### 9. Backend API requirement
 
@@ -673,7 +873,7 @@ POST /api/v1/job-search/web/use-job
 
 **Request (`WebJobSearchRequest`):** `query`, `city`, `country`, `job_type`, `work_mode`, `date_posted`, `search_worldwide=False`, `user_latitude`, `user_longitude`, `max_pages_per_provider`, `include_remote=True`
 
-**Response (`WebJobSearchResponse`):** `results`, `total_fetched`, `total_after_deduplication`, `providers_searched`, `provider_statuses`, `has_more`, `next_cursor`, `warnings`, `coverage_note`
+**Response (`WebJobSearchResponse`):** `results`, `total_fetched`, `total_after_deduplication`, `providers_searched`, `providers_failed`, `provider_statuses` (per-provider page depth, errors, limits), `has_more`, `next_cursor`, `warnings`, `coverage_note`
 
 ### 10. Frontend result card requirement
 
@@ -695,7 +895,7 @@ Optional (do not remove required): Save job, Copy link, Generate pack, View extr
 
 Block or safely handle restricted categories (see §6). Normal jobs proceed.
 
-### 13. Tests (when implemented)
+### 13. Planned tests (when implemented)
 
 Under `backend/app/agents/job_search/tests/`:
 
@@ -704,27 +904,58 @@ Under `backend/app/agents/job_search/tests/`:
 - `test_web_job_search_ranking.py`
 - `test_web_job_search_use_job.py`
 
-Verify: intent parsing, job types, odd-job safe expansion, unsafe blocking, location/worldwide rules, pagination, dedup, ranking, Use this job → intelligence profile, real URLs only, mock providers, no API keys in default tests, existing suite still passes.
+**Backend tests must verify:**
 
-Frontend: city/country fields, job type selector, worldwide checkbox default unchecked, required action buttons visible.
+1. City and country fields are parsed.
+2. Job type filters work.
+3. Full-time search builds correct provider queries.
+4. Part-time search builds correct provider queries.
+5. Odd-job intent expands safely.
+6. Unsafe job categories are blocked or safely handled.
+7. Location-specific search prioritizes specified city/country.
+8. No-location search starts nearest-first when user coordinates exist.
+9. No-location/no-user-location warns when `search_worldwide=False`.
+10. No-location/no-user-location can proceed when `search_worldwide=True`.
+11. Worldwide search checkbox defaults to false.
+12. Worldwide search expands beyond local only when enabled.
+13. Provider pagination continues until exhausted or configured limit.
+14. Results are deduplicated.
+15. Ranking prioritizes role match and location match.
+16. `Use this job` maps a result into Job Intelligence Profile fields.
+17. `Open original link` contains original/provider URL only.
+18. No fake URLs are generated.
+19. Tests do not require real API keys.
+20. Mock providers can simulate multiple pages.
+21. Provider failures return warnings, not crashes.
+22. Existing `app/agents/job_search/tests` suite still passes.
 
-### 14. Samples and review output (when implemented)
+**Frontend checks (later):** city/country fields; job type selector; `Search around the world` checkbox default unchecked; **Use this job** and **Open original link** remain visible.
 
-`project_review/samples/iteration_004f_global_job_search_agent/`:
+### 14. Planned samples (when implemented)
 
-- `iteration_004f_summary.md`, `metrics.json`
-- Sample JSON: data analyst (no location / worldwide false & true), barista city filter, part-time odd jobs, social media creator country filter
-- `sample_use_this_job_to_intelligence_profile.md`
+Folder: `project_review/samples/iteration_004f_global_job_search_agent/`
 
-Summary metrics table columns: Scenario, Query, City, Country, Job Type, Search Worldwide, Providers Searched, Pages Fetched, Results Fetched, Deduplicated, Has More, Warnings, Unsafe Blocked, Fake URLs.
+| File | Purpose |
+|------|---------|
+| `iteration_004f_summary.md` | Metrics table + example UI/provider/result blocks |
+| `metrics.json` | Machine-readable scenario metrics |
+| `sample_search_data_analyst_no_location_worldwide_false.json` | No location, worldwide off → warning path |
+| `sample_search_data_analyst_worldwide_true.json` | Worldwide on → expansion path |
+| `sample_search_barista_city_filter.json` | City-filtered part-time search |
+| `sample_search_part_time_odd_jobs.json` | Safe odd/gig expansion |
+| `sample_search_social_media_creator_country_filter.json` | Country filter |
+| `sample_use_this_job_to_intelligence_profile.md` | Use this job → intelligence profile mapping |
 
-### 15. Remaining after 004F (next phases)
+**Summary metrics table columns:** Scenario | Query | City | Country | Job Type | Search Worldwide | Providers Searched | Pages Fetched | Results Fetched | Deduplicated Results | Has More | Warnings | Unsafe Blocked | Fake URLs
 
-- Job posting detail extraction from selected job link (004E-B overlap)
-- Company profile web research with real captured URLs
+### 15. Remaining after 004F (future phases)
+
 - Persistent saved jobs and search history
+- **Use this job** from search results → Job Intelligence Profile (depends on 004E-B–004E-D being complete first)
 
-### Acceptance criteria (004F planning)
+### Acceptance criteria (004F planning — deferred)
+
+Requirements preserved for future implementation after 004E-F gate passes:
 
 - [x] Roadmap includes 004F as planned major phase
 - [x] City/country and job-type filters documented

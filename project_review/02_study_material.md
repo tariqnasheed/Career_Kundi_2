@@ -491,22 +491,40 @@ Samples: `project_review/samples/iteration_004c_study_synthesis_quality/`
 
 **Test result:** `186 passed`
 
-### Next step (Iteration 004E)
+### Next step — Interview Pack + Study Material completion track (004E-B–004E-F)
 
-**Planned — not implemented:** [004E — Job Posting Intelligence and Interview Pack Source Ladder](../01_job_search_and_interview_pack.md#iteration-004e--job-posting-intelligence-and-interview-pack-source-ladder-planned)
+**Active focus:** Complete Interview Pack Generator and Interview Study Material **before** Job Search.
 
-Key study-material implications for 004E:
+> **004F Global Job Search Agent is intentionally deferred until Interview Pack Generator and Interview Study Material are fully completed.**
 
-- Per-question study modules must connect to the **Job Intelligence Profile** (company, responsibility, skill, tool context) — not role-title-only generics.
-- Source ladder extends to pack generation: user posting → link extraction → web (real URLs) → model (flagged) → document library → local fallback.
-- Coverage audit must verify study material exists for every exportable question and reflects extracted posting items.
-- Final Content Library Regeneration remains blocked until 004E + roadmap corrections complete.
+| Phase | Status | Focus |
+|-------|--------|-------|
+| **004E-A** | Done (`1fb45af5`) | Job Intelligence Profile + coverage audit foundation |
+| **004E-B** | Planned | Job posting link extraction for interview packs |
+| **004E-C** | Planned | Company profile + source-cited web research |
+| **004E-D** | Planned | Full source ladder integration into Q&A generation |
+| **004E-E** | Planned | Study material finalization per question |
+| **004E-F** | Planned | Final regression gate before Job Search |
+| **004F** | **Deferred** | Global Job Search Agent — after 004E-F |
 
-**Test result (latest):** `186 passed`
+Full specifications: [01_job_search_and_interview_pack.md § 004E-B–004E-F](../01_job_search_and_interview_pack.md#interview-pack--study-material-completion-track-004e-b004e-f)
+
+**004E-E study-material requirements:**
+
+- Per-question modules tied to the **Job Intelligence Profile** (company, responsibility, skill, tool context)
+- Core idea, definitions, principles, step-by-step method, beginner/intermediate/advanced, examples, mistakes, interview application
+- Saved material, model, and web/source insight where available — with transparent source/fallback status
+- No generic role-wide blocks; no fake citations; no `Role Specific` leaks
+
+**Do not run yet:** Final Content Library Regeneration or final cleanup unless explicitly instructed. Regeneration remains scheduled after interview pack, interview study material, roadmap generator, and roadmap study material completion.
+
+**Test result (latest):** `219 passed` (004E-A at `1fb45af5`)
+
+### 004F — Global Job Search (deferred)
+
+Requirements preserved in `01_job_search_and_interview_pack.md` § Iteration 004F. When 004F eventually starts, **Use this job** from search results should populate the Job Intelligence Profile — extending the 004E source ladder upstream. **Do not implement 004F until 004E-F gate passes.**
 
 ---
-
-Before final cleanup, after interview-pack and study-material corrections are complete (and again after roadmap study-material corrections), the system must regenerate all final downloadable content and persist it to project storage/database.
 
 ### Required outputs (interview study material scope)
 
@@ -556,12 +574,19 @@ See also: `project_review/05_cleanup_plan.md` (this phase runs **before** cleanu
 
 ## Next implementation notes
 
-**Next major phase:** Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder (**004E-A foundation implemented**; see `01_job_search_and_interview_pack.md`).
+**Active focus:** Complete Interview Pack + Study Material completion track (**004E-B → 004E-F**) before Job Search.
+
+> **004F Global Job Search Agent is intentionally deferred until Interview Pack Generator and Interview Study Material are fully completed.**
 
 - [x] `source/fallback status` on every module (004A metadata + export)
 - [x] Wire document-library retrieval to `documents/interview_packs/` (004B)
 - [x] Model-knowledge feature flag (004D) — disabled by default
 - [x] Random validation coverage floor for creative/trending roles (004D-S)
-- [ ] **004E:** Job Intelligence Profile + coverage audit + full source ladder for pack generation
-- [ ] **004E:** Per-question study material tied to extracted job profile items
-- [ ] **Final content library regeneration** (pre-cleanup gate — after 004E + roadmap corrections)
+- [x] **004E-A:** Job Intelligence Profile + coverage audit foundation (`1fb45af5`)
+- [ ] **004E-B:** Job posting link extraction for interview packs
+- [ ] **004E-C:** Company profile + source-cited web research
+- [ ] **004E-D:** Full source ladder integration into pack generation
+- [ ] **004E-E:** Per-question study material finalization (profile-connected)
+- [ ] **004E-F:** Final regression gate before Job Search
+- [ ] **004F:** Global Job Search Agent (**deferred**)
+- [ ] **Final content library regeneration** (pre-cleanup gate — **do not run unless explicitly instructed**)
