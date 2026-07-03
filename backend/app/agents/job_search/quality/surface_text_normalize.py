@@ -62,6 +62,13 @@ _JOINED_WORD_FIXES: tuple[tuple[str, str], ...] = (
         _joined_word_pattern(_joined_token("source", " ", "ladderis")),
         "source ladder is",
     ),
+    (r"\busingdocumented\b", "using documented"),
+    (r"\bdocumentedthe\b", "documented the"),
+    (r"\bassumptionsare\b", "assumptions are"),
+    (r"\bbeforeproceeding\b", "before proceeding"),
+    (r"\bproceduresand\b", "procedures and"),
+    (r"\bintermediatequality\b", "intermediate quality"),
+    (r"\bstructuredverification\b", "structured verification"),
 )
 
 _PLACEHOLDER_REPLACEMENTS: tuple[tuple[str, str], ...] = (

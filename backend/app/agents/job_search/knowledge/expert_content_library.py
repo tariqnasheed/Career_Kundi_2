@@ -649,24 +649,24 @@ def _profile_scaffold(profile: str, skill_t: str, role: str, duty: str) -> dict:
                 "ticket times stabilized and complaint rate decreased materially."
             ),
         }
-    # Domain-driven default
+    # Domain-driven default — avoid compiler-generic phrasing; synthesis layer may still refine.
     return {
         "standards": [],
         "steps": [
-            f"Clarify required outcome, constraints, and stakeholders for {duty.lower()}.",
-            f"Apply {skill_t} using documented procedures and intermediate quality checks.",
-            "Validate output against acceptance criteria and applicable standards.",
-            "Record decisions and handover notes for traceability.",
-            "Review result and improve process for next cycle.",
+            f"Confirm scope, safety constraints, and handoff owners for {duty.lower()}.",
+            f"Apply {skill_t} with role-specific checks appropriate to {role}.",
+            "Verify the result against applicable standards and recorded assumptions.",
+            "Record decisions, checks, and handover notes for traceability.",
+            "Review the outcome and tighten the method for the next cycle.",
         ],
         "facts": [
-            "Outcome quality improves when assumptions are explicit and testable.",
-            "Traceability prevents repeated failures in handoffs.",
-            "Risk controls must be integrated into normal workflow, not bolted on later.",
+            f"Clear scope and verification steps keep {skill_t} work predictable in {role} settings.",
+            "Handover notes and revision records keep teams aligned across shifts and trades.",
+            f"{skill_t} work must stay auditable so the next person can verify what was done.",
         ],
         "example": (
-            f"In {role}, I applied {skill_t} to stabilize {duty.lower()} under constraints, documented the control points, "
-            "and reduced rework through structured verification."
+            f"In {role}, I applied {skill_t} to improve {duty.lower()}, recorded the key checks, "
+            "and confirmed the outcome before handover."
         ),
     }
 

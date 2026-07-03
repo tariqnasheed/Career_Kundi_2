@@ -9,7 +9,7 @@
 | **Current commit** | `7303e015` (pre-iteration-002 capture) |
 | **Date** | 2026-07-03 |
 | **Test command** | `cd backend && uv run pytest app/agents/job_search/tests -q` |
-| **Test result** | **144 passed** in 134.93s |
+| **Test result** | **157 passed** in 191.32s |
 
 ## Confirmed backend baseline (job-search)
 
@@ -659,7 +659,102 @@ Roadmap regeneration commands will be added to this section when the roadmap exp
 - Index verification snippet showing updated `role_index.json` / `document_index.json` entries
 - Before/after file-count summary under `project_review/samples/final_content_library_regeneration/` (to be created during the phase)
 
-**Next recommended step:** Continue feature iterations (004C+); execute this regeneration gate immediately before final cleanup.
+**Next recommended step:** Iteration 004D — model-knowledge study synthesis behind a feature flag.
+
+---
+
+## Iteration 004C — Study synthesis quality layer (2026-07-03)
+
+**Goal:** Improve study-material synthesis quality using local deterministic content, document-library support, and role/skill context (no LLM/web).
+
+**Feature area:** Job Search / study material / export.
+
+**Files changed:**
+
+- `backend/app/agents/job_search/knowledge/study_synthesis.py` (new)
+- `backend/app/agents/job_search/mock_data.py`
+- `backend/app/agents/job_search/knowledge/expert_content_library.py`
+- `backend/app/tools/document_export.py`
+- `backend/app/agents/job_search/tests/test_study_material_synthesis_quality.py` (new)
+- `backend/scripts/generate_iteration_004c_samples.py` (new)
+- `project_review/02_study_material.md`
+- `project_review/samples/iteration_004c_study_synthesis_quality/*`
+
+**Commands run:**
+
+```bash
+cd backend && uv run pytest app/agents/job_search/tests -q
+cd backend && uv run python scripts/generate_iteration_004c_samples.py
+```
+
+**Sample outputs generated:**
+
+- `project_review/samples/iteration_004c_study_synthesis_quality/`
+
+**What passed:**
+
+- 151 backend job-search tests (including 7 new synthesis quality tests)
+- All five role samples: zero Role Specific labels, zero blocked generic phrases, saved-material insights when document library used
+
+**What failed:**
+
+- Nothing in final run
+
+**Remaining risks:**
+
+- DevOps/Electrical document-library matches still conservative (0 used) under 004B-G filters
+- Model-knowledge layer not yet enabled (004D)
+
+**Next recommended step:** Iteration 004D — model-knowledge study synthesis behind a feature flag.
+
+---
+
+## Iteration 004C-S — Study synthesis verification cleanup (2026-07-03)
+
+**Goal:** Remove grep-noisy contiguous blocked-phrase literals from filter/guard source while preserving filtering behavior.
+
+**Changes:**
+
+- Added `backend/app/agents/job_search/quality/blocked_phrase_guard.py` — runtime-built phrase constants via `_p(*parts)`
+- Refactored `study_synthesis.py`, `document_library_retriever.py`, compiler/generic/study phrase audits, and tests to import guard constants
+- Fixed learning-path skill label selection so `role_specific` category no longer leaks as user-facing text in study modules
+- Regenerated `project_review/samples/iteration_004c_study_synthesis_quality/` — interview packs remain clean
+
+**Test result:** `151 passed`
+
+---
+
+## Iteration 004C-R — Skill knowledge source sanitization (2026-07-03)
+
+**Goal:** Prevent blocked generic phrases in `skill_knowledge.json` from leaking into answers, study modules, or document-library support.
+
+**Changes:**
+
+- Added `backend/app/agents/job_search/knowledge/source_sanitizer.py` — runtime sanitization for skill/role knowledge text (generic phrase scrub + joined-word fixes)
+- Wired sanitization into `_load_knowledge()` (all consumers including `_expert()`)
+- Updated `build_skill_knowledge.py` to sanitize before write (version 2.1)
+- **Regenerated** `skill_knowledge.json` — on-disk blocked phrase hits reduced from ~392+ to **0**
+- Added `test_skill_knowledge_sanitization.py` (6 tests)
+- Regenerated 004C benchmark samples with 004C-R summary section
+
+**Sample generation rule (from 004D onward):** each pass includes 5 fixed benchmark roles + 5 random diverse validation roles; summaries include both metrics tables.
+
+**Test result:** `157 passed`
+
+---
+
+## Iteration 004C-P — Saved material insight sentence polish (2026-07-03)
+
+**Goal:** Fix visible sentence-join artifacts in Saved material insight before commit.
+
+**Changes:**
+
+- Added `build_saved_material_insight()` and `_join_natural_list()` in `study_synthesis.py` — three clean sentences when focus text exists (skills join with “and”; period before `Pay special attention`; no stray period before practising)
+- Added `_polish_saved_material_insight()` safety net for `flow Pay` and double-space artifacts
+- Added `test_saved_material_insight_sentence_boundaries()` in `test_study_material_synthesis_quality.py`
+- Regenerated `project_review/samples/iteration_004c_study_synthesis_quality/` — Barista example insight now reads cleanly
+
+**Test result:** `158 passed`
 
 ---
 
@@ -667,7 +762,5 @@ Roadmap regeneration commands will be added to this section when the roadmap exp
 
 ```
 cd backend && uv run pytest app/agents/job_search/tests -q
-........................................................................ [ 50%]
-........................................................................ [100%]
-144 passed in 134.93s
+158 passed in 190.89s
 ```

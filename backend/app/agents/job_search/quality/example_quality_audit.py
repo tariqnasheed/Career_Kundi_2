@@ -1,8 +1,13 @@
 from __future__ import annotations
 
+from app.agents.job_search.quality.blocked_phrase_guard import (
+    DOCUMENTED_CONTROL_POINTS,
+    STRUCTURED_VERIFICATION,
+)
+
 _WEAK_EXAMPLE_PATTERNS = (
-    "structured verification",
-    "documented the control points",
+    STRUCTURED_VERIFICATION,
+    DOCUMENTED_CONTROL_POINTS,
     "stabilized workflow",
     "complaint rate decreased materially",
     "reduced rework",

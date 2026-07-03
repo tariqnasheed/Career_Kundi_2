@@ -135,7 +135,10 @@ _ANSWER_PROMPT_BLUEPRINTS: dict[str, dict[str, str]] = {
 def _load_knowledge() -> dict[str, Any]:
     if not _KNOWLEDGE_PATH.is_file():
         return {"skills": {}, "roles": {}}
-    return json.loads(_KNOWLEDGE_PATH.read_text(encoding="utf-8"))
+    from app.agents.job_search.knowledge.source_sanitizer import sanitize_knowledge_payload
+
+    payload = json.loads(_KNOWLEDGE_PATH.read_text(encoding="utf-8"))
+    return sanitize_knowledge_payload(payload)
 
 
 def get_skill_knowledge(skill: str) -> dict[str, Any]:

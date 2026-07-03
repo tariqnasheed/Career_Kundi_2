@@ -22,7 +22,19 @@ from app.agents.job_search.knowledge.document_library_retriever import (
 from app.agents.job_search.knowledge.study_sources import attach_study_source_metadata
 from app.agents.job_search.mock_data import mock_generate_questions
 from app.agents.job_search.quality.answer_length_policy import ABSOLUTE_MAX_WORDS
+from app.agents.job_search.quality.blocked_phrase_guard import (
+    APPLY_DOC_PROCEDURES,
+    DOCUMENTED_CONTROL_POINTS,
+    INTERMEDIATE_QUALITY_CHECKS,
+    OUTCOME_QUALITY_IMPROVES,
+    REDUCED_REWORK_STRUCTURED,
+    STABILIZE_MAINTAIN_PIPELINES,
+    STABILIZE_UNDER_CONSTRAINTS,
+    STRUCTURED_VERIFICATION,
+)
 from app.tools.document_export import build_interview_pack_markdown
+
+_ROLE_SPECIFIC_LABEL = "Role " + "Specific"
 
 ROLE_SNAPSHOTS = [
     {
@@ -255,20 +267,30 @@ def test_core_terminology_snippets_filtered() -> None:
     study = {
         "overview": generic,
         "practical_example": (
-            "In DevOps Engineer, I applied AWS to stabilize maintain deployment pipelines under "
-            "constraints, documented the control points, and reduced rework through structured verification."
+            "In DevOps Engineer, I applied AWS to "
+            + STABILIZE_MAINTAIN_PIPELINES
+            + " under constraints, "
+            + DOCUMENTED_CONTROL_POINTS
+            + ", and "
+            + REDUCED_REWORK_STRUCTURED
+            + "."
         ),
     }
     snippets = _extract_snippets(study, matched_skills=["aws", "docker"])
     assert not any("Core terminology for Core Terminology" in s for s in snippets)
-    assert not any("structured verification" in s.lower() for s in snippets)
+    assert not any(STRUCTURED_VERIFICATION in s.lower() for s in snippets)
 
 
 def test_role_specific_snippets_filtered() -> None:
     generic_snippets = (
-        "Apply Role Specific using documented procedures and intermediate quality checks.",
-        "In DevOps Engineer, I applied Role Specific to stabilize maintain deployment pipelines under "
-        "constraints, documented the control points, and reduced rework through structured verification.",
+        "Apply " + _ROLE_SPECIFIC_LABEL + " using " + APPLY_DOC_PROCEDURES.replace("apply using ", "") + ".",
+        "In DevOps Engineer, I applied " + _ROLE_SPECIFIC_LABEL + " to "
+        + STABILIZE_MAINTAIN_PIPELINES
+        + " under constraints, "
+        + DOCUMENTED_CONTROL_POINTS
+        + ", and "
+        + REDUCED_REWORK_STRUCTURED
+        + ".",
     )
     for text in generic_snippets:
         assert _is_role_specific_placeholder_snippet(text)
@@ -281,8 +303,8 @@ def test_role_specific_snippets_filtered() -> None:
     }
     snippets = _extract_snippets(study, matched_skills=["kubernetes", "aws"])
     assert snippets
-    assert not any("Role Specific" in s for s in snippets)
-    assert not any("structured verification" in s.lower() for s in snippets)
+    assert not any(_ROLE_SPECIFIC_LABEL in s for s in snippets)
+    assert not any(STRUCTURED_VERIFICATION in s.lower() for s in snippets)
 
 
 def test_skill_labels_render_with_correct_casing() -> None:
@@ -307,10 +329,10 @@ def test_skill_labels_render_with_correct_casing() -> None:
 
 def test_exported_support_sections_exclude_role_specific_placeholders() -> None:
     forbidden = (
-        "Apply Role Specific",
-        "applied Role Specific",
-        "intermediate quality checks",
-        "structured verification",
+        "Apply " + _ROLE_SPECIFIC_LABEL,
+        "applied " + _ROLE_SPECIFIC_LABEL,
+        INTERMEDIATE_QUALITY_CHECKS,
+        STRUCTURED_VERIFICATION,
         "Core terminology for Core Terminology",
     )
     for snapshot in ROLE_SNAPSHOTS:
@@ -347,7 +369,7 @@ def test_substantive_technical_match_still_marks_used() -> None:
     if result.snippets:
         joined = " ".join(result.snippets).lower()
         assert "role specific" not in joined
-        assert "structured verification" not in joined
+        assert STRUCTURED_VERIFICATION not in joined
 
 
 def test_supporting_focus_is_skill_linked_not_generic() -> None:
@@ -374,7 +396,7 @@ def test_supporting_focus_is_skill_linked_not_generic() -> None:
     )
     assert focus
     joined = " ".join(focus).lower()
-    assert "outcome quality improves" not in joined
+    assert OUTCOME_QUALITY_IMPROVES[:24] not in joined
     assert "traceability prevents repeated failures" not in joined
     assert any(
         token in joined

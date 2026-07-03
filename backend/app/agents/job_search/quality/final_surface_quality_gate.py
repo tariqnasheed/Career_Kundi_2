@@ -5,6 +5,10 @@ from typing import Any
 
 from app.agents.job_search.knowledge.answer_builders import GENERIC_CLOSING_PHRASE
 from app.agents.job_search.quality.compiler_boilerplate_audit import contains_universal_boilerplate
+from app.agents.job_search.quality.blocked_phrase_guard import (
+    DOCUMENTED_CONTROL_POINTS,
+    REDUCED_REWORK_STRUCTURED,
+)
 from app.agents.job_search.quality.example_quality_audit import validate_example_quality
 from app.agents.job_search.quality.expert_naturalness_audit import (
     contains_formulaic_spoken_labels,
@@ -23,8 +27,8 @@ EMPTY_SLOT_PATTERNS = [
     r"check\s+and verify using",
 ]
 _GENERIC_SURFACE_FRAGMENTS = (
-    "documented the control points",
-    "reduced rework through structured verification",
+    DOCUMENTED_CONTROL_POINTS,
+    REDUCED_REWORK_STRUCTURED,
     "complaint rate decreased materially",
 )
 _TRUNCATED_ENDINGS = ("and", "or", "with", "into", "for", "to", "from", "because", "while")

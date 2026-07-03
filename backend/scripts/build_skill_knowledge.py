@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT))
 from app.agents.job_search.knowledge.domains import classify_skill_domain, get_domain_foundation
 from app.agents.job_search.knowledge.expert_content_library import resolve_expert_content
 from app.agents.job_search.knowledge.normalize import normalize_key, title_case_skill
+from app.agents.job_search.knowledge.source_sanitizer import sanitize_knowledge_payload
 
 CATALOG = json.loads((ROOT / "app/data/popular_roles_catalog.json").read_text())
 OUT = ROOT / "app/agents/job_search/knowledge/skill_knowledge.json"
@@ -536,7 +537,7 @@ def main() -> None:
             "skill_expert": skill_experts,
         }
 
-    payload = {"skills": skill_data, "roles": role_data, "version": "2.0"}
+    payload = sanitize_knowledge_payload({"skills": skill_data, "roles": role_data, "version": "2.1"})
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Wrote {len(skill_data)} skills and {len(role_data)} roles to {OUT}")

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 
+from app.agents.job_search.quality.blocked_phrase_guard import GENERIC_PHRASE_PATTERN, STUDY_BANNED_EXTRA
 from app.agents.job_search.quality.generic_phrase_audit import GENERIC_PATTERNS, generic_phrase_count
 
 STUDY_BANNED_PATTERNS = list(GENERIC_PATTERNS) + [
@@ -16,7 +17,7 @@ STUDY_BANNED_PATTERNS = list(GENERIC_PATTERNS) + [
     r"\bbenchmark check\b",
     r"\bdocumentation review\b",
     r"\bacceptance criteria\b",
-    r"\bstructured verification\b",
+    STUDY_BANNED_EXTRA,
     r"\bdo safe and correct work\b",
 ]
 

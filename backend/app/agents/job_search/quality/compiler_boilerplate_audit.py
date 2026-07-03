@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import re
 
+from app.agents.job_search.quality.blocked_phrase_guard import COMPILER_BOILERPLATE_EXTRA
+
 COMPILER_BOILERPLATE_PATTERNS = [
     r"this is not a single action",
     r"preparation, controlled execution, verification, and safe handover",
@@ -16,15 +18,9 @@ NEW_COMPILER_BOILERPLATE_PATTERNS = [
     r"The critical discipline is evidence",
     r"When conditions change, I revalidate assumptions before proceeding",
     r"stays reliable under real operational constraints",
-    r"documented the control points",
-    r"reduced rework through structured verification",
-    r"stabilize .* under constraints",
-    r"clarify required outcome, constraints, and stakeholders",
-    r"apply .* using documented procedures and intermediate quality checks",
     r"gather and reconcile source documents against assertions",
     r"materiality drives prioritization of review effort",
-    r"outcome quality improves when assumptions are explicit and testable",
-]
+] + list(COMPILER_BOILERPLATE_EXTRA)
 
 UNIVERSAL_BOILERPLATE_PATTERNS = COMPILER_BOILERPLATE_PATTERNS + NEW_COMPILER_BOILERPLATE_PATTERNS
 

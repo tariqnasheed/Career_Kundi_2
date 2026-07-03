@@ -9,6 +9,11 @@ from pathlib import Path
 from typing import Any, Literal
 
 from app.agents.job_search.knowledge.normalize import title_case_skill
+from app.agents.job_search.quality.blocked_phrase_guard import (
+    GENERIC_SNIPPET_PHRASES,
+    INTERMEDIATE_QUALITY_CHECKS,
+    STRUCTURED_VERIFICATION,
+)
 from app.agents.job_search.quality.surface_text_normalize import normalize_surface_text, truncate_at_word
 from app.core.config import settings
 from app.services.role_pack_library import find_role_pack, normalize_role_slug
@@ -43,24 +48,6 @@ _STOPWORDS = frozenset(
         "when", "where", "which", "while", "with", "would", "your", "tell", "give",
         "want", "why", "you", "the", "for", "this", "does", "work", "day", "one",
     }
-)
-
-_GENERIC_SNIPPET_PHRASES = (
-    "outcome quality improves when assumptions are explicit and testable",
-    "traceability prevents repeated failures in handoffs",
-    "risk controls must be integrated into normal workflow",
-    "body of knowledge, tools, standards, and verified procedures",
-    "clarify required outcome, constraints, and stakeholders",
-    "apply using documented procedures and intermediate quality checks",
-    "precise definitions required for",
-    "core terminology for core terminology",
-    "how work is executed to standard in",
-    "apply role specific",
-    "applied role specific",
-    "role specific using documented procedures",
-    "intermediate quality checks",
-    "structured verification",
-    "reduced rework through structured verification",
 )
 
 _ROLE_SPECIFIC_PLACEHOLDER_RE = re.compile(r"\brole specific\b", re.I)
@@ -262,7 +249,7 @@ def _is_generic_phrase(text: str, *, min_len: int | None = None) -> bool:
         return True
     if lowered in _GENERIC_SKILLS:
         return True
-    for phrase in _GENERIC_SNIPPET_PHRASES:
+    for phrase in GENERIC_SNIPPET_PHRASES:
         if phrase in lowered:
             return True
     return False
@@ -358,7 +345,7 @@ def _snippet_quality_score(snippets: list[str]) -> int:
             score -= 25
         if _is_core_terminology_snippet(snippet):
             score -= 20
-        if "intermediate quality checks" in lowered or "structured verification" in lowered:
+        if INTERMEDIATE_QUALITY_CHECKS in lowered or STRUCTURED_VERIFICATION in lowered:
             score -= 12
     return score
 

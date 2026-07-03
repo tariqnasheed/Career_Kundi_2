@@ -1,0 +1,67 @@
+[
+  {
+    "role": "Data Analyst",
+    "questions": 33,
+    "study_material_present": 33,
+    "source_status_present": 33,
+    "role_specific_labels_found": 0,
+    "generic_phrase_hits": 0,
+    "saved_material_insights": 0,
+    "document_library_used": 0,
+    "saved_insight_when_doc_used": 0,
+    "answers_over_500": 0,
+    "source_library_blocked_hits": 0
+  },
+  {
+    "role": "Electrical Engineer",
+    "questions": 36,
+    "study_material_present": 36,
+    "source_status_present": 36,
+    "role_specific_labels_found": 0,
+    "generic_phrase_hits": 0,
+    "saved_material_insights": 0,
+    "document_library_used": 0,
+    "saved_insight_when_doc_used": 0,
+    "answers_over_500": 0,
+    "source_library_blocked_hits": 0
+  },
+  {
+    "role": "Clinical Pharmacist",
+    "questions": 36,
+    "study_material_present": 36,
+    "source_status_present": 36,
+    "role_specific_labels_found": 0,
+    "generic_phrase_hits": 0,
+    "saved_material_insights": 26,
+    "document_library_used": 26,
+    "saved_insight_when_doc_used": 26,
+    "answers_over_500": 0,
+    "source_library_blocked_hits": 0
+  },
+  {
+    "role": "Barista",
+    "questions": 32,
+    "study_material_present": 32,
+    "source_status_present": 32,
+    "role_specific_labels_found": 0,
+    "generic_phrase_hits": 0,
+    "saved_material_insights": 23,
+    "document_library_used": 23,
+    "saved_insight_when_doc_used": 23,
+    "answers_over_500": 0,
+    "source_library_blocked_hits": 0
+  },
+  {
+    "role": "DevOps Engineer",
+    "questions": 36,
+    "study_material_present": 36,
+    "source_status_present": 36,
+    "role_specific_labels_found": 0,
+    "generic_phrase_hits": 0,
+    "saved_material_insights": 0,
+    "document_library_used": 0,
+    "saved_insight_when_doc_used": 0,
+    "answers_over_500": 0,
+    "source_library_blocked_hits": 0
+  }
+]

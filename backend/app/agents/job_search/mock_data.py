@@ -168,6 +168,10 @@ from app.agents.job_search.quality.surface_text_normalize import (
     normalize_surface_text,
 )
 from app.agents.job_search.knowledge.study_sources import attach_study_source_metadata
+from app.agents.job_search.knowledge.study_synthesis import (
+    build_user_facing_related_skills,
+    synthesize_study_module,
+)
 from app.agents.job_search.knowledge.content_engine import (
     build_answer_explanation,
     build_model_answer,
@@ -416,6 +420,8 @@ def _enforce_cross_role_uniqueness(enriched: dict, job: dict) -> None:
 
 def _boost_specificity(enriched: dict, job: dict) -> None:
     """Ensure answer/study mention role-specific technical anchors."""
+    if enriched.get("export_blocked"):
+        return
     if enriched.get("category") in ("hr", "daily_routine", "behavioral"):
         return
     if enriched.get("question_type") in {
@@ -466,17 +472,7 @@ def _answer_explanation(q: dict, job: dict) -> str:
 
 
 def _related_skills_for(q: dict, job: dict) -> list[str]:
-    skills: list[str] = []
-    if q.get("skill_tag"):
-        skills.append(q["skill_tag"])
-    for s in job.get("extracted_skills", [])[:3]:
-        name = s.get("skill") if isinstance(s, dict) else s
-        if name and name not in skills:
-            skills.append(name)
-    cat = q.get("category", "")
-    if cat and cat not in skills:
-        skills.append(cat.replace("_", " ").title())
-    return skills
+    return build_user_facing_related_skills(q, job)
 
 
 def _role_baseline_questions(job: dict) -> list[dict]:
@@ -567,13 +563,13 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
     enriched.setdefault("answer_explanation", _answer_explanation(enriched, job))
     enriched.setdefault("study_material", _study_material_for_question(enriched, job))
     # Upgrade thin or generic LLM content from live path
-    if is_generic_content(enriched.get("model_answer", "")):
+    if is_generic_content(enriched.get("model_answer", "")) and not enriched.get("export_blocked"):
         enriched["model_answer"] = build_model_answer(enriched, job)
     if not compiler_only:
         enriched["model_answer"] = polish_spoken_answer(enriched.get("model_answer", ""), enriched, job)
     # Force at least one role anchor in technical answers.
     role_anchor = (job.get("title") or "").lower()
-    if role_anchor and enriched.get("category") in ("technical", "role_specific"):
+    if role_anchor and enriched.get("category") in ("technical", "role_specific") and not enriched.get("export_blocked"):
         if role_anchor not in enriched.get("model_answer", "").lower():
             enriched["model_answer"] = build_model_answer(enriched, job)
     study = enriched.get("study_material") or {}
@@ -673,6 +669,7 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
     if enriched.get("study_material"):
         enriched["study_material"] = normalize_study_material_dict(enriched["study_material"])
     attach_study_source_metadata(enriched, job)
+    synthesize_study_module(enriched, job)
     return enriched
 
 

@@ -16,6 +16,11 @@ from app.agents.job_search.quality.compiler_boilerplate_audit import universal_b
 from app.agents.job_search.quality.domain_contamination_audit import domain_contamination_count
 from app.agents.job_search.quality.domain_density_audit import domain_density_breakdown
 from app.agents.job_search.quality.expert_naturalness_audit import expert_naturalness_score
+from app.agents.job_search.quality.blocked_phrase_guard import (
+    CLARIFY_OUTCOME,
+    DOCUMENTED_CONTROL_POINTS,
+    STRUCTURED_VERIFICATION,
+)
 from app.agents.job_search.quality.final_surface_quality_gate import validate_final_surface
 
 DOMAIN_DENSITY_MIN = 45.0
@@ -88,9 +93,9 @@ _BOILERPLATE_PATTERNS = [
     r"The critical discipline is evidence",
     r"When conditions change",
     r"stays reliable under real operational constraints",
-    r"documented the control points",
-    r"structured verification",
-    r"clarify required outcome, constraints, and stakeholders",
+    re.escape(DOCUMENTED_CONTROL_POINTS),
+    re.escape(STRUCTURED_VERIFICATION),
+    re.escape(CLARIFY_OUTCOME),
     r"apply .* using documented procedures",
 ]
 

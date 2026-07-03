@@ -4,7 +4,7 @@
     "role_family": "healthcare",
     "skill": "Pharmacology",
     "must_contain": ["contraindications", "dose", "monitor clinical response", "SBAR"],
-    "must_not_contain": ["conductor", "RCD", "consumer unit", "structured verification"]
+    "must_not_contain": ["conductor", "RCD", "consumer unit", "structured\u0020verification"]
   },
   {
     "role": "Architect",
@@ -39,35 +39,35 @@
     "role_family": "legal",
     "skill": "Legal Research",
     "must_contain": ["case law", "statute", "precedent", "client advice"],
-    "must_not_contain": ["critical discipline is evidence", "structured verification", "RCD", "milk texture"]
+    "must_not_contain": ["critical discipline is evidence", "structured\u0020verification", "RCD", "milk texture"]
   },
   {
     "role": "DevOps Engineer",
     "role_family": "technology",
     "skill": "AWS",
     "must_contain": ["IAM", "CloudWatch", "deployment pipeline", "rollback"],
-    "must_not_contain": ["structured verification", "case record trail", "contraindications", "milk texture"]
+    "must_not_contain": ["structured\u0020verification", "case record trail", "contraindications", "milk texture"]
   },
   {
     "role": "Laboratory Scientist",
     "role_family": "science_laboratory",
     "skill": "Lab Techniques",
     "must_contain": ["SOP", "sample integrity", "calibration", "contamination control"],
-    "must_not_contain": ["RCBO", "planning drawings", "case record trail", "structured verification"]
+    "must_not_contain": ["RCBO", "planning drawings", "case record trail", "structured\u0020verification"]
   },
   {
     "role": "University Lecturer",
     "role_family": "education",
     "skill": "Research",
     "must_contain": ["learning outcomes", "formative assessment", "research methods", "academic integrity"],
-    "must_not_contain": ["structured verification", "RCD", "allergen controls", "consumer unit"]
+    "must_not_contain": ["structured\u0020verification", "RCD", "allergen controls", "consumer unit"]
   },
   {
     "role": "Operations Manager",
     "role_family": "operations",
     "skill": "Process Improvement",
     "must_contain": ["KPI", "bottleneck", "root cause", "standard operating procedure"],
-    "must_not_contain": ["structured verification", "contraindications", "RCD", "milk texture"]
+    "must_not_contain": ["structured\u0020verification", "contraindications", "RCD", "milk texture"]
   },
   {
     "role": "Data Analyst",

@@ -470,15 +470,17 @@ def _study_material_md_sections(study: dict) -> list[str]:
     lines.append("### Study material")
     lines.append("")
 
+    if study.get("technical_skills_covered"):
+        lines.append(
+            "**Technical skills covered:** " + ", ".join(str(s) for s in study["technical_skills_covered"])
+        )
+        lines.append("")
+
     core_parts: list[str] = []
     if study.get("what_this_question_tests"):
         core_parts.append(study["what_this_question_tests"])
     if study.get("overview"):
         core_parts.append(study["overview"])
-    if study.get("beginner_explanation"):
-        core_parts.append(study["beginner_explanation"])
-    if study.get("intermediate_explanation"):
-        core_parts.append(study["intermediate_explanation"])
     if study.get("definitions"):
         for definition in study["definitions"]:
             core_parts.append(
@@ -494,6 +496,16 @@ def _study_material_md_sections(study: dict) -> list[str]:
         lines.append("**Core idea:**")
         lines.extend(core_parts)
         lines.append("")
+
+    for level_key, level_label in (
+        ("beginner_explanation", "Beginner"),
+        ("intermediate_explanation", "Intermediate"),
+        ("advanced_explanation", "Advanced"),
+    ):
+        if study.get(level_key):
+            lines.append(f"**{level_label} level:**")
+            lines.append(study[level_key])
+            lines.append("")
 
     apply_lines: list[str] = []
     if study.get("step_by_step_method"):
@@ -565,6 +577,12 @@ def _study_material_md_sections(study: dict) -> list[str]:
 
     if study.get("related_concepts"):
         lines.append("**Related concepts to study next:** " + ", ".join(study["related_concepts"]))
+        lines.append("")
+
+    if study.get("saved_material_insight"):
+        lines.append("### Saved material insight")
+        lines.append("")
+        lines.append(study["saved_material_insight"])
         lines.append("")
 
     doc_support = study.get("document_library_support") or {}
