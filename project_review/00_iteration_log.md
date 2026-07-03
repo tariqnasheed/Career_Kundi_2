@@ -90,8 +90,8 @@ This applies especially when implementing complex features such as:
    - **004E-B** — Job posting link extraction (**implemented**)
    - **004E-C** — Company profile and source-cited web research (**implemented**)
    - **004E-D** — Full interview pack source ladder integration (**implemented**)
-   - **004E-E** — Study material finalization for interview packs (next)
-   - **004E-F** — Final interview pack and study material regression gate
+   - **004E-E** — Study material finalization for interview packs (**implemented**)
+   - **004E-F** — Final interview pack and study material regression gate (next)
 7. **Job Search / Role Selection** (**DEFERRED** — after 004E-F; do not interrupt Interview Pack + Study Material completion):
    - **Comprehensive Role Catalog Dropdown** — searchable grouped catalog, custom role, optional autofill (`role_catalog_autofill` source tier)
    - **004F — Global Job Search Agent and Location-Aware Search Page**
@@ -1072,7 +1072,25 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 - Tests: `test_interview_pack_source_ladder.py`, `test_interview_pack_full_coverage.py`
 - Samples: `project_review/samples/iteration_004e_d_source_ladder_integration/`
 
-**Not implemented:** 004F global job search (deferred). **Next:** 004E-E.
+**Not implemented:** 004F global job search (deferred). **Next:** 004E-F.
+
+---
+
+## Iteration 004E-E — Study Material Finalization for Interview Packs (2026-07-03)
+
+**Status:** Implemented.
+
+**Goal:** Finalize dedicated per-question study modules connected to exact questions, answers, and 004E-D source-ladder metadata.
+
+**Changes:**
+
+- Added `knowledge/question_study_material.py`
+- Integrated in `mock_data._finalize_question` pipeline
+- Extended schemas, export, minimal frontend study source display
+- Tests: `test_interview_pack_study_material_finalization.py`, `test_question_specific_study_material.py`
+- Samples: `project_review/samples/iteration_004e_e_study_material_finalization/`
+
+**Not implemented:** 004F global job search (deferred). Final Content Library Regeneration not run. **Next:** 004E-F.
 
 ---
 
@@ -1080,5 +1098,5 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 ```
 cd backend && uv run pytest app/agents/job_search/tests -q
-287 passed
+302 passed
 ```

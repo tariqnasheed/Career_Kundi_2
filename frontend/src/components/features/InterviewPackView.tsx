@@ -95,9 +95,21 @@ function StudyMaterialPanel({ material }: { material: InterviewStudyMaterial }) 
   );
   return (
     <div className="interview-study-panel">
-      {material.overview && (
+      {material.what_this_question_tests && (
+        <p style={{ fontSize: "0.78rem", lineHeight: 1.55, color: "var(--text-secondary)", marginBottom: "0.5rem" }}>
+          <strong>What this tests:</strong> {material.what_this_question_tests}
+        </p>
+      )}
+      {material.source_status && Object.keys(material.source_status).length > 0 && (
+        <p style={{ fontSize: "0.72rem", color: "var(--text-muted)", marginBottom: "0.5rem" }}>
+          Study sources — user: {material.source_status.user_fields ?? "—"}; URL: {material.source_status.link_extraction ?? "—"};
+          company: {material.source_status.company_research ?? "—"}; model: {material.source_status.model_knowledge ?? "—"};
+          library: {material.source_status.document_library ?? "—"}; fallback: {material.source_status.local_fallback ?? "—"}
+        </p>
+      )}
+      {(material.core_idea || material.overview) && (
         <p style={{ fontSize: "0.82rem", lineHeight: 1.65, color: "var(--text-primary)", marginBottom: "0.75rem" }}>
-          {material.overview}
+          {material.core_idea || material.overview}
         </p>
       )}
       {material.what_you_need_to_know_first && material.what_you_need_to_know_first.length > 0 && section("first", (

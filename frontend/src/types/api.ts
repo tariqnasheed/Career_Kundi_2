@@ -197,6 +197,29 @@ export interface InterviewStudyMaterial {
   revision_notes?: string[];
   related_concepts?: string[];
   estimated_reading_time_minutes?: number | null;
+  question_id?: string | null;
+  question_text?: string | null;
+  answer_summary?: string | null;
+  source_items_used?: string[];
+  source_types_used?: string[];
+  source_priority_used?: string[];
+  core_idea?: string | null;
+  what_this_question_tests?: string | null;
+  technical_or_workflow_skills_covered?: string[];
+  key_definitions?: { term: string; definition: string }[];
+  key_principles?: string[];
+  step_by_step_method?: string[];
+  beginner_explanation?: string | null;
+  intermediate_explanation?: string | null;
+  advanced_explanation?: string | null;
+  interview_application?: string | null;
+  likely_follow_ups?: string[];
+  saved_material_insight?: string | null;
+  document_library_insight?: string | null;
+  model_insight?: string | null;
+  web_or_company_source_insight?: string | null;
+  source_status?: Record<string, string>;
+  fallback_status?: string | null;
 }
 
 export interface RoleOverview {

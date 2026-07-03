@@ -579,6 +579,26 @@ def _study_material_md_sections(study: dict) -> list[str]:
         lines.append("**Related concepts to study next:** " + ", ".join(study["related_concepts"]))
         lines.append("")
 
+    if study.get("interview_application"):
+        lines.append("**Interview application:**")
+        lines.append(study["interview_application"])
+        lines.append("")
+
+    if study.get("web_or_company_source_insight"):
+        lines.append("**Company / captured source insight:**")
+        lines.append(study["web_or_company_source_insight"])
+        lines.append("")
+
+    if study.get("document_library_insight") and not study.get("saved_material_insight"):
+        lines.append("**Document-library insight:**")
+        lines.append(study["document_library_insight"])
+        lines.append("")
+
+    if study.get("model_insight") and not study.get("model_knowledge_insight"):
+        lines.append("**Model knowledge:**")
+        lines.append(study["model_insight"])
+        lines.append("")
+
     if study.get("saved_material_insight"):
         lines.append("### Saved material insight")
         lines.append("")

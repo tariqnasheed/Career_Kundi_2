@@ -211,6 +211,7 @@ from app.agents.job_search.knowledge.source_ladder import (
     build_source_ladder_questions,
     refresh_source_ladder_usage_from_questions,
 )
+from app.agents.job_search.knowledge.question_study_material import apply_finalized_study_module
 from app.agents.job_search.quality.silly_question_guard import is_silly_or_vague_question
 from app.agents.job_search.quality.broken_template_audit import broken_template_count
 from app.agents.job_search.quality.compiler_boilerplate_audit import (
@@ -720,6 +721,7 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
     attach_study_source_metadata(enriched, job)
     synthesize_study_module(enriched, job)
     annotate_question_source_metadata(enriched, job)
+    apply_finalized_study_module(enriched, job)
     return enriched
 
 

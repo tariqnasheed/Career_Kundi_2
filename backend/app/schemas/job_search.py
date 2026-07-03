@@ -348,6 +348,30 @@ class InterviewStudyMaterial(BaseModel):
     revision_notes: list[str] = Field(default_factory=list)
     related_concepts: list[str] = Field(default_factory=list)
     estimated_reading_time_minutes: int | None = None
+    # 004E-E finalized per-question module metadata (additive)
+    question_id: str | None = None
+    question_text: str | None = None
+    answer_summary: str | None = None
+    source_items_used: list[str] = Field(default_factory=list)
+    source_types_used: list[str] = Field(default_factory=list)
+    source_priority_used: list[str] = Field(default_factory=list)
+    core_idea: str | None = None
+    what_this_question_tests: str | None = None
+    technical_or_workflow_skills_covered: list[str] = Field(default_factory=list)
+    key_definitions: list[dict[str, str]] = Field(default_factory=list)
+    key_principles: list[str] = Field(default_factory=list)
+    step_by_step_method: list[str] = Field(default_factory=list)
+    beginner_explanation: str | None = None
+    intermediate_explanation: str | None = None
+    advanced_explanation: str | None = None
+    interview_application: str | None = None
+    likely_follow_ups: list[str] = Field(default_factory=list)
+    saved_material_insight: str | None = None
+    document_library_insight: str | None = None
+    model_insight: str | None = None
+    web_or_company_source_insight: str | None = None
+    source_status: dict[str, str] = Field(default_factory=dict)
+    fallback_status: str | None = None
 
 
 class StudySourceEntry(BaseModel):

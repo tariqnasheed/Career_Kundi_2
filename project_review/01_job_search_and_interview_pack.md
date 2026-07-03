@@ -300,7 +300,7 @@ Samples: [iteration_004b_summary.md](../samples/iteration_004b_document_library_
 1. **004E-B** — Job posting link extraction for interview packs (**implemented**)
 2. **004E-C** — Company profile + source-cited web research for interview packs (**implemented**)
 3. **004E-D** — Full interview pack source ladder integration (**implemented**)
-4. **004E-E** — Study material finalization for interview packs
+4. **004E-E** — Study material finalization for interview packs (**implemented**)
 5. **004E-F** — Final regression gate (samples + metrics)
 6. **Then** — **Job Search / Role Selection improvements** (deferred — after 004E-F):
    - **Comprehensive Role Catalog Dropdown** — searchable grouped catalog + optional autofill (see [§ Future Feature — Comprehensive Role Catalog Dropdown](#future-feature--comprehensive-role-catalog-dropdown-deferred))
@@ -701,26 +701,47 @@ User-edited values always override catalog autofill. Autofill must be marked as 
 
 ---
 
-### 004E-E — Study Material Finalization for Interview Packs
+### 004E-E — Study Material Finalization for Interview Packs (IMPLEMENTED)
+
+**Status:** Implemented (2026-07-03). **Next active phase:** 004E-F.
 
 **Goal:** Ensure every generated interview question has dedicated study material directly connected to that exact question and answer.
 
-**Each question's study module must include:**
+**Implementation:**
 
-- core idea; technical/workflow skills covered; key definitions; principles
-- step-by-step method
-- beginner, intermediate, and advanced explanations
-- practical example; common mistakes; interview application
-- saved material insight where available; model insight where enabled; web/source insight where available
-- source/fallback status
+- Added `knowledge/question_study_material.py` — per-question module finalization with source-ladder trace metadata
+- Integrated in `mock_data._finalize_question` after `synthesize_study_module` and source annotation
+- Extended `InterviewStudyMaterial` schema and `api.ts` with 004E-E module fields
+- Export: `document_export.py` renders interview application, company/document/model insights
+- Minimal study source status in `InterviewPackView` study panel
+- Tests: `test_interview_pack_study_material_finalization.py`, `test_question_specific_study_material.py`
+- Samples: `project_review/samples/iteration_004e_e_study_material_finalization/`
+
+**004E-E risk controls:**
+
+1. **Generic study material** — each question gets its own module; `what_this_question_tests` includes question hook text.
+2. **Q&A mismatch** — modules carry `question_text`, `answer_summary`, and source items from the generating question.
+3. **Source mismatch** — `source_items_used`, `source_types_used`, `source_priority_used`, `source_status` mirror 004E-D metadata.
+4. **Fake citations** — company/document insights use captured 004E-B/C metadata only; no new URLs.
+5. **Over-scope** — no 004F, role catalog, or content-library regeneration.
+6. **Model/API** — model knowledge disabled by default; deterministic tests only.
+7. **Network** — no new HTTP clients; reuses existing extraction/research metadata.
+8. **Schema drift** — backend schema and `api.ts` aligned.
+9. **Regression** — blocked-phrase, internal-label, and empty-section guards in samples/tests.
+
+**Each question's study module includes:**
+
+- `question_id`, `question_text`, `answer_summary`, source ladder fields
+- `core_idea`, `what_this_question_tests`, skills/definitions/principles, step-by-step method
+- beginner/intermediate/advanced explanations, `interview_application`, `likely_follow_ups`
+- `saved_material_insight`, `document_library_insight`, `model_insight`, `web_or_company_source_insight` where available
+- `source_status`, `fallback_status`
 
 **Rules:**
 
 - No generic study notes disconnected from the question
 - No one-size-fits-all study material for the whole role
 - No fake citations; no vague filler; no user-facing internal labels like `Role Specific`
-
-**Planned touchpoints:** study synthesis layer (`study_sources.py`, model-knowledge flag path), per-question export in `document_export.py`, coverage audit study-material checks
 
 **Study-material detail:** `project_review/02_study_material.md` § 004E-E.
 

@@ -503,7 +503,7 @@ Samples: `project_review/samples/iteration_004c_study_synthesis_quality/`
 | **004E-B** | Done | Job posting link extraction (JSON-LD + HTML fallback) |
 | **004E-C** | Done | Company profile + source-cited web research (Organization JSON-LD + HTML fallback) |
 | **004E-D** | Done | Full source ladder integration into Q&A generation |
-| **004E-E** | Planned | Study material finalization per question |
+| **004E-E** | Done | Per-question study material finalization with source-ladder metadata |
 | **004E-F** | Planned | Final regression gate before Job Search |
 | **Role catalog** | **Deferred** | Searchable grouped role catalog + optional autofill — after 004E-F |
 | **004F** | **Deferred** | Global Job Search Agent — after 004E-F |
@@ -517,9 +517,15 @@ Full specifications: [01_job_search_and_interview_pack.md § 004E-B–004E-F](..
 - Saved material, model, and web/source insight where available — with transparent source/fallback status
 - No generic role-wide blocks; no fake citations; no `Role Specific` leaks
 
+### 004E-E — Study Material Finalization (IMPLEMENTED)
+
+**Status:** Implemented (2026-07-03). Samples: `project_review/samples/iteration_004e_e_study_material_finalization/`.
+
+**Risk controls:** per-question modules only; source-ladder metadata from 004E-D; no invented URLs; model disabled by default; no new network fetching; Final Content Library Regeneration not run.
+
 **Do not run yet:** Final Content Library Regeneration or final cleanup unless explicitly instructed. Regeneration remains scheduled after interview pack, interview study material, roadmap generator, and roadmap study material completion.
 
-**Test result (latest):** `219 passed` (004E-A at `1fb45af5`)
+**Test result (latest):** `302 passed` (after 004E-E)
 
 ### 004F — Global Job Search (deferred)
 
@@ -599,7 +605,7 @@ See also: `project_review/05_cleanup_plan.md` (this phase runs **before** cleanu
 - [x] **004E-B:** Job posting link extraction for interview packs
 - [x] **004E-C:** Company profile + source-cited web research
 - [x] **004E-D:** Full source ladder integration into pack generation
-- [ ] **004E-E:** Per-question study material finalization (profile-connected)
+- [x] **004E-E:** Per-question study material finalization (profile-connected)
 - [ ] **004E-F:** Final regression gate before Job Search
 - [ ] **Role catalog:** Comprehensive searchable dropdown + optional autofill (**deferred** — after 004E-F)
 - [ ] **004F:** Global Job Search Agent (**deferred**)
