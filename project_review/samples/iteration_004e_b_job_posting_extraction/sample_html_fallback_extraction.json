@@ -1,0 +1,143 @@
+{
+  "extraction": {
+    "source_url": "https://example.com/jobs/barista",
+    "final_url": "https://example.com/jobs/barista",
+    "title": null,
+    "company_name": null,
+    "company_profile": null,
+    "description": null,
+    "responsibilities": [
+      "Prepare espresso drinks",
+      "Maintain cleanliness standards"
+    ],
+    "requirements": [
+      "Customer service experience",
+      "Food safety awareness"
+    ],
+    "preferred_qualifications": [
+      "Latte art experience"
+    ],
+    "tools": [
+      "POS systems"
+    ],
+    "skills": [],
+    "location": null,
+    "seniority": null,
+    "employment_type": null,
+    "date_posted": null,
+    "valid_through": null,
+    "salary_text": null,
+    "extraction_confidence": "medium",
+    "extraction_methods": [
+      "html_sections"
+    ],
+    "warnings": [
+      "No Schema.org JobPosting JSON-LD was found; used readable page text fallback.",
+      "Only partial job details were extracted. Paste the full job description for stronger results."
+    ],
+    "source_status": {
+      "job_posting_url": "used",
+      "json_ld": "available_not_used",
+      "meta_tags": "available_not_used",
+      "html_text": "used",
+      "manual_fields": "merged"
+    }
+  },
+  "merged_job": {
+    "title": "Barista",
+    "source_url": "https://example.com/jobs/barista",
+    "responsibilities": [
+      "Prepare espresso drinks",
+      "Maintain cleanliness standards"
+    ],
+    "requirements": [
+      "Customer service experience",
+      "Food safety awareness",
+      "Latte art experience"
+    ],
+    "extracted_skills": [
+      {
+        "skill": "POS systems",
+        "importance": "high",
+        "category": "tool"
+      }
+    ],
+    "company_profile": {},
+    "extracted_link_content": "Prepare espresso drinks Maintain cleanliness standards Customer service experience Food safety awareness",
+    "job_posting_extraction": {
+      "source_url": "https://example.com/jobs/barista",
+      "final_url": "https://example.com/jobs/barista",
+      "title": null,
+      "company_name": null,
+      "company_profile": null,
+      "description": null,
+      "responsibilities": [
+        "Prepare espresso drinks",
+        "Maintain cleanliness standards"
+      ],
+      "requirements": [
+        "Customer service experience",
+        "Food safety awareness"
+      ],
+      "preferred_qualifications": [
+        "Latte art experience"
+      ],
+      "tools": [
+        "POS systems"
+      ],
+      "skills": [],
+      "location": null,
+      "seniority": null,
+      "employment_type": null,
+      "date_posted": null,
+      "valid_through": null,
+      "salary_text": null,
+      "extraction_confidence": "medium",
+      "extraction_methods": [
+        "html_sections"
+      ],
+      "warnings": [
+        "No Schema.org JobPosting JSON-LD was found; used readable page text fallback.",
+        "Only partial job details were extracted. Paste the full job description for stronger results."
+      ],
+      "source_status": {
+        "job_posting_url": "used",
+        "json_ld": "available_not_used",
+        "meta_tags": "available_not_used",
+        "html_text": "used",
+        "manual_fields": "merged"
+      }
+    },
+    "coverage_audit": {
+      "total_items": 10,
+      "covered_items": 10,
+      "missing_items": [],
+      "coverage_score": 100,
+      "warnings": [],
+      "added_question_count": 0,
+      "responsibilities_covered": 2,
+      "skills_covered": 4,
+      "tools_covered": 0,
+      "company_context_covered": false,
+      "compliance_covered": true,
+      "has_difficulty_progression": true,
+      "has_practical_or_scenario": true
+    }
+  },
+  "pack_metrics": {
+    "extracted_field_count": 5,
+    "responsibilities_extracted": 2,
+    "requirements_extracted": 4,
+    "skills_extracted": 4,
+    "tools_extracted": 0,
+    "warnings_count": 3,
+    "coverage_score": 100,
+    "added_coverage_questions": 0,
+    "fake_urls": 0,
+    "generic_phrase_hits": 0,
+    "silly_question_hits": 0,
+    "answers_over_500": 0,
+    "questions": 22,
+    "profile_summary": "Role: Barista | Completeness: 54/100 | Responsibilities tracked: 2 | Required skills: Customer service experience, Food safety awareness, Latte art experience, POS systems | Compliance/safety clues: 2"
+  }
+}

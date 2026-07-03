@@ -83,6 +83,30 @@ export interface JobDiscoveryResult {
   verified: boolean;
 }
 
+export interface JobPostingExtractionRead {
+  source_url: string;
+  final_url?: string | null;
+  title?: string | null;
+  company_name?: string | null;
+  company_profile?: string | null;
+  description?: string | null;
+  responsibilities?: string[];
+  requirements?: string[];
+  preferred_qualifications?: string[];
+  tools?: string[];
+  skills?: string[];
+  location?: string | null;
+  seniority?: string | null;
+  employment_type?: string | null;
+  date_posted?: string | null;
+  valid_through?: string | null;
+  salary_text?: string | null;
+  extraction_confidence?: string;
+  extraction_methods?: string[];
+  warnings?: string[];
+  source_status?: Record<string, string>;
+}
+
 export interface InterviewPackRead {
   job_id: string;
   questions: InterviewQuestion[];
@@ -94,6 +118,13 @@ export interface InterviewPackRead {
   saved_documents?: string[];
   fallback_message?: string | null;
   from_library?: boolean;
+  job_intelligence?: {
+    completeness_score?: number;
+    warnings?: string[];
+    summary?: string;
+  } | null;
+  job_posting_extraction?: JobPostingExtractionRead | null;
+  coverage_audit?: Record<string, unknown> | null;
 }
 
 export interface SkillCluster {

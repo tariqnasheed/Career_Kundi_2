@@ -500,7 +500,7 @@ Samples: `project_review/samples/iteration_004c_study_synthesis_quality/`
 | Phase | Status | Focus |
 |-------|--------|-------|
 | **004E-A** | Done (`1fb45af5`) | Job Intelligence Profile + coverage audit foundation |
-| **004E-B** | Planned | Job posting link extraction for interview packs |
+| **004E-B** | Done | Job posting link extraction (JSON-LD + HTML fallback) |
 | **004E-C** | Planned | Company profile + source-cited web research |
 | **004E-D** | Planned | Full source ladder integration into Q&A generation |
 | **004E-E** | Planned | Study material finalization per question |
@@ -583,7 +583,7 @@ See also: `project_review/05_cleanup_plan.md` (this phase runs **before** cleanu
 - [x] Model-knowledge feature flag (004D) — disabled by default
 - [x] Random validation coverage floor for creative/trending roles (004D-S)
 - [x] **004E-A:** Job Intelligence Profile + coverage audit foundation (`1fb45af5`)
-- [ ] **004E-B:** Job posting link extraction for interview packs
+- [x] **004E-B:** Job posting link extraction for interview packs
 - [ ] **004E-C:** Company profile + source-cited web research
 - [ ] **004E-D:** Full source ladder integration into pack generation
 - [ ] **004E-E:** Per-question study material finalization (profile-connected)

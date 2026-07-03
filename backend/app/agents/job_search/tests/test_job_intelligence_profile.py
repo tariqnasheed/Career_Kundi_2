@@ -129,7 +129,7 @@ def test_compliance_clues_captured_for_electrical():
 def test_job_url_without_extraction_warning():
     profile = build_job_intelligence_profile(JOB_WITH_URL_ONLY)
     assert profile.job_posting_url
-    assert any("link extraction is not enabled" in w.lower() for w in profile.warnings)
+    assert any("extraction" in w.lower() for w in profile.warnings)
 
 
 def test_source_status_transparent():

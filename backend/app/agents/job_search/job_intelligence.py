@@ -48,8 +48,13 @@ _WARN_TITLE_ONLY = (
 )
 
 _WARN_LINK_NO_EXTRACTION = (
-    "A job posting link was provided, but full link extraction is not enabled in this "
-    "iteration. Paste the job description manually for a more accurate pack."
+    "A job posting link was provided, but extraction could not retrieve useful content. "
+    "Paste the job description manually for a more accurate pack."
+)
+
+_WARN_PARTIAL_LINK = (
+    "We extracted partial information from the job link. For better results, paste the full "
+    "job description or add missing responsibilities, skills, tools, and company details manually."
 )
 
 
@@ -260,6 +265,10 @@ def _compute_completeness_score(profile: JobIntelligenceProfile) -> int:
 
 def _build_warnings(profile: JobIntelligenceProfile, job: dict[str, Any]) -> list[str]:
     warnings: list[str] = []
+    extraction = job.get("job_posting_extraction") if isinstance(job.get("job_posting_extraction"), dict) else None
+    if extraction:
+        warnings.extend(extraction.get("warnings") or [])
+
     thin = (
         not profile.job_description
         and not profile.responsibilities
@@ -271,12 +280,24 @@ def _build_warnings(profile: JobIntelligenceProfile, job: dict[str, Any]) -> lis
         warnings.append(_WARN_TITLE_ONLY)
     url = profile.job_posting_url
     if url and not profile.extracted_link_content and not profile.job_description:
-        warnings.append(_WARN_LINK_NO_EXTRACTION)
-    elif url and not profile.extracted_link_content and thin:
-        warnings.append(_WARN_LINK_NO_EXTRACTION)
+        if _WARN_LINK_NO_EXTRACTION not in warnings:
+            warnings.append(_WARN_LINK_NO_EXTRACTION)
+    elif url and profile.extracted_link_content and thin:
+        if _WARN_PARTIAL_LINK not in warnings:
+            warnings.append(_WARN_PARTIAL_LINK)
+    elif extraction and extraction.get("extraction_confidence") in ("low", "medium"):
+        if _WARN_PARTIAL_LINK not in warnings:
+            warnings.append(_WARN_PARTIAL_LINK)
     if profile.completeness_score <= 30 and _WARN_TITLE_ONLY not in warnings:
         warnings.append(_WARN_TITLE_ONLY)
-    return warnings
+    # Dedupe while preserving order
+    seen: set[str] = set()
+    unique: list[str] = []
+    for w in warnings:
+        if w not in seen:
+            seen.add(w)
+            unique.append(w)
+    return unique
 
 
 def _build_source_status(profile: JobIntelligenceProfile, job: dict[str, Any]) -> dict[str, str]:
@@ -288,9 +309,15 @@ def _build_source_status(profile: JobIntelligenceProfile, job: dict[str, Any]) -
         or profile.extra_notes
     )
     user_status = "used" if user_signal else "thin"
-    link_status = "used" if profile.extracted_link_content else (
-        "not_present" if not profile.job_posting_url else "not_configured"
-    )
+    extraction = job.get("job_posting_extraction") if isinstance(job.get("job_posting_extraction"), dict) else None
+    if profile.extracted_link_content:
+        link_status = "used"
+    elif extraction and extraction.get("extraction_confidence") == "failed":
+        link_status = "failed"
+    elif profile.job_posting_url:
+        link_status = "not_configured"
+    else:
+        link_status = "not_present"
     model_status = "disabled"
     if settings.job_search_enable_model_knowledge:
         model_status = "available_not_used"

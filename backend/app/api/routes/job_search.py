@@ -36,6 +36,7 @@ from sqlalchemy.orm.attributes import flag_modified
 from app.agents.job_search.graph import run_interview_pack_pipeline, run_job_enrichment_pipeline
 from app.agents.job_search import mock_data
 from app.agents.job_search.job_intelligence import build_job_intelligence_profile, profile_summary_text
+from app.agents.job_search.job_posting_extractor import enrich_job_snapshot_from_posting_url
 from app.agents.job_search.job_coverage_audit import audit_pack_coverage
 from app.core.config import settings
 from app.services import role_pack_library as library
@@ -54,6 +55,7 @@ from app.schemas.job_search import (
     JobDiscoveryResult,
     JobIntelligenceProfileRead,
     JobParseRequest,
+    JobPostingExtractionRead,
     JobStatusUpdate,
     RoleOverview,
     SavedJobCreate,
@@ -99,6 +101,7 @@ def _pack_read_response(
     role_overview: dict | None = None,
     job_intelligence: JobIntelligenceProfileRead | dict | None = None,
     coverage_audit: CoverageAuditRead | dict | None = None,
+    job_posting_extraction: JobPostingExtractionRead | dict | None = None,
 ) -> InterviewPackRead:
     slug = library.normalize_role_slug(job.title)
     overview = role_overview
@@ -110,6 +113,9 @@ def _pack_read_response(
     audit = coverage_audit
     if audit and not isinstance(audit, CoverageAuditRead):
         audit = CoverageAuditRead(**audit)
+    extraction = job_posting_extraction
+    if extraction and not isinstance(extraction, JobPostingExtractionRead):
+        extraction = JobPostingExtractionRead(**extraction)
     return InterviewPackRead(
         job_id=str(job.id),
         questions=job.interview_pack,
@@ -123,6 +129,7 @@ def _pack_read_response(
         from_library=from_library,
         job_intelligence=intel,
         coverage_audit=audit,
+        job_posting_extraction=extraction,
     )
 
 
@@ -459,6 +466,19 @@ async def generate_interview_pack(
         "experience_level": getattr(job, "experience_level", None),
     }
 
+    extraction_read: JobPostingExtractionRead | None = None
+    posting_url = payload.job_posting_url or job.source_url
+    if payload.extract_from_url and posting_url:
+        try:
+            job_snapshot, extraction = await enrich_job_snapshot_from_posting_url(
+                job_snapshot,
+                posting_url,
+            )
+            if extraction:
+                extraction_read = JobPostingExtractionRead(**extraction.__dict__)
+        except Exception as exc:
+            logger.warning("job_posting_extraction_failed", error=str(exc))
+
     library_status = "generated"
     fallback_message: str | None = None
     from_library = False
@@ -559,6 +579,12 @@ async def generate_interview_pack(
         role_overview=role_overview,
         job_intelligence=job_intelligence_read,
         coverage_audit=coverage_audit_read,
+        job_posting_extraction=extraction_read
+        or (
+            JobPostingExtractionRead(**job_snapshot["job_posting_extraction"])
+            if isinstance(job_snapshot.get("job_posting_extraction"), dict)
+            else None
+        ),
     )
 
 

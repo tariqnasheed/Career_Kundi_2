@@ -231,6 +231,32 @@ class JobEnrichmentResult(BaseModel):
 # --- Interview Pack -----------------------------------------------------------------------
 
 
+class JobPostingExtractionRead(BaseModel):
+    """Metadata from job posting URL extraction (Iteration 004E-B)."""
+
+    source_url: str
+    final_url: str | None = None
+    title: str | None = None
+    company_name: str | None = None
+    company_profile: str | None = None
+    description: str | None = None
+    responsibilities: list[str] = Field(default_factory=list)
+    requirements: list[str] = Field(default_factory=list)
+    preferred_qualifications: list[str] = Field(default_factory=list)
+    tools: list[str] = Field(default_factory=list)
+    skills: list[str] = Field(default_factory=list)
+    location: str | None = None
+    seniority: str | None = None
+    employment_type: str | None = None
+    date_posted: str | None = None
+    valid_through: str | None = None
+    salary_text: str | None = None
+    extraction_confidence: str = "failed"
+    extraction_methods: list[str] = Field(default_factory=list)
+    warnings: list[str] = Field(default_factory=list)
+    source_status: dict[str, str] = Field(default_factory=dict)
+
+
 class InterviewPackRequest(BaseModel):
     """
     Optional steering for pack generation. `focus_areas` lets the user bias
@@ -245,6 +271,14 @@ class InterviewPackRequest(BaseModel):
     include_study_material: bool = Field(
         default=True,
         description="When true, each question includes beginner-friendly study material (definitions, principles, explanations).",
+    )
+    job_posting_url: str | None = Field(
+        default=None,
+        description="Optional job posting URL override for link extraction before generation.",
+    )
+    extract_from_url: bool = Field(
+        default=True,
+        description="When true and a posting URL is present, extract fields before generating the pack.",
     )
 
 
@@ -398,6 +432,7 @@ class InterviewPackRead(BaseModel):
     from_library: bool = False
     job_intelligence: JobIntelligenceProfileRead | None = None
     coverage_audit: CoverageAuditRead | None = None
+    job_posting_extraction: JobPostingExtractionRead | None = None
 
 
 class RolePackLibraryEntry(BaseModel):

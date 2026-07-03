@@ -356,6 +356,11 @@ export function InterviewPackView({
   const roleOverview = pack?.role_overview as Record<string, unknown> | undefined;
   const libraryStatus = pack?.library_status as string | undefined;
   const fallbackMessage = pack?.fallback_message as string | undefined;
+  const extractionWarnings = [
+    ...((pack?.job_posting_extraction as { warnings?: string[] } | undefined)?.warnings ?? []),
+    ...((pack?.job_intelligence as { warnings?: string[] } | undefined)?.warnings ?? []),
+  ].filter((w, i, arr) => arr.indexOf(w) === i);
+  const extractionConfidence = (pack?.job_posting_extraction as { extraction_confidence?: string } | undefined)?.extraction_confidence;
   let questionIndex = 0;
 
   if (loading || generating) {
@@ -407,6 +412,16 @@ export function InterviewPackView({
           {fallbackMessage && (
             <p style={{ fontSize: "0.75rem", color: "var(--accent-amber)", marginBottom: "0.5rem" }}>{fallbackMessage}</p>
           )}
+          {extractionConfidence && extractionConfidence !== "failed" && (
+            <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginBottom: "0.35rem" }}>
+              Job link extraction: {extractionConfidence} confidence
+            </p>
+          )}
+          {extractionWarnings.slice(0, 3).map((warning) => (
+            <p key={warning} style={{ fontSize: "0.75rem", color: "var(--accent-amber)", marginBottom: "0.35rem", lineHeight: 1.45 }}>
+              {warning}
+            </p>
+          ))}
           {libraryStatus === "library_fallback" && (
             <Badge color="amber" size="sm">Loaded from saved documents</Badge>
           )}

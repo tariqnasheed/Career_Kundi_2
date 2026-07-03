@@ -1,0 +1,161 @@
+{
+  "extraction": {
+    "source_url": "https://example.com/jobs/data-analyst",
+    "final_url": "https://example.com/jobs/data-analyst",
+    "title": "Data Analyst",
+    "company_name": "Northline Analytics",
+    "company_profile": "Retail subscription analytics SaaS",
+    "description": "Build dashboards and KPI reporting for retail analytics clients.",
+    "responsibilities": [
+      "SQL dashboard creation",
+      "Daily data quality checks",
+      "KPI definitions"
+    ],
+    "requirements": [
+      "Strong SQL",
+      "Stakeholder communication",
+      "Preferred: Python automation"
+    ],
+    "preferred_qualifications": [],
+    "tools": [
+      "SQL",
+      "Python"
+    ],
+    "skills": [
+      "SQL",
+      "Power BI",
+      "Python"
+    ],
+    "location": "Manchester, UK",
+    "seniority": null,
+    "employment_type": "FULL_TIME",
+    "date_posted": null,
+    "valid_through": null,
+    "salary_text": null,
+    "extraction_confidence": "high",
+    "extraction_methods": [
+      "json_ld"
+    ],
+    "warnings": [],
+    "source_status": {
+      "job_posting_url": "used",
+      "json_ld": "used",
+      "meta_tags": "available_not_used",
+      "html_text": "available_not_used",
+      "manual_fields": "merged"
+    }
+  },
+  "merged_job": {
+    "title": "Data Analyst",
+    "source_url": "https://example.com/jobs/data-analyst",
+    "company_name": "Northline Analytics",
+    "location": "Manchester, UK",
+    "employment_type": "FULL_TIME",
+    "description_raw": "Build dashboards and KPI reporting for retail analytics clients.",
+    "responsibilities": [
+      "SQL dashboard creation",
+      "Daily data quality checks",
+      "KPI definitions"
+    ],
+    "requirements": [
+      "Strong SQL",
+      "Stakeholder communication",
+      "Preferred: Python automation"
+    ],
+    "extracted_skills": [
+      {
+        "skill": "SQL",
+        "importance": "high"
+      },
+      {
+        "skill": "Power BI",
+        "importance": "high"
+      },
+      {
+        "skill": "Python",
+        "importance": "high"
+      }
+    ],
+    "company_profile": {
+      "summary": "Retail subscription analytics SaaS"
+    },
+    "extracted_link_content": "Data Analyst Northline Analytics Build dashboards and KPI reporting for retail analytics clients. SQL dashboard creation Daily data quality checks KPI definitions Strong SQL Stakeholder communication Preferred: Python automation",
+    "job_posting_extraction": {
+      "source_url": "https://example.com/jobs/data-analyst",
+      "final_url": "https://example.com/jobs/data-analyst",
+      "title": "Data Analyst",
+      "company_name": "Northline Analytics",
+      "company_profile": "Retail subscription analytics SaaS",
+      "description": "Build dashboards and KPI reporting for retail analytics clients.",
+      "responsibilities": [
+        "SQL dashboard creation",
+        "Daily data quality checks",
+        "KPI definitions"
+      ],
+      "requirements": [
+        "Strong SQL",
+        "Stakeholder communication",
+        "Preferred: Python automation"
+      ],
+      "preferred_qualifications": [],
+      "tools": [
+        "SQL",
+        "Python"
+      ],
+      "skills": [
+        "SQL",
+        "Power BI",
+        "Python"
+      ],
+      "location": "Manchester, UK",
+      "seniority": null,
+      "employment_type": "FULL_TIME",
+      "date_posted": null,
+      "valid_through": null,
+      "salary_text": null,
+      "extraction_confidence": "high",
+      "extraction_methods": [
+        "json_ld"
+      ],
+      "warnings": [],
+      "source_status": {
+        "job_posting_url": "used",
+        "json_ld": "used",
+        "meta_tags": "available_not_used",
+        "html_text": "available_not_used",
+        "manual_fields": "merged"
+      }
+    },
+    "coverage_audit": {
+      "total_items": 15,
+      "covered_items": 15,
+      "missing_items": [],
+      "coverage_score": 100,
+      "warnings": [],
+      "added_question_count": 0,
+      "responsibilities_covered": 4,
+      "skills_covered": 6,
+      "tools_covered": 2,
+      "company_context_covered": true,
+      "compliance_covered": true,
+      "has_difficulty_progression": true,
+      "has_practical_or_scenario": true
+    }
+  },
+  "pack_metrics": {
+    "extracted_field_count": 16,
+    "responsibilities_extracted": 3,
+    "requirements_extracted": 6,
+    "skills_extracted": 5,
+    "tools_extracted": 2,
+    "warnings_count": 0,
+    "coverage_score": 100,
+    "added_coverage_questions": 0,
+    "fake_urls": 0,
+    "generic_phrase_hits": 0,
+    "silly_question_hits": 0,
+    "answers_over_500": 0,
+    "questions": 37,
+    "profile_summary": "Role: Data Analyst | Completeness: 97/100 | Company: Northline Analytics | Responsibilities tracked: 3 | Required skills: Strong SQL, Stakeholder communication, SQL, Power BI, Python | Tools: Sql, Python"
+  }
+}

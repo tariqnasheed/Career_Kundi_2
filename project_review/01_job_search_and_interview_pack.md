@@ -296,7 +296,7 @@ Samples: [iteration_004b_summary.md](../samples/iteration_004b_document_library_
 
 **Next major phases (in order):**
 
-1. **004E-B** — Job posting link extraction for interview packs
+1. **004E-B** — Job posting link extraction for interview packs (**implemented**)
 2. **004E-C** — Company profile + source-cited web research for interview packs
 3. **004E-D** — Full interview pack source ladder integration
 4. **004E-E** — Study material finalization for interview packs
@@ -548,29 +548,34 @@ See `project_review/05_cleanup_plan.md`.
 
 > **004F Global Job Search Agent is intentionally deferred until Interview Pack Generator and Interview Study Material are fully completed.**
 
-### 004E-B — Job Posting Link Extraction for Interview Packs
+### 004E-B — Job Posting Link Extraction for Interview Packs (IMPLEMENTED)
+
+**Status:** Implemented (2026-07-03). **Next active phase:** 004E-C.
 
 **Goal:** If the user provides a job posting URL for interview-pack generation, extract posting content before generation.
 
-**Scope (extracted fields):**
+**Module:** `backend/app/agents/job_search/job_posting_extractor.py`
 
-- job title, company name, company profile (where present on page)
-- job description, responsibilities, requirements, preferred qualifications
-- tools/software, skills, location, seniority, employment type
-- source URL, extraction confidence, extraction warnings
+**Extraction strategy (research-assisted):**
 
-**Rules:**
+1. **JSON-LD `JobPosting`** — parse `application/ld+json` blocks; handle `@graph`, nested objects, and `@type` as string or list ([Schema.org JobPosting](https://schema.org/JobPosting)).
+2. **OpenGraph/meta fallback** — `og:title`, `og:description`, `og:site_name`, page title.
+3. **HTML section headings** — Responsibilities, Requirements, Preferred qualifications, Tools, etc.
+4. **Light cleanup** — dedupe bullets, strip noise, cap bullet length.
 
-- Apply [Research-Assisted Development Rule](#research-assisted-development-rule) before implementation
-- Prefer official docs and reliable open-source patterns
-- Do not scrape sites that disallow scraping
-- Do not fake extracted content or URLs
-- If extraction is partial, warn the user and allow manual paste/edit
-- Tests must not require live internet — use mocked HTML/pages
+**Merge priority:** user-provided fields → extracted structured data → HTML fallback → existing local deterministic paths.
 
-**Planned touchpoints:** scraper/import agents, `JobIntelligenceProfile` population from link, frontend extracted-field review/edit UI, `test_job_posting_link_extraction.py`
+**API:** `InterviewPackRequest.job_posting_url`, `extract_from_url`; response `job_posting_extraction` on `InterviewPackRead`.
 
----
+**Tests:** `test_job_posting_extractor.py`, `test_job_posting_url_integration.py` — mocked/static HTML only; no live internet in default suite.
+
+**Samples:** `project_review/samples/iteration_004e_b_job_posting_extraction/`
+
+**Metrics (samples):** fake URLs = 0, silly question hits = 0, generic phrase hits = 0.
+
+**Not in 004E-B:** global job search (004F deferred), company web research (004E-C), extracted-field review UI beyond warnings.
+
+**Remaining touchpoints for later:** dedicated extracted-field review/edit UI polish (004E-C+).
 
 ### 004E-C — Company Profile and Source-Cited Web Research for Interview Packs
 

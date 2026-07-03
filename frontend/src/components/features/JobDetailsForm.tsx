@@ -64,7 +64,10 @@ export function JobDetailsForm({
           </select>
         </div>
         <Input label="Company URL" value={form.company_url} onChange={(e) => set({ company_url: e.target.value })} placeholder="https://company.com" fullWidth />
-        <Input label="Source URL" value={form.source_url} onChange={(e) => set({ source_url: e.target.value })} placeholder="Original job posting link" fullWidth />
+        <Input label="Job posting URL" value={form.source_url} onChange={(e) => set({ source_url: e.target.value })} placeholder="https://…" fullWidth />
+        <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginTop: "-0.5rem", marginBottom: "0.75rem", lineHeight: 1.45, gridColumn: "1 / -1" }}>
+          Paste a job posting link. We&apos;ll try to extract the title, company, responsibilities, skills, tools, and requirements before generating your interview pack.
+        </p>
         <Input label="Min salary" type="number" value={form.salary_min} onChange={(e) => set({ salary_min: e.target.value })} placeholder="60000" fullWidth />
         <Input label="Max salary" type="number" value={form.salary_max} onChange={(e) => set({ salary_max: e.target.value })} placeholder="90000" fullWidth />
         <Input label="Currency" value={form.salary_currency} onChange={(e) => set({ salary_currency: e.target.value })} placeholder="GBP" fullWidth />

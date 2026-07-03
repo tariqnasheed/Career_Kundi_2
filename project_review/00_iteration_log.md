@@ -9,7 +9,7 @@
 | **Current commit** | `1fb45af5` — Add job intelligence profile and coverage audit foundation |
 | **Date** | 2026-07-03 |
 | **Test command** | `cd backend && uv run pytest app/agents/job_search/tests -q` |
-| **Test result** | **219 passed** |
+| **Test result** | **237 passed** |
 
 ## Confirmed backend baseline (job-search)
 
@@ -86,9 +86,9 @@ This applies especially when implementing complex features such as:
 3. Job Search + Interview Pack Generator fixes (003A–003B)
 4. Study Material multi-source architecture (004A–004D)
 5. **004E-A — Job Intelligence Profile + coverage audit foundation** (committed `1fb45af5`)
-6. **Interview Pack + Study Material completion track** (active — implement in order):
-   - **004E-B** — Job posting link extraction for interview packs
-   - **004E-C** — Company profile and source-cited web research for interview packs
+6. **Interview Pack + Study Material completion track** (active):
+   - **004E-B** — Job posting link extraction (**implemented**)
+   - **004E-C** — Company profile and source-cited web research (next)
    - **004E-D** — Full interview pack source ladder integration
    - **004E-E** — Study material finalization for interview packs
    - **004E-F** — Final interview pack and study material regression gate
@@ -967,7 +967,7 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 | Phase | Goal |
 |-------|------|
-| **004E-B** | Job posting link extraction for interview packs (mocked HTML tests; no live internet) |
+| **004E-B** | Job posting link extraction for interview packs (**done**) |
 | **004E-C** | Company profile + source-cited web research for interview packs (real URLs only; no invented facts) |
 | **004E-D** | Full interview pack source ladder integration into Q&A generation |
 | **004E-E** | Study material finalization — dedicated per-question modules connected to profile |
@@ -989,9 +989,33 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 ---
 
+## Iteration 004E-B — Job Posting Link Extraction for Interview Packs (2026-07-03)
+
+**Status:** Implemented.
+
+**Goal:** Extract job posting fields from a user-provided URL before interview-pack generation; merge into `JobIntelligenceProfile`, coverage audit, and pack metadata.
+
+**Changes:**
+
+- Added `job_posting_extractor.py` — JSON-LD JobPosting → meta → HTML sections; `fetch_and_extract_job_posting_url` with SSRF-safe http(s) only
+- Integrated extraction in `POST /job-search/{job_id}/interview-pack` when `source_url` or `job_posting_url` present
+- Extended schemas: `JobPostingExtractionRead`, `InterviewPackRequest.job_posting_url`, `InterviewPackRead.job_posting_extraction`
+- Updated `job_intelligence.py` link-extraction warnings and `source_status`
+- Frontend: Job posting URL field helper text; extraction warnings in `InterviewPackView`
+- Tests: `test_job_posting_extractor.py`, `test_job_posting_url_integration.py` (mocked HTML)
+- Samples: `project_review/samples/iteration_004e_b_job_posting_extraction/`
+
+**Research notes:** Schema.org JobPosting JSON-LD is preferred structured source; HTML heading fallback for pages without structured data. No fake URLs or citations.
+
+**Not implemented:** 004F global job search (deferred). **Next:** 004E-C company profile web research.
+
+**Test result:** `237 passed`
+
+---
+
 ## Test result (latest)
 
 ```
 cd backend && uv run pytest app/agents/job_search/tests -q
-219 passed
+237 passed
 ```

@@ -1,0 +1,52 @@
+[
+  {
+    "sample": "JSON-LD JobPosting",
+    "extraction_method": "json_ld",
+    "confidence": "high",
+    "extracted_fields": 16,
+    "warnings": 0,
+    "extracted_field_count": 16,
+    "responsibilities_extracted": 3,
+    "requirements_extracted": 6,
+    "skills_extracted": 5,
+    "tools_extracted": 2,
+    "warnings_count": 0,
+    "coverage_score": 100,
+    "added_coverage_questions": 0,
+    "fake_urls": 0,
+    "generic_phrase_hits": 0,
+    "silly_question_hits": 0,
+    "answers_over_500": 0,
+    "questions": 37,
+    "profile_summary": "Role: Data Analyst | Completeness: 97/100 | Company: Northline Analytics | Responsibilities tracked: 3 | Required skills: Strong SQL, Stakeholder communication, SQL, Power BI, Python | Tools: Sql, Python"
+  },
+  {
+    "sample": "HTML section fallback",
+    "extraction_method": "html_sections",
+    "confidence": "medium",
+    "extracted_fields": 5,
+    "warnings": 2,
+    "extracted_field_count": 5,
+    "responsibilities_extracted": 2,
+    "requirements_extracted": 4,
+    "skills_extracted": 4,
+    "tools_extracted": 0,
+    "warnings_count": 3,
+    "coverage_score": 100,
+    "added_coverage_questions": 0,
+    "fake_urls": 0,
+    "generic_phrase_hits": 0,
+    "silly_question_hits": 0,
+    "answers_over_500": 0,
+    "questions": 22,
+    "profile_summary": "Role: Barista | Completeness: 54/100 | Responsibilities tracked: 2 | Required skills: Customer service experience, Food safety awareness, Latte art experience, POS systems | Compliance/safety clues: 2"
+  },
+  {
+    "sample": "Manual + URL merge",
+    "extraction_method": "json_ld",
+    "confidence": "high",
+    "extracted_fields": 16,
+    "warnings": 0,
+    "user_company_preserved": true
+  }
+]
