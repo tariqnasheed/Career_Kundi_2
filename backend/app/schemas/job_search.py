@@ -306,6 +306,47 @@ class RoleOverview(BaseModel):
     skill_clusters: list[str] = Field(default_factory=list)
 
 
+class JobIntelligenceItemRead(BaseModel):
+    item_type: str
+    text: str
+    source: str
+    importance: str
+    covered: bool = False
+    related_question_ids: list[str] = Field(default_factory=list)
+    missing_reason: str | None = None
+
+
+class JobIntelligenceProfileRead(BaseModel):
+    job_title: str
+    company_name: str | None = None
+    completeness_score: int = 0
+    warnings: list[str] = Field(default_factory=list)
+    responsibilities: list[str] = Field(default_factory=list)
+    daily_responsibilities: list[str] = Field(default_factory=list)
+    required_skills: list[str] = Field(default_factory=list)
+    preferred_skills: list[str] = Field(default_factory=list)
+    tools_software: list[str] = Field(default_factory=list)
+    compliance_safety_ethics: list[str] = Field(default_factory=list)
+    seniority_level: str | None = None
+    source_status: dict[str, str] = Field(default_factory=dict)
+    summary: str = ""
+
+
+class CoverageAuditRead(BaseModel):
+    total_items: int = 0
+    covered_items: int = 0
+    coverage_score: int = 0
+    warnings: list[str] = Field(default_factory=list)
+    added_question_count: int = 0
+    responsibilities_covered: int = 0
+    skills_covered: int = 0
+    tools_covered: int = 0
+    company_context_covered: bool = False
+    compliance_covered: bool = False
+    has_difficulty_progression: bool = False
+    has_practical_or_scenario: bool = False
+
+
 class InterviewQuestion(BaseModel):
     question_id: str | None = None
     category: Literal[
@@ -355,6 +396,8 @@ class InterviewPackRead(BaseModel):
     saved_documents: list[str] = Field(default_factory=list)
     fallback_message: str | None = None
     from_library: bool = False
+    job_intelligence: JobIntelligenceProfileRead | None = None
+    coverage_audit: CoverageAuditRead | None = None
 
 
 class RolePackLibraryEntry(BaseModel):

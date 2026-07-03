@@ -6,6 +6,20 @@ Upgrade study material into comprehensive, question-specific, multi-source learn
 
 ---
 
+## Research-Assisted Development Rule
+
+**Applies to every future major implementation iteration** (effective 004E-A-S, 2026-07-03). Canonical copy: `project_review/00_iteration_log.md`.
+
+From this iteration onward, every major implementation iteration may use web research to improve technical design, architecture, implementation quality, and reliability — including source ladder design, web/model/document-library integration, coverage audit design, PDF/export generation, database/document-library storage, LangGraph workflows, parsing/scraping/citation pipelines, and testing strategy.
+
+**Allowed sources:** official documentation; reputable open-source repositories; technical blogs; engineering articles; library/framework docs; job-posting parser examples; source citation systems; extraction/retrieval pipelines; PDF/export workflow examples.
+
+**Rules:** prefer official docs and reputable OSS; no proprietary copying; justify new dependencies; no fake citations/URLs; do not claim research was used unless it was; keep tests deterministic; no API keys required for default tests; document influential external ideas in `project_review/`; document why researched approaches were not adopted.
+
+**004E-B onward:** use web research where useful before job posting link extraction and company profile capture feed the study-material source ladder.
+
+---
+
 ## Desired source ladder
 
 Priority order for content retrieval and synthesis:
@@ -542,7 +556,7 @@ See also: `project_review/05_cleanup_plan.md` (this phase runs **before** cleanu
 
 ## Next implementation notes
 
-**Next major phase:** Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder (see `01_job_search_and_interview_pack.md`).
+**Next major phase:** Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder (**004E-A foundation implemented**; see `01_job_search_and_interview_pack.md`).
 
 - [x] `source/fallback status` on every module (004A metadata + export)
 - [x] Wire document-library retrieval to `documents/interview_packs/` (004B)

@@ -6,6 +6,47 @@ Upgrade job import, popular-role selection, interview-pack generation, and page 
 
 ---
 
+## Research-Assisted Development Rule
+
+**Applies to every future major implementation iteration** (effective 004E-A-S, 2026-07-03). See also `project_review/00_iteration_log.md`.
+
+From this iteration onward, every major implementation iteration may use web research to improve technical design, architecture, implementation quality, and reliability.
+
+This applies especially when implementing complex features such as:
+
+- job posting link extraction
+- company profile extraction
+- source ladder design
+- web/model/document-library integration
+- coverage audit design
+- PDF/export generation
+- database/document-library storage
+- frontend extracted-field review/edit UX
+- FastAPI architecture
+- React/Vite frontend patterns
+- LangGraph or agent workflow design
+- parsing, scraping, crawling, and source-citation workflows
+- testing strategy and regression coverage
+
+**Allowed research sources:** official documentation; reputable open-source repositories; technical blogs; engineering articles; library/framework docs; examples of job-posting parsers, source citation systems, extraction/retrieval pipelines, and PDF/export workflows.
+
+**Rules:**
+
+- Prefer official documentation and reputable open-source examples.
+- Do not copy proprietary code.
+- Do not add risky dependencies without justification.
+- Do not fake citations, URLs, or web results.
+- Do not claim web research was used unless it actually was used.
+- Keep tests deterministic.
+- Do not require API keys for default tests.
+- Document important external ideas in `project_review/` when they influence implementation.
+- Use research to improve design, testing, reliability, and user experience.
+- If a researched approach is not implemented, document why.
+
+**004E-B note:** From **004E-B onward**, use web research where useful **before** implementing job posting link extraction and company profile capture (real URLs only; no fake citations in product output).
+
+---
+
 ## Required job-search changes
 
 - Pasted job links should extract job data accurately.
@@ -251,9 +292,11 @@ Samples: [iteration_004b_summary.md](../samples/iteration_004b_document_library_
 
 ## Next implementation notes
 
-**Next major phase:** **Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder** (planned — not started).
+**Next major phase:** **Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder** (**004E-A foundation implemented**; 004E-B for link extraction + web research).
 
-See full specification and task checklist in [§ Iteration 004E](#iteration-004e--job-posting-intelligence-and-interview-pack-source-ladder-planned) below.
+**Following major phase (planned):** **Iteration 004F — Global Job Search Agent and Location-Aware Search Page** (after 004E-A commit — see § Iteration 004F).
+
+See full specification and task checklist in [§ Iteration 004E](#iteration-004e--job-posting-intelligence-and-interview-pack-source-ladder-in-progress) and [§ Iteration 004F](#iteration-004f--global-job-search-agent-and-location-aware-search-page-planned) below.
 
 Deferred until after 004E:
 
@@ -262,7 +305,13 @@ Deferred until after 004E:
 
 ---
 
-## Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder (PLANNED)
+## Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder (IN PROGRESS)
+
+**004E-A (implemented):** Job Intelligence Profile, completeness warnings, coverage audit, missing-coverage questions, silly-question guard, API metadata fields, minimal frontend hint.
+
+**004E-B (planned):** Job posting link extraction, company web research with real URLs only, extracted-field review/edit UI.
+
+**004E-B research expectation:** Before implementation, apply the [Research-Assisted Development Rule](#research-assisted-development-rule) — review official docs and reputable open-source examples for job-posting parsers, HTML extraction, company-profile capture, and source-citation patterns. Document chosen approach and rejected alternatives in `project_review/`.
 
 **Status:** Documented requirement and task list only — **do not implement until explicitly instructed.**
 
@@ -478,3 +527,215 @@ See `project_review/05_cleanup_plan.md`.
 - [x] Requirement: web + model + document-library source ladder  
 - [x] Requirement: sample count vs real user coverage-driven generation distinguished  
 - [x] Requirement: final PDF/database regeneration before cleanup documented  
+- [ ] Roadmap includes 004F as planned major phase after 004E-A commit
+
+---
+
+## Iteration 004F — Global Job Search Agent and Location-Aware Search Page (PLANNED)
+
+**Status:** Documented requirement only — **do not implement until 004E-A is committed and explicitly instructed.**
+
+**Gate:** 004E-A stabilization committed. Apply [Research-Assisted Development Rule](#research-assisted-development-rule) before provider implementation.
+
+**Current codebase touchpoints (inspect before editing):**
+
+| Layer | Path |
+|-------|------|
+| Page | `frontend/src/pages/JobSearchPage.tsx` |
+| Discovery UI | `frontend/src/components/features/JobDiscoveryPanel.tsx` (`Use this job`, open posting link) |
+| Job form | `frontend/src/components/features/JobDetailsForm.tsx` |
+| API client | `frontend/src/lib/api.ts` (`jobApi`) |
+| Discover route | `POST /api/v1/job-search/discover` — `JobDiscoverRequest` in `backend/app/schemas/job_search.py` |
+| Discovery service | `backend/app/services/job_discovery.py` |
+
+### 1. Product requirement
+
+The Job Search page must support a rigorous web job search experience. The user searches any job role and optionally specifies location, job type, work mode, date posted, and whether to expand worldwide.
+
+The page must **not** search only by vague job title. It builds a structured **`JobSearchIntent`** and runs a multi-source search agent to retrieve, deduplicate, rank, and display results.
+
+### 2. Frontend layout requirement
+
+Add dedicated search fields to the Job Search page (extend or replace current discovery panel):
+
+| Field | Options / notes |
+|-------|-----------------|
+| Job role / keyword | Required for search |
+| City | Optional |
+| Country | Optional |
+| Job type | Any, Full-time, Part-time, Contract, Internship, Freelance, Odd jobs / gig jobs |
+| Work mode | Any, Remote, Hybrid, Onsite |
+| Date posted | Any, Last 24h, Last 3 days, Last 7 days, Last 30 days |
+| **Search around the world** | Checkbox, **default unchecked** |
+
+**Helper text (worldwide checkbox):**
+
+> Leave unchecked to search deeply in your selected or nearest location. Enable worldwide search to expand beyond your location after local results.
+
+**UX rules:**
+
+- If city/country entered → search that location first.
+- If no city/country → start nearest to user when browser geolocation (with permission), profile location, or saved user location is available.
+- If no location and worldwide **unchecked** → warn user to enter city/country or enable worldwide search.
+- **Do not** auto-expand worldwide unless checkbox is checked.
+- **Do not** auto-generate interview packs from search results.
+- Each result card keeps **Use this job** and **Open original link** (existing `JobDiscoveryPanel` pattern).
+- **Use this job** → populate Job Intelligence Profile / interview-pack fields with extracted data.
+- **Open original link** → real original posting or provider redirect URL (new tab).
+
+Optional: prompt *“Use my current location to show nearest jobs first?”* — browser geolocation **only with explicit permission**; never silent tracking.
+
+### 3. Worldwide search checkbox rule
+
+**Correct wording:**
+
+> The default search deeply searches the selected or nearest location. Worldwide expansion only happens when the user enables Search around the world.
+
+Backend field: `search_worldwide: bool = False`
+
+| Condition | Behavior |
+|-----------|----------|
+| City/country + `search_worldwide=False` | Search only that location deeply; rank nearest/relevant first |
+| City/country + `search_worldwide=True` | Target location first, then regional/country/global/remote |
+| No location + `search_worldwide=False` | Use user coordinates/profile if available; else **warning** |
+| No location + `search_worldwide=True` | Global search via configured providers; include remote where relevant |
+
+When unchecked: paginate configured providers until provider limit, rate limit, depth, timeout, duplicate saturation, or user stop — show provider coverage transparently.
+
+When checked: local/nearest first, then broader results — label by location/source; still do not claim literal worldwide completeness.
+
+### 4. Realistic “all jobs” rule
+
+**Exhaustive configured-source search** — retrieve all available results from configured providers until:
+
+- provider has no more pages
+- API/page limit, rate limit, timeout, or duplicate saturation
+- user stops pagination
+
+**UI copy:**
+
+> Showing results from configured job sources. Continue loading to search deeper.
+
+**Backend exposes:** `total_fetched`, `total_after_deduplication`, `providers_searched`, `provider_statuses`, `has_more`, `next_cursor`, `warnings`, `coverage_note`. Never fake searching the entire internet.
+
+### 5. Location-aware search rule
+
+- Provided city/country → search first; rank closer jobs higher when coordinates exist; expand only if worldwide enabled.
+- No location → geolocation with permission, else profile/saved location, else compliant IP/country hint if already available — else warn or require worldwide.
+- Do not silently track location.
+
+### 6. Job type and odd/gig job support
+
+Support standard roles (Software Engineer, Nurse, …), part-time/hourly (Barista, Tutor, …), and safe odd/gig jobs (Dog Walker, Event Staff, Handyman, Freelance Creative, …).
+
+**Query expansion** for odd jobs → safe categories (cleaning, event staff, dog walking, gardening, moving help, etc.).
+
+**Block unsafe categories:** weapons, illegal drugs, adult services, gambling, dangerous stunts, illegal hacking, scams, extremist activity.
+
+### 7. Multi-agent search architecture
+
+Suggested module: `backend/app/agents/job_search/web_search/`
+
+| Agent | Responsibility |
+|-------|----------------|
+| `SearchIntentParserAgent` | Build `JobSearchIntent` (role, job type, location, remote mode, date posted, worldwide flag, odd-job intent, unsafe exclusions) |
+| `LocationResolverAgent` | Resolve city/country, coordinates, country codes, distance fields — graceful fallback without requiring permission |
+| `QueryExpansionAgent` | Provider-specific query strings |
+| `ProviderSearchAgent` | Call configured providers (Adzuna, SerpApi Google Jobs if keyed, USAJOBS if keyed, remote provider, **mock provider for tests**) |
+| `PaginationCrawlerAgent` | Page until exhausted/limited; track pages, tokens, errors |
+| `JobNormalizerAgent` | `NormalizedJobResult` schema (title, company, location, remote_mode, job_type, salary, descriptions, posted_at, source_provider, original_url, apply_url, scores, …) |
+| `DeduplicationAgent` | By title, company, location, URL, provider ID, text similarity |
+| `RankingAgent` | Role match, proximity, freshness, job type, source confidence, filters; local dominance when worldwide off |
+| `ResultActionAgent` | Use this job → Job Intelligence Profile fields; Open original link |
+| `SearchAuditAgent` | Provider statuses, pages, warnings, rate limits, worldwide flag |
+
+**Provider rules:** official APIs only; no scraping where disallowed; API keys via env; tests use mocks.
+
+### 8. Provider research notes (pre-implementation)
+
+Apply Research-Assisted Development Rule. Document sources in `project_review/` when they influence design.
+
+- **Adzuna** — keywords, location, pagination, contract type, redirect URL
+- **USAJOBS** — keyword, location, schedule, page, radius
+- **SerpApi Google Jobs** — location param, `next_page_token` pagination (page-limited)
+- Browser geolocation — permission-gated nearest-first only
+
+### 9. Backend API requirement
+
+Suggested endpoints (adapt to existing `/api/v1/job-search` conventions):
+
+```text
+POST /api/v1/job-search/web/search
+GET  /api/v1/job-search/web/search/{search_id}
+POST /api/v1/job-search/web/search/{search_id}/load-more
+POST /api/v1/job-search/web/use-job
+```
+
+**Request (`WebJobSearchRequest`):** `query`, `city`, `country`, `job_type`, `work_mode`, `date_posted`, `search_worldwide=False`, `user_latitude`, `user_longitude`, `max_pages_per_provider`, `include_remote=True`
+
+**Response (`WebJobSearchResponse`):** `results`, `total_fetched`, `total_after_deduplication`, `providers_searched`, `provider_statuses`, `has_more`, `next_cursor`, `warnings`, `coverage_note`
+
+### 10. Frontend result card requirement
+
+Display: title, company, location, job type, work mode, posted date, source provider, salary, snippet, confidence, distance.
+
+**Required actions:** Use this job · Open original link
+
+Optional (do not remove required): Save job, Copy link, Generate pack, View extracted details.
+
+### 11. Search depth and pagination UX
+
+- Initial results + Load more + progress indicator
+- Provider status and “more results may exist” notes
+- **Worldwide unchecked:** *“Searching deeply in your selected or nearest location. Enable ‘Search around the world’ to expand beyond this location.”*
+- **Worldwide checked:** *“Searching your selected or nearest location first, then expanding to broader global and remote results from configured job sources.”*
+- **Provider limit:** *“Results are fetched from configured job sources. Some providers may limit pages or require API keys. Use ‘Load more’ to continue searching deeper.”*
+
+### 12. Safety and quality rules
+
+Block or safely handle restricted categories (see §6). Normal jobs proceed.
+
+### 13. Tests (when implemented)
+
+Under `backend/app/agents/job_search/tests/`:
+
+- `test_web_job_search_intent.py`
+- `test_web_job_search_providers.py`
+- `test_web_job_search_ranking.py`
+- `test_web_job_search_use_job.py`
+
+Verify: intent parsing, job types, odd-job safe expansion, unsafe blocking, location/worldwide rules, pagination, dedup, ranking, Use this job → intelligence profile, real URLs only, mock providers, no API keys in default tests, existing suite still passes.
+
+Frontend: city/country fields, job type selector, worldwide checkbox default unchecked, required action buttons visible.
+
+### 14. Samples and review output (when implemented)
+
+`project_review/samples/iteration_004f_global_job_search_agent/`:
+
+- `iteration_004f_summary.md`, `metrics.json`
+- Sample JSON: data analyst (no location / worldwide false & true), barista city filter, part-time odd jobs, social media creator country filter
+- `sample_use_this_job_to_intelligence_profile.md`
+
+Summary metrics table columns: Scenario, Query, City, Country, Job Type, Search Worldwide, Providers Searched, Pages Fetched, Results Fetched, Deduplicated, Has More, Warnings, Unsafe Blocked, Fake URLs.
+
+### 15. Remaining after 004F (next phases)
+
+- Job posting detail extraction from selected job link (004E-B overlap)
+- Company profile web research with real captured URLs
+- Persistent saved jobs and search history
+
+### Acceptance criteria (004F planning)
+
+- [x] Roadmap includes 004F as planned major phase
+- [x] City/country and job-type filters documented
+- [x] `Search around the world` default unchecked; local-deep default
+- [x] Worldwide expansion only when enabled
+- [x] No-location warning when worldwide off
+- [x] Exhaustive configured-provider rule (not fake unlimited)
+- [x] Multi-agent architecture documented
+- [x] Use this job + Open original link preserved
+- [x] Pagination, dedup, ranking, provider transparency
+- [x] Safety restrictions for unsafe categories
+- [x] Tests and sample requirements documented
+- [x] Research-assisted development required before providers
+- [ ] **Implementation** — not started

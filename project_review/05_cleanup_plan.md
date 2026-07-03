@@ -4,7 +4,31 @@ Cleanup happens **after** project completion, not during active feature developm
 
 **Important:** Final cleanup (step 13) must **not** run until **Final Content Library Regeneration** (step 12) completes successfully.
 
-**Gate before regeneration:** Iteration **004E — Job Posting Intelligence and Interview Pack Source Ladder** must be complete, along with interview Q&A quality, interview study material, roadmap generator, and roadmap study material corrections (see `01_job_search_and_interview_pack.md`).
+**Gate before regeneration:** Iteration **004E** must be complete (**004E-A foundation done**; 004E-B link/web phases still required), along with interview Q&A quality, interview study material, roadmap generator, and roadmap study material corrections (see `01_job_search_and_interview_pack.md`).
+
+---
+
+## Research-Assisted Development Rule
+
+**Applies to every future major implementation iteration** (effective 004E-A-S, 2026-07-03). Full rule: `project_review/00_iteration_log.md`.
+
+Major iterations may use web research to improve design, reliability, and UX — especially for PDF/export generation, document-library storage/indexing, final content library regeneration, source ladders, and testing strategy.
+
+**Rules (summary):** prefer official documentation and reputable open-source examples; no proprietary copying; justify risky dependencies; no fake citations or URLs; do not claim research was used unless it was; keep tests deterministic; document influential ideas in `project_review/`.
+
+**004E-B onward:** research job-posting extraction and company-profile capture patterns before implementation so final regeneration and cleanup phases inherit sound storage, indexing, and citation practices.
+
+**004F (planned):** Global Job Search Agent — apply research-assisted development before job provider integration (Adzuna, USAJOBS, SerpApi, etc.). 004F does not change the final cleanup gate; it adds location-aware search UX and configured-provider crawling on the Job Search page. See `01_job_search_and_interview_pack.md` § Iteration 004F.
+
+**Job Search page roadmap (004F):**
+
+- City and country filters; full-time, part-time, contract, internship, freelance, and odd/gig job types
+- `Search around the world` checkbox (default **unchecked**); default search deeply targets selected/nearest location
+- Worldwide expansion only when user enables the checkbox
+- Exhaustive configured-provider search — not falsely unlimited global coverage
+- Nearest-first requires user location permission or profile location
+- **Use this job** and **Open original link** must remain on every result card
+- Tests must use mock providers; default tests must not require API keys
 
 ---
 

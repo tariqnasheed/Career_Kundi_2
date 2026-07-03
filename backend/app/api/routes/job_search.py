@@ -35,6 +35,8 @@ from sqlalchemy.orm.attributes import flag_modified
 
 from app.agents.job_search.graph import run_interview_pack_pipeline, run_job_enrichment_pipeline
 from app.agents.job_search import mock_data
+from app.agents.job_search.job_intelligence import build_job_intelligence_profile, profile_summary_text
+from app.agents.job_search.job_coverage_audit import audit_pack_coverage
 from app.core.config import settings
 from app.services import role_pack_library as library
 from app.api.deps import get_current_user
@@ -45,10 +47,12 @@ from app.db.models.profile import Profile, Skill
 from app.db.models.user import User
 from app.db.session import get_db
 from app.schemas.job_search import (
+    CoverageAuditRead,
     InterviewPackRead,
     InterviewPackRequest,
     JobDiscoverRequest,
     JobDiscoveryResult,
+    JobIntelligenceProfileRead,
     JobParseRequest,
     JobStatusUpdate,
     RoleOverview,
@@ -93,11 +97,19 @@ def _pack_read_response(
     fallback_message: str | None = None,
     from_library: bool = False,
     role_overview: dict | None = None,
+    job_intelligence: JobIntelligenceProfileRead | dict | None = None,
+    coverage_audit: CoverageAuditRead | dict | None = None,
 ) -> InterviewPackRead:
     slug = library.normalize_role_slug(job.title)
     overview = role_overview
     if overview and not isinstance(overview, RoleOverview):
         overview = RoleOverview(**overview)
+    intel = job_intelligence
+    if intel and not isinstance(intel, JobIntelligenceProfileRead):
+        intel = JobIntelligenceProfileRead(**intel)
+    audit = coverage_audit
+    if audit and not isinstance(audit, CoverageAuditRead):
+        audit = CoverageAuditRead(**audit)
     return InterviewPackRead(
         job_id=str(job.id),
         questions=job.interview_pack,
@@ -109,7 +121,61 @@ def _pack_read_response(
         saved_documents=saved_documents or [],
         fallback_message=fallback_message,
         from_library=from_library,
+        job_intelligence=intel,
+        coverage_audit=audit,
     )
+
+
+def _intelligence_read_models(
+    job_snapshot: dict,
+    questions: list[dict],
+    *,
+    profile_dict: dict | None = None,
+    audit_dict: dict | None = None,
+) -> tuple[JobIntelligenceProfileRead, CoverageAuditRead]:
+    profile_data = profile_dict or job_snapshot.get("job_intelligence_profile")
+    if not profile_data:
+        profile = build_job_intelligence_profile(job_snapshot)
+        profile_data = {
+            "job_title": profile.job_title,
+            "company_name": profile.company_name,
+            "completeness_score": profile.completeness_score,
+            "warnings": profile.warnings,
+            "responsibilities": profile.responsibilities,
+            "daily_responsibilities": profile.daily_responsibilities,
+            "required_skills": profile.required_skills,
+            "preferred_skills": profile.preferred_skills,
+            "tools_software": profile.tools_software,
+            "compliance_safety_ethics": profile.compliance_safety_ethics,
+            "seniority_level": profile.seniority_level,
+            "source_status": profile.source_status,
+            "summary": profile_summary_text(profile),
+        }
+    else:
+        profile_data = dict(profile_data)
+        if not profile_data.get("summary"):
+            profile = build_job_intelligence_profile(job_snapshot)
+            profile_data["summary"] = profile_summary_text(profile)
+
+    audit_data = audit_dict or job_snapshot.get("coverage_audit")
+    if not audit_data:
+        profile = build_job_intelligence_profile(job_snapshot)
+        audit = audit_pack_coverage(profile, questions)
+        audit_data = {
+            "total_items": audit.total_items,
+            "covered_items": audit.covered_items,
+            "coverage_score": audit.coverage_score,
+            "warnings": audit.warnings,
+            "added_question_count": audit.added_question_count,
+            "responsibilities_covered": audit.responsibilities_covered,
+            "skills_covered": audit.skills_covered,
+            "tools_covered": audit.tools_covered,
+            "company_context_covered": audit.company_context_covered,
+            "compliance_covered": audit.compliance_covered,
+            "has_difficulty_progression": audit.has_difficulty_progression,
+            "has_practical_or_scenario": audit.has_practical_or_scenario,
+        }
+    return JobIntelligenceProfileRead(**profile_data), CoverageAuditRead(**audit_data)
 
 
 @router.post("/parse", response_model=SavedJobRead, status_code=201)
@@ -389,6 +455,7 @@ async def generate_interview_pack(
         "benefits": job.benefits,
         "extracted_skills": job.extracted_skills,
         "company_profile": job.company_profile,
+        "source_url": job.source_url,
         "experience_level": getattr(job, "experience_level", None),
     }
 
@@ -476,6 +543,13 @@ async def generate_interview_pack(
         except Exception as exc:
             logger.warning("role_pack_library_save_failed", error=str(exc))
 
+    job_intelligence_read: JobIntelligenceProfileRead | None = None
+    coverage_audit_read: CoverageAuditRead | None = None
+    try:
+        job_intelligence_read, coverage_audit_read = _intelligence_read_models(job_snapshot, questions)
+    except Exception as exc:
+        logger.warning("job_intelligence_read_failed", error=str(exc))
+
     return _pack_read_response(
         job,
         library_status=library_status,
@@ -483,6 +557,8 @@ async def generate_interview_pack(
         fallback_message=fallback_message,
         from_library=from_library,
         role_overview=role_overview,
+        job_intelligence=job_intelligence_read,
+        coverage_audit=coverage_audit_read,
     )
 
 

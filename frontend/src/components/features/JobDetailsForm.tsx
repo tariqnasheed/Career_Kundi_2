@@ -34,6 +34,15 @@ export function JobDetailsForm({
       <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", marginBottom: "1.25rem" }}>
         Step 2 — Review extracted job fields. Company is optional. Save the job, then generate your interview pack in step 3.
       </p>
+      <p style={{ fontSize: "0.78rem", color: "var(--text-secondary)", marginBottom: "1rem", lineHeight: 1.45 }}>
+        For best results, paste the complete job posting including job description, responsibilities, requirements,
+        company profile, tools, skills, and extra notes. More complete input creates a more accurate, company-specific interview pack.
+      </p>
+      {!form.description_raw.trim() && !form.responsibilities.trim() && form.title.trim() && (
+        <p style={{ fontSize: "0.78rem", color: "var(--accent-amber, #d97706)", marginBottom: "1rem", lineHeight: 1.45 }}>
+          You entered only a role title. The generated pack may be more general until you add the full job posting details.
+        </p>
+      )}
 
       <div className="feature-grid-2" style={{ marginBottom: "1rem" }}>
         <Input label="Job title *" value={form.title} onChange={(e) => set({ title: e.target.value })} placeholder="Senior Backend Engineer" fullWidth />

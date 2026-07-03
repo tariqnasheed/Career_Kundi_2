@@ -1,0 +1,120 @@
+[
+  {
+    "slug": "role_title_only_data_analyst",
+    "sample": "Data Analyst (title only)",
+    "completeness_score": 10,
+    "extracted_items": 0,
+    "covered_items": 0,
+    "coverage_score": 0,
+    "coverage_score_display": "N/A",
+    "added_coverage_questions": 0,
+    "warnings": 1,
+    "generic_phrase_hits": 0,
+    "silly_question_hits": 0,
+    "fake_urls": 0,
+    "answers_over_500": 0,
+    "questions": 12,
+    "profile_summary": "Role: Data Analyst | Completeness: 10/100",
+    "warning_examples": [
+      "You entered only a role title. The generated pack may be more general. For a stronger interview pack, add the complete job description, responsibilities, company profile, tools, skills, and extra notes."
+    ],
+    "audit_warnings": [
+      "No detailed job intelligence items were available to audit. Add responsibilities, skills, tools, and company details for a meaningful coverage audit."
+    ],
+    "source_status": {
+      "user_fields": "thin",
+      "link_extraction": "not_present",
+      "web_research": "not_configured",
+      "model_knowledge": "disabled",
+      "document_library": "available",
+      "local_fallback": "used"
+    },
+    "low_input": true
+  },
+  {
+    "slug": "rich_job_posting_data_analyst",
+    "sample": "Data Analyst (rich posting)",
+    "completeness_score": 100,
+    "extracted_items": 24,
+    "covered_items": 24,
+    "coverage_score": 100,
+    "coverage_score_display": "100",
+    "added_coverage_questions": 2,
+    "warnings": 0,
+    "generic_phrase_hits": 0,
+    "silly_question_hits": 0,
+    "fake_urls": 0,
+    "answers_over_500": 0,
+    "questions": 37,
+    "profile_summary": "Role: Data Analyst | Completeness: 100/100 | Company: Northline Analytics | Responsibilities tracked: 3 | Required skills: Strong SQL querying and dashboard creation, Experience with data quality checks, SQL, Power BI, Python, Data Visualization | Tools: Sql, Excel, Power Bi, Python",
+    "warning_examples": [],
+    "audit_warnings": [],
+    "source_status": {
+      "user_fields": "used",
+      "link_extraction": "not_present",
+      "web_research": "not_configured",
+      "model_knowledge": "disabled",
+      "document_library": "available",
+      "local_fallback": "used"
+    },
+    "low_input": false
+  },
+  {
+    "slug": "rich_job_posting_electrical_engineer",
+    "sample": "Electrical Engineer (rich posting)",
+    "completeness_score": 99,
+    "extracted_items": 14,
+    "covered_items": 14,
+    "coverage_score": 100,
+    "coverage_score_display": "100",
+    "added_coverage_questions": 1,
+    "warnings": 0,
+    "generic_phrase_hits": 0,
+    "silly_question_hits": 0,
+    "fake_urls": 0,
+    "answers_over_500": 0,
+    "questions": 31,
+    "profile_summary": "Role: Electrical Engineer | Completeness: 99/100 | Company: GridForm Projects | Responsibilities tracked: 3 | Required skills: AutoCAD design experience, Electrical safety and standards compliance, Commissioning and inspection records, AutoCAD | Tools: Autocad | Compliance/safety clues: 3",
+    "warning_examples": [],
+    "audit_warnings": [],
+    "source_status": {
+      "user_fields": "used",
+      "link_extraction": "not_present",
+      "web_research": "not_configured",
+      "model_knowledge": "disabled",
+      "document_library": "available",
+      "local_fallback": "used"
+    },
+    "low_input": false
+  },
+  {
+    "slug": "rich_job_posting_social_media_creator",
+    "sample": "Social Media Creator (rich posting)",
+    "completeness_score": 100,
+    "extracted_items": 16,
+    "covered_items": 15,
+    "coverage_score": 94,
+    "coverage_score_display": "94",
+    "added_coverage_questions": 0,
+    "warnings": 0,
+    "generic_phrase_hits": 0,
+    "silly_question_hits": 0,
+    "fake_urls": 0,
+    "answers_over_500": 0,
+    "questions": 28,
+    "profile_summary": "Role: Social Media Creator | Completeness: 100/100 | Company: BrightLoop Media | Responsibilities tracked: 4 | Required skills: Short-form video editing, Analytics and audience growth reporting, Brand safety and sponsorship awareness, Content Planning, Analytics | Compliance/safety clues: 3",
+    "warning_examples": [],
+    "audit_warnings": [
+      "1 important profile items were not yet covered by exportable questions."
+    ],
+    "source_status": {
+      "user_fields": "used",
+      "link_extraction": "not_present",
+      "web_research": "not_configured",
+      "model_knowledge": "disabled",
+      "document_library": "available",
+      "local_fallback": "used"
+    },
+    "low_input": false
+  }
+]

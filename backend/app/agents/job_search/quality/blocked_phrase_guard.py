@@ -89,10 +89,21 @@ GENERIC_PHRASE_PATTERN = _p(r"\bstructured", r" verification\b")
 
 STUDY_BANNED_EXTRA = GENERIC_PHRASE_PATTERN
 
+_USER_FACING_ROLE_SPECIFIC_RE = re.compile(r"\bRole\s+Specific\b")
+
 
 def contains_blocked_phrase(text: str) -> bool:
     blob = text or ""
     return any(re.search(pattern, blob, flags=re.I) for pattern in BLOCKED_REGEX_PATTERNS)
+
+
+def export_blocked_phrase_count(text: str) -> int:
+    """Count blocked generic phrases in exported Markdown (avoids false positives like 'role specification')."""
+    blob = text or ""
+    count = sum(1 for pattern in BLOCKED_REGEX_PATTERNS if re.search(pattern, blob, flags=re.I))
+    if _USER_FACING_ROLE_SPECIFIC_RE.search(blob):
+        count += 1
+    return count
 
 
 def build_family_scrub_replacements() -> dict[str, list[tuple[str, str]]]:

@@ -197,6 +197,14 @@ from app.agents.job_search.knowledge.skill_cards import (
     build_skill_card_bank,
     map_question_to_skill_card,
 )
+from app.agents.job_search.job_intelligence import build_job_intelligence_profile, profile_to_dict
+from app.agents.job_search.job_coverage_audit import (
+    audit_pack_coverage,
+    audit_to_dict,
+    build_missing_coverage_questions,
+    build_profile_driven_questions,
+)
+from app.agents.job_search.quality.silly_question_guard import is_silly_or_vague_question
 from app.agents.job_search.quality.broken_template_audit import broken_template_count
 from app.agents.job_search.quality.compiler_boilerplate_audit import (
     compiler_boilerplate_count,
@@ -691,6 +699,10 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
     ]
     enriched.setdefault("revision_notes", study.get("revision_notes") or [])
     enriched["question"] = normalize_surface_text(enriched.get("question", ""))
+    if is_silly_or_vague_question(enriched.get("question", ""), job, job.get("job_intelligence_profile")):
+        enriched["export_blocked"] = True
+        quality["blocked_export_count"] = 1
+        quality["silly_or_vague_question"] = True
     if enriched.get("model_answer"):
         enriched["model_answer"] = normalize_surface_text(enriched["model_answer"])
         enriched["expert_reference_answer"] = enriched["model_answer"]
@@ -718,6 +730,8 @@ def mock_generate_questions(
     count is hardcoded anywhere in this function.
     """
     questions: list[dict] = []
+    intelligence_profile = build_job_intelligence_profile(job)
+    job["job_intelligence_profile"] = profile_to_dict(intelligence_profile)
     role_intelligence = build_role_intelligence(job)
     role = job.get("title") or "Professional"
     role_family_pack = _role_family_for_pack(role)
@@ -810,6 +824,8 @@ def mock_generate_questions(
     if not questions:
         questions.extend(_role_baseline_questions(job))
 
+    questions.extend(build_profile_driven_questions(intelligence_profile))
+
     questions = apply_coverage_plan(job, questions, difficulty=difficulty)
 
     unique_questions: list[dict] = []
@@ -865,6 +881,30 @@ def mock_generate_questions(
             seen.add(key)
             unique_questions.append(q)
 
+    exportable = [
+        q for q in (_finalize_question(q, job, difficulty, i) for i, q in enumerate(unique_questions))
+        if not q.get("export_blocked")
+    ]
+    if exportable:
+        missing_raw = build_missing_coverage_questions(intelligence_profile, exportable)
+        added = 0
+        for q in missing_raw:
+            finalized = _finalize_question(q, job, difficulty, len(exportable) + added)
+            if finalized.get("export_blocked"):
+                continue
+            key = _question_dedupe_key(finalized)
+            if key in seen:
+                continue
+            seen.add(key)
+            exportable.append(finalized)
+            added += 1
+        coverage_audit = audit_pack_coverage(intelligence_profile, exportable)
+        coverage_audit.added_question_count = added
+    else:
+        coverage_audit = audit_pack_coverage(intelligence_profile, exportable)
+
+    job["coverage_audit"] = audit_to_dict(coverage_audit)
+
     return exportable if exportable else [
         q for q in (_finalize_question(q, job, difficulty, i) for i, q in enumerate(unique_questions))
         if not q.get("export_blocked")
@@ -873,7 +913,10 @@ def mock_generate_questions(
 
 def finalize_questions_list(questions: list[dict], job: dict, difficulty: str) -> list[dict]:
     """Ensure every question has model answers, study material, and coverage (live + mock paths)."""
+    intelligence_profile = build_job_intelligence_profile(job)
+    job["job_intelligence_profile"] = profile_to_dict(intelligence_profile)
     expanded = apply_coverage_plan(job, list(questions), difficulty=difficulty)
+    expanded.extend(build_profile_driven_questions(intelligence_profile))
     unique: list[dict] = []
     seen: set[str] = set()
     for q in expanded:
@@ -883,7 +926,23 @@ def finalize_questions_list(questions: list[dict], job: dict, difficulty: str) -
         seen.add(key)
         unique.append(q)
     finalized = [_finalize_question(q, job, difficulty, i) for i, q in enumerate(unique)]
-    return [q for q in finalized if not q.get("export_blocked")]
+    exportable = [q for q in finalized if not q.get("export_blocked")]
+    missing_raw = build_missing_coverage_questions(intelligence_profile, exportable)
+    added = 0
+    for q in missing_raw:
+        item = _finalize_question(q, job, difficulty, len(exportable) + added)
+        if item.get("export_blocked"):
+            continue
+        key = _question_dedupe_key(item)
+        if key in seen:
+            continue
+        seen.add(key)
+        exportable.append(item)
+        added += 1
+    audit = audit_pack_coverage(intelligence_profile, exportable)
+    audit.added_question_count = added
+    job["coverage_audit"] = audit_to_dict(audit)
+    return exportable
 
 
 def mock_company_profile(company_name: str | None) -> dict:

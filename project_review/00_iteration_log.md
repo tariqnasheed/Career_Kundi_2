@@ -24,6 +24,59 @@
 
 ---
 
+## Research-Assisted Development Rule
+
+**Effective from:** Iteration 004E-A-S documentation pass (2026-07-03). Applies to **every future major implementation iteration**.
+
+From this iteration onward, every major implementation iteration **may use web research** to improve technical design, architecture, implementation quality, and reliability.
+
+This applies especially when implementing complex features such as:
+
+- job posting link extraction
+- company profile extraction
+- source ladder design
+- web/model/document-library integration
+- coverage audit design
+- PDF/export generation
+- database/document-library storage
+- frontend extracted-field review/edit UX
+- FastAPI architecture
+- React/Vite frontend patterns
+- LangGraph or agent workflow design
+- parsing, scraping, crawling, and source-citation workflows
+- testing strategy and regression coverage
+
+### Allowed research sources
+
+- official documentation
+- reputable open-source repositories
+- technical blogs
+- engineering articles
+- library/framework docs
+- examples of job-posting parsers
+- examples of source citation systems
+- examples of extraction/retrieval pipelines
+- examples of PDF/export workflows
+
+### Rules
+
+- Prefer official documentation and reputable open-source examples.
+- Do not copy proprietary code.
+- Do not add risky dependencies without justification.
+- Do not fake citations, URLs, or web results.
+- Do not claim web research was used unless it actually was used.
+- Keep tests deterministic.
+- Do not require API keys for default tests.
+- Document important external ideas in `project_review/` when they influence implementation.
+- Use research to improve design, testing, reliability, and user experience.
+- If a researched approach is not implemented, document why.
+
+### Next application
+
+**From 004E-B onward:** use web research where useful **before** implementing job posting link extraction and company profile capture. See `01_job_search_and_interview_pack.md` § Iteration 004E-B.
+
+---
+
 ## Implementation order
 
 1. Project review/reporting system
@@ -31,14 +84,15 @@
 3. Job Search + Interview Pack Generator fixes
 4. Study Material multi-source architecture
 5. Study Material export/fallback improvements
-6. **004E — Job Posting Intelligence and Interview Pack Source Ladder** (planned — see below)
-7. CV Builder redesign
-8. CV template expansion and section-level AI
-9. Roadmap page rebuild
-10. Roadmap study material and exports
-11. Final regression testing
-12. **Final content library regeneration** (required before cleanup — see `05_cleanup_plan.md`)
-13. Final cleanup
+6. **004E — Job Posting Intelligence and Interview Pack Source Ladder** (004E-A implemented; 004E-B planned)
+7. **004F — Global Job Search Agent and Location-Aware Search Page** (planned — after 004E-A commit; see below)
+8. CV Builder redesign
+9. CV template expansion and section-level AI
+10. Roadmap page rebuild
+11. Roadmap study material and exports
+12. Final regression testing
+13. **Final content library regeneration** (required before cleanup — see `05_cleanup_plan.md`)
+14. Final cleanup
 
 ---
 
@@ -816,9 +870,30 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 ---
 
-## Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder (PLANNED)
+## Iteration 004E-A — Job Intelligence Profile + Coverage Audit Foundation (2026-07-03)
 
-**Status:** Documented only — **not implemented yet**. Next major implementation phase after 004D/004D-S.
+**Status:** Implemented (foundation only — no live web research or link extraction yet).
+
+**Goal:** Build deterministic Job Intelligence Profile extraction, completeness warnings, coverage audit, and missing-coverage question generation before full 004E link/web phases.
+
+**Changes:**
+
+- Added `job_intelligence.py` (`JobIntelligenceProfile`, completeness scoring, source-status ladder)
+- Added `job_coverage_audit.py` (coverage audit + missing-item question generation)
+- Added `quality/silly_question_guard.py`
+- Integrated profile-driven questions and audit fill in `mock_generate_questions()` / `finalize_questions_list()`
+- Extended `InterviewPackRead` with `job_intelligence` and `coverage_audit`
+- Minimal frontend completeness hint in `JobDetailsForm.tsx`
+- Samples: `project_review/samples/iteration_004e_job_intelligence_foundation/`
+- Tests: `test_job_intelligence_profile.py`, `test_interview_pack_coverage_audit.py`
+
+**Not in 004E-A:** job posting link extraction, company web research, extracted-field review UI (planned for 004E-B).
+
+---
+
+## Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder (IN PROGRESS)
+
+**Status:** **004E-A foundation implemented.** Link extraction, web research, and frontend review UI remain for **004E-B**.
 
 **Goal:** The Interview Pack Generator must not produce vague questions from a role title alone. It must deeply analyse the full job posting, company profile, responsibilities, skills, tools, user notes, job-link content, web research, model knowledge, and saved document-library fallback before generating the pack.
 
@@ -843,9 +918,52 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 ---
 
+## Iteration 004E-A-S — Job Intelligence foundation stabilization (2026-07-03)
+
+**Goal:** Fix misleading 004E sample metrics without production feature changes.
+
+**Changes:** Empty-profile coverage score `0` / summary `N/A`; `export_blocked_phrase_count()` metric fix; regenerated 004E samples; `frontend/dist` churn restored.
+
+**Test result:** `219 passed`
+
+---
+
+## Documentation — Research-Assisted Development Rule (2026-07-03)
+
+**Goal:** Add standing development rule to project roadmap (documentation only).
+
+**Changes:** Rule documented in `00_iteration_log.md`, `01_job_search_and_interview_pack.md`, `02_study_material.md`, `05_cleanup_plan.md`. From **004E-B onward**, use web research where useful before job posting link extraction and company profile capture.
+
+---
+
+## Iteration 004F — Global Job Search Agent and Location-Aware Search Page (PLANNED)
+
+**Status:** Documented only — **not implemented**. **Gate:** 004E-A stabilized and committed before implementation starts.
+
+**Goal:** Rigorous location-aware web job search on the Job Search page — structured `JobSearchIntent`, multi-agent provider pipeline, deduplication/ranking, and result actions that feed the Job Intelligence Profile.
+
+**Recommended sequence:** After **004E-A commit**; coordinate with **004E-B** (link/company extraction) so **Use this job** maps cleanly into intelligence fields.
+
+**Full specification:** `project_review/01_job_search_and_interview_pack.md` § Iteration 004F.
+
+**Key requirements (summary):**
+
+- City/country filters; job types (full-time, part-time, contract, internship, freelance, odd/gig)
+- Work mode (remote/hybrid/onsite); date posted filters
+- **`Search around the world` checkbox — default unchecked**; deep local/nearest search by default
+- Exhaustive **configured-provider** crawling (not fake “every job on the internet”)
+- Multi-agent pipeline under `backend/app/agents/job_search/web_search/`
+- Preserve **Use this job** and **Open original link** on every result card
+- Mock providers for tests; no API keys required for default test suite
+- Apply **Research-Assisted Development Rule** before provider implementation (Adzuna, USAJOBS, SerpApi Google Jobs, etc.)
+
+**Samples (when implemented):** `project_review/samples/iteration_004f_global_job_search_agent/`
+
+---
+
 ## Test result (latest)
 
 ```
 cd backend && uv run pytest app/agents/job_search/tests -q
-186 passed in 221.91s
+219 passed
 ```
