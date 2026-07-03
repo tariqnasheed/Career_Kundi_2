@@ -64,7 +64,7 @@ This applies especially when implementing complex features such as:
   - extracted skills
   - company profile if available
 - Company information should **not** be required to generate an interview pack.
-- Popular job-role selection should auto-fill required role fields.
+- Popular job-role selection should auto-fill required role fields (today: limited popular list; **future:** comprehensive searchable role catalog — see [§ Future Feature — Comprehensive Role Catalog Dropdown](#future-feature--comprehensive-role-catalog-dropdown-deferred)).
 - Popular role selection should **not** automatically generate, download, or export the interview pack.
 - Interview pack generation should happen only when the user clicks a clear **Generate** button.
 - Downloads should happen only when the user clicks a **Download/Export** button.
@@ -124,7 +124,8 @@ Suggested page flow:
 
 - paste job link
 - paste job description
-- choose popular role
+- choose role from searchable grouped catalog (future) or limited popular roles (current)
+- optional **Autofill interview-pack fields** checkbox when a catalog role is selected (future)
 - direct custom role input
 
 ### 2. Extracted job review area
@@ -298,16 +299,20 @@ Samples: [iteration_004b_summary.md](../samples/iteration_004b_document_library_
 
 1. **004E-B** — Job posting link extraction for interview packs (**implemented**)
 2. **004E-C** — Company profile + source-cited web research for interview packs (**implemented**)
-3. **004E-D** — Full interview pack source ladder integration
+3. **004E-D** — Full interview pack source ladder integration (**implemented**)
 4. **004E-E** — Study material finalization for interview packs
 5. **004E-F** — Final regression gate (samples + metrics)
-6. **Then** — **004F — Global Job Search Agent** (deferred)
+6. **Then** — **Job Search / Role Selection improvements** (deferred — after 004E-F):
+   - **Comprehensive Role Catalog Dropdown** — searchable grouped catalog + optional autofill (see [§ Future Feature — Comprehensive Role Catalog Dropdown](#future-feature--comprehensive-role-catalog-dropdown-deferred))
+   - **004F — Global Job Search Agent** (deferred)
 
 > **004F Global Job Search Agent is intentionally deferred until Interview Pack Generator and Interview Study Material are fully completed.**
 
 See [§ Interview Pack + Study Material Completion Track (004E-B–004E-F)](#interview-pack--study-material-completion-track-004e-b004e-f) and [§ Iteration 004F](#iteration-004f--global-job-search-agent-and-location-aware-search-page-deferred) below.
 
-**Do not implement yet:** 004F, global job search, job-search web provider architecture, provider APIs, Job Search page redesign.
+**Do not implement yet:** 004F, global job search, job-search web provider architecture, provider APIs, Job Search page redesign, comprehensive role catalog dropdown.
+
+**Not in 004E-D:** role catalog autofill, `role_catalog_autofill` source tier, or Popular Job Roles UI redesign — deferred to Job Search / Role Selection work after 004E-F.
 
 Deferred until after 004E-B–004E-F:
 
@@ -620,11 +625,47 @@ See `project_review/05_cleanup_plan.md`.
 
 ---
 
-### 004E-D — Full Interview Pack Source Ladder Integration
+### 004E-D — Full Interview Pack Source Ladder Integration (IMPLEMENTED)
+
+**Status:** Implemented (2026-07-03). **Next active phase:** 004E-E.
 
 **Goal:** Connect all source layers directly into interview-pack question and answer generation.
 
-**Source priority:**
+**Implementation:**
+
+- Added `knowledge/source_ladder.py` — 6-tier status, source-derived audit items, ladder questions, per-question metadata
+- Integrated in `mock_generate_questions` / `finalize_questions_list` and `job_intelligence._build_source_status`
+- Coverage audit exports `audit_items` with `item_id`, `source_type`, `source_label`, `action`
+- Questions carry `question_source_items`, `question_source_types`, `source_priority_used`, `coverage_item_ids`
+- API: `SourceLadderStatusRead`, `CoverageAuditItemRead`, extended `JobIntelligenceProfileRead` / `CoverageAuditRead`
+- Frontend: minimal source ladder line in `InterviewPackView`
+- Tests: `test_interview_pack_source_ladder.py`, `test_interview_pack_full_coverage.py`
+- Samples: `project_review/samples/iteration_004e_d_source_ladder_integration/`
+
+**004E-D risk controls (pre-implementation):**
+
+1. **Source priority inversion** — user fields remain primary; URL/company items are additive audit rows, never overwriting manual profile text.
+2. **Fake citations** — no new URLs or facts invented; ladder reads only existing 004E-B/004E-C metadata.
+3. **Over-scope** — no 004F, no provider APIs, no Job Search page redesign.
+4. **Backward compatibility** — additive schema fields only; `web_research` alias retained on `source_status`.
+5. **Test determinism** — mocked HTML jobs only; model knowledge disabled by default.
+6. **Generic output regression** — silly/generic guards unchanged; sample metrics target zero hits.
+7. **Schema drift** — `api.ts` updated to match backend ladder fields.
+8. **Coverage audit** — URL/company/document items appear in `audit_items` with source labels.
+9. **Network fetch** — **no new HTTP clients** in 004E-D; fetch remains isolated in 004E-B/004E-C modules.
+
+**Quality gate — network import scan (excludes tests, `__pycache__`, and 004E-B/004E-C fetch modules):**
+
+```bash
+grep -R -E "(^|\s)(import httpx|import requests|from httpx|from requests|import urllib\.request|from urllib\.request import|urllib\.request\.urlopen|urlopen\()" -n backend/app/agents/job_search \
+  --exclude-dir="__pycache__" \
+  --exclude="*.pyc" \
+  --exclude="test_*" \
+  | grep -v "job_posting_extractor.py" \
+  | grep -v "company_research.py" || true
+```
+
+**Source priority (004E-D implemented):**
 
 1. User-provided job posting fields
 2. Extracted job posting link content
@@ -632,6 +673,18 @@ See `project_review/05_cleanup_plan.md`.
 4. Model knowledge where enabled
 5. Saved document-library / project database material
 6. Local deterministic fallback
+
+**Future source tier (not in 004E-D — Role Catalog feature):** When the comprehensive role catalog ships, add **`role_catalog_autofill`** between document library and local fallback:
+
+1. User-provided fields
+2. Job posting URL extraction
+3. Company research
+4. Model knowledge where enabled
+5. Document library
+6. **Role catalog autofill** (`role_catalog_autofill`)
+7. Local deterministic fallback
+
+User-edited values always override catalog autofill. Autofill must be marked as fallback/catalog-sourced, not user-provided facts.
 
 **Required behavior:**
 
@@ -642,7 +695,9 @@ See `project_review/05_cleanup_plan.md`.
 - Real user packs are coverage-driven — not capped to small sample counts
 - Coverage audit runs before export; gaps trigger supplemental questions where safe
 
-**Planned touchpoints:** `mock_data.py` / generation pipeline, `coverage_planner.py`, `silly_question_guard.py`, source ladder wiring
+**Planned touchpoints:** ~~`mock_data.py` / generation pipeline, `coverage_planner.py`, `silly_question_guard.py`, source ladder wiring~~ **Done in 004E-D.**
+
+**Study material handoff:** per-question `question_source_*` metadata prepared for 004E-E; no generic whole-role study notes added in this phase.
 
 ---
 
@@ -709,6 +764,220 @@ See `project_review/05_cleanup_plan.md`.
 **Planned samples folder:** `project_review/samples/iteration_004e_final_regression_gate/`
 
 **Do not run Final Content Library Regeneration** as part of 004E-F unless explicitly instructed. Full library regeneration remains after roadmap generator + roadmap study material completion (`05_cleanup_plan.md`).
+
+---
+
+## Future Feature — Comprehensive Role Catalog Dropdown (DEFERRED)
+
+**Status:** Documented requirement only — **do not implement** during 004E-D or the Interview Pack + Study Material completion track (004E-E, 004E-F).
+
+**Scope:** Future **Job Search / frontend role-selection** improvement on the Job Search / Interview Pack page. Can ship alongside or before **004F** once the 004E-F gate passes. Does **not** require global job search or provider APIs.
+
+> **004F Global Job Search Agent is intentionally deferred until Interview Pack Generator and Interview Study Material are fully completed.** This role-catalog feature is also deferred until **004E-F** passes; it must not interrupt 004E-E or 004E-F work.
+
+### Product goal
+
+Replace or enhance the current **Popular Job Roles** section with a **searchable grouped dropdown/catalog** covering professional, part-time, odd/gig, and educational-department roles across sectors.
+
+**Current behavior:** Users select from a limited popular-role list.
+
+**Required future behavior:** Searchable catalog with grouped categories, employment-type filters, popular shortcuts, and custom-role fallback.
+
+### UI requirements
+
+The catalog UI must support:
+
+1. **Searchable dropdown** — type to filter role titles
+2. **Grouped categories/sectors** — browse by industry/department
+3. **Popular roles** — quick-access shortcuts (existing behavior, expanded)
+4. **Full-time roles**
+5. **Part-time roles**
+6. **Odd/gig job roles** (safe/legal only)
+7. **Educational department roles**
+8. **Custom role input** when the role is not listed
+9. Optional **“Autofill interview-pack fields”** checkbox
+
+**Search behavior:**
+
+- Type to search role titles
+- Filter by category and employment type
+- Show **“No exact role found — use custom role”** when no match
+- Custom role always available
+
+### Autofill UX (critical)
+
+When the user selects any role from the catalog, show:
+
+```text
+[ ] Autofill interview-pack fields for this role
+```
+
+| Checkbox | Behavior |
+|----------|----------|
+| **Checked** | Autofill interview-pack fields from role-specific catalog/mock profile data: title, overview, typical responsibilities, required skills, tools/software, seniority hints, department/industry context, ethics/safety/compliance hints where relevant. Mark values as **editable** and source as `role_catalog_autofill`. |
+| **Unchecked** | Set **job title / role only**; user manually fills all other fields. |
+
+The user must **always** be able to edit autofilled fields before generating the interview pack. User-edited values become **user-provided** and take priority over catalog autofill in the source ladder.
+
+### Maintainable role catalog structure
+
+Store the catalog in a **data file or shared module** — not hardcoded inside a React component.
+
+Suggested record shape:
+
+```text
+category
+subcategory
+role_title
+role_type
+employment_type
+default_responsibilities
+default_skills
+default_tools
+default_seniority_options
+default_industry_context
+```
+
+**Possible `role_type` / `employment_type` values:**
+
+```text
+full_time
+part_time
+contract
+internship
+freelance
+odd_job
+gig_job
+student_job
+apprenticeship
+volunteer
+```
+
+**Suggested touchpoints (when implemented):**
+
+| Layer | Path |
+|-------|------|
+| Catalog data | `backend/app/agents/job_search/data/role_catalog.json` (or equivalent module) |
+| Catalog API | `GET /api/v1/job-search/role-catalog` (search, filter, categories) |
+| Autofill service | Backend helper mapping catalog entry → job snapshot fields |
+| Frontend | `JobDetailsForm.tsx` / role-selection component on Job Search page |
+
+### Suggested categories
+
+Broad sectors (expand into concrete `role_title` entries):
+
+- Information Technology & Telecommunications
+- Healthcare & Life Sciences
+- Financial Services & Insurance
+- Sales & Business Development
+- Marketing, Advertising & Public Relations
+- Retail & Wholesale Trade
+- Education & Training
+- Human Resources & Recruiting
+- Hospitality, Tourism & Leisure
+- Manufacturing, Industrial & Engineering
+- Logistics, Transportation & Warehousing
+- Media, Design & Entertainment
+- Music Industry
+- Architecture & Construction
+- Real Estate & Facilities Management
+- Government & Public Administration
+- Energy & Utilities
+- Home & Personal Services
+- Nonprofit & Charities
+- Environmental Services
+- Aerospace & Aviation
+- Science & R&D
+- Agriculture, Forestry & Fishing
+- Defense & Military
+- Public Safety & Emergency Services
+- Private Security Services
+- Mining & Natural Resources
+- Sports & Athletics
+- Legal & Compliance
+- Customer Service & Call Center
+- Data & Analytics
+- Product & Project Management
+- Skilled Trades
+- Beauty & Wellness
+- Childcare & Elder Care
+- Cleaning & Domestic Services
+- Delivery & Local Services
+- Freelance & Creator Economy
+
+### Example roles to include
+
+**IT:** Software Engineer, Frontend Developer, Backend Developer, Full Stack Developer, Data Analyst, Data Scientist, Cybersecurity Analyst, Network Engineer, Cloud Engineer, DevOps Engineer, IT Support Technician, QA Tester, UI/UX Designer, Product Manager, Business Analyst
+
+**Engineering:** Electrical Engineer, Mechanical Engineer, Civil Engineer, MEP Engineer, HVAC Engineer, Electrical Design Engineer, Site Engineer, Estimation Engineer, Maintenance Engineer, Automation Engineer, PLC Engineer, Draftsman / CAD Technician
+
+**Healthcare:** Nurse, Pharmacist, Clinical Pharmacist, Healthcare Assistant, Medical Laboratory Technician, Physiotherapist, Radiographer, Dentist, Medical Receptionist
+
+**Education:** Teacher, Teaching Assistant, Lecturer, Tutor, Academic Counselor, School Administrator, Special Education Teacher, Online Instructor
+
+**Business/Sales:** Sales Executive, Business Development Executive, Account Manager, Customer Success Executive, Operations Executive, Office Administrator, Procurement Officer
+
+**Finance:** Accountant, Auditor, Financial Analyst, Insurance Advisor, Bank Teller, Payroll Officer, Tax Associate
+
+**Hospitality/Retail:** Barista, Waiter / Waitress, Chef, Hotel Receptionist, Housekeeper, Retail Assistant, Cashier, Store Manager, Travel Consultant
+
+**Part-time / odd / gig (safe only):** Delivery Driver, Food Delivery Rider, Dog Walker, Babysitter, Nanny, Event Staff, Domestic Cleaner, Gardening Helper, Moving Helper, Handyman, Tutor, Grocery Picker, Warehouse Picker, Freelance Content Writer, Freelance Graphic Designer, Social Media Creator, Video Editor, Photographer
+
+### Safety restrictions
+
+**Do not include:** unsafe, illegal, adult, gambling, drug-related, weapon-related, cybercrime, extremist, or dangerous-challenge roles.
+
+**Odd jobs allowed only when safe and legal:** cleaning, tutoring, delivery, gardening, dog walking, babysitting/nannying, moving help, event staffing, freelance creative work.
+
+### Interview-pack autofill behavior
+
+When autofill is enabled, populate fields similar to existing mock/profile data:
+
+- Job title, role overview, typical responsibilities, required skills, tools/software
+- Seniority level hints, department/industry context
+- Ethics/safety/compliance hints where relevant
+- Source status: `role_catalog_autofill` (not `user_field`)
+
+Generated packs must treat catalog values as **fallback/autofill**, not user-provided facts. Any user edit promotes that field to user-provided priority.
+
+### Source ladder integration (when implemented)
+
+Add `role_catalog_autofill` as a lower-priority source than user fields, URL extraction, company research, model knowledge, and document library:
+
+1. User-provided fields
+2. Job posting URL extraction
+3. Company research
+4. Model knowledge where enabled
+5. Document library
+6. **Role catalog autofill**
+7. Local deterministic fallback
+
+### Tests required (when implemented)
+
+1. Role catalog contains major categories
+2. Role catalog contains full-time roles
+3. Role catalog contains part-time roles
+4. Role catalog contains odd/gig roles
+5. Unsafe role categories are **not** included
+6. Search finds roles by title
+7. Search finds roles by category
+8. Custom role option works
+9. Autofill **unchecked** → only job title set
+10. Autofill **checked** → interview-pack fields populated
+11. User-edited values override autofill values
+12. Autofill marked as `role_catalog_autofill`, not user-provided
+13. Interview pack generation works from selected role
+14. Existing tests still pass
+
+### Acceptance criteria (planning — deferred)
+
+- [x] Roadmap documents comprehensive searchable role catalog
+- [x] Catalog includes professional, part-time, odd/gig, and education roles
+- [x] Autofill checkbox UX and override rules documented
+- [x] `role_catalog_autofill` source tier documented
+- [x] Safety restrictions documented
+- [x] Test plan documented
+- [ ] **Implementation** — not started
 
 ---
 
@@ -977,6 +1246,7 @@ Folder: `project_review/samples/iteration_004f_global_job_search_agent/`
 
 - Persistent saved jobs and search history
 - **Use this job** from search results → Job Intelligence Profile (depends on 004E-B–004E-D being complete first)
+- **Comprehensive Role Catalog Dropdown** — see [§ Future Feature — Comprehensive Role Catalog Dropdown](#future-feature--comprehensive-role-catalog-dropdown-deferred) (can ship before or with 004F; same 004E-F gate)
 
 ### Acceptance criteria (004F planning — deferred)
 

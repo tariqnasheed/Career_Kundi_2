@@ -86,7 +86,7 @@ def audit_pack_coverage(profile: JobIntelligenceProfile, questions: list[dict[st
                 skills_covered += 1
             elif item.item_type == "tool":
                 tools_covered += 1
-            elif item.item_type in ("company_profile", "company_products", "industry_domain"):
+            elif item.item_type in ("company_profile", "company_products", "industry_domain", "company_product_service", "company_industry", "company_market"):
                 company_covered = True
             elif item.item_type == "compliance":
                 compliance_covered = True
@@ -98,6 +98,8 @@ def audit_pack_coverage(profile: JobIntelligenceProfile, questions: list[dict[st
                 importance=item.importance,
                 covered=False,
                 missing_reason="No exportable question referenced this item closely enough.",
+                item_id=getattr(item, "item_id", None),
+                source_label=getattr(item, "source_label", None),
             )
             missing.append(clone)
 
@@ -170,7 +172,7 @@ def _question_for_item(item: JobIntelligenceItem, profile: JobIntelligenceProfil
         )
         category = "technical"
         qtype = "tool_usage"
-    elif item.item_type in ("company_profile", "company_products", "industry_domain"):
+    elif item.item_type in ("company_profile", "company_products", "industry_domain", "company_product_service", "company_industry", "company_market"):
         focus = text or profile.company_products_services or profile.industry_domain or company
         question = (
             f"How would you adapt your work as a {role} if the company's main focus is {focus}?"
@@ -223,6 +225,7 @@ def _question_for_item(item: JobIntelligenceItem, profile: JobIntelligenceProfil
             "progression_label": progression,
             "coverage_item_type": item.item_type,
             "coverage_item_text": item.text,
+            "source_type": item.source,
         },
     }
 
@@ -353,6 +356,23 @@ def apply_coverage_audit_and_fill(
 
 
 def audit_to_dict(audit: CoverageAuditResult) -> dict[str, Any]:
+    from app.agents.job_search.knowledge.source_ladder import _source_label
+
     data = asdict(audit)
-    data["missing_items"] = [asdict(i) for i in audit.missing_items]
+    missing_dicts = []
+    for i in audit.missing_items:
+        row = asdict(i)
+        row["item_id"] = getattr(i, "item_id", None)
+        row["item_text"] = i.text
+        row["source_type"] = i.source
+        row["source_label"] = getattr(i, "source_label", None) or _source_label(i.source)
+        row["action"] = "add_question"
+        missing_dicts.append(row)
+    data["missing_items"] = missing_dicts
     return data
+
+
+def build_audit_items_for_profile(profile: JobIntelligenceProfile) -> list[dict[str, Any]]:
+    from app.agents.job_search.knowledge.source_ladder import build_coverage_audit_items
+
+    return build_coverage_audit_items(profile)

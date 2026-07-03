@@ -507,6 +507,17 @@ def _result_from_mapped(
     result.warnings = _build_warnings(result, methods)
     if result.sources:
         result.sources[0].confidence = result.research_confidence
+    # Reset status map for this extraction path; keys are assigned below from methods/source_type.
+    result.source_status = {}
+    if methods and _has_useful_context(result):
+        if source_type == "company_page":
+            result.source_status["company_page"] = "used"
+        if "user_provided" in methods:
+            result.source_status["user_company_profile"] = "used"
+        if "job_posting_derived" in methods:
+            result.source_status["job_posting_company_profile"] = "used"
+    result.source_status.setdefault("model_knowledge", "disabled")
+    result.source_status.setdefault("local_fallback", "available")
     return result
 
 

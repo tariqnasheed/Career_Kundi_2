@@ -149,6 +149,8 @@ export interface InterviewPackRead {
     completeness_score?: number;
     warnings?: string[];
     summary?: string;
+    source_status?: Record<string, string>;
+    source_ladder?: Record<string, string>;
   } | null;
   job_posting_extraction?: JobPostingExtractionRead | null;
   company_research?: CompanyResearchRead | null;

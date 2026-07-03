@@ -387,6 +387,33 @@ class JobIntelligenceItemRead(BaseModel):
     covered: bool = False
     related_question_ids: list[str] = Field(default_factory=list)
     missing_reason: str | None = None
+    item_id: str | None = None
+    source_label: str | None = None
+    item_text: str | None = None
+    source_type: str | None = None
+    action: str | None = None
+
+
+class CoverageAuditItemRead(BaseModel):
+    item_id: str | None = None
+    item_type: str
+    item_text: str
+    source_type: str
+    source_label: str = ""
+    covered: bool = False
+    related_question_ids: list[str] = Field(default_factory=list)
+    missing_reason: str | None = None
+    action: str = "pending"
+
+
+class SourceLadderStatusRead(BaseModel):
+    user_fields: str = "thin"
+    link_extraction: str = "not_present"
+    company_research: str = "not_present"
+    model_knowledge: str = "disabled"
+    document_library: str = "not_configured"
+    local_fallback: str = "used"
+    web_research: str | None = None
 
 
 class JobIntelligenceProfileRead(BaseModel):
@@ -402,6 +429,7 @@ class JobIntelligenceProfileRead(BaseModel):
     compliance_safety_ethics: list[str] = Field(default_factory=list)
     seniority_level: str | None = None
     source_status: dict[str, str] = Field(default_factory=dict)
+    source_ladder: SourceLadderStatusRead | None = None
     summary: str = ""
 
 
@@ -418,6 +446,8 @@ class CoverageAuditRead(BaseModel):
     compliance_covered: bool = False
     has_difficulty_progression: bool = False
     has_practical_or_scenario: bool = False
+    audit_items: list[CoverageAuditItemRead] = Field(default_factory=list)
+    missing_items: list[CoverageAuditItemRead] = Field(default_factory=list)
 
 
 class InterviewQuestion(BaseModel):
@@ -444,6 +474,10 @@ class InterviewQuestion(BaseModel):
     follow_up_questions: list[str] = Field(default_factory=list)
     study_material: InterviewStudyMaterial = Field(default_factory=InterviewStudyMaterial)
     study_sources: StudySourcesMetadata | None = None
+    question_source_items: list[str] = Field(default_factory=list)
+    question_source_types: list[str] = Field(default_factory=list)
+    source_priority_used: list[str] = Field(default_factory=list)
+    coverage_item_ids: list[str] = Field(default_factory=list)
     practice_tasks: list[str] = Field(default_factory=list)
     revision_notes: list[str] = Field(default_factory=list)
     citations: list[dict] = Field(default_factory=list)

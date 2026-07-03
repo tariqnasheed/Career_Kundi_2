@@ -174,10 +174,18 @@ def _intelligence_read_models(
             profile = build_job_intelligence_profile(job_snapshot)
             profile_data["summary"] = profile_summary_text(profile)
 
+    profile = build_job_intelligence_profile(job_snapshot)
+    ladder = job_snapshot.get("source_ladder")
+    if isinstance(ladder, dict) and ladder.get("source_status"):
+        profile_data["source_ladder"] = ladder.get("source_status")
+    else:
+        profile_data["source_ladder"] = profile.source_status
+
     audit_data = audit_dict or job_snapshot.get("coverage_audit")
     if not audit_data:
-        profile = build_job_intelligence_profile(job_snapshot)
         audit = audit_pack_coverage(profile, questions)
+        from app.agents.job_search.job_coverage_audit import build_audit_items_for_profile
+
         audit_data = {
             "total_items": audit.total_items,
             "covered_items": audit.covered_items,
@@ -191,7 +199,15 @@ def _intelligence_read_models(
             "compliance_covered": audit.compliance_covered,
             "has_difficulty_progression": audit.has_difficulty_progression,
             "has_practical_or_scenario": audit.has_practical_or_scenario,
+            "audit_items": build_audit_items_for_profile(profile),
+            "missing_items": [],
         }
+    else:
+        audit_data = dict(audit_data)
+        if not audit_data.get("audit_items"):
+            from app.agents.job_search.job_coverage_audit import build_audit_items_for_profile
+
+            audit_data["audit_items"] = build_audit_items_for_profile(profile)
     return JobIntelligenceProfileRead(**profile_data), CoverageAuditRead(**audit_data)
 
 

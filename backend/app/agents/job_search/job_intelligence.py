@@ -67,6 +67,8 @@ class JobIntelligenceItem:
     covered: bool = False
     related_question_ids: list[str] = field(default_factory=list)
     missing_reason: str | None = None
+    item_id: str | None = None
+    source_label: str | None = None
 
 
 @dataclass
@@ -237,6 +239,11 @@ def _build_extracted_items(profile: JobIntelligenceProfile, job: dict[str, Any] 
                 importance="medium",
             )
         )
+
+    from app.agents.job_search.knowledge.source_ladder import assign_item_ids, collect_source_derived_items
+
+    items.extend(collect_source_derived_items(job or {}, items))
+    assign_item_ids(items)
     return items
 
 
@@ -310,51 +317,9 @@ def _build_warnings(profile: JobIntelligenceProfile, job: dict[str, Any]) -> lis
 
 
 def _build_source_status(profile: JobIntelligenceProfile, job: dict[str, Any]) -> dict[str, str]:
-    user_signal = bool(
-        profile.job_description
-        or profile.responsibilities
-        or profile.required_skills
-        or profile.company_profile
-        or profile.extra_notes
-    )
-    user_status = "used" if user_signal else "thin"
-    extraction = job.get("job_posting_extraction") if isinstance(job.get("job_posting_extraction"), dict) else None
-    if profile.extracted_link_content:
-        link_status = "used"
-    elif extraction and extraction.get("extraction_confidence") == "failed":
-        link_status = "failed"
-    elif profile.job_posting_url:
-        link_status = "not_configured"
-    else:
-        link_status = "not_present"
-    model_status = "disabled"
-    if settings.job_search_enable_model_knowledge:
-        model_status = "available_not_used"
-    company_research = job.get("company_research")
-    if isinstance(company_research, dict):
-        cr_status = company_research.get("source_status") or {}
-        page_status = cr_status.get("company_page", "not_present")
-        confidence = company_research.get("research_confidence")
-        if page_status == "used" and confidence in ("high", "medium"):
-            web_status = "used"
-        elif page_status == "failed":
-            web_status = "failed"
-        elif confidence in ("high", "medium", "low"):
-            web_status = "available_not_used"
-        else:
-            web_status = "not_configured"
-    elif job.get("company_url"):
-        web_status = "not_configured"
-    else:
-        web_status = "not_configured"
-    return {
-        "user_fields": user_status,
-        "link_extraction": link_status,
-        "web_research": web_status,
-        "model_knowledge": model_status,
-        "document_library": "available",
-        "local_fallback": "used",
-    }
+    from app.agents.job_search.knowledge.source_ladder import build_source_ladder_status
+
+    return build_source_ladder_status(job, profile)
 
 
 def build_job_intelligence_profile(job: dict[str, Any]) -> JobIntelligenceProfile:

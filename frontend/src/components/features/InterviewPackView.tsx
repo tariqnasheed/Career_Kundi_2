@@ -363,6 +363,8 @@ export function InterviewPackView({
   const extractionConfidence = (pack?.job_posting_extraction as { extraction_confidence?: string } | undefined)?.extraction_confidence;
   const companyResearch = pack?.company_research as CompanyResearchRead | undefined;
   const companyResearchWarnings = companyResearch?.warnings ?? [];
+  const sourceLadder = (pack?.job_intelligence as { source_ladder?: Record<string, string>; source_status?: Record<string, string> } | undefined)?.source_ladder
+    ?? (pack?.job_intelligence as { source_status?: Record<string, string> } | undefined)?.source_status;
   let questionIndex = 0;
 
   if (loading || generating) {
@@ -443,6 +445,13 @@ export function InterviewPackView({
                 </p>
               )}
             </div>
+          )}
+          {sourceLadder && (
+            <p style={{ fontSize: "0.72rem", color: "var(--text-secondary)", marginBottom: "0.5rem", lineHeight: 1.45 }}>
+              Source ladder — user: {sourceLadder.user_fields ?? "—"} · URL: {sourceLadder.link_extraction ?? "—"} ·
+              company: {sourceLadder.company_research ?? sourceLadder.web_research ?? "—"} · model: {sourceLadder.model_knowledge ?? "—"} ·
+              library: {sourceLadder.document_library ?? "—"} · fallback: {sourceLadder.local_fallback ?? "—"}
+            </p>
           )}
           {libraryStatus === "library_fallback" && (
             <Badge color="amber" size="sm">Loaded from saved documents</Badge>

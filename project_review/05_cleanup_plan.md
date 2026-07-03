@@ -26,7 +26,18 @@ Major iterations may use web research to improve design, reliability, and UX —
 
 **004F (DEFERRED):** Global Job Search Agent — requirements preserved in `01_job_search_and_interview_pack.md` § Iteration 004F. **Do not implement** until 004E-F gate passes. When eventually started, apply research-assisted development before job provider integration (Adzuna, USAJOBS, SerpApi, etc.). 004F does not change the final cleanup gate.
 
-**Job Search page roadmap (004F — deferred):**
+**Job Search page roadmap (deferred — after 004E-F):**
+
+**Role catalog (before or alongside 004F):**
+
+- Replace/enhance **Popular Job Roles** with searchable grouped catalog across sectors, departments, full-time, part-time, odd/gig, and education roles
+- Custom role input when not listed; search by title, category, employment type
+- Optional **Autofill interview-pack fields** checkbox — unchecked sets title only; checked fills responsibilities/skills/tools/seniority/industry context from catalog data module (not hardcoded in React)
+- User-edited values override catalog autofill; source tier `role_catalog_autofill` (below document library, above local fallback)
+- Exclude unsafe/illegal/adult/gambling/weapon/cybercrime roles
+- Full spec: `01_job_search_and_interview_pack.md` § Future Feature — Comprehensive Role Catalog Dropdown
+
+**004F — Global Job Search Agent:**
 
 - City and country filters; full-time, part-time, contract, internship, freelance, and odd/gig job types
 - `Search around the world` checkbox (default **unchecked**); default search deeply targets selected/nearest location

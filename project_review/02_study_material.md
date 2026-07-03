@@ -502,9 +502,10 @@ Samples: `project_review/samples/iteration_004c_study_synthesis_quality/`
 | **004E-A** | Done (`1fb45af5`) | Job Intelligence Profile + coverage audit foundation |
 | **004E-B** | Done | Job posting link extraction (JSON-LD + HTML fallback) |
 | **004E-C** | Done | Company profile + source-cited web research (Organization JSON-LD + HTML fallback) |
-| **004E-D** | Planned | Full source ladder integration into Q&A generation |
+| **004E-D** | Done | Full source ladder integration into Q&A generation |
 | **004E-E** | Planned | Study material finalization per question |
 | **004E-F** | Planned | Final regression gate before Job Search |
+| **Role catalog** | **Deferred** | Searchable grouped role catalog + optional autofill — after 004E-F |
 | **004F** | **Deferred** | Global Job Search Agent — after 004E-F |
 
 Full specifications: [01_job_search_and_interview_pack.md § 004E-B–004E-F](../01_job_search_and_interview_pack.md#interview-pack--study-material-completion-track-004e-b004e-f)
@@ -523,6 +524,18 @@ Full specifications: [01_job_search_and_interview_pack.md § 004E-B–004E-F](..
 ### 004F — Global Job Search (deferred)
 
 Requirements preserved in `01_job_search_and_interview_pack.md` § Iteration 004F. When 004F eventually starts, **Use this job** from search results should populate the Job Intelligence Profile — extending the 004E source ladder upstream. **Do not implement 004F until 004E-F gate passes.**
+
+### Future — Comprehensive Role Catalog Dropdown (deferred)
+
+**Not part of 004E-D/E/F.** Popular Job Roles will become a **searchable grouped role catalog** (professional, part-time, odd/gig, education department roles) with custom-role fallback and an optional **Autofill interview-pack fields** checkbox.
+
+- Unchecked → title only; user fills fields manually
+- Checked → catalog populates responsibilities, skills, tools, seniority hints, industry context; all fields remain editable
+- User-provided edits always override catalog autofill (`role_catalog_autofill` — planned source tier below document library, above local fallback)
+- Catalog stored in maintainable data module, not hardcoded in React
+- **004F remains deferred** until Interview Pack + Study Material completion (004E-F gate)
+
+Full spec: `01_job_search_and_interview_pack.md` § Future Feature — Comprehensive Role Catalog Dropdown.
 
 ---
 
@@ -585,8 +598,9 @@ See also: `project_review/05_cleanup_plan.md` (this phase runs **before** cleanu
 - [x] **004E-A:** Job Intelligence Profile + coverage audit foundation (`1fb45af5`)
 - [x] **004E-B:** Job posting link extraction for interview packs
 - [x] **004E-C:** Company profile + source-cited web research
-- [ ] **004E-D:** Full source ladder integration into pack generation
+- [x] **004E-D:** Full source ladder integration into pack generation
 - [ ] **004E-E:** Per-question study material finalization (profile-connected)
 - [ ] **004E-F:** Final regression gate before Job Search
+- [ ] **Role catalog:** Comprehensive searchable dropdown + optional autofill (**deferred** — after 004E-F)
 - [ ] **004F:** Global Job Search Agent (**deferred**)
 - [ ] **Final content library regeneration** (pre-cleanup gate — **do not run unless explicitly instructed**)

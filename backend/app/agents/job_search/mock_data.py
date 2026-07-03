@@ -201,8 +201,15 @@ from app.agents.job_search.job_intelligence import build_job_intelligence_profil
 from app.agents.job_search.job_coverage_audit import (
     audit_pack_coverage,
     audit_to_dict,
+    build_audit_items_for_profile,
     build_missing_coverage_questions,
     build_profile_driven_questions,
+)
+from app.agents.job_search.knowledge.source_ladder import (
+    annotate_question_source_metadata,
+    apply_source_ladder_to_job,
+    build_source_ladder_questions,
+    refresh_source_ladder_usage_from_questions,
 )
 from app.agents.job_search.quality.silly_question_guard import is_silly_or_vague_question
 from app.agents.job_search.quality.broken_template_audit import broken_template_count
@@ -712,6 +719,7 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
         enriched["study_material"] = normalize_study_material_dict(enriched["study_material"])
     attach_study_source_metadata(enriched, job)
     synthesize_study_module(enriched, job)
+    annotate_question_source_metadata(enriched, job)
     return enriched
 
 
@@ -730,6 +738,7 @@ def mock_generate_questions(
     count is hardcoded anywhere in this function.
     """
     questions: list[dict] = []
+    ladder_ctx = apply_source_ladder_to_job(job)
     intelligence_profile = build_job_intelligence_profile(job)
     job["job_intelligence_profile"] = profile_to_dict(intelligence_profile)
     role_intelligence = build_role_intelligence(job)
@@ -857,6 +866,8 @@ def mock_generate_questions(
                     }
                 )
 
+    questions.extend(build_source_ladder_questions(job, ladder_ctx))
+
     if not questions:
         questions.extend(_role_baseline_questions(job))
 
@@ -939,7 +950,12 @@ def mock_generate_questions(
     else:
         coverage_audit = audit_pack_coverage(intelligence_profile, exportable)
 
-    job["coverage_audit"] = audit_to_dict(coverage_audit)
+    audit_payload = audit_to_dict(coverage_audit)
+    audit_payload["audit_items"] = build_audit_items_for_profile(intelligence_profile)
+    job["coverage_audit"] = audit_payload
+
+    if exportable:
+        refresh_source_ladder_usage_from_questions(job, exportable)
 
     return exportable if exportable else [
         q for q in (_finalize_question(q, job, difficulty, i) for i, q in enumerate(unique_questions))
@@ -949,6 +965,7 @@ def mock_generate_questions(
 
 def finalize_questions_list(questions: list[dict], job: dict, difficulty: str) -> list[dict]:
     """Ensure every question has model answers, study material, and coverage (live + mock paths)."""
+    apply_source_ladder_to_job(job)
     intelligence_profile = build_job_intelligence_profile(job)
     job["job_intelligence_profile"] = profile_to_dict(intelligence_profile)
     expanded = apply_coverage_plan(job, list(questions), difficulty=difficulty)
@@ -977,7 +994,10 @@ def finalize_questions_list(questions: list[dict], job: dict, difficulty: str) -
         added += 1
     audit = audit_pack_coverage(intelligence_profile, exportable)
     audit.added_question_count = added
-    job["coverage_audit"] = audit_to_dict(audit)
+    audit_payload = audit_to_dict(audit)
+    audit_payload["audit_items"] = build_audit_items_for_profile(intelligence_profile)
+    job["coverage_audit"] = audit_payload
+    refresh_source_ladder_usage_from_questions(job, exportable)
     return exportable
 
 

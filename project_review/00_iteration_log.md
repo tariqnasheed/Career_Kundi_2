@@ -89,10 +89,12 @@ This applies especially when implementing complex features such as:
 6. **Interview Pack + Study Material completion track** (active):
    - **004E-B** — Job posting link extraction (**implemented**)
    - **004E-C** — Company profile and source-cited web research (**implemented**)
-   - **004E-D** — Full interview pack source ladder integration (next)
-   - **004E-E** — Study material finalization for interview packs
+   - **004E-D** — Full interview pack source ladder integration (**implemented**)
+   - **004E-E** — Study material finalization for interview packs (next)
    - **004E-F** — Final interview pack and study material regression gate
-7. **004F — Global Job Search Agent and Location-Aware Search Page** (**DEFERRED** — do not implement until steps 1–6 above are fully complete)
+7. **Job Search / Role Selection** (**DEFERRED** — after 004E-F; do not interrupt Interview Pack + Study Material completion):
+   - **Comprehensive Role Catalog Dropdown** — searchable grouped catalog, custom role, optional autofill (`role_catalog_autofill` source tier)
+   - **004F — Global Job Search Agent and Location-Aware Search Page**
 8. CV Builder redesign
 9. CV template expansion and section-level AI
 10. Roadmap page rebuild
@@ -945,13 +947,32 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 ---
 
+## Future Feature — Comprehensive Role Catalog Dropdown (DEFERRED — documented 2026-07-03)
+
+**Status:** Documented only — **not implemented**. **Do not implement** during 004E-D, 004E-E, or 004E-F.
+
+**Goal:** Replace/enhance Popular Job Roles on the Job Search / Interview Pack page with a searchable grouped role catalog (professional, part-time, odd/gig, education roles), custom-role fallback, and optional **Autofill interview-pack fields** checkbox.
+
+**Key rules:**
+
+- Autofill unchecked → set title only; user fills other fields manually
+- Autofill checked → populate responsibilities, skills, tools, seniority hints, industry context from catalog; values remain editable
+- User edits override catalog autofill (`role_catalog_autofill` source tier — below document library, above local fallback)
+- Unsafe/illegal/adult/gambling/weapon/cybercrime roles excluded from catalog
+
+**Full specification:** `project_review/01_job_search_and_interview_pack.md` § Future Feature — Comprehensive Role Catalog Dropdown.
+
+**Gate:** Same as 004F — after **004E-F** passes; must not interrupt Interview Pack + Study Material completion.
+
+---
+
 ## Iteration 004F — Global Job Search Agent and Location-Aware Search Page (DEFERRED)
 
 **Status:** Documented only — **not implemented** and **intentionally deferred**. **Baseline:** `1fb45af5` (004E-A committed).
 
 > **004F Global Job Search Agent is intentionally deferred until Interview Pack Generator and Interview Study Material are fully completed.**
 
-**Gate:** Do not implement 004F, global job search, job-search web provider architecture, provider APIs, or Job Search page redesign until **004E-B through 004E-F** are complete. Apply Research-Assisted Development Rule before provider work when 004F eventually starts.
+**Gate:** Do not implement 004F, global job search, job-search web provider architecture, provider APIs, or Job Search page redesign until **004E-B through 004E-F** are complete. The **Comprehensive Role Catalog Dropdown** (role selection + optional autofill) shares the same gate — see `01_job_search_and_interview_pack.md` § Future Feature — Comprehensive Role Catalog Dropdown. Apply Research-Assisted Development Rule before provider work when 004F eventually starts.
 
 **Goal:** Rigorous location-aware web job search on the Job Search page — structured `JobSearchIntent`, multi-agent provider pipeline, deduplication/ranking, and result actions that feed the Job Intelligence Profile.
 
@@ -969,7 +990,7 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 |-------|------|
 | **004E-B** | Job posting link extraction for interview packs (**done**) |
 | **004E-C** | Company profile + source-cited web research for interview packs (**done**) |
-| **004E-D** | Full interview pack source ladder integration into Q&A generation |
+| **004E-D** | Full interview pack source ladder integration (**done**) |
 | **004E-E** | Study material finalization — dedicated per-question modules connected to profile |
 | **004E-F** | Final regression samples and gate before Job Search |
 
@@ -1031,9 +1052,27 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 **Research notes:** Schema.org Organization JSON-LD preferred; user company profile overrides extracted fields; no fake URLs.
 
-**Not implemented:** 004F global job search (deferred). **Next:** 004E-D.
+**Not implemented:** 004F global job search (deferred). **Next:** 004E-E study material finalization.
 
 **Test result:** `265 passed`
+
+---
+
+## Iteration 004E-D — Full Interview Pack Source Ladder Integration (2026-07-03)
+
+**Status:** Implemented.
+
+**Goal:** Wire the 6-tier source ladder into interview-pack Q&A generation, coverage audit, and API metadata.
+
+**Changes:**
+
+- Added `knowledge/source_ladder.py` (no direct network fetching; reuses 004E-B/004E-C metadata)
+- Integrated ladder into `mock_data.py`, `job_intelligence.py`, `job_coverage_audit.py`
+- Extended schemas/API and minimal frontend source ladder display
+- Tests: `test_interview_pack_source_ladder.py`, `test_interview_pack_full_coverage.py`
+- Samples: `project_review/samples/iteration_004e_d_source_ladder_integration/`
+
+**Not implemented:** 004F global job search (deferred). **Next:** 004E-E.
 
 ---
 
@@ -1041,5 +1080,5 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 ```
 cd backend && uv run pytest app/agents/job_search/tests -q
-265 passed
+287 passed
 ```
