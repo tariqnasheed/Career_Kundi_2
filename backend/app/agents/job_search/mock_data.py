@@ -820,6 +820,42 @@ def mock_generate_questions(
                 "skill_tag": None,
             }
         )
+        cr = job.get("company_research") if isinstance(job.get("company_research"), dict) else None
+        if cr:
+            for product in (cr.get("products_services") or [])[:1]:
+                questions.append(
+                    {
+                        "category": "company_specific",
+                        "question": (
+                            f"How would your experience help {job['company_name']} deliver "
+                            f"{product} effectively?"
+                        ),
+                        "why_asked": "Tests alignment with researched company products or services.",
+                        "ideal_answer_points": [
+                            f"References {product}",
+                            "Links experience to company offering",
+                        ],
+                        "follow_ups": [],
+                        "skill_tag": None,
+                    }
+                )
+            for industry in (cr.get("industries") or [])[:1]:
+                questions.append(
+                    {
+                        "category": "company_specific",
+                        "question": (
+                            f"What industry-specific challenges in {industry} would you expect in this role "
+                            f"at {job['company_name']}?"
+                        ),
+                        "why_asked": "Tests domain awareness from researched company industry context.",
+                        "ideal_answer_points": [
+                            f"Names a realistic {industry} challenge",
+                            "Connects challenge to role responsibilities",
+                        ],
+                        "follow_ups": [],
+                        "skill_tag": None,
+                    }
+                )
 
     if not questions:
         questions.extend(_role_baseline_questions(job))

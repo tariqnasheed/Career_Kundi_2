@@ -36,6 +36,10 @@ from sqlalchemy.orm.attributes import flag_modified
 from app.agents.job_search.graph import run_interview_pack_pipeline, run_job_enrichment_pipeline
 from app.agents.job_search import mock_data
 from app.agents.job_search.job_intelligence import build_job_intelligence_profile, profile_summary_text
+from app.agents.job_search.company_research import (
+    enrich_job_snapshot_with_company_research,
+    research_to_dict,
+)
 from app.agents.job_search.job_posting_extractor import enrich_job_snapshot_from_posting_url
 from app.agents.job_search.job_coverage_audit import audit_pack_coverage
 from app.core.config import settings
@@ -48,6 +52,7 @@ from app.db.models.profile import Profile, Skill
 from app.db.models.user import User
 from app.db.session import get_db
 from app.schemas.job_search import (
+    CompanyResearchRead,
     CoverageAuditRead,
     InterviewPackRead,
     InterviewPackRequest,
@@ -102,6 +107,7 @@ def _pack_read_response(
     job_intelligence: JobIntelligenceProfileRead | dict | None = None,
     coverage_audit: CoverageAuditRead | dict | None = None,
     job_posting_extraction: JobPostingExtractionRead | dict | None = None,
+    company_research: CompanyResearchRead | dict | None = None,
 ) -> InterviewPackRead:
     slug = library.normalize_role_slug(job.title)
     overview = role_overview
@@ -116,6 +122,9 @@ def _pack_read_response(
     extraction = job_posting_extraction
     if extraction and not isinstance(extraction, JobPostingExtractionRead):
         extraction = JobPostingExtractionRead(**extraction)
+    research = company_research
+    if research and not isinstance(research, CompanyResearchRead):
+        research = CompanyResearchRead(**research)
     return InterviewPackRead(
         job_id=str(job.id),
         questions=job.interview_pack,
@@ -130,6 +139,7 @@ def _pack_read_response(
         job_intelligence=intel,
         coverage_audit=audit,
         job_posting_extraction=extraction,
+        company_research=research,
     )
 
 
@@ -462,6 +472,7 @@ async def generate_interview_pack(
         "benefits": job.benefits,
         "extracted_skills": job.extracted_skills,
         "company_profile": job.company_profile,
+        "company_url": payload.company_url or job.company_url,
         "source_url": job.source_url,
         "experience_level": getattr(job, "experience_level", None),
     }
@@ -478,6 +489,18 @@ async def generate_interview_pack(
                 extraction_read = JobPostingExtractionRead(**extraction.__dict__)
         except Exception as exc:
             logger.warning("job_posting_extraction_failed", error=str(exc))
+
+    company_research_read: CompanyResearchRead | None = None
+    if payload.research_company:
+        try:
+            job_snapshot, company_research = await enrich_job_snapshot_with_company_research(
+                job_snapshot,
+                company_url=payload.company_url or job.company_url,
+                fetch_company_page=bool(payload.company_url or job.company_url),
+            )
+            company_research_read = CompanyResearchRead(**research_to_dict(company_research))
+        except Exception as exc:
+            logger.warning("company_research_failed", error=str(exc))
 
     library_status = "generated"
     fallback_message: str | None = None
@@ -583,6 +606,12 @@ async def generate_interview_pack(
         or (
             JobPostingExtractionRead(**job_snapshot["job_posting_extraction"])
             if isinstance(job_snapshot.get("job_posting_extraction"), dict)
+            else None
+        ),
+        company_research=company_research_read
+        or (
+            CompanyResearchRead(**job_snapshot["company_research"])
+            if isinstance(job_snapshot.get("company_research"), dict)
             else None
         ),
     )

@@ -12,7 +12,7 @@ import { Button } from "../ui/Button";
 import { Badge } from "../ui/Badge";
 import { Card } from "../ui/Card";
 import { Spinner } from "../ui/Spinner";
-import type { InterviewQuestion, InterviewStudyMaterial } from "../../types/api";
+import type { InterviewQuestion, InterviewStudyMaterial, CompanyResearchRead } from "../../types/api";
 
 const DIFF_COLOR: Record<string, string> = {
   Easy: "emerald", Medium: "amber", Hard: "rose", Expert: "violet",
@@ -361,6 +361,8 @@ export function InterviewPackView({
     ...((pack?.job_intelligence as { warnings?: string[] } | undefined)?.warnings ?? []),
   ].filter((w, i, arr) => arr.indexOf(w) === i);
   const extractionConfidence = (pack?.job_posting_extraction as { extraction_confidence?: string } | undefined)?.extraction_confidence;
+  const companyResearch = pack?.company_research as CompanyResearchRead | undefined;
+  const companyResearchWarnings = companyResearch?.warnings ?? [];
   let questionIndex = 0;
 
   if (loading || generating) {
@@ -422,6 +424,26 @@ export function InterviewPackView({
               {warning}
             </p>
           ))}
+          {companyResearch && companyResearch.research_confidence && companyResearch.research_confidence !== "unavailable" && (
+            <div style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginBottom: "0.5rem", lineHeight: 1.45 }}>
+              <p style={{ marginBottom: "0.25rem" }}>
+                Company context — confidence: {companyResearch.research_confidence}
+                {(companyResearch.source_urls?.length ?? 0) > 0 && (
+                  <> · sources captured: {companyResearch.source_urls?.length}</>
+                )}
+              </p>
+              {companyResearchWarnings.slice(0, 2).map((warning) => (
+                <p key={`cr-${warning}`} style={{ color: "var(--accent-amber)", marginBottom: "0.25rem" }}>
+                  {warning}
+                </p>
+              ))}
+              {(companyResearch.source_urls?.length ?? 0) > 0 && (
+                <p style={{ fontSize: "0.7rem", opacity: 0.85 }}>
+                  {companyResearch.source_urls?.slice(0, 3).join(" · ")}
+                </p>
+              )}
+            </div>
+          )}
           {libraryStatus === "library_fallback" && (
             <Badge color="amber" size="sm">Loaded from saved documents</Badge>
           )}

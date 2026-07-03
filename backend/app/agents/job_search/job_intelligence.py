@@ -183,7 +183,7 @@ def _company_fields(company_profile: dict[str, Any] | None) -> tuple[str | None,
     return profile or None, scope or None, products or None, industry or None
 
 
-def _build_extracted_items(profile: JobIntelligenceProfile) -> list[JobIntelligenceItem]:
+def _build_extracted_items(profile: JobIntelligenceProfile, job: dict[str, Any] | None = None) -> list[JobIntelligenceItem]:
     items: list[JobIntelligenceItem] = []
 
     def add_many(item_type: str, values: list[str], source: str, importance: str) -> None:
@@ -201,12 +201,21 @@ def _build_extracted_items(profile: JobIntelligenceProfile) -> list[JobIntellige
     add_many("qualification", profile.qualifications, "user_field", "medium")
     add_many("experience", profile.experience_requirements, "user_field", "medium")
 
+    company_source = "user_field"
+    cr = job.get("company_research") if isinstance(job, dict) else None
+    if isinstance(cr, dict):
+        ss = cr.get("source_status") or {}
+        if ss.get("company_page") == "used":
+            company_source = "company_page"
+        elif ss.get("job_posting_company_profile") == "used":
+            company_source = "job_posting_derived"
+
     if profile.company_profile:
         items.append(
             JobIntelligenceItem(
                 item_type="company_profile",
                 text=profile.company_profile,
-                source="user_field",
+                source=company_source,
                 importance="high",
             )
         )
@@ -215,7 +224,7 @@ def _build_extracted_items(profile: JobIntelligenceProfile) -> list[JobIntellige
             JobIntelligenceItem(
                 item_type="company_products",
                 text=profile.company_products_services,
-                source="user_field",
+                source=company_source,
                 importance="high",
             )
         )
@@ -224,7 +233,7 @@ def _build_extracted_items(profile: JobIntelligenceProfile) -> list[JobIntellige
             JobIntelligenceItem(
                 item_type="industry_domain",
                 text=profile.industry_domain,
-                source="user_field",
+                source=company_source,
                 importance="medium",
             )
         )
@@ -321,10 +330,27 @@ def _build_source_status(profile: JobIntelligenceProfile, job: dict[str, Any]) -
     model_status = "disabled"
     if settings.job_search_enable_model_knowledge:
         model_status = "available_not_used"
+    company_research = job.get("company_research")
+    if isinstance(company_research, dict):
+        cr_status = company_research.get("source_status") or {}
+        page_status = cr_status.get("company_page", "not_present")
+        confidence = company_research.get("research_confidence")
+        if page_status == "used" and confidence in ("high", "medium"):
+            web_status = "used"
+        elif page_status == "failed":
+            web_status = "failed"
+        elif confidence in ("high", "medium", "low"):
+            web_status = "available_not_used"
+        else:
+            web_status = "not_configured"
+    elif job.get("company_url"):
+        web_status = "not_configured"
+    else:
+        web_status = "not_configured"
     return {
         "user_fields": user_status,
         "link_extraction": link_status,
-        "web_research": "not_configured",
+        "web_research": web_status,
         "model_knowledge": model_status,
         "document_library": "available",
         "local_fallback": "used",
@@ -423,7 +449,7 @@ def build_job_intelligence_profile(job: dict[str, Any]) -> JobIntelligenceProfil
     profile.completeness_score = _compute_completeness_score(profile)
     profile.warnings = _build_warnings(profile, job)
     profile.source_status = _build_source_status(profile, job)
-    profile.extracted_items = _build_extracted_items(profile)
+    profile.extracted_items = _build_extracted_items(profile, job)
     return profile
 
 

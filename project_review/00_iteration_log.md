@@ -88,8 +88,8 @@ This applies especially when implementing complex features such as:
 5. **004E-A — Job Intelligence Profile + coverage audit foundation** (committed `1fb45af5`)
 6. **Interview Pack + Study Material completion track** (active):
    - **004E-B** — Job posting link extraction (**implemented**)
-   - **004E-C** — Company profile and source-cited web research (next)
-   - **004E-D** — Full interview pack source ladder integration
+   - **004E-C** — Company profile and source-cited web research (**implemented**)
+   - **004E-D** — Full interview pack source ladder integration (next)
    - **004E-E** — Study material finalization for interview packs
    - **004E-F** — Final interview pack and study material regression gate
 7. **004F — Global Job Search Agent and Location-Aware Search Page** (**DEFERRED** — do not implement until steps 1–6 above are fully complete)
@@ -968,7 +968,7 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 | Phase | Goal |
 |-------|------|
 | **004E-B** | Job posting link extraction for interview packs (**done**) |
-| **004E-C** | Company profile + source-cited web research for interview packs (real URLs only; no invented facts) |
+| **004E-C** | Company profile + source-cited web research for interview packs (**done**) |
 | **004E-D** | Full interview pack source ladder integration into Q&A generation |
 | **004E-E** | Study material finalization — dedicated per-question modules connected to profile |
 | **004E-F** | Final regression samples and gate before Job Search |
@@ -1007,9 +1007,33 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 **Research notes:** Schema.org JobPosting JSON-LD is preferred structured source; HTML heading fallback for pages without structured data. No fake URLs or citations.
 
-**Not implemented:** 004F global job search (deferred). **Next:** 004E-C company profile web research.
+**Not implemented:** 004F global job search (deferred). **Next:** 004E-D full source ladder integration.
 
-**Test result:** `237 passed`
+**Test result:** `265 passed`
+
+---
+
+## Iteration 004E-C — Company Profile and Source-Cited Web Research (2026-07-03)
+
+**Status:** Implemented.
+
+**Goal:** Capture reliable company context from user profile, job posting extraction, and official company page HTML for interview-pack generation.
+
+**Changes:**
+
+- Added `company_research.py` — Organization JSON-LD, meta fallback, HTML section extraction, merge layers
+- Integrated company research in `POST /job-search/{job_id}/interview-pack` with `research_company` flag
+- Extended schemas: `CompanyResearchRead`, `InterviewPackRead.company_research`
+- Updated `job_intelligence.py` `web_research` source status and company item sources
+- Frontend: company context confidence/sources in `InterviewPackView`
+- Tests: `test_company_research.py`, `test_company_research_integration.py`
+- Samples: `project_review/samples/iteration_004e_c_company_research/`
+
+**Research notes:** Schema.org Organization JSON-LD preferred; user company profile overrides extracted fields; no fake URLs.
+
+**Not implemented:** 004F global job search (deferred). **Next:** 004E-D.
+
+**Test result:** `265 passed`
 
 ---
 
@@ -1017,5 +1041,5 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 ```
 cd backend && uv run pytest app/agents/job_search/tests -q
-237 passed
+265 passed
 ```

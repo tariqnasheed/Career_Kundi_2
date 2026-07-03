@@ -231,6 +231,37 @@ class JobEnrichmentResult(BaseModel):
 # --- Interview Pack -----------------------------------------------------------------------
 
 
+class CompanyResearchSourceRead(BaseModel):
+    """One captured company research source (Iteration 004E-C)."""
+
+    url: str
+    source_type: str
+    title: str | None = None
+    extracted_facts: list[str] = Field(default_factory=list)
+    confidence: str = "medium"
+
+
+class CompanyResearchRead(BaseModel):
+    """Company profile and source-cited research metadata (Iteration 004E-C)."""
+
+    company_name: str | None = None
+    company_domain: str | None = None
+    official_website: str | None = None
+    company_overview: str | None = None
+    products_services: list[str] = Field(default_factory=list)
+    industries: list[str] = Field(default_factory=list)
+    markets: list[str] = Field(default_factory=list)
+    mission_or_values: list[str] = Field(default_factory=list)
+    company_size: str | None = None
+    headquarters: str | None = None
+    source_urls: list[str] = Field(default_factory=list)
+    sources: list[CompanyResearchSourceRead] = Field(default_factory=list)
+    research_confidence: str = "unavailable"
+    source_status: dict[str, str] = Field(default_factory=dict)
+    warnings: list[str] = Field(default_factory=list)
+    research_methods: list[str] = Field(default_factory=list)
+
+
 class JobPostingExtractionRead(BaseModel):
     """Metadata from job posting URL extraction (Iteration 004E-B)."""
 
@@ -279,6 +310,14 @@ class InterviewPackRequest(BaseModel):
     extract_from_url: bool = Field(
         default=True,
         description="When true and a posting URL is present, extract fields before generating the pack.",
+    )
+    company_url: str | None = Field(
+        default=None,
+        description="Optional company profile page URL override for company research before generation.",
+    )
+    research_company: bool = Field(
+        default=True,
+        description="When true and a company URL is present, extract company context before generating the pack.",
     )
 
 
@@ -433,6 +472,7 @@ class InterviewPackRead(BaseModel):
     job_intelligence: JobIntelligenceProfileRead | None = None
     coverage_audit: CoverageAuditRead | None = None
     job_posting_extraction: JobPostingExtractionRead | None = None
+    company_research: CompanyResearchRead | None = None
 
 
 class RolePackLibraryEntry(BaseModel):

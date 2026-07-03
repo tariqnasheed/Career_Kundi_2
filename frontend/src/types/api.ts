@@ -83,6 +83,33 @@ export interface JobDiscoveryResult {
   verified: boolean;
 }
 
+export interface CompanyResearchSourceRead {
+  url: string;
+  source_type: string;
+  title?: string | null;
+  extracted_facts?: string[];
+  confidence?: string;
+}
+
+export interface CompanyResearchRead {
+  company_name?: string | null;
+  company_domain?: string | null;
+  official_website?: string | null;
+  company_overview?: string | null;
+  products_services?: string[];
+  industries?: string[];
+  markets?: string[];
+  mission_or_values?: string[];
+  company_size?: string | null;
+  headquarters?: string | null;
+  source_urls?: string[];
+  sources?: CompanyResearchSourceRead[];
+  research_confidence?: string;
+  source_status?: Record<string, string>;
+  warnings?: string[];
+  research_methods?: string[];
+}
+
 export interface JobPostingExtractionRead {
   source_url: string;
   final_url?: string | null;
@@ -124,6 +151,7 @@ export interface InterviewPackRead {
     summary?: string;
   } | null;
   job_posting_extraction?: JobPostingExtractionRead | null;
+  company_research?: CompanyResearchRead | null;
   coverage_audit?: Record<string, unknown> | null;
 }
 

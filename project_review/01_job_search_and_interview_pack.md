@@ -297,7 +297,7 @@ Samples: [iteration_004b_summary.md](../samples/iteration_004b_document_library_
 **Next major phases (in order):**
 
 1. **004E-B** — Job posting link extraction for interview packs (**implemented**)
-2. **004E-C** — Company profile + source-cited web research for interview packs
+2. **004E-C** — Company profile + source-cited web research for interview packs (**implemented**)
 3. **004E-D** — Full interview pack source ladder integration
 4. **004E-E** — Study material finalization for interview packs
 5. **004E-F** — Final regression gate (samples + metrics)
@@ -324,7 +324,7 @@ Deferred until after 004E-B–004E-F:
 
 **004E-B research expectation:** Before 004E-B implementation, apply the [Research-Assisted Development Rule](#research-assisted-development-rule) — review official docs and reputable open-source examples for job-posting parsers, HTML extraction, company-profile capture, and source-citation patterns. Document chosen approach and rejected alternatives in `project_review/`.
 
-**Status:** 004E-A foundation done; 004E-B–004E-F documented — implement when explicitly instructed.
+**Status:** 004E-A foundation done; 004E-B and 004E-C implemented; 004E-D–004E-F documented — implement when explicitly instructed.
 
 ### Problem statement
 
@@ -550,7 +550,7 @@ See `project_review/05_cleanup_plan.md`.
 
 ### 004E-B — Job Posting Link Extraction for Interview Packs (IMPLEMENTED)
 
-**Status:** Implemented (2026-07-03). **Next active phase:** 004E-C.
+**Status:** Implemented (2026-07-03). **Next active phase:** 004E-D.
 
 **Goal:** If the user provides a job posting URL for interview-pack generation, extract posting content before generation.
 
@@ -573,13 +573,41 @@ See `project_review/05_cleanup_plan.md`.
 
 **Metrics (samples):** fake URLs = 0, silly question hits = 0, generic phrase hits = 0.
 
-**Not in 004E-B:** global job search (004F deferred), company web research (004E-C), extracted-field review UI beyond warnings.
+**Not in 004E-B:** global job search (004F deferred), company web research (moved to **004E-C**, now implemented), extracted-field review UI beyond warnings.
 
 **Remaining touchpoints for later:** dedicated extracted-field review/edit UI polish (004E-C+).
 
-### 004E-C — Company Profile and Source-Cited Web Research for Interview Packs
+### 004E-C — Company Profile and Source-Cited Web Research for Interview Packs (IMPLEMENTED)
+
+**Status:** Implemented (2026-07-03). **Next active phase:** 004E-D.
 
 **Goal:** When company name/domain is available, capture reliable company context for interview-pack generation.
+
+**Implementation:**
+
+- Added `company_research.py` — user profile → job posting derived → Organization JSON-LD → meta → HTML sections
+- `CompanyResearchResult` with `source_status`, `research_confidence`, real `source_urls` only
+- `fetch_and_research_company_url` reuses 004E-B safe fetch (SSRF redirect validation, DNS/IP checks, 2 MB cap)
+- Integrated in `POST /job-search/{job_id}/interview-pack` when `research_company` and `company_url` present
+- Extended schemas: `CompanyResearchRead`, `InterviewPackRequest.company_url` / `research_company`, `InterviewPackRead.company_research`
+- `job_intelligence.py` — `web_research` source status; company items tagged by source layer
+- `mock_data.py` — company-specific questions from researched products/industries
+- Frontend: minimal company context block in `InterviewPackView`
+- Tests: `test_company_research.py`, `test_company_research_integration.py` (mocked HTML)
+- Samples: `project_review/samples/iteration_004e_c_company_research/`
+
+**Research notes (Schema.org Organization):** Prefer `application/ld+json` with types `Organization`, `Corporation`, `LocalBusiness`, `EducationalOrganization`, `NGO`, and `@graph` arrays. Map `name`/`legalName`, `description`, `url`, `sameAs`, `location`, `areaServed`, `makesOffer`/`brand`, `knowsAbout`/`keywords`. OpenGraph/meta and HTML headings (`About`, `Products`, `Services`, `Industries`, `Markets`, `Mission`) are fallback only. User-provided `company_profile` always wins over extracted text.
+
+**Rules enforced:**
+
+- No invented company facts or fake citations
+- Model knowledge disabled unless configured
+- Transparent warnings when research is partial or unavailable
+- Tests use mocked/captured sources — no live internet in default suite
+
+**Not in 004E-C:** global job search (004F deferred), model-knowledge company facts, search provider APIs, persisting `company_research` / `job_posting_extraction` on `SavedJob` rows (deferred — returned on pack response only for now).
+
+**Future improvements (deferred):** persist merged `company_research` and `job_posting_extraction` metadata on saved jobs to avoid repeated fetches on regenerate.
 
 **Scope:**
 
@@ -588,15 +616,7 @@ See `project_review/05_cleanup_plan.md`.
 - relevant company context for interview questions
 - real captured URLs only; source/fallback status
 
-**Rules:**
-
-- Do not invent company facts or fake citations
-- Do not claim web research was used unless it actually was
-- Model knowledge must not be treated as a factual cited source
-- If company research is unavailable, say so transparently
-- Tests use mocked/captured sources — no live internet in default suite
-
-**Planned touchpoints:** company research agent/module, source metadata on profile, transparent `source_status` in pack output
+**Planned touchpoints:** ~~company research agent/module, source metadata on profile, transparent `source_status` in pack output~~ **Done in 004E-C.**
 
 ---
 

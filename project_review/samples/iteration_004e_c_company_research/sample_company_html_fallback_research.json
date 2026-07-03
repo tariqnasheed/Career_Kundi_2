@@ -1,0 +1,169 @@
+{
+  "company_research": {
+    "company_name": null,
+    "company_domain": "harbor.example",
+    "official_website": "https://harbor.example/about",
+    "company_overview": "Harbor Tools builds precision calibration equipment for aerospace maintenance teams.",
+    "products_services": [
+      "Torque calibration rigs",
+      "Digital audit trails"
+    ],
+    "industries": [
+      "Aerospace, Defence"
+    ],
+    "markets": [
+      "UK and EU MRO facilities"
+    ],
+    "mission_or_values": [],
+    "company_size": null,
+    "headquarters": null,
+    "source_urls": [
+      "https://harbor.example/about"
+    ],
+    "sources": [
+      {
+        "url": "https://harbor.example/about",
+        "source_type": "company_page",
+        "title": null,
+        "extracted_facts": [
+          "Harbor Tools builds precision calibration equipment for aerospace maintenance teams.",
+          "Torque calibration rigs",
+          "Digital audit trails",
+          "Aerospace, Defence"
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "research_confidence": "medium",
+    "source_status": {},
+    "warnings": [
+      "No official company profile source was available. Company-specific questions may be limited."
+    ],
+    "research_methods": [
+      "html_sections"
+    ]
+  },
+  "merged_job": {
+    "title": "Calibration Technician",
+    "company_name": "Harbor Tools",
+    "company_url": "https://harbor.example/about",
+    "description_raw": "Maintain calibration equipment.",
+    "responsibilities": [
+      "Equipment checks"
+    ],
+    "requirements": [
+      "Attention to detail",
+      "Calibration standards"
+    ],
+    "extracted_skills": [
+      {
+        "skill": "Calibration"
+      },
+      {
+        "skill": "Quality Control"
+      }
+    ],
+    "company_profile": {
+      "summary": "Harbor Tools builds precision calibration equipment for aerospace maintenance teams.",
+      "products_services": "Torque calibration rigs, Digital audit trails",
+      "industry": "Aerospace, Defence",
+      "scope": "UK and EU MRO facilities"
+    },
+    "company_research": {
+      "company_name": null,
+      "company_domain": "harbor.example",
+      "official_website": "https://harbor.example/about",
+      "company_overview": "Harbor Tools builds precision calibration equipment for aerospace maintenance teams.",
+      "products_services": [
+        "Torque calibration rigs",
+        "Digital audit trails"
+      ],
+      "industries": [
+        "Aerospace, Defence"
+      ],
+      "markets": [
+        "UK and EU MRO facilities"
+      ],
+      "mission_or_values": [],
+      "company_size": null,
+      "headquarters": null,
+      "source_urls": [
+        "https://harbor.example/about"
+      ],
+      "sources": [
+        {
+          "url": "https://harbor.example/about",
+          "source_type": "company_page",
+          "title": null,
+          "extracted_facts": [
+            "Harbor Tools builds precision calibration equipment for aerospace maintenance teams.",
+            "Torque calibration rigs",
+            "Digital audit trails",
+            "Aerospace, Defence"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "research_confidence": "medium",
+      "source_status": {},
+      "warnings": [
+        "No official company profile source was available. Company-specific questions may be limited."
+      ],
+      "research_methods": [
+        "html_sections"
+      ]
+    },
+    "coverage_audit": {
+      "total_items": 9,
+      "covered_items": 7,
+      "missing_items": [
+        {
+          "item_type": "company_products",
+          "text": "Torque calibration rigs, Digital audit trails",
+          "source": "user_field",
+          "importance": "high",
+          "covered": false,
+          "related_question_ids": [],
+          "missing_reason": "No exportable question referenced this item closely enough."
+        },
+        {
+          "item_type": "industry_domain",
+          "text": "Aerospace, Defence",
+          "source": "user_field",
+          "importance": "medium",
+          "covered": false,
+          "related_question_ids": [],
+          "missing_reason": "No exportable question referenced this item closely enough."
+        }
+      ],
+      "coverage_score": 78,
+      "warnings": [
+        "2 important profile items were not yet covered by exportable questions."
+      ],
+      "added_question_count": 0,
+      "responsibilities_covered": 1,
+      "skills_covered": 4,
+      "tools_covered": 0,
+      "company_context_covered": true,
+      "compliance_covered": true,
+      "has_difficulty_progression": false,
+      "has_practical_or_scenario": true
+    }
+  },
+  "pack_metrics": {
+    "research_confidence": "medium",
+    "source_urls_count": 1,
+    "company_facts_count": 5,
+    "products_services_count": 2,
+    "industries_markets_count": 2,
+    "warnings_count": 1,
+    "company_specific_questions_count": 0,
+    "coverage_score": 78,
+    "fake_urls": 0,
+    "generic_phrase_hits": 0,
+    "silly_question_hits": 0,
+    "answers_over_500": 0,
+    "questions": 13,
+    "profile_summary": "Role: Calibration Technician | Completeness: 71/100 | Company: Harbor Tools | Responsibilities tracked: 1 | Required skills: Attention to detail, Calibration standards, Calibration, Quality Control | Compliance/safety clues: 1"
+  }
+}

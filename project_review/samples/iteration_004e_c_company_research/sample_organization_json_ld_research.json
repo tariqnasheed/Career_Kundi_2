@@ -1,0 +1,151 @@
+{
+  "company_research": {
+    "company_name": "Northline Analytics Ltd",
+    "company_domain": "northline.example",
+    "official_website": "https://northline.example/about",
+    "company_overview": "Retail subscription analytics SaaS for mid-market retailers.",
+    "products_services": [
+      "KPI dashboards",
+      "Retail forecasting"
+    ],
+    "industries": [
+      "Retail analytics",
+      "SaaS"
+    ],
+    "markets": [
+      "United Kingdom"
+    ],
+    "mission_or_values": [],
+    "company_size": null,
+    "headquarters": "Manchester, UK",
+    "source_urls": [
+      "https://northline.example/about",
+      "https://www.linkedin.com/company/northline"
+    ],
+    "sources": [
+      {
+        "url": "https://northline.example/about",
+        "source_type": "company_page",
+        "title": null,
+        "extracted_facts": [
+          "Retail subscription analytics SaaS for mid-market retailers.",
+          "KPI dashboards",
+          "Retail forecasting",
+          "Retail analytics",
+          "SaaS"
+        ],
+        "confidence": "high"
+      }
+    ],
+    "research_confidence": "high",
+    "source_status": {},
+    "warnings": [],
+    "research_methods": [
+      "json_ld_organization"
+    ]
+  },
+  "merged_job": {
+    "title": "Data Analyst",
+    "company_name": "Northline Analytics",
+    "company_url": "https://northline.example/about",
+    "description_raw": "Build dashboards and KPI reporting.",
+    "responsibilities": [
+      "SQL dashboard creation"
+    ],
+    "requirements": [
+      "Strong SQL",
+      "Excel"
+    ],
+    "extracted_skills": [
+      {
+        "skill": "SQL"
+      },
+      {
+        "skill": "Excel"
+      }
+    ],
+    "company_profile": {
+      "summary": "Retail subscription analytics SaaS for mid-market retailers.",
+      "products_services": "KPI dashboards, Retail forecasting",
+      "industry": "Retail analytics, SaaS",
+      "scope": "United Kingdom",
+      "headquarters": "Manchester, UK"
+    },
+    "company_research": {
+      "company_name": "Northline Analytics Ltd",
+      "company_domain": "northline.example",
+      "official_website": "https://northline.example/about",
+      "company_overview": "Retail subscription analytics SaaS for mid-market retailers.",
+      "products_services": [
+        "KPI dashboards",
+        "Retail forecasting"
+      ],
+      "industries": [
+        "Retail analytics",
+        "SaaS"
+      ],
+      "markets": [
+        "United Kingdom"
+      ],
+      "mission_or_values": [],
+      "company_size": null,
+      "headquarters": "Manchester, UK",
+      "source_urls": [
+        "https://northline.example/about",
+        "https://www.linkedin.com/company/northline"
+      ],
+      "sources": [
+        {
+          "url": "https://northline.example/about",
+          "source_type": "company_page",
+          "title": null,
+          "extracted_facts": [
+            "Retail subscription analytics SaaS for mid-market retailers.",
+            "KPI dashboards",
+            "Retail forecasting",
+            "Retail analytics",
+            "SaaS"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "research_confidence": "high",
+      "source_status": {},
+      "warnings": [],
+      "research_methods": [
+        "json_ld_organization"
+      ]
+    },
+    "coverage_audit": {
+      "total_items": 9,
+      "covered_items": 9,
+      "missing_items": [],
+      "coverage_score": 100,
+      "warnings": [],
+      "added_question_count": 0,
+      "responsibilities_covered": 1,
+      "skills_covered": 3,
+      "tools_covered": 2,
+      "company_context_covered": true,
+      "compliance_covered": true,
+      "has_difficulty_progression": true,
+      "has_practical_or_scenario": true
+    }
+  },
+  "pack_metrics": {
+    "research_confidence": "high",
+    "source_urls_count": 2,
+    "company_facts_count": 6,
+    "products_services_count": 2,
+    "industries_markets_count": 3,
+    "warnings_count": 0,
+    "company_specific_questions_count": 4,
+    "coverage_score": 100,
+    "fake_urls": 0,
+    "generic_phrase_hits": 0,
+    "silly_question_hits": 0,
+    "answers_over_500": 0,
+    "questions": 29,
+    "profile_summary": "Role: Data Analyst | Completeness: 70/100 | Company: Northline Analytics | Responsibilities tracked: 1 | Required skills: Strong SQL, Excel, SQL | Tools: Sql, Excel"
+  }
+}
