@@ -9,7 +9,7 @@
 | **Current commit** | `7303e015` (pre-iteration-002 capture) |
 | **Date** | 2026-07-03 |
 | **Test command** | `cd backend && uv run pytest app/agents/job_search/tests -q` |
-| **Test result** | **157 passed** in 191.32s |
+| **Test result** | **186 passed** in 221.91s |
 
 ## Confirmed backend baseline (job-search)
 
@@ -31,13 +31,14 @@
 3. Job Search + Interview Pack Generator fixes
 4. Study Material multi-source architecture
 5. Study Material export/fallback improvements
-6. CV Builder redesign
-7. CV template expansion and section-level AI
-8. Roadmap page rebuild
-9. Roadmap study material and exports
-10. Final regression testing
-11. **Final content library regeneration** (required before cleanup — see below)
-12. Final cleanup
+6. **004E — Job Posting Intelligence and Interview Pack Source Ladder** (planned — see below)
+7. CV Builder redesign
+8. CV template expansion and section-level AI
+9. Roadmap page rebuild
+10. Roadmap study material and exports
+11. Final regression testing
+12. **Final content library regeneration** (required before cleanup — see `05_cleanup_plan.md`)
+13. Final cleanup
 
 ---
 
@@ -758,9 +759,93 @@ cd backend && uv run python scripts/generate_iteration_004c_samples.py
 
 ---
 
+## Iteration 004D — Model-knowledge feature flag + random validation (2026-07-03)
+
+**Goal:** Add model-knowledge study synthesis behind a disabled-by-default feature flag; introduce fixed benchmark + random validation sample generation.
+
+**Changes:**
+
+- Added `model_knowledge.py` — `ModelKnowledgeStatus`, `ModelKnowledgeResult`, deterministic test provider, failing test double
+- Added `JOB_SEARCH_ENABLE_MODEL_KNOWLEDGE` (default `false`) and `JOB_SEARCH_MODEL_KNOWLEDGE_PROVIDER` (default `disabled`)
+- Wired model insight into `study_synthesis.py`, `study_sources.py`, and `document_export.py`
+- Added `test_model_knowledge_source_ladder.py` (14 tests)
+- Updated `generate_iteration_004d_samples.py` — 5 fixed benchmark + 5 seeded random validation roles
+- Generated `project_review/samples/iteration_004d_model_knowledge_flag/`
+
+**Sample rule (from 004D onward):** every sample pass includes 5 fixed benchmark roles + 5 random diverse validation roles (seed **42** for this iteration).
+
+**Random validation roles (seed 42):** Primary School Teacher, Solicitor, Mechanical Engineer, Journalist, Social Media Creator.
+
+**Next recommended step:** Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder (planned).
+
+**Test result:** `172 passed`
+
+---
+
+## Iteration 004D-S — Random validation coverage stabilization (2026-07-03)
+
+**Goal:** Fix under-generation for creative/media/trending random validation roles.
+
+**Root cause:** Journalist and similar roles lost many skill questions to contract-compiler export blocks; creator/trending fallbacks had sparse job snapshots.
+
+**Changes:**
+
+- Expanded `coverage_planner.py` with creative/media, creator/trending, and sports archetype question packs
+- Added evidence packs: `creative_media`, `creator_trending`, `sports`
+- Added archetype legacy answers + compiler fallback in `content_engine.py`
+- Enforced `MIN_EXPORTABLE_PACK_QUESTIONS = 28` for archetype roles only
+- Added `test_random_validation_coverage.py` (14 tests)
+- Regenerated 004D samples — Journalist **17 → 31**, Social Media Creator **14 → 30**
+
+**Test result:** `186 passed`
+
+---
+
+## Iteration 004D-P — Final summary polish and 004E roadmap alignment (2026-07-03)
+
+**Goal:** Fix summary spacing typo risk and align 004E recommendation text with Job Posting Intelligence roadmap.
+
+**Changes:**
+
+- Added joined-word spacing guards in `surface_text_normalize.py` (model-insight example normalization)
+- Normalized model-insight example in `generate_iteration_004d_samples.py`
+- Updated 004D summary **Remaining for 004E** (no longer web-research-stub-only)
+- Aligned `02_study_material.md` and historical 004C sample next-step note
+
+**Test result:** `186 passed`
+
+---
+
+## Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder (PLANNED)
+
+**Status:** Documented only — **not implemented yet**. Next major implementation phase after 004D/004D-S.
+
+**Goal:** The Interview Pack Generator must not produce vague questions from a role title alone. It must deeply analyse the full job posting, company profile, responsibilities, skills, tools, user notes, job-link content, web research, model knowledge, and saved document-library fallback before generating the pack.
+
+**Core deliverables:**
+
+1. **Job Intelligence Profile** — structured profile from user input and/or job posting link (title, company, products/services, industry, responsibilities, skills, tools, seniority, location, compliance clues, user notes, extracted link content, source metadata).
+2. **User guidance + warnings** — completeness hints; warn when only a role title is provided; partial-extraction warning for job links.
+3. **Exhaustive coverage rule** — no silent skipping of meaningful posting/company/user information; coverage-driven question count for real users (benchmark samples keep 5+5 rule).
+4. **Coverage audit** — pre-export audit of responsibilities, skills, tools, company context, difficulty progression, seniority, source status; auto-add missing questions where safe.
+5. **Full source ladder** — user posting → link extraction → web research (real URLs) → model knowledge (flagged) → document library → local deterministic fallback; transparent status, no fake citations.
+6. **Job posting link extraction** — full parse of description, responsibilities, requirements, skills, tools, company profile, metadata.
+7. **Difficulty progression** — easy → practical → scenario → advanced → senior per major responsibility/skill/tool.
+8. **No silly/filler questions** — block shallow prompts; every question job-connected.
+9. **Rich pack output** — intelligence summary, skill/responsibility maps, per-question study material, coverage audit summary, source/fallback status.
+10. **Frontend UX** — completeness checklist, manual edit after extraction, explicit Generate only, no auto-generate on popular role.
+
+**Dependency:** Final Content Library Regeneration runs only after 004E plus interview Q&A/study-material and roadmap corrections are complete (`05_cleanup_plan.md`).
+
+**Planned task list:** see `project_review/01_job_search_and_interview_pack.md` § Iteration 004E.
+
+**Next recommended step:** Implement 004E when explicitly instructed.
+
+---
+
 ## Test result (latest)
 
 ```
 cd backend && uv run pytest app/agents/job_search/tests -q
-158 passed in 190.89s
+186 passed in 221.91s
 ```

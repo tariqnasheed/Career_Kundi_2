@@ -238,8 +238,8 @@ Samples: [iteration_004b_summary.md](../samples/iteration_004b_document_library_
 | JS-004 | Answers | Short behavioral answers | medium | **improved** |
 | JS-005 | Skills | Secondary skill depth | medium | open |
 | JS-006 | Frontend | Auto-generate on role select | high | **fixed** |
-| JS-007 | Import | Pasted job link extraction QA | high | open |
-| JS-008 | Company | Company-specific without data | low | expected |
+| JS-007 | Import | Pasted job link extraction QA | high | open → **004E** |
+| JS-008 | Company | Company-specific without data | low | expected → **004E** improves when profile present |
 | JS-009 | UX | Download only in pack preview | low | open |
 | JS-010 | Surface | Joined-word artifacts | medium | **fixed (003B)** |
 | JS-011 | HR | Generic motivation copy | medium | **fixed (003A)** |
@@ -251,9 +251,230 @@ Samples: [iteration_004b_summary.md](../samples/iteration_004b_document_library_
 
 ## Next implementation notes
 
-**Next Cursor task:** Implementation order step 4 — Study Material multi-source architecture.
+**Next major phase:** **Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder** (planned — not started).
 
-- [ ] Implement source ladder orchestrator (web → model → library → fallback)
-- [ ] Add `source/fallback status` to study modules
-- [ ] Validate pasted job URL/description field extraction (remaining step 3 item)
+See full specification and task checklist in [§ Iteration 004E](#iteration-004e--job-posting-intelligence-and-interview-pack-source-ladder-planned) below.
+
+Deferred until after 004E:
+
+- [ ] Final content library regeneration (pre-cleanup gate)
 - [ ] Optional: surface download actions in job form quick actions after pack exists
+
+---
+
+## Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder (PLANNED)
+
+**Status:** Documented requirement and task list only — **do not implement until explicitly instructed.**
+
+### Problem statement
+
+The generator must not create vague, generic, or silly interview questions from only a role title. It must deeply read and use the full job posting, company profile, user notes, job-link extraction, web research (when enabled), model knowledge (when enabled), and document-library fallback before export.
+
+No important useful information from the posting or company profile should be silently skipped unless duplicate, irrelevant, unsafe, or impossible to verify.
+
+### 1. Job Intelligence Profile (backend)
+
+Before generation, build a **Job Intelligence Profile** from user input and/or job posting link.
+
+| Field group | Profile fields |
+|-------------|----------------|
+| Role | job title, seniority, experience level, department/team, location/regional context |
+| Company | company name, profile, what the company does, products/services, industry/domain, scope/market |
+| Posting | job description, daily responsibilities, required skills, preferred skills, tools/software, qualifications |
+| Compliance | ethics/safety/regulation clues where relevant |
+| User | extra notes |
+| Extracted | job-posting link content (structured + text fallback) |
+| Sources | web research metadata, model knowledge metadata, document-library matches, local fallback notes |
+
+The profile drives company-specific, responsibility-specific, and skill-specific questions — not title-only generics.
+
+### 2. User guidance (frontend)
+
+**Before generation — best-results hint:**
+
+> For best results, enter the complete job posting details, including job description, responsibilities, requirements, company profile, tools, skills, and any extra notes. The more complete and accurate your input is, the more accurate, company-specific, and responsibility-specific your interview pack will be.
+
+**Title-only warning:**
+
+> You entered only a role title. The generated pack may be more general. For a stronger interview pack, add the complete job description, responsibilities, company profile, tools, skills, and extra notes.
+
+**Partial link extraction warning:**
+
+> We extracted partial information from the job link. For better results, paste the full job description or add missing responsibilities, skills, tools, and company details manually.
+
+### 3. Exhaustive information coverage rule
+
+The generator must analyse and use, where meaningful:
+
+- every responsibility, required skill, preferred skill, tool/software mention
+- every qualification and experience requirement
+- every daily duty, department/team clue, company-profile detail
+- every product/service/scope/domain clue
+- every compliance/safety/ethics clue
+- every soft-skill and technical-skill requirement
+- every location/regional context clue
+- every extra user note
+
+Convert each into interview preparation material where reasonable. No silent skipping of useful information.
+
+### 4. Required generation behavior
+
+Questions and answers must connect to:
+
+1. Exact job posting content  
+2. Company profile and what the company does  
+3. Products/services and market scope  
+4. Daily responsibilities  
+5. Required and preferred skills  
+6. Tools/software mentioned  
+7. Industry/domain  
+8. Seniority level  
+9. Web research (when enabled, real URLs only)  
+10. Model knowledge (when enabled, not cited as fact)  
+11. Document-library fallback  
+12. Local deterministic fallback only when stronger sources unavailable  
+
+**Required question categories:** HR, motivation, behavioral, technical, conceptual, responsibility-specific, daily routine, scenario, case-study, practical task, problem-solving, tools/software, company/domain-specific, ethics/safety/compliance (where relevant), seniority variations, follow-ups, beginner→advanced study progression.
+
+### 5. Difficulty progression rule
+
+Per major responsibility, skill, tool, and domain requirement — where relevant:
+
+| Level | Example focus |
+|-------|----------------|
+| Easy/basic | What does this mean in this role? |
+| Practical/medium | How applied in daily responsibilities? |
+| Scenario | What if something goes wrong? |
+| Advanced | Optimise, troubleshoot, defend approach |
+| Senior | Trade-offs, judgement, guiding others |
+
+### 6. No silly or shallow questions rule
+
+**Reject filler** such as: “Do you like this job?”, “Are you good at teamwork?”, “Can you use a computer?”, generic “Why should we hire you?” without job-profile connection, unstructured “Tell me about yourself”.
+
+**Require job-connected prompts** such as KPI-definition conflicts, cable-sizing verification, clinical allergy counselling, content-calendar planning for a product launch, tailoring answers to enterprise vs SMB clients.
+
+### 7. Question count rule
+
+| Context | Rule |
+|---------|------|
+| **Real user packs** | Coverage-driven — expand with responsibilities, skills, tools, domain complexity, seniority, posting depth; no artificial small cap |
+| **Dev/sample packs** | Keep 5 fixed benchmark + 5 random validation roles (deterministic seed) for comparison |
+
+More questions only when they add real coverage — never filler for count.
+
+### 8. Information coverage audit (backend)
+
+Run **before finalising export**. Audit:
+
+- responsibilities, required/preferred skills, tools/software
+- company profile, products/services, domain context
+- daily workflow, practical tasks, scenarios
+- ethics/safety/compliance (where relevant)
+- difficulty progression, seniority variations
+- source/fallback status per question
+
+**Metadata per extracted item:** item, type, covered/not covered, related question IDs, missing reason, action taken.
+
+If important items are uncovered, add questions before export. Record why items cannot be used safely.
+
+### 9. Source ladder (interview pack generation)
+
+Priority order:
+
+1. User-provided job posting fields  
+2. Extracted job posting link content  
+3. Company profile from reliable web research (**real URLs only**)  
+4. Model knowledge synthesis (feature-flagged; not presented as cited fact)  
+5. Saved document-library / project database material  
+6. Local deterministic fallback  
+
+**Rules:** no fake web citations, company facts, or URLs; never claim web/model use unless actually contributed; user posting remains highest priority.
+
+### 10. Job posting link extraction
+
+When user provides a link, fetch and parse before generation. Extract at minimum:
+
+- job title, company name, company description/profile  
+- full job description, responsibilities, requirements  
+- required/preferred qualifications, skills, tools/software  
+- employment type, seniority, location, benefits (if relevant)  
+- structured metadata; page-text fallback if structured parse fails  
+
+### 11. Interview pack output requirement
+
+Each final pack includes:
+
+- role introduction, company/context summary, **extracted job intelligence summary**
+- what employers likely expect, skill map, responsibility map
+- beginner→advanced skill breakdown
+- all question categories listed in §4
+- answer guidance, **dedicated study material per question** (not one generic block for the whole role)
+- source/fallback status per question
+- **coverage audit summary**
+
+### 12. Frontend layout and UX
+
+Required sections/fields: job title, company name, job posting link, company profile, job description, responsibilities, required/preferred skills, tools/software, seniority, industry/domain, location, extra notes.
+
+Support: paste full posting, link extraction with manual edit, completeness score/checklist, missing-field warnings, **explicit Generate click only** (no auto-generate on popular role select).
+
+Message: **“More complete input = more accurate interview pack.”**
+
+### 13. Testing and samples
+
+**Samples (unchanged):** 5 fixed benchmark + 5 deterministic random validation roles.
+
+**Tests to add in 004E:**
+
+- [ ] Full posting parses into Job Intelligence Profile  
+- [ ] Title-only input produces warning metadata  
+- [ ] Job link extraction fills maximum fields; partial extraction warns  
+- [ ] Responsibilities → questions; required/preferred skills → questions  
+- [ ] Tools/software and company profile affect questions  
+- [ ] Difficulty progression present  
+- [ ] Silly/filler question guard  
+- [ ] Coverage audit detects gaps; gaps trigger supplemental questions  
+- [ ] Source/fallback transparency; no fake URLs/citations  
+- [ ] No user-facing internal labels; no blocked generic phrases  
+- [ ] Answers within quality limits  
+- [ ] Real user path not capped to sample-size limits  
+- [ ] Existing `app/agents/job_search/tests` suite still passes  
+
+### 14. Final Content Library Regeneration dependency
+
+After 004E **and** corrections for interview Q&A, study material, roadmap generator, and roadmap study material:
+
+1. Generate new final PDFs (interview Q&A, study material, full packs, roadmap PDFs)  
+2. Save to storage/database/document library  
+3. Rebuild indexes and metadata  
+4. Point fallback retrieval and frontend downloads at latest files  
+5. Remove outdated PDFs **only after** new files verified  
+6. Capture verification under `project_review/samples/final_content_library_regeneration/`  
+
+See `project_review/05_cleanup_plan.md`.
+
+### 15. Planned implementation files (reference)
+
+| Area | Likely touchpoints |
+|------|-------------------|
+| Job intelligence | new `job_intelligence.py` or extend `mock_data` / job snapshot schema |
+| Link extraction | scraper routes, job import agents |
+| Coverage audit | extend `coverage_planner.py` |
+| Source ladder | extend `study_sources.py`, web research stub |
+| Export | `document_export.py`, API routes |
+| Frontend | job search page, form validation, warnings |
+| Tests | `test_job_intelligence_profile.py`, `test_coverage_audit.py`, sample generators |
+
+### Acceptance criteria (planning update)
+
+- [x] Roadmap includes 004E as next major phase after 004D  
+- [x] Requirement: deep read of all job/company/user input  
+- [x] Requirement: no silent skip of useful information  
+- [x] Requirement: coverage audit before export  
+- [x] Requirement: easy→hard difficulty progression  
+- [x] Requirement: block silly/filler questions  
+- [x] Requirement: job posting link extraction  
+- [x] Requirement: web + model + document-library source ladder  
+- [x] Requirement: sample count vs real user coverage-driven generation distinguished  
+- [x] Requirement: final PDF/database regeneration before cleanup documented  

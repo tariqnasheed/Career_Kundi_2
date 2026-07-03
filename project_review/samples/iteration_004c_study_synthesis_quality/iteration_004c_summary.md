@@ -54,6 +54,6 @@ After: **Related skills:** SQL, Data Quality, Dashboarding
 
 ## Remaining for 004D
 
-- **Recommended:** model-knowledge study synthesis behind a feature flag.
-- Optional later: web-research source capture stub with real captured URLs only.
+- **Completed in 004D:** model-knowledge study synthesis behind a feature flag.
+- **Next (004E):** Job Posting Intelligence and Interview Pack Source Ladder (see `project_review/01_job_search_and_interview_pack.md`).
 

@@ -105,6 +105,7 @@ def build_default_study_source_bundle(
     role_title: str,
     generation_mode: str = "deterministic",
     document_retrieval: Any | None = None,
+    model_knowledge: Any | None = None,
 ) -> StudySourceBundle:
     """
     Build the default four-step source ladder for deterministic generation.
@@ -148,6 +149,12 @@ def build_default_study_source_bundle(
         status="not_configured",
         note="Web research retrieval is not configured in this iteration.",
     )
+    from app.agents.job_search.knowledge.model_knowledge import (
+        ModelKnowledgeResult,
+        generate_model_knowledge,
+        model_knowledge_study_source_status,
+    )
+
     if generation_mode == "llm":
         model = StudySource(
             source_type="model",
@@ -156,11 +163,15 @@ def build_default_study_source_bundle(
             note="LLM generation may be active for answers; study modules still use local compiler paths.",
         )
     else:
+        mk_result = model_knowledge if isinstance(model_knowledge, ModelKnowledgeResult) else None
+        if mk_result is None:
+            mk_result = generate_model_knowledge({}, {"title": role_title})
+        mk_status, mk_note = model_knowledge_study_source_status(mk_result)
         model = StudySource(
             source_type="model",
             label=_SOURCE_LABELS["model"],
-            status="not_configured",
-            note="Model knowledge retrieval is not enabled in deterministic mode.",
+            status=mk_status,  # type: ignore[arg-type]
+            note=mk_note,
         )
     if pack_exists or doc_path:
         document = StudySource(
@@ -240,10 +251,29 @@ def attach_study_source_metadata(
     if question.get("answer_source") in {"llm", "live_llm"}:
         mode = "llm"
     retrieval = apply_document_library_support(question, job)
+    from app.agents.job_search.knowledge.model_knowledge import (
+        ModelKnowledgeResult,
+        ModelKnowledgeStatus,
+        apply_model_knowledge_support,
+    )
+
+    existing_mk = question.get("model_knowledge_support")
+    if existing_mk:
+        model_result = ModelKnowledgeResult(
+            status=str(existing_mk.get("status") or ModelKnowledgeStatus.NOT_CONFIGURED.value),
+            used=bool(existing_mk.get("used")),
+            insight=existing_mk.get("insight"),
+            provider_name=existing_mk.get("provider_name"),
+            reason=str(existing_mk.get("reason") or ""),
+            warnings=list(existing_mk.get("warnings") or []),
+        )
+    else:
+        model_result = apply_model_knowledge_support(question, job)
     bundle = build_default_study_source_bundle(
         role_title=role_title,
         generation_mode=mode,
         document_retrieval=retrieval,
+        model_knowledge=model_result,
     )
     question["study_sources"] = bundle.to_dict()
     return question
@@ -299,6 +329,14 @@ def render_study_source_markdown(study_sources: dict[str, Any] | None) -> list[s
                 line += f" — {note}"
         elif status == "used":
             continue
+        elif source_type == "model" and status == "failed":
+            line = (
+                f"- **{label}:** Failed fallback — {note}"
+                if note
+                else f"- **{label}:** Failed fallback"
+            )
+        elif source_type == "model" and status == "not_configured" and note.lower().startswith("disabled"):
+            line = f"- **{label}:** {note}"
         else:
             line = f"- **{label}:** {status_text}"
             if note:

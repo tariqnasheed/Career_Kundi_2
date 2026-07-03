@@ -23,6 +23,55 @@ _SIMPLE_ROLE_HINTS = (
     "packer", "driver", "waiter", "waitress", "gardener", "housekeeper",
 )
 
+MIN_EXPORTABLE_PACK_QUESTIONS = 28
+TARGET_PACK_QUESTIONS = 32
+
+_CREATIVE_MEDIA_HINTS = (
+    "journalist", "graphic designer", "video editor", "content writer", "copywriter",
+    "photographer", "editor", "reporter", "broadcast", "media",
+)
+_CREATOR_TRENDING_HINTS = (
+    "youtuber", "influencer", "podcaster", "social media creator", "content creator",
+    "streamer", "esports", "vlogger", "creator",
+)
+_SPORTS_HINTS = (
+    "footballer", "cricketer", "athlete", "coach", "fitness trainer", "personal trainer",
+    "sports player", "sportsperson",
+)
+
+_ARCHETYPE_LEGACY_TYPES = frozenset(
+    {
+        "ethics",
+        "portfolio",
+        "audience_research",
+        "story_planning",
+        "production_workflow",
+        "platform_tools",
+        "publishing_schedule",
+        "analytics_kpi",
+        "brand_safety",
+        "copyright",
+        "crisis_reputation",
+        "editor_feedback",
+        "quality_review",
+        "content_niche",
+        "training_discipline",
+        "match_preparation",
+        "teamwork_sports",
+        "sportsmanship",
+        "recovery_awareness",
+        "coaching_feedback",
+        "content_planning",
+        "community_management",
+        "monetization_awareness",
+        "filming_recording",
+        "thumbnail_hooks",
+        "workflow_process",
+        "stakeholder_communication",
+        "growth_seniority",
+    }
+)
+
 
 def _norm(text: str) -> str:
     return re.sub(r"\s+", " ", (text or "").lower()).strip()
@@ -462,6 +511,440 @@ def build_skill_gap_questions(job: dict, skills: list[str], existing: list[dict]
     return out
 
 
+def detect_coverage_archetype(job: dict) -> str | None:
+    """Classify roles that need creative/media, creator/trending, or sports coverage packs."""
+    title = _norm(job.get("title") or "")
+    blob = f"{title} {_norm(' '.join(_skills_from_job(job)))}"
+    if any(h in blob for h in _CREATOR_TRENDING_HINTS):
+        return "creator_trending"
+    if any(h in blob for h in _CREATIVE_MEDIA_HINTS):
+        return "creative_media"
+    if any(h in blob for h in _SPORTS_HINTS):
+        return "sports"
+    return None
+
+
+def is_archetype_legacy_question_type(question_type: str | None) -> bool:
+    return (question_type or "") in _ARCHETYPE_LEGACY_TYPES
+
+
+def _archetype_question(
+    *,
+    role: str,
+    category: str,
+    question_type: str,
+    question: str,
+    why: str,
+    skill_tag: str | None = None,
+) -> dict:
+    return {
+        "category": category,
+        "question": question,
+        "why_asked": why,
+        "ideal_answer_points": ["Concrete method", "Role-specific example", "Quality or ethics check"],
+        "question_type": question_type,
+        "skill_tag": skill_tag,
+        "skip_skill_card": True,
+    }
+
+
+def build_creative_media_questions(job: dict) -> list[dict]:
+    role = job.get("title") or "this role"
+    skills = ", ".join(_skills_from_job(job)[:3]) or "core editorial skills"
+    return [
+        _archetype_question(
+            role=role,
+            category="behavioral",
+            question_type="ethics",
+            question=(
+                f"Describe a time as a {role} when source verification or editorial ethics "
+                f"changed what you could publish."
+            ),
+            why="Ethics and accuracy under deadline pressure.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="story_planning",
+            question=(
+                f"How do you plan a {role} story from initial tip to publish-ready copy, "
+                f"including research, interviews, and fact-checking?"
+            ),
+            why="Research and story-planning workflow.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="audience_research",
+            question=(
+                f"How do you decide which stories matter to your audience as a {role}, "
+                f"and how do you measure engagement after publication?"
+            ),
+            why="Audience understanding and post-publish review.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="production_workflow",
+            question=(
+                f"Walk me through your production workflow as a {role} — drafting, editing, "
+                f"legal/sub-editing checks, and CMS publishing."
+            ),
+            why="Production workflow and deadline management.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="platform_tools",
+            question=f"Which tools or platforms do you rely on most as a {role} ({skills}), and how do you verify outputs?",
+            why="Tools/platforms depth without buzzwords.",
+            skill_tag=_skills_from_job(job)[0] if _skills_from_job(job) else None,
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="editor_feedback",
+            question=(
+                f"Tell me about a difficult editor or stakeholder feedback round in {role} work "
+                f"and how you incorporated it without losing accuracy."
+            ),
+            why="Stakeholder/editor feedback handling.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="portfolio",
+            question=f"What would you include in a {role} portfolio to show range, accuracy, and deadline discipline?",
+            why="Portfolio and evidence of craft.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="quality_review",
+            question=(
+                f"How do you run a final quality review on {role} work before publication, "
+                f"including headline, quotes, and image rights?"
+            ),
+            why="Quality review and sign-off discipline.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="practical_task",
+            question=(
+                f"Practical task: You receive a late-breaking lead as a {role}. Outline your first hour "
+                f"including verification, outreach, and deadline planning."
+            ),
+            why="Practical task under time pressure.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="case_study",
+            question=(
+                f"Case study: A controversial story risks defamation complaints. How would you handle "
+                f"verification, escalation, and publication decisions as a {role}?"
+            ),
+            why="Case-study judgement for media risk.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="copyright",
+            question=f"How do you manage copyright, attribution, and image rights in {role} publishing?",
+            why="Copyright and rights awareness.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="growth_seniority",
+            question=(
+                f"How has your {role} craft evolved from early assignments to more complex beats, "
+                f"and what do you still deliberately practise?"
+            ),
+            why="Seniority and growth variation.",
+        ),
+    ]
+
+
+def build_creator_trending_questions(job: dict) -> list[dict]:
+    role = job.get("title") or "this role"
+    return [
+        _archetype_question(
+            role=role,
+            category="behavioral",
+            question_type="content_niche",
+            question=f"How did you choose your content niche as a {role}, and how do you keep it credible as you grow?",
+            why="Niche and audience positioning.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="content_planning",
+            question=f"Describe your content planning process as a {role} — ideas, calendar, scripting, and batching.",
+            why="Content planning and scheduling discipline.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="filming_recording",
+            question=f"Walk me through your filming/recording and editing workflow as a {role} from setup to export.",
+            why="Production workflow.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="thumbnail_hooks",
+            question=f"How do you develop thumbnails, titles, and hooks as a {role} without misleading the audience?",
+            why="Hooks and packaging with integrity.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="publishing_schedule",
+            question=f"How do you set and protect a publishing schedule as a {role} during busy or low-motivation periods?",
+            why="Publishing cadence and consistency.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="analytics_kpi",
+            question=f"Which analytics or KPIs do you track as a {role}, and how do you turn them into better content decisions?",
+            why="Analytics and performance review.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="community_management",
+            question=f"How do you manage community comments and DMs as a {role} during a viral spike?",
+            why="Community management under pressure.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="brand_safety",
+            question=f"What brand-safety checks do you run before accepting sponsorships or posting as a {role}?",
+            why="Brand safety and reputation.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="monetization_awareness",
+            question=f"How do you balance monetization and audience trust as a {role}?",
+            why="Sponsorship/monetization awareness.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="copyright",
+            question=f"How do you handle music, footage, and asset rights before publishing as a {role}?",
+            why="Copyright clearance.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="crisis_reputation",
+            question=f"Describe how you would respond to a reputation crisis or platform-policy warning as a {role}.",
+            why="Crisis/reputation handling.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="platform_tools",
+            question=f"Which platforms and creator tools do you use most as a {role}, and how do you quality-check each upload?",
+            why="Platform/tool proficiency.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="practical_task",
+            question=f"Practical task: Plan a seven-day content series as a {role} for a new audience segment.",
+            why="Practical planning task.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="case_study",
+            question=f"Case study: A sponsored video underperforms and attracts negative comments. What do you do as a {role}?",
+            why="Case-study response under pressure.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="growth_seniority",
+            question=f"How has your {role} approach changed as your audience grew, and what would you do differently at 10x scale?",
+            why="Growth/seniority variation.",
+        ),
+    ]
+
+
+def build_sports_questions(job: dict) -> list[dict]:
+    role = job.get("title") or "this role"
+    return [
+        _archetype_question(
+            role=role,
+            category="behavioral",
+            question_type="training_discipline",
+            question=f"Describe your training discipline as a {role} during a congested fixture or competition period.",
+            why="Training discipline without unsafe advice.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="match_preparation",
+            question=f"How do you prepare for match or game day as a {role}, including review, communication, and routines?",
+            why="Match/game preparation.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="teamwork_sports",
+            question=f"Give an example of effective teamwork or on-field communication from your {role} experience.",
+            why="Teamwork under competitive pressure.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="coaching_feedback",
+            question=f"How do you receive and apply coaching feedback as a {role}?",
+            why="Coaching feedback and improvement.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="recovery_awareness",
+            question=f"How do you balance training load, sleep, and recovery as a {role} without ignoring medical guidance?",
+            why="Recovery awareness — safe, non-medical framing.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="sportsmanship",
+            question=f"Describe a moment where sportsmanship or ethics mattered in your {role} career.",
+            why="Ethics/sportsmanship.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="practical_task",
+            question=f"Practical task: Design a one-week preparation plan as a {role} before an important match or event.",
+            why="Practical preparation task.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="case_study",
+            question=f"Case study: You notice a performance slump mid-season as a {role}. How do you diagnose and respond?",
+            why="Scenario/problem-solving.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="growth_seniority",
+            question=f"How has your role as a {role} evolved from early career to more senior expectations?",
+            why="Seniority/growth variation.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="workflow_process",
+            question=f"What performance metrics or review habits do you use as a {role} to improve week to week?",
+            why="Performance review habits.",
+        ),
+    ]
+
+
+def build_field_agnostic_floor_questions(job: dict, *, round_index: int = 0) -> list[dict]:
+    """Field-agnostic supplemental questions when packs still fall below the coverage floor."""
+    role = job.get("title") or "this role"
+    skills = _skills_from_job(job)
+    skill = skills[round_index % len(skills)] if skills else role
+    templates = [
+        _archetype_question(
+            role=role,
+            category="behavioral",
+            question_type="workflow_process",
+            question=f"Describe how you organise daily priorities as a {role} when deadlines and quality both matter.",
+            why="Daily workflow and prioritisation.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="stakeholder_communication",
+            question=f"How do you communicate progress and risks to stakeholders or managers in {role} work?",
+            why="Communication and stakeholder management.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="quality_review",
+            question=f"What quality checks do you never skip in {role} work involving {skill}?",
+            why="Quality control discipline.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="practical_task",
+            question=f"Practical task: Outline how you would complete a representative {skill} assignment as a {role}.",
+            why="Practical task depth.",
+            skill_tag=skill,
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="case_study",
+            question=f"Case study: A {role} deliverable fails review at the last minute. How do you respond?",
+            why="Problem-solving under pressure.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="growth_seniority",
+            question=f"How would a senior {role} mentor someone struggling with {skill.lower()} fundamentals?",
+            why="Growth and seniority perspective.",
+        ),
+    ]
+    start = (round_index * 2) % len(templates)
+    return templates[start : start + 3]
+
+
+def build_archetype_coverage_questions(job: dict, archetype: str | None = None) -> list[dict]:
+    archetype = archetype or detect_coverage_archetype(job)
+    if archetype == "creative_media":
+        return build_creative_media_questions(job)
+    if archetype == "creator_trending":
+        return build_creator_trending_questions(job)
+    if archetype == "sports":
+        return build_sports_questions(job)
+    return []
+
+
+def build_coverage_floor_questions(
+    job: dict,
+    *,
+    archetype: str | None,
+    round_index: int,
+    existing: list[dict],
+) -> list[dict]:
+    """Additional non-duplicate questions for exportable coverage floor rounds."""
+    pool: list[dict] = []
+    if archetype:
+        pool.extend(build_archetype_coverage_questions(job, archetype))
+    pool.extend(build_field_agnostic_floor_questions(job, round_index=round_index))
+    pool.extend(build_scenario_questions(job, _skills_from_job(job)))
+    pool.extend(build_case_study_questions(job, _skills_from_job(job)))
+
+    out: list[dict] = []
+    seen = {_norm(q.get("question", ""))[:80] for q in existing}
+    for q in pool:
+        key = _norm(q.get("question", ""))[:80]
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(q)
+    return out[:6]
+
+
 def apply_coverage_plan(
     job: dict,
     questions: list[dict],
@@ -507,5 +990,9 @@ def apply_coverage_plan(
 
     supplemental.extend(build_responsibility_questions(job, questions + supplemental))
     supplemental.extend(build_skill_gap_questions(job, skills, questions + supplemental))
+
+    archetype = detect_coverage_archetype(job)
+    if archetype:
+        supplemental.extend(build_archetype_coverage_questions(job, archetype))
 
     return questions + supplemental

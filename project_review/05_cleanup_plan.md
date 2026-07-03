@@ -2,7 +2,9 @@
 
 Cleanup happens **after** project completion, not during active feature development unless generated cache files pollute git status.
 
-**Important:** Final cleanup (step 12) must **not** run until **Final Content Library Regeneration** (step 11) completes successfully.
+**Important:** Final cleanup (step 13) must **not** run until **Final Content Library Regeneration** (step 12) completes successfully.
+
+**Gate before regeneration:** Iteration **004E — Job Posting Intelligence and Interview Pack Source Ladder** must be complete, along with interview Q&A quality, interview study material, roadmap generator, and roadmap study material corrections (see `01_job_search_and_interview_pack.md`).
 
 ---
 
@@ -14,9 +16,10 @@ Cleanup happens **after** project completion, not during active feature developm
 
 After all corrections are completed for:
 
-- Interview Pack Generator
+- **004E — Job Posting Intelligence and Interview Pack Source Ladder**
+- Interview Pack Generator (job intelligence, coverage audit, source ladder)
 - Interview Question and Answer quality
-- Interview Study Material
+- Interview Study Material (per-question, profile-connected)
 - Roadmap Generator
 - Roadmap Study Material
 
@@ -31,13 +34,14 @@ After all corrections are completed for:
 
 ### Required behavior
 
-- Remove outdated previously generated PDFs **only after** new final PDFs are successfully generated
+- Remove outdated previously generated PDFs **only after** new final PDFs are successfully generated, saved, indexed, and verified
 - Do **not** delete source templates, code, seed data, or `.env.example`
-- Rebuild document indexes after regeneration
+- Rebuild `documents/indexes/` (`role_index.json`, `skill_index.json`, `document_index.json`) after regeneration
 - Ensure database/document-library metadata points to the latest regenerated files
 - Ensure fallback retrieval uses the latest generated material, not stale PDFs
-- Ensure frontend download buttons download the latest final PDFs
-- Add verification commands and sample output notes to `project_review/`
+- Ensure frontend download buttons download the latest final PDFs (interview + roadmap)
+- Add verification commands and sample output notes to `project_review/samples/final_content_library_regeneration/`
+- Record verification that old PDFs are not referenced by indexes or API responses
 
 ### Planned regeneration commands
 
@@ -85,7 +89,8 @@ Save under `project_review/samples/final_content_library_regeneration/` (create 
 
 ## Final cleanup checklist
 
-- [ ] **Confirm Final Content Library Regeneration completed** (step 11 gate)
+- [ ] **Confirm 004E and dependent interview/roadmap corrections completed**
+- [ ] **Confirm Final Content Library Regeneration completed** (step 12 gate)
 - [ ] Remove `__pycache__/`
 - [ ] Remove `*.pyc`
 - [ ] Remove `.pytest_cache/`

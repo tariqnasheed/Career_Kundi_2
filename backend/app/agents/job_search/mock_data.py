@@ -162,7 +162,12 @@ def mock_parse_job(text: str) -> dict:
     }
 
 
-from app.agents.job_search.knowledge.coverage_planner import apply_coverage_plan
+from app.agents.job_search.knowledge.coverage_planner import (
+    MIN_EXPORTABLE_PACK_QUESTIONS,
+    apply_coverage_plan,
+    build_coverage_floor_questions,
+    detect_coverage_archetype,
+)
 from app.agents.job_search.quality.surface_text_normalize import (
     normalize_study_material_dict,
     normalize_surface_text,
@@ -248,6 +253,13 @@ _ROLE_FAMILY_KEYWORDS: dict[str, tuple[str, ...]] = {
     "finance_legal": ("accountant", "finance", "investment", "analyst", "solicitor", "paralegal", "compliance"),
     "education": ("teacher", "lecturer", "tutor", "teaching assistant"),
     "public_admin": ("civil service", "policy", "administrator", "public"),
+    "creative_media": (
+        "journalist", "graphic designer", "video editor", "content writer", "copywriter", "photographer", "reporter",
+    ),
+    "creator_trending": (
+        "youtuber", "influencer", "podcaster", "social media creator", "content creator", "streamer", "esports",
+    ),
+    "sports": ("footballer", "cricketer", "athlete", "coach", "fitness trainer", "personal trainer"),
 }
 
 
@@ -349,6 +361,24 @@ def _family_behavioral_templates(job: dict) -> list[str]:
             f"Describe a policy or service-delivery decision you supported with evidence in {role} work.",
             "Tell me about a time you coordinated multiple stakeholders with conflicting priorities.",
             "Give an example of improving process compliance without delaying delivery.",
+        ]
+    if family == "creative_media":
+        return [
+            f"Describe a deadline crisis in {role} work{ctx} and how you protected accuracy while still publishing.",
+            f"Tell me about a story or piece{ctx} where source verification changed your final angle.",
+            f"Give an example of handling sensitive editorial feedback in {role} practice{ctx}.",
+        ]
+    if family == "creator_trending":
+        return [
+            f"Describe a content launch as a {role}{ctx} that underperformed and how you diagnosed the issue.",
+            f"Tell me about a sponsorship or brand decision{ctx} where you prioritised audience trust.",
+            f"Give an example of community moderation or reputation pressure{ctx} you managed calmly.",
+        ]
+    if family == "sports":
+        return [
+            f"Describe how you prepared for an important match or competition as a {role}{ctx}.",
+            f"Tell me about a teamwork moment{ctx} where communication changed the outcome.",
+            f"Give an example of applying coaching feedback{ctx} to improve performance safely.",
         ]
     variants = [
         [
@@ -800,7 +830,7 @@ def mock_generate_questions(
             "skill_tag": q.get("skill_tag"),
         }
         card = map_question_to_skill_card(q, skill_card_bank)
-        if card:
+        if card and not q.get("skip_skill_card"):
             q["skill_card"] = card
             q["mapped_skill"] = card.get("skill")
             q["employer_expectation"] = card.get("employer_expectation")
@@ -809,7 +839,36 @@ def mock_generate_questions(
             seen.add(key)
             unique_questions.append(q)
 
-    return [_finalize_question(q, job, difficulty, i) for i, q in enumerate(unique_questions) if not q.get("export_blocked")]
+    archetype = detect_coverage_archetype(job)
+    exportable: list[dict] = []
+    for floor_round in range(5):
+        finalized = [
+            _finalize_question(q, job, difficulty, i) for i, q in enumerate(unique_questions)
+        ]
+        exportable = [q for q in finalized if not q.get("export_blocked")]
+        if len(exportable) >= MIN_EXPORTABLE_PACK_QUESTIONS:
+            break
+        if archetype is None:
+            break
+        extra = build_coverage_floor_questions(
+            job,
+            archetype=archetype,
+            round_index=floor_round,
+            existing=unique_questions,
+        )
+        if not extra:
+            break
+        for q in extra:
+            key = _question_dedupe_key(q)
+            if key in seen:
+                continue
+            seen.add(key)
+            unique_questions.append(q)
+
+    return exportable if exportable else [
+        q for q in (_finalize_question(q, job, difficulty, i) for i, q in enumerate(unique_questions))
+        if not q.get("export_blocked")
+    ]
 
 
 def finalize_questions_list(questions: list[dict], job: dict, difficulty: str) -> list[dict]:

@@ -69,6 +69,8 @@ _JOINED_WORD_FIXES: tuple[tuple[str, str], ...] = (
     (r"\bproceduresand\b", "procedures and"),
     (r"\bintermediatequality\b", "intermediate quality"),
     (r"\bstructuredverification\b", "structured verification"),
+    (r"\bexplaininghow\b", "explaining how"),
+    (r"\bhowyou\b", "how you"),
 )
 
 _PLACEHOLDER_REPLACEMENTS: tuple[tuple[str, str], ...] = (

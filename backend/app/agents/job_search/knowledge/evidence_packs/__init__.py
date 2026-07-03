@@ -15,6 +15,9 @@ from app.agents.job_search.knowledge.evidence_packs.operations import OPERATIONS
 from app.agents.job_search.knowledge.evidence_packs.project_management import PROJECT_MANAGEMENT_PACK
 from app.agents.job_search.knowledge.evidence_packs.public_administration import PUBLIC_ADMIN_PACK
 from app.agents.job_search.knowledge.evidence_packs.science_laboratory import SCIENCE_LABORATORY_PACK
+from app.agents.job_search.knowledge.evidence_packs.creative_media import CREATIVE_MEDIA_PACK
+from app.agents.job_search.knowledge.evidence_packs.creator_trending import CREATOR_TRENDING_PACK
+from app.agents.job_search.knowledge.evidence_packs.sports import SPORTS_PACK
 from app.agents.job_search.knowledge.evidence_packs.technology import TECHNOLOGY_PACK
 
 _PACKS = {
@@ -33,6 +36,9 @@ _PACKS = {
     "mechanical_engineering": MECHANICAL_ENGINEERING_PACK,
     "finance": FINANCE_PACK,
     "project_management": PROJECT_MANAGEMENT_PACK,
+    "creative_media": CREATIVE_MEDIA_PACK,
+    "creator_trending": CREATOR_TRENDING_PACK,
+    "sports": SPORTS_PACK,
     "default": DEFAULT_PACK,
 }
 
@@ -71,6 +77,48 @@ def resolve_role_family(role: str, explicit: str | None = None) -> str:
         return "finance"
     if any(k in r for k in ("project manager", "programme manager", "pmo")):
         return "project_management"
+    if any(
+        k in r
+        for k in (
+            "journalist",
+            "graphic designer",
+            "video editor",
+            "content writer",
+            "copywriter",
+            "photographer",
+            "editor",
+            "reporter",
+            "broadcast",
+        )
+    ):
+        return "creative_media"
+    if any(
+        k in r
+        for k in (
+            "youtuber",
+            "influencer",
+            "podcaster",
+            "social media creator",
+            "content creator",
+            "streamer",
+            "esports",
+            "vlogger",
+        )
+    ):
+        return "creator_trending"
+    if any(
+        k in r
+        for k in (
+            "footballer",
+            "cricketer",
+            "athlete",
+            "coach",
+            "fitness trainer",
+            "personal trainer",
+            "sports",
+        )
+    ):
+        return "sports"
     return "default"
 
 

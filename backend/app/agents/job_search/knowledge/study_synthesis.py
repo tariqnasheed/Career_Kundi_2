@@ -431,6 +431,26 @@ def build_skill_learning_path(
     return _scrub_internal_placeholders_in_study(study, skill)
 
 
+def merge_model_knowledge_into_study_material(
+    study: dict[str, Any],
+    question: dict[str, Any],
+    job: dict[str, Any],
+) -> dict[str, Any]:
+    """Add model-knowledge insight when the provider supplied sanitized content."""
+    support = question.get("model_knowledge_support") or {}
+    insight = support.get("insight")
+    if not support.get("used") or not insight:
+        study.pop("model_knowledge_insight", None)
+        return study
+    family = infer_role_family(job)
+    study["model_knowledge_insight"] = scrub_generic_phrasing(
+        str(insight),
+        family,
+        question.get("skill_tag"),
+    )
+    return study
+
+
 def synthesize_study_module(question: dict[str, Any], job: dict[str, Any]) -> dict[str, Any]:
     """Post-process a finalized question: labels, phrasing, learning path, doc-library insight."""
     family = infer_role_family(job)
@@ -450,6 +470,7 @@ def synthesize_study_module(question: dict[str, Any], job: dict[str, Any]) -> di
     study = scrub_study_material_dict(study, role_family=family, skill_tag=skill_tag)
     study = build_skill_learning_path(study, question, job)
     study = merge_document_support_into_study_material(study, question, job)
+    study = merge_model_knowledge_into_study_material(study, question, job)
     question["study_material"] = study
     return question
 

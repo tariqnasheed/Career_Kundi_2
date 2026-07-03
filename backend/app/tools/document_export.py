@@ -585,6 +585,12 @@ def _study_material_md_sections(study: dict) -> list[str]:
         lines.append(study["saved_material_insight"])
         lines.append("")
 
+    if study.get("model_knowledge_insight"):
+        lines.append("### Model knowledge insight")
+        lines.append("")
+        lines.append(study["model_knowledge_insight"])
+        lines.append("")
+
     doc_support = study.get("document_library_support") or {}
     if doc_support:
         lines.append("### Document-library support")

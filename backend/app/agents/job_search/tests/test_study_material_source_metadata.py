@@ -179,7 +179,7 @@ def test_markdown_export_includes_source_status(snapshot: dict) -> None:
     assert md.count("### Source / fallback status") >= len(questions)
     assert "Local deterministic study material" in md
     assert "Not configured in this iteration" in md
-    assert "deterministic mode" in md.lower()
+    assert "disabled" in md.lower() or "model knowledge" in md.lower()
     lowered = md.lower()
     for artifact in _joined_guard_tokens():
         assert artifact not in lowered, f"Joined source artifact {artifact!r} in {snapshot['title']} export"
@@ -205,12 +205,12 @@ def test_coverage_categories_still_present(snapshot: dict) -> None:
     assert has_case
 
 
-def test_model_source_note_uses_deterministic_mode_wording() -> None:
+def test_model_source_note_reports_disabled_feature_flag_by_default() -> None:
     bundle = build_default_study_source_bundle(role_title="Data Analyst")
     model = next(s for s in bundle.sources if s.source_type == "model")
-    assert "deterministic mode" in model.note.lower()
-    assert ("deterministic" + "mode") not in model.note.lower()
-    assert ("deterministic" + " generation mode") not in model.note.lower()
+    assert model.status == "not_configured"
+    assert "disabled" in model.note.lower()
+    assert "feature flag" in model.note.lower()
 
 
 def test_render_study_source_markdown_graceful_without_metadata() -> None:

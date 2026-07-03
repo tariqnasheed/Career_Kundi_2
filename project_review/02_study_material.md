@@ -375,10 +375,10 @@ Export: `document_export.py` renders learning-path sections and saved-material i
 
 Samples: `project_review/samples/iteration_004c_study_synthesis_quality/`
 
-### Next step (Iteration 004D)
+### Next step (Iteration 004D) — completed
 
-- **Recommended:** model-knowledge study synthesis behind a feature flag
-- Optional later: web-research source capture stub with real captured URLs only
+- **Completed in 004D:** model-knowledge study synthesis behind a feature flag.
+- **Next (004E):** Job Posting Intelligence and Interview Pack Source Ladder — see `01_job_search_and_interview_pack.md`.
 
 ---
 
@@ -437,28 +437,60 @@ Samples: `project_review/samples/iteration_004c_study_synthesis_quality/`
 
 **Test result:** `158 passed`
 
-### Sample generation rule (004D onward)
+## Iteration 004D — Model-knowledge feature flag (2026-07-03)
 
-Every sample-generation pass must include:
+**Goal:** Safe model-knowledge synthesis layer behind a feature flag; random validation sampling from this iteration onward.
 
-1. **5 fixed benchmark roles:** Data Analyst, Electrical Engineer, Clinical Pharmacist, Barista, DevOps Engineer
-2. **5 random diverse validation roles** from categories:
-   - healthcare or education
-   - legal, finance, or business
-   - engineering or technical
-   - creative, media, or communication
-   - non-traditional/trending (e.g. YouTuber, podcaster, esports player)
+### Feature flag design
 
-Each summary must include a **fixed benchmark metrics table** and a **random validation metrics table**.
+| Setting | Default | Purpose |
+|---|---|---|
+| `JOB_SEARCH_ENABLE_MODEL_KNOWLEDGE` | `false` | Master switch — no model calls when off |
+| `JOB_SEARCH_MODEL_KNOWLEDGE_PROVIDER` | `disabled` | `deterministic_test` for tests/samples; `gemini` reserved |
 
-### Next step (Iteration 004D)
+### Behavior
 
-- **Recommended:** model-knowledge study synthesis behind a feature flag
-- Implement random validation role sampling in sample-generation scripts
+- **Disabled (default):** source block shows `Model knowledge: Disabled — … feature flag`; local deterministic + document-library material unchanged
+- **Enabled + deterministic_test:** role-family insight added as `### Model knowledge insight`; marked `used` only when non-empty sanitized insight exists
+- **Failed provider:** `Failed fallback` status; generation continues with local/document-library material
+- **Web research:** remains `not_configured` in 004D
+- **No fake URLs or citations** in model insight path
+
+### Sample generation (004D)
+
+- **Fixed benchmark (5):** Data Analyst, Electrical Engineer, Clinical Pharmacist, Barista, DevOps Engineer → `fixed/`
+- **Random validation (5, seed 42):** Primary School Teacher, Solicitor, Mechanical Engineer, Journalist, Social Media Creator → `random_validation/`
+- Samples at `project_review/samples/iteration_004d_model_knowledge_flag/`
+
+**Test result:** `172 passed` — no API keys required for default tests.
+
+## Iteration 004D-S — Random validation coverage stabilization (2026-07-03)
+
+**Problem:** Random validation exposed weak packs for creative/trending roles (Journalist 17, Social Media Creator 14).
+
+**Fix:**
+
+- Archetype coverage packs for creative/media, creator/trending, and sports careers
+- Evidence packs + legacy answer paths to reduce export blocking
+- Coverage floor (`28+` exportable questions) for archetype roles only
+- Journalist **17 → 31**; Social Media Creator **14 → 30** in regenerated 004D samples
+
+**Test result:** `186 passed`
+
+### Next step (Iteration 004E)
+
+**Planned — not implemented:** [004E — Job Posting Intelligence and Interview Pack Source Ladder](../01_job_search_and_interview_pack.md#iteration-004e--job-posting-intelligence-and-interview-pack-source-ladder-planned)
+
+Key study-material implications for 004E:
+
+- Per-question study modules must connect to the **Job Intelligence Profile** (company, responsibility, skill, tool context) — not role-title-only generics.
+- Source ladder extends to pack generation: user posting → link extraction → web (real URLs) → model (flagged) → document library → local fallback.
+- Coverage audit must verify study material exists for every exportable question and reflects extracted posting items.
+- Final Content Library Regeneration remains blocked until 004E + roadmap corrections complete.
+
+**Test result (latest):** `186 passed`
 
 ---
-
-**Status:** Documented only — not executed yet.
 
 Before final cleanup, after interview-pack and study-material corrections are complete (and again after roadmap study-material corrections), the system must regenerate all final downloadable content and persist it to project storage/database.
 
@@ -502,20 +534,20 @@ See also: `project_review/05_cleanup_plan.md` (this phase runs **before** cleanu
 | SM-003 | Sources | No `source/fallback status` field | high | **fixed (004A)** |
 | SM-004 | Export | Beginner/intermediate/advanced compression in export | medium | open |
 | SM-005 | Learning | No cited web/PDF/library sources | high | **improved (004B local library)** |
-| SM-006 | Skills | Secondary skill depth uneven | medium | open |
+| SM-006 | Skills | Secondary skill depth uneven | medium | open → **004E** profile-driven |
 | SM-007 | Coverage | New categories have study blocks | medium | **fixed** |
+| SM-008 | Architecture | Study material not tied to Job Intelligence Profile | high | open → **004E** |
 
 ---
 
 ## Next implementation notes
 
-**Next Cursor task:** Iteration 004D — model-knowledge study synthesis behind a feature flag.
+**Next major phase:** Iteration 004E — Job Posting Intelligence and Interview Pack Source Ladder (see `01_job_search_and_interview_pack.md`).
 
-- [ ] `StudyMaterialOrchestrator` skeleton
 - [x] `source/fallback status` on every module (004A metadata + export)
 - [x] Wire document-library retrieval to `documents/interview_packs/` (004B)
-- [x] Re-capture Iteration 004B samples after library retrieval lands
-- [x] **004B-F:** filter Core Terminology-only matches and generic vocabulary snippets
-- [x] **004B-G:** filter Role Specific/generic procedure snippets; normalize skill label casing
-- [ ] **Final content library regeneration** (pre-cleanup gate — regenerate interview PDFs/JSON/indexes before cleanup)
-- [ ] **Final content library regeneration** (pre-cleanup gate — regenerate all interview PDFs/JSON/indexes before cleanup)
+- [x] Model-knowledge feature flag (004D) — disabled by default
+- [x] Random validation coverage floor for creative/trending roles (004D-S)
+- [ ] **004E:** Job Intelligence Profile + coverage audit + full source ladder for pack generation
+- [ ] **004E:** Per-question study material tied to extracted job profile items
+- [ ] **Final content library regeneration** (pre-cleanup gate — after 004E + roadmap corrections)

@@ -128,6 +128,16 @@ class Settings(BaseSettings):
     token_budget_per_request: int = Field(default=200_000)
     prompt_cache_ttl_seconds: int = Field(default=86_400)
 
+    # --- Job search study synthesis -------------------------------------------------------
+    job_search_enable_model_knowledge: bool = Field(
+        default=False,
+        description="Enable model-knowledge study synthesis (disabled by default; no API calls unless provider configured).",
+    )
+    job_search_model_knowledge_provider: Literal["disabled", "deterministic_test", "gemini"] = Field(
+        default="disabled",
+        description="Model-knowledge provider: disabled | deterministic_test (tests/samples) | gemini (future).",
+    )
+
     # --- Observability ----------------------------------------------------------------------
     otel_exporter_otlp_endpoint: str = Field(default="")
     log_level: str = Field(default="INFO")

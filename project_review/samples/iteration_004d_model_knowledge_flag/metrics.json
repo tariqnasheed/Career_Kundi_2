@@ -1,0 +1,132 @@
+{
+  "fixed": [
+    {
+      "role": "Data Analyst",
+      "questions": 33,
+      "study_material_present": 33,
+      "source_status_present": 33,
+      "model_knowledge_used": 0,
+      "document_library_used": 0,
+      "saved_material_insights": 0,
+      "model_insights": 0,
+      "generic_phrase_hits": 0,
+      "role_specific_leaks": 0,
+      "answers_over_500": 0
+    },
+    {
+      "role": "Electrical Engineer",
+      "questions": 33,
+      "study_material_present": 33,
+      "source_status_present": 33,
+      "model_knowledge_used": 0,
+      "document_library_used": 0,
+      "saved_material_insights": 0,
+      "model_insights": 0,
+      "generic_phrase_hits": 0,
+      "role_specific_leaks": 0,
+      "answers_over_500": 0
+    },
+    {
+      "role": "Clinical Pharmacist",
+      "questions": 35,
+      "study_material_present": 35,
+      "source_status_present": 35,
+      "model_knowledge_used": 0,
+      "document_library_used": 26,
+      "saved_material_insights": 26,
+      "model_insights": 0,
+      "generic_phrase_hits": 0,
+      "role_specific_leaks": 0,
+      "answers_over_500": 0
+    },
+    {
+      "role": "Barista",
+      "questions": 32,
+      "study_material_present": 32,
+      "source_status_present": 32,
+      "model_knowledge_used": 0,
+      "document_library_used": 23,
+      "saved_material_insights": 23,
+      "model_insights": 0,
+      "generic_phrase_hits": 0,
+      "role_specific_leaks": 0,
+      "answers_over_500": 0
+    },
+    {
+      "role": "DevOps Engineer",
+      "questions": 36,
+      "study_material_present": 36,
+      "source_status_present": 36,
+      "model_knowledge_used": 0,
+      "document_library_used": 0,
+      "saved_material_insights": 0,
+      "model_insights": 0,
+      "generic_phrase_hits": 0,
+      "role_specific_leaks": 0,
+      "answers_over_500": 0
+    }
+  ],
+  "random_validation": [
+    {
+      "role": "Primary School Teacher",
+      "category": "healthcare or education",
+      "questions": 35,
+      "study_material_present": 35,
+      "source_status_present": 35,
+      "model_knowledge_used": 0,
+      "generic_phrase_hits": 0,
+      "role_specific_leaks": 0,
+      "answers_over_500": 0,
+      "notes": ""
+    },
+    {
+      "role": "Solicitor",
+      "category": "legal, finance, or business",
+      "questions": 35,
+      "study_material_present": 35,
+      "source_status_present": 35,
+      "model_knowledge_used": 0,
+      "generic_phrase_hits": 0,
+      "role_specific_leaks": 0,
+      "answers_over_500": 0,
+      "notes": ""
+    },
+    {
+      "role": "Mechanical Engineer",
+      "category": "engineering or technical",
+      "questions": 36,
+      "study_material_present": 36,
+      "source_status_present": 36,
+      "model_knowledge_used": 0,
+      "generic_phrase_hits": 0,
+      "role_specific_leaks": 0,
+      "answers_over_500": 0,
+      "notes": ""
+    },
+    {
+      "role": "Journalist",
+      "category": "creative, media, or communication",
+      "questions": 31,
+      "study_material_present": 31,
+      "source_status_present": 31,
+      "model_knowledge_used": 0,
+      "generic_phrase_hits": 0,
+      "role_specific_leaks": 0,
+      "answers_over_500": 0,
+      "notes": ""
+    },
+    {
+      "role": "Social Media Creator",
+      "category": "non-traditional/trending",
+      "questions": 30,
+      "study_material_present": 30,
+      "source_status_present": 30,
+      "model_knowledge_used": 0,
+      "generic_phrase_hits": 0,
+      "role_specific_leaks": 0,
+      "answers_over_500": 0,
+      "notes": ""
+    }
+  ],
+  "seed": 42
+}
