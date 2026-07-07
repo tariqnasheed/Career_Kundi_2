@@ -26,9 +26,13 @@ _SIMPLE_ROLE_HINTS = (
 MIN_EXPORTABLE_PACK_QUESTIONS = 28
 TARGET_PACK_QUESTIONS = 32
 
+_CREATIVE_DESIGN_HINTS = (
+    "graphic designer", "visual designer", "brand designer", "ui designer", "ux designer",
+    "illustrator", "art director", "motion designer", "product designer",
+)
 _CREATIVE_MEDIA_HINTS = (
-    "journalist", "graphic designer", "video editor", "content writer", "copywriter",
-    "photographer", "editor", "reporter", "broadcast", "media",
+    "journalist", "reporter", "sub-editor", "newsroom", "broadcast journalist",
+    "video editor", "content writer", "copywriter", "photographer", "editor", "media",
 )
 _CREATOR_TRENDING_HINTS = (
     "youtuber", "influencer", "podcaster", "social media creator", "content creator",
@@ -53,6 +57,8 @@ _ARCHETYPE_LEGACY_TYPES = frozenset(
         "copyright",
         "crisis_reputation",
         "editor_feedback",
+        "design_brief",
+        "client_feedback",
         "quality_review",
         "content_niche",
         "training_discipline",
@@ -75,6 +81,13 @@ _ARCHETYPE_LEGACY_TYPES = frozenset(
 
 def _norm(text: str) -> str:
     return re.sub(r"\s+", " ", (text or "").lower()).strip()
+
+
+def _role_goal_phrase(role: str) -> str:
+    r = (role or "this role").strip()
+    if re.search(r"\brole\b", r, re.I):
+        return r
+    return f"{r} role"
 
 
 def _is_simple_role(title: str) -> bool:
@@ -174,87 +187,89 @@ def _seniority_label(job: dict, difficulty: str) -> tuple[str, str]:
 
 
 def _hr_motivation_question(job: dict) -> str:
+    """Atomic motivation question — technical method belongs in a separate question."""
     role = job.get("title") or "this role"
-    role_l = _norm(role)
-    skills = ", ".join(_skills_from_job(job)[:4])
-
-    if "data analyst" in role_l:
-        return (
-            f"Why do you want this {role} role, and how would you turn messy operational data into "
-            f"trusted SQL queries, dashboards, and KPI reporting with clear data quality checks "
-            f"that stakeholders can act on?"
-        )
-    if "electrical engineer" in role_l:
-        return (
-            f"Why are you pursuing this {role} role, and how would you deliver safe, compliant electrical work "
-            f"across load calculations, cable sizing, commissioning, and site coordination?"
-        )
-    if "clinical pharmacist" in role_l or "pharmacist" in role_l:
-        return (
-            f"Why do you want this {role} role, and how would you contribute to medicines optimisation through "
-            f"medication review, prescribing safety checks, patient counselling, and clinical governance?"
-        )
-    if "barista" in role_l:
-        return (
-            f"Why do you want this {role} role, and how would you keep drink quality, hygiene, allergen control, "
-            f"and customer service consistent during busy rush periods?"
-        )
-    if "devops" in role_l:
-        return (
-            f"Why are you interested in this {role} role, and how would you improve reliable deployments, "
-            f"monitoring, incident response, and secure infrastructure automation using tools such as {skills}?"
-        )
-    return (
-        f"Why do you want this {role} role, and which strengths in {skills} would help you deliver "
-        f"the responsibilities listed in this posting from the first month?"
-    )
+    resp = _responsibilities(job)
+    if resp:
+        return f"Why are you interested in this {role} role, particularly its focus on {resp[0].lower()}?"
+    # Title-only / thin input: do not reference "listed responsibilities" that
+    # were never captured (Defect Class E).
+    return f"What interests you about this {role} role, and what would you most want to clarify about it?"
 
 
 def build_hr_questions(job: dict) -> list[dict]:
+    from app.agents.job_search.knowledge.question_obligations import mark_synthetic_question
+
     role = job.get("title") or "this role"
+    resp = _responsibilities(job)
+    primary = resp[0] if resp else "core duties"
+    skill = _skills_from_job(job)[0] if _skills_from_job(job) else role
     return [
-        {
-            "category": "hr",
-            "question": _hr_motivation_question(job),
-            "why_asked": "HR screen — role-specific motivation, domain fit, and communication clarity.",
-            "ideal_answer_points": [
-                "Links motivation to specific responsibilities in the posting",
-                "Highlights 2–3 relevant strengths with brief evidence",
-                "Shows realistic understanding of day-to-day work",
-            ],
-            "question_type": "hr_motivation",
-            "skill_tag": None,
-        },
-        {
-            "category": "hr",
-            "question": (
-                f"What salary expectations and notice period do you have for a {role} role, "
-                f"and what employment arrangement works best for you?"
-            ),
-            "why_asked": "HR screen — practical hiring logistics and expectation alignment.",
-            "ideal_answer_points": [
-                "States a researched salary range or flexibility",
-                "Confirms notice period honestly",
-                "Mentions work pattern preferences if relevant (remote, shifts, contract)",
-            ],
-            "question_type": "hr_logistics",
-            "skill_tag": None,
-        },
-        {
-            "category": "hr",
-            "question": (
-                f"How do you handle feedback, performance reviews, and professional development "
-                f"in a {role} career?"
-            ),
-            "why_asked": "HR screen — growth mindset and workplace professionalism.",
-            "ideal_answer_points": [
-                "Concrete example of acting on feedback",
-                "How you track development goals",
-                "How you balance autonomy with manager guidance",
-            ],
-            "question_type": "hr_development",
-            "skill_tag": None,
-        },
+        mark_synthetic_question(
+            {
+                "category": "hr",
+                "question": _hr_motivation_question(job),
+                "why_asked": "HR screen — genuine motivation and posting fit without unrelated technical workflow.",
+                "ideal_answer_points": [
+                    "Links motivation to specific responsibilities in the posting",
+                    "Connects interests to genuine strengths or development goals",
+                    "Shows realistic understanding of day-to-day work",
+                ],
+                "question_type": "hr_motivation",
+                "skill_tag": None,
+            }
+        ),
+        mark_synthetic_question(
+            {
+                "category": "technical",
+                "question": (
+                    f"How would you approach {primary.lower()} in this {role} role using {skill}, "
+                    f"including the checks you would run before handoff?"
+                ),
+                "why_asked": "Technical screen — method and verification for the primary responsibility.",
+                "ideal_answer_points": [
+                    "Clear method tied to the primary skill",
+                    "Named checks or validation steps",
+                    "Realistic failure awareness without inventing metrics",
+                ],
+                "question_type": "technical_method",
+                "skill_tag": skill,
+            }
+        ),
+        mark_synthetic_question(
+            {
+                "category": "hr",
+                "question": (
+                    f"What salary expectations and notice period do you have for a {_role_goal_phrase(role)}, "
+                    f"and what employment arrangement works best for you?"
+                ),
+                "why_asked": "HR screen — practical hiring logistics and expectation alignment.",
+                "ideal_answer_points": [
+                    "States a researched salary range or flexibility",
+                    "Confirms notice period honestly",
+                    "Mentions work pattern preferences if relevant (remote, shifts, contract)",
+                ],
+                "question_type": "hr_logistics",
+                "skill_tag": None,
+            }
+        ),
+        mark_synthetic_question(
+            {
+                "category": "hr",
+                "question": (
+                    f"How do you handle feedback, performance reviews, and professional development "
+                    f"in a {role} career?"
+                ),
+                "why_asked": "HR screen — growth mindset and workplace professionalism.",
+                "ideal_answer_points": [
+                    "Concrete example of acting on feedback",
+                    "How you track development goals",
+                    "How you balance autonomy with manager guidance",
+                ],
+                "question_type": "hr_development",
+                "skill_tag": None,
+            }
+        ),
     ]
 
 
@@ -342,16 +357,41 @@ def build_seniority_questions(job: dict, difficulty: str) -> list[dict]:
     ]
 
 
+def _simple_case_study_disruption(role: str, skill: str) -> str:
+    """Pick an operational disruption compatible with the role's own domain.
+
+    The simple-role case study used to hardcode a hospitality "drink quality
+    drops" anchor for EVERY simple role, so Delivery Drivers and Warehouse
+    Pickers inherited a barista scenario (Defect Class A). The disruption is now
+    derived from role/skill semantics, and the fallback is domain-neutral — it
+    never borrows another sector's anchor.
+    """
+    text = f"{role} {skill}".lower()
+    if any(k in text for k in ("barista", "café", "cafe", "coffee", "espresso", "bartender", "waiter", "waitress", "kitchen", "chef", "drink", "hospitality")):
+        return "drink quality drops and customer complaints rise"
+    if any(k in text for k in ("delivery", "driver", "courier", "route", "dispatch", "last-mile", "last mile")):
+        return "deliveries run late and customers report missed drop-off slots"
+    if any(k in text for k in ("warehouse", "picker", "picking", "stock", "pack", "fulfil", "fulfill", "inventory")):
+        return "pick accuracy drops and mis-picks rise"
+    if any(k in text for k in ("retail", "cashier", "till", "shop assistant", "sales assistant")):
+        return "queues build and service quality slips"
+    if any(k in text for k in ("clean", "housekeep", "janitor")):
+        return "standards slip and complaints rise"
+    # Domain-neutral fallback — no borrowed sector anchor.
+    return "output quality drops and complaints rise"
+
+
 def build_case_study_questions(job: dict, skills: list[str]) -> list[dict]:
     role = job.get("title") or "this role"
     skill = skills[0] if skills else role
     simple = _is_simple_role(role)
     if simple:
+        disruption = _simple_case_study_disruption(role, skill)
         return [
             {
                 "category": "technical",
                 "question": (
-                    f"During a busy rush as a {role}, drink quality drops and customer complaints rise. "
+                    f"During a busy rush as a {role}, {disruption}. "
                     f"Walk me through how you diagnose and fix the issue using {skill} practices."
                 ),
                 "why_asked": "Practical case — operational problem-solving under pressure.",
@@ -388,8 +428,17 @@ def build_case_study_questions(job: dict, skills: list[str]) -> list[dict]:
 
 
 def build_scenario_questions(job: dict, skills: list[str]) -> list[dict]:
+    from app.agents.job_search.knowledge.study_material_budget import is_job_thin
+
     role = job.get("title") or "this role"
     skill = skills[0] if skills else "core work"
+    thin = is_job_thin(job)
+    quality_question = (
+        f"Describe how you would solve a recurring quality problem affecting "
+        f"{skill.lower()} outputs in {role} work."
+    )
+    if not thin:
+        quality_question += " including metrics you would track."
     return [
         {
             "category": "technical",
@@ -404,10 +453,7 @@ def build_scenario_questions(job: dict, skills: list[str]) -> list[dict]:
         },
         {
             "category": "technical",
-            "question": (
-                f"Describe how you would solve a recurring quality problem affecting "
-                f"{skill.lower()} outputs in {role} work, including metrics you would track."
-            ),
+            "question": quality_question,
             "why_asked": "Problem-solving with measurement and continuous improvement.",
             "ideal_answer_points": ["Define the defect", "Root cause", "Corrective action with metrics"],
             "question_type": "problem_solving",
@@ -517,6 +563,8 @@ def detect_coverage_archetype(job: dict) -> str | None:
     blob = f"{title} {_norm(' '.join(_skills_from_job(job)))}"
     if any(h in blob for h in _CREATOR_TRENDING_HINTS):
         return "creator_trending"
+    if any(h in blob for h in _CREATIVE_DESIGN_HINTS):
+        return "creative_design"
     if any(h in blob for h in _CREATIVE_MEDIA_HINTS):
         return "creative_media"
     if any(h in blob for h in _SPORTS_HINTS):
@@ -546,6 +594,108 @@ def _archetype_question(
         "skill_tag": skill_tag,
         "skip_skill_card": True,
     }
+
+
+def build_creative_design_questions(job: dict) -> list[dict]:
+    role = job.get("title") or "this role"
+    skills = ", ".join(_skills_from_job(job)[:3]) or "core design skills"
+    return [
+        _archetype_question(
+            role=role,
+            category="behavioral",
+            question_type="ethics",
+            question=(
+                f"Describe a time as a {role} when brand guidelines, accessibility, or client constraints "
+                f"changed your final design direction."
+            ),
+            why="Design judgement under brand and accessibility constraints.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="design_brief",
+            question=(
+                f"How do you translate a {role} brief into layout, hierarchy, and asset specifications "
+                f"before starting visual execution?"
+            ),
+            why="Brief interpretation and design planning.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="client_feedback",
+            question=(
+                f"How do you manage client or stakeholder feedback rounds as a {role} without losing "
+                f"visual consistency or missing deadline milestones?"
+            ),
+            why="Revision workflow and stakeholder communication.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="production_workflow",
+            question=(
+                f"Walk me through your production workflow as a {role} — concept, refinement, "
+                f"export formats, and handoff to marketing or print teams."
+            ),
+            why="Production workflow and deliverable quality.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="platform_tools",
+            question=f"Which design tools do you rely on most as a {role} ({skills}), and how do you verify outputs?",
+            why="Tools depth without buzzwords.",
+            skill_tag=_skills_from_job(job)[0] if _skills_from_job(job) else None,
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="portfolio",
+            question=f"What would you include in a {role} portfolio to show range, craft, and deadline discipline?",
+            why="Portfolio and evidence of design craft.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="quality_review",
+            question=(
+                f"How do you run a final quality review on {role} work before delivery, "
+                f"including typography, colour, spacing, and brand alignment?"
+            ),
+            why="Quality review and sign-off discipline.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="practical_task",
+            question=(
+                f"Practical task: You receive a rushed campaign visual request as a {role}. "
+                f"Outline your first hour including brief checks, references, and export planning."
+            ),
+            why="Practical task under time pressure.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="case_study",
+            question=(
+                f"Case study: A campaign visual fails brand review at the last minute. "
+                f"How would you diagnose, revise, and hand off as a {role}?"
+            ),
+            why="Case-study judgement for design risk.",
+        ),
+        _archetype_question(
+            role=role,
+            category="technical",
+            question_type="growth_seniority",
+            question=(
+                f"How has your {role} craft evolved from early assignments to more complex briefs, "
+                f"and what do you still deliberately practise?"
+            ),
+            why="Seniority and growth variation.",
+        ),
+    ]
 
 
 def build_creative_media_questions(job: dict) -> list[dict]:
@@ -910,6 +1060,8 @@ def build_field_agnostic_floor_questions(job: dict, *, round_index: int = 0) -> 
 
 def build_archetype_coverage_questions(job: dict, archetype: str | None = None) -> list[dict]:
     archetype = archetype or detect_coverage_archetype(job)
+    if archetype == "creative_design":
+        return build_creative_design_questions(job)
     if archetype == "creative_media":
         return build_creative_media_questions(job)
     if archetype == "creator_trending":

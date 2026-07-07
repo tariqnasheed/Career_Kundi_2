@@ -14,6 +14,7 @@ from app.agents.job_search.knowledge.question_intent import (
     INTENT_TERMINOLOGY,
     detect_question_intent,
 )
+from app.agents.job_search.quality.surface_text_normalize import truncate_at_word
 
 MIN_EXPERT_ANSWER_WORDS = 150
 TARGET_EXPERT_ANSWER_WORDS = 220
@@ -39,6 +40,32 @@ _VERB_TO_GERUND = {
     "avoid": "avoiding",
     "set": "setting",
     "monitor": "monitoring",
+    # Skill-native workflow verbs (from expert `how_it_works` and skill-anchored steps).
+    "establish": "establishing",
+    "account": "accounting",
+    "calculate": "calculating",
+    "select": "selecting",
+    "size": "sizing",
+    "determine": "determining",
+    "measure": "measuring",
+    "plan": "planning",
+    "design": "designing",
+    "assess": "assessing",
+    "estimate": "estimating",
+    "compare": "comparing",
+    "balance": "balancing",
+    "allow": "allowing",
+    "total": "totalling",
+    "convert": "converting",
+    "clarify": "clarifying",
+    "prepare": "preparing",
+    "execute": "executing",
+    "evaluate": "evaluating",
+    "install": "installing",
+    "define": "defining",
+    "build": "building",
+    "run": "running",
+    "gather": "gathering",
 }
 
 
@@ -134,15 +161,44 @@ def render_compliance_naturally(
     role_family: str = "default",
 ) -> str:
     _ = checks, safety_checks, workflow_steps
-    standards_text = human_join(standards[:3])
     evidence_text = COMPLIANCE_EVIDENCE_BY_FAMILY.get(role_family) or COMPLIANCE_EVIDENCE_BY_FAMILY["default"]
 
-    if standards:
+    named = [s for s in standards if _is_named_standard(s)]
+    if named:
         return (
-            f"For compliance, I would rely on {standards_text}. "
+            f"For compliance, I would rely on {human_join(named[:3])}. "
             f"I would evidence the work through {evidence_text}."
         )
+    if standards:
+        # Only non-identifying placeholders were available (e.g. "applicable
+        # standards"). Do NOT pretend to rely on a named standard (Defect Class
+        # G) — make the gap explicit instead of hallucinating one.
+        return (
+            "No specific governing standard was specified for this work in the available information, "
+            "so I would confirm which standard or documented procedure applies before proceeding, and "
+            f"evidence the work through {evidence_text}."
+        )
     return f"I would evidence the work through {evidence_text}."
+
+
+# Real, identifying standards carry a code, number, or recognised scheme name.
+# Generic words like "applicable standards" / "default standards" do not satisfy
+# an explicit standard obligation (Defect Class G).
+_NAMED_STANDARD_TOKENS: tuple[str, ...] = (
+    "iso", "bs ", "iec", "en ", "astm", "din", "gdpr", "haccp", "osha", "nice",
+    "ifrs", "gaap", "coshh", "reach", "sox", "hipaa", "pci", "nist", "gmp", "glp",
+    "nec", "nfpa", "cdm", "sop", "bnf",
+)
+
+
+def _is_named_standard(standard: str) -> bool:
+    s = (standard or "").strip()
+    if not s:
+        return False
+    low = s.lower()
+    if any(ch.isdigit() for ch in s):  # e.g. ISO 15189, BS 7671
+        return True
+    return any(tok in low for tok in _NAMED_STANDARD_TOKENS)
 
 
 def render_spoken_workflow(steps: list[str], max_steps: int = 4) -> str:
@@ -213,15 +269,11 @@ INTENT_CLOSINGS: dict[tuple[str, str], str] = {
     ("technology", INTENT_GENERAL): (
         "In an interview, I would show that I can deliver reliable releases with observable pipelines, least-privilege access, and tested rollback plans."
     ),
-    ("data", INTENT_CALCULATION): (
-        "In an interview, I would show that I can diagnose performance with execution evidence, not guesswork."
-    ),
-    ("data", INTENT_PRODUCTION): (
-        "In an interview, I would show that I can diagnose performance with execution evidence, not guesswork."
-    ),
-    ("data", INTENT_GENERAL): (
-        "In an interview, I would show that I can build reliable SQL analysis with sound joins, data quality controls, and performance awareness."
-    ),
+    # NOTE: data-family closings are intentionally NOT overridden here. A single
+    # family-level closing forced every data sub-skill (Python/Excel/Dashboarding)
+    # to close as SQL (Defect Class D). The skill-aware closing selected in
+    # evidence_slot_builder._pick_closing is used instead, so the closing stays
+    # aligned to the question's primary skill.
     ("hospitality", INTENT_TERMINOLOGY): (
         "In an interview, I would show that I understand consistency, hygiene, allergens, and service speed under pressure."
     ),
@@ -362,11 +414,11 @@ def build_calculation_or_diagnostic_answer(contract: dict[str, Any], slots: dict
     workflow = render_spoken_workflow(slots.get("practical_steps", []))
     compliance = _compliance_body(contract, slots)
     mistake = str(slots.get("common_mistakes", ["Joining tables without understanding cardinality."])[0]).rstrip(".")
-    if role_family == "data":
+    if role_family == "data" and not slots.get("family_workflow_is_foreign"):
         example = (
-            "For example, on a revenue dashboard, I fixed many-to-many joins inflating aggregation totals, "
-            "validated data quality on source freshness, inspected the execution plan for query performance, "
-            "and cut runtime from 48 seconds to 6 seconds."
+            "Illustrative example: on a revenue dashboard, a data analyst could identify many-to-many joins "
+            "inflating aggregation totals, validate data quality on source freshness, inspect the execution plan "
+            "for query performance, and compare runtime before and after the change."
         )
     else:
         example = _format_example(slots.get("role_specific_example", ""))
@@ -380,9 +432,28 @@ def build_calculation_or_diagnostic_answer(contract: dict[str, Any], slots: dict
     return expand_answer_if_short(answer, slots)
 
 
+def _skill_native_tradeoff_body(slots: dict[str, Any]) -> str:
+    """Skill-native peer-teaching body used when the family default is foreign (§5)."""
+    parts: list[str] = []
+    explanation = str(slots.get("skill_native_explanation") or "").strip()
+    if explanation:
+        parts.append(explanation if explanation.endswith(".") else explanation + ".")
+    mechanisms = [str(m).strip() for m in (slots.get("skill_native_mechanism") or []) if str(m).strip()]
+    if mechanisms:
+        parts.append("Key mechanisms I would make sure a junior understands: " + "; ".join(mechanisms[:3]) + ".")
+    parts.append(
+        "Every choice trades off simplicity, performance, and maintainability, so I name the "
+        "quality signal I would check after a change rather than guessing."
+    )
+    return " ".join(parts)
+
+
 def build_peer_teaching_answer(contract: dict[str, Any], slots: dict[str, Any]) -> str:
     role_family = str(contract.get("role_family") or "default")
-    tradeoffs = PEER_TEACHING_TRADEOFFS.get(role_family) or PEER_TEACHING_TRADEOFFS["default"]
+    if slots.get("family_workflow_is_foreign") and slots.get("skill_native_explanation"):
+        tradeoffs = _skill_native_tradeoff_body(slots)
+    else:
+        tradeoffs = PEER_TEACHING_TRADEOFFS.get(role_family) or PEER_TEACHING_TRADEOFFS["default"]
     workflow = render_spoken_workflow(slots.get("practical_steps", []))
     compliance = _compliance_body(contract, slots)
     mistake = str(slots.get("common_mistakes", ["Skipping required checks."])[0]).rstrip(".")
@@ -403,18 +474,19 @@ def build_production_issue_metrics_answer(contract: dict[str, Any], slots: dict[
     workflow = render_spoken_workflow(slots.get("practical_steps", []))
     compliance = _compliance_body(contract, slots)
     mistake = str(slots.get("common_mistakes", ["Joining tables without understanding cardinality."])[0]).rstrip(".")
-    if role_family == "data":
+    if role_family == "data" and not slots.get("family_workflow_is_foreign"):
         example = (
-            "For example, on a revenue dashboard, I fixed many-to-many joins inflating aggregation totals, "
-            "validated data quality on source freshness, inspected the execution plan for query performance, "
-            "and cut runtime from 48 seconds to 6 seconds."
+            "Illustrative example: on a revenue dashboard, a data analyst could identify many-to-many joins "
+            "inflating aggregation totals, validate data quality on source freshness, inspect the execution plan "
+            "for query performance, and compare runtime before and after the change."
         )
     else:
         example = _format_example(slots.get("role_specific_example", ""))
     issue_block = (
-        "The issue was a production failure with measurable customer or service impact. "
-        "I diagnosed root cause using logs, execution evidence, and controlled comparisons rather than assumptions. "
-        "The fix removed the bottleneck or defect, and I added monitoring or validation so recurrence would be visible early."
+        "A production issue of this kind is a failure with measurable customer or service impact. "
+        "A strong answer would diagnose root cause using logs, execution evidence, and controlled comparisons "
+        "rather than assumptions, then remove the bottleneck or defect and add monitoring or validation so any "
+        "recurrence would be visible early."
     )
     closing = pick_intent_closing(role_family, INTENT_PRODUCTION, slots["interview_ready_closing"])
     answer = (
@@ -551,7 +623,8 @@ def build_study_module_from_slots(contract: dict[str, Any], slots: dict[str, Any
     standard_hint = human_join(standards[:2]) if standards else "the relevant technical reference"
     return {
         "what_this_question_tests": (
-            f"Whether you can answer this {skill} interview question for {role}: {question[:120]}"
+            f"Whether you can answer this {skill} interview question for {role}: "
+            f"{truncate_at_word(question, 120)}"
         ),
         "beginner_explanation": (
             f"At beginner level, {skill} in {role} work means knowing the task objective, "
@@ -572,7 +645,7 @@ def build_study_module_from_slots(contract: dict[str, Any], slots: dict[str, Any
         "troubleshooting_checklist": slots.get("quality_checks", [])[:5] + slots.get("safety_checks", [])[:3],
         "common_mistakes": slots.get("common_mistakes", [])[:5],
         "interview_traps": [
-            f"Answering '{question[:60]}' with theory only and no {skill} method.",
+            f"Answering '{truncate_at_word(question, 60)}' with theory only and no {skill} method.",
             "Claiming compliance without naming the standard or verification check.",
         ],
         "mini_practice_task": (

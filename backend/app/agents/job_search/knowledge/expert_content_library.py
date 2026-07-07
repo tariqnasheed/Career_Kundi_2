@@ -105,6 +105,65 @@ _SKILL["electrical_installation"] = _s(
     related=["Earthing and bonding", "Cable sizing", "RCD types A vs AC", "Inspection and testing", "Part P notification"],
 )
 
+_SKILL["load_calculations"] = _s(
+    definition=(
+        "Load calculation is the electrical design task of determining how much current and power an "
+        "installation will actually draw, so that cables, protective devices, and the supply are correctly "
+        "sized. It combines connected load, demand and diversity factors, power factor, and phase balance "
+        "to arrive at a design current and a maximum demand the system must carry safely."
+    ),
+    how_it_works=[
+        "Establish the connected load for every circuit and total it by phase.",
+        "Apply demand and diversity factors to convert connected load into realistic maximum demand.",
+        "Account for power factor to convert between kW and kVA when sizing the supply and protection.",
+        "Calculate the design current (Ib) and select a protective device rating (In) at or above it.",
+        "Check cable current-carrying capacity (Iz) and voltage drop over the longest run stay within limits.",
+        "Confirm upstream capacity and transformer/main-switch headroom, allowing an agreed future-growth margin.",
+        "Validate the diversity and power-factor assumptions against the actual load profile before sign-off.",
+    ],
+    key_facts=[
+        "Design current Ib ≤ device rating In ≤ cable capacity Iz is the core sizing inequality.",
+        "Diversity reflects that not all loads run at full power simultaneously; over-stating it undersizes the supply.",
+        "Voltage drop limits (typically 3% lighting, 5% other) often govern cable size on long runs, not current.",
+        "Balancing single-phase loads across three phases minimises neutral current and phase over-loading.",
+        "Power factor below unity increases kVA demand for the same kW, affecting supply and protection sizing.",
+    ],
+    standards=["BS 7671 (IET Wiring Regulations)", "IEC 60364", "On-Site Guide (diversity tables)"],
+    teaching=(
+        "Load calculation is fundamentally about honest demand, not nameplate totals. You start from the "
+        "connected load, then apply diversity because real installations never run every load at once. Power "
+        "factor turns real power (kW) into apparent power (kVA) that the supply and protective devices must "
+        "actually carry, so it matters for sizing. The design current Ib drives protective-device selection (In) "
+        "and cable capacity (Iz), and on long runs voltage drop frequently decides the cable size before "
+        "current-carrying capacity does. Finally you check upstream capacity and phase balance, and keep a "
+        "documented allowance for future load so the installation is not obsolete on day one."
+    ),
+    explain=(
+        "A load calculation works out how much the installation will really draw so everything downstream is "
+        "sized correctly. You add up the connected load, apply diversity so you are not sizing for every load "
+        "running flat out, and use power factor to move between kW and kVA. From that you get the design current, "
+        "pick a protective device that will carry it, and check the cable can carry it too without excessive "
+        "voltage drop on the longest run. Then you confirm the supply and each phase have enough capacity, "
+        "leave a sensible margin for future load, and record the assumptions you made."
+    ),
+    complex=(
+        "For a mixed-use block, the demanding part was sizing the incoming supply where diversity assumptions "
+        "drove the whole design. I built the connected load per unit, applied diversity per the On-Site Guide "
+        "for the domestic risers but held commercial kitchens closer to full load, and corrected for a 0.9 power "
+        "factor on the mechanical plant. The design current pushed the main protective device to the next frame "
+        "size, but voltage drop on the longest sub-main was the real constraint, so I upsized that cable rather "
+        "than the whole distribution. I balanced single-phase loads across the three phases to keep neutral "
+        "current low, confirmed the transformer had headroom for a documented 15% future allowance, and set out "
+        "every diversity and power-factor assumption so the assessor could check the numbers."
+    ),
+    pitfalls=[
+        "Summing nameplate loads with no diversity, oversizing the supply and protective devices.",
+        "Ignoring voltage drop on long runs so the cable meets current capacity but not the drop limit.",
+        "Forgetting power factor, so kVA demand is understated when sizing the supply.",
+    ],
+    related=["Cable Sizing", "Diversity and demand factors", "Voltage drop", "Protective device selection", "Phase balancing"],
+)
+
 _SKILL["testing"] = _s(  # electrical testing default for trades; overridden for software roles
     definition=(
         "Electrical testing and verification is the process of measuring an installation's safety and compliance "
@@ -473,12 +532,29 @@ def _infer_profile(skill_t: str, role: str, duty: str, domain: str) -> str:
         return "education"
     if any(k in text for k in ("finance", "valuation", "tax", "ifrs", "audit", "legal", "compliance")):
         return "finance_legal"
-    if any(k in text for k in ("sales", "crm", "marketing", "seo", "brand", "e-commerce")):
+    if any(k in text for k in ("graphic designer", "photographer", "illustrator", "visual design", "typography", "layout design")):
+        return domain
+    if any(k in text for k in ("sales", "crm", "marketing", "seo", "e-commerce")):
+        return "commercial"
+    if "brand" in text:
         return "commercial"
     if any(k in text for k in ("driver", "courier", "route", "warehouse", "navigation", "delivery")):
         return "logistics"
     if any(k in text for k in ("hospitality", "kitchen", "food", "barista", "guest", "restaurant")):
         return "hospitality"
+    # Field engineering / construction trades and lab technical work both used to
+    # fall through to one generic scaffold, so unrelated roles shared identical
+    # fallback fact skeletons (Defect Class F). Give each its own domain shape.
+    if any(
+        k in text
+        for k in ("mep", "site engineer", "mechanical", "electrical", "plumbing", "hvac", "construction", "snagging", "commissioning", "installation")
+    ):
+        return "field_engineering"
+    if any(
+        k in text
+        for k in ("lab technician", "laboratory technician", "sample", "specimen", "calibration", "assay", "reagent", "titration")
+    ):
+        return "lab_technical"
     return domain
 
 
@@ -649,6 +725,46 @@ def _profile_scaffold(profile: str, skill_t: str, role: str, duty: str) -> dict:
                 "ticket times stabilized and complaint rate decreased materially."
             ),
         }
+    if profile == "field_engineering":
+        return {
+            "standards": [],
+            "steps": [
+                f"Review drawings and specifications, then coordinate {skill_t} sequencing across trades.",
+                f"Set out and install to tolerance, checking clashes before {duty.lower()} proceeds.",
+                "Inspect and test against specification, recording results and any non-conformances.",
+                "Raise RFIs for design changes so as-built records stay accurate.",
+                "Complete snagging, commissioning evidence, and a documented handover.",
+            ],
+            "facts": [
+                "Coordinated sequencing prevents clashes between trades before installation begins.",
+                f"Inspection and test records are the proof that {skill_t} met specification on site.",
+                "Design changes must flow through documented RFIs so as-built records stay accurate.",
+            ],
+            "example": (
+                f"On site as {role}, I coordinated {skill_t} against the drawings for {duty.lower()}, "
+                "cleared a services clash before installation, and signed off with inspection records."
+            ),
+        }
+    if profile == "lab_technical":
+        return {
+            "standards": [],
+            "steps": [
+                f"Receive and label samples, confirming chain of custody before {skill_t} begins.",
+                "Verify instrument calibration and run controls before processing.",
+                f"Execute {skill_t} to the documented method for {duty.lower()} with intermediate checks.",
+                "Compare results against controls and specification limits.",
+                "Investigate out-of-specification results before reporting and release.",
+            ],
+            "facts": [
+                "Chain of custody and sample labelling protect result integrity from receipt to disposal.",
+                f"Calibration and quality controls must pass before {skill_t} results are reported.",
+                "Out-of-specification results trigger a documented investigation before any release.",
+            ],
+            "example": (
+                f"In the lab as {role}, I processed samples for {duty.lower()} using {skill_t}, held a batch "
+                "on a failed control, and released only after the investigation cleared it."
+            ),
+        }
     # Domain-driven default — avoid compiler-generic phrasing; synthesis layer may still refine.
     return {
         "standards": [],
@@ -726,6 +842,16 @@ def _generate_fallback(skill: str, role_title: str, responsibility: str | None) 
         definition = (
             f"{skill_t} in hospitality is the repeatable delivery of safe, high-quality service under "
             "time pressure, with hygiene and guest-experience controls."
+        )
+    elif profile == "field_engineering":
+        definition = (
+            f"{skill_t} in site engineering is the coordinated, tolerance-controlled installation and "
+            f"verification of building services to deliver {duty.lower()} to specification and inspection sign-off."
+        )
+    elif profile == "lab_technical":
+        definition = (
+            f"{skill_t} in laboratory work is the method-controlled processing of samples with calibration, "
+            f"quality controls, and chain-of-custody so {duty.lower()} produces defensible, traceable results."
         )
     else:
         definition = (
@@ -829,6 +955,22 @@ def resolve_expert_content(skill: str, role_title: str | None = None, responsibi
         _generate_fallback(skill, role_title or "Professional", responsibility),
         role_title,
     )
+
+
+def has_curated_expert_content(skill: str, role_title: str | None = None) -> bool:
+    """True when ``resolve_expert_content`` would return a genuine per-skill entry.
+
+    Distinguishes a real curated ``_SKILL``/role-override entry (e.g. Load Calculations,
+    Electrical Installation, Python, SQL) from a generic per-profile fallback (e.g.
+    Pharmacology, which borrows the healthcare-profile workflow). Only curated content
+    is trustworthy as a skill-native workflow/definition source (§5); fallback profile
+    steps happen to be imperative and must not masquerade as skill-native.
+    """
+    sk = normalize_key(skill)
+    role_k = normalize_key(role_title or "")
+    if role_k in _ROLE_SKILL_OVERRIDES and sk in _ROLE_SKILL_OVERRIDES[role_k]:
+        return True
+    return sk in _SKILL
 
 
 def list_curated_skills() -> list[str]:

@@ -28,7 +28,7 @@ DATA_PACK = {
         "Shipping dashboards without data quality checks.",
     ],
     "role_specific_examples": [
-        "For example, on a revenue dashboard, I fixed a many-to-many join inflating totals, added data quality checks on source freshness, and cut query runtime from 48 seconds to 6 seconds.",
+        "Illustrative example: on a revenue dashboard, a data analyst could identify a many-to-many join inflating totals, add data-quality checks on source freshness, and compare query runtime before and after the change.",
     ],
     "interview_closings": [
         "In an interview, I would show that I can build reliable SQL analysis with sound joins, data quality controls, and performance awareness.",

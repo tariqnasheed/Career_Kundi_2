@@ -15,6 +15,12 @@ from app.agents.job_search.knowledge.study_synthesis import (
     infer_role_family,
     scrub_generic_phrasing,
 )
+from app.agents.job_search.knowledge.study_material_budget import (
+    apply_adaptive_study_budget,
+    build_role_fit_apply_steps,
+    build_role_fit_interview_application,
+    question_has_role_fit_study_archetype,
+)
 from app.core.config import settings
 
 _REQUIRED_TEXT_KEYS = (
@@ -36,7 +42,10 @@ def _first_sentence(text: str, *, max_len: int = 220) -> str:
     match = re.split(r"(?<=[.!?])\s+", cleaned, maxsplit=1)
     sentence = match[0] if match else cleaned
     if len(sentence) > max_len:
-        return sentence[: max_len - 3].rsplit(" ", 1)[0] + "..."
+        # Trim trailing punctuation before the ellipsis and use the single-glyph "…"
+        # so surface normalization (which collapses "...") cannot leave a ",." splice.
+        cut = sentence[: max_len - 1].rsplit(" ", 1)[0].rstrip(" ,;:.")
+        return (cut or sentence[: max_len - 1].rstrip(" ,;:.")) + "…"
     return sentence
 
 
@@ -238,7 +247,10 @@ def finalize_question_study_module(question: dict[str, Any], job: dict[str, Any]
     family = infer_role_family(job)
     skill_tag = question.get("skill_tag")
     source_items = _source_items(question)
-    source_types = list(dict.fromkeys(question.get("question_source_types") or []))
+    used_source_types = (question.get("study_sources") or {}).get("used_source_types") or []
+    source_types = list(
+        dict.fromkeys([*(question.get("question_source_types") or []), *used_source_types])
+    )
     priority = list(question.get("source_priority_used") or [])
 
     study["question_id"] = question.get("question_id")
@@ -253,7 +265,13 @@ def finalize_question_study_module(question: dict[str, Any], job: dict[str, Any]
         question, job, source_items
     )
     hook = _question_hook(question)
-    if hook and hook.lower() not in tests.lower():
+    # Only append the question hook when the tests text does not already restate the
+    # question. The answer-builder "what_this_question_tests" already embeds a
+    # (word-truncated) copy of the question, so appending a second truncated copy
+    # produced splices like "…handling 'Medicat It directly addresses: Describe…".
+    tests_norm = re.sub(r"\s+", " ", tests).lower()
+    q_lead = re.sub(r"\s+", " ", question.get("question") or "").strip().lower()[:40]
+    if hook and q_lead and q_lead not in tests_norm:
         tests = f"{tests} It directly addresses: {hook}"
     study["what_this_question_tests"] = scrub_generic_phrasing(tests, family, skill_tag)
     study["core_idea"] = scrub_generic_phrasing(
@@ -264,11 +282,58 @@ def finalize_question_study_module(question: dict[str, Any], job: dict[str, Any]
 
     if not study.get("key_definitions") and study.get("definitions"):
         study["key_definitions"] = list(study["definitions"])
-    study["key_principles"] = _ensure_list(
+    raw_principles = _ensure_list(
         study.get("key_principles") or study.get("principles") or study.get("key_concepts")
         or question.get("ideal_answer_points")
     )
-    if not study["key_principles"]:
+    category = (question.get("category") or "").lower()
+    qtext = (question.get("question") or "").lower()
+    is_role_fit = question_has_role_fit_study_archetype(question)
+    is_company_or_motivation = is_role_fit or (
+        category == "company_specific"
+        or "company_research" in set(question.get("question_source_types") or [])
+        or any(
+            k in qtext
+            for k in (
+                "excites you",
+                "why do you want",
+                "why this role",
+                "why are you interested",
+                "experience help",
+                "motivat",
+                "fit for this",
+                "a good fit",
+            )
+        )
+    )
+    # Terse checklist points (e.g. company_specific `ideal_answer_points` such as
+    # "References X") are coverage cues, not substantive study principles. For a
+    # company/role-fit question, expand them into genuine role-fit guidance (§10/§15)
+    # rather than leaving a non-substantive key_principles element. This is guidance,
+    # not invented user history — it never asserts the user did anything.
+    substantive_raw = [p for p in raw_principles if len(str(p).split()) >= 4]
+    if is_company_or_motivation and len(substantive_raw) < 2:
+        company = job.get("company_name") or "the employer"
+        role = job.get("title") or "this role"
+        focus = source_items[0] if source_items else (skill_tag or "the role's core work")
+        study["key_principles"] = [
+            f"Explain why {company} and this {role} role genuinely fit your interests and strengths.",
+            f"Connect your real experience with {focus} to what the posting actually asks for.",
+            "Name the contribution you could make and the development direction you want in the role.",
+        ]
+    elif raw_principles:
+        study["key_principles"] = raw_principles
+    elif is_role_fit:
+        role = job.get("title") or "this role"
+        focus = source_items[0] if source_items else (job.get("responsibilities") or ["core duties"])[0]
+        if isinstance(focus, dict):
+            focus = focus.get("text")
+        study["key_principles"] = [
+            f"Explain why this {role} posting genuinely fits your interests and strengths.",
+            f"Connect {str(focus).lower()} to what attracts you and where you hope to contribute.",
+            "State development direction honestly — do not invent employers, projects, or metrics.",
+        ]
+    else:
         focus = source_items[0] if source_items else (skill_tag or "the focus area")
         study["key_principles"] = [
             f"Tie each point back to {focus} and the exact wording of the question.",
@@ -282,10 +347,15 @@ def finalize_question_study_module(question: dict[str, Any], job: dict[str, Any]
             "Giving a generic example that does not match the question wording.",
         ]
 
-    if not all(str(study.get(k) or "").strip() for k in ("beginner_explanation", "intermediate_explanation", "advanced_explanation")):
+    if not is_role_fit and not all(
+        str(study.get(k) or "").strip()
+        for k in ("beginner_explanation", "intermediate_explanation", "advanced_explanation")
+    ):
         study = build_skill_learning_path(study, question, job)
 
-    if not study.get("step_by_step_method"):
+    if is_role_fit:
+        study["step_by_step_method"] = build_role_fit_apply_steps(question, job)
+    elif not study.get("step_by_step_method"):
         study["step_by_step_method"] = _ensure_list(
             study.get("step_by_step_breakdown") or study.get("step_by_step_method")
         )
@@ -295,11 +365,18 @@ def finalize_question_study_module(question: dict[str, Any], job: dict[str, Any]
         covered = build_user_facing_related_skills(question, job)
     study["technical_or_workflow_skills_covered"] = covered[:6]
 
-    study["interview_application"] = scrub_generic_phrasing(
-        study.get("interview_application") or _build_interview_application(question, job, source_items),
-        family,
-        skill_tag,
-    )
+    if is_role_fit:
+        study["interview_application"] = scrub_generic_phrasing(
+            build_role_fit_interview_application(question, job),
+            family,
+            skill_tag,
+        )
+    else:
+        study["interview_application"] = scrub_generic_phrasing(
+            study.get("interview_application") or _build_interview_application(question, job, source_items),
+            family,
+            skill_tag,
+        )
 
     follow_ups = question.get("follow_up_questions") or question.get("follow_ups") or []
     study["likely_follow_ups"] = [str(f).strip() for f in follow_ups if f and str(f).strip()][:4]
@@ -319,6 +396,8 @@ def finalize_question_study_module(question: dict[str, Any], job: dict[str, Any]
 
     study["source_status"] = _study_source_status(question, job)
     study["fallback_status"] = _fallback_status_label(question)
+
+    study = apply_adaptive_study_budget(study, question, job)
 
     return study
 
@@ -343,4 +422,16 @@ def study_module_fingerprint(study: dict[str, Any], question_text: str = "") -> 
 
 
 def count_empty_study_sections(study: dict[str, Any]) -> int:
+    from app.agents.job_search.knowledge.study_material_budget import (
+        _DEPTH_CONTRACT,
+        _element_present,
+    )
+
+    depth = study.get("study_depth")
+    if depth and depth in _DEPTH_CONTRACT:
+        required = list(_DEPTH_CONTRACT[depth])
+        for key in ("core_idea", "what_this_question_tests"):
+            if key not in required:
+                required.append(key)
+        return sum(1 for el in required if not _element_present(study, el))
     return _empty_section_count(study)

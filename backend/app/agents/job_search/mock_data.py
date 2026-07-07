@@ -212,6 +212,11 @@ from app.agents.job_search.knowledge.source_ladder import (
     refresh_source_ladder_usage_from_questions,
 )
 from app.agents.job_search.knowledge.question_study_material import apply_finalized_study_module
+from app.agents.job_search.knowledge.question_obligations import (
+    attach_obligation_profile,
+    mark_synthetic_question,
+    repair_synthetic_question_overload,
+)
 from app.agents.job_search.quality.silly_question_guard import is_silly_or_vague_question
 from app.agents.job_search.quality.broken_template_audit import broken_template_count
 from app.agents.job_search.quality.compiler_boilerplate_audit import (
@@ -226,6 +231,9 @@ from app.agents.job_search.quality.expert_naturalness_audit import (
 )
 from app.agents.job_search.quality.generic_phrase_audit import generic_phrase_count
 from app.agents.job_search.quality.legacy_template_audit import legacy_template_count
+from app.agents.job_search.knowledge.study_material_budget import enforce_study_hard_max_after_export_touchup
+from app.agents.job_search.quality.claim_integrity import rewrite_or_flag_unsupported_claims
+from app.agents.job_search.quality.surface_quality_guard import fix_surface_quality_defects
 from app.agents.job_search.quality.study_depth_audit import study_depth_score
 
 _GENERIC_BEHAVIORAL_TEMPLATES = [
@@ -269,8 +277,11 @@ _ROLE_FAMILY_KEYWORDS: dict[str, tuple[str, ...]] = {
     "finance_legal": ("accountant", "finance", "investment", "analyst", "solicitor", "paralegal", "compliance"),
     "education": ("teacher", "lecturer", "tutor", "teaching assistant"),
     "public_admin": ("civil service", "policy", "administrator", "public"),
+    "creative_design": (
+        "graphic designer", "visual designer", "brand designer", "ui designer", "illustrator", "art director",
+    ),
     "creative_media": (
-        "journalist", "graphic designer", "video editor", "content writer", "copywriter", "photographer", "reporter",
+        "journalist", "video editor", "content writer", "copywriter", "photographer", "reporter", "sub-editor",
     ),
     "creator_trending": (
         "youtuber", "influencer", "podcaster", "social media creator", "content creator", "streamer", "esports",
@@ -378,6 +389,12 @@ def _family_behavioral_templates(job: dict) -> list[str]:
             "Tell me about a time you coordinated multiple stakeholders with conflicting priorities.",
             "Give an example of improving process compliance without delaying delivery.",
         ]
+    if family == "creative_design":
+        return [
+            f"Describe a deadline crisis in {role} work{ctx} and how you protected quality while still delivering assets.",
+            f"Tell me about a design brief{ctx} where stakeholder feedback changed your final layout or visual direction.",
+            f"Give an example of handling brand-guideline constraints in {role} practice{ctx}.",
+        ]
     if family == "creative_media":
         return [
             f"Describe a deadline crisis in {role} work{ctx} and how you protected accuracy while still publishing.",
@@ -424,11 +441,39 @@ def _question_dedupe_key(q: dict) -> str:
     return " ".join(text.split()[:16])
 
 
-def _role_specific_context(job: dict) -> str:
+def _skill_aligned_context_responsibility(job: dict, skill: str | None) -> str:
+    """Pick a responsibility to use as question context without borrowing a
+    DIFFERENT skill's responsibility.
+
+    A Python / Excel / Dashboarding question anchored to a "SQL dashboard
+    creation" responsibility framed the question around a foreign skill (Defect
+    Class D framing). We prefer a responsibility that does not name any of the
+    role's OTHER extracted skills; only if none qualifies do we fall back to the
+    first responsibility.
+    """
+    resps = [
+        (r.get("text") if isinstance(r, dict) else r)
+        for r in (job.get("responsibilities") or [])
+    ]
+    resps = [str(r).strip() for r in resps if r]
+    if not resps:
+        return ""
+    skill_l = (skill or "").lower()
+    other_skills = [
+        str(s.get("skill") if isinstance(s, dict) else s).lower()
+        for s in (job.get("extracted_skills") or [])
+    ]
+    other_skills = [s for s in other_skills if s and s != skill_l]
+    for resp in resps:
+        rl = resp.lower()
+        if not any(os and os in rl for os in other_skills):
+            return resp
+    return resps[0]
+
+
+def _role_specific_context(job: dict, skill: str | None = None) -> str:
     role = job.get("title") or "this role"
-    resp = (job.get("responsibilities") or [None])[0]
-    if isinstance(resp, dict):
-        resp = resp.get("text")
+    resp = _skill_aligned_context_responsibility(job, skill)
     if resp:
         return f"{role} context: {resp}"
     return role
@@ -444,23 +489,58 @@ def _global_fingerprint(question: str, qtype: str) -> str:
 
 
 def _enforce_cross_role_uniqueness(enriched: dict, job: dict) -> None:
+    from app.agents.job_search.knowledge.study_material_budget import is_job_thin
+
     qtype = enriched.get("question_type") or enriched.get("category", "other")
     qtext = enriched.get("question", "")
+    category = (enriched.get("category") or "").lower()
+    q_lower = qtext.lower()
+    thin = is_job_thin(job)
+    qtype_l = (enriched.get("question_type") or "").lower()
+    # A metric/standard/failure-mode demand is only appropriate on a genuinely
+    # technical question. Appending it to behavioral, daily-routine, HR, or
+    # motivation questions as a uniqueness/dedupe device is exactly the
+    # synthetic overload that Defect Class C reproduced. Skip those categories
+    # (and thin inputs) so a late uniqueness pass can never overload them.
+    skip_modifier_suffix = (
+        category in {"hr", "motivation", "company_specific", "behavioral", "daily_routine"}
+        or qtype_l in {
+            "behavioral",
+            "daily_routine",
+            "hr_motivation",
+            "hr_logistics",
+            "hr_development",
+            "seniority",
+            "day_one",
+            "responsibility",
+        }
+        or any(
+            m in q_lower
+            for m in (
+                "why are you interested",
+                "why do you want",
+                "what excites you",
+                "what do you know about",
+            )
+        )
+        or thin
+    )
+    # `skip_modifier_suffix` retained for callers/telemetry; the uniqueness pass
+    # itself no longer appends metric/standard/failure-mode demands (Defect
+    # Class C invariant), so it can never overload a question as a dedupe device.
+    _ = skip_modifier_suffix
     key = _global_fingerprint(qtext, qtype)
     bucket = _GLOBAL_QUESTION_FINGERPRINTS.setdefault(qtype, set())
     if key in bucket:
-        context = _role_specific_context(job)
+        context = _role_specific_context(job, enriched.get("skill_tag"))
         if "In this role-specific case" not in qtext:
+            # Role-specific context is a semantically-neutral differentiator. We
+            # deliberately do NOT escalate to appending technical modifier
+            # demands (metric / standard / failure mode) when a residual
+            # collision remains — that reintroduction is exactly Defect Class C.
             enriched["question"] = f"{qtext} In this role-specific case, address: {context}."
             qtext = enriched["question"]
             key = _global_fingerprint(qtext, qtype)
-            if key in bucket:
-                skill = enriched.get("skill_tag") or "core competency"
-                enriched["question"] = (
-                    f"{qtext} Include one concrete {skill} metric, one governing standard/protocol, "
-                    f"and one failure mode relevant to {context}."
-                )
-                key = _global_fingerprint(enriched["question"], qtype)
     bucket.add(key)
 
 
@@ -579,6 +659,155 @@ def _common_mistakes_for(q: dict) -> list[str]:
     ]
 
 
+# Study-material keys whose values are metadata/numeric bookkeeping, not prose.
+_STUDY_SANITIZE_SKIP_KEYS = frozenset(
+    {
+        "study_depth",
+        "study_depth_label",
+        "study_complexity_level",
+        "complexity_signals",
+        "budget_status",
+        "budget_reason",
+        "concise_complete_reason",
+        "target_min_words",
+        "target_max_words",
+        "hard_max_words",
+        "actual_word_count",
+        "hard_max_ratio",
+        "estimated_reading_time_minutes",
+        "depth_contract_required_elements",
+        "depth_contract_present_elements",
+        "depth_contract_substantive_elements",
+        "depth_contract_weak_elements",
+        "depth_contract_missing_elements",
+        "depth_contract_coverage",
+        "substantive_contract_coverage",
+        "source_types_used",
+        "source_priority_used",
+        "source_status",
+    }
+)
+
+
+# Question-level keys to leave untouched by the final prose-sanitiser pass:
+# the question stem (kept verbatim / surface-fixed separately), study_material
+# (already sanitised + hard-max enforced), and non-prose metadata/ids.
+_QUESTION_PROSE_SKIP_KEYS = frozenset(
+    {
+        "question",
+        "question_id",
+        "study_material",
+        "category",
+        "question_type",
+        "skill_tag",
+        "mapped_skill",
+        "role_family",
+        "answer_source",
+        "difficulty",
+        "export_blocked",
+        "used_fallback_template",
+        "used_legacy_polisher",
+        "estimated_answer_time_minutes",
+        "coverage_item_ids",
+        "question_source_items",
+        "question_source_types",
+        "source_priority_used",
+        "source_status",
+        "study_sources",
+        "quality_audit",
+        "quality_gate_status",
+        "generation_stage_meta",
+        "model_knowledge_support",
+        "related_skills",
+    }
+)
+
+
+# Minimal cross-SKILL scrub: SQL/DevOps jargon that must not appear as if it
+# defines a spreadsheet/visualisation skill. Replacements keep sentences coherent
+# and skill-appropriate rather than leaving dangling fragments. Applied ONLY when
+# the question's own skill is Excel/Dashboarding, so genuine SQL/DevOps questions
+# are untouched. Ordered longest-first so specific phrases win over generic ones.
+_EXCEL_FOREIGN_SCRUB: tuple[tuple[re.Pattern[str], str], ...] = (
+    (re.compile(r"query execution plans?", re.I), "formula and calculation efficiency"),
+    (re.compile(r"execution plans?", re.I), "calculation efficiency"),
+    (re.compile(r"join cardinality", re.I), "lookup key matching"),
+    (re.compile(r"schema design", re.I), "workbook and table structure"),
+    (re.compile(r"connection[- ]pool(?:\s+sizing)?s?", re.I), "workbook data connections"),
+    (re.compile(r"\bqps\b", re.I), "recalculation load"),
+    (re.compile(r"index seeks?", re.I), "lookups"),
+    (re.compile(r"bookmark lookups?", re.I), "cell lookups"),
+    (re.compile(r"\bkubernetes\b", re.I), "the spreadsheet toolset"),
+    (re.compile(r"\bci/cd\b", re.I), "the update workflow"),
+    (re.compile(r"least privilege", re.I), "restricted access"),
+    (re.compile(r"rollback plan", re.I), "change backup"),
+    (re.compile(r"rollback criteria", re.I), "change-backout criteria"),
+)
+
+_DASHBOARDING_FOREIGN_SCRUB: tuple[tuple[re.Pattern[str], str], ...] = (
+    (re.compile(r"query execution plans?", re.I), "dashboard refresh efficiency"),
+    (re.compile(r"execution plans?", re.I), "refresh efficiency"),
+    (re.compile(r"join cardinality", re.I), "data relationship matching"),
+    (re.compile(r"schema design", re.I), "data model structure"),
+    (re.compile(r"connection[- ]pool(?:\s+sizing)?s?", re.I), "data source connections"),
+    (re.compile(r"\bqps\b", re.I), "refresh load"),
+    (re.compile(r"\bkubernetes\b", re.I), "the reporting toolset"),
+    (re.compile(r"\bci/cd\b", re.I), "the publish workflow"),
+    (re.compile(r"rollback criteria", re.I), "change-backout criteria"),
+)
+
+
+def _skill_scrub_rules(skill: str) -> tuple[tuple[re.Pattern[str], str], ...]:
+    s = (skill or "").lower()
+    if "excel" in s or "spreadsheet" in s:
+        return _EXCEL_FOREIGN_SCRUB
+    if "dashboard" in s or "visual" in s:
+        return _DASHBOARDING_FOREIGN_SCRUB
+    return ()
+
+
+def _scrub_skill_foreign_terms(text: str, rules: tuple[tuple[re.Pattern[str], str], ...]) -> str:
+    if not rules or not text:
+        return text
+    out = text
+    for pattern, repl in rules:
+        out = pattern.sub(repl, out)
+    return re.sub(r"[ \t]{2,}", " ", out)
+
+
+def _sanitize_prose_value(
+    value: str,
+    job: dict,
+    role_title: str,
+    scrub_rules: tuple[tuple[re.Pattern[str], str], ...] = (),
+) -> str:
+    cleaned = fix_surface_quality_defects(value, role=role_title)
+    cleaned, _ = rewrite_or_flag_unsupported_claims(cleaned, job)
+    cleaned = _scrub_skill_foreign_terms(cleaned, scrub_rules)
+    return cleaned
+
+
+def _sanitize_study_material_recursive(
+    node, job: dict, role_title: str, scrub_rules: tuple[tuple[re.Pattern[str], str], ...] = ()
+):
+    """Recursively fix surface defects, unsupported claims, and cross-skill
+    foreign jargon across all user-facing prose — including nested lists/dicts
+    (e.g. advanced_extension) — while skipping metadata keys."""
+    if isinstance(node, str):
+        return _sanitize_prose_value(node, job, role_title, scrub_rules)
+    if isinstance(node, dict):
+        out = {}
+        for key, val in node.items():
+            if isinstance(key, str) and key in _STUDY_SANITIZE_SKIP_KEYS:
+                out[key] = val
+            else:
+                out[key] = _sanitize_study_material_recursive(val, job, role_title, scrub_rules)
+        return out
+    if isinstance(node, list):
+        return [_sanitize_study_material_recursive(item, job, role_title, scrub_rules) for item in node]
+    return node
+
+
 def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> dict:
     """Enrich a draft question with model answer, study material, and evaluation metadata."""
     enriched = dict(q)
@@ -596,7 +825,9 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
     follow_ups = enriched.get("follow_ups") or []
     enriched.setdefault("follow_up_questions", list(follow_ups))
     enriched.setdefault("estimated_answer_time_minutes", 5 if enriched.get("category") == "behavioral" else 8)
+    enriched = attach_obligation_profile(enriched, job)
     _enforce_cross_role_uniqueness(enriched, job)
+    enriched = attach_obligation_profile(enriched, job)
     enriched.setdefault("model_answer", _model_answer_from_points(enriched, job))
     enriched.setdefault("expert_reference_answer", enriched.get("model_answer", ""))
     contract = create_question_contract(enriched, job)
@@ -706,23 +937,49 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
         f"Review the key facts for this topic and write a 200-word summary from memory.",
     ]
     enriched.setdefault("revision_notes", study.get("revision_notes") or [])
-    enriched["question"] = normalize_surface_text(enriched.get("question", ""))
+    enriched["question"] = fix_surface_quality_defects(
+        normalize_surface_text(enriched.get("question", "")),
+        role=job.get("title") or "",
+    )
     if is_silly_or_vague_question(enriched.get("question", ""), job, job.get("job_intelligence_profile")):
         enriched["export_blocked"] = True
         quality["blocked_export_count"] = 1
         quality["silly_or_vague_question"] = True
     if enriched.get("model_answer"):
         enriched["model_answer"] = normalize_surface_text(enriched["model_answer"])
+        enriched["model_answer"] = fix_surface_quality_defects(
+            enriched["model_answer"], role=job.get("title") or ""
+        )
+        enriched["model_answer"], claim_meta = rewrite_or_flag_unsupported_claims(
+            enriched["model_answer"], job
+        )
+        enriched.setdefault("quality_audit", {}).update(claim_meta)
         enriched["expert_reference_answer"] = enriched["model_answer"]
+    role_title = job.get("title") or ""
+    scrub_rules = _skill_scrub_rules(enriched.get("skill_tag") or enriched.get("mapped_skill") or "")
     if enriched.get("answer_explanation"):
         enriched["answer_explanation"] = normalize_surface_text(enriched["answer_explanation"])
+        enriched["answer_explanation"] = _sanitize_prose_value(
+            enriched["answer_explanation"], job, role_title, scrub_rules
+        )
     if enriched.get("study_material"):
         enriched["study_material"] = normalize_study_material_dict(enriched["study_material"])
     attach_study_source_metadata(enriched, job)
     synthesize_study_module(enriched, job)
     annotate_question_source_metadata(enriched, job)
     apply_finalized_study_module(enriched, job)
-    return enriched
+    study = enriched.get("study_material") or {}
+    study = _sanitize_study_material_recursive(study, job, role_title, scrub_rules)
+    enriched["study_material"] = enforce_study_hard_max_after_export_touchup(study, enriched, job)
+    # Final safety net: sanitise ALL remaining user-facing prose on the question
+    # (evidence slots, expert reference, common mistakes, follow-ups, etc.) so the
+    # audited content matches what a user could ever see. study_material and the
+    # question stem are handled above / kept verbatim.
+    for key, value in list(enriched.items()):
+        if key in _QUESTION_PROSE_SKIP_KEYS:
+            continue
+        enriched[key] = _sanitize_study_material_recursive(value, job, role_title, scrub_rules)
+    return attach_obligation_profile(enriched, job)
 
 
 def mock_generate_questions(
@@ -758,7 +1015,11 @@ def mock_generate_questions(
     skill_card_bank = build_skill_card_bank(job, skills)
 
     for skill in skills:
-        questions.extend(build_technical_questions_for_skill(skill, role, resp))
+        # Anchor each skill's questions to a responsibility that does not name a
+        # DIFFERENT skill, so e.g. a Python question is not framed "while handling
+        # 'SQL dashboard creation'" (Defect Class D framing contamination).
+        skill_resp = _skill_aligned_context_responsibility(job, skill) or resp
+        questions.extend(build_technical_questions_for_skill(skill, role, skill_resp))
 
     role_term = get_role_terminology_question(job)
     if role_term:
@@ -809,12 +1070,30 @@ def mock_generate_questions(
             }
         )
 
+    _real_resp = [r for r in (job.get("responsibilities") or []) if r]
+    _real_skills = [s for s in (job.get("extracted_skills") or []) if s]
+    if not _real_resp and not _real_skills and not (job.get("description_raw") or "").strip():
+        # Title-only input: do not imply a posting was read (Defect Class E).
+        excites_q = (
+            f"What interests you about this {job.get('title', 'role')} role based on the "
+            f"information available so far, and what would you want to clarify about it?"
+        )
+        excites_points = [
+            "Honest interest given limited information",
+            "Sensible questions to clarify responsibilities, skills, and success measures",
+        ]
+    else:
+        excites_q = (
+            f"What excites you specifically about this {job.get('title', 'role')} position, "
+            f"based on what you've read?"
+        )
+        excites_points = ["References specific responsibilities or requirements from the real posting"]
     questions.append(
         {
             "category": "role_specific",
-            "question": f"What excites you specifically about this {job.get('title', 'role')} position, based on what you've read?",
+            "question": excites_q,
             "why_asked": "Tests genuine engagement with the actual posting rather than a rehearsed generic answer.",
-            "ideal_answer_points": ["References specific responsibilities or requirements from the real posting"],
+            "ideal_answer_points": excites_points,
             "follow_ups": [],
             "skill_tag": None,
         }
@@ -876,11 +1155,14 @@ def mock_generate_questions(
     questions.extend(build_profile_driven_questions(intelligence_profile))
 
     questions = apply_coverage_plan(job, questions, difficulty=difficulty)
+    questions = repair_synthetic_question_overload(questions, job)
 
     unique_questions: list[dict] = []
     seen: set[str] = set()
     for q in questions:
         q.setdefault("generation_stage_meta", {})
+        if not q.get("question_origin"):
+            q = mark_synthetic_question(q, source="mock_generate")
         q["generation_stage_meta"]["stage_1_role_intelligence"] = {
             "role": role_intelligence["role"],
             "domain": role_intelligence["domain"],

@@ -35,3 +35,38 @@ HUMAN_RESOURCES_PACK = {
     ],
     "contamination_terms": ["RCD", "CloudWatch", "milk texture", "insulation resistance"],
 }
+
+HR_ONBOARDING_PACK = {
+    "domain_terms": [
+        "onboarding checklist",
+        "induction plan",
+        "starter documentation",
+        "probation review",
+        "role expectations",
+        "policy acknowledgement",
+        "buddy assignment",
+    ],
+    "verification_checks": [
+        "confirm contract, payroll, and right-to-work documentation is complete",
+        "verify role expectations and probation milestones are documented",
+        "check policy acknowledgements and mandatory training completion",
+        "review 30/60/90 day check-ins and manager sign-off",
+    ],
+    "safety_checks": [
+        "protect personal data in starter records",
+        "escalate missing compliance training before role handover",
+    ],
+    "common_mistakes": [
+        "Starting operational work before mandatory onboarding steps are complete.",
+        "Missing probation milestone documentation.",
+        "Handing over role expectations verbally without written confirmation.",
+    ],
+    "role_specific_examples": [
+        "For a new starter, I issued the onboarding checklist, confirmed policy acknowledgements, "
+        "scheduled probation check-ins, and documented role expectations before handover to the line manager.",
+    ],
+    "interview_closings": [
+        "In an interview, I would show that I run onboarding with clear documentation, compliance checks, and probation follow-up.",
+    ],
+    "contamination_terms": ["grievance case", "disciplinary action", "investigation notes"],
+}

@@ -5914,71 +5914,71 @@
     },
     "excel": {
       "skill": "Excel",
-      "domain": "technology",
-      "definition": "Excel is the role-specific tools, standards, and verified procedures that Chartered Accountant professionals apply when performing core professional duties.",
+      "domain": "data",
+      "definition": "Excel is a spreadsheet tool for organising, calculating, and analysing tabular data using formulas, functions, lookups, and pivot tables, with controls that keep results accurate and auditable.",
       "principles": [
-        "Separation of concerns: modular boundaries reduce coupling and simplify change.",
-        "Correctness before optimization: prove the solution works, then profile and improve bottlenecks.",
-        "Fail-safe defaults: systems should degrade gracefully; errors must be observable and actionable.",
-        "Apply Excel with explicit reference to standards, tools, and measurable outcomes in this domain.",
-        "Document assumptions and limitations whenever Excel informs a decision others will rely on."
+        "Separate raw data, calculations, and outputs so a change in one layer does not silently corrupt another.",
+        "Prefer exact-match lookups and structured references over hard-coded cell addresses that break when rows move.",
+        "Validate inputs (data validation, type checks, control totals) before trusting any downstream aggregation.",
+        "Handle errors explicitly with IFERROR/ISNA rather than letting #N/A or #REF propagate into reports.",
+        "Document assumptions and reconcile totals to a trusted source whenever a spreadsheet informs a decision."
       ],
       "key_concepts": [
-        "Excel",
-        "Abstraction",
-        "Testing",
-        "Observability",
-        "Security",
-        "Scalability"
+        "Formulas and functions",
+        "Lookups (VLOOKUP/XLOOKUP/INDEX-MATCH)",
+        "PivotTables",
+        "Data validation",
+        "Error handling",
+        "Cell referencing"
       ],
-      "deep_explanation": "Excel is the role-specific tools, standards, and verified procedures that Chartered Accountant professionals apply when performing core professional duties. In Chartered Accountant practice, Excel directly supports core professional duties. Software and data engineering rest on formal models of computation, information, and distributed systems. Practitioners combine computer science theory (algorithms, complexity, concurrency) with engineering discipline (testing, observability, security) to build reliable software at scale. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
-      "practical_example": "In Chartered Accountant, I applied Excel to improve core professional duties, recorded the key checks, and confirmed the outcome before handover.",
+      "deep_explanation": "Excel turns rows and columns of data into reliable analysis through formulas, functions, lookups, and PivotTables. Robust spreadsheets keep source data, calculation logic, and presentation separated, use exact-match lookups and structured references so logic survives edits, and validate inputs before aggregating. Common failure modes are silent errors (#N/A, #REF, #DIV/0!), type and whitespace mismatches that break joins, and totals that do not reconcile to the source. Disciplined analysts add control totals, data validation, and error handling, and reconcile outputs against a trusted source before publishing.",
+      "practical_example": "Illustrative example: an analyst reconciling a sales workbook could check that a VLOOKUP against the product table returns no unexpected #N/A values, confirm the PivotTable total matches a control total from the raw export, and wrap lookups in IFERROR before sharing the summary.",
       "common_mistakes": [
-        "Executing Excel without validating prerequisites and constraints.",
-        "Relying on habit instead of current procedures and controls.",
-        "Incomplete records that break traceability and handover."
+        "Using approximate-match lookups when an exact match is required, returning wrong values silently.",
+        "Letting #N/A, #REF, or #DIV/0! errors flow into totals instead of handling them explicitly.",
+        "Failing to reconcile a dashboard or summary total against a control total from the raw source."
       ],
       "related_concepts": [
-        "Excel",
-        "Clear scope and verification steps keep Excel work predictable in Chartered Accountant settings.",
-        "Handover notes and revision records keep teams aligned across shifts and trades.",
-        "technology"
+        "PivotTables",
+        "Lookups and structured references",
+        "Data validation and control totals",
+        "data"
       ],
       "methodology_steps": [
-        "Confirm scope, safety constraints, and handoff owners for core professional duties.",
-        "Apply Excel with role-specific checks appropriate to Chartered Accountant.",
-        "Verify the result against applicable standards and recorded assumptions.",
-        "Record decisions, checks, and handover notes for traceability.",
-        "Review the outcome and tighten the method for the next cycle."
+        "Confirm the question, the source data, and the control total the answer must reconcile to.",
+        "Build calculations with exact-match lookups and structured references, kept separate from raw data.",
+        "Validate inputs and handle errors (IFERROR/ISNA) so problems are visible, not silent.",
+        "Reconcile outputs against the source control total and record any assumptions.",
+        "Review the workbook for fragile references before handover."
       ],
       "expert": {
-        "definition": "Excel is the role-specific tools, standards, and verified procedures that Chartered Accountant professionals apply when performing core professional duties.",
+        "definition": "Excel is a spreadsheet tool for organising, calculating, and analysing tabular data using formulas, functions, lookups, and PivotTables, with controls that keep results accurate and auditable.",
         "how_it_works": [
-          "Confirm scope, safety constraints, and handoff owners for core professional duties.",
-          "Apply Excel with role-specific checks appropriate to Chartered Accountant.",
-          "Verify the result against applicable standards and recorded assumptions.",
-          "Record decisions, checks, and handover notes for traceability.",
-          "Review the outcome and tighten the method for the next cycle."
+          "Confirm the question, the source data, and the control total the answer must reconcile to.",
+          "Build calculations with exact-match lookups and structured references, kept separate from raw data.",
+          "Validate inputs and handle errors (IFERROR/ISNA) so problems are visible, not silent.",
+          "Reconcile outputs against the source control total and record any assumptions.",
+          "Review the workbook for fragile references before handover."
         ],
         "key_facts": [
-          "Clear scope and verification steps keep Excel work predictable in Chartered Accountant settings.",
-          "Handover notes and revision records keep teams aligned across shifts and trades.",
-          "Excel work must stay auditable so the next person can verify what was done."
+          "Exact-match lookups and structured references keep spreadsheet logic reliable when data changes.",
+          "Control totals and data validation catch input problems before they reach a report.",
+          "Explicit error handling stops #N/A and #REF from silently corrupting aggregates."
         ],
         "standards": [],
-        "teaching_body": "Excel is the role-specific tools, standards, and verified procedures that Chartered Accountant professionals apply when performing core professional duties. In Chartered Accountant practice, Excel directly supports core professional duties. Software and data engineering rest on formal models of computation, information, and distributed systems. Practitioners combine computer science theory (algorithms, complexity, concurrency) with engineering discipline (testing, observability, security) to build reliable software at scale. Operational excellence requires explicit controls, measurable checks, and documented decision points.",
-        "explain_answer": "In this Chartered Accountant context, Excel starts with confirm scope, safety constraints, and handoff owners for core professional duties. and continues through apply excel with role-specific checks appropriate to chartered accountant. The critical discipline is measurable checks: clear scope and verification steps keep excel work predictable in chartered accountant settings. When conditions change, I re-check scope and constraints before proceeding — that is how core professional duties stays reliable under real operational constraints.",
-        "complex_answer": "In Chartered Accountant, I applied Excel to improve core professional duties, recorded the key checks, and confirmed the outcome before handover.",
+        "teaching_body": "Excel turns tabular data into reliable analysis through formulas, functions, lookups, and PivotTables. Strong practice separates raw data, calculations, and outputs, uses exact-match lookups and structured references, validates inputs, and reconciles totals to a trusted source. The critical discipline is making errors visible — handling #N/A, #REF, and #DIV/0! explicitly and checking control totals — so the numbers people rely on are correct and auditable.",
+        "explain_answer": "A strong Excel answer starts by confirming the source data and the control total the result must reconcile to, then builds calculations with exact-match lookups and structured references kept separate from raw data. The critical discipline is validation: data validation on inputs, IFERROR/ISNA on lookups, and reconciliation of totals to the source. When the data changes, re-checking references and control totals is how the workbook stays reliable.",
+        "complex_answer": "Illustrative example: an analyst reconciling a sales workbook could confirm the PivotTable total matches a control total from the raw export, isolate any #N/A lookup keys caused by whitespace or type mismatches, and wrap lookups in IFERROR before publishing the summary.",
         "technical_pitfalls": [
-          "Executing Excel without validating prerequisites and constraints.",
-          "Relying on habit instead of current procedures and controls.",
-          "Incomplete records that break traceability and handover."
+          "Using approximate-match lookups when an exact match is required, returning wrong values silently.",
+          "Letting #N/A, #REF, or #DIV/0! errors flow into totals instead of handling them explicitly.",
+          "Failing to reconcile a dashboard or summary total against a control total from the raw source."
         ],
         "related_topics": [
-          "Excel",
-          "Clear scope and verification steps keep Excel work predictable in Chartered Accountant settings.",
-          "Handover notes and revision records keep teams aligned across shifts and trades.",
-          "technology"
+          "PivotTables",
+          "Lookups and structured references",
+          "Data validation and control totals",
+          "data"
         ]
       }
     },

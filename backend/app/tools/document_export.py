@@ -470,6 +470,13 @@ def _study_material_md_sections(study: dict) -> list[str]:
     lines.append("### Study material")
     lines.append("")
 
+    if study.get("study_depth_label"):
+        depth_line = f"**Study depth:** {study['study_depth_label']}"
+        if study.get("target_min_words") is not None and study.get("target_max_words") is not None:
+            depth_line += f" (approx. {study['target_min_words']}–{study['target_max_words']} words)"
+        lines.append(depth_line)
+        lines.append("")
+
     if study.get("technical_skills_covered"):
         lines.append(
             "**Technical skills covered:** " + ", ".join(str(s) for s in study["technical_skills_covered"])
@@ -582,6 +589,76 @@ def _study_material_md_sections(study: dict) -> list[str]:
     if study.get("interview_application"):
         lines.append("**Interview application:**")
         lines.append(study["interview_application"])
+        lines.append("")
+
+    if study.get("practical_workflow"):
+        lines.append("**Practical workflow:**")
+        lines.append(study["practical_workflow"])
+        lines.append("")
+
+    if study.get("decision_points"):
+        lines.append("**Decision points:**")
+        for point in study["decision_points"]:
+            lines.append(f"- {point}")
+        lines.append("")
+
+    for label, key in (
+        ("Workflow checkpoints", "workflow_checkpoints"),
+        ("Failure modes", "failure_modes"),
+        ("Escalation triggers", "escalation_triggers"),
+        ("Competing constraints", "competing_constraints"),
+        ("Decision branches", "decision_branches"),
+        ("Verification steps", "verification_steps"),
+        ("Assumptions and dependencies", "assumptions_and_dependencies"),
+        ("Staged reasoning", "staged_reasoning"),
+        ("Validation and monitoring", "validation_and_monitoring"),
+        ("Alternative paths", "alternative_paths"),
+        ("Technical mechanisms", "technical_mechanisms"),
+        ("Common misconceptions", "common_misconceptions"),
+    ):
+        items = study.get(key)
+        if items:
+            lines.append(f"**{label}:**")
+            for item in items:
+                lines.append(f"- {item}")
+            lines.append("")
+
+    for label, key in (
+        ("Compact explanation", "compact_explanation"),
+        ("Behavioral response structure", "behavioral_response_structure"),
+        ("Workflow objective", "workflow_objective"),
+        ("Scenario framing", "scenario_framing"),
+        ("Outcome evaluation", "outcome_evaluation"),
+        ("System framing", "system_framing"),
+        ("Trade-off analysis", "trade_off_analysis"),
+    ):
+        if study.get(key):
+            lines.append(f"**{label}:**")
+            lines.append(study[key])
+            lines.append("")
+
+    if study.get("advanced_nuance"):
+        lines.append("**Advanced nuance:**")
+        lines.append(study["advanced_nuance"])
+        lines.append("")
+
+    if study.get("likely_follow_ups"):
+        lines.append("**Likely follow-ups:**")
+        for item in study["likely_follow_ups"]:
+            lines.append(f"- {item}")
+        lines.append("")
+
+    ext = study.get("advanced_extension")
+    if isinstance(ext, dict) and ext:
+        lines.append("**Advanced extension:**")
+        if ext.get("advanced_explanation"):
+            lines.append(ext["advanced_explanation"])
+        if ext.get("practical_workflow"):
+            lines.append(ext["practical_workflow"])
+        for point in ext.get("decision_points") or []:
+            lines.append(f"- {point}")
+        if ext.get("advanced_nuance"):
+            lines.append(ext["advanced_nuance"])
         lines.append("")
 
     if study.get("web_or_company_source_insight"):

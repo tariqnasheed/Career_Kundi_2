@@ -8,6 +8,7 @@ from __future__ import annotations
 from app.agents.job_search.knowledge.domains import classify_skill_domain, get_domain_foundation
 from app.agents.job_search.knowledge.expert_content_library import resolve_expert_content
 from app.agents.job_search.knowledge.normalize import normalize_key, title_case_skill
+from app.agents.job_search.quality.key_term_quality_audit import is_valid_key_term
 
 _ROLE_FAMILY_KEYWORDS: dict[str, tuple[str, ...]] = {
     "healthcare": ("nurse", "pharmacist", "doctor", "gp", "physio", "radiograph", "clinical", "therapist"),
@@ -51,6 +52,21 @@ _CALC_BY_SKILL: dict[str, dict] = {
         "prompt": "A table has 10 million rows. An index on user_id reduces lookup from full scan to index seek. Why does SELECT * still perform poorly?",
         "answer": "Index helps find rows quickly but SELECT * fetches all columns — key lookup + heap/clustered fetch (bookmark lookup) adds I/O. Covering index on needed columns avoids extra lookups.",
         "steps": ["Explain index seek vs scan", "Describe bookmark/covering index", "Recommend SELECT only required columns"],
+    },
+    "excel": {
+        "prompt": "A sales sheet has 12,000 rows. A VLOOKUP against a 5,000-row product table returns #N/A for 400 rows. What does that indicate and how do you verify it?",
+        "answer": "#N/A means those lookup keys are absent from the product table (or have trailing spaces / type mismatches). Verify with TRIM/CLEAN, confirm exact-match (FALSE) not approximate, and reconcile the 400 unmatched keys against the source before trusting any aggregation built on the join.",
+        "steps": ["Isolate the #N/A keys", "Check for whitespace/type mismatches and exact-match flag", "Reconcile unmatched keys before aggregating"],
+    },
+    "dashboarding": {
+        "prompt": "A dashboard shows total revenue of £1.2m but the underlying pivot sums to £1.35m. Where do you look first?",
+        "answer": "A mismatch usually means the dashboard measure is filtered or de-duplicated differently from the pivot — check slicer/filter context, excluded categories, and whether one view removes duplicate transaction IDs. Reconcile both against a control total from the raw source before publishing.",
+        "steps": ["Compare filter/slicer context between views", "Check de-duplication and excluded categories", "Reconcile to a raw-source control total"],
+    },
+    "data_visualization": {
+        "prompt": "A dashboard shows total revenue of £1.2m but the underlying pivot sums to £1.35m. Where do you look first?",
+        "answer": "A mismatch usually means the dashboard measure is filtered or de-duplicated differently from the pivot — check slicer/filter context, excluded categories, and whether one view removes duplicate transaction IDs. Reconcile both against a control total from the raw source before publishing.",
+        "steps": ["Compare filter/slicer context between views", "Check de-duplication and excluded categories", "Reconcile to a raw-source control total"],
     },
     "financial_modelling": {
         "prompt": "FCF year 1 = £120k, growth 5%, discount rate 10%, terminal growth 2%. Outline DCF logic for enterprise value.",
@@ -219,24 +235,34 @@ def _terminology_from_expert(skill: str, role: str, exp: dict) -> list[dict[str,
         terms.append({"term": std.split("(")[0].strip(), "definition": f"Standard/framework governing {skill_t}: {std}."})
 
     for fact in (exp.get("key_facts") or [])[:4]:
-        if ":" in fact:
-            parts = fact.split(":", 1)
-            terms.append({"term": parts[0].strip(), "definition": parts[1].strip()})
-        else:
-            terms.append({"term": fact[:40], "definition": fact})
+        # Only "Named concept: gloss" facts yield a glossary term. Prose facts
+        # without a leading named concept are NOT clipped into a term — that is
+        # exactly what produced malformed entries like "Clear scope and
+        # verification steps keep" (Defect Class B). The prose fact still lives
+        # on in principles/study material; it just never masquerades as a term.
+        if ":" not in fact:
+            continue
+        candidate = fact.split(":", 1)[0].strip()
+        if is_valid_key_term(candidate):
+            terms.append({"term": candidate, "definition": fact.split(":", 1)[1].strip()})
 
     for topic in (exp.get("related_topics") or [])[:3]:
         if topic != skill_t:
             terms.append({"term": topic, "definition": f"Related concept used with {skill_t} in professional practice."})
 
-    # Deduplicate by term
+    # Deduplicate by term and enforce the terminology type boundary: a term must
+    # be a noun-like domain concept / named tool / standard — never a clipped
+    # prose principle or sentence fragment.
     seen: set[str] = set()
     unique: list[dict[str, str]] = []
     for t in terms:
         key = t["term"].lower()
-        if key not in seen and t.get("definition"):
-            seen.add(key)
-            unique.append(t)
+        if key in seen or not t.get("definition"):
+            continue
+        if not is_valid_key_term(t["term"]):
+            continue
+        seen.add(key)
+        unique.append(t)
     return unique[:8]
 
 
@@ -288,9 +314,18 @@ def get_role_terminology_question(job: dict) -> dict | None:
     if not skills:
         return None
     terms: list[dict[str, str]] = []
+    seen_terms: set[str] = set()
     for s in skills[:4]:
         pack = get_terminology_pack(s, role, (job.get("responsibilities") or [None])[0])
-        terms.extend(pack["terms"][:3])
+        for t in pack["terms"][:3]:
+            key = (t.get("term") or "").strip().lower()
+            # Structural type boundary + cross-skill dedupe so a malformed or
+            # repeated fragment cannot survive aggregation into the consolidated
+            # terminology question (Defect Class B).
+            if not key or key in seen_terms or not is_valid_key_term(t.get("term") or ""):
+                continue
+            seen_terms.add(key)
+            terms.append(t)
     if not terms:
         return None
     term_list = ", ".join(t["term"] for t in terms[:6])

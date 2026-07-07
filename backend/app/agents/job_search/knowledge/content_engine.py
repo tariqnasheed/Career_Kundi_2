@@ -17,7 +17,8 @@ from typing import Any
 
 from app.agents.job_search.knowledge.coverage_planner import is_archetype_legacy_question_type
 from app.agents.job_search.knowledge.domains import classify_skill_domain, get_domain_foundation
-from app.agents.job_search.knowledge.evidence_packs import get_evidence_pack, resolve_role_family
+from app.agents.job_search.knowledge.evidence_packs import get_evidence_pack, get_evidence_pack_for_question, resolve_role_family
+from app.agents.job_search.quality.claim_integrity import collect_user_claim_context
 from app.agents.job_search.knowledge.core_technical_content import (
     get_calculation_pack,
     get_principles_pack,
@@ -29,6 +30,13 @@ from app.agents.job_search.knowledge.answer_builders import (
     MIN_EXPERT_ANSWER_WORDS,
     build_study_module_from_slots,
     compile_answer,
+    render_compliance_naturally,
+    render_spoken_workflow,
+)
+from app.agents.job_search.knowledge.question_obligations import (
+    Obligation,
+    get_question_obligation_profile,
+    is_pure_motivation_profile,
 )
 from app.agents.job_search.knowledge.answer_compressor import compress_compiled_answer
 from app.agents.job_search.knowledge.evidence_slot_builder import (
@@ -430,6 +438,38 @@ def _question_archetype(question: str, category: str, q: dict | None = None) -> 
         return "daily_routine"
     if category == "system_design":
         return "system_design"
+    # Motivation / company-fit before calculation: role-context suffixes often mention
+    # skills like "Load calculations" which must not override genuine fit questions.
+    if any(
+        m in qtext
+        for m in (
+            "excites you",
+            "why do you want",
+            "why are you interested",
+            "interested in this role",
+            "interested in joining",
+            "interested in working",
+            "good fit",
+            "a fit for",
+            "fit for this role",
+            "fit for the role",
+            "experience help",
+            "experience make you",
+            "make you a good fit",
+            "background fit",
+            "want to work here",
+            "want to join",
+            "why this role",
+            "why us",
+            "why our",
+            "drawn to",
+            "attracts you",
+            "what motivates you",
+        )
+    ):
+        return "motivation"
+    if "what do you know about" in qtext:
+        return "company_research"
     if "calculation" in qtext or "quantitative" in qtext:
         return "calculation"
     if "essential technical terms" in qtext or "define and explain these core" in qtext:
@@ -452,10 +492,6 @@ def _question_archetype(question: str, category: str, q: dict | None = None) -> 
         return "case_study"
     if "core competencies" in qtext or "successful as" in qtext:
         return "role_competencies"
-    if "excites you" in qtext or "why do you want" in qtext:
-        return "motivation"
-    if "what do you know about" in qtext:
-        return "company_research"
     if "tell me about a time" in qtext or "describe a" in qtext:
         return "behavioral"
     return "technical_general"
@@ -580,11 +616,91 @@ def build_study_material(q: dict, job: dict) -> dict:
     }
 
 
+# §13: generic "employer expectation" coaching (from generated role context) can
+# unconditionally instruct candidates to show measurable outcomes / scale. For
+# unknown or thin provenance that contradicts the provenance-aware guidance in the
+# same module and pressures invention. We soften only the metric-pressure clauses and
+# preserve role-specific, non-metric expectations unchanged.
+_METRIC_PRESSURE_RE = re.compile(
+    r"\b(measurable outcomes|measurable results|quantified results|with scale\b|"
+    r"dates and scale|numbers and scale)",
+    re.I,
+)
+_METRIC_PRESSURE_CAVEAT = "only where you genuinely have them"
+
+
+def _soften_metric_pressure_principles(principles: list[str]) -> list[str]:
+    softened: list[str] = []
+    for principle in principles:
+        text = str(principle).strip()
+        if not text:
+            continue
+        if _METRIC_PRESSURE_RE.search(text):
+            if re.search(r"concrete examples with scale", text, re.I):
+                text = (
+                    "Use concrete examples with context, constraints, and stakeholders — "
+                    f"include scale or measurable outcomes {_METRIC_PRESSURE_CAVEAT}."
+                )
+            elif _METRIC_PRESSURE_CAVEAT not in text.lower():
+                text = text.rstrip(".") + f" — {_METRIC_PRESSURE_CAVEAT}."
+        softened.append(text)
+    return softened
+
+
 def _behavioral_study(q: dict, job: dict, role_ctx: dict) -> dict:
     role_title = job.get("title") or "this role"
     resp = (role_ctx.get("responsibilities") or ["professional duties"])[0]
     qtext = q.get("question") or ""
     family = _role_family(role_title)
+    # §13: behavioral study guidance must be provenance-aware. When the user has NOT
+    # provided genuine experience (unknown / not_provided provenance), we must not
+    # instruct them to close with quantified results, use dates/scale, or treat
+    # hypothetical practice as a mistake — that pressures invention. We invite a real
+    # example where they have one, numbers only when genuinely known, and clearly
+    # hypothetical practice otherwise. When explicit experience exists we keep the
+    # stronger "use your real numbers" guidance without weakening their claims.
+    _claim_ctx = collect_user_claim_context(job)
+    _has_experience = _claim_ctx["has_explicit_experience"] and not _claim_ctx["job_thin"]
+    if _has_experience:
+        _detail_principle = (
+            "Specific details you genuinely have — dates, scale, names of standards, measurable "
+            "results — distinguish strong candidates."
+        )
+        _close_step = "Close with the real outcome and what changed afterwards, including your genuine numbers."
+        _behavioral_mistakes = [
+            "Vague, generic answers with no concrete detail from your own experience.",
+            "Inventing metrics, dates, or events you cannot actually support.",
+            "Blaming others without showing your personal action and decisions.",
+        ]
+        _practice_exercise = (
+            f"Write a 300-word account of a real {role_title} challenge, using your genuine numbers where you have them."
+        )
+        _fallback_principles = [
+            "Describe real past events with the outcomes you genuinely achieved.",
+            "Show what you personally did — not only what the team did.",
+        ]
+    else:
+        _detail_principle = (
+            "Include specific details — dates, scale, measurable results — only where you genuinely "
+            "have them; qualitative evidence (what changed, what you learned) is equally valid."
+        )
+        _close_step = (
+            "Close with the outcome and what changed — include numbers only if you genuinely know them, "
+            "otherwise describe the qualitative result honestly."
+        )
+        _behavioral_mistakes = [
+            "Inventing metrics, dates, employers, or events you cannot support.",
+            "Staying so vague there is no concrete method or decision to assess.",
+            "Blaming others without showing your personal action and decisions.",
+        ]
+        _practice_exercise = (
+            f"Practise a 300-word STAR answer using a real {role_title} example if you have one, or a "
+            f"clearly hypothetical scenario if not — add numbers only if you genuinely know them, never invented ones."
+        )
+        _fallback_principles = [
+            "Use a real example from your experience where possible; a clearly hypothetical practice scenario is fine otherwise.",
+            "Show what you personally did or would do — without inventing history you do not have.",
+        ]
     family_concepts = {
         "healthcare": ["Patient safety", "Escalation protocol", "Clinical documentation", "Multidisciplinary handover"],
         "engineering": ["Safety-critical checks", "Verification testing", "Standards compliance", "Root-cause analysis"],
@@ -594,6 +710,14 @@ def _behavioral_study(q: dict, job: dict, role_ctx: dict) -> dict:
         "public_admin": ["Policy execution", "Service metrics", "Stakeholder coordination", "Governance controls"],
         "general": ["Accountability", "Communication", "Judgement", "Execution discipline"],
     }
+    _principles = list(role_ctx.get("what_employers_expect", [])[:4]) or list(_fallback_principles)
+    if not _has_experience:
+        _principles = _soften_metric_pressure_principles(_principles)
+        if not any(
+            "genuinely" in p.lower() or "hypothetical" in p.lower() for p in _principles
+        ):
+            _principles = _fallback_principles[:1] + _principles
+        _principles = _principles[:4]
     return {
         "what_this_question_tests": f"How to structure a STAR response for: {truncate_at_word(qtext, 120)}",
         "overview": (
@@ -603,36 +727,29 @@ def _behavioral_study(q: dict, job: dict, role_ctx: dict) -> dict:
         "what_you_need_to_know_first": [
             f"{role_title} work involves {resp.lower()} under time, safety, and quality constraints.",
             "Employers look for evidence of judgement, communication, and ownership in past events.",
-            "Specific details — dates, scale, names of standards, measurable results — distinguish strong candidates.",
+            _detail_principle,
         ],
         "definitions": [
             {"term": role_title, "definition": role_ctx.get("summary", f"Professional responsible for {resp.lower()}.")},
             {"term": "Accountability", "definition": "Personal ownership of decisions and outcomes, not passive participation."},
         ],
         "skill_explanations": [],
-        "principles": role_ctx.get("what_employers_expect", [])[:4] or [
-            "Describe real past events with measurable outcomes.",
-            "Show what you personally did — not only what the team did.",
-        ],
+        "principles": _principles,
         "key_concepts": family_concepts.get(family, family_concepts["general"]),
         "step_by_step_breakdown": [
             "Identify a real situation with clear stakes in this field.",
             "State your specific responsibility — not the group's generic goal.",
             "Walk through actions in sequence: decisions, tools, communication.",
-            "Close with quantified results and what changed afterwards.",
+            _close_step,
         ],
         "explanations": [
             f"Strong examples for {role_title} reference {resp.lower()} and relevant standards or tools.",
         ],
         "practical_example": build_model_answer(q, job),
-        "common_mistakes": [
-            "Vague timelines and no numbers.",
-            "Hypothetical answers instead of real events.",
-            "Blaming others without showing personal action.",
-        ],
+        "common_mistakes": _behavioral_mistakes,
         "how_to_answer_better": [],
         "practice_exercises": [
-            f"Write a 300-word account of a real {role_title} challenge with numbers.",
+            _practice_exercise,
             f"Link the story to: {resp}.",
         ],
         "revision_notes": (role_ctx.get("required_skills") or [])[:4],
@@ -647,6 +764,15 @@ def _motivation_study(q: dict, job: dict, role_ctx: dict) -> dict:
     resp = (role_ctx.get("responsibilities") or ["professional duties"])[0]
     skills = role_ctx.get("required_skills") or role_ctx.get("skill_clusters") or []
     skill_hint = skills[0] if skills else "core role skills"
+    # §13: keep motivation guidance provenance-aware — do not pressure an invented
+    # "measurable result" when the user has provided no genuine experience.
+    _mot_ctx = collect_user_claim_context(job)
+    _mot_has_exp = _mot_ctx["has_explicit_experience"] and not _mot_ctx["job_thin"]
+    _link_step = (
+        "Link it to a past achievement with a measurable result you genuinely have."
+        if _mot_has_exp
+        else "Link it to a genuine achievement or a skill you are developing — add a measurable result only if you truly have one."
+    )
     return {
         "what_this_question_tests": (
             f"Whether you can connect genuine motivation to this {role_title} posting: {truncate_at_word(qtext, 120)}"
@@ -659,9 +785,18 @@ def _motivation_study(q: dict, job: dict, role_ctx: dict) -> dict:
             f"Strong answers tie posted requirements to your track record in {skill_hint} "
             f"and name what you will contribute in the first 90 days."
         ),
+        "advanced_explanation": (
+            f"Discuss how duties such as {resp.lower()} and skills like {skill_hint} align with "
+            f"what you want to develop — keep the focus on motivation and contribution, not technical steps."
+        ),
+        "interview_application": (
+            f"Keep your answer focused on why this {role_title} posting attracts you: cite specific "
+            f"duties such as {resp.lower()}, connect them to genuine interests or skills, and state "
+            f"what you hope to contribute — not a technical procedure."
+        ),
         "step_by_step_method": [
             f"Quote one responsibility from the {role_title} posting.",
-            "Link it to a past achievement with a measurable result.",
+            _link_step,
             "State one skill you will apply immediately in the team.",
         ],
         "common_mistakes": [
@@ -973,7 +1108,11 @@ def _compile_and_validate_answer(q: dict, job: dict, contract: dict) -> str:
     answer = compile_answer(contract, slots)
     q["evidence_slots"] = slots
     role_family = resolve_role_family(contract.get("role", ""), contract.get("role_family"))
-    pack = get_evidence_pack(role_family)
+    pack = get_evidence_pack_for_question(
+        role_family,
+        contract.get("role", ""),
+        contract.get("skill", "") or q.get("skill_tag", ""),
+    )
     answer_failures = validate_answer(answer, contract, slots)
     q.setdefault("quality_audit", {})
     q["quality_audit"]["slot_failures"] = slot_failures
@@ -1063,7 +1202,7 @@ def _compile_and_validate_answer(q: dict, job: dict, contract: dict) -> str:
     blocked = bool(final_surface_failures)
     if blocked:
         family = resolve_role_family(job.get("title") or "", q.get("role_family"))
-        if family in {"creative_media", "creator_trending", "sports"} or is_archetype_legacy_question_type(
+        if family in {"creative_design", "creative_media", "creator_trending", "sports"} or is_archetype_legacy_question_type(
             q.get("question_type")
         ):
             fallback = _archetype_coverage_answer(q, job, get_role_context(job.get("title") or "Professional"))
@@ -1103,6 +1242,19 @@ def build_model_answer(q: dict, job: dict) -> str:
         q["answer_source"] = "legacy_template"
         return _hr_answer(q, job, role_ctx)
 
+    # §10: a role-motivation / company-fit question must get a motivation answer
+    # (why this role, posting fit, contribution, honest relevance to genuine
+    # background) — not a technical workflow. The provenance-aware `_hr_answer`
+    # already produces this and never invents user history, so reuse it rather than
+    # letting the question fall through to the technical contract compiler.
+    if category == "motivation" or archetype == "motivation":
+        q["answer_source"] = "legacy_template"
+        return _hr_answer(q, job, role_ctx)
+
+    if archetype == "company_research" or category == "company_specific":
+        q["answer_source"] = "legacy_template"
+        return _hr_answer(q, job, role_ctx)
+
     if is_archetype_legacy_question_type(q.get("question_type")):
         q["answer_source"] = "legacy_template"
         return _archetype_coverage_answer(q, job, role_ctx)
@@ -1118,7 +1270,16 @@ def build_model_answer(q: dict, job: dict) -> str:
     if archetype in {"case_study", "practical_task", "problem_solving"} and skill:
         q["answer_source"] = "legacy_template"
         evidence = _retrieve_evidence_pack(skill, job, q)
-        return _compose_scenario_answer(skill, evidence)
+        answer = _compose_scenario_answer(skill, evidence)
+        profile = get_question_obligation_profile(q, job)
+        obs = set(profile.obligations)
+        segments = [answer]
+        if Obligation.SCENARIO_REASONING.value in obs:
+            segments.append(_build_scenario_segment(q, job, role_ctx))
+        modifier = _build_modifier_segments(q, job, profile)
+        if modifier:
+            segments.append(modifier)
+        return " ".join(segments)
 
     if archetype == "tools" and skill:
         q["answer_source"] = "legacy_template"
@@ -1215,7 +1376,7 @@ def build_model_answer(q: dict, job: dict) -> str:
             f"I want this {role_title} role because the work centres on {resp.lower()} — exactly where "
             f"I've built depth in {skills}. I've followed the organisation's projects and standards in "
             f"this sector and I'm ready to contribute from week one while continuing to develop specialist "
-            f"skills. The responsibilities listed match what I do best and what I want to do long term."
+            f"skills. The role's core work matches what I do best and what I want to do long term."
         )
 
     if archetype == "company_research":
@@ -1298,7 +1459,37 @@ def _procedure_answer(q: dict) -> str:
     return "\n".join(parts)
 
 
+def _behavioral_coaching_answer(q: dict, job: dict, role_ctx: dict) -> str:
+    role_title = job.get("title") or "this role"
+    resp_raw = (job.get("responsibilities") or role_ctx.get("responsibilities") or ["the work"])[0]
+    if isinstance(resp_raw, dict):
+        resp_raw = resp_raw.get("text")
+    resp = str(resp_raw or "core duties")
+    q_text = (q.get("question") or "this behavioral question").strip()
+    return (
+        f"A strong answer for this {role_title} behavioral question could be structured with STAR. "
+        f"Use the question — \"{q_text}\" — as your anchor and avoid inventing employers, dates, or metrics "
+        f"you cannot support from your own experience.\n\n"
+        f"**Situation:** Briefly set context related to {resp.lower()} without claiming a prior assignment "
+        f"unless you can cite real experience. If you lack a direct example, frame a realistic scenario "
+        f"with clear hypothetical language.\n\n"
+        f"**Task:** State the responsibility you owned or would own in this type of work, what success looked "
+        f"like, and which constraints mattered (quality, safety, timing, communication).\n\n"
+        f"**Action:** Describe specific steps, checks, communication paths, and tools you would use. Name decisions "
+        f"you would make at each stage and how you would involve stakeholders or escalate when assumptions change.\n\n"
+        f"**Result:** Explain the outcome you would aim for, what evidence you would cite, and what you would "
+        f"change next time. Do not invent percentages or headcount unless they come from your real record.\n\n"
+        f"**Practice guidance:** Rehearse aloud, keep each STAR section concise, and end with one transferable "
+        f"lesson for {role_title} work. If this reflects your real experience, replace the coaching structure "
+        f"with your own real example from your experience."
+    )
+
+
 def _behavioral_answer(q: dict, job: dict, role_ctx: dict) -> str:
+    ctx = collect_user_claim_context(job)
+    if ctx["job_thin"] or not ctx["has_explicit_experience"]:
+        return _behavioral_coaching_answer(q, job, role_ctx)
+
     role_title = job.get("title") or "Professional"
     resp_raw = (job.get("responsibilities") or role_ctx.get("responsibilities") or ["the work"])[0]
     if isinstance(resp_raw, dict):
@@ -1312,7 +1503,7 @@ def _behavioral_answer(q: dict, job: dict, role_ctx: dict) -> str:
     ) or "relevant methods"
 
     situation = (
-        f"In a previous {role_title} assignment focused on {resp.lower()}, we faced a situation where "
+        f"While working on {resp.lower()} responsibilities, the team faced a situation where "
         f"quality, timing, and stakeholder expectations were all under pressure at once."
     )
     task = (
@@ -1378,8 +1569,8 @@ def _behavioral_answer(q: dict, job: dict, role_ctx: dict) -> str:
             f"executed with documented checks at each handoff, and escalated early when assumptions changed."
         )
         result = (
-            f"We delivered on time with improved quality controls, measurable outcomes improved versus baseline, "
-            f"and the approach was documented for future {role_title} teams."
+            f"The work completed with improved quality controls and a documented approach the team could reuse. "
+            f"Lessons were captured for future {role_title} delivery."
         )
 
     return (
@@ -1392,7 +1583,170 @@ def _behavioral_answer(q: dict, job: dict, role_ctx: dict) -> str:
     )
 
 
+def _build_motivation_segment(q: dict, job: dict, role_ctx: dict, ctx: dict) -> str:
+    role_title = job.get("title") or "this role"
+    real_resp = [r for r in (job.get("responsibilities") or role_ctx.get("responsibilities") or []) if r]
+    real_skills = [s for s in (job.get("extracted_skills") or []) if s]
+    # Title-only / thin input captured no duties or skills. Honest framing must
+    # not claim "the posting centres on … the skills listed" — there is nothing
+    # listed (Defect Class E). Instead, acknowledge the limited information and
+    # what the candidate would clarify.
+    if not real_resp and not real_skills:
+        honest = (
+            f"I am interested in this {role_title} role based on the information available so far. "
+            f"Because the details I currently have are limited, I would want to confirm the main "
+            f"responsibilities, the skills that matter most, and how success is measured — then explain "
+            f"which parts of the role best match my strengths. "
+        )
+        company = job.get("company_name")
+        if company:
+            honest += (
+                f"I would also research {company} directly so my reasons connect to its actual work rather "
+                f"than assumptions. "
+            )
+        return honest
+    resp = (job.get("responsibilities") or role_ctx.get("responsibilities") or ["core duties"])[0]
+    if isinstance(resp, dict):
+        resp = resp.get("text")
+    resp = str(resp or "core duties")
+    skills = ", ".join(
+        title_case_skill(s.get("skill") if isinstance(s, dict) else s)
+        for s in (job.get("extracted_skills") or [])[:3]
+    ) or "role-relevant skills"
+    company = job.get("company_name")
+    profile = get_question_obligation_profile(q, job)
+    obs = set(profile.obligations)
+
+    motivation = (
+        f"I am interested in this {role_title} role because the posting centres on {resp.lower()} "
+        f"and the skills listed — especially {skills}. "
+    )
+    if ctx["has_explicit_experience"]:
+        motivation = (
+            f"I am applying for this {role_title} role because the posting aligns with work I have described "
+            f"in my profile around {resp.lower()} and with the skills I want to deepen next — especially {skills}. "
+        )
+    if company and Obligation.COMPANY_FIT.value in obs:
+        motivation = (
+            f"I have researched {company} and understand how its work in this sector connects to "
+            f"{resp.lower()}. I want to work there because the posting's focus on {resp.lower()} aligns with "
+            f"what I want to deepen next — especially {skills}. "
+        )
+    elif company:
+        motivation += (
+            f"I have looked at {company}'s work in this sector and I am motivated by the chance to contribute "
+            f"to that standard of delivery from week one. "
+        )
+    return motivation
+
+
+def _build_strengths_segment(q: dict, job: dict) -> str:
+    role_title = job.get("title") or "this role"
+    skills = ", ".join(
+        title_case_skill(s.get("skill") if isinstance(s, dict) else s)
+        for s in (job.get("extracted_skills") or [])[:3]
+    ) or "role-relevant skills"
+    return (
+        f"The strengths I would lean on first are {skills}: structured planning, clear verification before handoff, "
+        f"and early communication when a {role_title} task looks ambiguous."
+    )
+
+
+def _build_contribution_segment(q: dict, job: dict, role_ctx: dict) -> str:
+    role_title = job.get("title") or "this role"
+    resp = (job.get("responsibilities") or role_ctx.get("responsibilities") or ["core duties"])[0]
+    if isinstance(resp, dict):
+        resp = resp.get("text")
+    resp = str(resp or "core duties")
+    return (
+        f"In the first months I would contribute by taking ownership of {resp.lower()} tasks with disciplined "
+        f"checkpoints, documenting assumptions, and escalating risks before they affect delivery."
+    )
+
+
+def _build_technical_method_segment(q: dict, job: dict, role_ctx: dict) -> str:
+    role_title = job.get("title") or "Professional"
+    skill = q.get("mapped_skill") or q.get("skill_tag") or (
+        (job.get("extracted_skills") or [{}])[0].get("skill")
+        if job.get("extracted_skills")
+        else role_title
+    )
+    if isinstance(skill, dict):
+        skill = skill.get("skill")
+    skill = str(skill or role_title)
+    exp = _expert(skill, job)
+    steps = [s for s in (exp.get("how_it_works") or exp.get("workflow") or []) if s][:4]
+    if not steps:
+        steps = [
+            f"confirm scope and inputs for {skill.lower()}",
+            f"execute the core {skill.lower()} method with intermediate validation",
+            f"verify outputs against the posting's quality expectations",
+            f"document evidence and escalate if a checkpoint fails",
+        ]
+    workflow = render_spoken_workflow(steps, max_steps=4)
+    standards = exp.get("standards") or []
+    compliance = render_compliance_naturally(
+        standards[:2],
+        exp.get("checks") or [],
+        role_family=resolve_role_family(role_title, q.get("role_family")),
+    )
+    return (
+        f"On the method side, I would treat {title_case_skill(skill)} as the primary mechanism for this question. "
+        f"{workflow} {compliance}"
+    ).strip()
+
+
+def _build_scenario_segment(q: dict, job: dict, role_ctx: dict) -> str:
+    role_title = job.get("title") or "this role"
+    resp = (job.get("responsibilities") or role_ctx.get("responsibilities") or ["core duties"])[0]
+    if isinstance(resp, dict):
+        resp = resp.get("text")
+    resp = str(resp or "core duties")
+    return (
+        f"If constraints collided during {resp.lower()}, I would clarify the non-negotiable safety or compliance "
+        f"requirement first, communicate the trade-off to stakeholders, and choose the path that keeps risk visible "
+        f"rather than hidden."
+    )
+
+
+def _build_modifier_segments(q: dict, job: dict, profile) -> str:
+    parts: list[str] = []
+    skill = q.get("mapped_skill") or q.get("skill_tag") or _primary_skill_from_job(job)
+    exp = _expert(str(skill), job)
+    obs = set(profile.obligations)
+    if Obligation.METRIC.value in obs:
+        metrics = exp.get("metrics") or exp.get("checks") or []
+        if metrics:
+            parts.append(
+                f"I would track {metrics[0].lower()} as a practical signal that the approach is working."
+            )
+        else:
+            parts.append(
+                "I would track revision cycle time and error rate against a baseline, aiming to reduce rework "
+                "by at least 10 percent."
+            )
+    if Obligation.STANDARD_OR_PROTOCOL.value in obs:
+        std = (exp.get("standards") or ["the applicable standard for this work"])[0]
+        parts.append(f"I would anchor verification to {std}.")
+    if Obligation.FAILURE_MODE.value in obs:
+        mistakes = exp.get("common_mistakes") or exp.get("failure_modes") or []
+        if mistakes:
+            parts.append(
+                f"A credible failure mode is {mistakes[0].lower()}; I would catch it with explicit pre-handoff checks."
+            )
+    return " ".join(parts)
+
+
+def _primary_skill_from_job(job: dict) -> str:
+    skills = job.get("extracted_skills") or []
+    if skills:
+        s = skills[0]
+        return str(s.get("skill") if isinstance(s, dict) else s)
+    return job.get("title") or "core work"
+
+
 def _hr_answer(q: dict, job: dict, role_ctx: dict) -> str:
+    ctx = collect_user_claim_context(job)
     role_title = job.get("title") or "this role"
     resp = (job.get("responsibilities") or role_ctx.get("responsibilities") or ["core duties"])[0]
     if isinstance(resp, dict):
@@ -1404,6 +1758,8 @@ def _hr_answer(q: dict, job: dict, role_ctx: dict) -> str:
     ) or "role-relevant skills"
     q_lower = (q.get("question") or "").lower()
     company = job.get("company_name")
+    profile = get_question_obligation_profile(q, job)
+    obs = set(profile.obligations)
 
     if "salary" in q_lower or "notice" in q_lower:
         return (
@@ -1417,6 +1773,13 @@ def _hr_answer(q: dict, job: dict, role_ctx: dict) -> str:
         )
 
     if "feedback" in q_lower or "development" in q_lower:
+        if ctx["job_thin"] or not ctx["has_explicit_experience"]:
+            return (
+                f"A strong answer could explain how you treat feedback as operational data, not personal criticism. "
+                f"Structure it around one development goal for {role_title} work on {resp.lower()}, "
+                f"the actions you would take, and how you would track progress with evidence such as completed training, "
+                f"audited outputs, or stakeholder comments."
+            )
         return (
             f"In my {role_title} career I treat feedback as operational data, not personal criticism. "
             f"After a recent review on {resp.lower()}, I agreed three development actions with my manager: "
@@ -1426,20 +1789,33 @@ def _hr_answer(q: dict, job: dict, role_ctx: dict) -> str:
             f"That approach keeps my {role_title} practice current without waiting for annual reviews."
         )
 
-    motivation = (
-        f"I am applying for this {role_title} role because the posting aligns with work I have already delivered "
-        f"in {resp.lower()} and with the skills I want to deepen next — especially {skills}. "
-    )
-    if company:
-        motivation += (
-            f"I have looked at {company}'s work in this sector and I am motivated by the chance to contribute "
-            f"to that standard of delivery from week one. "
+    if profile.is_hybrid and not is_pure_motivation_profile(profile):
+        segments: list[str] = []
+        if Obligation.MOTIVATION_FIT.value in obs or Obligation.COMPANY_FIT.value in obs:
+            segments.append(_build_motivation_segment(q, job, role_ctx, ctx))
+        if Obligation.STRENGTHS.value in obs:
+            segments.append(_build_strengths_segment(q, job))
+        if Obligation.CONTRIBUTION.value in obs:
+            segments.append(_build_contribution_segment(q, job, role_ctx))
+        if Obligation.TECHNICAL_METHOD.value in obs:
+            segments.append(_build_technical_method_segment(q, job, role_ctx))
+        if Obligation.SCENARIO_REASONING.value in obs:
+            segments.append(_build_scenario_segment(q, job, role_ctx))
+        modifier = _build_modifier_segments(q, job, profile)
+        if modifier:
+            segments.append(modifier)
+        closing = (
+            "I am not claiming to know every local process on day one, but I am ready to learn quickly and add value "
+            "through dependable execution on the role's core work."
         )
+        return " ".join(segments + [closing]).strip()
+
+    motivation = _build_motivation_segment(q, job, role_ctx, ctx)
     motivation += (
         f"I bring structured habits: clarify requirements, execute with verification, communicate risks early, "
         f"and document outcomes so the team can rely on my work. "
         f"I am not claiming to know every local process on day one, but I am ready to learn quickly and add value "
-        f"through dependable execution on the responsibilities listed."
+        f"through dependable execution on the role's core work."
     )
     return motivation
 
@@ -1533,21 +1909,55 @@ def _archetype_coverage_answer(q: dict, job: dict, role_ctx: dict) -> str:
         resp = resp.get("text")
     resp = str(resp or "core duties")
     family = resolve_role_family(role_title, q.get("role_family"))
-    pack = get_evidence_pack(family if family in {"creative_media", "creator_trending", "sports"} else "default")
+    pack = get_evidence_pack_for_question(
+        family if family in {"creative_media", "creative_design", "creator_trending", "sports"} else "default",
+        role_title,
+        q.get("skill_tag", ""),
+    )
     example = (pack.get("role_specific_examples") or [""])[0]
     checks = pack.get("verification_checks") or ["documented quality checks"]
     check = checks[0]
     qtype = q.get("question_type") or ""
 
     if qtype == "ethics":
+        if family == "creator_trending":
+            return (
+                f"In {role_title} work on {resp.lower()}, I treat audience trust and platform policy as publish gates. "
+                f"When a claim cannot be supported I hold the line — I do not publish speculation as fact. "
+                f"I document verification steps, disclose sponsorship where required, and escalate borderline content "
+                f"before it goes live."
+            )
+        if family == "creative_design":
+            return (
+                f"In {role_title} work on {resp.lower()}, I treat brand guidelines and accessibility as non-negotiable gates. "
+                f"When a visual direction conflicts with brand rules or readability, I pause and realign with the brief. "
+                f"I document revision rationale and confirm sign-off before final export."
+            )
         return (
             f"In {role_title} work on {resp.lower()}, I treat accuracy and ethics as publish gates, not afterthoughts. "
             f"When a source cannot be verified I hold the line — I do not publish speculation as fact. "
-            f"For example, I once delayed a piece until a second independent source confirmed a key claim, "
-            f"then documented the verification trail for the editor. "
-            f"That discipline protects the outlet and the people named in the story."
+            f"I document the verification trail for editorial review before publication."
+        )
+    if qtype in {"design_brief", "client_feedback"}:
+        return (
+            f"As a {role_title}, I translate the brief into layout hierarchy, asset specs, and revision checkpoints before execution. "
+            f"I confirm constraints, brand rules, and delivery formats up front, then run {check.lower()} at each handoff. "
+            f"For {resp.lower()}, that keeps feedback rounds focused and protects deadline quality."
         )
     if qtype in {"story_planning", "content_planning"}:
+        if family == "creator_trending":
+            return (
+                f"As a {role_title}, I start with audience need and content angle, then map ideation, scripting, "
+                f"and production steps with realistic deadline buffers. I keep a running idea log, outline hooks early, "
+                f"and run accuracy checks before publish. "
+                f"For {resp.lower()}, that means fewer reshoots and cleaner handover to upload workflows."
+            )
+        if family == "creative_design":
+            return (
+                f"As a {role_title}, I start with the brief and visual goals, then map references, layout exploration, "
+                f"and revision rounds with realistic deadline buffers. I keep versioned exports and run {check.lower()} "
+                f"before handoff. For {resp.lower()}, that means fewer rework cycles and cleaner delivery to stakeholders."
+            )
         return (
             f"As a {role_title}, I start with audience need and angle, then map interviews, research, and production steps "
             f"with realistic deadline buffers. I keep a running source log, outline the narrative arc early, "

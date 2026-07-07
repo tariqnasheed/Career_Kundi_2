@@ -8,13 +8,14 @@ from app.agents.job_search.knowledge.evidence_packs.electrical import ELECTRICAL
 from app.agents.job_search.knowledge.evidence_packs.finance import FINANCE_PACK
 from app.agents.job_search.knowledge.evidence_packs.healthcare import HEALTHCARE_PACK
 from app.agents.job_search.knowledge.evidence_packs.hospitality import HOSPITALITY_PACK
-from app.agents.job_search.knowledge.evidence_packs.human_resources import HUMAN_RESOURCES_PACK
+from app.agents.job_search.knowledge.evidence_packs.human_resources import HUMAN_RESOURCES_PACK, HR_ONBOARDING_PACK
 from app.agents.job_search.knowledge.evidence_packs.legal import LEGAL_PACK
 from app.agents.job_search.knowledge.evidence_packs.mechanical_engineering import MECHANICAL_ENGINEERING_PACK
 from app.agents.job_search.knowledge.evidence_packs.operations import OPERATIONS_PACK
 from app.agents.job_search.knowledge.evidence_packs.project_management import PROJECT_MANAGEMENT_PACK
 from app.agents.job_search.knowledge.evidence_packs.public_administration import PUBLIC_ADMIN_PACK
 from app.agents.job_search.knowledge.evidence_packs.science_laboratory import SCIENCE_LABORATORY_PACK
+from app.agents.job_search.knowledge.evidence_packs.creative_design import CREATIVE_DESIGN_PACK
 from app.agents.job_search.knowledge.evidence_packs.creative_media import CREATIVE_MEDIA_PACK
 from app.agents.job_search.knowledge.evidence_packs.creator_trending import CREATOR_TRENDING_PACK
 from app.agents.job_search.knowledge.evidence_packs.sports import SPORTS_PACK
@@ -37,6 +38,7 @@ _PACKS = {
     "finance": FINANCE_PACK,
     "project_management": PROJECT_MANAGEMENT_PACK,
     "creative_media": CREATIVE_MEDIA_PACK,
+    "creative_design": CREATIVE_DESIGN_PACK,
     "creator_trending": CREATOR_TRENDING_PACK,
     "sports": SPORTS_PACK,
     "default": DEFAULT_PACK,
@@ -124,6 +126,22 @@ def resolve_role_family(role: str, explicit: str | None = None) -> str:
 
 def get_evidence_pack(role_family: str) -> dict:
     return _PACKS.get(role_family, DEFAULT_PACK)
+
+
+def get_evidence_pack_for_question(role_family: str, role: str, skill: str = "") -> dict:
+    """Skill-aware pack selection to avoid cross-subdomain contamination."""
+    text = f"{role} {skill}".lower()
+    if role_family == "creative_media":
+        if any(k in text for k in ("journalist", "reporter", "editor", "broadcast", "news", "sub-editor")):
+            return CREATIVE_MEDIA_PACK
+        if any(k in text for k in ("journalism", "editorial", "reporting", "newsroom")):
+            return CREATIVE_MEDIA_PACK
+        return CREATIVE_DESIGN_PACK
+    if role_family == "human_resources":
+        if any(k in text for k in ("onboarding", "induction", "new starter", "orientation")):
+            return HR_ONBOARDING_PACK
+        return HUMAN_RESOURCES_PACK
+    return get_evidence_pack(role_family)
 
 
 ROLE_FAMILY_OPENINGS = {
