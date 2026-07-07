@@ -1,0 +1,53 @@
+{
+  "manifest": {
+    "audit_schema_version": "a5cfec07014c",
+    "dirty_worktree_fingerprint": "eac3f6561de1249e",
+    "document_library_fingerprint": "464788207deefbce",
+    "findings_schema_version": "2",
+    "generated_at": "2026-07-07T22:40:47Z",
+    "git_head": "d27d15732b970c24fa72108831b80fb58ba8b3fb",
+    "manifest_version": 1,
+    "metrics_schema_version": "2",
+    "run_id": "run-20260707T224047Z-e39c62ea",
+    "work_plan_digest": "2942fe9ae8d7244b"
+  },
+  "totals": {
+    "missing_answer_count": 0,
+    "missing_study_module_count": 0,
+    "fake_url_hits": 0,
+    "generic_phrase_hits": 0,
+    "silly_question_hits": 0,
+    "empty_section_count": 0,
+    "hard_max_violation_count": 0,
+    "missing_study_depth_count": 0,
+    "answers_over_limit_count": 0,
+    "duplicate_study_module_count": 0,
+    "internal_label_leak_count": 0,
+    "unsupported_personal_claim_count": 0,
+    "unsupported_numeric_claim_count": 0,
+    "cross_domain_contamination_hits": 0,
+    "surface_quality_defect_count": 0,
+    "thin_input_specificity_violation_count": 0,
+    "structure_incomplete_count": 0,
+    "substantive_depth_failure_count": 0,
+    "intent_depth_mismatch_count": 0,
+    "question_study_alignment_failure_count": 0,
+    "synthetic_overload_failure_count": 0,
+    "answer_obligation_coverage_failure_count": 0,
+    "study_obligation_coverage_failure_count": 0,
+    "pure_motivation_technical_dominance_failure_count": 0,
+    "terminology_integrity_failure_count": 0,
+    "cross_skill_answer_contamination_failure_count": 0,
+    "generic_template_saturation_failure_count": 6
+  },
+  "failing_samples": [
+    {
+      "sample": "DevOps Engineer",
+      "role": "DevOps Engineer",
+      "reasons": [
+        "generic_template_saturation_failure_count"
+      ]
+    }
+  ],
+  "all_clean": false
+}

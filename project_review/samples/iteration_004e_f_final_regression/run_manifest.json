@@ -1,0 +1,43 @@
+{
+  "artifacts": {
+    "iteration_004e_f_summary.md": {
+      "sha256": "7a70d859ad842bca7cb011b5f03f3651e6d9238802eb9eda0470d0bd2fd4cea1"
+    },
+    "metrics.json": {
+      "sha256": "0808187227c41cb2a781e3e47412ae2c71233947b5fcd17f0ac2577943f46a03"
+    },
+    "sample_cross_sector_regression.md": {
+      "sha256": "305df03e11cea5e7994da4fad59ad2a0754f0e3dd04e32e0be3f3673a77d7278"
+    },
+    "sample_deterministic_random_regression.md": {
+      "sha256": "f62e9bcaa9ebd584d58326f6168c9a333e38bfdfa50c45a1de081fe2478a9ab6"
+    },
+    "sample_document_export_regression.md": {
+      "sha256": "a13635f40c63baf2b63cf248b52df56003d58e24ebdb9bf12da2fb3e25aa1d30"
+    },
+    "sample_final_quality_findings.json": {
+      "sha256": "f73bdb2078a917dd551bb32c3ddf4cef1677d14b33f97c702c142e198d0a49ad"
+    },
+    "sample_part_time_odd_job_input_regression.md": {
+      "sha256": "95965e8a78581ab6937fa5ead1473e3cae0072975ffd2e6a7ab5bdf0ac5fc7df"
+    },
+    "sample_rich_source_ladder_regression.md": {
+      "sha256": "a13635f40c63baf2b63cf248b52df56003d58e24ebdb9bf12da2fb3e25aa1d30"
+    },
+    "sample_title_only_regression.md": {
+      "sha256": "a507ec4f8207a58507359e286aae148ad48cca95894a20c8974d25db9821d22a"
+    }
+  },
+  "manifest": {
+    "audit_schema_version": "a5cfec07014c",
+    "dirty_worktree_fingerprint": "eac3f6561de1249e",
+    "document_library_fingerprint": "464788207deefbce",
+    "findings_schema_version": "2",
+    "generated_at": "2026-07-07T22:40:47Z",
+    "git_head": "d27d15732b970c24fa72108831b80fb58ba8b3fb",
+    "manifest_version": 1,
+    "metrics_schema_version": "2",
+    "run_id": "run-20260707T224047Z-e39c62ea",
+    "work_plan_digest": "2942fe9ae8d7244b"
+  }
+}
