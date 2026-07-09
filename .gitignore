@@ -91,3 +91,6 @@ uploads/
 generated/
 __pycache__/
 *.py[cod]
+
+# Vite / Vitest local caches
+frontend/node_modules/.vite/
