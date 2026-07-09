@@ -9,11 +9,7 @@
   "question_count": 25,
   "question_specific_study_material_count": 8,
   "skill_count": 16,
-  "pdf_files": [
-    "clinical_pharmacist_interview_pack.pdf",
-    "clinical_pharmacist_study_material.pdf",
-    "clinical_pharmacist_questions_answers.pdf"
-  ],
+  "pdf_files": [],
   "markdown_files": [
     "clinical_pharmacist_interview_pack.md",
     "clinical_pharmacist_study_material.md",
@@ -22,16 +18,13 @@
   "source_files": [
     "clinical_pharmacist_interview_pack.md",
     "clinical_pharmacist_study_material.md",
-    "clinical_pharmacist_questions_answers.md",
-    "clinical_pharmacist_interview_pack.pdf",
-    "clinical_pharmacist_study_material.pdf",
-    "clinical_pharmacist_questions_answers.pdf"
+    "clinical_pharmacist_questions_answers.md"
   ],
   "web_sources": [],
   "related_roles": [],
   "status": "complete",
   "version": "1.0",
   "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/clinical_pharmacist",
-  "has_pdf": true,
+  "has_pdf": false,
   "has_markdown": true
 }

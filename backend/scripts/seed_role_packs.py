@@ -2,9 +2,13 @@
 """
 Pre-generate interview packs for all popular roles into documents/interview_packs/.
 
+Normal seed writes structured JSON + Markdown + metadata only (no PDFs).
+Explicit PDF generation requires --pdf-only (make seed-role-packs-pdf).
+
 Usage:
   cd backend && uv run python -m scripts.seed_role_packs
   cd backend && uv run python -m scripts.seed_role_packs --force
+  cd backend && uv run python -m scripts.seed_role_packs --pdf-only
 """
 
 from __future__ import annotations
@@ -25,7 +29,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Seed role-pack document library")
     parser.add_argument("--force", action="store_true", help="Regenerate even if pack exists")
     parser.add_argument("--all", action="store_true", help="Regenerate all (alias for --force)")
-    parser.add_argument("--pdf-only", action="store_true", help="Regenerate PDFs from saved structured JSON")
+    parser.add_argument(
+        "--pdf-only",
+        action="store_true",
+        help="EXPLICIT: regenerate PDFs from saved structured JSON (not part of normal seed)",
+    )
     args = parser.parse_args()
 
     ensure_library_layout()

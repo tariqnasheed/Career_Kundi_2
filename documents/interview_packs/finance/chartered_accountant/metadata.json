@@ -9,11 +9,7 @@
   "question_count": 32,
   "question_specific_study_material_count": 32,
   "skill_count": 37,
-  "pdf_files": [
-    "chartered_accountant_interview_pack.pdf",
-    "chartered_accountant_study_material.pdf",
-    "chartered_accountant_questions_answers.pdf"
-  ],
+  "pdf_files": [],
   "markdown_files": [
     "chartered_accountant_interview_pack.md",
     "chartered_accountant_study_material.md",
@@ -22,16 +18,13 @@
   "source_files": [
     "chartered_accountant_interview_pack.md",
     "chartered_accountant_study_material.md",
-    "chartered_accountant_questions_answers.md",
-    "chartered_accountant_interview_pack.pdf",
-    "chartered_accountant_study_material.pdf",
-    "chartered_accountant_questions_answers.pdf"
+    "chartered_accountant_questions_answers.md"
   ],
   "web_sources": [],
   "related_roles": [],
   "status": "complete",
   "version": "1.0",
   "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/finance/chartered_accountant",
-  "has_pdf": true,
+  "has_pdf": false,
   "has_markdown": true
 }

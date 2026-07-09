@@ -9,11 +9,7 @@
   "question_count": 23,
   "question_specific_study_material_count": 23,
   "skill_count": 29,
-  "pdf_files": [
-    "rideshare_driver_interview_pack.pdf",
-    "rideshare_driver_study_material.pdf",
-    "rideshare_driver_questions_answers.pdf"
-  ],
+  "pdf_files": [],
   "markdown_files": [
     "rideshare_driver_interview_pack.md",
     "rideshare_driver_study_material.md",
@@ -22,16 +18,13 @@
   "source_files": [
     "rideshare_driver_interview_pack.md",
     "rideshare_driver_study_material.md",
-    "rideshare_driver_questions_answers.md",
-    "rideshare_driver_interview_pack.pdf",
-    "rideshare_driver_study_material.pdf",
-    "rideshare_driver_questions_answers.pdf"
+    "rideshare_driver_questions_answers.md"
   ],
   "web_sources": [],
   "related_roles": [],
   "status": "complete",
   "version": "1.0",
   "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/construction/rideshare_driver",
-  "has_pdf": true,
+  "has_pdf": false,
   "has_markdown": true
 }

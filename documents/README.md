@@ -12,19 +12,25 @@ documents/
   exports/                  # Latest and archived exports
 ```
 
-Each role folder contains:
+Each role folder contains (after normal seed):
+
+- `{role_slug}_interview_pack.md` — markdown mirror (always saved)
+- `{role_slug}_study_material.md` / `{role_slug}_questions_answers.md`
+- `parsed_content.md` — full readable export
+- `metadata.json` — counts, dates, file list (`pdf_files: []`, `has_pdf: false` until PDFs are explicitly generated)
+- `structured_content.json` — machine-readable questions + study modules
+- `sources.json` — citations and references
+
+Optional PDFs (only after an **explicit** PDF action such as `make seed-role-packs-pdf`, or a user-requested download/export):
 
 - `{role_slug}_interview_pack.pdf` — full pack with study material
 - `{role_slug}_study_material.pdf` — study guides only
 - `{role_slug}_questions_answers.pdf` — Q&A only
-- `{role_slug}_interview_pack.md` — markdown mirror (always saved)
-- `{role_slug}_study_material.md` / `{role_slug}_questions_answers.md`
-- `parsed_content.md` — full readable export
-- `metadata.json` — counts, dates, file list
-- `structured_content.json` — machine-readable questions + study modules
-- `sources.json` — citations and references
 
-## Pre-seeding all popular roles
+Normal seed and runtime library save do **not** pre-generate hundreds of generic PDFs.
+Fallback and study material use structured JSON / Markdown — not PDF bytes.
+
+## Pre-seeding all popular roles (JSON / Markdown only)
 
 Run once (or after adding new roles to the catalog):
 
@@ -32,7 +38,8 @@ Run once (or after adding new roles to the catalog):
 make seed-role-packs
 ```
 
-This generates packs for all **78 popular roles** from `backend/app/data/popular_roles_catalog.json`.
+This generates packs for all **78 popular roles** from `backend/app/data/popular_roles_catalog.json`
+(structured JSON + Markdown + metadata + indexes). **No PDFs.**
 Content uses the PhD-level knowledge engine (`backend/app/agents/job_search/knowledge/`) with
 real definitions, principles, and role-specific examples — not generic placeholders.
 
@@ -41,18 +48,26 @@ Rebuild skill/role knowledge after catalog changes:
 ```bash
 make build-skill-knowledge
 ```
-On first dev startup, if the library is empty, seeding runs automatically.
+On first dev startup, if the library is empty, seeding runs automatically (still JSON/Markdown only).
 
-Regenerate everything:
+Regenerate everything (still no PDFs):
 
 ```bash
 make seed-role-packs-force
 ```
 
-Regenerate PDFs only (after installing WeasyPrint system deps):
+### Explicit PDF seed (admin / optional)
+
+Regenerate PDFs only from existing structured JSON (after installing WeasyPrint system deps):
 
 ```bash
 make seed-role-packs-pdf
+```
+
+Force overwrite all library PDFs:
+
+```bash
+make seed-role-packs-pdf-force
 ```
 
 On macOS install deps first: `brew install pango gdk-pixbuf libffi cairo`
@@ -66,9 +81,9 @@ make sync-role-catalog
 ## Runtime flow
 
 1. User clicks **Generate interview pack** → multi-agent pipeline runs (live Gemini when configured).
-2. On success → pack saved to DB **and** updated in this folder.
-3. On API / web-search failure → system loads the **pre-seeded pack** for that role from here.
-4. Markdown files are always available even when PDF generation fails (install WeasyPrint deps on macOS: `brew install pango gdk-pixbuf libffi`).
+2. On success → pack saved to DB **and** updated in this folder as JSON/Markdown (PDFs are not bulk-written).
+3. On API / web-search failure → system loads the **pre-seeded pack** for that role from here (JSON/Markdown).
+4. User-requested PDF download/export remains a separate capability via export endpoints; library PDF files appear only when explicitly generated.
 
 ## Custom roles
 

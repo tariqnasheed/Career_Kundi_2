@@ -9,11 +9,7 @@
   "question_count": 34,
   "question_specific_study_material_count": 34,
   "skill_count": 55,
-  "pdf_files": [
-    "data_scientist_interview_pack.pdf",
-    "data_scientist_study_material.pdf",
-    "data_scientist_questions_answers.pdf"
-  ],
+  "pdf_files": [],
   "markdown_files": [
     "data_scientist_interview_pack.md",
     "data_scientist_study_material.md",
@@ -22,16 +18,13 @@
   "source_files": [
     "data_scientist_interview_pack.md",
     "data_scientist_study_material.md",
-    "data_scientist_questions_answers.md",
-    "data_scientist_interview_pack.pdf",
-    "data_scientist_study_material.pdf",
-    "data_scientist_questions_answers.pdf"
+    "data_scientist_questions_answers.md"
   ],
   "web_sources": [],
   "related_roles": [],
   "status": "complete",
   "version": "1.0",
   "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/data_scientist",
-  "has_pdf": true,
+  "has_pdf": false,
   "has_markdown": true
 }

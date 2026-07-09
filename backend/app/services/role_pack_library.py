@@ -331,9 +331,13 @@ def save_role_pack(
     stream_hint: str | None = None,
     sources: list[dict] | None = None,
     generated_by: str = "Careerkundi multi-agent pipeline",
+    generate_pdfs: bool = False,
 ) -> dict[str, Any]:
     """
-    Persist questions + PDFs + metadata under documents/interview_packs/.
+    Persist structured JSON + Markdown + metadata under documents/interview_packs/.
+
+    PDFs are opt-in via ``generate_pdfs=True`` or ``regenerate_pdfs_for_catalog``.
+    Normal seed / runtime save must not bulk-create PDF bytes.
     Updates role_index, skill_index, and document_index.
     """
     ensure_library_layout()
@@ -397,27 +401,28 @@ def save_role_pack(
         encoding="utf-8",
     )
 
-    # PDF exports
+    # PDF exports — explicit opt-in only (normal seed/save leaves pdf_files empty)
     pdf_names: list[str] = []
-    exports = [
-        (f"{slug}_interview_pack.pdf", export_interview_pack_pdf),
-        (f"{slug}_study_material.pdf", export_study_material_pdf),
-        (f"{slug}_questions_answers.pdf", export_questions_answers_pdf),
-    ]
-    for filename, exporter in exports:
-        try:
-            pdf_bytes = exporter(
-                job_title=role_name,
-                company_name=company,
-                questions=questions,
-                generated_at=now,
-                confidence_score=confidence_score,
-                role_overview=role_overview,
-            )
-            (folder / filename).write_bytes(pdf_bytes)
-            pdf_names.append(filename)
-        except Exception as exc:  # noqa: BLE001
-            logger.warning("role_pack_pdf_export_failed", file=filename, error=str(exc))
+    if generate_pdfs:
+        exports = [
+            (f"{slug}_interview_pack.pdf", export_interview_pack_pdf),
+            (f"{slug}_study_material.pdf", export_study_material_pdf),
+            (f"{slug}_questions_answers.pdf", export_questions_answers_pdf),
+        ]
+        for filename, exporter in exports:
+            try:
+                pdf_bytes = exporter(
+                    job_title=role_name,
+                    company_name=company,
+                    questions=questions,
+                    generated_at=now,
+                    confidence_score=confidence_score,
+                    role_overview=role_overview,
+                )
+                (folder / filename).write_bytes(pdf_bytes)
+                pdf_names.append(filename)
+            except Exception as exc:  # noqa: BLE001
+                logger.warning("role_pack_pdf_export_failed", file=filename, error=str(exc))
 
     skill_tags: set[str] = set()
     for q in questions:
@@ -457,7 +462,14 @@ def save_role_pack(
     _write_json(folder / "sources.json", {"web_sources": sources or [], "project_sources": []})
 
     _update_indexes(slug, category, role_name, folder, questions, pdf_names, skill_tags)
-    logger.info("role_pack_saved", slug=slug, category=category, questions=len(questions))
+    logger.info(
+        "role_pack_saved",
+        slug=slug,
+        category=category,
+        questions=len(questions),
+        generate_pdfs=generate_pdfs,
+        pdf_count=len(pdf_names),
+    )
     return {"role_slug": slug, "category": category, "folder": str(folder), "metadata": meta, "pdf_files": pdf_names}
 
 
@@ -528,7 +540,11 @@ def load_stored_pack_for_role(role_name: str, *, stream_hint: str | None = None)
 
 
 def regenerate_pdfs_for_catalog(*, only_missing: bool = True) -> dict[str, Any]:
-    """Generate PDF files from existing structured_content.json in each role folder."""
+    """
+    Explicit PDF regeneration from existing structured_content.json.
+
+    Invoked only via ``make seed-role-packs-pdf`` / ``--pdf-only`` — never by normal seed.
+    """
     ensure_library_layout()
     stats = {"regenerated": 0, "skipped": 0, "failed": 0}
     role_index = _read_json(_indexes_dir() / "role_index.json", {})
@@ -567,8 +583,10 @@ def regenerate_pdfs_for_catalog(*, only_missing: bool = True) -> dict[str, Any]:
                 )
                 (folder / filename).write_bytes(pdf_bytes)
                 pdf_names.append(filename)
+            markdown_files = list(meta.get("markdown_files") or [])
             meta["pdf_files"] = pdf_names
-            meta["has_pdf"] = True
+            meta["has_pdf"] = len(pdf_names) > 0
+            meta["source_files"] = markdown_files + pdf_names
             meta["last_updated"] = datetime.now(timezone.utc).date().isoformat()
             _write_json(meta_path, meta)
             entry["pdf_files"] = pdf_names
@@ -587,8 +605,11 @@ def seed_catalog_role_packs(
     only_missing: bool = True,
 ) -> dict[str, Any]:
     """
-    Pre-generate interview packs (+ PDFs/markdown) for every role in the
-    popular roles catalog. Run via ``make seed-role-packs``.
+    Pre-generate interview packs (structured JSON + Markdown + metadata) for every
+    role in the popular roles catalog. Run via ``make seed-role-packs``.
+
+    Does **not** generate PDFs. Use ``regenerate_pdfs_for_catalog`` /
+    ``make seed-role-packs-pdf`` for explicit PDF generation.
     """
     from app.agents.job_search import mock_data
     from app.data.popular_roles_catalog import catalog_role_to_job_snapshot, get_all_catalog_roles
@@ -623,6 +644,7 @@ def seed_catalog_role_packs(
                 confidence_score=0.9,
                 stream_hint=stream,
                 generated_by="Careerkundi catalog pre-seed (offline pipeline)",
+                generate_pdfs=False,
             )
             stats["seeded"] += 1
         except Exception as exc:  # noqa: BLE001

@@ -9,11 +9,7 @@
   "question_count": 29,
   "question_specific_study_material_count": 8,
   "skill_count": 17,
-  "pdf_files": [
-    "civil_service_administrator_interview_pack.pdf",
-    "civil_service_administrator_study_material.pdf",
-    "civil_service_administrator_questions_answers.pdf"
-  ],
+  "pdf_files": [],
   "markdown_files": [
     "civil_service_administrator_interview_pack.md",
     "civil_service_administrator_study_material.md",
@@ -22,16 +18,13 @@
   "source_files": [
     "civil_service_administrator_interview_pack.md",
     "civil_service_administrator_study_material.md",
-    "civil_service_administrator_questions_answers.md",
-    "civil_service_administrator_interview_pack.pdf",
-    "civil_service_administrator_study_material.pdf",
-    "civil_service_administrator_questions_answers.pdf"
+    "civil_service_administrator_questions_answers.md"
   ],
   "web_sources": [],
   "related_roles": [],
   "status": "complete",
   "version": "1.0",
   "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/engineering/civil_service_administrator",
-  "has_pdf": true,
+  "has_pdf": false,
   "has_markdown": true
 }

@@ -9,11 +9,7 @@
   "question_count": 23,
   "question_specific_study_material_count": 23,
   "skill_count": 36,
-  "pdf_files": [
-    "physiotherapist_interview_pack.pdf",
-    "physiotherapist_study_material.pdf",
-    "physiotherapist_questions_answers.pdf"
-  ],
+  "pdf_files": [],
   "markdown_files": [
     "physiotherapist_interview_pack.md",
     "physiotherapist_study_material.md",
@@ -22,16 +18,13 @@
   "source_files": [
     "physiotherapist_interview_pack.md",
     "physiotherapist_study_material.md",
-    "physiotherapist_questions_answers.md",
-    "physiotherapist_interview_pack.pdf",
-    "physiotherapist_study_material.pdf",
-    "physiotherapist_questions_answers.pdf"
+    "physiotherapist_questions_answers.md"
   ],
   "web_sources": [],
   "related_roles": [],
   "status": "complete",
   "version": "1.0",
   "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/physiotherapist",
-  "has_pdf": true,
+  "has_pdf": false,
   "has_markdown": true
 }

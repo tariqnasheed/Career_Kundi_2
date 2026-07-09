@@ -53,16 +53,16 @@ migration: ## Create a new Alembic migration (usage: make migration name="add_x"
 seed: ## Populate the database with demo data (user, jobs, roadmaps, CVs)
 	cd backend && uv run python scripts/seed.py
 
-seed-role-packs: ## Pre-generate interview packs + PDFs for all popular roles
+seed-role-packs: ## Pre-generate role packs (JSON/Markdown/metadata only — no PDFs)
 	cd backend && uv run python -m scripts.seed_role_packs
 
-seed-role-packs-force: ## Regenerate all pre-seeded role packs (overwrite)
+seed-role-packs-force: ## Regenerate all pre-seeded role packs (JSON/Markdown; no PDFs)
 	cd backend && uv run python -m scripts.seed_role_packs --force
 
-seed-role-packs-pdf: ## Regenerate PDFs only from existing structured JSON
+seed-role-packs-pdf: ## EXPLICIT: regenerate missing PDFs from existing structured JSON
 	cd backend && uv run python -m scripts.seed_role_packs --pdf-only
 
-seed-role-packs-pdf-force: ## Regenerate all PDFs (overwrite existing)
+seed-role-packs-pdf-force: ## EXPLICIT: regenerate all PDFs (overwrite existing)
 	cd backend && uv run python -m scripts.seed_role_packs --pdf-only --force
 
 build-skill-knowledge: ## Build PhD-level skill/role knowledge JSON

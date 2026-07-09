@@ -9,11 +9,7 @@
   "question_count": 28,
   "question_specific_study_material_count": 28,
   "skill_count": 41,
-  "pdf_files": [
-    "graphic_designer_interview_pack.pdf",
-    "graphic_designer_study_material.pdf",
-    "graphic_designer_questions_answers.pdf"
-  ],
+  "pdf_files": [],
   "markdown_files": [
     "graphic_designer_interview_pack.md",
     "graphic_designer_study_material.md",
@@ -22,16 +18,13 @@
   "source_files": [
     "graphic_designer_interview_pack.md",
     "graphic_designer_study_material.md",
-    "graphic_designer_questions_answers.md",
-    "graphic_designer_interview_pack.pdf",
-    "graphic_designer_study_material.pdf",
-    "graphic_designer_questions_answers.pdf"
+    "graphic_designer_questions_answers.md"
   ],
   "web_sources": [],
   "related_roles": [],
   "status": "complete",
   "version": "1.0",
   "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/arts_media/graphic_designer",
-  "has_pdf": true,
+  "has_pdf": false,
   "has_markdown": true
 }

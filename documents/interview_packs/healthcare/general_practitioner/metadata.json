@@ -9,11 +9,7 @@
   "question_count": 29,
   "question_specific_study_material_count": 29,
   "skill_count": 38,
-  "pdf_files": [
-    "general_practitioner_interview_pack.pdf",
-    "general_practitioner_study_material.pdf",
-    "general_practitioner_questions_answers.pdf"
-  ],
+  "pdf_files": [],
   "markdown_files": [
     "general_practitioner_interview_pack.md",
     "general_practitioner_study_material.md",
@@ -22,16 +18,13 @@
   "source_files": [
     "general_practitioner_interview_pack.md",
     "general_practitioner_study_material.md",
-    "general_practitioner_questions_answers.md",
-    "general_practitioner_interview_pack.pdf",
-    "general_practitioner_study_material.pdf",
-    "general_practitioner_questions_answers.pdf"
+    "general_practitioner_questions_answers.md"
   ],
   "web_sources": [],
   "related_roles": [],
   "status": "complete",
   "version": "1.0",
   "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/healthcare/general_practitioner",
-  "has_pdf": true,
+  "has_pdf": false,
   "has_markdown": true
 }

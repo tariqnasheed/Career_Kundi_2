@@ -9,11 +9,7 @@
   "question_count": 29,
   "question_specific_study_material_count": 29,
   "skill_count": 35,
-  "pdf_files": [
-    "freelance_graphic_designer_interview_pack.pdf",
-    "freelance_graphic_designer_study_material.pdf",
-    "freelance_graphic_designer_questions_answers.pdf"
-  ],
+  "pdf_files": [],
   "markdown_files": [
     "freelance_graphic_designer_interview_pack.md",
     "freelance_graphic_designer_study_material.md",
@@ -22,16 +18,13 @@
   "source_files": [
     "freelance_graphic_designer_interview_pack.md",
     "freelance_graphic_designer_study_material.md",
-    "freelance_graphic_designer_questions_answers.md",
-    "freelance_graphic_designer_interview_pack.pdf",
-    "freelance_graphic_designer_study_material.pdf",
-    "freelance_graphic_designer_questions_answers.pdf"
+    "freelance_graphic_designer_questions_answers.md"
   ],
   "web_sources": [],
   "related_roles": [],
   "status": "complete",
   "version": "1.0",
   "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/arts_media/freelance_graphic_designer",
-  "has_pdf": true,
+  "has_pdf": false,
   "has_markdown": true
 }

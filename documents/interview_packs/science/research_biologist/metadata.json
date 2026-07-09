@@ -9,11 +9,7 @@
   "question_count": 28,
   "question_specific_study_material_count": 28,
   "skill_count": 47,
-  "pdf_files": [
-    "research_biologist_interview_pack.pdf",
-    "research_biologist_study_material.pdf",
-    "research_biologist_questions_answers.pdf"
-  ],
+  "pdf_files": [],
   "markdown_files": [
     "research_biologist_interview_pack.md",
     "research_biologist_study_material.md",
@@ -22,16 +18,13 @@
   "source_files": [
     "research_biologist_interview_pack.md",
     "research_biologist_study_material.md",
-    "research_biologist_questions_answers.md",
-    "research_biologist_interview_pack.pdf",
-    "research_biologist_study_material.pdf",
-    "research_biologist_questions_answers.pdf"
+    "research_biologist_questions_answers.md"
   ],
   "web_sources": [],
   "related_roles": [],
   "status": "complete",
   "version": "1.0",
   "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/science/research_biologist",
-  "has_pdf": true,
+  "has_pdf": false,
   "has_markdown": true
 }

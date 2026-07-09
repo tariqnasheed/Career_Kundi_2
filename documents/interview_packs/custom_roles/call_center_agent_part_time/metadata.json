@@ -9,11 +9,7 @@
   "question_count": 23,
   "question_specific_study_material_count": 23,
   "skill_count": 40,
-  "pdf_files": [
-    "call_center_agent_part_time_interview_pack.pdf",
-    "call_center_agent_part_time_study_material.pdf",
-    "call_center_agent_part_time_questions_answers.pdf"
-  ],
+  "pdf_files": [],
   "markdown_files": [
     "call_center_agent_part_time_interview_pack.md",
     "call_center_agent_part_time_study_material.md",
@@ -22,16 +18,13 @@
   "source_files": [
     "call_center_agent_part_time_interview_pack.md",
     "call_center_agent_part_time_study_material.md",
-    "call_center_agent_part_time_questions_answers.md",
-    "call_center_agent_part_time_interview_pack.pdf",
-    "call_center_agent_part_time_study_material.pdf",
-    "call_center_agent_part_time_questions_answers.pdf"
+    "call_center_agent_part_time_questions_answers.md"
   ],
   "web_sources": [],
   "related_roles": [],
   "status": "complete",
   "version": "1.0",
   "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/custom_roles/call_center_agent_part_time",
-  "has_pdf": true,
+  "has_pdf": false,
   "has_markdown": true
 }

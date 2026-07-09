@@ -9,11 +9,7 @@
   "question_count": 31,
   "question_specific_study_material_count": 31,
   "skill_count": 26,
-  "pdf_files": [
-    "devops_engineer_interview_pack.pdf",
-    "devops_engineer_study_material.pdf",
-    "devops_engineer_questions_answers.pdf"
-  ],
+  "pdf_files": [],
   "markdown_files": [
     "devops_engineer_interview_pack.md",
     "devops_engineer_study_material.md",
@@ -22,16 +18,13 @@
   "source_files": [
     "devops_engineer_interview_pack.md",
     "devops_engineer_study_material.md",
-    "devops_engineer_questions_answers.md",
-    "devops_engineer_interview_pack.pdf",
-    "devops_engineer_study_material.pdf",
-    "devops_engineer_questions_answers.pdf"
+    "devops_engineer_questions_answers.md"
   ],
   "web_sources": [],
   "related_roles": [],
   "status": "complete",
   "version": "1.0",
   "folder": "/Users/tariqnasheed/Desktop/Career_Kundi_2/documents/interview_packs/technology/devops_engineer",
-  "has_pdf": true,
+  "has_pdf": false,
   "has_markdown": true
 }
