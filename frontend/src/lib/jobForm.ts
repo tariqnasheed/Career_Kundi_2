@@ -11,7 +11,7 @@ export interface JobFormState {
   location: string;
   employment_type: string;
   experience_level: string;
-  is_remote: boolean;
+  is_remote: boolean | null;
   salary_min: string;
   salary_max: string;
   salary_currency: string;
@@ -30,7 +30,7 @@ export const EMPTY_JOB_FORM: JobFormState = {
   location: "",
   employment_type: "",
   experience_level: "",
-  is_remote: false,
+  is_remote: null,
   salary_min: "",
   salary_max: "",
   salary_currency: "GBP",
@@ -75,7 +75,7 @@ export function jobToForm(job: SavedJobRead): JobFormState {
     location: job.location ?? "",
     employment_type: job.employment_type ?? "",
     experience_level: expMatch?.[1] ?? "",
-    is_remote: job.is_remote ?? false,
+    is_remote: job.is_remote,
     salary_min: job.salary_min != null ? String(job.salary_min) : "",
     salary_max: job.salary_max != null ? String(job.salary_max) : "",
     salary_currency: job.salary_currency ?? "GBP",
@@ -94,13 +94,20 @@ export function formToSavePayload(form: JobFormState): Record<string, unknown> {
     requirements.unshift(`Experience: ${form.experience_level.trim()}`);
   }
 
+  const remotePayload = (
+    form.is_remote === null
+      ? {}
+      : {
+          is_remote: form.is_remote,
+        }
+  );
+
   return {
     title: form.title.trim() || "Untitled Role",
     company_name: form.company_name.trim() || null,
     company_url: form.company_url.trim() || null,
     location: form.location.trim() || null,
     employment_type: form.employment_type.trim() || null,
-    is_remote: form.is_remote,
     salary_min: form.salary_min ? Number(form.salary_min) : null,
     salary_max: form.salary_max ? Number(form.salary_max) : null,
     salary_currency: form.salary_currency.trim() || null,
@@ -110,6 +117,7 @@ export function formToSavePayload(form: JobFormState): Record<string, unknown> {
     requirements,
     benefits: linesToList(form.benefits),
     extracted_skills: textToSkills(form.skills),
+    ...remotePayload,
     import_method: "manual",
   };
 }

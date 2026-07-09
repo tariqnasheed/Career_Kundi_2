@@ -30,6 +30,7 @@ from typing import Literal
 
 from fastapi import APIRouter, Body, Depends, Query, Response
 from sqlalchemy import or_, select
+from sqlalchemy.sql import Select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm.attributes import flag_modified
 
@@ -67,7 +68,12 @@ from app.schemas.job_search import (
     SavedJobRead,
     SavedJobUpdate,
 )
+from app.schemas.saved_job_search import SavedJobSearchPageRead
 from app.services.job_discovery import discover_jobs
+from app.services.saved_job_identity import (
+    exact_source_url_key,
+    find_owned_saved_job_by_exact_source_url,
+)
 from app.services.matching import compute_match_score
 from app.tools.document_export import (
     export_interview_pack_pdf,
@@ -214,6 +220,7 @@ def _intelligence_read_models(
 @router.post("/parse", response_model=SavedJobRead, status_code=201)
 async def parse_job(
     payload: JobParseRequest,
+    response: Response,
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ) -> SavedJob:
@@ -223,9 +230,26 @@ async def parse_job(
     CrossVerifier -> Reflector pipeline, then persist the structured,
     RAG-grounded, cross-verified result as a new `SavedJob` row.
     """
+    source_url_key = exact_source_url_key(
+        payload.url,
+    )
+    if source_url_key:
+        existing_job = (
+            await find_owned_saved_job_by_exact_source_url(
+                db,
+                user_id=user.id,
+                source_url=source_url_key,
+                import_methods={"pasted_url"},
+            )
+        )
+
+        if existing_job is not None:
+            response.status_code = 200
+            return existing_job
+
     result = await run_job_enrichment_pipeline(
         user_id=str(user.id),
-        url=payload.url,
+        url=source_url_key,
         pasted_text=payload.pasted_text,
     )
     final_state = result["state"]
@@ -239,7 +263,9 @@ async def parse_job(
 
     job = SavedJob(
         user_id=user.id,
-        source_url=source_meta.get("source_url"),
+        source_url=exact_source_url_key(
+            source_meta.get("source_url")
+        ),
         source_site=source_meta.get("source_site"),
         import_method=source_meta.get("import_method", "manual"),
         title=draft.get("title") or "Untitled Role",
@@ -295,6 +321,7 @@ async def discover_jobs_from_web(
 @router.post("/", response_model=SavedJobRead, status_code=201)
 async def save_job(
     payload: SavedJobCreate,
+    response: Response,
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ) -> SavedJob:
@@ -306,13 +333,33 @@ async def save_job(
     pipeline — it trusts the reviewed fields the client sends, so any manual
     edits the user made in the "Review extracted data" form are preserved.
     """
+    source_url_key = exact_source_url_key(
+        payload.source_url,
+    )
+    if (
+        payload.import_method == "search"
+        and source_url_key
+    ):
+        existing_job = (
+            await find_owned_saved_job_by_exact_source_url(
+                db,
+                user_id=user.id,
+                source_url=source_url_key,
+                import_methods={"search"},
+            )
+        )
+
+        if existing_job is not None:
+            response.status_code = 200
+            return existing_job
+
     # Profile Match Rating: same 0-100 fit score as the parse flow, computed
     # from the reviewed skills the client is saving.
     match_score = compute_match_score(await _user_skill_names(db, user), payload.extracted_skills)
 
     job = SavedJob(
         user_id=user.id,
-        source_url=payload.source_url,
+        source_url=source_url_key,
         source_site=payload.source_site,
         import_method=payload.import_method,
         title=payload.title or "Untitled Role",
@@ -352,31 +399,18 @@ async def list_saved_jobs(
     return list(result.scalars().all())
 
 
-@router.get("/search", response_model=list[SavedJobRead])
-async def search_saved_jobs(
-    q: str | None = Query(default=None, description="Free-text match on title, company, or description"),
-    location: str | None = Query(default=None),
-    employment_type: str | None = Query(default=None),
-    remote: bool | None = Query(default=None),
-    page: int = Query(default=1, ge=1),
-    page_size: int = Query(default=20, ge=1, le=100),
-    user: User = Depends(get_current_user),
-    db: AsyncSession = Depends(get_db),
-) -> list[SavedJob]:
-    """
-    Search and filter the current user's OWN saved jobs.
-
-    CareerKundi imports jobs by URL/paste rather than crawling external job
-    boards, so there is no global job index to query — this endpoint searches
-    what the user has already saved. `q` matches title / company / description;
-    the remaining parameters filter by structured fields. Results are
-    newest-first and paginated.
-
-    NOTE: this route is declared BEFORE `/{job_id}` on purpose — FastAPI matches
-    routes top-to-bottom, so if `/{job_id}` came first it would swallow the
-    literal path "search" and try to parse it as a job UUID.
-    """
-    stmt = select(SavedJob).where(SavedJob.user_id == user.id)
+def _apply_saved_job_search_filters(
+    stmt: Select,
+    *,
+    user_id: uuid.UUID,
+    q: str | None,
+    location: str | None,
+    employment_type: str | None,
+    remote: bool | None,
+) -> Select:
+    stmt = stmt.where(
+        SavedJob.user_id == user_id,
+    )
 
     if q and q.strip():
         like = f"%{q.strip()}%"
@@ -387,16 +421,169 @@ async def search_saved_jobs(
                 SavedJob.description_raw.ilike(like),
             )
         )
-    if location and location.strip():
-        stmt = stmt.where(SavedJob.location.ilike(f"%{location.strip()}%"))
-    if employment_type:
-        stmt = stmt.where(SavedJob.employment_type == employment_type)
-    if remote is not None:
-        stmt = stmt.where(SavedJob.is_remote.is_(remote))
 
-    stmt = stmt.order_by(SavedJob.created_at.desc()).limit(page_size).offset((page - 1) * page_size)
+    if location and location.strip():
+        stmt = stmt.where(
+            SavedJob.location.ilike(
+                f"%{location.strip()}%"
+            )
+        )
+
+    if employment_type:
+        stmt = stmt.where(
+            SavedJob.employment_type
+            == employment_type
+        )
+
+    if remote is not None:
+        stmt = stmt.where(
+            SavedJob.is_remote.is_(remote)
+        )
+
+    return stmt
+
+
+@router.get(
+    "/search",
+    response_model=list[SavedJobRead],
+)
+async def search_saved_jobs(
+    q: str | None = Query(
+        default=None,
+        description=(
+            "Free-text match on title, company, or description"
+        ),
+    ),
+    location: str | None = Query(
+        default=None,
+    ),
+    employment_type: str | None = Query(
+        default=None,
+    ),
+    remote: bool | None = Query(
+        default=None,
+    ),
+    page: int = Query(
+        default=1,
+        ge=1,
+    ),
+    page_size: int = Query(
+        default=20,
+        ge=1,
+        le=100,
+    ),
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> list[SavedJob]:
+    """
+    Search and filter the current user's OWN saved jobs.
+
+    This legacy endpoint deliberately preserves its array response
+    contract for backward compatibility.
+    """
+    stmt = _apply_saved_job_search_filters(
+        select(SavedJob),
+        user_id=user.id,
+        q=q,
+        location=location,
+        employment_type=employment_type,
+        remote=remote,
+    )
+
+    stmt = (
+        stmt
+        .order_by(
+            SavedJob.created_at.desc(),
+            SavedJob.id.desc(),
+        )
+        .limit(page_size)
+        .offset(
+            (page - 1) * page_size
+        )
+    )
+
     result = await db.execute(stmt)
-    return list(result.scalars().all())
+
+    return list(
+        result.scalars().all()
+    )
+
+
+@router.get(
+    "/search/page",
+    response_model=SavedJobSearchPageRead,
+)
+async def search_saved_jobs_paginated(
+    q: str | None = Query(
+        default=None,
+        description=(
+            "Free-text match on title, company, or description"
+        ),
+    ),
+    location: str | None = Query(
+        default=None,
+    ),
+    employment_type: str | None = Query(
+        default=None,
+    ),
+    remote: bool | None = Query(
+        default=None,
+    ),
+    page: int = Query(
+        default=1,
+        ge=1,
+    ),
+    page_size: int = Query(
+        default=20,
+        ge=1,
+        le=100,
+    ),
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> SavedJobSearchPageRead:
+    """
+    Return one deterministic saved-search page with exact lookahead.
+
+    The endpoint fetches one row beyond the requested page size so
+    `has_next` never relies on the ambiguous
+    `len(items) == page_size` heuristic.
+    """
+    stmt = _apply_saved_job_search_filters(
+        select(SavedJob),
+        user_id=user.id,
+        q=q,
+        location=location,
+        employment_type=employment_type,
+        remote=remote,
+    )
+
+    stmt = (
+        stmt
+        .order_by(
+            SavedJob.created_at.desc(),
+            SavedJob.id.desc(),
+        )
+        .limit(
+            page_size + 1
+        )
+        .offset(
+            (page - 1) * page_size
+        )
+    )
+
+    result = await db.execute(stmt)
+    fetched_jobs = list(
+        result.scalars().all()
+    )
+
+    return SavedJobSearchPageRead(
+        items=fetched_jobs[:page_size],
+        page=page,
+        page_size=page_size,
+        has_next=(
+            len(fetched_jobs) > page_size
+        ),
+    )
 
 
 @router.get("/{job_id}", response_model=SavedJobRead)
@@ -428,10 +615,40 @@ async def update_saved_job(
     db: AsyncSession = Depends(get_db),
 ) -> SavedJob:
     """Update job posting fields after the user edits them in the unified job form."""
-    job = await _get_owned_job(db, user, job_id)
-    data = payload.model_dump(exclude_unset=True)
+    job = await _get_owned_job(
+        db,
+        user,
+        job_id,
+    )
+    data = payload.model_dump(
+        exclude_unset=True,
+    )
+
+    if "source_url" in data:
+        previous_source_url_key = exact_source_url_key(
+            job.source_url,
+        )
+        next_source_url_key = exact_source_url_key(
+            data["source_url"],
+        )
+
+        data["source_url"] = next_source_url_key
+
+        if next_source_url_key is None:
+            data["source_site"] = None
+        elif (
+            next_source_url_key
+            != previous_source_url_key
+            and "source_site" not in data
+        ):
+            data["source_site"] = None
+
     for key, value in data.items():
-        setattr(job, key, value)
+        setattr(
+            job,
+            key,
+            value,
+        )
     if "extracted_skills" in data:
         job.match_score = compute_match_score(await _user_skill_names(db, user), job.extracted_skills)
     await db.commit()

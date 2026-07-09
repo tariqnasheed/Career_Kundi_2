@@ -16,7 +16,25 @@ import {
 } from "lucide-react";
 import { applyApi, jobApi, cvApi, profileApi } from "../lib/api";
 import { EMPTY_JOB_FORM, formToSavePayload, jobToForm } from "../lib/jobForm";
+import { invalidateSavedJobQueries } from "../lib/savedJobQueryInvalidation";
+import { resolveSavedJobSearchView } from "../lib/savedJobSearchView";
+import {
+  nextSavedJobSearchPage,
+  previousSavedJobSearchPage,
+  resolveSavedJobSearchPagination,
+  shouldShowSavedJobSearchPagination,
+  SAVED_JOB_SEARCH_PAGE_SIZE,
+} from "../lib/savedJobSearchPagination";
+import {
+  buildSavedJobSearchPageParams,
+  buildSavedJobSearchQueryKey,
+  hasActiveSavedJobSearchFilter,
+} from "../lib/savedJobSearchFilters";
 import { popularRoleToForm, type PopularJobRole } from "../lib/popularJobRoles";
+import {
+  resolvePendingCreateSavePayload,
+  type PendingCreateOrigin,
+} from "../lib/pendingCreateSavePayload";
 import type { JobFormState } from "../lib/jobForm";
 import { Button } from "../components/ui/Button";
 import { Input } from "../components/ui/Input";
@@ -27,6 +45,10 @@ import { Spinner } from "../components/ui/Spinner";
 import { MatchScoreRing } from "../components/features/MatchScoreRing";
 import { DefaultCVSelector, getDefaultCvId } from "../components/features/DefaultCVSelector";
 import { JobDiscoveryPanel } from "../components/features/JobDiscoveryPanel";
+import {
+  SavedJobFilters,
+  type VisibleSavedJobSearchFilters,
+} from "../components/features/SavedJobFilters";
 import { PopularJobRolesPanel } from "../components/features/PopularJobRolesPanel";
 import { JobDetailsForm } from "../components/features/JobDetailsForm";
 import { InterviewPackView, normalizeInterviewPack } from "../components/features/InterviewPackView";
@@ -150,12 +172,12 @@ function SavedJobCard({
 
   const statusMutation = useMutation({
     mutationFn: (status: SavedJobRead["status"]) => jobApi.updateStatus(job.id, status),
-    onSuccess: () => { qc.invalidateQueries({ queryKey: ["jobs"] }); addToast({ type: "success", message: "Status updated." }); },
+    onSuccess: () => { void invalidateSavedJobQueries(qc); addToast({ type: "success", message: "Status updated." }); },
   });
 
   const deleteMutation = useMutation({
     mutationFn: () => jobApi.delete(job.id),
-    onSuccess: () => { qc.invalidateQueries({ queryKey: ["jobs"] }); addToast({ type: "info", message: "Job removed." }); },
+    onSuccess: () => { void invalidateSavedJobQueries(qc); addToast({ type: "info", message: "Job removed." }); },
   });
 
   const previewSnippet = job.description_raw?.slice(0, 180) ?? job.responsibilities?.[0] ?? "";
@@ -329,11 +351,23 @@ export default function JobSearchPage() {
   const [activeJobId, setActiveJobId] = useState<string | null>(searchParamsUrl.get("jobId"));
   const [applyJob, setApplyJob] = useState<SavedJobRead | null>(null);
   const [applyOpen, setApplyOpen] = useState(false);
-  const [savedFilter, setSavedFilter] = useState("");
+  const [
+    savedFilters,
+    setSavedFilters,
+  ] = useState<VisibleSavedJobSearchFilters>({
+    q: "",
+    location: "",
+    employmentType: "",
+    remote: undefined,
+  });
+
+  const [savedPage, setSavedPage] = useState(1);
   const [defaultCvId, setDefaultCvId] = useState(getDefaultCvId() ?? "");
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [selectingRoleId, setSelectingRoleId] = useState<string | null>(null);
   const [packOverride, setPackOverride] = useState<Record<string, unknown> | null>(null);
+  const [pendingCreateOrigin, setPendingCreateOrigin] =
+    useState<PendingCreateOrigin>(null);
   const qc = useQueryClient();
   const { addToast } = useUIStore();
   const navigate = useNavigate();
@@ -354,6 +388,7 @@ export default function JobSearchPage() {
 
   const loadJobIntoForm = (job: SavedJobRead) => {
     setActiveJobId(job.id);
+    setPendingCreateOrigin(null);
     setJobForm(jobToForm(job));
     setPackOverride(null);
     setTimeout(() => jobFormRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
@@ -362,6 +397,7 @@ export default function JobSearchPage() {
   const openInterviewPack = async (job: SavedJobRead) => {
     skipPackClearRef.current = true;
     setActiveJobId(job.id);
+    setPendingCreateOrigin(null);
     setJobForm(jobToForm(job));
     setTimeout(() => packSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 150);
     if (!job.has_interview_pack) {
@@ -386,6 +422,7 @@ export default function JobSearchPage() {
   const regenerateInterviewPack = (job: SavedJobRead) => {
     skipPackClearRef.current = true;
     setActiveJobId(job.id);
+    setPendingCreateOrigin(null);
     setJobForm(jobToForm(job));
     generatePackMutation.mutate(job.id);
   };
@@ -410,20 +447,29 @@ export default function JobSearchPage() {
   });
 
   useEffect(() => {
-    if (activeJob) setJobForm(jobToForm(activeJob));
+    if (activeJob) {
+      setPendingCreateOrigin(null);
+      setJobForm(jobToForm(activeJob));
+    }
   }, [activeJob?.id]);
 
   const upsertJob = async (): Promise<string> => {
-    const payload = formToSavePayload(jobForm);
     if (activeJobId) {
+      const payload = formToSavePayload(jobForm);
       const updated = await jobApi.update(activeJobId, payload);
-      qc.invalidateQueries({ queryKey: ["jobs"] });
+      void invalidateSavedJobQueries(qc);
       qc.invalidateQueries({ queryKey: ["job", activeJobId] });
       return updated.id;
     }
+
+    const payload = resolvePendingCreateSavePayload(
+      jobForm,
+      pendingCreateOrigin,
+    );
     const created = await jobApi.save(payload);
     setActiveJobId(created.id);
-    qc.invalidateQueries({ queryKey: ["jobs"] });
+    setPendingCreateOrigin(null);
+    void invalidateSavedJobQueries(qc);
     return created.id;
   };
 
@@ -451,7 +497,7 @@ export default function JobSearchPage() {
       skipPackClearRef.current = true;
       setPackOverride(pack as unknown as Record<string, unknown>);
       if (jobId) qc.setQueryData(["interview-pack", jobId], pack);
-      qc.invalidateQueries({ queryKey: ["jobs"] });
+      void invalidateSavedJobQueries(qc);
       addToast({
         type: "success",
         title: "Interview pack ready!",
@@ -491,6 +537,7 @@ export default function JobSearchPage() {
     try {
       const form = popularRoleToForm(role);
       setActiveJobId(null);
+      setPendingCreateOrigin("popular_role");
       setPackOverride(null);
       setJobForm(form);
       addToast({
@@ -516,21 +563,69 @@ export default function JobSearchPage() {
     queryFn: () => jobApi.list(),
   });
 
-  const { data: searchResults } = useQuery({
-    queryKey: ["jobs-search", savedFilter],
-    queryFn: () => jobApi.searchSaved({ q: savedFilter }),
-    enabled: !!savedFilter.trim(),
+  const hasSavedFilter = (
+    hasActiveSavedJobSearchFilter(
+      savedFilters,
+    )
+  );
+
+  const {
+    data: searchPage,
+    isPending: searchPending,
+    isError: searchError,
+  } = useQuery({
+    queryKey: buildSavedJobSearchQueryKey(
+      savedFilters,
+      savedPage,
+      SAVED_JOB_SEARCH_PAGE_SIZE,
+    ),
+    queryFn: () => jobApi.searchSavedPage(
+      buildSavedJobSearchPageParams(
+        savedFilters,
+        savedPage,
+        SAVED_JOB_SEARCH_PAGE_SIZE,
+      ),
+    ),
+    enabled: hasSavedFilter,
   });
 
-  const displayedJobs = useMemo(() => {
-    if (!savedFilter.trim()) return allJobs ?? [];
-    return searchResults ?? (allJobs ?? []).filter((j) => {
-      const q = savedFilter.toLowerCase();
-      return j.title.toLowerCase().includes(q)
-        || (j.company_name ?? "").toLowerCase().includes(q)
-        || (j.description_raw ?? "").toLowerCase().includes(q);
-    });
-  }, [allJobs, searchResults, savedFilter]);
+  const savedJobSearchView = useMemo(
+    () => resolveSavedJobSearchView({
+      hasActiveFilter: hasSavedFilter,
+      allJobs,
+      searchResults: searchPage?.items,
+      searchPending,
+      searchError,
+    }),
+    [
+      allJobs,
+      hasSavedFilter,
+      searchError,
+      searchPending,
+      searchPage,
+    ],
+  );
+
+  const displayedJobs = savedJobSearchView.jobs;
+
+  const savedJobSearchPagination = useMemo(
+    () => resolveSavedJobSearchPagination(
+      savedPage,
+      searchPage?.has_next ?? false,
+    ),
+    [
+      savedPage,
+      searchPage?.has_next,
+    ],
+  );
+
+  const showSavedJobSearchPagination = (
+    shouldShowSavedJobSearchPagination(
+      hasSavedFilter,
+      savedJobSearchView.state,
+      savedJobSearchPagination,
+    )
+  );
 
   const displayPack = packOverride ?? (interviewPack as Record<string, unknown> | null | undefined);
   const activeJobHasPack = Boolean(
@@ -556,7 +651,7 @@ export default function JobSearchPage() {
       </motion.div>
 
       <JobDiscoveryPanel
-        onUseJob={(job) => { loadJobIntoForm(job); qc.invalidateQueries({ queryKey: ["jobs"] }); }}
+        onUseJob={(job) => { loadJobIntoForm(job); void invalidateSavedJobQueries(qc); }}
         usingUrl={null}
       />
 
@@ -577,7 +672,7 @@ export default function JobSearchPage() {
           onGeneratePack={() => generatePackMutation.mutate(undefined)}
           onViewPack={showOpenPackAction ? () => packSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }) : undefined}
           hasInterviewPack={showOpenPackAction}
-          onClear={() => { setActiveJobId(null); setPackOverride(null); }}
+          onClear={() => { setActiveJobId(null); setPendingCreateOrigin(null); setPackOverride(null); }}
           saving={saveMutation.isPending}
           generating={generatePackMutation.isPending}
           activeJobId={activeJobId}
@@ -603,8 +698,22 @@ export default function JobSearchPage() {
             </Button>
           </div>
           <h3 style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: "0.75rem" }}>Recent saved jobs</h3>
-          {!displayedJobs.length ? (
-            <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>No saved jobs yet.</p>
+          {savedJobSearchView.state === "search_loading" ? (
+            <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+              Searching saved jobs…
+            </p>
+          ) : savedJobSearchView.state === "search_error" ? (
+            <p style={{ fontSize: "0.8rem", color: "var(--accent-rose)" }}>
+              Could not load filtered saved jobs.
+            </p>
+          ) : savedJobSearchView.state === "search_empty" ? (
+            <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+              No saved jobs match this filter.
+            </p>
+          ) : !displayedJobs.length ? (
+            <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+              No saved jobs yet.
+            </p>
           ) : (
             <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
               {displayedJobs.slice(0, 8).map((job) => (
@@ -643,26 +752,107 @@ export default function JobSearchPage() {
       <div className="feature-glass feature-panel">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem", flexWrap: "wrap", gap: "0.75rem" }}>
           <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "1.1rem" }}>
-            Your saved jobs {displayedJobs.length > 0 && `(${displayedJobs.length})`}
+            Your saved jobs {!hasSavedFilter && displayedJobs.length > 0 && `(${displayedJobs.length})`}
           </h2>
-          <div style={{ minWidth: 220, flex: 1, maxWidth: 320 }}>
-            <Input
-              placeholder="Filter saved jobs…"
-              value={savedFilter}
-              onChange={(e) => setSavedFilter(e.target.value)}
-              leftIcon={<Search size={14} />}
-              fullWidth
-            />
-          </div>
+          {showSavedJobSearchPagination && (
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                }}
+              >
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  disabled={!savedJobSearchPagination.canGoPrevious}
+                  onClick={() => {
+                    setSavedPage((page) => (
+                      previousSavedJobSearchPage(page)
+                    ));
+                  }}
+                >
+                  Previous
+                </Button>
+
+                <span
+                  style={{
+                    fontSize: "0.8rem",
+                    color: "var(--text-secondary)",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  Page {savedJobSearchPagination.page}
+                </span>
+
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  disabled={
+                    savedJobSearchView.state !== "search_results"
+                    || !savedJobSearchPagination.canGoNext
+                  }
+                  onClick={() => {
+                    setSavedPage((page) => (
+                      nextSavedJobSearchPage(
+                        page,
+                        savedJobSearchView.state === "search_results"
+                          ? searchPage?.has_next ?? false
+                          : false,
+                      )
+                    ));
+                  }}
+                >
+                  Next
+                </Button>
+              </div>
+            )}
           {selectedIds.size > 0 && (
             <Button variant="primary" size="sm" leftIcon={<Zap size={14} />} onClick={() => addToast({ type: "info", message: `Bulk apply queued for ${selectedIds.size} jobs (sequential processing).` })}>
               Auto Apply to Selected ({selectedIds.size})
             </Button>
           )}
         </div>
-        {listLoading ? (
+        <div
+          style={{
+            marginBottom: "1rem",
+          }}
+        >
+          <SavedJobFilters
+            filters={savedFilters}
+            onChange={(nextFilters) => {
+              setSavedFilters(nextFilters);
+              setSavedPage(1);
+            }}
+            onClearAll={() => {
+              setSavedFilters({
+                q: "",
+                location: "",
+                employmentType: "",
+                remote: undefined,
+              });
+              setSavedPage(1);
+            }}
+          />
+        </div>
+        {!hasSavedFilter && listLoading ? (
           <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
             {[1, 2, 3].map((i) => <div key={i} className="skeleton" style={{ height: 120, borderRadius: 16 }} />)}
+          </div>
+        ) : savedJobSearchView.state === "search_loading" ? (
+          <div style={{ textAlign: "center", padding: "3rem", color: "var(--text-secondary)" }}>
+            <Search size={40} style={{ margin: "0 auto 1rem", opacity: 0.3 }} />
+            <p>Searching saved jobs…</p>
+          </div>
+        ) : savedJobSearchView.state === "search_error" ? (
+          <div style={{ textAlign: "center", padding: "3rem", color: "var(--text-secondary)" }}>
+            <Globe size={40} style={{ margin: "0 auto 1rem", opacity: 0.3 }} />
+            <p>Could not load filtered saved jobs. Please try again.</p>
+          </div>
+        ) : savedJobSearchView.state === "search_empty" ? (
+          <div style={{ textAlign: "center", padding: "3rem", color: "var(--text-secondary)" }}>
+            <Search size={40} style={{ margin: "0 auto 1rem", opacity: 0.3 }} />
+            <p>No saved jobs match this filter.</p>
           </div>
         ) : !displayedJobs.length ? (
           <div style={{ textAlign: "center", padding: "3rem", color: "var(--text-secondary)" }}>

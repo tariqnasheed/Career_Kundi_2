@@ -18,6 +18,9 @@ import httpx
 
 from app.core.config import settings
 from app.core.logging import get_logger
+from app.services.job_discovery_dedupe import (
+    suppress_duplicate_discovery_results,
+)
 
 logger = get_logger(__name__)
 
@@ -218,37 +221,107 @@ async def discover_jobs(
     url: str | None = None,
 ) -> list[dict]:
     """
-    Return job discovery hits from the public web. If `url` is set, return a
-    single preview card for that posting (full extraction happens on parse).
+    Return job discovery hits from the public web.
+
+    If `url` is set, return a preview card for that posting. The preview is
+    intentionally unverified because full retrieval and extraction happen
+    later on the parse path.
+
+    Explicit offline/mock mode still returns deterministic mock listings.
+    Live-provider failures are logged and re-raised so callers can surface an
+    honest search failure instead of silently presenting mock data as a
+    successful live search.
+
+    Multi-result discovery responses suppress later duplicates by exact
+    source URL after outer-whitespace trimming only. First provider result
+    wins and provider ordering remains stable.
     """
     if url and url.strip():
         if settings.search_mode != "live":
-            return _mock_discover(q, location, employment_type, remote, url)
+            return suppress_duplicate_discovery_results(
+                _mock_discover(
+                    q,
+                    location,
+                    employment_type,
+                    remote,
+                    url,
+                )
+            )
+
+        cleaned_url = url.strip()
+        parsed_url = urlparse(cleaned_url)
+
         return [{
-            "title": urlparse(url.strip()).path.rstrip("/").split("/")[-1].replace("-", " ").title() or "Job posting",
-            "company_name": urlparse(url.strip()).netloc.replace("www.", "").split(".")[0].capitalize(),
+            "title": (
+                parsed_url.path.rstrip("/").split("/")[-1].replace("-", " ").title()
+                or "Job posting"
+            ),
+            "company_name": (
+                parsed_url.netloc.replace("www.", "").split(".")[0].capitalize()
+            ),
             "location": location,
             "employment_type": employment_type,
             "is_remote": remote,
-            "snippet": f"Direct job URL from {_source_site(url.strip())}. Use 'Use this job' to extract the full posting.",
-            "source_url": url.strip(),
-            "source_site": _source_site(url.strip()),
+            "snippet": (
+                f"Preview only from {_source_site(cleaned_url)}. "
+                "This URL has not been fetched or verified yet. "
+                "Use 'Use this job' to extract the full posting."
+            ),
+            "source_url": cleaned_url,
+            "source_site": _source_site(cleaned_url),
             "salary_hint": None,
-            "verified": True,
+            "verified": False,
         }]
 
-    query = _build_query(q, location, employment_type, remote, experience_level)
+    query = _build_query(
+        q,
+        location,
+        employment_type,
+        remote,
+        experience_level,
+    )
 
     if settings.search_mode != "live":
-        logger.info("job_discovery_mock", query=query)
-        return _mock_discover(q, location, employment_type, remote, None)
+        logger.info(
+            "job_discovery_mock",
+            query=query,
+        )
+
+        return suppress_duplicate_discovery_results(
+            _mock_discover(
+                q,
+                location,
+                employment_type,
+                remote,
+                None,
+            )
+        )
 
     try:
-        results = await _live_google_jobs(query, location)
+        results = await _live_google_jobs(
+            query,
+            location,
+        )
+
         if not results:
-            results = await _live_organic_jobs(query)
-        logger.info("job_discovery_live", query=query, count=len(results))
+            results = await _live_organic_jobs(
+                query,
+            )
+
+        results = suppress_duplicate_discovery_results(
+            results,
+        )
+
+        logger.info(
+            "job_discovery_live",
+            query=query,
+            count=len(results),
+        )
         return results
     except Exception as exc:
-        logger.warning("job_discovery_failed", error=str(exc), query=query)
-        return _mock_discover(q, location, employment_type, remote, None)
+        logger.warning(
+            "job_discovery_failed",
+            error=str(exc),
+            query=query,
+        )
+        raise

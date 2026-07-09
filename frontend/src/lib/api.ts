@@ -34,6 +34,11 @@ import type {
   ProfileRead,
   ApiError,
 } from "@/types/api";
+import {
+  buildSavedJobSearchPageRequest,
+  type SavedJobSearchPageParams,
+  type SavedJobSearchPageRead,
+} from "./savedJobSearchPageRequest";
 
 // The base URL is injected at build time from the VITE_API_BASE_URL env var;
 // in local development the Vite proxy rewrites /api → localhost:8000, so the
@@ -155,6 +160,24 @@ export const jobApi = {
     page?: number;
   }): Promise<SavedJobRead[]> => {
     const res = await http.get<SavedJobRead[]>("/job-search/search", { params });
+    return res.data;
+  },
+
+  /** Search the user's saved jobs with exact server pagination metadata. */
+  searchSavedPage: async (
+    params: SavedJobSearchPageParams,
+  ): Promise<SavedJobSearchPageRead> => {
+    const request = buildSavedJobSearchPageRequest(
+      params,
+    );
+
+    const res = await http.get<SavedJobSearchPageRead>(
+      request.url,
+      {
+        params: request.params,
+      },
+    );
+
     return res.data;
   },
 

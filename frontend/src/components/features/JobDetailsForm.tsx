@@ -32,7 +32,7 @@ export function JobDetailsForm({
         Job details
       </h2>
       <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", marginBottom: "1.25rem" }}>
-        Step 2 — Review extracted job fields. Company is optional. Save the job, then generate your interview pack in step 3.
+        Step 2 — Review and edit job details. Company is optional. Save the job, then generate your interview pack in step 3.
       </p>
       <p style={{ fontSize: "0.78rem", color: "var(--text-secondary)", marginBottom: "1rem", lineHeight: 1.45 }}>
         For best results, paste the complete job posting including job description, responsibilities, requirements,
@@ -74,7 +74,7 @@ export function JobDetailsForm({
       </div>
 
       <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem", fontSize: "0.8rem", cursor: "pointer" }}>
-        <input type="checkbox" checked={form.is_remote} onChange={(e) => set({ is_remote: e.target.checked })} style={{ accentColor: "var(--accent-violet)" }} />
+        <input type="checkbox" checked={form.is_remote === true} onChange={(e) => set({ is_remote: e.target.checked })} style={{ accentColor: "var(--accent-violet)" }} />
         Remote position
       </label>
 
