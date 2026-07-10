@@ -25,6 +25,7 @@ import {
   Trophy,
   User,
   Settings,
+  Layers,
   ChevronLeft,
   Sparkles,
 } from "lucide-react";
@@ -50,6 +51,7 @@ const NAV_GROUPS: { heading?: string; items: NavItem[] }[] = [
     items: [
       { to: "/cv-builder",     icon: <BookOpen        size={18} />, label: "CV Builder" },
       { to: "/roadmap",        icon: <Map             size={18} />, label: "Career Roadmap" },
+      { to: "/platform",       icon: <Layers          size={18} />, label: "Platform" },
     ],
   },
   {

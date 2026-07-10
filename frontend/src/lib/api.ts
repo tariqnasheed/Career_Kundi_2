@@ -33,6 +33,13 @@ import type {
   AgentMemoryRead,
   ProfileRead,
   ApiError,
+  PlatformSubjectRead,
+  PlatformSubjectEnvelope,
+  PlatformSubjectListEnvelope,
+  PlatformGoalCreate,
+  PlatformGoalRead,
+  PlatformGoalEnvelope,
+  PlatformGoalListEnvelope,
 } from "@/types/api";
 import {
   buildSavedJobSearchPageRequest,
@@ -532,6 +539,48 @@ export const applyApi = {
   },
 };
 
+// ---------------------------------------------------------------------------
+// Platform foundation endpoints (0050-PF8 envelopes: { data } / { data, meta })
+// ---------------------------------------------------------------------------
 
+export const platformApi = {
+  /** List Career Subjects owned by the authenticated user. */
+  listPlatformSubjects: async (): Promise<PlatformSubjectRead[]> => {
+    const res = await http.get<PlatformSubjectListEnvelope>("/platform/subjects");
+    return res.data.data;
+  },
+
+  /** Create a Career Subject (no request body — ownership from auth). */
+  createPlatformSubject: async (): Promise<PlatformSubjectRead> => {
+    const res = await http.post<PlatformSubjectEnvelope>("/platform/subjects");
+    return res.data.data;
+  },
+
+  /** Read one Career Subject by id. */
+  getPlatformSubject: async (subjectId: string): Promise<PlatformSubjectRead> => {
+    const res = await http.get<PlatformSubjectEnvelope>(`/platform/subjects/${subjectId}`);
+    return res.data.data;
+  },
+
+  /** List Goals for an owned Career Subject. */
+  listPlatformGoals: async (subjectId: string): Promise<PlatformGoalRead[]> => {
+    const res = await http.get<PlatformGoalListEnvelope>(
+      `/platform/subjects/${subjectId}/goals`,
+    );
+    return res.data.data;
+  },
+
+  /** Create a Goal under an owned Career Subject. */
+  createPlatformGoal: async (
+    subjectId: string,
+    payload: PlatformGoalCreate,
+  ): Promise<PlatformGoalRead> => {
+    const res = await http.post<PlatformGoalEnvelope>(
+      `/platform/subjects/${subjectId}/goals`,
+      payload,
+    );
+    return res.data.data;
+  },
+};
 
 export default http;

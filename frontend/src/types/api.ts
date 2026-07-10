@@ -446,6 +446,57 @@ export interface CustomSectionRead {
 }
 
 // ---------------------------------------------------------------------------
+// Platform foundation (0050-PF8 / PF11)
+// ---------------------------------------------------------------------------
+
+export interface PlatformListMeta {
+  count: number;
+}
+
+export interface PlatformSubjectRead {
+  id: string;
+  owner_user_id: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface PlatformSubjectEnvelope {
+  data: PlatformSubjectRead;
+}
+
+export interface PlatformSubjectListEnvelope {
+  data: PlatformSubjectRead[];
+  meta: PlatformListMeta;
+}
+
+export interface PlatformGoalCreate {
+  goal_kind: string;
+  title: string;
+  description?: string | null;
+  status?: string;
+}
+
+export interface PlatformGoalRead {
+  id: string;
+  subject_id: string;
+  goal_kind: string;
+  title: string;
+  description: string | null;
+  status: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface PlatformGoalEnvelope {
+  data: PlatformGoalRead;
+}
+
+export interface PlatformGoalListEnvelope {
+  data: PlatformGoalRead[];
+  meta: PlatformListMeta;
+}
+
+// ---------------------------------------------------------------------------
 // Shared error envelope
 // ---------------------------------------------------------------------------
 

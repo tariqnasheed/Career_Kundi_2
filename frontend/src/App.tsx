@@ -14,6 +14,7 @@
  *     /achievements
  *     /profile
  *     /settings
+ *     /platform
  *
  * Auth guard: <PrivateRoute /> checks useAuthStore().isAuthenticated.
  * While `isLoading` is true (session restore in progress) it shows a
@@ -39,6 +40,7 @@ const RoadmapPage      = lazy(() => import("./pages/RoadmapPage"));
 const AchievementsPage = lazy(() => import("./pages/AchievementsPage"));
 const ProfilePage      = lazy(() => import("./pages/ProfilePage"));
 const SettingsPage     = lazy(() => import("./pages/SettingsPage"));
+const PlatformPage     = lazy(() => import("./pages/PlatformPage"));
 const ChatbotPage      = lazy(() => import("./pages/ChatbotPage"));
 const NotFoundPage     = lazy(() => import("./pages/NotFoundPage"));
 
@@ -118,6 +120,7 @@ export default function App() {
             <Route path="/achievements"    element={<AchievementsPage />} />
             <Route path="/profile"         element={<ProfilePage />} />
             <Route path="/settings"        element={<SettingsPage />} />
+            <Route path="/platform"        element={<PlatformPage />} />
             <Route path="/chatbot"         element={<ChatbotPage />} />
           </Route>
         </Route>

@@ -23,6 +23,7 @@ const PAGE_LABELS: Record<string, string> = {
   achievements:   "Achievements",
   profile:        "Profile",
   settings:       "Settings",
+  platform:       "Platform Foundation",
 };
 
 function useBreadcrumb() {
