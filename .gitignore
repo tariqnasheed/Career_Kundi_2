@@ -26,7 +26,8 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # --- Build outputs -------------------------------------------------------------
-dist/                          # Frontend production build output (Vite)
+# Frontend production build output (Vite)
+frontend/dist/
 build/                          # Generic build output directory
 .next/                           # (unused here, defensive for future Next.js migration)
 out/
