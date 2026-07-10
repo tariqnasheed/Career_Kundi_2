@@ -20,14 +20,24 @@ from prometheus_client import make_asgi_app
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 
-from app.api.routes import auth, chatbot, cv_builder, health, job_search, profile, roadmap, role_packs
 from app.api.routes import apply as apply_router
+from app.api.routes import (
+    auth,
+    chatbot,
+    cv_builder,
+    health,
+    job_search,
+    platform,
+    profile,
+    roadmap,
+    role_packs,
+)
 from app.api.routes import badges as badges_router
 from app.api.routes import queue as queue_router
 from app.core.config import settings
 from app.core.errors import register_exception_handlers
 from app.core.logging import configure_logging, get_logger
-from app.core.middleware import RequestContextMiddleware
+from app.platform.observability.middleware import ObservabilityMiddleware
 
 configure_logging()
 logger = get_logger(__name__)
@@ -77,8 +87,8 @@ async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
 
     # We import these here (inside the function) rather than at the top of the file
     # to avoid "circular imports" where two files try to import each other at the same time.
-    from app.tools.rag import get_vector_store
     from app.tools.graph_rag import get_knowledge_graph
+    from app.tools.rag import get_vector_store
 
     # Pre-load the vector store (FAISS) and knowledge graph into memory.
     # If they don't exist yet, these functions will build them.
@@ -136,8 +146,8 @@ def create_app() -> FastAPI:
         allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         allow_headers=["Authorization", "Content-Type", "X-Request-ID"],
     )
-    # Injects a unique ID into every request for tracing logs
-    app.add_middleware(RequestContextMiddleware)
+    # Request correlation + safe completion logging (0050-PF10-S1)
+    app.add_middleware(ObservabilityMiddleware)
 
     # --- Rate limiting ------------------------------------------------------------
     # Attach the slowapi limiter to the app state so it can block spam requests
@@ -163,6 +173,7 @@ def create_app() -> FastAPI:
     app.include_router(apply_router.router, prefix=api_v1_prefix)
     app.include_router(badges_router.router, prefix=api_v1_prefix)
     app.include_router(queue_router.router, prefix=api_v1_prefix)
+    app.include_router(platform.router, prefix=api_v1_prefix)
 
     return app
 

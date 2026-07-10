@@ -44,11 +44,14 @@ dev-frontend: ## Start Vite dev server with hot-reload on :5173
 
 # --- Database -------------------------------------------------------------
 
-migrate: ## Apply all pending Alembic database migrations
-	cd backend && uv run alembic upgrade head
+migrate: ## Prepare foundation DB (EMPTY upgrade / VERSIONED upgrade / fail-closed)
+	cd backend && uv run python -m app.db.migration_runner
 
-migration: ## Create a new Alembic migration (usage: make migration name="add_x")
-	cd backend && uv run alembic revision --autogenerate -m "$(name)"
+migration: ## Create foundation Alembic revision (usage: make migration name="add_x")
+	cd backend && uv run alembic -c foundation-alembic.ini revision --autogenerate -m "$(name)"
+
+legacy-migration-history: ## Show frozen legacy Alembic history (read-only convenience)
+	cd backend && uv run alembic -c alembic.ini history
 
 seed: ## Populate the database with demo data (user, jobs, roadmaps, CVs)
 	cd backend && uv run python scripts/seed.py

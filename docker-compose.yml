@@ -46,8 +46,9 @@ services:
       retries: 10
 
   # ---------------------------------------------------------------------------
-  # Backend — FastAPI + LangGraph multi-agent system. Runs migrations on boot
-  # then starts uvicorn. Mounts the FAISS index + knowledge graph as a volume
+  # Backend — FastAPI + LangGraph. Dockerfile CMD runs foundation
+  # `python -m app.db.migration_runner` (fail-closed on legacy unowned DBs),
+  # then uvicorn. Mounts the FAISS index + knowledge graph as a volume
   # so RAG/GraphRAG data persists across restarts.
   # ---------------------------------------------------------------------------
   backend:

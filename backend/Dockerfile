@@ -65,6 +65,6 @@ EXPOSE 8000
 HEALTHCHECK --interval=10s --timeout=5s --retries=10 --start-period=20s \
     CMD curl -f http://localhost:8000/health || exit 1
 
-# Run migrations then start the server. Using `sh -c` so both commands run
-# in sequence as the container's single foreground process.
-CMD ["sh", "-c", "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"]
+# Prepare DB via PF1 migration_runner (VERSIONED upgrade / EMPTY bootstrap /
+# NONEMPTY_UNVERSIONED fail-closed), then start the server.
+CMD ["sh", "-c", "python -m app.db.migration_runner && uvicorn app.main:app --host 0.0.0.0 --port 8000"]

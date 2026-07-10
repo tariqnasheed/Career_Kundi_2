@@ -10,10 +10,26 @@ from app.db.models.apply import JobApplication
 from app.db.models.assets import GeneratedAsset
 from app.db.models.audit import AuditLog, FeedbackRecord, TokenUsageRecord
 from app.db.models.badges import BadgeDefinition, UserBadge
+from app.db.models.career_subject import CareerSubject
 from app.db.models.chat import ChatMessage, ChatSession
+from app.db.models.claim import ClaimRecord
 from app.db.models.cv import GeneratedCV
+from app.db.models.geo import (
+    GeoArea,
+    JurisdictionArea,
+    LocaleProfile,
+    WorkAuthorizationArea,
+)
 from app.db.models.job import SavedJob
+from app.db.models.lifecycle import (
+    CareerAttempt,
+    CareerFeedback,
+    CareerGoal,
+    CareerOutcome,
+    CareerRecommendation,
+)
 from app.db.models.memory import AgentMemory
+from app.db.models.privacy import ConsentRecord, PrivacyPolicy, RetentionPolicy
 from app.db.models.profile import (
     Award,
     Certification,
@@ -29,6 +45,7 @@ from app.db.models.profile import (
     Volunteer,
     WorkExperience,
 )
+from app.db.models.provenance import SourceRecord, SourceSnapshot
 from app.db.models.queue import GenerationJob
 from app.db.models.roadmap import Roadmap, RoadmapMilestone, RoadmapSkill
 from app.db.models.user import User
@@ -64,4 +81,20 @@ __all__ = [
     "BadgeDefinition",
     "UserBadge",
     "JobApplication",
+    "CareerSubject",
+    "ClaimRecord",
+    "SourceRecord",
+    "SourceSnapshot",
+    "GeoArea",
+    "JurisdictionArea",
+    "LocaleProfile",
+    "WorkAuthorizationArea",
+    "CareerGoal",
+    "CareerRecommendation",
+    "CareerAttempt",
+    "CareerOutcome",
+    "CareerFeedback",
+    "PrivacyPolicy",
+    "ConsentRecord",
+    "RetentionPolicy",
 ]

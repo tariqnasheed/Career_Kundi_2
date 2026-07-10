@@ -1,0 +1,21 @@
+# Local Python environments must never enter the Linux Docker image.
+.venv/
+venv/
+env/
+
+# Python caches and local test/tool state.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local editor / OS metadata.
+.DS_Store
+.vscode/
+.idea/
+
+# Local runtime artifacts.
+*.log

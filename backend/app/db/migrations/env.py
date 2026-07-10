@@ -5,6 +5,10 @@ Alembic environment script. Wires Alembic's migration runner to our
 SQLAlchemy `Base.metadata` (for autogenerate) and to the synchronous
 database URL from `app.core.config.settings` (Alembic itself runs sync,
 even though the application uses the async engine at runtime).
+
+Legacy environment — frozen historical lineage (0001_initial). New CareerKundi
+foundation schema evolution uses `foundation-alembic.ini` /
+`app/db/foundation_migrations/` instead.
 """
 
 from logging.config import fileConfig
