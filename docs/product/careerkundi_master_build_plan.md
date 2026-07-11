@@ -2767,6 +2767,79 @@ Next slice: **UX-CHECKPOINT-1 Post-CV-and-Roadmap UX Checkpoint**
 
 - **ROAD-F4 outcome (2026-07-12):** Decision **B** — Roadmap ladder closed with minor shell overflow limitation; next = **UX-CHECKPOINT-1**.
 
+### UX-CHECKPOINT-1 Post-CV-and-Roadmap UX Checkpoint
+- **Type:** CROSS_FEATURE_UX_CHECKPOINT  
+- **Goal:** Verify auth/shell, CV Builder, Roadmap, and primary routes before 0051.  
+- **Allowed:** Docs/tracker; tiny UX blockers only if journey fails.  
+- **Forbidden:** 0051 implementation; shell redesign; new engines; migrations.  
+- **Evidence:** `~/Desktop/CareerKundi_UX_Checkpoint_1_Evidence.txt`  
+- **Commit message:** `docs(product): record post-CV Roadmap UX checkpoint`  
+- **Push:** Yes  
+
+#### Cross-Feature Browser Journey Summary
+
+| Journey Area | Result | Evidence | Issue Found | Follow-Up |
+|---|---|---|---|---|
+| auth/session | Pass | UI register → `/dashboard` | — | — |
+| dashboard | Pass | load + widgets | — | — |
+| navigation shell | Pass | sidebar/header on routes | — | — |
+| CV Builder route | Pass | Studio loads | — | — |
+| CV 15-template gallery | Pass | gallery candidates present; non-default select | — | — |
+| CV save/load | Pass | Save Draft → Draft saved; library/persist | Generate can take ~20s | Watch latency |
+| CV export | Pass | PDF `CareerKundi_Candidate_Minimal_Corporate_CV.pdf` | Export disabled until draft exists | Honest |
+| Roadmap route | Pass | `/roadmap` | — | — |
+| Roadmaps alias | Pass | `/roadmaps` | — | — |
+| Roadmap generate/load | Pass | Data Analyst + skills | — | — |
+| Roadmap skill tracking | Pass | status persist after reload | — | — |
+| Dashboard widgets | Pass | no fake roadmap.status; no CV overclaim | — | — |
+| Profile route | Pass | loads | — | — |
+| Settings route | Pass | loads | — | — |
+| Jobs route | Pass | loads | — | — |
+| Platform route | Pass load | page loads | CORS on `/platform/subjects` console errors | Watch / PF11 follow-up |
+| console health | Acceptable | no CV/Roadmap journey breakers | Platform CORS noise | Watch |
+| network health | Acceptable | CV/Roadmap APIs OK | Platform subjects CORS | Watch |
+| 390px responsive check | Usable | overflow observed | Shell overflow | Shell slice |
+| 768px responsive check | Pass | usable; CV overflow minor | CV studio width | Watch |
+| desktop check | Pass | no overflow | — | — |
+
+#### Fixes Applied
+
+No product-code fixes were required in UX-CHECKPOINT-1.
+
+#### Known Limitations
+
+- CV PDF uses 4 CSS style families, not full 15-layout rendering.
+- Roadmap has no separate Task model; skills are current progress units.
+- App-shell horizontal overflow at 390px observed but usable.
+- Advanced Roadmap Engine remains future work.
+- Specialized pathway packs remain future work.
+- Old 004E repair remains frozen/deferred.
+- Old Auto Apply repair remains frozen/deferred.
+- Platform subjects CORS console noise observed; page still loads (watch item).
+
+#### Readiness Decision
+
+`READY_FOR_0051_WITH_WATCH_ITEMS`
+
+#### Recommended Next Slice
+
+Next slice: **0051 Universal Role & Pathway Taxonomy Planning**
+
+#### 0051 Entry Guardrails
+
+- 0051 must not break CV Builder.
+- 0051 must not break Roadmap.
+- 0051 must preserve browser-tested flows.
+- 0051 must treat role/pathway taxonomy as a platform foundation layer.
+- 0051 must include exact Cursor prompt, scripts, files, tests, and evidence.
+- 0051 should start with planning/audit before broad implementation.
+
+#### UX-CHECKPOINT-1 Decision
+
+**B UX_CHECKPOINT_ACCEPTED_WITH_MINOR_LIMITATIONS_READY_FOR_0051**
+
+- **UX-CHECKPOINT-1 outcome (2026-07-12):** Decision **B** — ready for **0051 planning** with watch items (shell overflow, PDF 4-family, Platform CORS, no Task model).
+
 ---
 
 ## 44. Key Technical Slice Notes
