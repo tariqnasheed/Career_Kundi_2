@@ -3124,6 +3124,103 @@ Docs-only contract (not implemented in F0). Proposed core entities:
 
 ---
 
+### 0051-F2 Backend Taxonomy Registry MVP
+
+**Status:** Completed  
+**Type:** `BACKEND_REGISTRY_MVP`  
+**Date:** 2026-07-12  
+**Preflight HEAD:** `182663e4298ced264d4ec5fc65848fd476931400`  
+**Evidence:** `~/Desktop/CareerKundi_0051_F2_Taxonomy_Registry_MVP_Evidence.txt`
+
+#### Registry MVP Summary
+
+| Area | Before | Change Made | Result | Notes |
+|---|---|---|---|---|
+| registry module | Missing | Added `backend/app/taxonomy/registry.py` | Implemented | In-memory only |
+| seed catalog loading | Catalog only | `TaxonomyRegistry.from_seed_catalog()` | Implemented | Tiny internal seed |
+| role id lookup | Missing | `get_role` | Implemented | Exact id |
+| role title/alias match | Missing | `match_role` + normalized indexes | Implemented | No nearest-neighbor guess |
+| skill id lookup | Missing | `get_skill` | Implemented | Exact id |
+| skill label/alias match | Missing | `match_skill` | Implemented | Uses `matched_skill_id` |
+| pathway validation | Enum only | `validate_pathway_type` / `list_pathway_types` | Implemented | Rejects invalid |
+| role-to-skill lookup | Missing | `skills_for_role` | Implemented | Skips missing skill refs |
+| related-role lookup | Field on role | `related_roles` | Implemented | Deterministic |
+| source/confidence enforcement | F1 validators | Stricter + registry coercion | Implemented | No auto-verified |
+| unknown/no-match behavior | N/A | Safe unknown match | Implemented | No hallucination |
+| import boundary | F1 clean | Registry stays dependency-light | Verified | Tests cover markers |
+| tests | Contract only | `test_taxonomy_registry.py` | Passing | + F1 still green |
+| feature integration | None | None | NONE | Out of scope |
+| external dataset ingestion | None | None | NONE | No O*NET/ESCO/NIST |
+
+#### Files Changed
+
+| File | Change Type | Reason | Scope |
+|---|---|---|---|
+| `backend/app/taxonomy/registry.py` | Added | In-memory registry MVP | Registry |
+| `backend/app/taxonomy/__init__.py` | Updated | Export `TaxonomyRegistry` | Package |
+| `backend/app/taxonomy/contracts.py` | Updated | Add `matched_skill_id` on `TaxonomyMatch` | Minimal contract |
+| `backend/app/taxonomy/normalization.py` | Updated | Stricter verified bans + skill id kwarg | Confidence rules |
+| `backend/tests/unit/test_taxonomy_registry.py` | Added | Registry unit coverage | Tests |
+| `docs/product/careerkundi_master_build_plan.md` | Updated | Record F2 results | Docs |
+| `docs/product/careerkundi_live_tracker.md` | Updated | Position → F2 done / F3 next | Docs |
+
+#### Registry API Implemented
+
+| Function / Method | Implemented | Purpose | Notes |
+|---|---|---|---|
+| `TaxonomyRegistry.from_seed_catalog` | YES | Load seed indexes | Classmethod |
+| `get_role` | YES | Canonical role by id | None if missing |
+| `get_skill` | YES | Skill by id | None if missing |
+| `match_role` | YES | Title/alias/id match → `TaxonomyMatch` | Defaults inferred |
+| `match_skill` | YES | Label/alias/id match → `TaxonomyMatch` | Sets `matched_skill_id` |
+| `list_pathway_types` | YES | Enumerate pathway types | 11 values |
+| `validate_pathway_type` | YES | Parse/validate pathway | Raises on invalid |
+| `skills_for_role` | YES | Role → known seed skills | Skips absent refs |
+| `related_roles` | YES | Role → related canonical roles | Empty if none |
+
+#### Boundary Rules Verified
+
+| Boundary Rule | Result | Evidence | Notes |
+|---|---|---|---|
+| No database import | PASS | taxonomy source + tests | No SQLAlchemy |
+| No FastAPI route | PASS | No routes touched | No APIRouter |
+| No HTTP client | PASS | Import marker test | No requests/httpx |
+| No LLM client | PASS | Import marker test | No Gemini/OpenAI/Anthropic |
+| No external dataset ingestion | PASS | Seed catalog only | — |
+| No frontend integration | PASS | No `frontend/src` changes | — |
+| No CV Builder integration | PASS | Agents untouched | — |
+| No Roadmap integration | PASS | Agents untouched | — |
+| No Job Search integration | PASS | Agents untouched | — |
+| No API route exposure | PASS | No `api/routes` changes | — |
+
+#### Test Decision
+
+**TAXONOMY_REGISTRY_TESTS_ADDED_AND_PASSING**
+
+- Targeted: contract + registry → **24 passed**
+- Broader filter `taxonomy or roadmap or cv or export or studio_template` → **47 passed**
+
+#### 0051-F2 Decision
+
+**A TAXONOMY_REGISTRY_MVP_ACCEPTED_READY_FOR_0051_F3**
+
+#### Recommended Next Slice
+
+**Next slice: 0051-F3 Frontend Type/API Alignment Planning**
+
+- 0051-F3 should still not wire CV Builder or Roadmap behavior unless explicitly approved.
+- It should likely plan/prepare shared frontend/backend type expectations or a read-only API contract boundary first.
+
+#### 0051-F3 Guardrails
+
+- 0051-F3 must preserve CV Builder and Roadmap browser-tested flows.
+- 0051-F3 must not create broad UI rewiring.
+- 0051-F3 must not ingest external datasets.
+- 0051-F3 must not add database migrations by default.
+- 0051-F3 should keep taxonomy exposure read-only and contract-bound.
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:

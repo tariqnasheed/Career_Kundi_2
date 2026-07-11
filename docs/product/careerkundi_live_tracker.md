@@ -10,12 +10,12 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | 0051 Universal Role & Pathway Taxonomy |
-| Current Slice | 0051-F1 Taxonomy Contract Boundary |
+| Current Slice | 0051-F2 Backend Taxonomy Registry MVP |
 | Current Status | Completed / In review |
-| Last Completed Slice | 0051-F0 Universal Role & Pathway Taxonomy Planning |
-| Last Commit | `c01a1bee` — `docs(product): plan universal role pathway taxonomy` |
-| Last Push Status | Pushed (matched `origin/main` at 0051-F1 start) |
-| Next Slice | **0051-F2 Backend Taxonomy Registry MVP** |
+| Last Completed Slice | 0051-F1 Taxonomy Contract Boundary |
+| Last Commit | `182663e4` — `feat(taxonomy): add contract boundary` |
+| Last Push Status | Pushed (matched `origin/main` at 0051-F2 start) |
+| Next Slice | **0051-F3 Frontend Type/API Alignment Planning** |
 | Blocked Items | No active blockers |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
 
@@ -28,7 +28,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Master Build Plan | `docs/product/careerkundi_master_build_plan.md` |
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 
-**Pointers:** 0051-F0 Done · **0051-F1** contract Done · Next **0051-F2**.
+**Pointers:** 0051-F1 Done · **0051-F2** registry Done · Next **0051-F3**.
 
 ---
 
@@ -36,10 +36,10 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| UX-CHECKPOINT-1 | Post-CV/Roadmap UX | Done | Desktop UX evidence | `52e41165` | Yes | Decision B |
 | 0051-F0 | Taxonomy Planning | Done | Desktop F0 evidence | `c01a1bee` | Yes | Docs-only |
-| 0051-F1 | Taxonomy Contract Boundary | Done | `~/Desktop/CareerKundi_0051_F1_Taxonomy_Contract_Boundary_Evidence.txt` | This commit | Yes (with this push) | Pure contract; Decision A |
-| 0051-F2 | Backend Taxonomy Registry MVP | Planned | — | — | — | **Next** |
+| 0051-F1 | Taxonomy Contract Boundary | Done | Desktop F1 evidence | `182663e4` | Yes | Pure contract |
+| 0051-F2 | Backend Taxonomy Registry MVP | Done | `~/Desktop/CareerKundi_0051_F2_Taxonomy_Registry_MVP_Evidence.txt` | This commit | Yes (with this push) | In-memory; Decision A |
+| 0051-F3 | Frontend Type/API Alignment Planning | Planned | — | — | — | **Next** |
 
 ---
 
@@ -47,8 +47,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | 0051-F0 | `~/Desktop/CareerKundi_0051_F0_Taxonomy_Planning_Evidence.txt` | B …WITH_WATCH_ITEMS… | Plan only |
 | 2026-07-12 | 0051-F1 | `~/Desktop/CareerKundi_0051_F1_Taxonomy_Contract_Boundary_Evidence.txt` | A …READY_FOR_0051_F2… | Contract + tests |
+| 2026-07-12 | 0051-F2 | `~/Desktop/CareerKundi_0051_F2_Taxonomy_Registry_MVP_Evidence.txt` | A …READY_FOR_0051_F3… | Registry MVP |
 
 ---
 
@@ -56,8 +56,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | 0051-F0 | `c01a1bee` | Pushed | Docs-only |
-| 2026-07-12 | 0051-F1 | This commit (`feat(taxonomy): add contract boundary`) | Pushed with this slice | Package + tests + docs |
+| 2026-07-12 | 0051-F1 | `182663e4` | Pushed | Contract boundary |
+| 2026-07-12 | 0051-F2 | This commit (`feat(taxonomy): add registry MVP`) | Pushed with this slice | Registry + tests + docs |
 
 ---
 
@@ -65,8 +65,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Decision | Impact | Status |
 |---|---|---|---|
-| 2026-07-12 | 0051-F0 Decision B | Proceed to F1 contract boundary | Accepted |
 | 2026-07-12 | 0051-F1 Decision A | Proceed to F2 registry MVP | Accepted |
+| 2026-07-12 | 0051-F2 Decision A | Proceed to F3 type/API planning | Accepted |
 
 ---
 
@@ -80,13 +80,13 @@ No active product blockers. Watch: shell overflow @390; Platform CORS; CV PDF 4-
 
 | Field | Value |
 |---|---|
-| Next slice | **0051-F2 Backend Taxonomy Registry MVP** |
-| Reason | Contract boundary accepted; registry next |
-| Type | Backend registry around contract (no migrations/ingest by default) |
-| Evidence required | Per master § 0051-F2 Guardrails |
+| Next slice | **0051-F3 Frontend Type/API Alignment Planning** |
+| Reason | Registry MVP accepted; plan read-only type/API alignment |
+| Type | Planning / contract-bound; no broad UI rewiring |
+| Evidence required | Per master § 0051-F3 Guardrails |
 | Commit rule | Per master plan |
 | Push rule | Push after clean verification |
 
 ---
 
-*Tracker updated: 2026-07-12 — 0051-F1*
+*Tracker updated: 2026-07-12 — 0051-F2*

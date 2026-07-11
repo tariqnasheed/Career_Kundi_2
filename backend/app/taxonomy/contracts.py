@@ -279,16 +279,23 @@ class PathwayGoal(BaseModel):
 
 
 class TaxonomyMatch(BaseModel):
+    """Deterministic match result for roles or skills (0051-F2).
+
+    `matched_role_id` remains the role match field (F1 compat).
+    `matched_skill_id` is set for skill matches; both stay None on no-match.
+    """
+
     input_text: str
     normalized_text: str
     matched_role_id: str | None = None
+    matched_skill_id: str | None = None
     source: SourceType
     confidence: ConfidenceLevel
     explanation: str = ""
 
-    @field_validator("matched_role_id")
+    @field_validator("matched_role_id", "matched_skill_id")
     @classmethod
-    def _matched_role_id(cls, value: str | None) -> str | None:
+    def _optional_ids(cls, value: str | None) -> str | None:
         if value is None:
             return None
         return _validate_taxonomy_id(value)

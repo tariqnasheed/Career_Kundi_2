@@ -1,8 +1,8 @@
 """
-Universal Role & Pathway Taxonomy — contract boundary (0051-F1).
+Universal Role & Pathway Taxonomy — contract + registry (0051-F1/F2).
 
-Pure, deterministic types and helpers. No DB, FastAPI routes, LLM clients,
-or feature integrations in this package.
+Pure, deterministic types and in-memory registry. No DB, FastAPI routes,
+LLM clients, or feature integrations in this package.
 """
 
 from __future__ import annotations
@@ -29,6 +29,7 @@ from app.taxonomy.normalization import (
     safe_default_source,
     validate_source_confidence,
 )
+from app.taxonomy.registry import TaxonomyRegistry
 
 __all__ = [
     "SEED_CATALOG",
@@ -44,6 +45,7 @@ __all__ = [
     "SkillCluster",
     "SourceType",
     "TaxonomyMatch",
+    "TaxonomyRegistry",
     "build_taxonomy_match",
     "get_seed_catalog",
     "normalize_aliases",
