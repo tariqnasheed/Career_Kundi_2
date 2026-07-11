@@ -31,6 +31,7 @@ from app.api.routes import (
     profile,
     roadmap,
     role_packs,
+    taxonomy,
 )
 from app.api.routes import badges as badges_router
 from app.api.routes import queue as queue_router
@@ -174,6 +175,7 @@ def create_app() -> FastAPI:
     app.include_router(badges_router.router, prefix=api_v1_prefix)
     app.include_router(queue_router.router, prefix=api_v1_prefix)
     app.include_router(platform.router, prefix=api_v1_prefix)
+    app.include_router(taxonomy.router, prefix=api_v1_prefix)
 
     return app
 

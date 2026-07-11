@@ -3429,6 +3429,113 @@ Plan only — **do not implement in F3**. Likely home: `taxonomyApi` in `fronten
 
 ---
 
+### 0051-F4 Read-Only Backend Taxonomy API
+
+**Status:** Completed  
+**Type:** `READ_ONLY_BACKEND_API`  
+**Date:** 2026-07-12  
+**Preflight HEAD:** `fb41fd601631ab5f0e7a5791b12a03c292ad1e80`  
+**Evidence:** `~/Desktop/CareerKundi_0051_F4_Read_Only_Backend_Taxonomy_API_Evidence.txt`
+
+#### API Boundary Summary
+
+| Area | Before | Change Made | Result | Notes |
+|---|---|---|---|---|
+| backend taxonomy schemas | Missing | `backend/app/schemas/taxonomy.py` | Implemented | DTO layer only |
+| taxonomy router | Missing | `backend/app/api/routes/taxonomy.py` | Implemented | Read-only |
+| router registration | Missing | `main.py` include under `/api/v1` | Implemented | prefix `/taxonomy` |
+| health endpoint | Missing | GET `/api/v1/taxonomy/health` | Implemented | Public; `internal_seed` |
+| pathway-types endpoint | Missing | GET `/pathway-types` | Implemented | 11 types |
+| role match endpoint | Missing | POST `/roles/match` | Implemented | Deterministic |
+| skill match endpoint | Missing | POST `/skills/match` | Implemented | Deterministic |
+| role detail endpoint | Missing | GET `/roles/{role_id}` | Implemented | 404 via NotFoundError |
+| role skills endpoint | Missing | GET `/roles/{id}/skills` | Implemented | Seed skills only |
+| related roles endpoint | Missing | GET `/roles/{id}/related` | Implemented | Deterministic |
+| auth decision | N/A | Health public; others `get_current_user` | Documented | Tests override auth |
+| source/confidence preservation | Registry only | Match + seed DTOs | Preserved | Seed = suggested reference |
+| unknown/no-match behavior | Registry | API returns unknown | Explicit | No nearest guess |
+| external dataset ingestion | None | Flag false on health | NONE | — |
+| DB/API write behavior | N/A | No writes | NONE | Match POSTs are read-only |
+| feature integration | None | None | NONE | No CV/Roadmap/Jobs |
+
+#### Files Changed
+
+| File | Change Type | Reason | Scope |
+|---|---|---|---|
+| `backend/app/schemas/taxonomy.py` | Added | API DTO schemas | API boundary |
+| `backend/app/api/routes/taxonomy.py` | Added | Read-only routes | API boundary |
+| `backend/app/main.py` | Updated | Register taxonomy router | Registration |
+| `backend/tests/unit/test_taxonomy_api.py` | Added | API unit/TestClient coverage | Tests |
+| `docs/product/careerkundi_master_build_plan.md` | Updated | Record F4 | Docs |
+| `docs/product/careerkundi_live_tracker.md` | Updated | Position → F4 done / F5 next | Docs |
+
+#### API Contract Implemented
+
+| Endpoint | Method | Implemented | Auth | Response Model | Notes |
+|---|---|---|---|---|---|
+| `/api/v1/taxonomy/health` | GET | YES | Public | TaxonomyHealthRead | No DB |
+| `/api/v1/taxonomy/pathway-types` | GET | YES | Required | list[TaxonomyPathwayTypeRead] | 11 items |
+| `/api/v1/taxonomy/roles/match` | POST | YES | Required | TaxonomyMatchRead | Read-only match |
+| `/api/v1/taxonomy/skills/match` | POST | YES | Required | TaxonomyMatchRead | Read-only match |
+| `/api/v1/taxonomy/roles/{role_id}` | GET | YES | Required | TaxonomyRoleRead | 404 if missing |
+| `/api/v1/taxonomy/roles/{role_id}/skills` | GET | YES | Required | TaxonomyRoleSkillsRead | — |
+| `/api/v1/taxonomy/roles/{role_id}/related` | GET | YES | Required | TaxonomyRelatedRolesRead | — |
+
+#### Schema Contract Implemented
+
+| Schema | Implemented | Purpose | Notes |
+|---|---|---|---|
+| TaxonomyHealthRead | YES | Availability + counts | `external_dataset_ingestion=false` |
+| TaxonomyPathwayTypeRead | YES | Pathway enum DTO | id/label/description |
+| TaxonomyMatchRequest | YES | Match input | Trimmed non-empty text |
+| TaxonomyMatchRead | YES | Match output | role + skill ids |
+| TaxonomyRoleRead | YES | Role detail | Seed provenance suggested |
+| TaxonomySkillRead | YES | Skill detail | — |
+| TaxonomyRoleSkillsRead | YES | Role→skills | — |
+| TaxonomyRelatedRolesRead | YES | Related roles | — |
+| TaxonomyErrorRead | YES | Documented error shape | 404 uses NotFoundError envelope |
+
+#### Boundary Rules Verified
+
+| Boundary Rule | Result | Evidence | Notes |
+|---|---|---|---|
+| No database import | PASS | Route uses registry only; no Session | User type for Depends only |
+| No DB writes | PASS | No commit/flush/add | — |
+| No external HTTP calls | PASS | Import marker test | — |
+| No LLM client | PASS | Import marker test | — |
+| No external dataset ingestion | PASS | health flag false | — |
+| No frontend integration | PASS | No frontend changes | — |
+| No CV Builder integration | PASS | Agents untouched | — |
+| No Roadmap integration | PASS | Agents untouched | — |
+| No Job Search integration | PASS | Agents untouched | — |
+| No user data write | PASS | Read-only routes | — |
+
+#### Test Decision
+
+**TAXONOMY_API_TESTS_ADDED_AND_PASSING**
+
+- Targeted: contract + registry + API → **38 passed**
+- Broader filter `taxonomy or roadmap or cv or export or studio_template` → **61 passed**
+- Auth test setup: `TestClient` + empty lifespan + `get_current_user` override (no Postgres)
+
+#### 0051-F4 Decision
+
+**A READ_ONLY_TAXONOMY_API_ACCEPTED_READY_FOR_0051_F5**
+
+#### Recommended Next Slice
+
+**Next slice: 0051-F5 Frontend Taxonomy API Client + Types**
+
+#### 0051-F5 Guardrails
+
+- 0051-F5 may add frontend TypeScript types and taxonomyApi client only.
+- 0051-F5 must not add UI integration or feature hooks.
+- 0051-F5 must not change CV Builder or Roadmap behavior.
+- 0051-F5 must preserve backend API contract and tests.
+- 0051-F5 should include browser/API smoke only if frontend build/client use requires it.
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:
