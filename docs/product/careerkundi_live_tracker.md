@@ -10,13 +10,13 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | Post-UX0 Controlled Execution |
-| Current Slice | CVB-F4 CV Save / Load Versions |
+| Current Slice | CVB-F5 CV Browser-Tested Checkpoint |
 | Current Status | Completed / In review |
-| Last Completed Slice | CVB-F3 CV PDF Export Verification |
-| Last Commit | `3441a1c6` — `feat(cv-builder): verify PDF export flow` |
-| Last Push Status | Pushed (matched `origin/main` at CVB-F4 start) |
-| Next Slice | **CVB-F5 CV Browser-Tested Checkpoint** |
-| Blocked Items | Browser save/load journey `BLOCKED_BROWSER_SETUP` (does not block F5 planning) |
+| Last Completed Slice | CVB-F4 CV Save / Load Versions |
+| Last Commit | `bfabd845` — `feat(cv-builder): persist CV versions and templates` |
+| Last Push Status | Pushed (matched `origin/main` at CVB-F5 start) |
+| Next Slice | **ROAD-F0 Roadmap Audit** |
+| Blocked Items | No active blockers |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
 
 ---
@@ -28,7 +28,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Master Build Plan | `docs/product/careerkundi_master_build_plan.md` |
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 
-**Pointers:** CVB-F3 export · **CVB-F4 save/load + template persistence** (master § CVB-F4) · Next **CVB-F5**.
+**Pointers:** CVB-F4 save/load · **CVB-F5 browser checkpoint** (master § CVB-F5) · Next **ROAD-F0**.
 
 ---
 
@@ -36,11 +36,11 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| CVB-F2 | 15-Template Studio | Done | `~/Desktop/CareerKundi_CVB_F2_Template_Preview_Evidence.txt` | `ef3eff65` | Yes | Gallery redesign |
-| CVB-F3 | PDF Export Verification | Done | `~/Desktop/CareerKundi_CVB_F3_PDF_Export_Evidence.txt` | `3441a1c6` | Yes | Decision B → F4 |
-| CVB-F4 | Save/Load Versions | Done | `~/Desktop/CareerKundi_CVB_F4_Save_Load_Versions_Evidence.txt` | This commit | Yes (with this push) | Decision B → F5 |
-| CVB-F5 | Browser Checkpoint | Planned | — | — | — | **Next** |
-| ROAD-F0…F4 | Roadmap stabilization | Planned | — | — | — | After CVB-F5 |
+| CVB-F3 | PDF Export Verification | Done | `~/Desktop/CareerKundi_CVB_F3_PDF_Export_Evidence.txt` | `3441a1c6` | Yes | Decision B |
+| CVB-F4 | Save/Load Versions | Done | `~/Desktop/CareerKundi_CVB_F4_Save_Load_Versions_Evidence.txt` | `bfabd845` | Yes | Decision B → F5 |
+| CVB-F5 | Browser Checkpoint | Done | `~/Desktop/CareerKundi_CVB_F5_Browser_Checkpoint_Evidence.txt` | This commit | Yes (with this push) | Decision B → ROAD-F0 |
+| ROAD-F0 | Roadmap Audit | Planned | — | — | — | **Next** |
+| ROAD-F1…F4 | Roadmap stabilization | Planned | — | — | — | After ROAD-F0 |
 | 0051 | Role & Pathway Taxonomy | Planned | — | — | — | After ROAD gate |
 
 ---
@@ -49,9 +49,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | CVB-F2 | `~/Desktop/CareerKundi_CVB_F2_Template_Preview_Evidence.txt` | B …BROWSER_SETUP_BLOCKED… | |
-| 2026-07-12 | CVB-F3 | `~/Desktop/CareerKundi_CVB_F3_PDF_Export_Evidence.txt` | B CVB_F3_ACCEPTED_BROWSER_SETUP_BLOCKED_COMMITTED_PUSHED | template_id → 4 PDF styles |
-| 2026-07-12 | CVB-F4 | `~/Desktop/CareerKundi_CVB_F4_Save_Load_Versions_Evidence.txt` | B CVB_F4_ACCEPTED_BROWSER_SETUP_BLOCKED_COMMITTED_PUSHED | section_config `_studio` meta |
+| 2026-07-12 | CVB-F4 | `~/Desktop/CareerKundi_CVB_F4_Save_Load_Versions_Evidence.txt` | B …BROWSER_SETUP_BLOCKED… | section_config `_studio` |
+| 2026-07-12 | CVB-F5 | `~/Desktop/CareerKundi_CVB_F5_Browser_Checkpoint_Evidence.txt` | B CVB_F5_…MINOR_LIMITATIONS…COMMITTED_PUSHED | Full journey PASS; 4-family PDF caveat |
 
 ---
 
@@ -59,9 +58,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | CVB-F2 | `ef3eff65` | Pushed | Studio + 15 templates |
-| 2026-07-12 | CVB-F3 | `3441a1c6` | Pushed | Export + safe filename |
-| 2026-07-12 | CVB-F4 | This commit (`feat(cv-builder): persist CV versions and templates`) | Pushed with this slice | Save/load + studio template |
+| 2026-07-12 | CVB-F4 | `bfabd845` | Pushed | Save/load + studio template |
+| 2026-07-12 | CVB-F5 | This commit (`docs(product): record CV browser checkpoint`) | Pushed with this slice | Docs-only verification |
 
 ---
 
@@ -70,14 +68,13 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Date | Decision | Impact | Status |
 |---|---|---|---|
 | 2026-07 | 004E / Auto Apply frozen | Studio + Safe Apply | Accepted |
-| 2026-07-12 | PDF export maps studio templates to 4 CSS families | Honest limitation; full layout PDF later | Accepted |
-| 2026-07-12 | Studio template id in `section_config` meta (no migration) | Save/load restores gallery selection | Accepted |
+| 2026-07-12 | CV Builder browser checkpoint PASS | CVB ladder closed → ROAD-F0 | Accepted (minor: 4 PDF families) |
 
 ---
 
 ## 7. Active Blockers
 
-No active product blockers. Authenticated save→refresh→load→export journey `BLOCKED_BROWSER_SETUP` — re-check in CVB-F5.
+No active product blockers.
 
 ---
 
@@ -85,13 +82,13 @@ No active product blockers. Authenticated save→refresh→load→export journey
 
 | Field | Value |
 |---|---|
-| Next slice | **CVB-F5 CV Browser-Tested Checkpoint** |
-| Reason | Save/load + template persistence code-ready; need authenticated browser gate |
-| Type | BROWSER_CHECKPOINT |
-| Evidence required | `~/Desktop/CareerKundi_CVB_F5_Browser_Checkpoint_Evidence.txt` |
-| Commit rule | Per master §43 CVB-F5 card |
-| Push rule | Push after clean verification |
+| Next slice | **ROAD-F0 Roadmap Audit** |
+| Reason | CV Builder F0–F5 complete; start Roadmap stabilization |
+| Type | AUDIT_ONLY |
+| Evidence required | `~/Desktop/CareerKundi_ROAD_F0_Roadmap_Audit_Evidence.txt` |
+| Commit rule | Per master §43 ROAD-F0 card |
+| Push rule | Optional/yes after clean verification |
 
 ---
 
-*Tracker updated: 2026-07-12 — CVB-F4*
+*Tracker updated: 2026-07-12 — CVB-F5*

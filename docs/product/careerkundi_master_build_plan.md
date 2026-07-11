@@ -1910,7 +1910,7 @@ Every large feature should show: status label; readiness; known limitations; wha
 | CVB-F2 | Template Gallery + Preview | Templates | After F1 | Minimal | Gallery/preview | None | No AI rewrite | — | Build | Template+preview | CVB-F2 | Yes | No | CVB files | Yes | Planned |
 | CVB-F3 | PDF Export Verification | Export works | After F2 | Export path | Export UI | None | None | Safe filename | Build + open PDF | Export | CVB-F3 | Yes | No | CVB files | Yes | Planned |
 | CVB-F4 | Save/Load Versions | Persist CVs | After F3 | PATCH + section_config meta | Save/load UI | No | None | Ownership | API+UI tests | Save/refresh/load | CVB-F4 | Yes | Existing APIs | CV+API | Yes | Done (Decision B) |
-| CVB-F5 | CV Browser Checkpoint | Close CVB | After F3+F4 | — | — | — | — | — | Full | Full CV journey | CVB-F5 | Yes | No | evidence/docs | Yes | Planned |
+| CVB-F5 | CV Browser Checkpoint | Close CVB | After F3+F4 | — | — | — | — | — | Full | Full CV journey | CVB-F5 | Yes | No | evidence/docs | Yes | Done (Decision B) |
 | ROAD-F0 | Roadmap Audit | Audit only | Before repair | Inspect | Inspect | None | None | — | Manual | Open page | ROAD-F0 | Yes | No | docs | Optional | Planned |
 | ROAD-F1 | Roadmap UI Repair | Usable list | After F0 | Minimal | Roadmap page | None | No full AI engine | — | Build | List/empty/CTA | ROAD-F1 | Yes | No | ROAD files | Yes | Planned |
 | ROAD-F2 | Save/Load Contract | Persist roadmaps | After F1 | Roadmap APIs | Save/load | Maybe | None | Ownership | API tests | Create/refresh | ROAD-F2 | Yes | If contract | ROAD+API | Yes | Planned |
@@ -2249,6 +2249,7 @@ Next slice: **CVB-F5 CV Browser-Tested Checkpoint**
 
 - **CVB-F4 outcome (2026-07-12):** Decision **B** — code/tests/build accepted; browser save→refresh→load blocked by local setup; next = **CVB-F5**.
 
+### CVB-F5 CV Browser-Tested Checkpoint
 ### CVB-F5 — CV Browser-Tested Checkpoint
 - **Type:** BROWSER_CHECKPOINT  
 - **Goal:** Close CV Builder stabilization with full website verification.  
@@ -2257,9 +2258,58 @@ Next slice: **CVB-F5 CV Browser-Tested Checkpoint**
 - **Browser journey:** login → CV Builder → choose template → edit sections → preview → save → refresh → load → export PDF.  
 - **Tests:** Build + journey + console + dist ignored.  
 - **Evidence:** `~/Desktop/CareerKundi_CVB_F5_Browser_Checkpoint_Evidence.txt`  
-- **Commit message:** `test(cv-builder): record CV browser checkpoint` (or fix commit if needed)  
+- **Commit message:** `docs(product): record CV browser checkpoint`  
 - **Push:** Yes  
 - **Done definition:** Full journey PASS; acceptance gate items green  
+
+#### Browser Journey Summary
+
+| Journey Area | Result | Evidence | Issue Found | Follow-Up |
+|---|---|---|---|---|
+| runtime setup | PASS | `make dev-backend` pattern via `.venv/bin/uvicorn :8001`; `npm run dev :5173` | Docker `:8000` image pre-F4 (no PATCH) — used local `:8001` with current code | Rebuild docker backend later if needed |
+| auth session | PASS | Registered `cvbf5_*@example.com` via `/api/v1/auth/register`; UI login OK | Initial CORS miss for `127.0.0.1:5173` — fixed at runtime with `CORS_ORIGINS` env (no code commit) | Prefer `localhost` or keep both origins in local `.env` |
+| /cv-builder load | PASS | Studio header “Design a distinctive CV” | None | — |
+| 15-template gallery | PASS | 15 `.cv-template-card` buttons | None | — |
+| template preview switching | PASS | Minimal Corporate → Bold Sidebar → Editorial Modern → Engineering Blueprint | None | — |
+| Save Draft | PASS | “Draft saved”; library items=1 | First save runs generate (AI/mock) — ~seconds | — |
+| Load saved CV | PASS | After refresh, Load restored draft | None | — |
+| selected template persistence | PASS | Engineering Blueprint restored; copy “Template restored from saved version.” | None | — |
+| Export PDF | PASS | Download started | PDF style family still mapped (modern for Engineering Blueprint) | Full 15-layout PDF later |
+| safe filename | PASS | `CareerKundi_CVB-F5_Engineering_Draft_Engineering_Blueprint_CV.pdf` | None | — |
+| console health | PASS | No console errors | React Router v7 future-flag warnings only (pre-existing) | — |
+| network health | PASS | No failed `/api` responses in journey | None | — |
+| responsive quick check | PASS | 390×844 studio visible | None | — |
+
+#### Fixes Applied
+
+No product-code fixes were required in CVB-F5.
+
+Runtime-only (not committed): expanded `CORS_ORIGINS` for `http://127.0.0.1:5173` when starting local uvicorn on `:8001`.
+
+#### CV Builder Stabilization Decision
+
+`CV_BUILDER_BROWSER_CHECKPOINT_PASSED_WITH_MINOR_LIMITATIONS`
+
+Known remaining limitation (honest UI copy): PDF export maps studio templates to 4 CSS style families (modern/classic/compact/creative), not full 15-layout PDF parity.
+
+#### Remaining CV Builder Work
+
+| Remaining Work | Target Slice | Notes |
+|---|---|---|
+| Full 15-layout PDF rendering | Future approved slice | Still deferred; 4 CSS families |
+| AI CV rewriting | Future AI slice | Out of CVB |
+| Additional template polish | Future approved slice | Optional |
+| Mobile polish | Future if needed | Quick check OK at 390px |
+
+#### CVB-F5 Decision
+
+**B CVB_F5_BROWSER_CHECKPOINT_ACCEPTED_WITH_MINOR_LIMITATIONS**
+
+#### Recommended Next Slice
+
+Next slice: **ROAD-F0 Roadmap Audit**
+
+- **CVB-F5 outcome (2026-07-12):** Decision **B** — authenticated browser journey PASS (save/load/template restore/export); minor limitation = 4-family PDF mapping; next = **ROAD-F0**.
 
 ### ROAD-F0 — Roadmap Audit
 - **Type:** AUDIT_ONLY  
