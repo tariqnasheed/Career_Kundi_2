@@ -3034,6 +3034,96 @@ Docs-only contract (not implemented in F0). Proposed core entities:
 
 ---
 
+### 0051-F1 Taxonomy Contract Boundary
+
+**Status:** Completed  
+**Type:** `BACKEND_CONTRACT_BOUNDARY`  
+**Date:** 2026-07-12  
+**Preflight HEAD:** `c01a1bee763cd9b9b158256e5594cf1539488d1d`  
+**Evidence:** `~/Desktop/CareerKundi_0051_F1_Taxonomy_Contract_Boundary_Evidence.txt`
+
+#### Contract Boundary Summary
+
+| Area | Before | Change Made | Result | Notes |
+|---|---|---|---|---|
+| backend taxonomy package | Missing | Added `backend/app/taxonomy/` | EXISTING | Pure contract package |
+| contract entities | Planned in F0 only | Pydantic models for core entities | Implemented (MVP subset) | Compact subset of F0 list |
+| source/confidence model | Planned | `SourceType` + `ConfidenceLevel` + validators | Implemented | Blocks inferred/fallback as verified |
+| pathway type enum | Planned | 11 `PathwayType` values | Implemented | Matches F0 pathway set |
+| normalization helpers | Missing | `normalization.py` helpers | Implemented | Deterministic; no LLM |
+| seed catalog | Missing | Tiny internal illustrative catalog | Implemented | Not external ingestion |
+| import boundary | N/A | No FastAPI/SQLAlchemy/LLM imports | Verified by tests | Source inspection |
+| tests | Missing | `tests/unit/test_taxonomy_contract_boundary.py` | 11 passed | Plus related filter green |
+| feature integration | None | None | NONE | Explicitly out of F1 |
+| external dataset ingestion | None | None | NONE | O*NET/ESCO/NIST not ingested |
+
+#### Files Changed
+
+| File | Change Type | Reason | Scope |
+|---|---|---|---|
+| `backend/app/taxonomy/__init__.py` | Added | Public exports | Contract boundary |
+| `backend/app/taxonomy/contracts.py` | Added | Enums + entity models | Contract boundary |
+| `backend/app/taxonomy/normalization.py` | Added | Deterministic helpers | Contract boundary |
+| `backend/app/taxonomy/catalog.py` | Added | Tiny internal seed | Tests / illustration |
+| `backend/tests/unit/test_taxonomy_contract_boundary.py` | Added | Contract unit coverage | Tests |
+| `docs/product/careerkundi_master_build_plan.md` | Updated | Record F1 results | Docs |
+| `docs/product/careerkundi_live_tracker.md` | Updated | Position → F1 done / F2 next | Docs |
+
+#### Contract Entities Implemented
+
+| Entity / Enum | Implemented | Purpose | Notes |
+|---|---|---|---|
+| SourceType | YES | Provenance ladder | 8 values from F0 |
+| ConfidenceLevel | YES | User-facing confidence | Blocks unsafe verified claims |
+| SeniorityLevel | YES | Seniority indicators | Includes unknown |
+| PathwayType | YES | Pathway kinds | 11 values |
+| CareerDomain | YES | Domain bucket | id/label/aliases |
+| RoleFamily | YES | Family within domain | example_roles |
+| CanonicalRole | YES | Stable role identity | seniority_range + skills |
+| RoleAlias | YES | Alias → canonical | source + confidence |
+| SkillCluster | YES | Skill grouping | domain-linked |
+| Skill | YES | Atomic skill | evidence/tool examples |
+| PathwayGoal | YES | Goal instance | pathway_type + role |
+| TaxonomyMatch | YES | Resolve result shape | For future registry |
+
+#### Boundary Rules Verified
+
+| Boundary Rule | Result | Evidence | Notes |
+|---|---|---|---|
+| No database import | PASS | taxonomy source + unit test | No SQLAlchemy |
+| No FastAPI route | PASS | No routes touched; import test | No APIRouter |
+| No LLM client | PASS | Import marker test | No Gemini/OpenAI/Anthropic |
+| No external dataset ingestion | PASS | Tiny internal seed only | No O*NET/ESCO/NIST |
+| No frontend integration | PASS | No `frontend/src` changes | — |
+| No CV Builder integration | PASS | Agents/routes untouched | — |
+| No Roadmap integration | PASS | Agents/routes untouched | — |
+| No Job Search integration | PASS | Agents/routes untouched | — |
+
+#### Test Decision
+
+**TAXONOMY_CONTRACT_TESTS_ADDED_AND_PASSING**
+
+- Targeted: `tests/unit/test_taxonomy_contract_boundary.py` → **11 passed**
+- Broader filter `taxonomy or roadmap or cv or export or studio_template` → **34 passed**
+
+#### 0051-F1 Decision
+
+**A TAXONOMY_CONTRACT_BOUNDARY_ACCEPTED_READY_FOR_0051_F2**
+
+#### Recommended Next Slice
+
+**Next slice: 0051-F2 Backend Taxonomy Registry MVP**
+
+#### 0051-F2 Guardrails
+
+- 0051-F2 may create the backend registry MVP around the contract boundary.
+- 0051-F2 must not add database migrations by default.
+- 0051-F2 must not ingest external datasets.
+- 0051-F2 must not wire CV Builder/Roadmap/Job Search yet unless explicitly approved.
+- 0051-F2 must preserve deterministic taxonomy behavior and test coverage.
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:
