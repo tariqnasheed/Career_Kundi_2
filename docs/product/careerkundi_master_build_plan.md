@@ -928,6 +928,171 @@ UX0-S4 is a **docs-only** domain ownership contract.
 
 ---
 
+## UX0-S5 Implementation Ladder Checkpoint
+
+**Slice:** UX0-S5  
+**Date:** 2026-07-11  
+**Type:** Docs-only — closes UX0 planning and freezes immediate execution order  
+**Companion cards:** Final PF11-R1…ROAD-F4 cards live in §43 (updated by this slice).
+
+### 6.1 UX0 Planning Completion Summary
+
+| Slice | Purpose | Status | Commit | Evidence | Notes |
+|---|---|---|---|---|---|
+| UX0-S1 | Master build plan + separate live tracker | Done | `563f9884` | `~/Desktop/CareerKundi_UX0_S1_Master_Plan_Live_Tracker_Evidence.txt` | Docs only |
+| UX0-S2 | Navigation + sitemap contract | Done | `f9acda89` | `~/Desktop/CareerKundi_UX0_S2_Navigation_Sitemap_Evidence.txt` | Docs only |
+| UX0-S3 | Design system + component inventory | Done | `258441c1` | `~/Desktop/CareerKundi_UX0_S3_Design_System_Component_Inventory_Evidence.txt` | Docs only |
+| UX0-S4 | Backend/frontend domain ownership map | Done | `b803838c` | `~/Desktop/CareerKundi_UX0_S4_Domain_Ownership_Map_Evidence.txt` | Docs only |
+| UX0-S5 | Implementation ladder checkpoint | Completing | Pending this slice | `~/Desktop/CareerKundi_UX0_S5_Implementation_Ladder_Checkpoint_Evidence.txt` | Docs only |
+
+### 6.2 Transition Gate From UX Planning to Implementation
+
+CareerKundi may move from UX0 planning into controlled implementation only when:
+
+1. Master build plan exists  
+2. Live tracker exists  
+3. Navigation/sitemap contract exists  
+4. Design system/component inventory exists  
+5. Backend/frontend domain ownership map exists  
+6. Implementation ladder checkpoint exists  
+7. Live tracker identifies the exact next slice  
+8. Repo is clean  
+9. Latest commit is pushed  
+10. Frozen/deferred systems remain protected  
+
+If any item fails → **`BLOCKED_UX0_EXIT_GATE_INCOMPLETE`**.
+
+### 6.3 Final Immediate Execution Order
+
+Freeze this immediate order unless changed by a future decision record:
+
+1. **PF11-R1** Platform Shell Review / Refinement  
+2. **CVB-F0** CV Builder Audit  
+3. **CVB-F1** CV Builder UI Repair  
+4. **CVB-F2** CV Template Gallery + Preview  
+5. **CVB-F3** CV PDF Export Verification  
+6. **CVB-F4** CV Save/Load Versions  
+7. **CVB-F5** CV Browser-Tested Checkpoint  
+8. **ROAD-F0** Roadmap Audit  
+9. **ROAD-F1** Roadmap UI Repair  
+10. **ROAD-F2** Roadmap Save/Load Contract  
+11. **ROAD-F3** Roadmap Detail + Task Tracking  
+12. **ROAD-F4** Browser-Tested Checkpoint  
+13. **UX checkpoint before 0051** (docs/evidence gate)  
+14. **0051** Universal Role & Pathway Taxonomy  
+15. **0052** Career & Education Passport  
+
+**Rule:** Do not jump to 0051 until visible PF11 / CV Builder / Roadmap stabilization checkpoints are completed or explicitly deferred by decision record.
+
+### 6.4 Slice Type Classification
+
+| Slice | Type | Product Code Allowed? | Browser Journey Required? | Tests Required? | Commit Scope |
+|---|---|---|---|---|---|
+| PF11-R1 | AUDIT_ONLY (default); FRONTEND_VISIBLE if small approved refinement | Only if audit finds approved PF11-file fix | Yes | Build if code changed; docs checks always | Docs/evidence; optional PF11 UI files |
+| CVB-F0 | AUDIT_ONLY | No | Open page (manual) | Manual audit notes | Docs/evidence only |
+| CVB-F1 | FRONTEND_VISIBLE | Yes (CV UI files) | Load/edit/L/E/E | Frontend build | CV Builder FE |
+| CVB-F2 | FRONTEND_VISIBLE | Yes | Template + preview | Frontend build | CV Builder FE |
+| CVB-F3 | FRONTEND_VISIBLE or FULL_STACK | Yes (export path) | Export PDF | Build + PDF open | CV export FE/BE as needed |
+| CVB-F4 | FULL_STACK if persistence missing | Yes | Save/refresh/load | API + UI ownership tests | CV versions API + FE |
+| CVB-F5 | BROWSER_CHECKPOINT | Only if fix required | Full CV journey | Full risk-matched | Evidence (+ tiny fixes if needed) |
+| ROAD-F0 | AUDIT_ONLY | No | Open page | Manual audit | Docs/evidence only |
+| ROAD-F1 | FRONTEND_VISIBLE | Yes | List/empty/CTA | Frontend build | Roadmap FE |
+| ROAD-F2 | FULL_STACK if persistence missing | Yes | Create/refresh | API + ownership tests | Roadmap API + FE |
+| ROAD-F3 | FULL_STACK | Yes | Detail + task complete | API + UI | Roadmap detail/tasks |
+| ROAD-F4 | BROWSER_CHECKPOINT | Only if fix required | Full roadmap journey | Full risk-matched | Evidence (+ tiny fixes if needed) |
+| Pre-0051 UX checkpoint | ARCHITECTURE_GATE / DOCS_ONLY | No | No | Doc gate | Docs/tracker |
+| 0051 | BACKEND_VISIBLE / ARCHITECTURE_GATE | Yes (taxonomy module) | N/A early | Migration + tests | Taxonomy backend |
+| 0052 | FULL_STACK | Yes | Passport journey | Ownership + UI | Passport module + UI |
+
+### 6.5 Next Slice Cards Finalization
+
+The finalized cards for **PF11-R1 through ROAD-F4** are maintained in **§43 Detailed Technical Slice Cards** (expanded by UX0-S5). Each card includes: slice id, type, goal, allowed/forbidden files, backend/frontend/API/DB/AI/security tasks, tests, browser journey, evidence file, commit message, push rule, done definition.
+
+Do not copy full cards into the live tracker.
+
+### 6.6 Evidence Naming Convention
+
+```text
+~/Desktop/CareerKundi_<SLICE_ID>_<Short_Name>_Evidence.txt
+```
+
+Examples:
+
+- `~/Desktop/CareerKundi_PF11_R1_Platform_Shell_Review_Evidence.txt`
+- `~/Desktop/CareerKundi_CVB_F0_CV_Builder_Audit_Evidence.txt`
+- `~/Desktop/CareerKundi_CVB_F1_UI_Repair_Evidence.txt`
+- `~/Desktop/CareerKundi_CVB_F2_Template_Preview_Evidence.txt`
+- `~/Desktop/CareerKundi_CVB_F3_PDF_Export_Evidence.txt`
+- `~/Desktop/CareerKundi_CVB_F4_Save_Load_Evidence.txt`
+- `~/Desktop/CareerKundi_CVB_F5_Browser_Checkpoint_Evidence.txt`
+- `~/Desktop/CareerKundi_ROAD_F0_Roadmap_Audit_Evidence.txt`
+- `~/Desktop/CareerKundi_ROAD_F1_UI_Repair_Evidence.txt`
+- `~/Desktop/CareerKundi_ROAD_F2_Save_Load_Contract_Evidence.txt`
+- `~/Desktop/CareerKundi_ROAD_F3_Detail_Task_Tracking_Evidence.txt`
+- `~/Desktop/CareerKundi_ROAD_F4_Browser_Checkpoint_Evidence.txt`
+
+### 6.7 Commit Message Convention
+
+```text
+docs(product): <docs-only planning work>
+docs(product): record <audit/checkpoint>
+feat(frontend): <frontend visible feature>
+feat(<domain>): <full-stack/backend domain feature>
+test(<domain>): <test/checkpoint work>
+fix(<domain>): <bug fix within approved slice>
+```
+
+Rules:
+
+- One slice per commit where possible.  
+- Do not mix audit docs with product implementation unless explicitly approved.  
+- Do not commit generated build output.  
+- Do not use broad `git add`.  
+- Every accepted slice updates the live tracker.  
+- Master plan updates only when architecture / ladder / slice cards change.
+
+### 6.8 Implementation Acceptance Gate
+
+Every implementation slice must pass:
+
+1. Allowed files respected  
+2. Forbidden files untouched  
+3. Live tracker updated  
+4. Tests matched risk  
+5. Browser journey completed if user-visible  
+6. `frontend/dist` ignored if frontend build ran  
+7. Security/privacy reviewed if user data touched  
+8. No frozen systems touched  
+9. Evidence file created  
+10. Commit/push verified if required  
+
+If any item fails, use **`NEEDS_FIX`**, **`BLOCKED`**, or **`REJECTED`** — do not mark **`PASS_ACCEPTED`**.
+
+### 6.9 First Post-UX0 Slice Decision
+
+After UX0-S5, the next slice is:
+
+**PF11-R1 — Platform Shell Review / Refinement**
+
+**Reason:** PF11 created the first authenticated Platform shell. Before stabilizing CV Builder and Roadmaps, the Platform shell should be reviewed against the completed UX0 navigation, design system, and domain ownership contracts.
+
+**PF11-R1 default behavior:**
+
+- Start as **AUDIT_ONLY**.  
+- Do not modify product code unless the audit finds a small approved refinement inside PF11 allowed files.  
+- If no refinement is needed, commit only docs / live tracker / evidence.  
+- If refinement is needed, product-code change requires exact allowed files, browser journey, build check, and tracker update.
+
+### 6.10 UX0-S5 Implementation Decision
+
+UX0-S5 is a **docs-only** implementation ladder checkpoint.
+
+- No backend implementation is included in this slice.  
+- No frontend implementation is included in this slice.  
+- This slice **closes UX0 planning** and prepares **PF11-R1** as the next controlled execution slice.
+
+---
+
 ## 13. Dashboard Blueprint
 
 | Section | Purpose | Data | Backend source | Empty state | Primary action | Secondary | MVP | Future | Analytics | Tech notes |
@@ -1524,84 +1689,202 @@ Privacy/logging restrictions / Tests/evals
 - **Commit suggestion:** `docs(product): add domain ownership map`
 
 ### UX0-S5 — Implementation Ladder Checkpoint
-- **Goal:** Freeze next 10–15 slices and commit boundaries.
-- **Tasks:** confirm order; PF11-R1 need; CVB/ROAD order; exact next slice; evidence naming.
-- **Evidence:** `~/Desktop/CareerKundi_UX0_S5_Ladder_Checkpoint_Evidence.txt`
-- **Commit suggestion:** `docs(product): freeze next implementation ladder`
+- **Type:** DOCS_ONLY / ARCHITECTURE_GATE  
+- **Goal:** Freeze next execution order, evidence/commit conventions, and UX0 exit gate.  
+- **Allowed:** `docs/product/careerkundi_master_build_plan.md`, `docs/product/careerkundi_live_tracker.md`  
+- **Forbidden:** All product code; migrations; UI redesign; frozen 004E / Auto Apply  
+- **Backend/Frontend/API/DB/AI:** None  
+- **Security/privacy:** Protect frozen systems in tracker  
+- **Tests:** Doc section greps + git scope  
+- **Browser:** No  
+- **Evidence:** `~/Desktop/CareerKundi_UX0_S5_Implementation_Ladder_Checkpoint_Evidence.txt`  
+- **Commit message:** `docs(product): checkpoint implementation ladder`  
+- **Push:** Yes after verification  
+- **Done definition:** Exit gate documented; order frozen; next slice = PF11-R1; tracker updated  
 
 ### PF11-R1 — Platform Shell Review / Refinement
-- **Goal:** Review committed `/platform` against master UI architecture.
-- **Allowed:** Platform page/nav files only if refinement approved; else docs/evidence.
-- **Tasks:** inspect route, sidebar, breadcrumb, layout; subjects/goals only; L/E/E states; browser journey.
-- **Browser:** required. **Evidence:** `~/Desktop/CareerKundi_PF11_R1_Platform_Shell_Review_Evidence.txt`
-- **Commit:** only if approved fixes. **Push:** if committed.
+- **Type:** AUDIT_ONLY (default); FRONTEND_VISIBLE only if small approved refinement  
+- **Goal:** Review committed `/platform` against UX0 nav, design, and ownership contracts.  
+- **Allowed (audit):** docs/tracker + read-only inspect of Platform route/page/nav/header/api types.  
+- **Allowed (refinement only if approved):** `frontend/src/pages/PlatformPage.tsx` and only other PF11 files explicitly listed in the PF11-R1 prompt.  
+- **Forbidden:** Claims/privacy/geo UI; job_search; foundation_migrations; `frontend/dist`; Auto Apply; 004E repair; broad sidebar redesign.  
+- **Backend tasks:** None unless API contract mismatch proven (tiny fix only).  
+- **Frontend tasks:** Inspect route, sidebar placement, breadcrumb, layout, subjects/goals only, L/E/E states.  
+- **API/DB/AI:** Inspect platform subjects/goals envelopes; no migration; no AI.  
+- **Security/privacy:** Auth required; ownership already server-side; no auth bypass.  
+- **Tests:** Frontend build if code changed.  
+- **Browser journey:** login → `/platform` → list/create subject → create goal → refresh persist; console clean.  
+- **Evidence:** `~/Desktop/CareerKundi_PF11_R1_Platform_Shell_Review_Evidence.txt`  
+- **Commit message:** `docs(product): record PF11 platform shell review` or `fix(frontend): refine platform foundation shell`  
+- **Push:** Yes if committed  
+- **Done definition:** Review complete; subjects/goals-only confirmed; refinement either not needed or verified with journey  
 
 ### CVB-F0 — CV Builder Audit
-- **Implementation allowed:** No.
-- **Tasks:** find routes/components/types/API/PDF; run page; document breaks; define F1–F5.
-- **Evidence:** `~/Desktop/CareerKundi_CVB_F0_CV_Builder_Audit_Evidence.txt`
+- **Type:** AUDIT_ONLY  
+- **Goal:** Document current CV Builder routes/components/APIs/PDF/export and define F1–F5 precisely.  
+- **Allowed:** Docs/tracker/evidence; read-only inspect CV pages/components/API/types.  
+- **Forbidden:** Product code changes; AI rewrite features; folder rewrite.  
+- **Backend/Frontend/API/DB/AI:** Inspect only.  
+- **Security/privacy:** Note ownership assumptions.  
+- **Tests:** Manual page open notes.  
+- **Browser:** Open `/cv-builder` and record behavior (not a pass/fail product fix).  
+- **Evidence:** `~/Desktop/CareerKundi_CVB_F0_CV_Builder_Audit_Evidence.txt`  
+- **Commit message:** `docs(product): record CV Builder audit`  
+- **Push:** Optional/yes after verification  
+- **Done definition:** Broken behaviors listed; F1–F5 scoped; no code changes  
+- **Product code allowed:** No  
 
 ### CVB-F1 — CV Builder UI Repair
-- **Goal:** Page loads cleanly and is usable.
-- **Tasks:** route exists; no crash; sections display; L/E/E; fix imports/types; no advanced AI.
-- **Evidence:** `~/Desktop/CareerKundi_CVB_F1_UI_Repair_Evidence.txt`
-- **Commit suggestion:** `fix(cv-builder): repair CV Builder UI shell`
+- **Type:** FRONTEND_VISIBLE  
+- **Goal:** Make existing CV Builder page load cleanly and become usable.  
+- **Allowed:** CV Builder page/components/styles explicitly listed after F0; docs/tracker.  
+- **Forbidden:** Advanced AI generation; new domains; frozen systems; broad redesign.  
+- **Backend:** Minimal/none. **Frontend:** Route renders; sections display; L/E/E; fix imports/types.  
+- **API/DB/AI:** Use existing APIs only; no new persistence unless already present.  
+- **Security:** Auth page only.  
+- **Tests:** Frontend build.  
+- **Browser:** Load + basic edit without crash.  
+- **Evidence:** `~/Desktop/CareerKundi_CVB_F1_UI_Repair_Evidence.txt`  
+- **Commit message:** `fix(cv-builder): repair CV Builder UI shell`  
+- **Push:** Yes  
+- **Done definition:** Usable shell with required UI states  
 
-### CVB-F2 — Template Gallery + Preview
-- **Goal:** Template selection + preview-before-download.
-- **Tasks:** template metadata; gallery; ATS + modern templates; live preview; selected template state; no AI rewriting unless approved.
-- **Evidence:** `~/Desktop/CareerKundi_CVB_F2_Templates_Preview_Evidence.txt`
-- **Commit suggestion:** `feat(cv-builder): add template gallery and preview`
+### CVB-F2 — CV Template Gallery + Preview
+- **Type:** FRONTEND_VISIBLE  
+- **Goal:** Template selection + preview-before-download.  
+- **Allowed:** CV Builder FE files listed in slice prompt; docs/tracker.  
+- **Forbidden:** AI rewriting unless explicitly approved; backend migrations unless required and approved.  
+- **Backend:** Minimal/none. **Frontend:** Template metadata; gallery; ATS + modern; live preview; selected template state.  
+- **API/DB/AI:** No AI.  
+- **Security:** Auth.  
+- **Tests:** Frontend build.  
+- **Browser:** Choose template → preview updates.  
+- **Evidence:** `~/Desktop/CareerKundi_CVB_F2_Template_Preview_Evidence.txt`  
+- **Commit message:** `feat(frontend): add CV template gallery and preview`  
+- **Push:** Yes  
+- **Done definition:** Gallery + preview working for approved templates  
 
 ### CVB-F3 — CV PDF Export Verification
-- **Goal:** Stabilize PDF export.
-- **Tasks:** inspect PDF approach; template exports; safe filename; opens/downloads; no generated files tracked.
-- **Evidence:** `~/Desktop/CareerKundi_CVB_F3_PDF_Export_Evidence.txt`
-- **Commit suggestion:** `fix(cv-builder): verify and stabilize PDF export`
+- **Type:** FRONTEND_VISIBLE or FULL_STACK (depending export architecture found in F0)  
+- **Goal:** Verify and stabilize CV PDF export.  
+- **Allowed:** Export-related FE/BE files listed after F0; docs/tracker.  
+- **Forbidden:** Tracking generated PDFs; unrelated refactors.  
+- **Backend/Frontend:** Inspect PDF library/approach; ensure selected template exports; safe filename.  
+- **API/DB/AI:** Existing export path; no AI.  
+- **Security:** Safe filenames; auth.  
+- **Tests:** Build + open/download PDF.  
+- **Browser:** Export succeeds; file opens.  
+- **Evidence:** `~/Desktop/CareerKundi_CVB_F3_PDF_Export_Evidence.txt`  
+- **Commit message:** `fix(cv-builder): verify and stabilize PDF export`  
+- **Push:** Yes  
+- **Done definition:** Export works; dist/artifacts not tracked  
 
 ### CVB-F4 — CV Save/Load Versions
-- **Goal:** Persist CV versions.
-- **Possible API:** `GET/POST /api/v1/cv-builder/versions`, `GET/PATCH /api/v1/cv-builder/versions/{id}` (planned, not claimed existing).
-- **Rules:** belongs to authenticated user/subject; ownership checks.
-- **Evidence:** `~/Desktop/CareerKundi_CVB_F4_Save_Load_Evidence.txt`
-- **Commit suggestion:** `feat(cv-builder): add CV version save and load`
+- **Type:** FULL_STACK (if persistence missing)  
+- **Goal:** Persist CV versions so users do not lose work.  
+- **Allowed:** CV version API/routes/schemas/services/models + FE save/load UI as listed; docs/tracker.  
+- **Forbidden:** Cross-user access; claims ownership; Auto Apply.  
+- **Backend:** Versions CRUD with ownership. **Frontend:** Save/load UI.  
+- **API:** Planned shape `GET/POST /api/v1/cv-builder/versions`, `GET/PATCH .../{id}` (verify existing before inventing).  
+- **DB/Migration:** Only if required and approved.  
+- **AI:** None.  
+- **Security/privacy:** Every CV belongs to authenticated user/subject; ownership checks.  
+- **Tests:** API ownership + UI persist.  
+- **Browser:** Save → refresh → load.  
+- **Evidence:** `~/Desktop/CareerKundi_CVB_F4_Save_Load_Evidence.txt`  
+- **Commit message:** `feat(cv-builder): add CV version save and load`  
+- **Push:** Yes  
+- **Done definition:** Persist across refresh with ownership enforced  
 
 ### CVB-F5 — CV Browser-Tested Checkpoint
-- **Goal:** Close CV stabilization with website verification.
-- **Browser:** login → CV Builder → template → edit → preview → save → refresh → load → export PDF.
-- **Evidence:** `~/Desktop/CareerKundi_CVB_F5_Browser_Checkpoint_Evidence.txt`
+- **Type:** BROWSER_CHECKPOINT  
+- **Goal:** Close CV Builder stabilization with full website verification.  
+- **Allowed:** Docs/tracker/evidence; tiny fixes only if journey fails and files are approved.  
+- **Forbidden:** New features; scope expansion into 0051.  
+- **Browser journey:** login → CV Builder → choose template → edit sections → preview → save → refresh → load → export PDF.  
+- **Tests:** Build + journey + console + dist ignored.  
+- **Evidence:** `~/Desktop/CareerKundi_CVB_F5_Browser_Checkpoint_Evidence.txt`  
+- **Commit message:** `test(cv-builder): record CV browser checkpoint` (or fix commit if needed)  
+- **Push:** Yes  
+- **Done definition:** Full journey PASS; acceptance gate items green  
 
 ### ROAD-F0 — Roadmap Audit
-- **Implementation allowed:** No.
-- **Tasks:** find routes/components/APIs; run page; document behavior; compare to platform-wide placement; define F1–F4.
-- **Evidence:** `~/Desktop/CareerKundi_ROAD_F0_Roadmap_Audit_Evidence.txt`
+- **Type:** AUDIT_ONLY  
+- **Goal:** Document current roadmap routes/components/APIs vs platform-wide placement; define F1–F4.  
+- **Allowed:** Docs/tracker/evidence; read-only inspect.  
+- **Forbidden:** Product code; Graduate Launch ownership confusion in docs.  
+- **Product code allowed:** No  
+- **Browser:** Open `/roadmap` and record behavior.  
+- **Evidence:** `~/Desktop/CareerKundi_ROAD_F0_Roadmap_Audit_Evidence.txt`  
+- **Commit message:** `docs(product): record Roadmap audit`  
+- **Push:** Optional/yes  
+- **Done definition:** Audit complete; F1–F4 scoped  
 
 ### ROAD-F1 — Roadmap UI Repair
-- **Goal:** Load usable surface; list or empty; create CTA; no full AI engine; no Graduate Launch ownership confusion.
-- **Evidence:** `~/Desktop/CareerKundi_ROAD_F1_UI_Repair_Evidence.txt`
-- **Commit suggestion:** `fix(roadmaps): repair Roadmap UI shell`
+- **Type:** FRONTEND_VISIBLE  
+- **Goal:** Make Roadmap page load and display a usable surface.  
+- **Allowed:** Roadmap page/components listed after F0; docs/tracker.  
+- **Forbidden:** Full AI roadmap engine; Graduate-only ownership of all roadmaps; 004E/Auto Apply.  
+- **Frontend:** Route exists; list or empty; create CTA.  
+- **Backend/API/DB/AI:** Minimal/none; no full AI engine.  
+- **Tests:** Frontend build.  
+- **Browser:** List/empty/CTA.  
+- **Evidence:** `~/Desktop/CareerKundi_ROAD_F1_UI_Repair_Evidence.txt`  
+- **Commit message:** `fix(roadmaps): repair Roadmap UI shell`  
+- **Push:** Yes  
+- **Done definition:** Usable list/empty/CTA surface  
 
 ### ROAD-F2 — Roadmap Save/Load Contract
-- **Possible API:** `GET/POST /api/v1/roadmaps`, `GET/PATCH /api/v1/roadmaps/{id}`, `POST .../tasks`, `PATCH .../tasks/{task_id}` (planned).
-- **Rules:** belongs to user/subject; ownership; no cross-user access.
-- **Evidence:** `~/Desktop/CareerKundi_ROAD_F2_Save_Load_Evidence.txt`
-- **Commit suggestion:** `feat(roadmaps): add roadmap save and load contract`
+- **Type:** FULL_STACK if persistence missing  
+- **Goal:** Persist roadmaps with ownership.  
+- **Allowed:** Roadmap API/FE files listed after F0/F1; docs/tracker.  
+- **Forbidden:** Cross-user access; inventing endpoints as existing without verify.  
+- **API shape (planned):** `GET/POST /api/v1/roadmaps`, `GET/PATCH /api/v1/roadmaps/{id}`, task routes as needed — verify before coding.  
+- **Security:** Belongs to user/subject; ownership checks.  
+- **Tests:** API ownership + create/refresh.  
+- **Browser:** Create → refresh → still present.  
+- **Evidence:** `~/Desktop/CareerKundi_ROAD_F2_Save_Load_Contract_Evidence.txt`  
+- **Commit message:** `feat(roadmaps): add roadmap save and load contract`  
+- **Push:** Yes  
+- **Done definition:** Persist + ownership enforced  
 
 ### ROAD-F3 — Roadmap Detail + Task Tracking
-- **Goal:** Detail with milestones, tasks, completion, progress, persistence.
-- **Evidence:** `~/Desktop/CareerKundi_ROAD_F3_Detail_Tasks_Evidence.txt`
-- **Commit suggestion:** `feat(roadmaps): add roadmap detail and task tracking`
+- **Type:** FULL_STACK  
+- **Goal:** Detail with milestones, tasks, completion, progress, persistence.  
+- **Allowed:** Detail/task FE + matching API files listed in prompt; docs/tracker.  
+- **Forbidden:** Taxonomy intelligence requiring 0051; Graduate Launch takeover.  
+- **Frontend:** Timeline; milestone cards; task list; completion; progress.  
+- **Backend/API:** Task create/update as needed with ownership.  
+- **Tests:** API + UI.  
+- **Browser:** Complete task → refresh persist.  
+- **Evidence:** `~/Desktop/CareerKundi_ROAD_F3_Detail_Task_Tracking_Evidence.txt`  
+- **Commit message:** `feat(roadmaps): add roadmap detail and task tracking`  
+- **Push:** Yes  
+- **Done definition:** Detail + tasks persist  
+
+### ROAD-F4 — Roadmap Browser-Tested Checkpoint
+- **Type:** BROWSER_CHECKPOINT  
+- **Goal:** Close Roadmap stabilization with full website verification.  
+- **Allowed:** Docs/tracker/evidence; tiny approved fixes only if journey fails.  
+- **Forbidden:** Jumping to 0051 without gate; new engines.  
+- **Browser journey:** login → Roadmaps → create/open → complete task → refresh → progress persists.  
+- **Tests:** Build + journey + console + dist ignored.  
+- **Evidence:** `~/Desktop/CareerKundi_ROAD_F4_Browser_Checkpoint_Evidence.txt`  
+- **Commit message:** `test(roadmaps): record Roadmap browser checkpoint`  
+- **Push:** Yes  
+- **Done definition:** Full journey PASS; ready for pre-0051 UX checkpoint  
 
 ---
 
 ## 44. Key Technical Slice Notes
 
-See Section 43 cards for UX0-S2…ROAD-F3. Additional emphasis:
+See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:
 
-- **UX0-S2:** backend none; frontend inspect only unless approved.
-- **PF11-R1:** verify subjects/goals only; no claims UI creep.
-- **CVB-F0 / ROAD-F0:** implementation not allowed.
-- **CVB-F4 / ROAD-F2:** ownership checks mandatory on every object route.
+- **UX0-S5:** UX0 planning closed; next = PF11-R1.  
+- **PF11-R1:** subjects/goals only; no claims UI creep; audit-first.  
+- **CVB-F0 / ROAD-F0:** implementation not allowed.  
+- **CVB-F4 / ROAD-F2:** ownership checks mandatory on every object route.  
+- **Do not jump to 0051** until PF11/CVB/ROAD checkpoints complete or deferred by ADR.
 
 ---
 

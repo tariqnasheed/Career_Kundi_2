@@ -9,13 +9,13 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Field | Value |
 |---|---|
-| Current Phase | UX0 Planning |
-| Current Slice | UX0-S4 Backend/Frontend Domain Ownership Map |
-| Current Status | Done (domain ownership map documented) |
-| Last Completed Slice | UX0-S3 Design System + Component Inventory |
-| Last Commit | `258441c1` — `docs(product): add design system and component inventory` |
-| Last Push Status | Pushed (matched `origin/main` at UX0-S4 start) |
-| Next Slice | UX0-S5 Implementation Ladder Checkpoint |
+| Current Phase | UX0 Planning → closing |
+| Current Slice | UX0-S5 Implementation Ladder Checkpoint |
+| Current Status | Done (ladder checkpoint documented; UX0 planning closed) |
+| Last Completed Slice | UX0-S4 Backend/Frontend Domain Ownership Map |
+| Last Commit | `b803838c` — `docs(product): add domain ownership map` |
+| Last Push Status | Pushed (matched `origin/main` at UX0-S5 start) |
+| Next Slice | **PF11-R1 Platform Shell Review / Refinement** |
 | Blocked Items | None |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
 
@@ -30,11 +30,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 **Rules:** Read both before every slice. Update this tracker every slice. Update the master plan only when architecture, ladder, slice cards, or major decisions change.
 
-**Pointers (do not duplicate full tables here):**
-
-- UX0-S2 → Navigation + Sitemap Contract  
-- UX0-S3 → Design System + Component Inventory  
-- UX0-S4 → Backend / Frontend Domain Ownership Map  
+**Pointers:** UX0-S2 nav · UX0-S3 design · UX0-S4 ownership · **UX0-S5 ladder checkpoint** (master § UX0-S5). Final PF11-R1…ROAD-F4 cards in master §43.
 
 ---
 
@@ -42,18 +38,16 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| 0050 | Platform Foundation | Done | VERIFY_IN_REPO | `29a27493` | Yes | |
-| CP4-B | frontend/dist cleanup | Done | VERIFY_IN_REPO | `6c1ac4fe` | Yes | |
-| PF11 | Platform Foundation Shell | Done | VERIFY_IN_REPO | `3b8827ec` | Yes | |
 | UX0-S1 | Master Plan + Live Tracker | Done | `~/Desktop/CareerKundi_UX0_S1_Master_Plan_Live_Tracker_Evidence.txt` | `563f9884` | Yes | |
-| UX0-S2 | Navigation + Sitemap Contract | Done | `~/Desktop/CareerKundi_UX0_S2_Navigation_Sitemap_Evidence.txt` | `f9acda89` | Yes | |
-| UX0-S3 | Design System + Component Inventory | Done | `~/Desktop/CareerKundi_UX0_S3_Design_System_Component_Inventory_Evidence.txt` | `258441c1` | Yes | |
-| UX0-S4 | Domain Ownership Map | Done | `~/Desktop/CareerKundi_UX0_S4_Domain_Ownership_Map_Evidence.txt` | This commit | Yes (with this push) | Docs only |
-| UX0-S5 | Ladder Checkpoint | Planned | — | — | — | Next |
-| PF11-R1 | Platform Shell Review | Planned | — | — | — | |
-| CVB-F0 | CV Builder Audit | Planned | — | — | — | Audit only |
-| ROAD-F0 | Roadmap Audit | Planned | — | — | — | Audit only |
-| 0051 | Role & Pathway Taxonomy | Planned | — | — | — | |
+| UX0-S2 | Navigation + Sitemap | Done | `~/Desktop/CareerKundi_UX0_S2_Navigation_Sitemap_Evidence.txt` | `f9acda89` | Yes | |
+| UX0-S3 | Design System Inventory | Done | `~/Desktop/CareerKundi_UX0_S3_Design_System_Component_Inventory_Evidence.txt` | `258441c1` | Yes | |
+| UX0-S4 | Domain Ownership Map | Done | `~/Desktop/CareerKundi_UX0_S4_Domain_Ownership_Map_Evidence.txt` | `b803838c` | Yes | |
+| UX0-S5 | Ladder Checkpoint | Done | `~/Desktop/CareerKundi_UX0_S5_Implementation_Ladder_Checkpoint_Evidence.txt` | This commit | Yes (with this push) | Closes UX0 |
+| PF11-R1 | Platform Shell Review | Planned | — | — | — | **Next** (audit-first) |
+| CVB-F0 | CV Builder Audit | Planned | — | — | — | After PF11-R1 |
+| CVB-F1…F5 | CV stabilization | Planned | — | — | — | See master §43 |
+| ROAD-F0…F4 | Roadmap stabilization | Planned | — | — | — | After CVB-F5 |
+| 0051 | Role & Pathway Taxonomy | Planned | — | — | — | After ROAD-F4 + gate |
 
 ---
 
@@ -61,10 +55,11 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-11 | UX0-S1 | `~/Desktop/CareerKundi_UX0_S1_Master_Plan_Live_Tracker_Evidence.txt` | A …COMMITTED_PUSHED | Docs |
-| 2026-07-11 | UX0-S2 | `~/Desktop/CareerKundi_UX0_S2_Navigation_Sitemap_Evidence.txt` | A UX0_NAVIGATION_SITEMAP_CONTRACT_COMMITTED_PUSHED | Docs |
-| 2026-07-11 | UX0-S3 | `~/Desktop/CareerKundi_UX0_S3_Design_System_Component_Inventory_Evidence.txt` | A UX0_DESIGN_SYSTEM_COMPONENT_INVENTORY_COMMITTED_PUSHED | Docs |
-| 2026-07-11 | UX0-S4 | `~/Desktop/CareerKundi_UX0_S4_Domain_Ownership_Map_Evidence.txt` | A UX0_DOMAIN_OWNERSHIP_MAP_COMMITTED_PUSHED | Docs-only |
+| 2026-07-11 | UX0-S1 | `~/Desktop/CareerKundi_UX0_S1_Master_Plan_Live_Tracker_Evidence.txt` | A …COMMITTED_PUSHED | |
+| 2026-07-11 | UX0-S2 | `~/Desktop/CareerKundi_UX0_S2_Navigation_Sitemap_Evidence.txt` | A …COMMITTED_PUSHED | |
+| 2026-07-11 | UX0-S3 | `~/Desktop/CareerKundi_UX0_S3_Design_System_Component_Inventory_Evidence.txt` | A …COMMITTED_PUSHED | |
+| 2026-07-11 | UX0-S4 | `~/Desktop/CareerKundi_UX0_S4_Domain_Ownership_Map_Evidence.txt` | A …COMMITTED_PUSHED | |
+| 2026-07-11 | UX0-S5 | `~/Desktop/CareerKundi_UX0_S5_Implementation_Ladder_Checkpoint_Evidence.txt` | A UX0_IMPLEMENTATION_LADDER_CHECKPOINT_COMMITTED_PUSHED | Docs-only |
 
 ---
 
@@ -72,13 +67,11 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07 | 0050 | `29a27493` | Pushed | Platform foundation |
-| 2026-07 | CP4-B | `6c1ac4fe` | Pushed | dist ignored |
-| 2026-07-11 | PF11 | `3b8827ec` | Pushed | Platform shell |
 | 2026-07-11 | UX0-S1 | `563f9884` | Pushed | Master plan + tracker |
 | 2026-07-11 | UX0-S2 | `f9acda89` | Pushed | Nav/sitemap |
 | 2026-07-11 | UX0-S3 | `258441c1` | Pushed | Design inventory |
-| 2026-07-11 | UX0-S4 | This commit (`docs(product): add domain ownership map`) | Pushed with this slice | Ownership map |
+| 2026-07-11 | UX0-S4 | `b803838c` | Pushed | Ownership map |
+| 2026-07-11 | UX0-S5 | This commit (`docs(product): checkpoint implementation ladder`) | Pushed with this slice | Ladder checkpoint |
 
 ---
 
@@ -87,9 +80,9 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Date | Decision | Impact | Status |
 |---|---|---|---|
 | 2026-07 | 004E / Auto Apply frozen | Studio + Safe Apply | Accepted |
-| 2026-07 | Roadmaps platform-wide | Not Graduate-only | Accepted |
-| 2026-07-11 | UX0 docs-only S1–S3 | Contracts before code | Accepted |
-| 2026-07-11 | UX0-S4 ownership gate; no giant FE/BE restructure | Implement domains after UX0-S5 | Accepted |
+| 2026-07-11 | UX0 S1–S4 contracts complete | Planning foundation | Accepted |
+| 2026-07-11 | Immediate order: PF11-R1 → CVB-F0…F5 → ROAD-F0…F4 → gate → 0051 | No jump to 0051 early | Accepted |
+| 2026-07-11 | Next execution slice = PF11-R1 (audit-first) | Controlled implementation start | Accepted |
 
 ---
 
@@ -103,14 +96,16 @@ No active blockers.
 
 | Field | Value |
 |---|---|
-| Next slice | **UX0-S5 Implementation Ladder Checkpoint** |
-| Reason | Freeze next 10–15 execution slices and commit boundaries before CVB/ROAD |
-| Allowed files | Docs only unless explicitly approved |
-| Forbidden files | Product code; migrations; UI redesign; frozen 004E / Auto Apply |
-| Evidence required | `~/Desktop/CareerKundi_UX0_S5_Ladder_Checkpoint_Evidence.txt` |
-| Commit rule | Docs-only after evidence review |
+| Next slice | **PF11-R1 Platform Shell Review / Refinement** |
+| Reason | Review `/platform` against UX0 nav/design/ownership before CVB/ROAD |
+| Type | AUDIT_ONLY by default; FRONTEND_VISIBLE only if tiny approved PF11 fix |
+| Allowed files | Docs/tracker + read-only inspect; product files only if refinement approved and listed |
+| Forbidden files | Claims/privacy UI; job_search; foundation_migrations; dist; 004E; Auto Apply |
+| Evidence required | `~/Desktop/CareerKundi_PF11_R1_Platform_Shell_Review_Evidence.txt` |
+| Browser journey | login → `/platform` → subject → goal → refresh |
+| Commit rule | Docs review commit, or `fix(frontend): refine platform foundation shell` if approved |
 | Push rule | Push after clean verification unless paused |
 
 ---
 
-*Tracker updated: 2026-07-11 — UX0-S4*
+*Tracker updated: 2026-07-11 — UX0-S5*
