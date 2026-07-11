@@ -2842,6 +2842,198 @@ Next slice: **0051 Universal Role & Pathway Taxonomy Planning**
 
 ---
 
+### 0051-F0 Universal Role & Pathway Taxonomy Planning
+
+**Status:** Completed (docs-only planning/audit)  
+**Type:** `PLANNING_AUDIT_ONLY` — no product-code implementation in F0  
+**Date:** 2026-07-12  
+**Preflight HEAD:** `52e4116592179a7e697a0b3f6ed4fff8720d8571` (`docs(product): record post-CV Roadmap UX checkpoint`)  
+**Evidence:** `~/Desktop/CareerKundi_0051_F0_Taxonomy_Planning_Evidence.txt`
+
+#### Why 0051 Exists
+
+0051 creates a **platform foundation** for consistent role and pathway understanding across CV Builder, Roadmap, Job Search, Interview Packs, Study Materials, and future CareerKundi modules.
+
+It should prevent hardcoded one-feature interpretations of roles — e.g. treating Roadmap as only Graduate Launch, or treating CV Builder role text as isolated freeform text with no shared meaning across features.
+
+It should support **global, platform-wide career pathways** while remaining evidence-grounded and not overbuilding. External taxonomies (O*NET, ESCO, NIST NICE) are **reference patterns only** in this phase — not ingested datasets and not licensing obligations.
+
+**UX-CHECKPOINT-1 facts used:** `READY_FOR_0051_WITH_WATCH_ITEMS`; CV Builder (15-template gallery, save/load, PDF 4-family); Roadmap (`/roadmap` + `/roadmaps`, generate/load/detail, skill-based tracking); watch items: PDF mapping, no Task model, shell overflow @390, Platform CORS, advanced roadmap engine future; old 004E and Auto Apply remain frozen.
+
+#### Current Repository Role / Pathway Inventory
+
+| Area | Verified File / Module | Current Role/Pathway Concept | Current Status | Risk | 0051 Opportunity |
+|---|---|---|---|---|---|
+| CV Builder | `frontend/src/pages/CVBuilderPage.tsx`; `backend/app/schemas/cv_builder.py`; `backend/app/api/routes/cv_builder.py`; `backend/app/agents/cv_builder/*` | Freeform `target_role_title` / `target_role_description`; optional `target_job_id`; `generation_mode=role_targeted`; studio templates | PARTIAL_EXISTING | Role text not shared with Roadmap/Job Search | Hook generate/tailor to CanonicalRole + provenance |
+| Roadmap | `frontend/src/pages/RoadmapPage.tsx`; `backend/app/api/routes/roadmap.py`; `backend/app/schemas/roadmap.py`; `backend/app/agents/roadmap/*`; `backend/app/db/models/roadmap.py` | Freeform `target_role`; hardcoded `SAMPLE_ROLES`; UI pathway examples (skill gap / switch / graduate); `RoleTaxonomyAgent` + `graph_rag.get_skills_for_role` + `mock_data.infer_required_skills` fallback | PARTIAL_EXISTING / HARDCODED | Tech-skewed samples; LLM taxonomy can fail → mock skills; no PathwayType field | Map `target_role` → CanonicalRole; add PathwayType without Task model |
+| Jobs / Job Search | `frontend/src/pages/JobSearchPage.tsx` (JobsPage.tsx **MISSING**); `backend/app/api/routes/job_search.py`; `backend/app/schemas/job_search.py`; `backend/app/agents/job_search/*` | Profile `job_title` / `seniority_level`; JD-driven packs; domain/archetype/intent inside job_search knowledge | PARTIAL_EXISTING | Role meaning local to compiler | Shared CanonicalRole + SkillCluster with packs |
+| Interview Pack / Study Material | `backend/app/services/role_pack_library.py`; `backend/app/agents/job_search/knowledge/*`; `backend/app/tools/document_export.py` | Role packs by job title; skill domains; evidence slots | PARTIAL_EXISTING / HARDCODED | Curated packs ≠ universal taxonomy | Alias → pack routing; confidence labels |
+| Dashboard | `frontend/src/pages/DashboardPage.tsx` | Shows `activeRoadmap.target_role` | EXISTING_VERIFIED | Display-only free text | Display canonical title + pathway type later |
+| Profile | `frontend/src/pages/ProfilePage.tsx`; `backend/app/db/models/profile.py` | Profile `job_title` as career SoT for AI features | PARTIAL_EXISTING | No canonical role id | Profile ↔ RoleAlias mapping |
+| Platform page | `frontend/src/pages/PlatformPage.tsx`; PF subjects/goals APIs | Subject + `goal_kind=career` goals — not occupation taxonomy | PARTIAL_EXISTING | CORS watch on subjects | PathwayGoal may link to subject goals later |
+| Backend schemas | `cv_builder.py`, `roadmap.py`, `job_search.py` | Disjoint role fields (`target_role`, `target_role_title`, `job_title`) | PARTIAL_EXISTING | Drift across products | Shared taxonomy contract types |
+| Backend models | `cv.py`, `roadmap.py`, job/profile models | String role fields; no taxonomy tables | PARTIAL_EXISTING | Migration temptation in F1 | Defer DB until F2+ approved |
+| Backend agents | roadmap RoleTaxonomy; cv_builder; job_search knowledge; chatbot snapshot `active_target_role` | Per-agent role inference | HARDCODED / PARTIAL_EXISTING | Inconsistent inference | Registry + confidence ladder |
+| Taxonomy-adjacent data | `backend/app/data/popular_roles_catalog.json`; `backend/app/data/seed_graph.py`; `backend/app/tools/graph_rag.py`; `backend/app/api/routes/role_packs.py` | Popular roles catalog; skill↔role graph seeds; graph RAG; role pack routes | PARTIAL_EXISTING | Fragmented “almost taxonomy” | Inventory into F1 contract; do not ingest O*NET/ESCO yet |
+| Frontend types / API client | `frontend/src/types/api.ts`; `frontend/src/lib/api.ts` | `target_role`, `job_title`, optional `seniority` | PARTIAL_EXISTING | No shared taxonomy types | F3 type/API alignment |
+| Tests | CVB/ROAD/job_search tests under `backend/tests`, frontend `*.test.tsx` | Feature-local contracts | EXISTING_VERIFIED | Cross-feature role mismatch untested | F7 cross-feature checkpoint |
+| Docs/tracker | master plan §0051; live tracker | 0051 planned; F0 this slice | EXISTING_VERIFIED | — | Keep tracker short; plan lives here |
+
+**Uncertain / VERIFY_IN_REPO:** exact production wiring of `role_packs` routes vs job_search compiler; full coverage of `popular_roles_catalog.json` consumers; any hidden pathway_type column (none found in roadmap schema — free text only).
+
+#### External Taxonomy Reference Map
+
+| Reference | Useful Concept | How 0051 Should Use It | Must Not Do Yet |
+|---|---|---|---|
+| O*NET | Occupation taxonomy; skills/tasks; job zones; related occupations | Shape CanonicalRole / Skill / SeniorityLevel fields; mapping inspiration | Ingest full dataset; claim official O*NET sync |
+| ESCO | Occupations + skills pillars; skills–occupations matrix | Inspire SkillCluster ↔ CanonicalRole matrix | Full ESCO dump; EU licensing obligations without review |
+| NIST NICE | Work roles + responsibility levels (cyber workforce) | Pattern for SeniorityLevel / EvidenceRequirement in specialized domains | Treat as global default for all careers |
+| Anthropic / tool-use architecture | Schema-bounded tools; prompt caching for repeated instruction sets | Plan agent tools that call taxonomy registry; cache static contract text carefully | Over-cache stale role packs; unbounded tool loops |
+| Internal CareerKundi evidence packs | Role packs, study/interview knowledge | First-class internal source with provenance | Present curated pack as verified external taxonomy |
+| User profile / CV data | `job_title`, CV content, passport signals | `user_provided` / `profile_supported` / `document_supported` | Invent credentials from thin CV text |
+| Job description data | Saved jobs, JD extractors | `job_description_supported` role/skill extraction | Overfit one JD as universal role definition |
+| Roadmap skill data | Milestone/skill JSON progress | Feed SkillCluster progress without Task model | Require Task model for taxonomy |
+
+**Wording lock:** 0051 uses external taxonomies as **reference patterns and mapping inspiration first**. **0051-F0 does not ingest** full external datasets. Future ingestion must consider licensing, storage, update cadence, and attribution.
+
+#### Proposed Universal Taxonomy Contract
+
+Docs-only contract (not implemented in F0). Proposed core entities:
+
+`CareerDomain`, `RoleFamily`, `CanonicalRole`, `RoleAlias`, `SeniorityLevel`, `PathwayType`, `PathwayGoal`, `SkillCluster`, `Skill`, `EvidenceRequirement`, `RegionContext`, `IndustryContext`, `LearningDepth`.
+
+| Entity | Purpose | Example Fields | Used By | Notes |
+|---|---|---|---|---|
+| CareerDomain | Top-level domain bucket | id, label, description, aliases, related_domains | All | Keep coarse in MVP |
+| RoleFamily | Family within a domain | id, domain_id, label, aliases, example_roles | CV, Roadmap, Jobs | Bridges free text → family |
+| CanonicalRole | Stable role identity | id, role_family_id, title, aliases, description, seniority_range, common_industries, common_skills, related_roles | All | Primary join key |
+| RoleAlias | Map user/JD strings → canonical | alias, canonical_role_id, source, confidence, region_context | Resolve APIs | Preserve provenance |
+| SeniorityLevel | Scope / depth indicators | id, label, indicators, expected_scope, evidence_depth | Profile, packs, CV | Align with profile.seniority_level later |
+| PathwayType | Kind of career journey | id, label, description, applies_to, example_goals | Roadmap first | UI examples already hint these |
+| PathwayGoal | Concrete user goal instance | id, pathway_type_id, target_role_id, source_context, goal_text | Roadmap, Platform goals | May link subjects later |
+| SkillCluster | Grouped skills | id, label, domain_id, related_roles | Roadmap, study | Maps to roadmap skills blobs |
+| Skill | Atomic skill | id, cluster_id, label, aliases, evidence_examples, tool_examples | Roadmap tracker, interview | No Task model required |
+| EvidenceRequirement | What evidence is needed | id, applies_to, evidence_type, required_for, confidence_policy | Interview, CV, badges | Honesty gates |
+| RegionContext | Geo caveats | id, label, examples, caveats | Mobility / public sector later | No visa guarantees |
+| IndustryContext | Industry overlays | id, label, common_roles, common_compliance_or_tools | CV, jobs | VERIFY_WITH_OFFICIAL_SOURCE for licensing |
+| LearningDepth | Content depth rules | id, level, explanation, content_depth_rules | Study materials | Budget/latency control |
+
+#### Proposed Pathway Types
+
+| Pathway Type | User Problem Solved | Example Inputs | Output Should Influence | Notes |
+|---|---|---|---|---|
+| Skill Gap Plan | Close gaps to a target role | Current skills, target role | Roadmap skills/milestones | Existing UI copy |
+| Career Switch Plan | Transferable path into new family | Source role, target role | Gap + related roles | Honesty on unknowns |
+| Graduate Launch Plan | First-role readiness | Degree/context, target role | Foundations milestones | Not the only pathway |
+| Interview Preparation Path | Pack readiness | Job/role, evidence | Interview/study packs | Tie to job_search |
+| Job Application Path | Apply with fit narrative | JD + profile | CV tailor + jobs queue | Future Safe Apply |
+| Study Abroad / Education Path | Education mobility | Program interest, region | Education checklist | No outcome guarantees |
+| Professional Certification Path | Cred planning | Target cert, role | Roadmap modules | VERIFY_WITH_OFFICIAL_SOURCE |
+| Public Sector Path | Public hiring readiness | Jurisdiction, role | Compliance-aware plan | Official-source later |
+| International Migration / Regional Readiness Path | Mobility readiness | Region, occupation | Checklist + caveats | No visa guarantees |
+| Portfolio / Project Path | Build proof | Target skills | Project milestones | EvidenceRequirement |
+| Promotion / Seniority Growth Path | Level-up in family | Current seniority, target | Seniority + evidence depth | Align SeniorityLevel |
+
+**Safety/honesty:** Do not guarantee visa/job outcomes. Do not invent certifications or licensing requirements. Mark regulatory/licensing as `VERIFY_WITH_OFFICIAL_SOURCE` unless official-source lookup exists later.
+
+#### Source of Truth and Confidence Model
+
+| Source Type | Confidence | Allowed Use | User-Facing Label | Notes |
+|---|---|---|---|---|
+| user_provided | High | Direct display; primary input | Provided by you | Free-text role entry |
+| profile_supported | High | Prefer over inference | From your profile | Profile.job_title |
+| document_supported | Medium–High | CV/passport-backed claims | From your document | Need extract provenance |
+| job_description_supported | Medium–High | JD-tailored outputs | From the job description | Saved job / posting |
+| external_taxonomy_reference | Medium | Mapping hints only | Reference taxonomy | Not “verified occupation” |
+| model_inferred | Low–Medium | Suggestions only | Suggested | Never as verified |
+| fallback_default | Low | Last resort | Default | e.g. mock skill list |
+| unknown | None | Explicit gap | Unknown | Prefer over fake certainty |
+
+**Rules:** Never present model-inferred role/pathway as verified. Taxonomy mappings must preserve provenance. Generated plans must distinguish evidence-backed, profile-supported, suggested, and unknown.
+
+#### Where 0051 Should Integrate
+
+| Feature | Current State | 0051 Integration Point | Risk | First Implementation Slice |
+|---|---|---|---|---|
+| CV Builder | Freeform target role + templates | Resolve `target_role_title` → CanonicalRole; store alias provenance | CV regression | 0051-F4 |
+| Roadmap | Freeform `target_role` + skill progress | PathwayType + CanonicalRole on generate; keep skills as progress units | Empty skills / UX copy drift | 0051-F5 |
+| Jobs / Job Search | JD + profile titles | Shared role resolve before pack compile | Pack quality / 004E freeze | 0051-F6 |
+| Interview Packs | Role pack library | Alias → pack; confidence labels | Frozen old 004E repair | 0051-F6 (hooks only; no 004E repair) |
+| Study Materials | Domain classifiers | SkillCluster / LearningDepth | Generic content | 0051-F6 |
+| Dashboard | Displays target_role | Canonical label when available | Cosmetic | After F5 |
+| Profile | job_title string | Optional canonical_role_id later | Profile SoT conflicts | F3+ |
+| Platform page | Subjects/goals | PathwayGoal link later | CORS watch | Deferred |
+| Future Safe Apply | Frozen / future | Application path type | Scope creep | Not in 0051 ladder |
+| Future Badges/Achievements | Separate | EvidenceRequirement hooks | Premature | Not in 0051 ladder |
+
+#### 0051 Implementation Ladder
+
+| Slice | Purpose | Allowed Scope | Not Allowed | Evidence Required |
+|---|---|---|---|---|
+| **0051-F1** Taxonomy Repo Inventory + Contract Files | Boundary: pure contract module + docs + pure tests | New taxonomy knowledge/contract module; schemas/types if needed; docs; pure contract tests | Broad CV/Roadmap rewiring; DB migration; external dataset ingestion; LLM changes; UI redesign | Contract tests green; decision `TAXONOMY_CONTRACT_BOUNDARY_READY_FOR_BACKEND_MVP` |
+| **0051-F2** Backend Taxonomy Registry MVP | In-process registry resolve alias→canonical; seed from internal catalogs only | Registry service; seed from existing internal JSON/graph; API read endpoints if thin | Full O*NET/ESCO ingest; CV/Roadmap UI rewrite | Registry unit tests; sample resolve evidence |
+| **0051-F3** Frontend Type/API Alignment | Types + api client for taxonomy reads | `api.ts` / types; thin UI optional display | Full gallery redesign; migrations | Typecheck/build |
+| **0051-F4** CV Builder Taxonomy Hook | Optional resolve on role-targeted generate | Minimal CV payload fields + provenance | Template gallery redesign; PDF engine rewrite | CV regression tests |
+| **0051-F5** Roadmap Taxonomy Hook | PathwayType + role resolve on generate; keep skill progress | Roadmap schema additive fields; UI select pathway type | Task model; specialized pathway engines | Roadmap regression + skill status |
+| **0051-F6** Job Search / Interview Pack Taxonomy Hook | Shared resolve before pack/study | Thin hooks; confidence labels | Old 004E repair; Auto Apply repair | Pack smoke tests; freeze respected |
+| **0051-F7** Browser-Tested Cross-Feature Taxonomy Checkpoint | End-to-end consistency | Browser journeys CV↔Roadmap↔Jobs role strings | New features | Desktop evidence + Decision A/B |
+
+#### Proposed 0051-F1 Scope
+
+**0051-F1** should create/prepare the taxonomy **contract boundary** with minimal product risk.
+
+**Allowed likely files:**
+- new backend taxonomy knowledge/contract module (if approved)
+- backend schemas/types if needed for the contract only
+- docs updates
+- tests for pure taxonomy contract behavior
+
+**Not allowed in F1:**
+- broad CV Builder rewiring
+- broad Roadmap rewiring
+- database migration
+- external dataset ingestion
+- LLM generation changes
+- UI redesign
+
+**Suggested F1 decision target:** `TAXONOMY_CONTRACT_BOUNDARY_READY_FOR_BACKEND_MVP`
+
+#### Risk Register
+
+| Risk | Impact | Evidence | Mitigation | Target Slice |
+|---|---|---|---|---|
+| Taxonomy overbuild | Delay; unused entities | Large entity list vs MVP needs | F1 contract only; MVP subset in F2 | F1–F2 |
+| Hardcoded role aliases | Inconsistent UX | `SAMPLE_ROLES`; role_pack_library; popular_roles_catalog | Central RoleAlias with source tags | F2–F5 |
+| Global occupation dataset licensing/storage | Legal/storage cost | O*NET/ESCO size | Reference-only until explicit ingest slice | Post-F2 gate |
+| Model-inferred roles as verified | Trust harm | RoleTaxonomy LLM path | Confidence ladder + UI labels | F1 contract → F4–F6 |
+| CV Builder / Roadmap regressions | Break working UX | UX-CHECKPOINT-1 green paths | Additive hooks; regression tests | F4–F5 |
+| Role/pathway mismatch across features | User confusion | Disjoint field names | Shared CanonicalRole id | F3–F7 |
+| International/regulatory claims without official source | Legal/safety | Migration/cert pathway types | VERIFY_WITH_OFFICIAL_SOURCE; no guarantees | All |
+| Cost/latency from long taxonomy prompts | Spend / slow generate | Large catalogs in prompts | Registry tools + selective context; prompt cache only for stable contract | F2+ |
+| Prompt cache misuse / stale context | Wrong roles served | Cached packs | Versioned contract; short TTL for dynamic data | F2+ |
+| Agent tool-use overreach | Unbounded calls | Future tool design | Schema-bounded tools; budgets | F2+ |
+
+#### Watch Items From UX-CHECKPOINT-1
+
+| Watch Item | Current Status | Impact on 0051 | Handling |
+|---|---|---|---|
+| CV PDF 4-family style mapping | Accepted limitation | F4 must not require new PDF families | Out of 0051 scope |
+| Roadmap no Task model | By design | Skills remain progress units | F5 must not add Task model |
+| Shell overflow at 390px | `SHELL_OVERFLOW_OBSERVED_USABLE` | Browser F7 may re-observe | Do not redesign shell in 0051 |
+| Platform CORS watch | Subjects noise; page loads | Platform PathwayGoal deferred | Do not block taxonomy MVP |
+| Old 004E frozen | Frozen | F6 hooks only; no pack repair campaign | Respect freeze |
+| Old Auto Apply frozen | Frozen | Job Application Path type is planning-only | No Safe Apply work in 0051 |
+
+#### 0051-F0 Decision
+
+**B UNIVERSAL_TAXONOMY_PLAN_ACCEPTED_WITH_WATCH_ITEMS**
+
+- Plan accepted; UX-CHECKPOINT-1 watch items and freezes carried forward.
+- **Recommended next slice:** **0051-F1 Taxonomy Contract Boundary**
+- Product code modified in F0: **NO**
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:
