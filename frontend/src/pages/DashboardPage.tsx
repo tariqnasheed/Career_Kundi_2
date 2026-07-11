@@ -73,10 +73,14 @@ export default function DashboardPage() {
   const { data: badgeStats } = useQuery({ queryKey: ["badge-stats"], queryFn: () => badgeApi.getStats() });
   const { data: pendingCelebrations } = useQuery({ queryKey: ["pending-celebrations"], queryFn: () => badgeApi.getPendingCelebrations() });
 
-  const activeRoadmap = roadmaps?.find((r: any) => r.status === "active") || roadmaps?.[0];
-  const roadmapPct = activeRoadmap
-    ? Math.round((activeRoadmap.milestones?.filter((m: any) => m.status === "completed").length / (activeRoadmap.milestones?.length || 1)) * 100)
+  // ROAD-F1: progress from skill.status only (roadmap/milestone have no status field)
+  const activeRoadmap = roadmaps?.[0];
+  const roadmapSkills = activeRoadmap?.milestones?.flatMap((m) => m.skills ?? []) ?? [];
+  const roadmapSkillsDone = roadmapSkills.filter((s) => s.status === "completed").length;
+  const roadmapPct = roadmapSkills.length
+    ? Math.round((roadmapSkillsDone / roadmapSkills.length) * 100)
     : 0;
+  const roadmapMilestoneCount = activeRoadmap?.milestones?.length ?? 0;
 
   const firstName = user?.full_name?.split(" ")[0] || "there";
 
@@ -119,10 +123,14 @@ export default function DashboardPage() {
                 <div>
                   <p style={{ fontWeight: 600, marginBottom: "0.4rem" }}>{activeRoadmap.target_role}</p>
                   <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>
-                    {activeRoadmap.milestones?.filter((m: any) => m.status === "completed").length || 0} of {activeRoadmap.milestones?.length || 0} milestones complete
+                    {roadmapSkillsDone} of {roadmapSkills.length} skills complete
+                    {roadmapMilestoneCount > 0 ? ` · ${roadmapMilestoneCount} milestones` : ""}
+                  </p>
+                  <p style={{ fontSize: "0.7rem", color: "var(--text-muted)", marginTop: "0.25rem" }}>
+                    Progress details available on the Roadmap page.
                   </p>
                   <Link to="/roadmap" style={{ display: "inline-block", marginTop: "0.75rem" }}>
-                    <Button size="sm" variant="secondary" rightIcon={<ArrowRight size={14} />}>View roadmap</Button>
+                    <Button size="sm" variant="secondary" rightIcon={<ArrowRight size={14} />}>Continue roadmap</Button>
                   </Link>
                 </div>
               </div>

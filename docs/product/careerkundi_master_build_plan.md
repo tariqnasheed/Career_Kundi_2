@@ -1912,7 +1912,7 @@ Every large feature should show: status label; readiness; known limitations; wha
 | CVB-F4 | Save/Load Versions | Persist CVs | After F3 | PATCH + section_config meta | Save/load UI | No | None | Ownership | API+UI tests | Save/refresh/load | CVB-F4 | Yes | Existing APIs | CV+API | Yes | Done (Decision B) |
 | CVB-F5 | CV Browser Checkpoint | Close CVB | After F3+F4 | — | — | — | — | — | Full | Full CV journey | CVB-F5 | Yes | No | evidence/docs | Yes | Done (Decision B) |
 | ROAD-F0 | Roadmap Audit | Audit only | Before repair | Inspect | Inspect | None | None | — | Manual | Open page | ROAD-F0 | Yes | No | docs | Optional | Done (Decision A) |
-| ROAD-F1 | Roadmap UI Repair | Usable list | After F0 | Minimal | Roadmap page | None | No full AI engine | — | Build | List/empty/CTA | ROAD-F1 | Yes | No | ROAD files | Yes | Planned |
+| ROAD-F1 | Roadmap UI Repair | Usable list | After F0 | Minimal | Roadmap page | None | No full AI engine | — | Build | List/empty/CTA | ROAD-F1 | Yes | No | ROAD files | Yes | Done (Decision A) |
 | ROAD-F2 | Save/Load Contract | Persist roadmaps | After F1 | Roadmap APIs | Save/load | Maybe | None | Ownership | API tests | Create/refresh | ROAD-F2 | Yes | If contract | ROAD+API | Yes | Planned |
 | ROAD-F3 | Detail + Tasks | Tracking | After F2 | Tasks API | Detail UI | Maybe | None | Ownership | API+UI | Complete task persist | ROAD-F3 | Yes | No | ROAD files | Yes | Planned |
 | ROAD-F4 | Browser Checkpoint | Close ROAD | After F3 | — | — | — | — | — | Full | Full roadmap journey | ROAD-F4 | Yes | No | evidence | Yes | Planned |
@@ -2459,26 +2459,91 @@ Any repair must happen in ROAD-F1 or later.
 
 - **ROAD-F0 outcome (2026-07-12):** Decision **A** — route/page/API exist; browser empty-state PASS; `/roadmaps` missing; next = **ROAD-F1**.
 
+### ROAD-F1 Roadmap UI Repair
 ### ROAD-F1 — Roadmap UI Repair
 - **Type:** FRONTEND_VISIBLE  
 - **Goal:** Make Roadmap page load and display a usable surface.  
-- **Allowed:** Roadmap page/components listed after F0; docs/tracker.  
-- **Forbidden:** Full AI roadmap engine; Graduate-only ownership of all roadmaps; 004E/Auto Apply.  
-- **Frontend:** Route exists; list or empty; create CTA.  
-- **Backend/API/DB/AI:** Minimal/none; no full AI engine.  
+- **Allowed:** Roadmap page/components listed after F0; docs/tracker; minimal App alias; Dashboard widget mismatch fix.  
+- **Forbidden:** Full AI roadmap engine; Graduate-only ownership of all roadmaps; 004E/Auto Apply; migrations.  
+- **Frontend:** Route exists; list or empty; create CTA; loading/error honesty; platform-wide copy.  
+- **Backend/API/DB/AI:** None changed.  
 - **Tests:** Frontend build.  
-- **Browser:** List/empty/CTA.  
-- **Evidence:** `~/Desktop/CareerKundi_ROAD_F1_UI_Repair_Evidence.txt`  
-- **Commit message:** `fix(roadmaps): repair Roadmap UI shell`  
+- **Browser:** List/empty/CTA + `/roadmaps` alias.  
+- **Evidence:** `~/Desktop/CareerKundi_ROAD_F1_Roadmap_UI_Repair_Evidence.txt`  
+- **Commit message:** `feat(frontend): repair Roadmap UI`  
 - **Push:** Yes  
 - **Done definition:** Usable list/empty/CTA surface  
+
+#### Repair Summary
+
+| Area | Before | Change Made | Result | Notes |
+|---|---|---|---|---|
+| Roadmap page load | Loaded | Kept + clearer shell | Pass | Browser PASS |
+| Platform-wide copy | Generic learning path | Platform-wide hero + pathway examples + footnote | Pass | Not Graduate-only |
+| Loading state | Spinner only | Status strip + spinner | Pass | |
+| Empty state | Basic CTA | Examples + honest empty + Generate CTA | Pass | |
+| Error state | Missing for list | List/detail error + Retry | Pass | Code path |
+| Roadmap list | Chips when >1 | Card list always when saved | Pass | |
+| CTA | New roadmap | New / Generate CTAs | Pass | |
+| Milestone/skill display | Skill % OK | Honest skill-status copy | Pass | No fake task tracker |
+| Dashboard roadmap widget | Fake milestone.status | Skill-based % + Continue CTA | Pass | Fixed |
+| `/roadmap` route | Existing | Unchanged live route | Pass | |
+| `/roadmaps` route behavior | 404 | Minimal alias → RoadmapPage | Pass | Alias added |
+| Responsive behavior | Kanban 3-col | Stack at ≤720px | Pass | Quick check |
+| Browser journey | Audit empty only | Auth + /roadmap + /roadmaps + dashboard | Pass | |
+
+#### Files Changed
+
+| File | Change Type | Reason | Scope |
+|---|---|---|---|
+| `frontend/src/pages/RoadmapPage.tsx` | Modified | UI repair shell | ROAD-F1 |
+| `frontend/src/pages/DashboardPage.tsx` | Modified | Status mismatch fix | ROAD-F1 |
+| `frontend/src/App.tsx` | Modified | `/roadmaps` alias | ROAD-F1 |
+| `frontend/src/styles/feature-pages.css` | Modified | Status/list/help/responsive | ROAD-F1 |
+| `docs/product/careerkundi_master_build_plan.md` | Modified | Outcome | Docs |
+| `docs/product/careerkundi_live_tracker.md` | Modified | Progress → F2 | Docs |
+
+#### Route Decision
+
+`ROUTE_ALIAS_ROADMAPS_ADDED`
+
+- `/roadmap` remains the primary live route (sidebar unchanged).
+- `/roadmaps` aliases to the same `RoadmapPage` (minimal App.tsx addition).
+- Full plural IA (`/roadmaps/new`, `/:id`, `/:id/tasks`) remains planned for later.
+
+#### Dashboard Widget Decision
+
+`DASHBOARD_WIDGET_STATUS_MISMATCH_FIXED`
+
+- Removed `roadmap.status === "active"` and `milestone.status === "completed"`.
+- Progress now uses `skill.status === "completed"` over flattened skills; latest list item as active.
+
+#### Remaining Roadmap Work
+
+| Remaining Work | Target Slice | Notes |
+|---|---|---|
+| Roadmap Save/Load Contract | ROAD-F2 | Delete UI, regenerate UX, ownership tests |
+| Roadmap Detail + Task Tracking | ROAD-F3 | Task model/UI beyond skills |
+| Roadmap Browser-Tested Checkpoint | ROAD-F4 | Full generate→track journey |
+| Full Roadmap Engine / advanced generation | Future engine slice | Specialized plan types |
+| Specialized roadmap pathways | Future pathway slices | Public sector, study abroad, etc. |
+
+#### ROAD-F1 Decision
+
+**A ROAD_F1_UI_REPAIR_ACCEPTED_READY_FOR_ROAD_F2**
+
+#### Recommended Next Slice
+
+Next slice: **ROAD-F2 Roadmap Save/Load Contract**
+
+- **ROAD-F1 outcome (2026-07-12):** Decision **A** — UI shell repaired; `/roadmaps` alias; Dashboard skill progress fixed; next = **ROAD-F2**.
 
 ### ROAD-F2 — Roadmap Save/Load Contract
 - **Type:** FULL_STACK if persistence missing  
 - **Goal:** Persist roadmaps with ownership.  
 - **Allowed:** Roadmap API/FE files listed after F0/F1; docs/tracker.  
 - **Forbidden:** Cross-user access; inventing endpoints as existing without verify.  
-- **API shape (planned):** `GET/POST /api/v1/roadmaps`, `GET/PATCH /api/v1/roadmaps/{id}`, task routes as needed — verify before coding.  
+- **API shape (planned):** Verify existing `/api/v1/roadmap*` before inventing plural contract.  
 - **Security:** Belongs to user/subject; ownership checks.  
 - **Tests:** API ownership + create/refresh.  
 - **Browser:** Create → refresh → still present.  

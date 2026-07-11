@@ -11,6 +11,7 @@
  *     /interview-pack
  *     /cv-builder
  *     /roadmap
+ *     /roadmaps (alias → same Roadmap page)
  *     /achievements
  *     /profile
  *     /settings
@@ -117,6 +118,8 @@ export default function App() {
             <Route path="/interview-pack"  element={<InterviewPackRedirect />} />
             <Route path="/cv-builder"      element={<CVBuilderPage />} />
             <Route path="/roadmap"         element={<RoadmapPage />} />
+            {/* Minimal alias — same page as /roadmap (ROAD-F1); plural IA remains planned */}
+            <Route path="/roadmaps"        element={<RoadmapPage />} />
             <Route path="/achievements"    element={<AchievementsPage />} />
             <Route path="/profile"         element={<ProfilePage />} />
             <Route path="/settings"        element={<SettingsPage />} />

@@ -1,7 +1,7 @@
 /**
  * RoadmapPage.tsx
- * Personalized career roadmap — milestones, skill phases, study material,
- * practice activities, progress tracking, and skill detail views.
+ * Platform-wide career roadmap — milestones, skill progress, study material.
+ * ROAD-F1: loading/empty/error honesty; not Graduate Launch-only.
  */
 
 import { useState, useEffect } from "react";
@@ -388,8 +388,20 @@ export default function RoadmapPage() {
   const [generateOpen, setGenerateOpen] = useState(false);
   const [skillDetail, setSkillDetail] = useState<RoadmapSkillRead | null>(null);
 
-  const { data: roadmaps, isLoading } = useQuery({ queryKey: ["roadmaps"], queryFn: () => roadmapApi.list() });
-  const { data: activeRoadmap, refetch } = useQuery({
+  const {
+    data: roadmaps,
+    isLoading,
+    isError,
+    error,
+    refetch: refetchList,
+  } = useQuery({ queryKey: ["roadmaps"], queryFn: () => roadmapApi.list() });
+
+  const {
+    data: activeRoadmap,
+    isLoading: detailLoading,
+    isError: detailError,
+    refetch,
+  } = useQuery({
     queryKey: ["roadmap", selectedId],
     queryFn: () => roadmapApi.get(selectedId!),
     enabled: !!selectedId,
@@ -409,6 +421,10 @@ export default function RoadmapPage() {
     value: s.status === "completed" ? 100 : s.status === "in_progress" ? 55 : 15,
   }));
 
+  const listErrorMessage =
+    (error as { message?: string } | undefined)?.message ||
+    "Could not load your roadmap. Please try again.";
+
   const exportMarkdown = () => {
     if (!activeRoadmap) return;
     const lines = [`# Career Roadmap: ${activeRoadmap.target_role}`, "", `Progress: ${pct}%`, ""];
@@ -426,107 +442,212 @@ export default function RoadmapPage() {
     URL.revokeObjectURL(url);
   };
 
+  const pathwayExamples = [
+    "Skill gap plan",
+    "Career switch plan",
+    "Graduate launch plan",
+    "Study / exam path",
+    "Interview preparation path",
+    "Job application path",
+  ];
+
   return (
-    <div className="feature-page">
+    <div className="feature-page roadmap-page">
       <div className="feature-page__inner">
-      <motion.div className="feature-hero" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "1rem" }}>
-          <div>
-            <span className="feature-hero__eyebrow"><Map size={14} /> Personalized learning path</span>
-            <h1 className="feature-hero__title gradient-text">Career Roadmap</h1>
-            <p className="feature-hero__subtitle">
-              Interactive milestones, grounded study materials, and unlimited practice activities — adapted to your pace and skill level.
-            </p>
+        <motion.div className="feature-hero" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "1rem" }}>
+            <div>
+              <span className="feature-hero__eyebrow"><Map size={14} /> Platform-wide career planning</span>
+              <h1 className="feature-hero__title gradient-text">Career Roadmap</h1>
+              <p className="feature-hero__subtitle">
+                Build a structured pathway for any career goal — skill gaps, career switches, graduate launch,
+                study plans, interview prep, and job-search paths. Progress is tracked from saved milestones and skills.
+              </p>
+            </div>
+            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+              <Button variant="ghost" size="sm" onClick={() => setView("timeline")} style={{ color: view === "timeline" ? "var(--accent-violet)" : undefined }} aria-pressed={view === "timeline"}><List size={15} /> Timeline</Button>
+              <Button variant="ghost" size="sm" onClick={() => setView("kanban")} style={{ color: view === "kanban" ? "var(--accent-violet)" : undefined }} aria-pressed={view === "kanban"}><LayoutGrid size={15} /> Board</Button>
+              {activeRoadmap && <Button variant="secondary" size="sm" leftIcon={<Download size={14} />} onClick={exportMarkdown}>Export MD</Button>}
+              <Button variant="primary" size="sm" leftIcon={<Zap size={14} />} onClick={() => setGenerateOpen(true)}>New roadmap</Button>
+            </div>
           </div>
-          <div style={{ display: "flex", gap: "0.5rem" }}>
-            <Button variant="ghost" size="sm" onClick={() => setView("timeline")} style={{ color: view === "timeline" ? "var(--accent-violet)" : undefined }}><List size={15} /></Button>
-            <Button variant="ghost" size="sm" onClick={() => setView("kanban")} style={{ color: view === "kanban" ? "var(--accent-violet)" : undefined }}><LayoutGrid size={15} /></Button>
-            {activeRoadmap && <Button variant="secondary" size="sm" leftIcon={<Download size={14} />} onClick={exportMarkdown}>Export MD</Button>}
-            <Button variant="primary" size="sm" leftIcon={<Zap size={14} />} onClick={() => setGenerateOpen(true)}>New roadmap</Button>
-          </div>
+        </motion.div>
+
+        <div className="roadmap-status-strip" aria-live="polite">
+          {isLoading && (
+            <div className="roadmap-status-strip__row roadmap-status-strip__row--loading">
+              <Spinner size="sm" />
+              <span>Loading your roadmaps from the server…</span>
+            </div>
+          )}
+          {isError && (
+            <div className="roadmap-status-strip__row roadmap-status-strip__row--error" role="alert">
+              <span>{listErrorMessage}</span>
+              <Button variant="ghost" size="sm" onClick={() => void refetchList()}>Retry</Button>
+            </div>
+          )}
+          {!isLoading && !isError && !(roadmaps?.length) && (
+            <div className="roadmap-status-strip__row">
+              No saved roadmaps yet. Generate one to start planning.
+            </div>
+          )}
+          {!isLoading && !isError && !!roadmaps?.length && (
+            <div className="roadmap-status-strip__row roadmap-status-strip__row--ok">
+              Loaded {roadmaps.length} roadmap{roadmaps.length === 1 ? "" : "s"} from your account.
+              {selectedId ? " Viewing selected pathway below." : ""}
+            </div>
+          )}
         </div>
-      </motion.div>
 
-        {isLoading && <div style={{ textAlign: "center", padding: "4rem" }}><Spinner size="lg" /></div>}
+        <div className="roadmap-layout">
+          <div className="roadmap-layout__main">
+            {isLoading && (
+              <div style={{ textAlign: "center", padding: "4rem" }}><Spinner size="lg" /></div>
+            )}
 
-        {!isLoading && !roadmaps?.length && (
-          <div style={{ textAlign: "center", padding: "5rem", color: "var(--text-secondary)" }}>
-            <Map size={48} style={{ margin: "0 auto 1rem", opacity: 0.3 }} />
-            <p style={{ fontWeight: 600, marginBottom: "0.5rem" }}>No roadmap yet</p>
-            <p style={{ fontSize: "0.875rem", marginBottom: "1.5rem" }}>Generate a personalized career transformation plan for any target role.</p>
-            <Button variant="primary" leftIcon={<Zap size={15} />} onClick={() => setGenerateOpen(true)}>Generate your roadmap</Button>
-          </div>
-        )}
-
-        {(roadmaps?.length ?? 0) > 0 && activeRoadmap && (
-          <>
-            {(roadmaps?.length ?? 0) > 1 && (
-              <div style={{ display: "flex", gap: "0.5rem", overflowX: "auto", marginBottom: "1.25rem" }}>
-                {roadmaps!.map((r) => (
-                  <button key={r.id} onClick={() => setSelectedId(r.id)} style={{
-                    padding: "0.4rem 0.875rem", borderRadius: "999px", whiteSpace: "nowrap",
-                    border: selectedId === r.id ? "2px solid var(--accent-violet)" : "1px solid var(--border-subtle)",
-                    background: selectedId === r.id ? "rgba(139,92,246,0.08)" : "transparent",
-                    cursor: "pointer", fontSize: "0.8rem",
-                  }}>{r.target_role}</button>
-                ))}
+            {!isLoading && !isError && !roadmaps?.length && (
+              <div className="roadmap-empty">
+                <Map size={48} className="roadmap-empty__icon" aria-hidden />
+                <h2>No roadmap yet</h2>
+                <p>
+                  Generate a personalized career pathway for any target role. Roadmaps are platform-wide —
+                  not limited to graduate launch.
+                </p>
+                <ul className="roadmap-empty__examples">
+                  {pathwayExamples.map((ex) => (
+                    <li key={ex}>{ex}</li>
+                  ))}
+                </ul>
+                <Button variant="primary" leftIcon={<Zap size={15} />} onClick={() => setGenerateOpen(true)}>
+                  Generate your roadmap
+                </Button>
               </div>
             )}
 
-            <div className="feature-grid-2" style={{ marginBottom: "1.5rem" }}>
-              <Card padding="lg" className="feature-glass">
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
-                <div>
-                  <p style={{ fontWeight: 700 }}>{activeRoadmap.target_role}</p>
-                  <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)" }}>
-                    {activeRoadmap.pace} pace · {activeRoadmap.starting_skill_level ?? "auto"} level · {activeRoadmap.milestones.length} milestones
-                  </p>
-                </div>
-                <p style={{ fontWeight: 800, fontSize: "1.25rem", color: "var(--accent-violet)" }}>{pct}%</p>
-              </div>
-              <div style={{ height: "8px", borderRadius: "999px", background: "var(--bg-overlay)", overflow: "hidden" }}>
-                <motion.div initial={{ width: 0 }} animate={{ width: `${pct}%` }} style={{ height: "100%", background: "var(--gradient-primary)", borderRadius: "999px" }} />
-              </div>
-              <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginTop: "0.4rem" }}>{done}/{allSkills.length} skills completed</p>
-              {nextSkill && (
-                <div style={{ marginTop: "0.75rem", padding: "0.625rem", borderRadius: "8px", background: "rgba(139,92,246,0.06)", fontSize: "0.8rem", display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
-                  <TrendingUp size={14} style={{ color: "var(--accent-violet)" }} />
-                  <span>Next up: <strong>{nextSkill.skill_name}</strong></span>
-                  <Button variant="ghost" size="sm" onClick={() => setSkillDetail(nextSkill)}>Open study view</Button>
-                </div>
-              )}
-              </Card>
-              <Card padding="lg" className="feature-glass">
-                <p style={{ fontWeight: 700, marginBottom: "0.5rem", fontSize: "0.85rem" }}>Skill progress radar</p>
-                <SkillRadar skills={radarData} />
-                <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginTop: "0.5rem", textAlign: "center" }}>
-                  GraphRAG lateral connections surface as you complete prerequisites
-                </p>
-              </Card>
-            </div>
+            {!isLoading && !isError && !!roadmaps?.length && (
+              <>
+                <section className="roadmap-list" aria-label="Saved roadmaps">
+                  <h2 className="roadmap-list__title">Your roadmaps</h2>
+                  <ul className="roadmap-list__cards">
+                    {roadmaps.map((r) => {
+                      const skillCount = r.milestones?.flatMap((m) => m.skills ?? []).length ?? 0;
+                      const milestoneCount = r.milestones?.length ?? 0;
+                      const selected = selectedId === r.id;
+                      return (
+                        <li key={r.id}>
+                          <button
+                            type="button"
+                            className={`roadmap-list__card${selected ? " is-selected" : ""}`}
+                            onClick={() => setSelectedId(r.id)}
+                          >
+                            <strong>{r.target_role}</strong>
+                            <span>
+                              {r.pace} pace · {milestoneCount} milestones · {skillCount} skills
+                            </span>
+                            <span className="roadmap-list__meta">
+                              Updated {new Date(r.updated_at).toLocaleDateString()}
+                            </span>
+                            <em>{selected ? "Viewing" : "Continue"}</em>
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
 
-            <AnimatePresence mode="wait">
-              {view === "timeline" ? (
-                <motion.div key="timeline" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                  <TimelineView roadmap={activeRoadmap} onRefresh={() => refetch()} onOpenSkill={setSkillDetail} />
-                </motion.div>
-              ) : (
-                <motion.div key="kanban" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                  <KanbanView roadmap={activeRoadmap} onRefresh={() => refetch()} onOpenSkill={setSkillDetail} />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </>
-        )}
+                {detailLoading && (
+                  <div style={{ textAlign: "center", padding: "2rem" }}><Spinner size="md" /></div>
+                )}
+                {detailError && (
+                  <div className="roadmap-status-strip__row roadmap-status-strip__row--error" role="alert">
+                    <span>Could not load this roadmap detail.</span>
+                    <Button variant="ghost" size="sm" onClick={() => void refetch()}>Retry</Button>
+                  </div>
+                )}
 
-      <GenerateModal open={generateOpen} onClose={() => setGenerateOpen(false)} />
-      <SkillDetailModal
-        skill={skillDetail}
-        roadmapId={activeRoadmap?.id ?? ""}
-        open={!!skillDetail}
-        onClose={() => setSkillDetail(null)}
-        onRefresh={() => refetch()}
-      />
+                {activeRoadmap && !detailLoading && (
+                  <>
+                    <div className="feature-grid-2" style={{ marginBottom: "1.5rem" }}>
+                      <Card padding="lg" className="feature-glass">
+                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
+                          <div>
+                            <p style={{ fontWeight: 700 }}>{activeRoadmap.target_role}</p>
+                            <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)" }}>
+                              {activeRoadmap.pace} pace · {activeRoadmap.starting_skill_level ?? "auto"} level · {activeRoadmap.milestones.length} milestones
+                            </p>
+                          </div>
+                          <p style={{ fontWeight: 800, fontSize: "1.25rem", color: "var(--accent-violet)" }}>{pct}%</p>
+                        </div>
+                        <div style={{ height: "8px", borderRadius: "999px", background: "var(--bg-overlay)", overflow: "hidden" }}>
+                          <motion.div initial={{ width: 0 }} animate={{ width: `${pct}%` }} style={{ height: "100%", background: "var(--gradient-primary)", borderRadius: "999px" }} />
+                        </div>
+                        <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginTop: "0.4rem" }}>
+                          {done}/{allSkills.length} skills completed (skill status — not a separate task tracker yet)
+                        </p>
+                        {nextSkill && (
+                          <div style={{ marginTop: "0.75rem", padding: "0.625rem", borderRadius: "8px", background: "rgba(139,92,246,0.06)", fontSize: "0.8rem", display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+                            <TrendingUp size={14} style={{ color: "var(--accent-violet)" }} />
+                            <span>Next up: <strong>{nextSkill.skill_name}</strong></span>
+                            <Button variant="ghost" size="sm" onClick={() => setSkillDetail(nextSkill)}>Open study view</Button>
+                          </div>
+                        )}
+                      </Card>
+                      <Card padding="lg" className="feature-glass">
+                        <p style={{ fontWeight: 700, marginBottom: "0.5rem", fontSize: "0.85rem" }}>Skill progress radar</p>
+                        <SkillRadar skills={radarData} />
+                        <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginTop: "0.5rem", textAlign: "center" }}>
+                          Based on saved skill status for this roadmap
+                        </p>
+                      </Card>
+                    </div>
+
+                    <AnimatePresence mode="wait">
+                      {view === "timeline" ? (
+                        <motion.div key="timeline" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                          <TimelineView roadmap={activeRoadmap} onRefresh={() => refetch()} onOpenSkill={setSkillDetail} />
+                        </motion.div>
+                      ) : (
+                        <motion.div key="kanban" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                          <div className="roadmap-kanban">
+                            <KanbanView roadmap={activeRoadmap} onRefresh={() => refetch()} onOpenSkill={setSkillDetail} />
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </>
+                )}
+              </>
+            )}
+          </div>
+
+          <aside className="roadmap-help" aria-label="What this roadmap can help with">
+            <h2>What this roadmap can help with</h2>
+            <ul>
+              {pathwayExamples.map((ex) => (
+                <li key={ex}>{ex}</li>
+              ))}
+            </ul>
+            <p className="roadmap-help__note">
+              Progress is based on saved milestones and skills currently available.
+              More detailed task tracking comes in a later slice. Specialized pathway engines
+              (public sector, study abroad, etc.) are not built in this repair.
+            </p>
+          </aside>
+        </div>
+
+        <p className="roadmap-footnote">
+          Career Roadmap is a platform-wide planning tool for every persona — graduates, career switchers,
+          and working professionals alike.
+        </p>
+
+        <GenerateModal open={generateOpen} onClose={() => setGenerateOpen(false)} />
+        <SkillDetailModal
+          skill={skillDetail}
+          roadmapId={activeRoadmap?.id ?? ""}
+          open={!!skillDetail}
+          onClose={() => setSkillDetail(null)}
+          onRefresh={() => refetch()}
+        />
       </div>
     </div>
   );
