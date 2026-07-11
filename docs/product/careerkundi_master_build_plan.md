@@ -1914,7 +1914,7 @@ Every large feature should show: status label; readiness; known limitations; wha
 | ROAD-F0 | Roadmap Audit | Audit only | Before repair | Inspect | Inspect | None | None | — | Manual | Open page | ROAD-F0 | Yes | No | docs | Optional | Done (Decision A) |
 | ROAD-F1 | Roadmap UI Repair | Usable list | After F0 | Minimal | Roadmap page | None | No full AI engine | — | Build | List/empty/CTA | ROAD-F1 | Yes | No | ROAD files | Yes | Done (Decision A) |
 | ROAD-F2 | Save/Load Contract | Persist roadmaps | After F1 | Roadmap APIs | Save/load | Maybe | None | Ownership | API tests | Create/refresh | ROAD-F2 | Yes | If contract | ROAD+API | Yes | Done (Decision A) |
-| ROAD-F3 | Detail + Tasks | Tracking | After F2 | Tasks API | Detail UI | Maybe | None | Ownership | API+UI | Complete task persist | ROAD-F3 | Yes | No | ROAD files | Yes | Planned |
+| ROAD-F3 | Detail + Tasks | Tracking | After F2 | Tasks API | Detail UI | Maybe | None | Ownership | API+UI | Complete task persist | ROAD-F3 | Yes | No | ROAD files | Yes | Done (Decision A) |
 | ROAD-F4 | Browser Checkpoint | Close ROAD | After F3 | — | — | — | — | — | Full | Full roadmap journey | ROAD-F4 | Yes | No | evidence | Yes | Planned |
 | 0051 | Role & Pathway Taxonomy | Taxonomy | After UX0+CVB/ROAD stab | Taxonomy module | Consumers later | Yes | Structured | — | Migration+tests | N/A early | 0051 | Yes | Yes | foundation+module | Yes | Planned |
 | 0052 | Career & Education Passport | Passport | After 0051 | passport | passport UI | Yes | L1 assist | High privacy | Tests | Passport journey | 0052 | Yes | Yes | module | Yes | Planned |
@@ -2617,26 +2617,85 @@ Next slice: **ROAD-F3 Roadmap Detail + Task Tracking**
 
 - **ROAD-F2 outcome (2026-07-12):** Decision **A** — save/load contract stabilized; delete/regen UI wired; contract tests added; next = **ROAD-F3**.
 
+### ROAD-F3 Roadmap Detail + Task Tracking
 ### ROAD-F3 — Roadmap Detail + Task Tracking
-- **Type:** FULL_STACK  
-- **Goal:** Detail with milestones, tasks, completion, progress, persistence.  
-- **Allowed:** Detail/task FE + matching API files listed in prompt; docs/tracker.  
-- **Forbidden:** Taxonomy intelligence requiring 0051; Graduate Launch takeover.  
-- **Frontend:** Timeline; milestone cards; task list; completion; progress.  
-- **Backend/API:** Task create/update as needed with ownership.  
-- **Tests:** API + UI.  
-- **Browser:** Complete task → refresh persist.  
+- **Type:** ROADMAP_DETAIL_AND_TRACKING  
+- **Goal:** Clear selected-roadmap detail; skill-based progress/action tracking; persist status updates.  
+- **Allowed:** Roadmap FE detail/tracker; existing skill status/refresh APIs; docs/tracker; targeted tests.  
+- **Forbidden:** New Task model/migration; full Roadmap Engine; pathway packs; sidebar redesign.  
+- **Frontend:** Progress summary by skill status; Skill progress tracker; explicit status selects; refresh/regen/delete remain.  
+- **Backend/API:** Existing skill status/refresh ownership endpoints unchanged (tests extended).  
+- **Tests:** Extended `test_roadmap_contract.py` (9 passed; 11 with skill filter).  
+- **Browser:** Generate → tracker → status update → refresh persist → alias.  
 - **Evidence:** `~/Desktop/CareerKundi_ROAD_F3_Detail_Task_Tracking_Evidence.txt`  
-- **Commit message:** `feat(roadmaps): add roadmap detail and task tracking`  
+- **Commit message:** `feat(roadmap): add detail tracking controls`  
 - **Push:** Yes  
-- **Done definition:** Detail + tasks persist  
+- **Done definition:** Detail + skill status tracking persist  
+
+#### Detail + Tracking Summary
+
+| Area | Before | Change / Verification | Result | Notes |
+|---|---|---|---|---|
+| Selected roadmap detail | Summary + timeline/kanban | Progress counts + honesty copy + tracker | Pass | |
+| Milestone display | Timeline milestones | Kept; skill % per milestone | Pass | |
+| Skill tracker | Chip cycle-only | Dedicated tracker + status select | Pass | |
+| Skill status update | Cycle icon; weak feedback | Select + success/error strip | Pass | Persisted |
+| Skill refresh | Modal only | Tracker Refresh + modal | Pass | Present |
+| Progress summary | Completed/total only | Counts by not_started/in_progress/completed | Pass | Skill-derived |
+| Regenerate roadmap | F2 wired | Still present | Pass | |
+| Delete roadmap | F2 wired | Still present | Pass | Visual |
+| Copy honesty | Skill unit note | Explicit “skills are progress units” | Pass | DETAIL_COPY_VERIFIED_PASS |
+| `/roadmap` route | Live | Stable | Pass | |
+| `/roadmaps` alias | F1/F2 | Stable | Pass | |
+| Browser journey | F2 create/load | Status update + persist | Pass | |
+
+#### Files Changed
+
+| File | Change Type | Reason | Scope |
+|---|---|---|---|
+| `frontend/src/pages/RoadmapPage.tsx` | Modified | Tracker, status selects, progress counts | ROAD-F3 |
+| `frontend/src/styles/feature-pages.css` | Modified | Tracker/detail scoped styles | ROAD-F3 |
+| `backend/tests/unit/test_roadmap_contract.py` | Modified | Skill ownership + no-Task contract | ROAD-F3 |
+| `docs/product/careerkundi_master_build_plan.md` | Modified | Outcome | Docs |
+| `docs/product/careerkundi_live_tracker.md` | Modified | Progress → F4 | Docs |
+
+#### Tracking Decision
+
+`SKILL_BASED_TRACKING_STABILIZED`
+
+#### Task Model Decision
+
+`NO_TASK_MODEL_SKILLS_ARE_PROGRESS_UNITS`
+
+#### Test Decision
+
+`ROADMAP_CONTRACT_TESTS_EXTENDED_AND_PASSING` (9 in file; 11 with `-k skill`)
+
+#### Remaining Roadmap Work
+
+| Remaining Work | Target Slice | Notes |
+|---|---|---|
+| Roadmap Browser-Tested Checkpoint | ROAD-F4 | Full journey gate |
+| Full Roadmap Engine / advanced generation | Future engine slice | Specialized plan types |
+| Specialized roadmap pathways | Future pathway slices | Public sector, study abroad, etc. |
+| Separate task model, if approved | Future task-tracking architecture slice | Not in ROAD-F3 |
+
+#### ROAD-F3 Decision
+
+**A ROAD_F3_DETAIL_TRACKING_ACCEPTED_READY_FOR_ROAD_F4**
+
+#### Recommended Next Slice
+
+Next slice: **ROAD-F4 Roadmap Browser-Tested Checkpoint**
+
+- **ROAD-F3 outcome (2026-07-12):** Decision **A** — skill-based detail tracking stabilized; next = **ROAD-F4**.
 
 ### ROAD-F4 — Roadmap Browser-Tested Checkpoint
 - **Type:** BROWSER_CHECKPOINT  
 - **Goal:** Close Roadmap stabilization with full website verification.  
 - **Allowed:** Docs/tracker/evidence; tiny approved fixes only if journey fails.  
 - **Forbidden:** Jumping to 0051 without gate; new engines.  
-- **Browser journey:** login → Roadmaps → create/open → complete task → refresh → progress persists.  
+- **Browser journey:** login → Roadmaps → create/open → update skill status → refresh → progress persists.  
 - **Tests:** Build + journey + console + dist ignored.  
 - **Evidence:** `~/Desktop/CareerKundi_ROAD_F4_Browser_Checkpoint_Evidence.txt`  
 - **Commit message:** `test(roadmaps): record Roadmap browser checkpoint`  

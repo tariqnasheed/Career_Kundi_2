@@ -1,7 +1,7 @@
 /**
  * RoadmapPage.tsx
  * Platform-wide career roadmap — milestones, skill progress, study material.
- * ROAD-F1: UI shell. ROAD-F2: save/load contract (create → list → load → persist).
+ * ROAD-F1: UI shell. ROAD-F2: save/load. ROAD-F3: detail + skill-based tracking.
  */
 
 import { useState, useEffect } from "react";
@@ -30,12 +30,50 @@ const STATUS_CONFIG = {
 } as const;
 
 type SkillStatus = keyof typeof STATUS_CONFIG;
+const SKILL_STATUS_ORDER: SkillStatus[] = ["not_started", "in_progress", "completed"];
 
-function SkillChip({ skill, roadmapId, onUpdate, onOpen }: {
+function skillStatusCounts(skills: RoadmapSkillRead[]) {
+  return {
+    not_started: skills.filter((s) => (s.status ?? "not_started") === "not_started").length,
+    in_progress: skills.filter((s) => s.status === "in_progress").length,
+    completed: skills.filter((s) => s.status === "completed").length,
+    total: skills.length,
+  };
+}
+
+function SkillStatusSelect({
+  value,
+  disabled,
+  onChange,
+}: {
+  value: SkillStatus;
+  disabled?: boolean;
+  onChange: (next: SkillStatus) => void;
+}) {
+  return (
+    <label className="roadmap-skill-status">
+      <span className="sr-only">Skill status</span>
+      <select
+        value={value}
+        disabled={disabled}
+        aria-label="Skill status"
+        onClick={(e) => e.stopPropagation()}
+        onChange={(e) => onChange(e.target.value as SkillStatus)}
+      >
+        {SKILL_STATUS_ORDER.map((s) => (
+          <option key={s} value={s}>{STATUS_CONFIG[s].label}</option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
+function SkillChip({ skill, roadmapId, onUpdate, onOpen, onActionMessage }: {
   skill: RoadmapSkillRead;
   roadmapId: string;
   onUpdate: () => void;
   onOpen: () => void;
+  onActionMessage?: (msg: string, kind: "success" | "error") => void;
 }) {
   const { addToast } = useUIStore();
   const status = (skill.status ?? "not_started") as SkillStatus;
@@ -43,32 +81,145 @@ function SkillChip({ skill, roadmapId, onUpdate, onOpen }: {
 
   const mutation = useMutation({
     mutationFn: (s: SkillStatus) => roadmapApi.updateSkillStatus(roadmapId, skill.id, s),
-    onSuccess: onUpdate,
-    onError: () => addToast({ type: "error", message: "Could not update skill status." }),
+    onSuccess: () => {
+      onUpdate();
+      addToast({ type: "success", message: "Skill status updated." });
+      onActionMessage?.("Skill status updated.", "success");
+    },
+    onError: () => {
+      addToast({ type: "error", message: "Could not update skill status. Please try again." });
+      onActionMessage?.("Could not update skill status. Please try again.", "error");
+    },
   });
 
-  const cycle = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const order: SkillStatus[] = ["not_started", "in_progress", "completed"];
-    mutation.mutate(order[(order.indexOf(status) + 1) % order.length]);
-  };
+  return (
+    <div className="roadmap-skill-chip-wrap">
+      <button
+        type="button"
+        onClick={onOpen}
+        className={`roadmap-skill-chip${status === "completed" ? " is-done" : ""}`}
+        style={{ color: cfg.color }}
+      >
+        {mutation.isPending ? <Spinner size="sm" /> : cfg.icon}
+        {skill.skill_name}
+        {skill.estimated_hours != null && <span className="roadmap-skill-chip__hours">{skill.estimated_hours}h</span>}
+        {skill.importance && <Badge color="default" size="sm">{skill.importance}</Badge>}
+      </button>
+      <SkillStatusSelect
+        value={status}
+        disabled={mutation.isPending}
+        onChange={(next) => {
+          if (next !== status) mutation.mutate(next);
+        }}
+      />
+    </div>
+  );
+}
+
+function SkillTracker({
+  roadmap,
+  onRefresh,
+  onOpenSkill,
+  onActionMessage,
+}: {
+  roadmap: RoadmapRead;
+  onRefresh: () => void;
+  onOpenSkill: (s: RoadmapSkillRead) => void;
+  onActionMessage: (msg: string, kind: "success" | "error") => void;
+}) {
+  const { addToast } = useUIStore();
+  const [updatingSkillId, setUpdatingSkillId] = useState<string | null>(null);
+  const [refreshingSkillId, setRefreshingSkillId] = useState<string | null>(null);
+
+  const statusMutation = useMutation({
+    mutationFn: ({ skillId, status }: { skillId: string; status: SkillStatus }) =>
+      roadmapApi.updateSkillStatus(roadmap.id, skillId, status),
+    onMutate: ({ skillId }) => setUpdatingSkillId(skillId),
+    onSuccess: () => {
+      onRefresh();
+      addToast({ type: "success", message: "Skill status updated." });
+      onActionMessage("Skill status updated.", "success");
+    },
+    onError: () => {
+      addToast({ type: "error", message: "Could not update skill status. Please try again." });
+      onActionMessage("Could not update skill status. Please try again.", "error");
+    },
+    onSettled: () => setUpdatingSkillId(null),
+  });
+
+  const refreshMutation = useMutation({
+    mutationFn: (skillId: string) => roadmapApi.refreshSkill(roadmap.id, skillId),
+    onMutate: (skillId) => setRefreshingSkillId(skillId),
+    onSuccess: () => {
+      onRefresh();
+      addToast({ type: "success", message: "Skill content refreshed." });
+      onActionMessage("Skill content refreshed.", "success");
+    },
+    onError: () => {
+      addToast({ type: "error", message: "Could not refresh skill content. Please try again." });
+      onActionMessage("Could not refresh skill content. Please try again.", "error");
+    },
+    onSettled: () => setRefreshingSkillId(null),
+  });
+
+  const rows = roadmap.milestones.flatMap((m) =>
+    m.skills.map((s) => ({ skill: s, milestoneTitle: m.title }))
+  );
 
   return (
-    <button
-      onClick={onOpen}
-      style={{
-        display: "inline-flex", alignItems: "center", gap: "5px",
-        padding: "4px 10px", borderRadius: "999px", border: "1px solid",
-        borderColor: status === "completed" ? "rgba(16,185,129,0.4)" : "var(--border-subtle)",
-        background: status === "completed" ? "rgba(16,185,129,0.08)" : "var(--bg-overlay)",
-        color: cfg.color, cursor: "pointer", fontSize: "0.75rem",
-      }}
-    >
-      <span onClick={cycle} style={{ display: "flex" }}>{cfg.icon}</span>
-      {skill.skill_name}
-      {skill.estimated_hours != null && <span style={{ opacity: 0.7, fontSize: "0.65rem" }}>{skill.estimated_hours}h</span>}
-      {skill.importance && <Badge color="default" size="sm">{skill.importance}</Badge>}
-    </button>
+    <section className="roadmap-skill-tracker" aria-label="Skill progress tracker">
+      <div className="roadmap-skill-tracker__head">
+        <h3>Skill progress tracker</h3>
+        <p>
+          Milestones organize the roadmap; skills are the current actionable progress units.
+          Detailed sub-task tracking comes in a later slice.
+        </p>
+      </div>
+      <ul className="roadmap-skill-tracker__list">
+        {rows.map(({ skill, milestoneTitle }) => {
+          const status = (skill.status ?? "not_started") as SkillStatus;
+          const busy = updatingSkillId === skill.id || refreshingSkillId === skill.id;
+          return (
+            <li key={skill.id} className="roadmap-skill-card">
+              <div className="roadmap-skill-card__main">
+                <button type="button" className="roadmap-skill-card__title" onClick={() => onOpenSkill(skill)}>
+                  <strong>{skill.skill_name}</strong>
+                  <span>{milestoneTitle}</span>
+                </button>
+                <div className="roadmap-skill-card__meta">
+                  {skill.importance && <Badge color="default" size="sm">{skill.importance}</Badge>}
+                  {skill.estimated_hours != null && (
+                    <span className="roadmap-skill-card__hours">~{skill.estimated_hours}h</span>
+                  )}
+                </div>
+              </div>
+              <div className="roadmap-skill-card__actions">
+                <SkillStatusSelect
+                  value={status}
+                  disabled={busy}
+                  onChange={(next) => {
+                    if (next !== status) statusMutation.mutate({ skillId: skill.id, status: next });
+                  }}
+                />
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  leftIcon={<RefreshCw size={13} />}
+                  loading={refreshingSkillId === skill.id}
+                  disabled={busy}
+                  onClick={() => refreshMutation.mutate(skill.id)}
+                >
+                  Refresh
+                </Button>
+                <Button variant="ghost" size="sm" onClick={() => onOpenSkill(skill)} disabled={busy}>
+                  Open
+                </Button>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }
 
@@ -79,35 +230,64 @@ const SAMPLE_ROLES = [
 ];
 
 function SkillDetailModal({
-  skill, roadmapId, open, onClose, onRefresh,
+  skill, roadmapId, open, onClose, onRefresh, onActionMessage,
 }: {
   skill: RoadmapSkillRead | null;
   roadmapId: string;
   open: boolean;
   onClose: () => void;
   onRefresh: () => void;
+  onActionMessage?: (msg: string, kind: "success" | "error") => void;
 }) {
   const { addToast } = useUIStore();
   const [practiceTab, setPracticeTab] = useState<"flashcards" | "quizzes" | "projects" | "reflection">("flashcards");
 
+  const statusMutation = useMutation({
+    mutationFn: (s: SkillStatus) => roadmapApi.updateSkillStatus(roadmapId, skill!.id, s),
+    onSuccess: () => {
+      onRefresh();
+      addToast({ type: "success", message: "Skill status updated." });
+      onActionMessage?.("Skill status updated.", "success");
+    },
+    onError: () => {
+      addToast({ type: "error", message: "Could not update skill status. Please try again." });
+      onActionMessage?.("Could not update skill status. Please try again.", "error");
+    },
+  });
+
   const refreshMutation = useMutation({
     mutationFn: () => roadmapApi.refreshSkill(roadmapId, skill!.id),
-    onSuccess: () => { onRefresh(); addToast({ type: "success", message: "Skill content refreshed." }); },
-    onError: () => addToast({ type: "error", message: "Refresh failed." }),
+    onSuccess: () => {
+      onRefresh();
+      addToast({ type: "success", message: "Skill content refreshed." });
+      onActionMessage?.("Skill content refreshed.", "success");
+    },
+    onError: () => {
+      addToast({ type: "error", message: "Could not refresh skill content. Please try again." });
+      onActionMessage?.("Could not refresh skill content. Please try again.", "error");
+    },
   });
 
   if (!skill) return null;
 
+  const status = (skill.status ?? "not_started") as SkillStatus;
   const study = skill.study_material;
   const practice = skill.practice_activities;
 
   return (
     <Modal open={open} onClose={onClose} title={skill.skill_name} size="lg">
       <ModalBody>
-        <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem", flexWrap: "wrap", alignItems: "center" }}>
           {skill.importance && <Badge color="violet">{skill.importance} priority</Badge>}
           {skill.estimated_hours != null && <Badge color="default">~{skill.estimated_hours}h</Badge>}
-          <Badge color={skill.status === "completed" ? "emerald" : "default"}>{skill.status?.replace("_", " ")}</Badge>
+          <SkillStatusSelect
+            value={status}
+            disabled={statusMutation.isPending || refreshMutation.isPending}
+            onChange={(next) => {
+              if (next !== status) statusMutation.mutate(next);
+            }}
+          />
+          {statusMutation.isPending && <Spinner size="sm" />}
         </div>
 
         {skill.lateral_connections?.length > 0 && (
@@ -142,7 +322,7 @@ function SkillDetailModal({
             <CardContent>
               <div className="skill-tabs">
                 {(["flashcards", "quizzes", "projects", "reflection"] as const).map((tab) => (
-                  <button key={tab} className={`skill-tab${practiceTab === tab ? " skill-tab--active" : ""}`} onClick={() => setPracticeTab(tab)}>
+                  <button key={tab} type="button" className={`skill-tab${practiceTab === tab ? " skill-tab--active" : ""}`} onClick={() => setPracticeTab(tab)}>
                     {tab.charAt(0).toUpperCase() + tab.slice(1)}
                   </button>
                 ))}
@@ -202,15 +382,16 @@ function SkillDetailModal({
   );
 }
 
-function TimelineView({ roadmap, onRefresh, onOpenSkill }: {
+function TimelineView({ roadmap, onRefresh, onOpenSkill, onActionMessage }: {
   roadmap: RoadmapRead;
   onRefresh: () => void;
   onOpenSkill: (s: RoadmapSkillRead) => void;
+  onActionMessage?: (msg: string, kind: "success" | "error") => void;
 }) {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
   return (
-    <div className="roadmap-timeline">
+    <div className="roadmap-timeline roadmap-milestone-list">
       {roadmap.milestones.map((m, i) => {
         const done = m.skills.filter((s) => s.status === "completed").length;
         const pct = m.skills.length ? Math.round((done / m.skills.length) * 100) : 0;
@@ -220,7 +401,7 @@ function TimelineView({ roadmap, onRefresh, onOpenSkill }: {
           <motion.div key={m.id} className="roadmap-milestone" initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.06 }}>
             <div className={`roadmap-milestone__dot${pct === 100 ? " roadmap-milestone__dot--done" : ""}`} />
             <Card padding="none" className="feature-glass">
-              <button onClick={() => setExpanded((p) => ({ ...p, [m.id]: !isOpen }))} style={{
+              <button type="button" onClick={() => setExpanded((p) => ({ ...p, [m.id]: !isOpen }))} style={{
                 width: "100%", display: "flex", alignItems: "center", gap: "0.75rem",
                 padding: "0.875rem 1.25rem", background: "none", border: "none", cursor: "pointer",
                 borderBottom: isOpen ? "1px solid var(--border-subtle)" : "none",
@@ -244,7 +425,14 @@ function TimelineView({ roadmap, onRefresh, onOpenSkill }: {
                 <div style={{ padding: "1rem 1.25rem" }}>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
                     {m.skills.map((s) => (
-                      <SkillChip key={s.id} skill={s} roadmapId={roadmap.id} onUpdate={onRefresh} onOpen={() => onOpenSkill(s)} />
+                      <SkillChip
+                        key={s.id}
+                        skill={s}
+                        roadmapId={roadmap.id}
+                        onUpdate={onRefresh}
+                        onOpen={() => onOpenSkill(s)}
+                        onActionMessage={onActionMessage}
+                      />
                     ))}
                   </div>
                 </div>
@@ -257,10 +445,11 @@ function TimelineView({ roadmap, onRefresh, onOpenSkill }: {
   );
 }
 
-function KanbanView({ roadmap, onRefresh, onOpenSkill }: {
+function KanbanView({ roadmap, onRefresh, onOpenSkill, onActionMessage }: {
   roadmap: RoadmapRead;
   onRefresh: () => void;
   onOpenSkill: (s: RoadmapSkillRead) => void;
+  onActionMessage?: (msg: string, kind: "success" | "error") => void;
 }) {
   const allSkills = roadmap.milestones.flatMap((m) => m.skills.map((s) => ({ ...s, milestone_title: m.title })));
   const columns: { status: SkillStatus; label: string; color: string }[] = [
@@ -270,7 +459,7 @@ function KanbanView({ roadmap, onRefresh, onOpenSkill }: {
   ];
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem" }}>
+    <div className="roadmap-kanban-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem" }}>
       {columns.map((col) => {
         const items = allSkills.filter((s) => (s.status ?? "not_started") === col.status);
         return (
@@ -282,10 +471,16 @@ function KanbanView({ roadmap, onRefresh, onOpenSkill }: {
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {items.map((s) => (
-                <div key={s.id} onClick={() => onOpenSkill(s)} style={{ padding: "0.75rem", borderRadius: "10px", background: "var(--bg-glass)", border: "1px solid var(--border-subtle)", cursor: "pointer" }}>
+                <div key={s.id} className="roadmap-skill-card" style={{ padding: "0.75rem" }}>
                   <p style={{ fontWeight: 600, fontSize: "0.8rem" }}>{s.skill_name}</p>
-                  <p style={{ fontSize: "0.7rem", color: "var(--text-secondary)" }}>{s.milestone_title}</p>
-                  <SkillChip skill={s} roadmapId={roadmap.id} onUpdate={onRefresh} onOpen={() => onOpenSkill(s)} />
+                  <p style={{ fontSize: "0.7rem", color: "var(--text-secondary)", marginBottom: "0.4rem" }}>{s.milestone_title}</p>
+                  <SkillChip
+                    skill={s}
+                    roadmapId={roadmap.id}
+                    onUpdate={onRefresh}
+                    onOpen={() => onOpenSkill(s)}
+                    onActionMessage={onActionMessage}
+                  />
                 </div>
               ))}
             </div>
@@ -397,6 +592,17 @@ export default function RoadmapPage() {
   const [generateOpen, setGenerateOpen] = useState(false);
   const [skillDetail, setSkillDetail] = useState<RoadmapSkillRead | null>(null);
   const [roadmapSuccess, setRoadmapSuccess] = useState<string | null>(null);
+  const [roadmapActionError, setRoadmapActionError] = useState<string | null>(null);
+
+  const handleActionMessage = (msg: string, kind: "success" | "error") => {
+    if (kind === "success") {
+      setRoadmapSuccess(msg);
+      setRoadmapActionError(null);
+    } else {
+      setRoadmapActionError(msg);
+      setRoadmapSuccess(null);
+    }
+  };
 
   const {
     data: roadmaps,
@@ -420,6 +626,21 @@ export default function RoadmapPage() {
   useEffect(() => {
     if (roadmaps?.length && !selectedId) setSelectedId(roadmaps[0].id);
   }, [roadmaps, selectedId]);
+
+  useEffect(() => {
+    if (!skillDetail || !activeRoadmap) return;
+    const fresh = activeRoadmap.milestones
+      .flatMap((m) => m.skills)
+      .find((s) => s.id === skillDetail.id);
+    if (!fresh) return;
+    if (
+      fresh.status !== skillDetail.status ||
+      fresh.resources?.length !== skillDetail.resources?.length ||
+      fresh.study_material?.overview !== skillDetail.study_material?.overview
+    ) {
+      setSkillDetail(fresh);
+    }
+  }, [activeRoadmap, skillDetail]);
 
   const deleteMutation = useMutation({
     mutationFn: (id: string) => roadmapApi.delete(id),
@@ -477,8 +698,9 @@ export default function RoadmapPage() {
   };
 
   const allSkills = activeRoadmap?.milestones.flatMap((m) => m.skills) ?? [];
-  const done = allSkills.filter((s) => s.status === "completed").length;
-  const pct = allSkills.length ? Math.round((done / allSkills.length) * 100) : 0;
+  const counts = skillStatusCounts(allSkills);
+  const done = counts.completed;
+  const pct = counts.total ? Math.round((done / counts.total) * 100) : 0;
   const nextSkill = allSkills.find((s) => s.status === "not_started" || s.status === "in_progress");
 
   const radarData = allSkills.slice(0, 8).map((s) => ({
@@ -591,9 +813,15 @@ export default function RoadmapPage() {
             </div>
           )}
           {roadmapSuccess && (
-            <div className="roadmap-status-strip__row roadmap-success">
+            <div className="roadmap-status-strip__row roadmap-success roadmap-action-status">
               <span>{roadmapSuccess}</span>
               <Button variant="ghost" size="sm" onClick={() => setRoadmapSuccess(null)}>Dismiss</Button>
+            </div>
+          )}
+          {roadmapActionError && (
+            <div className="roadmap-status-strip__row roadmap-status-strip__row--error roadmap-error roadmap-action-status" role="alert">
+              <span>{roadmapActionError}</span>
+              <Button variant="ghost" size="sm" onClick={() => setRoadmapActionError(null)}>Dismiss</Button>
             </div>
           )}
           {(deleteMutation.isPending || regenerateMutation.isPending) && (
@@ -675,8 +903,8 @@ export default function RoadmapPage() {
 
                 {activeRoadmap && !detailLoading && (
                   <div className="roadmap-detail">
-                    <div className="feature-grid-2" style={{ marginBottom: "1.5rem" }}>
-                      <Card padding="lg" className="feature-glass">
+                    <div className="roadmap-detail-grid feature-grid-2" style={{ marginBottom: "1.5rem" }}>
+                      <Card padding="lg" className="feature-glass roadmap-progress-summary">
                         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
                           <div>
                             <p style={{ fontWeight: 700 }}>{activeRoadmap.target_role}</p>
@@ -689,9 +917,16 @@ export default function RoadmapPage() {
                         <div style={{ height: "8px", borderRadius: "999px", background: "var(--bg-overlay)", overflow: "hidden" }}>
                           <motion.div initial={{ width: 0 }} animate={{ width: `${pct}%` }} style={{ height: "100%", background: "var(--gradient-primary)", borderRadius: "999px" }} />
                         </div>
-                        <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginTop: "0.4rem" }}>
-                          {done}/{allSkills.length} skills completed. This roadmap uses skill progress as the current progress unit.
-                          Detailed task tracking comes in a later slice.
+                        <ul className="roadmap-progress-summary__counts" aria-label="Skill status counts">
+                          <li><strong>{counts.completed}</strong> completed</li>
+                          <li><strong>{counts.in_progress}</strong> in progress</li>
+                          <li><strong>{counts.not_started}</strong> not started</li>
+                          <li><strong>{counts.total}</strong> skills total</li>
+                        </ul>
+                        <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginTop: "0.55rem" }}>
+                          Current progress is tracked through roadmap skills.
+                          Milestones organize the roadmap; skills are the current actionable progress units.
+                          Detailed sub-task tracking comes in a later slice.
                         </p>
                         {nextSkill && (
                           <div style={{ marginTop: "0.75rem", padding: "0.625rem", borderRadius: "8px", background: "rgba(139,92,246,0.06)", fontSize: "0.8rem", display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
@@ -710,15 +945,32 @@ export default function RoadmapPage() {
                       </Card>
                     </div>
 
+                    <SkillTracker
+                      roadmap={activeRoadmap}
+                      onRefresh={() => { void refetch(); void refetchList(); }}
+                      onOpenSkill={setSkillDetail}
+                      onActionMessage={handleActionMessage}
+                    />
+
                     <AnimatePresence mode="wait">
                       {view === "timeline" ? (
                         <motion.div key="timeline" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                          <TimelineView roadmap={activeRoadmap} onRefresh={() => refetch()} onOpenSkill={setSkillDetail} />
+                          <TimelineView
+                            roadmap={activeRoadmap}
+                            onRefresh={() => { void refetch(); void refetchList(); }}
+                            onOpenSkill={setSkillDetail}
+                            onActionMessage={handleActionMessage}
+                          />
                         </motion.div>
                       ) : (
                         <motion.div key="kanban" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                           <div className="roadmap-kanban">
-                            <KanbanView roadmap={activeRoadmap} onRefresh={() => refetch()} onOpenSkill={setSkillDetail} />
+                            <KanbanView
+                              roadmap={activeRoadmap}
+                              onRefresh={() => { void refetch(); void refetchList(); }}
+                              onOpenSkill={setSkillDetail}
+                              onActionMessage={handleActionMessage}
+                            />
                           </div>
                         </motion.div>
                       )}
@@ -759,7 +1011,8 @@ export default function RoadmapPage() {
           roadmapId={activeRoadmap?.id ?? ""}
           open={!!skillDetail}
           onClose={() => setSkillDetail(null)}
-          onRefresh={() => refetch()}
+          onRefresh={() => { void refetch(); void refetchList(); }}
+          onActionMessage={handleActionMessage}
         />
       </div>
     </div>

@@ -146,3 +146,27 @@ def test_owned_roadmap_helpers_filter_by_user_id():
 
     regen_src = inspect.getsource(roadmap_routes.regenerate_roadmap)
     assert "_get_owned_roadmap" in regen_src
+
+
+def test_skill_status_and_refresh_routes_require_owned_skill():
+    status_src = inspect.getsource(roadmap_routes.update_skill_status)
+    assert "_get_owned_skill" in status_src
+    assert "skill.status = payload.status" in status_src
+
+    refresh_src = inspect.getsource(roadmap_routes.refresh_skill_content)
+    assert "_get_owned_skill" in refresh_src
+
+    owned_skill_src = inspect.getsource(roadmap_routes._get_owned_skill)
+    assert "_get_owned_roadmap" in owned_skill_src
+    assert "NotFoundError" in owned_skill_src
+
+
+def test_no_task_model_skills_are_progress_units():
+    """ROAD-F3: progress contract is skill status — no Task ORM/schema required."""
+    assert "status" in RoadmapSkillRead.model_fields
+    assert RoadmapSkillStatusUpdate.model_fields["status"].annotation
+    # Ensure contract tests do not invent a Task schema import
+    import app.schemas.roadmap as roadmap_schemas
+
+    assert not hasattr(roadmap_schemas, "TaskRead")
+    assert not hasattr(roadmap_schemas, "RoadmapTaskRead")
