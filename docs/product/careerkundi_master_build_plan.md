@@ -1147,6 +1147,181 @@ PF11-R1 is **AUDIT_ONLY**.
 
 ---
 
+## CVB-F0 CV Builder Audit
+
+**Slice type:** AUDIT_ONLY (no product-code changes in CVB-F0).  
+**Inspected (read-only):** `App.tsx` route, `pages/CVBuilderPage.tsx`, `features/DefaultCVSelector.tsx`, `lib/api.ts` (`cvApi`), `types/api.ts` (`GeneratedCVRead`), `styles/feature-pages.css` (`.cv-studio*`), `backend/app/api/routes/cv_builder.py`, `schemas/cv_builder.py`, `db/models/cv.py`, `agents/cv_builder/*`, `tools/document_export.py`, `main.py` router include.  
+**Evidence:** `~/Desktop/CareerKundi_CVB_F0_CV_Builder_Audit_Evidence.txt`  
+**Search terms:** `cv-builder`, `CV Builder`, `CvBuilder`, `resume`, `template`, `pdf`, `export`, `cv_builder`, `GeneratedCV`
+
+### 8.1 Current CV Builder Route Inventory
+
+| Route | Page / Component | Access | Current Status | Source File | Notes |
+|---|---|---|---|---|---|
+| `/cv-builder` | `CVBuilderPage` | Auth + `AppShell` | EXISTING_VERIFIED | `frontend/src/pages/CVBuilderPage.tsx` | Single studio route; sidebar Career Tools → CV Builder; breadcrumb `PAGE_LABELS["cv-builder"]` |
+| `/cv-builder?jobId=` | same | Auth | EXISTING_VERIFIED | `CVBuilderPage` `useSearchParams` | Prefills target job when jobs list loads |
+| `/cv-builder/templates` | — | — | PLANNED | — | Not a separate route; gallery is in-page |
+| `/cv-builder/editor` | — | — | PLANNED | — | Editing is in-page sidebar + profile link |
+| `/cv-builder/preview` | — | — | PLANNED | — | In-page `cv-studio__viewer` |
+| `/cv-builder/export` | — | — | PLANNED | — | In-page PDF/DOCX/MD buttons → API export |
+
+### 8.2 Current Frontend CV Builder Inventory
+
+| Area | Verified File / Component | Current Behavior | Status | Notes |
+|---|---|---|---|---|
+| Page component | `pages/CVBuilderPage.tsx` | Full “AI CV Studio” layout (sidebar + viewer) | EXISTING_VERIFIED | Large single file; builds successfully (`CVBuilderPage-*.js` chunk) |
+| Related component | `features/DefaultCVSelector.tsx` | Default CV picker for applications (`localStorage` key `ck_default_cv_id`) | EXISTING_VERIFIED | Used outside builder (jobs/apply flows) |
+| Form sections | Section toggles + reorder; CV name; tone; target job import; role-targeted mode | Toggle/reorder 12 section kinds; content sourced from profile or AI generate | EXISTING_NEEDS_REVIEW | Not a free-form CV editor; profile edits via `/profile` link |
+| Template selection | In-page gallery of **12** tiles | Sets FE `selectedTemplate`; maps to **4** backend templates (`modern`/`classic`/`compact`/`creative`) | EXISTING_NEEDS_REVIEW | Gallery exists; visual fidelity vs export is F2/F3 risk |
+| Preview | `ProfileCVPreview` / `RenderedCVPreview` | Live profile preview before generate; rendered snapshot after generate; visual/ATS + viewport modes | EXISTING_NEEDS_REVIEW | Preview accent/fonts change with FE template; export uses backend template id |
+| PDF/export action | `cvApi.downloadPdf` via PDF/DOCX/MD buttons | Downloads blob with filename from CV name | EXISTING_NEEDS_REVIEW | Requires existing/generated `cvId`; toast if none |
+| Save/load behavior | Generate persists; list + Load; default star in `localStorage` | `POST /generate` saves; `GET /` lists; Load calls `cvApi.get` | EXISTING_NEEDS_REVIEW | No in-UI delete/regenerate; no PATCH edit of rendered content |
+| API calls | `cvApi`, `profileApi`, `jobApi` | list/get/generate/downloadPdf; profile + saved jobs | EXISTING_VERIFIED | FE does not call regenerate/delete/improve-bullet |
+| Types | `GeneratedCVRead` in `types/api.ts` | Matches backend `CVRead` shape | EXISTING_VERIFIED | |
+| Loading state | Generate overlay + button `loading` | Generate pending shows overlay/skeleton | EXISTING_NEEDS_REVIEW | Profile/jobs/cvs queries lack dedicated loading UI |
+| Empty state | Saved library “No CVs yet”; empty preview copy | Present for library + empty profile sections | EXISTING_NEEDS_REVIEW | |
+| Error state | Toasts on generate/export failure | Query `isError` for profile/cvs/jobs not surfaced in-page | EXISTING_NEEDS_REVIEW | Primary F1 gap |
+| Success state | Toast on generate/load/default | Present | EXISTING_VERIFIED | |
+| Mobile/responsive | `.cv-studio` CSS `@media (max-width: 1024px)` | Stacks to single column; sidebar `max-height: 50vh` | EXISTING_NEEDS_REVIEW | Browser/mobile UX VERIFY_IN_REPO |
+
+### 8.3 Current Backend CV Builder Inventory
+
+| Backend Area | Verified File / Endpoint | Current Behavior | Status | Notes |
+|---|---|---|---|---|
+| Routes | `api/routes/cv_builder.py` prefix `/cv-builder` | generate, list, get, delete, regenerate, export, improve-bullet | EXISTING_VERIFIED | Mounted in `main.py` under `/api/v1` |
+| Schemas | `schemas/cv_builder.py` | `CVGenerateRequest`, `CVRead`, bullet improve contracts | EXISTING_VERIFIED | Backend templates Literal: modern/classic/compact/creative |
+| Services / agents | `agents/cv_builder/{graph,agents,render,state,mock_data}.py` | Multi-agent generate + bullet improve; deterministic `render_cv` | EXISTING_VERIFIED | AI path is out of F1 scope |
+| Models/storage | `db/models/cv.py` `GeneratedCV` / `generated_cvs` | Persists name, template, section_config, rendered_content snapshot | EXISTING_VERIFIED | User-owned rows |
+| PDF/export logic | `tools/document_export.py` + `GET /{cv_id}/export` | Deterministic PDF/DOCX/Markdown; filename from CV name | EXISTING_VERIFIED | No LLM on export |
+| Auth/ownership | `_get_owned_cv`, `_get_owned_target_job`, `get_current_user` | 401 without auth (probed); NotFound if not owner | EXISTING_VERIFIED | API probe: `GET /api/v1/cv-builder/` → **401** |
+| Tests | Dedicated CV Builder route/agent tests | Not found under `backend/**/test*.py` for cv_builder | MISSING | VERIFY_IN_REPO if tests live under alternate names |
+
+### 8.4 Current CV Builder Capability Matrix
+
+| Capability | Current Status | Evidence | Gap | Target Slice |
+|---|---|---|---|---|
+| route exists | Yes | `App.tsx` `/cv-builder` | None | — |
+| page loads | Likely (build OK) | Frontend build emits `CVBuilderPage` chunk | Browser not verified | CVB-F1 / CVB-F5 |
+| editable CV sections | Partial | Toggles/reorder + profile link; not inline CV field editor | Clarify UX; surface L/E/E | CVB-F1 |
+| template gallery | Partial | 12 FE tiles present | Map/clarify vs 4 BE templates; fidelity | CVB-F2 |
+| template preview | Partial | Live FE preview | Preview may not match export layout | CVB-F2 |
+| ATS-friendly template | Partial | FE `category: "ats"` tiles + ATS preview mode | Backend compact/classic mapping only | CVB-F2 |
+| modern visual template | Partial | FE visual tiles → modern/creative/classic | Same mapping gap | CVB-F2 |
+| PDF export | Partial | Route + FE buttons + `export_pdf` | Reliability/browser verify | CVB-F3 |
+| safe filename | Partial | Spaces → `_` in FE and BE | Edge chars VERIFY_IN_REPO | CVB-F3 |
+| save CV version | Partial | Generate creates `GeneratedCV` | No explicit version naming/history UX | CVB-F4 |
+| load CV version | Partial | Library Load + `cvApi.get` | No delete UI; regenerate unused | CVB-F4 |
+| auth/ownership protection | Yes | Depends + ownership helpers; 401 probe | — | — |
+| loading/empty/error states | Partial | Generate L; library empty; weak query error UI | Add profile/cvs/jobs L/E/E | CVB-F1 |
+| mobile usability | Partial | CSS breakpoint | Browser verify | CVB-F1 / CVB-F5 |
+| browser journey verified | No | Vite down this slice | `BLOCKED_BROWSER_SETUP` | CVB-F5 (and F1 smoke if available) |
+
+### 8.5 Gap Analysis Against Master Plan
+
+**Already exists**
+
+- Authenticated `/cv-builder` studio page with sidebar controls and live preview.  
+- Backend generate/list/get/delete/regenerate/export + ownership.  
+- Persistence via `generated_cvs`.  
+- Template gallery UI (12), ATS/visual preview modes, export buttons, saved library + default CV localStorage.  
+- Profile-driven preview before AI generate.
+
+**Partially present**
+
+- Templates: FE 12 → BE 4 (preview accents ≠ distinct export templates).  
+- Save/load: generate/list/load work; delete/regenerate APIs unused in UI.  
+- L/E/E: generate covered; list/profile/jobs query failures not.  
+- Nested routes from UX0 sitemap remain PLANNED (in-page today is acceptable for MVP).
+
+**Broken or risky (documented, not fixed here)**
+
+- Preview/export template mismatch risk.  
+- AI generate/export reliability unverified in browser.  
+- Missing dedicated automated CV Builder tests (search found none).  
+- Unused FE imports / dead API surface (e.g. regenerate) are hygiene risks for F1.
+
+**Missing (do not invent as existing)**
+
+- Separate `/cv-builder/templates|editor|preview|export` routes.  
+- Cover letters / portfolio (explicitly not MVP).  
+- Passport-owned CV data (CV may read profile only).
+
+**Must not be built yet**
+
+- Passport/claims ownership of CV content.  
+- AI rewrite expansion beyond existing generate (F1 forbids advanced AI work).  
+- Safe Apply / Auto Apply coupling expansion.  
+- Broad visual redesign.
+
+**Next repair slice focus (CVB-F1)**
+
+- Ensure `/cv-builder` loads cleanly with usable controls.  
+- Add/fix loading, empty, and error states for profile / CV list / jobs queries.  
+- Fix any import/type/console issues discovered during F1.  
+- Do **not** expand template gallery, PDF hardening, or save/load product scope (F2–F4).
+
+### 8.6 CV Builder Risk Register
+
+| Risk | Impact | Evidence | Recommended Handling | Target Slice |
+|---|---|---|---|---|
+| Route/page crash | High | Not observed in build; browser unverified | Smoke load + fix crashes only | CVB-F1 |
+| Broken imports/types | Medium | Build passes; unused `Download` import noted | Clean only if F1 touches file | CVB-F1 |
+| Incomplete form structure | Medium | Sections are toggles, not inline editors | Document; keep profile-link pattern unless F1 needs clarity | CVB-F1 |
+| Template selection missing | Low | Gallery exists | Stabilize mapping/preview | CVB-F2 |
+| Preview/export mismatch | High | 12 FE vs 4 BE templates | Align preview semantics with export | CVB-F2 / CVB-F3 |
+| PDF export not reliable | High | Code path exists; browser unverified | Verify formats + safe filename | CVB-F3 |
+| CV data not persisted | Low | `GeneratedCV` + generate persist | Improve load/delete UX | CVB-F4 |
+| No ownership checks | Low (mitigated) | `_get_owned_cv` + 401 probe | Keep; regression tests later | CVB-F4 / tests |
+| Browser journey not verified | Medium | Vite down; no auth session | F1 smoke if possible; full journey F5 | CVB-F5 |
+| Console/network errors | Medium | VERIFY_IN_REPO | Capture in F1 browser if available | CVB-F1 |
+| Mobile layout problems | Medium | CSS stacks; 50vh sidebar | Verify + small CSS only if broken | CVB-F1 / F5 |
+| Missing automated tests | Medium | No cv_builder test hits found | Add when stabilizing F3/F4 | Later |
+
+### 8.7 CVB-F1 Repair Scope Recommendation
+
+**CVB-F1 should focus only on:**
+
+1. Making `/cv-builder` load cleanly under auth.  
+2. Repairing current UI crashes / import / type issues if found.  
+3. Making existing form/sidebar controls usable (name, sections, tone, job import, generate button affordances).  
+4. Adding or documenting loading / empty / error states for profile, CV list, and jobs queries.  
+5. Ensuring no console errors in the basic load journey (when browser available).  
+6. Updating live tracker + evidence.
+
+**CVB-F1 should not include:**
+
+- Template gallery expansion or redesign (CVB-F2)  
+- PDF export stabilization (CVB-F3)  
+- Save/load persistence product work beyond what’s needed for page usability (CVB-F4)  
+- AI CV rewriting / pipeline changes  
+- Backend migrations unless the route is unusable without them  
+- Large visual redesign  
+
+**Suggested allowed files for CVB-F1 (finalize in F1 prompt):**
+
+- `frontend/src/pages/CVBuilderPage.tsx`  
+- `frontend/src/styles/feature-pages.css` (CV studio selectors only if needed)  
+- Docs/tracker only besides the above  
+
+### 8.8 CVB-F0 Decision
+
+**A CV_BUILDER_READY_FOR_CVB_F1_UI_REPAIR**
+
+Rationale: `/cv-builder` and backend CV APIs exist and compile; capability gaps are documented for F1–F5. Browser was unavailable this slice but does **not** block starting F1 UI repair (mark journey `BLOCKED_BROWSER_SETUP` for verification only).
+
+**Recommended next slice:** **CVB-F1 CV Builder UI Repair**
+
+### 8.9 CVB-F0 Audit-Only Decision
+
+CVB-F0 is **audit-only**.
+
+- No CV Builder product code was modified.  
+- No backend product code was modified.  
+- Any repair must happen in **CVB-F1** or later.  
+- Frozen systems remain protected (old 004E Interview Pack repair; old Auto Apply).
+
+---
+
 ## 13. Dashboard Blueprint
 
 | Section | Purpose | Data | Backend source | Empty state | Primary action | Secondary | MVP | Future | Analytics | Tech notes |
@@ -1788,6 +1963,7 @@ Privacy/logging restrictions / Tests/evals
 - **Push:** Optional/yes after verification  
 - **Done definition:** Broken behaviors listed; F1–F5 scoped; no code changes  
 - **Product code allowed:** No  
+- **CVB-F0 outcome (2026-07-12):** Decision **A** — ready for CVB-F1 UI repair. Full audit in master § CVB-F0 CV Builder Audit. Browser journey `BLOCKED_BROWSER_SETUP` (does not block F1).
 
 ### CVB-F1 — CV Builder UI Repair
 - **Type:** FRONTEND_VISIBLE  
