@@ -1909,7 +1909,7 @@ Every large feature should show: status label; readiness; known limitations; wha
 | CVB-F1 | CV Builder UI Repair | Usable page | After audit | Minimal | CV page | None | None | Auth | Build | Load/edit | CVB-F1 | Yes | No | CVB files | Yes | Planned |
 | CVB-F2 | Template Gallery + Preview | Templates | After F1 | Minimal | Gallery/preview | None | No AI rewrite | — | Build | Template+preview | CVB-F2 | Yes | No | CVB files | Yes | Planned |
 | CVB-F3 | PDF Export Verification | Export works | After F2 | Export path | Export UI | None | None | Safe filename | Build + open PDF | Export | CVB-F3 | Yes | No | CVB files | Yes | Planned |
-| CVB-F4 | Save/Load Versions | Persist CVs | After F3 | Versions API | Save/load UI | Maybe | None | Ownership | API+UI tests | Save/refresh/load | CVB-F4 | Yes | If API contract | CV+API | Yes | Planned |
+| CVB-F4 | Save/Load Versions | Persist CVs | After F3 | PATCH + section_config meta | Save/load UI | No | None | Ownership | API+UI tests | Save/refresh/load | CVB-F4 | Yes | Existing APIs | CV+API | Yes | Done (Decision B) |
 | CVB-F5 | CV Browser Checkpoint | Close CVB | After F3+F4 | — | — | — | — | — | Full | Full CV journey | CVB-F5 | Yes | No | evidence/docs | Yes | Planned |
 | ROAD-F0 | Roadmap Audit | Audit only | Before repair | Inspect | Inspect | None | None | — | Manual | Open page | ROAD-F0 | Yes | No | docs | Optional | Planned |
 | ROAD-F1 | Roadmap UI Repair | Usable list | After F0 | Minimal | Roadmap page | None | No full AI engine | — | Build | List/empty/CTA | ROAD-F1 | Yes | No | ROAD files | Yes | Planned |
@@ -2175,22 +2175,79 @@ Privacy/logging restrictions / Tests/evals
 - **Done definition:** Export path verified; filename safe; template mapping documented  
 - **CVB-F3 outcome (2026-07-12):** Decision **B** — accepted with browser setup blocked; next = **CVB-F4**. Capability: selected template id wired to PDF style families; full layout PDF deferred.
 
+### CVB-F4 CV Save / Load Versions
 ### CVB-F4 — CV Save/Load Versions
-- **Type:** FULL_STACK (if persistence missing)  
-- **Goal:** Persist CV versions so users do not lose work.  
+- **Type:** FULL_STACK  
+- **Goal:** Persist CV versions so users do not lose work; restore selected gallery template.  
 - **Allowed:** CV version API/routes/schemas/services/models + FE save/load UI as listed; docs/tracker.  
-- **Forbidden:** Cross-user access; claims ownership; Auto Apply.  
-- **Backend:** Versions CRUD with ownership. **Frontend:** Save/load UI.  
-- **API:** Planned shape `GET/POST /api/v1/cv-builder/versions`, `GET/PATCH .../{id}` (verify existing before inventing).  
-- **DB/Migration:** Only if required and approved.  
-- **AI:** None.  
-- **Security/privacy:** Every CV belongs to authenticated user/subject; ownership checks.  
-- **Tests:** API ownership + UI persist.  
-- **Browser:** Save → refresh → load.  
-- **Evidence:** `~/Desktop/CareerKundi_CVB_F4_Save_Load_Evidence.txt`  
-- **Commit message:** `feat(cv-builder): add CV version save and load`  
+- **Forbidden:** Cross-user access; claims ownership; Auto Apply; AI rewrite; marketplace; migration unless required.  
+- **Backend:** Existing generate/list/get/delete/regenerate/export + new lightweight `PATCH /{cv_id}`; ownership via `_get_owned_cv`.  
+- **Frontend:** Save Draft (create via generate or update via PATCH); Load restores content + studio template; honest status banners.  
+- **DB/Migration:** None — studio template id stored in existing `section_config` JSON meta (`_studio`).  
+- **AI:** None for save-settings path; generate still uses existing pipeline when creating a new version.  
+- **Security/privacy:** Every CV belongs to authenticated user; ownership checks preserved.  
+- **Tests:** Unit tests for studio template validation/persistence + existing export tests.  
+- **Browser:** Save → refresh → load — `BLOCKED_BROWSER_SETUP` this slice.  
+- **Evidence:** `~/Desktop/CareerKundi_CVB_F4_Save_Load_Versions_Evidence.txt`  
+- **Commit message:** `feat(cv-builder): persist CV versions and templates`  
 - **Push:** Yes  
-- **Done definition:** Persist across refresh with ownership enforced  
+- **Done definition:** Persist across refresh (code-ready); ownership enforced; template restored when present  
+
+#### Save / Load Flow Summary
+
+| Area | Before | Change / Verification | Result | Notes |
+|---|---|---|---|---|
+| Saved CV list | Library list via `GET /cv-builder/` | Kept; version cards show template + selected state | Pass | Scoped CSS |
+| Load CV version | Load set backend style only | `cvApi.get` + restore `studio_template_id` / default | Pass | Honest default copy |
+| Save Draft | Always `generate` (new AI run) | No id → generate; has id → `PATCH` metadata | Pass | No AI on update path |
+| Selected template persistence | UI-only | Persist in `section_config` `_studio` meta | Pass | 15-id validation |
+| Default template fallback | N/A | Missing id → `minimal-corporate` | Pass | No scary error |
+| Backend create/update/read/list | generate/list/get | + PATCH; create/read return `studio_template_id` | Pass | No migration |
+| Ownership/auth check | `_get_owned_cv` | Preserved on get/patch/delete/export | Pass | Unchanged pattern |
+| Export compatibility | query `template_id` | Fallback to persisted studio id then row style | Pass | 4 PDF families |
+| UI loading/saving/error states | Toasts only | Banners: Saving/Draft saved/errors/load notes | Pass | `.cv-builder-save-load` |
+| Build | — | `npm run build` (tsc + vite) | Pass | dist ignored |
+| Backend tests | export unit tests | + `test_cv_studio_template_persistence.py` | Pass | 14 passed |
+| Browser journey | — | Not run | Blocked | `BLOCKED_BROWSER_SETUP` |
+
+#### Files Changed
+
+| File | Change Type | Reason | Scope |
+|---|---|---|---|
+| `backend/app/agents/cv_builder/studio_template.py` | Added | Validate/inject/extract studio id in section_config | CVB-F4 |
+| `backend/app/schemas/cv_builder.py` | Modified | `studio_template_id`, `CVUpdateRequest`, CVRead hydrate | CVB-F4 |
+| `backend/app/api/routes/cv_builder.py` | Modified | PATCH update; persist on generate; export fallback | CVB-F4 |
+| `backend/tests/unit/test_cv_studio_template_persistence.py` | Added | Valid/invalid/default/hydration tests | CVB-F4 |
+| `frontend/src/pages/CVBuilderPage.tsx` | Modified | Save/load states + restore template | CVB-F4 |
+| `frontend/src/lib/api.ts` | Modified | `studio_template_id` + `cvApi.update` | CVB-F4 |
+| `frontend/src/types/api.ts` | Modified | `studio_template_id` on `GeneratedCVRead` | CVB-F4 |
+| `frontend/src/styles/feature-pages.css` | Modified | Save/load + selected version styles | CVB-F4 |
+| `docs/product/careerkundi_master_build_plan.md` | Modified | CVB-F4 outcome | Docs |
+| `docs/product/careerkundi_live_tracker.md` | Modified | Progress → CVB-F5 | Docs |
+
+#### Persistence Decision
+
+`TEMPLATE_ID_PERSISTED_METADATA_FIELD`  
+`SAVE_LOAD_CODE_READY_BROWSER_SETUP_BLOCKED`
+
+#### Remaining CV Builder Work
+
+| Remaining Work | Target Slice | Notes |
+|---|---|---|
+| Browser-Tested Checkpoint | CVB-F5 | Full authenticated save/load/export journey |
+| Full 15-layout PDF rendering | Future approved slice | Still deferred (4 CSS families) |
+| AI CV rewriting | Future AI slice | Out of CVB-F4 |
+| More templates beyond 15 | Future approved slice | Out of scope |
+
+#### CVB-F4 Decision
+
+**B CVB_F4_ACCEPTED_BROWSER_SETUP_BLOCKED**
+
+#### Recommended Next Slice
+
+Next slice: **CVB-F5 CV Browser-Tested Checkpoint**
+
+- **CVB-F4 outcome (2026-07-12):** Decision **B** — code/tests/build accepted; browser save→refresh→load blocked by local setup; next = **CVB-F5**.
 
 ### CVB-F5 — CV Browser-Tested Checkpoint
 - **Type:** BROWSER_CHECKPOINT  

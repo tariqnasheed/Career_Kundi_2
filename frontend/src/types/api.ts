@@ -241,7 +241,9 @@ export interface GeneratedCVRead {
   target_job_id: string | null;
   name: string;
   template: string;
-  section_config: { section_id: string; enabled: boolean }[];
+  /** CVB-F2 gallery id when persisted; null on older CVs → UI defaults to minimal-corporate */
+  studio_template_id?: string | null;
+  section_config: { section_id: string; enabled: boolean; studio_template_id?: string }[];
   rendered_content: Record<string, unknown>;
   export_format_last_used: string | null;
   created_at: string;

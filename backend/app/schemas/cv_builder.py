@@ -25,7 +25,12 @@ import uuid
 from datetime import datetime
 from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+
+from app.agents.cv_builder.studio_template import (
+    extract_studio_template_id,
+    validate_studio_template_id,
+)
 
 
 class _ORMModel(BaseModel):
@@ -50,11 +55,18 @@ class CVGenerateRequest(BaseModel):
     `generation_mode="role_targeted"` generates full section content for a
     different target role via the model. Section toggles only control which
     sections appear — the model writes the content for each enabled section.
+
+    `studio_template_id` is the CVB-F2 gallery id (15 templates). Persisted in
+    section_config JSON meta — not the same as `template` (PDF style family).
     """
 
     name: str | None = Field(default=None, description="Display name for this saved CV, e.g. 'Backend Eng — Acme'")
     target_job_id: uuid.UUID | None = Field(default=None, description="Tailor content toward this saved job, if any")
     template: Literal["modern", "classic", "compact", "creative"] = "modern"
+    studio_template_id: str | None = Field(
+        default=None,
+        description="CVB-F2 gallery template id (e.g. bold-sidebar). Validated against the 15-template catalog.",
+    )
     section_ids: list[str] | None = Field(default=None, description="None = every populated section")
     tone: Literal["concise", "detailed", "executive"] = "concise"
     generation_mode: Literal["profile", "role_targeted"] = Field(
@@ -70,6 +82,11 @@ class CVGenerateRequest(BaseModel):
         description="Optional role/JD context when generation_mode=role_targeted",
     )
 
+    @field_validator("studio_template_id")
+    @classmethod
+    def _validate_studio_template_id(cls, value: str | None) -> str | None:
+        return validate_studio_template_id(value)
+
     @model_validator(mode="after")
     def _validate_role_targeted(self) -> "CVGenerateRequest":
         if self.generation_mode == "role_targeted" and not (self.target_role_title or "").strip():
@@ -79,6 +96,32 @@ class CVGenerateRequest(BaseModel):
 
 class CVRegenerateRequest(CVGenerateRequest):
     """Same shape as a fresh generation — regenerating just re-runs the pipeline against an existing saved CV row."""
+
+
+class CVUpdateRequest(BaseModel):
+    """
+    Lightweight save of draft metadata without re-running the AI pipeline.
+    Used by Save Draft when a CV version already exists (CVB-F4).
+    """
+
+    name: str | None = Field(default=None, description="Display name for this saved CV")
+    template: Literal["modern", "classic", "compact", "creative"] | None = Field(
+        default=None,
+        description="PDF/backend style family stored on the CV row",
+    )
+    studio_template_id: str | None = Field(
+        default=None,
+        description="CVB-F2 gallery template id to persist in section_config meta",
+    )
+    section_ids: list[str] | None = Field(
+        default=None,
+        description="When set, replaces enabled section toggles (studio meta preserved/merged)",
+    )
+
+    @field_validator("studio_template_id")
+    @classmethod
+    def _validate_studio_template_id(cls, value: str | None) -> str | None:
+        return validate_studio_template_id(value)
 
 
 class CVRead(_ORMModel):
@@ -92,6 +135,32 @@ class CVRead(_ORMModel):
     export_format_last_used: str | None = None
     created_at: datetime
     updated_at: datetime
+    studio_template_id: str | None = None
+
+    @model_validator(mode="before")
+    @classmethod
+    def _hydrate_studio_template_id(cls, data: Any) -> Any:
+        """Derive studio_template_id from section_config meta for ORM and dict inputs."""
+        if hasattr(data, "section_config"):
+            cfg = getattr(data, "section_config", None) or []
+            studio = extract_studio_template_id(cfg)
+            return {
+                "id": data.id,
+                "user_id": data.user_id,
+                "target_job_id": data.target_job_id,
+                "name": data.name,
+                "template": data.template,
+                "section_config": cfg,
+                "rendered_content": data.rendered_content or {},
+                "export_format_last_used": data.export_format_last_used,
+                "created_at": data.created_at,
+                "updated_at": data.updated_at,
+                "studio_template_id": studio,
+            }
+        if isinstance(data, dict) and data.get("studio_template_id") is None:
+            studio = extract_studio_template_id(data.get("section_config") or [])
+            return {**data, "studio_template_id": studio}
+        return data
 
 
 class CVExportRequest(BaseModel):

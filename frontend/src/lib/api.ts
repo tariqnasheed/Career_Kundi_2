@@ -295,6 +295,7 @@ export const cvApi = {
     name?: string;
     target_job_id?: string;
     template?: string;
+    studio_template_id?: string;
     section_ids?: string[];
     tone?: "concise" | "detailed" | "executive";
     generation_mode?: "profile" | "role_targeted";
@@ -302,6 +303,20 @@ export const cvApi = {
     target_role_description?: string;
   }): Promise<GeneratedCVRead> => {
     const res = await http.post<GeneratedCVRead>("/cv-builder/generate", payload);
+    return res.data;
+  },
+
+  /** Update draft metadata (name/template/studio id/sections) without re-running AI. */
+  update: async (
+    cvId: string,
+    payload: {
+      name?: string;
+      template?: string;
+      studio_template_id?: string;
+      section_ids?: string[];
+    },
+  ): Promise<GeneratedCVRead> => {
+    const res = await http.patch<GeneratedCVRead>(`/cv-builder/${cvId}`, payload);
     return res.data;
   },
 

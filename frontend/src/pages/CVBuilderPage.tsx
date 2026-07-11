@@ -1,7 +1,6 @@
 /**
  * CVBuilderPage.tsx
- * CV Builder Studio — 15-template gallery + live preview engine (CVB-F2).
- * PDF export hardening and version persistence continue in later slices.
+ * CV Builder Studio — 15-template gallery + live preview + save/load versions (CVB-F4).
  */
 
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -21,6 +20,9 @@ import {
 } from "../components/features/CVTemplateGallery";
 import { CVTemplatePreview } from "../components/features/CVTemplatePreview";
 import { CVBuilderStudioPanel } from "../components/features/CVBuilderStudioPanel";
+
+const DEFAULT_TEMPLATE_ID: CVTemplateId = "minimal-corporate";
+const STUDIO_META_SECTION = "_studio";
 
 function queryErrorMessage(err: unknown): string {
   const msg = (err as ApiError | undefined)?.message;
@@ -42,6 +44,35 @@ function buildSafeCvPdfFilename(candidateName: string | undefined | null, templa
   const name = sanitizeFilenameToken(candidateName, "Candidate");
   const template = sanitizeFilenameToken(templateName, "Template");
   return `CareerKundi_${name}_${template}_CV.pdf`;
+}
+
+function isCVTemplateId(value: string | null | undefined): value is CVTemplateId {
+  return Boolean(value && CV_TEMPLATE_CATALOG.some((t) => t.id === value));
+}
+
+/** Restore gallery id from saved CV; older rows without studio id use default. */
+function resolveLoadedTemplateId(cv: GeneratedCVRead): {
+  templateId: CVTemplateId;
+  usedDefault: boolean;
+} {
+  if (isCVTemplateId(cv.studio_template_id)) {
+    return { templateId: cv.studio_template_id, usedDefault: false };
+  }
+  const fromMeta = cv.section_config?.find((s) => s.section_id === STUDIO_META_SECTION)?.studio_template_id;
+  if (isCVTemplateId(fromMeta)) {
+    return { templateId: fromMeta, usedDefault: false };
+  }
+  const byBackend = CV_TEMPLATE_CATALOG.find((t) => t.backendTemplate === cv.template);
+  if (byBackend) {
+    return { templateId: byBackend.id, usedDefault: true };
+  }
+  return { templateId: DEFAULT_TEMPLATE_ID, usedDefault: true };
+}
+
+function enabledSectionIdsFromCv(cv: GeneratedCVRead): string[] {
+  return (cv.section_config ?? [])
+    .filter((s) => s.enabled && s.section_id !== STUDIO_META_SECTION)
+    .map((s) => s.section_id);
 }
 
 const DEFAULT_CV_KEY = "ck_default_cv_id";
@@ -76,7 +107,8 @@ export default function CVBuilderPage() {
   const jobs = jobsQuery.data;
   const cvs = cvsQuery.data;
 
-  const [selectedTemplateId, setSelectedTemplateId] = useState<CVTemplateId>("minimal-corporate");
+  const [selectedTemplateId, setSelectedTemplateId] = useState<CVTemplateId>(DEFAULT_TEMPLATE_ID);
+  const [selectedCvId, setSelectedCvId] = useState<string | null>(null);
   const [enabledSections, setEnabledSections] = useState([
     "summary", "experience", "education", "skills", "certifications", "projects",
   ]);
@@ -84,9 +116,14 @@ export default function CVBuilderPage() {
   const [targetJobDescription, setTargetJobDescription] = useState("");
   const [cvName, setCvName] = useState("");
   const [tone, setTone] = useState<"concise" | "detailed" | "executive">("concise");
-  const [lastCvId, setLastCvId] = useState<string | null>(null);
   const [defaultCvId, setDefaultCvId] = useState<string | null>(localStorage.getItem(DEFAULT_CV_KEY));
   const [loadingCvId, setLoadingCvId] = useState<string | null>(null);
+  const [isSavingDraft, setIsSavingDraft] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
+  const [saveSuccess, setSaveSuccess] = useState<string | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [loadSuccess, setLoadSuccess] = useState<string | null>(null);
+  const [templateRestoredNote, setTemplateRestoredNote] = useState<string | null>(null);
   const [exportError, setExportError] = useState<string | null>(null);
   const [exportSuccess, setExportSuccess] = useState<string | null>(null);
 
@@ -120,31 +157,64 @@ export default function CVBuilderPage() {
     }
   }, [selectedJob]);
 
-  const generateMutation = useMutation({
-    mutationFn: () =>
-      cvApi.generate({
-        name: cvName || `${profile?.full_name ?? "My"} CV`,
+  const saveDraft = async () => {
+    if (!profile && profileQuery.isError) {
+      setSaveError("Could not save this CV. Please try again.");
+      return;
+    }
+    setSaveError(null);
+    setSaveSuccess(null);
+    setIsSavingDraft(true);
+    try {
+      const name = cvName || `${profile?.full_name ?? "My"} CV`;
+      const payload = {
+        name,
         target_job_id: targetJobId || undefined,
         template: template.backendTemplate,
+        studio_template_id: selectedTemplateId,
         section_ids: enabledSections,
         tone,
-        generation_mode: "profile",
-      }),
-    onSuccess: (cv: GeneratedCVRead) => {
-      setLastCvId(cv.id);
-      qc.invalidateQueries({ queryKey: ["cvs"] });
-      addToast({
-        type: "success",
-        title: "Draft saved",
-        message: "Saved via existing generate API. Version UX continues in a later slice.",
-      });
-    },
-    onError: () => addToast({ type: "error", message: "Could not save draft." }),
-  });
+        generation_mode: "profile" as const,
+      };
+
+      let cv: GeneratedCVRead;
+      if (selectedCvId) {
+        cv = await cvApi.update(selectedCvId, {
+          name: payload.name,
+          template: payload.template,
+          studio_template_id: payload.studio_template_id,
+          section_ids: payload.section_ids,
+        });
+        setSaveSuccess("Draft saved");
+        addToast({
+          type: "success",
+          title: "Draft saved",
+          message: "Updated this CV version (name, sections, and selected template).",
+        });
+      } else {
+        cv = await cvApi.generate(payload);
+        setSaveSuccess("Draft saved");
+        addToast({
+          type: "success",
+          title: "Draft saved",
+          message: "Created a new saved CV version with the selected template.",
+        });
+      }
+      setSelectedCvId(cv.id);
+      await qc.invalidateQueries({ queryKey: ["cvs"] });
+    } catch (err) {
+      const message = "Could not save this CV. Please try again.";
+      setSaveError(message);
+      setSaveSuccess(null);
+      addToast({ type: "error", message: queryErrorMessage(err) || message });
+    } finally {
+      setIsSavingDraft(false);
+    }
+  };
 
   const exportMutation = useMutation({
     mutationFn: async () => {
-      const cvId = lastCvId ?? cvs?.[0]?.id;
+      const cvId = selectedCvId ?? cvs?.[0]?.id;
       if (!cvId) throw new Error("no-cv");
       setExportError(null);
       setExportSuccess(null);
@@ -152,7 +222,6 @@ export default function CVBuilderPage() {
       if (!(blob instanceof Blob) || blob.size === 0) {
         throw new Error("empty-pdf");
       }
-      // Guard against API error JSON returned as blob
       if (blob.type && blob.type.includes("application/json")) {
         throw new Error("export-rejected");
       }
@@ -194,16 +263,27 @@ export default function CVBuilderPage() {
 
   const loadCV = async (cv: GeneratedCVRead) => {
     setLoadingCvId(cv.id);
+    setLoadError(null);
+    setLoadSuccess(null);
+    setTemplateRestoredNote(null);
     try {
-      const match = CV_TEMPLATE_CATALOG.find((t) => t.backendTemplate === cv.template);
-      if (match) setSelectedTemplateId(match.id);
-      setEnabledSections(cv.section_config?.filter((s) => s.enabled).map((s) => s.section_id) ?? []);
-      setCvName(cv.name);
-      setLastCvId(cv.id);
-      if (cv.target_job_id) setTargetJobId(cv.target_job_id);
-      await cvApi.get(cv.id);
-      addToast({ type: "info", message: `Loaded draft: ${cv.name}` });
+      const full = await cvApi.get(cv.id);
+      const { templateId, usedDefault } = resolveLoadedTemplateId(full);
+      setSelectedTemplateId(templateId);
+      setEnabledSections(enabledSectionIdsFromCv(full));
+      setCvName(full.name);
+      setSelectedCvId(full.id);
+      if (full.target_job_id) setTargetJobId(full.target_job_id);
+      setLoadSuccess("Loaded saved CV");
+      if (usedDefault) {
+        setTemplateRestoredNote("Older CV version uses default template.");
+      } else {
+        setTemplateRestoredNote("Template restored from saved version.");
+      }
+      addToast({ type: "info", message: `Loaded draft: ${full.name}` });
     } catch (err) {
+      setLoadError("Could not load this CV.");
+      setLoadSuccess(null);
       addToast({ type: "error", message: queryErrorMessage(err) });
     } finally {
       setLoadingCvId(null);
@@ -214,8 +294,8 @@ export default function CVBuilderPage() {
     previewRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const canSave = !generateMutation.isPending && !profileQuery.isLoading && !profileQuery.isError;
-  const canExport = !exportMutation.isPending && Boolean(lastCvId || cvs?.[0]?.id);
+  const canSave = !isSavingDraft && !profileQuery.isLoading && !profileQuery.isError;
+  const canExport = !exportMutation.isPending && Boolean(selectedCvId || cvs?.[0]?.id);
 
   return (
     <div className="cv-builder-studio">
@@ -227,8 +307,8 @@ export default function CVBuilderPage() {
           <h1>Design a distinctive CV</h1>
           <p>
             Modern layered studio with {CV_TEMPLATE_CATALOG.length} structurally different templates
-            and a live preview engine. PDF export maps the selected template to a supported style
-            family (modern / classic / compact / creative). Full layout-parity PDF rendering is deferred.
+            and a live preview engine. Save Draft stores the selected gallery template with the CV
+            version. PDF export maps to a supported style family (modern / classic / compact / creative).
           </p>
         </div>
         <div className="cv-builder-studio__actions">
@@ -238,11 +318,11 @@ export default function CVBuilderPage() {
           <Button
             variant="primary"
             leftIcon={<Save size={15} />}
-            loading={generateMutation.isPending}
+            loading={isSavingDraft}
             disabled={!canSave}
-            onClick={() => generateMutation.mutate()}
+            onClick={() => void saveDraft()}
           >
-            Save Draft
+            {isSavingDraft ? "Saving..." : "Save Draft"}
           </Button>
           <Button
             variant="secondary"
@@ -260,6 +340,34 @@ export default function CVBuilderPage() {
           </Button>
         </div>
       </header>
+
+      <div className="cv-builder-save-load" aria-live="polite">
+        {isSavingDraft && (
+          <div className="cv-builder-save-status">Saving…</div>
+        )}
+        {saveError && (
+          <div className="cv-builder-save-error" role="alert">{saveError}</div>
+        )}
+        {saveSuccess && !saveError && (
+          <div className="cv-builder-save-success">{saveSuccess}</div>
+        )}
+        {loadError && (
+          <div className="cv-builder-save-error" role="alert">{loadError}</div>
+        )}
+        {loadSuccess && !loadError && (
+          <div className="cv-builder-save-success">{loadSuccess}</div>
+        )}
+        {templateRestoredNote && !loadError && (
+          <div className="cv-builder-save-status">{templateRestoredNote}</div>
+        )}
+        {selectedCvId && (
+          <p className="cv-builder-save-load__selected">
+            Selected version: <strong>{selectedCvId.slice(0, 8)}…</strong>
+            {" · "}
+            Template: <strong>{template.name}</strong>
+          </p>
+        )}
+      </div>
 
       <div className="cv-builder-export" aria-live="polite">
         {exportMutation.isPending && (
@@ -344,7 +452,7 @@ export default function CVBuilderPage() {
         />
       </div>
 
-      <section className="cv-builder-studio__library" aria-label="Saved CV library">
+      <section className="cv-builder-studio__library cv-builder-version-list" aria-label="Saved CV library">
         <h2>Saved drafts</h2>
         {cvsQuery.isLoading && (
           <div className="cv-builder-studio__library-loading">
@@ -356,36 +464,46 @@ export default function CVBuilderPage() {
         )}
         {cvsQuery.isSuccess && !!cvs?.length && (
           <ul>
-            {cvs.map((cv) => (
-              <li key={cv.id}>
-                <FileText size={14} />
-                <div>
-                  <strong>{cv.name}</strong>
-                  <span>{cv.template}</span>
-                </div>
-                {defaultCvId === cv.id && <Star size={12} className="is-default" />}
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  loading={loadingCvId === cv.id}
-                  disabled={!!loadingCvId}
-                  onClick={() => loadCV(cv)}
+            {cvs.map((cv) => {
+              const loaded = resolveLoadedTemplateId(cv);
+              const isSelected = selectedCvId === cv.id;
+              return (
+                <li
+                  key={cv.id}
+                  className={`cv-builder-version-card${isSelected ? " is-selected" : ""}`}
                 >
-                  Load
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => {
-                    localStorage.setItem(DEFAULT_CV_KEY, cv.id);
-                    setDefaultCvId(cv.id);
-                    addToast({ type: "success", message: "Default CV set for applications." });
-                  }}
-                >
-                  Default
-                </Button>
-              </li>
-            ))}
+                  <FileText size={14} />
+                  <div>
+                    <strong>{cv.name}</strong>
+                    <span>
+                      {getCVTemplate(loaded.templateId).name}
+                      {loaded.usedDefault && !cv.studio_template_id ? " · default template" : ""}
+                    </span>
+                  </div>
+                  {defaultCvId === cv.id && <Star size={12} className="is-default" />}
+                  <Button
+                    variant={isSelected ? "secondary" : "ghost"}
+                    size="sm"
+                    loading={loadingCvId === cv.id}
+                    disabled={!!loadingCvId}
+                    onClick={() => void loadCV(cv)}
+                  >
+                    {isSelected ? "Selected" : "Load"}
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => {
+                      localStorage.setItem(DEFAULT_CV_KEY, cv.id);
+                      setDefaultCvId(cv.id);
+                      addToast({ type: "success", message: "Default CV set for applications." });
+                    }}
+                  >
+                    Default
+                  </Button>
+                </li>
+              );
+            })}
           </ul>
         )}
       </section>

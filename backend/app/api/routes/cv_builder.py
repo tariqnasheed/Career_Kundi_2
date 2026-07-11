@@ -14,6 +14,7 @@ Endpoint summary
 POST   /api/v1/cv-builder/generate              — Generate a new CV from the user's profile.
 GET    /api/v1/cv-builder/                      — List the current user's saved CVs.
 GET    /api/v1/cv-builder/{cv_id}                — Fetch one saved CV.
+PATCH  /api/v1/cv-builder/{cv_id}                — Update draft metadata (name/template/studio id) without AI.
 DELETE /api/v1/cv-builder/{cv_id}                — Delete a saved CV.
 POST   /api/v1/cv-builder/{cv_id}/regenerate     — Re-run the pipeline against an existing saved CV.
 GET    /api/v1/cv-builder/{cv_id}/export         — Export a saved CV as PDF/DOCX/Markdown.
@@ -31,6 +32,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.agents.cv_builder.graph import run_bullet_improvement_pipeline, run_cv_generation_pipeline
 from app.agents.cv_builder.render import render_cv
+from app.agents.cv_builder.studio_template import (
+    extract_studio_template_id,
+    inject_studio_template_id,
+    visible_section_config,
+)
 from app.api.deps import get_current_user
 from app.api.routes.profile import _get_or_create_profile
 from app.core.errors import NotFoundError
@@ -44,6 +50,7 @@ from app.schemas.cv_builder import (
     CVGenerateRequest,
     CVRead,
     CVRegenerateRequest,
+    CVUpdateRequest,
 )
 from app.schemas.profile import ProfileRead
 from app.tools.document_export import (
@@ -152,6 +159,7 @@ async def _generate_and_render(*, db: AsyncSession, user: User, payload: CVGener
         confidence_score=final_state.get("confidence_score", 0.0),
     )
     section_config = [{"section_id": section_id, "enabled": True} for section_id in section_ids]
+    section_config = inject_studio_template_id(section_config, payload.studio_template_id)
     return rendered_content, section_config, cost_monitor, final_state
 
 
@@ -207,6 +215,47 @@ async def get_cv(
     db: AsyncSession = Depends(get_db),
 ) -> GeneratedCV:
     return await _get_owned_cv(db, user, cv_id)
+
+
+@router.patch("/{cv_id}", response_model=CVRead)
+async def update_cv(
+    cv_id: uuid.UUID,
+    payload: CVUpdateRequest,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> GeneratedCV:
+    """
+    Persist draft metadata (name, backend template style, studio gallery id,
+    section toggles) without re-running the AI pipeline. Ownership-checked.
+    """
+    cv = await _get_owned_cv(db, user, cv_id)
+
+    if payload.name is not None:
+        cleaned_name = payload.name.strip()
+        if cleaned_name:
+            cv.name = cleaned_name
+
+    if payload.template is not None:
+        cv.template = payload.template
+
+    section_config = list(cv.section_config or [])
+    if payload.section_ids is not None:
+        existing_studio = extract_studio_template_id(section_config)
+        section_config = [{"section_id": sid, "enabled": True} for sid in payload.section_ids]
+        studio_to_keep = (
+            payload.studio_template_id if payload.studio_template_id is not None else existing_studio
+        )
+        section_config = inject_studio_template_id(section_config, studio_to_keep)
+    elif payload.studio_template_id is not None:
+        section_config = inject_studio_template_id(
+            visible_section_config(section_config),
+            payload.studio_template_id,
+        )
+
+    cv.section_config = section_config
+    await db.commit()
+    await db.refresh(cv)
+    return cv
 
 
 @router.delete("/{cv_id}", status_code=204)
@@ -266,13 +315,16 @@ async def export_cv(
 
     Optional `template_id` (query) accepts either a backend style
     (modern|classic|compact|creative) or a CVB-F2 studio template id.
-    When omitted, PDF uses the style stored on the CV row. Studio layouts
-    map to the four PDF CSS families — full 15-layout PDF parity is deferred.
+    When omitted, prefers the persisted studio_template_id from section_config,
+    then the backend style on the CV row. Studio layouts map to the four PDF
+    CSS families — full 15-layout PDF parity is deferred.
     """
     cv = await _get_owned_cv(db, user, cv_id)
+    persisted_studio = extract_studio_template_id(cv.section_config)
+    effective_template_id = template_id or persisted_studio
 
     try:
-        pdf_style = resolve_pdf_template_style(template_id, cv.template)
+        pdf_style = resolve_pdf_template_style(effective_template_id, cv.template)
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
@@ -288,7 +340,7 @@ async def export_cv(
 
     personal = (cv.rendered_content or {}).get("personal_info") or {}
     candidate_name = personal.get("full_name") or cv.name or "Candidate"
-    template_label = (template_id or cv.template or pdf_style or "Template").replace("-", "_")
+    template_label = (effective_template_id or cv.template or pdf_style or "Template").replace("-", "_")
     filename = safe_cv_export_filename(
         candidate_name=str(candidate_name),
         template_label=str(template_label),

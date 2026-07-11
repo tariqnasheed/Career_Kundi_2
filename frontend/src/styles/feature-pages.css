@@ -1151,6 +1151,48 @@
   line-height: 1.4;
 }
 
+.cv-builder-save-load {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.75rem 0 0.25rem;
+  max-width: 52rem;
+}
+
+.cv-builder-save-status,
+.cv-builder-save-error,
+.cv-builder-save-success {
+  font-size: 0.8125rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 6px;
+}
+
+.cv-builder-save-status {
+  background: var(--bg-overlay);
+  color: var(--text-secondary);
+}
+
+.cv-builder-save-error {
+  background: color-mix(in srgb, var(--danger, #ef4444) 12%, transparent);
+  color: var(--danger, #b91c1c);
+}
+
+.cv-builder-save-success {
+  background: color-mix(in srgb, #16a34a 12%, transparent);
+  color: #166534;
+}
+
+.cv-builder-save-load__selected {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.cv-builder-version-list .cv-builder-version-card.is-selected {
+  outline: 1px solid color-mix(in srgb, var(--accent, #2563eb) 45%, transparent);
+  background: color-mix(in srgb, var(--accent, #2563eb) 6%, transparent);
+}
+
 .cv-builder-studio__library {
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
