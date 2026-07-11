@@ -1375,6 +1375,57 @@ Rationale: UI repair for workspace L/E/E and honest draft language is in place a
 
 ---
 
+## CVB-F2 CV Builder Studio Redesign + 15-Template Gallery + Live Preview Engine
+
+**Slice type:** FRONTEND_VISIBLE  
+**Evidence:** `~/Desktop/CareerKundi_CVB_F2_Template_Preview_Evidence.txt`
+
+### 12.1 Delivery Summary
+
+| Area | Result | Notes |
+|---|---|---|
+| Studio redesign | PASS | Layered header + gallery + live preview + right panel |
+| 15-template catalog | PASS | Frontend registry in `CVTemplateGallery.tsx` |
+| Gallery shows all 15 | PASS | Catalog length = 15 |
+| Selected template updates preview | PASS | State-driven `CVTemplatePreview` |
+| Structurally distinct layouts | PASS | Sidebar / editorial / matrix / ATS / metric / blueprint / etc. |
+| Template metadata in UI | PASS | Name, category, best-for, ATS, strengths in panel |
+| Honest actions | PASS | Preview / Save Draft / Export PDF (no false completeness) |
+| Scope exclusions | PASS | No PDF harden, no version persistence product, no AI rewrite, no backend |
+| Generated image assets | NO | CSS/React only |
+| Build | PASS | `npm run build` |
+| Browser journey | BLOCKED_BROWSER_SETUP | Vite down |
+
+### 12.2 Files Changed
+
+| File | Change Type | Reason |
+|---|---|---|
+| `frontend/src/pages/CVBuilderPage.tsx` | Redesign | Studio shell wiring |
+| `frontend/src/components/features/CVTemplateGallery.tsx` | New | Catalog + gallery |
+| `frontend/src/components/features/CVTemplatePreview.tsx` | New | Live preview engine |
+| `frontend/src/components/features/CVBuilderStudioPanel.tsx` | New | Content/style + metadata panel |
+| `frontend/src/styles/feature-pages.css` | Extend | Scoped `.cv-builder-studio*` / `.cv-template-*` styles |
+| `docs/product/careerkundi_master_build_plan.md` | Docs | F2 outcome |
+| `docs/product/careerkundi_live_tracker.md` | Docs | Progress → F3 |
+
+### 12.3 Remaining CV Builder Work
+
+| Remaining Work | Target Slice |
+|---|---|
+| PDF Export Verification | CVB-F3 |
+| Save/Load Versions | CVB-F4 |
+| Browser-Tested Checkpoint | CVB-F5 |
+
+### 12.4 CVB-F2 Decision
+
+**B CVB_F2_15_TEMPLATE_GALLERY_ACCEPTED_BROWSER_SETUP_BLOCKED**
+
+### 12.5 Recommended Next Slice
+
+**Next slice: CVB-F3 CV PDF Export Verification**
+
+---
+
 ## 13. Dashboard Blueprint
 
 | Section | Purpose | Data | Backend source | Empty state | Primary action | Secondary | MVP | Future | Analytics | Tech notes |
@@ -2034,20 +2085,22 @@ Privacy/logging restrictions / Tests/evals
 - **Done definition:** Usable shell with required UI states  
 - **CVB-F1 outcome (2026-07-12):** Decision **B** — UI repair accepted; browser setup blocked; next = **CVB-F2**. See master § CVB-F1 CV Builder UI Repair.
 
-### CVB-F2 — CV Template Gallery + Preview
+### CVB-F2 — CV Builder Studio Redesign + 15-Template Gallery + Live Preview Engine
 - **Type:** FRONTEND_VISIBLE  
-- **Goal:** Template selection + preview-before-download.  
-- **Allowed:** CV Builder FE files listed in slice prompt; docs/tracker.  
-- **Forbidden:** AI rewriting unless explicitly approved; backend migrations unless required and approved.  
-- **Backend:** Minimal/none. **Frontend:** Template metadata; gallery; ATS + modern; live preview; selected template state.  
-- **API/DB/AI:** No AI.  
+- **Goal:** Modern CV Builder Studio with 15 structurally distinct templates + live preview.  
+- **Allowed:** CV Builder FE files listed in slice prompt/addendum; docs/tracker; new gallery/preview/panel components.  
+- **Forbidden:** AI rewriting; backend migrations; PDF hardening product work; save/load version product; image asset commits; global redesign.  
+- **Backend:** Minimal/none (map FE templates → existing modern/classic/compact/creative for generate/export).  
+- **Frontend:** Catalog registry; gallery; selected state; live preview; metadata panel; honest Preview/Save Draft/Export PDF.  
+- **API/DB/AI:** No AI; existing generate/export only.  
 - **Security:** Auth.  
 - **Tests:** Frontend build.  
 - **Browser:** Choose template → preview updates.  
 - **Evidence:** `~/Desktop/CareerKundi_CVB_F2_Template_Preview_Evidence.txt`  
 - **Commit message:** `feat(frontend): add CV template gallery and preview`  
 - **Push:** Yes  
-- **Done definition:** Gallery + preview working for approved templates  
+- **Done definition:** Gallery + preview working for 15 approved templates  
+- **CVB-F2 outcome (2026-07-12):** Decision **B** — 15-template studio accepted; browser setup blocked; next = **CVB-F3**.
 
 ### CVB-F3 — CV PDF Export Verification
 - **Type:** FRONTEND_VISIBLE or FULL_STACK (depending export architecture found in F0)  
