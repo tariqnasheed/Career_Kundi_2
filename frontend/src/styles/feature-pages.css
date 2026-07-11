@@ -464,6 +464,22 @@
   margin-top: 0.25rem;
 }
 
+.roadmap-success {
+  color: var(--accent-emerald, #10b981);
+}
+
+.roadmap-error {
+  color: inherit;
+}
+
+.roadmap-detail {
+  min-width: 0;
+}
+
+.roadmap-progress {
+  font-variant-numeric: tabular-nums;
+}
+
 .roadmap-footnote {
   margin: 1.5rem 0 0;
   font-size: 0.72rem;

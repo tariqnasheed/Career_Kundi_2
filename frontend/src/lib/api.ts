@@ -27,6 +27,7 @@ import type {
   InterviewPackRead,
   GeneratedCVRead,
   RoadmapRead,
+  RoadmapSkillRead,
   ChatSessionRead,
   ChatMessageRead,
   ChatTurnResponse,
@@ -376,10 +377,12 @@ export const roadmapApi = {
     return res.data;
   },
 
-  /** Regenerate an existing roadmap. */
+  /** Regenerate an existing roadmap in place (ownership-scoped). */
   regenerate: async (id: string, payload: {
     target_role: string;
-    pace?: string;
+    pace?: "fast" | "normal" | "thorough" | string;
+    starting_skill_level?: string;
+    personalization_inputs?: Record<string, unknown>;
   }): Promise<RoadmapRead> => {
     const res = await http.post<RoadmapRead>(`/roadmap/${id}/regenerate`, payload);
     return res.data;
@@ -390,17 +393,23 @@ export const roadmapApi = {
     roadmapId: string,
     skillId: string,
     status: "not_started" | "in_progress" | "completed"
-  ): Promise<void> => {
-    await http.patch(`/roadmap/${roadmapId}/skills/${skillId}/status`, { status });
-  },
-
-  /** Refresh one skill's resources and study material. */
-  refreshSkill: async (roadmapId: string, skillId: string) => {
-    const res = await http.post(`/roadmap/${roadmapId}/skills/${skillId}/refresh`);
+  ): Promise<RoadmapSkillRead> => {
+    const res = await http.patch<RoadmapSkillRead>(
+      `/roadmap/${roadmapId}/skills/${skillId}/status`,
+      { status }
+    );
     return res.data;
   },
 
-  /** Delete a roadmap. */
+  /** Refresh one skill's resources and study material. */
+  refreshSkill: async (roadmapId: string, skillId: string): Promise<RoadmapSkillRead> => {
+    const res = await http.post<RoadmapSkillRead>(
+      `/roadmap/${roadmapId}/skills/${skillId}/refresh`
+    );
+    return res.data;
+  },
+
+  /** Delete a roadmap owned by the current user. */
   delete: async (id: string): Promise<void> => {
     await http.delete(`/roadmap/${id}`);
   },

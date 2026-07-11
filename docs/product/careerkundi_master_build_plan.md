@@ -1913,7 +1913,7 @@ Every large feature should show: status label; readiness; known limitations; wha
 | CVB-F5 | CV Browser Checkpoint | Close CVB | After F3+F4 | — | — | — | — | — | Full | Full CV journey | CVB-F5 | Yes | No | evidence/docs | Yes | Done (Decision B) |
 | ROAD-F0 | Roadmap Audit | Audit only | Before repair | Inspect | Inspect | None | None | — | Manual | Open page | ROAD-F0 | Yes | No | docs | Optional | Done (Decision A) |
 | ROAD-F1 | Roadmap UI Repair | Usable list | After F0 | Minimal | Roadmap page | None | No full AI engine | — | Build | List/empty/CTA | ROAD-F1 | Yes | No | ROAD files | Yes | Done (Decision A) |
-| ROAD-F2 | Save/Load Contract | Persist roadmaps | After F1 | Roadmap APIs | Save/load | Maybe | None | Ownership | API tests | Create/refresh | ROAD-F2 | Yes | If contract | ROAD+API | Yes | Planned |
+| ROAD-F2 | Save/Load Contract | Persist roadmaps | After F1 | Roadmap APIs | Save/load | Maybe | None | Ownership | API tests | Create/refresh | ROAD-F2 | Yes | If contract | ROAD+API | Yes | Done (Decision A) |
 | ROAD-F3 | Detail + Tasks | Tracking | After F2 | Tasks API | Detail UI | Maybe | None | Ownership | API+UI | Complete task persist | ROAD-F3 | Yes | No | ROAD files | Yes | Planned |
 | ROAD-F4 | Browser Checkpoint | Close ROAD | After F3 | — | — | — | — | — | Full | Full roadmap journey | ROAD-F4 | Yes | No | evidence | Yes | Planned |
 | 0051 | Role & Pathway Taxonomy | Taxonomy | After UX0+CVB/ROAD stab | Taxonomy module | Consumers later | Yes | Structured | — | Migration+tests | N/A early | 0051 | Yes | Yes | foundation+module | Yes | Planned |
@@ -2538,19 +2538,84 @@ Next slice: **ROAD-F2 Roadmap Save/Load Contract**
 
 - **ROAD-F1 outcome (2026-07-12):** Decision **A** — UI shell repaired; `/roadmaps` alias; Dashboard skill progress fixed; next = **ROAD-F2**.
 
+### ROAD-F2 Roadmap Save / Load Contract
 ### ROAD-F2 — Roadmap Save/Load Contract
-- **Type:** FULL_STACK if persistence missing  
-- **Goal:** Persist roadmaps with ownership.  
-- **Allowed:** Roadmap API/FE files listed after F0/F1; docs/tracker.  
-- **Forbidden:** Cross-user access; inventing endpoints as existing without verify.  
-- **API shape (planned):** Verify existing `/api/v1/roadmap*` before inventing plural contract.  
-- **Security:** Belongs to user/subject; ownership checks.  
-- **Tests:** API ownership + create/refresh.  
-- **Browser:** Create → refresh → still present.  
+- **Type:** FULL_STACK_CONTRACT_STABILIZATION  
+- **Goal:** Persist roadmaps with ownership; stabilize create/list/get/delete/regenerate UI contract.  
+- **Allowed:** Roadmap API/FE files listed after F0/F1; docs/tracker; targeted tests.  
+- **Forbidden:** Cross-user access; inventing endpoints; Task model; migrations; full engine.  
+- **API shape (verified):** Existing singular `/api/v1/roadmap*` (generate/list/get/delete/regenerate/skill status/refresh).  
+- **Security:** `_get_owned_roadmap` / user-scoped list preserved.  
+- **Tests:** `backend/tests/unit/test_roadmap_contract.py` (7 passed).  
+- **Browser:** Create → list → load → refresh persist → `/roadmaps` alias.  
 - **Evidence:** `~/Desktop/CareerKundi_ROAD_F2_Save_Load_Contract_Evidence.txt`  
-- **Commit message:** `feat(roadmaps): add roadmap save and load contract`  
+- **Commit message:** `feat(roadmap): stabilize save load contract`  
 - **Push:** Yes  
-- **Done definition:** Persist + ownership enforced  
+- **Done definition:** Persist + ownership enforced + UI contract stable  
+
+#### Contract Summary
+
+| Area | Before | Change / Verification | Result | Notes |
+|---|---|---|---|---|
+| Roadmap list | Loaded via `GET /roadmap/` | Kept; clearer success strip | Pass | Browser PASS |
+| Create/generate roadmap | Generated but did not auto-select | Select + success toast/strip after create | Pass | Live LLM ok |
+| Load/select roadmap | Auto-select first / card click | Explicit load success message | Pass | |
+| Detail rendering | Skills/milestones | Unchanged fields; honest progress copy | Pass | |
+| Milestone/skill progress | Skill status only | Confirmed; no roadmap/milestone status | Pass | |
+| Delete/regenerate if present | API existed; UI missing | Wired Delete + Regenerate w/ confirm | Pass | |
+| Frontend API methods | list/get/generate/regen/delete/skills | Return types aligned; regenerate payload expanded | Pass | |
+| Frontend types | Required `user_id`; strict urls | Optional `user_id`; nullable url; personalization_inputs | Pass | Matches BE schema |
+| Backend routes | Existing ownership routes | No route rewrite | Pass | Verified |
+| Backend schemas | Truthful Read models | Unchanged; tests lock contract | Pass | |
+| Auth/ownership | `_get_owned_*` | Preserved; tested via source contract | Pass | |
+| Platform-wide copy | F1 watch item | Re-verified in browser | Pass | See Platform Copy Decision |
+| `/roadmap` route | Live | Stable | Pass | |
+| `/roadmaps` alias | F1 alias | Stable | Pass | |
+| Browser journey | F1 shell only | Full create→refresh→alias | Pass | |
+
+#### Files Changed
+
+| File | Change Type | Reason | Scope |
+|---|---|---|---|
+| `frontend/src/pages/RoadmapPage.tsx` | Modified | Create select + delete/regen + success states | ROAD-F2 |
+| `frontend/src/lib/api.ts` | Modified | Skill return types; regenerate payload | ROAD-F2 |
+| `frontend/src/types/api.ts` | Modified | Align Roadmap types with backend | ROAD-F2 |
+| `frontend/src/styles/feature-pages.css` | Modified | Success/detail/progress scoped classes | ROAD-F2 |
+| `backend/tests/unit/test_roadmap_contract.py` | Added | Schema + ownership contract tests | ROAD-F2 |
+| `docs/product/careerkundi_master_build_plan.md` | Modified | Outcome | Docs |
+| `docs/product/careerkundi_live_tracker.md` | Modified | Progress → F3 | Docs |
+
+#### Save / Load Contract Decision
+
+`ROADMAP_SAVE_LOAD_CONTRACT_STABILIZED`
+
+#### Platform Copy Decision
+
+`PLATFORM_COPY_VERIFIED_PASS`  
+(ROAD-F1 `platform_copy` script mismatch explained as `PLATFORM_COPY_SCRIPT_ASSERTION_WAS_TOO_NARROW` — eyebrow/subtitle/empty copy are platform-wide; browser recheck PASS.)
+
+#### Test Decision
+
+`ROADMAP_CONTRACT_TESTS_ADDED_AND_PASSING` (7 passed)
+
+#### Remaining Roadmap Work
+
+| Remaining Work | Target Slice | Notes |
+|---|---|---|
+| Roadmap Detail + Task Tracking | ROAD-F3 | Task model/UI beyond skills |
+| Roadmap Browser-Tested Checkpoint | ROAD-F4 | Full generate→track journey gate |
+| Full Roadmap Engine / advanced generation | Future engine slice | Specialized plan types |
+| Specialized roadmap pathways | Future pathway slices | Public sector, study abroad, etc. |
+
+#### ROAD-F2 Decision
+
+**A ROAD_F2_SAVE_LOAD_ACCEPTED_READY_FOR_ROAD_F3**
+
+#### Recommended Next Slice
+
+Next slice: **ROAD-F3 Roadmap Detail + Task Tracking**
+
+- **ROAD-F2 outcome (2026-07-12):** Decision **A** — save/load contract stabilized; delete/regen UI wired; contract tests added; next = **ROAD-F3**.
 
 ### ROAD-F3 — Roadmap Detail + Task Tracking
 - **Type:** FULL_STACK  

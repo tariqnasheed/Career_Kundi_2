@@ -254,12 +254,15 @@ export interface GeneratedCVRead {
 // Career Roadmap
 // ---------------------------------------------------------------------------
 
+/** Matches backend `RoadmapRead` — no roadmap-level status field; progress is skill-based. */
 export interface RoadmapRead {
   id: string;
-  user_id: string;
+  /** Present on some clients historically; backend schema does not require it on read. */
+  user_id?: string;
   target_role: string;
-  pace: string;
+  pace: "fast" | "normal" | "thorough" | string;
   starting_skill_level: string | null;
+  personalization_inputs?: Record<string, unknown>;
   milestones: RoadmapMilestoneRead[];
   generation_confidence: number | null;
   generation_citations: Citation[];
@@ -271,7 +274,7 @@ export interface RoadmapMilestoneRead {
   id: string;
   title: string;
   timeframe_label: string | null;
-  order_index: number;
+  order_index?: number;
   skills: RoadmapSkillRead[];
 }
 
@@ -285,25 +288,27 @@ export interface RoadmapSkillRead {
   study_material: StudyMaterial | null;
   practice_activities: PracticeActivities | null;
   lateral_connections: string[];
-  order_index: number;
+  order_index?: number;
 }
 
 export interface ResourceLink {
   title: string;
-  url: string;
+  url: string | null;
   resource_type: string;
-  estimated_hours: number | null;
+  estimated_hours?: number | null;
+  source?: string | null;
+  verified?: boolean;
 }
 
 export interface StudyMaterial {
   overview: string;
   key_concepts: string[];
-  estimated_reading_time_minutes: number;
+  estimated_reading_time_minutes?: number | null;
 }
 
 export interface PracticeActivities {
   exercises: string[];
-  project_idea: string;
+  project_idea?: string | null;
   self_assessment_questions: string[];
 }
 

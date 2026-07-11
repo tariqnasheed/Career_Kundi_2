@@ -1,7 +1,7 @@
 /**
  * RoadmapPage.tsx
  * Platform-wide career roadmap — milestones, skill progress, study material.
- * ROAD-F1: loading/empty/error honesty; not Graduate Launch-only.
+ * ROAD-F1: UI shell. ROAD-F2: save/load contract (create → list → load → persist).
  */
 
 import { useState, useEffect } from "react";
@@ -9,8 +9,8 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Map, LayoutGrid, List, Zap, CheckCircle, Circle, Clock,
-  ChevronDown, ChevronUp, TrendingUp, BookOpen, Target,
-  RefreshCw, Play, Lightbulb, X, Download, Search,
+  ChevronDown, ChevronUp, TrendingUp, BookOpen,
+  RefreshCw, Play, Lightbulb, Download, Search, Trash2,
 } from "lucide-react";
 import { roadmapApi } from "../lib/api";
 import { Button } from "../components/ui/Button";
@@ -296,9 +296,16 @@ function KanbanView({ roadmap, onRefresh, onOpenSkill }: {
   );
 }
 
-function GenerateModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+function GenerateModal({
+  open,
+  onClose,
+  onCreated,
+}: {
+  open: boolean;
+  onClose: () => void;
+  onCreated: (roadmap: RoadmapRead) => void;
+}) {
   const { addToast } = useUIStore();
-  const qc = useQueryClient();
   const [role, setRole] = useState("");
   const [roleQuery, setRoleQuery] = useState("");
   const [pace, setPace] = useState<"fast" | "normal" | "thorough">("normal");
@@ -309,7 +316,7 @@ function GenerateModal({ open, onClose }: { open: boolean; onClose: () => void }
 
   const mutation = useMutation({
     mutationFn: () => roadmapApi.generate({
-      target_role: role,
+      target_role: role.trim(),
       pace,
       starting_skill_level: skillLevel || undefined,
       personalization_inputs: {
@@ -318,12 +325,12 @@ function GenerateModal({ open, onClose }: { open: boolean; onClose: () => void }
         additional_context: context || undefined,
       },
     }),
-    onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ["roadmaps"] });
-      addToast({ type: "success", message: `Roadmap for "${role}" generated!` });
+    onSuccess: (created) => {
+      addToast({ type: "success", message: "Roadmap created." });
+      onCreated(created);
       onClose();
     },
-    onError: () => addToast({ type: "error", message: "Generation failed." }),
+    onError: () => addToast({ type: "error", message: "Could not create roadmap. Please try again." }),
   });
 
   const filteredRoles = SAMPLE_ROLES.filter((r) => r.toLowerCase().includes(roleQuery.toLowerCase()));
@@ -335,7 +342,7 @@ function GenerateModal({ open, onClose }: { open: boolean; onClose: () => void }
         {roleQuery && filteredRoles.length > 0 && (
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem", margin: "0.5rem 0 1rem" }}>
             {filteredRoles.slice(0, 6).map((r) => (
-              <button key={r} onClick={() => { setRole(r); setRoleQuery(r); }} style={{ padding: "0.3rem 0.6rem", borderRadius: "999px", border: "1px solid var(--border-subtle)", background: role === r ? "rgba(139,92,246,0.12)" : "transparent", fontSize: "0.72rem", cursor: "pointer", color: "var(--text-secondary)" }}>{r}</button>
+              <button key={r} type="button" onClick={() => { setRole(r); setRoleQuery(r); }} style={{ padding: "0.3rem 0.6rem", borderRadius: "999px", border: "1px solid var(--border-subtle)", background: role === r ? "rgba(139,92,246,0.12)" : "transparent", fontSize: "0.72rem", cursor: "pointer", color: "var(--text-secondary)" }}>{r}</button>
             ))}
           </div>
         )}
@@ -344,7 +351,7 @@ function GenerateModal({ open, onClose }: { open: boolean; onClose: () => void }
           <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", marginBottom: "0.5rem" }}>Current skill level</p>
           <div style={{ display: "flex", gap: "0.4rem" }}>
             {(["beginner", "intermediate", "advanced"] as const).map((l) => (
-              <button key={l} onClick={() => setSkillLevel(l)} style={{
+              <button key={l} type="button" onClick={() => setSkillLevel(l)} style={{
                 flex: 1, padding: "0.45rem", borderRadius: "8px", fontSize: "0.75rem", cursor: "pointer", textTransform: "capitalize",
                 border: skillLevel === l ? "2px solid var(--accent-violet)" : "1px solid var(--border-subtle)",
                 background: skillLevel === l ? "rgba(139,92,246,0.08)" : "transparent",
@@ -356,7 +363,7 @@ function GenerateModal({ open, onClose }: { open: boolean; onClose: () => void }
           <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", marginBottom: "0.5rem" }}>Learning pace</p>
           <div style={{ display: "flex", gap: "0.4rem" }}>
             {(["fast", "normal", "thorough"] as const).map((p) => (
-              <button key={p} onClick={() => setPace(p)} style={{
+              <button key={p} type="button" onClick={() => setPace(p)} style={{
                 flex: 1, padding: "0.45rem", borderRadius: "8px", fontSize: "0.75rem", cursor: "pointer", textTransform: "capitalize",
                 border: pace === p ? "2px solid var(--accent-violet)" : "1px solid var(--border-subtle)",
                 background: pace === p ? "rgba(139,92,246,0.08)" : "transparent",
@@ -373,9 +380,9 @@ function GenerateModal({ open, onClose }: { open: boolean; onClose: () => void }
         </div>
       </ModalBody>
       <ModalFooter>
-        <Button variant="ghost" onClick={onClose}>Cancel</Button>
-        <Button variant="primary" onClick={() => mutation.mutate()} loading={mutation.isPending} disabled={!role.trim()}>
-          Generate roadmap
+        <Button variant="ghost" onClick={onClose} disabled={mutation.isPending}>Cancel</Button>
+        <Button variant="primary" onClick={() => mutation.mutate()} loading={mutation.isPending} disabled={!role.trim() || mutation.isPending}>
+          {mutation.isPending ? "Creating…" : "Generate roadmap"}
         </Button>
       </ModalFooter>
     </Modal>
@@ -383,10 +390,13 @@ function GenerateModal({ open, onClose }: { open: boolean; onClose: () => void }
 }
 
 export default function RoadmapPage() {
+  const { addToast } = useUIStore();
+  const qc = useQueryClient();
   const [view, setView] = useState<"timeline" | "kanban">("timeline");
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [generateOpen, setGenerateOpen] = useState(false);
   const [skillDetail, setSkillDetail] = useState<RoadmapSkillRead | null>(null);
+  const [roadmapSuccess, setRoadmapSuccess] = useState<string | null>(null);
 
   const {
     data: roadmaps,
@@ -411,6 +421,61 @@ export default function RoadmapPage() {
     if (roadmaps?.length && !selectedId) setSelectedId(roadmaps[0].id);
   }, [roadmaps, selectedId]);
 
+  const deleteMutation = useMutation({
+    mutationFn: (id: string) => roadmapApi.delete(id),
+    onSuccess: async (_void, id) => {
+      await qc.invalidateQueries({ queryKey: ["roadmaps"] });
+      qc.removeQueries({ queryKey: ["roadmap", id] });
+      if (selectedId === id) setSelectedId(null);
+      setRoadmapSuccess("Roadmap deleted.");
+      addToast({ type: "success", message: "Roadmap deleted." });
+    },
+    onError: () => addToast({ type: "error", message: "Could not delete roadmap. Please try again." }),
+  });
+
+  const regenerateMutation = useMutation({
+    mutationFn: () => {
+      if (!activeRoadmap) throw new Error("No roadmap selected");
+      return roadmapApi.regenerate(activeRoadmap.id, {
+        target_role: activeRoadmap.target_role,
+        pace: activeRoadmap.pace,
+        starting_skill_level: activeRoadmap.starting_skill_level ?? undefined,
+        personalization_inputs: activeRoadmap.personalization_inputs,
+      });
+    },
+    onSuccess: async (updated) => {
+      await qc.invalidateQueries({ queryKey: ["roadmaps"] });
+      await qc.invalidateQueries({ queryKey: ["roadmap", updated.id] });
+      setSelectedId(updated.id);
+      setRoadmapSuccess("Roadmap regenerated.");
+      addToast({ type: "success", message: "Roadmap regenerated." });
+    },
+    onError: () => addToast({ type: "error", message: "Could not regenerate roadmap. Please try again." }),
+  });
+
+  const handleCreated = async (created: RoadmapRead) => {
+    await qc.invalidateQueries({ queryKey: ["roadmaps"] });
+    qc.setQueryData(["roadmap", created.id], created);
+    setSelectedId(created.id);
+    setRoadmapSuccess("Roadmap created.");
+  };
+
+  const confirmDelete = () => {
+    if (!activeRoadmap) return;
+    const ok = window.confirm(
+      `Delete roadmap for "${activeRoadmap.target_role}"? This cannot be undone.`
+    );
+    if (ok) deleteMutation.mutate(activeRoadmap.id);
+  };
+
+  const confirmRegenerate = () => {
+    if (!activeRoadmap) return;
+    const ok = window.confirm(
+      `Regenerate roadmap for "${activeRoadmap.target_role}"? Existing milestones and skills will be replaced.`
+    );
+    if (ok) regenerateMutation.mutate();
+  };
+
   const allSkills = activeRoadmap?.milestones.flatMap((m) => m.skills) ?? [];
   const done = allSkills.filter((s) => s.status === "completed").length;
   const pct = allSkills.length ? Math.round((done / allSkills.length) * 100) : 0;
@@ -423,7 +488,7 @@ export default function RoadmapPage() {
 
   const listErrorMessage =
     (error as { message?: string } | undefined)?.message ||
-    "Could not load your roadmap. Please try again.";
+    "Could not load your roadmaps. Please try again.";
 
   const exportMarkdown = () => {
     if (!activeRoadmap) return;
@@ -451,6 +516,8 @@ export default function RoadmapPage() {
     "Job application path",
   ];
 
+  const isBusy = deleteMutation.isPending || regenerateMutation.isPending;
+
   return (
     <div className="feature-page roadmap-page">
       <div className="feature-page__inner">
@@ -468,7 +535,33 @@ export default function RoadmapPage() {
               <Button variant="ghost" size="sm" onClick={() => setView("timeline")} style={{ color: view === "timeline" ? "var(--accent-violet)" : undefined }} aria-pressed={view === "timeline"}><List size={15} /> Timeline</Button>
               <Button variant="ghost" size="sm" onClick={() => setView("kanban")} style={{ color: view === "kanban" ? "var(--accent-violet)" : undefined }} aria-pressed={view === "kanban"}><LayoutGrid size={15} /> Board</Button>
               {activeRoadmap && <Button variant="secondary" size="sm" leftIcon={<Download size={14} />} onClick={exportMarkdown}>Export MD</Button>}
-              <Button variant="primary" size="sm" leftIcon={<Zap size={14} />} onClick={() => setGenerateOpen(true)}>New roadmap</Button>
+              {activeRoadmap && (
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  leftIcon={<RefreshCw size={14} />}
+                  onClick={confirmRegenerate}
+                  loading={regenerateMutation.isPending}
+                  disabled={isBusy}
+                >
+                  Regenerate
+                </Button>
+              )}
+              {activeRoadmap && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  leftIcon={<Trash2 size={14} />}
+                  onClick={confirmDelete}
+                  loading={deleteMutation.isPending}
+                  disabled={isBusy}
+                >
+                  Delete
+                </Button>
+              )}
+              <Button variant="primary" size="sm" leftIcon={<Zap size={14} />} onClick={() => setGenerateOpen(true)} disabled={isBusy}>
+                New roadmap
+              </Button>
             </div>
           </div>
         </motion.div>
@@ -481,7 +574,7 @@ export default function RoadmapPage() {
             </div>
           )}
           {isError && (
-            <div className="roadmap-status-strip__row roadmap-status-strip__row--error" role="alert">
+            <div className="roadmap-status-strip__row roadmap-status-strip__row--error roadmap-error" role="alert">
               <span>{listErrorMessage}</span>
               <Button variant="ghost" size="sm" onClick={() => void refetchList()}>Retry</Button>
             </div>
@@ -495,6 +588,18 @@ export default function RoadmapPage() {
             <div className="roadmap-status-strip__row roadmap-status-strip__row--ok">
               Loaded {roadmaps.length} roadmap{roadmaps.length === 1 ? "" : "s"} from your account.
               {selectedId ? " Viewing selected pathway below." : ""}
+            </div>
+          )}
+          {roadmapSuccess && (
+            <div className="roadmap-status-strip__row roadmap-success">
+              <span>{roadmapSuccess}</span>
+              <Button variant="ghost" size="sm" onClick={() => setRoadmapSuccess(null)}>Dismiss</Button>
+            </div>
+          )}
+          {(deleteMutation.isPending || regenerateMutation.isPending) && (
+            <div className="roadmap-status-strip__row roadmap-status-strip__row--loading">
+              <Spinner size="sm" />
+              <span>{regenerateMutation.isPending ? "Regenerating roadmap…" : "Deleting roadmap…"}</span>
             </div>
           )}
         </div>
@@ -538,7 +643,10 @@ export default function RoadmapPage() {
                           <button
                             type="button"
                             className={`roadmap-list__card${selected ? " is-selected" : ""}`}
-                            onClick={() => setSelectedId(r.id)}
+                            onClick={() => {
+                              setSelectedId(r.id);
+                              setRoadmapSuccess("Roadmap loaded.");
+                            }}
                           >
                             <strong>{r.target_role}</strong>
                             <span>
@@ -559,14 +667,14 @@ export default function RoadmapPage() {
                   <div style={{ textAlign: "center", padding: "2rem" }}><Spinner size="md" /></div>
                 )}
                 {detailError && (
-                  <div className="roadmap-status-strip__row roadmap-status-strip__row--error" role="alert">
-                    <span>Could not load this roadmap detail.</span>
+                  <div className="roadmap-status-strip__row roadmap-status-strip__row--error roadmap-error" role="alert">
+                    <span>Could not load this roadmap detail. Please try again.</span>
                     <Button variant="ghost" size="sm" onClick={() => void refetch()}>Retry</Button>
                   </div>
                 )}
 
                 {activeRoadmap && !detailLoading && (
-                  <>
+                  <div className="roadmap-detail">
                     <div className="feature-grid-2" style={{ marginBottom: "1.5rem" }}>
                       <Card padding="lg" className="feature-glass">
                         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
@@ -576,13 +684,14 @@ export default function RoadmapPage() {
                               {activeRoadmap.pace} pace · {activeRoadmap.starting_skill_level ?? "auto"} level · {activeRoadmap.milestones.length} milestones
                             </p>
                           </div>
-                          <p style={{ fontWeight: 800, fontSize: "1.25rem", color: "var(--accent-violet)" }}>{pct}%</p>
+                          <p className="roadmap-progress" style={{ fontWeight: 800, fontSize: "1.25rem", color: "var(--accent-violet)" }}>{pct}%</p>
                         </div>
                         <div style={{ height: "8px", borderRadius: "999px", background: "var(--bg-overlay)", overflow: "hidden" }}>
                           <motion.div initial={{ width: 0 }} animate={{ width: `${pct}%` }} style={{ height: "100%", background: "var(--gradient-primary)", borderRadius: "999px" }} />
                         </div>
                         <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginTop: "0.4rem" }}>
-                          {done}/{allSkills.length} skills completed (skill status — not a separate task tracker yet)
+                          {done}/{allSkills.length} skills completed. This roadmap uses skill progress as the current progress unit.
+                          Detailed task tracking comes in a later slice.
                         </p>
                         {nextSkill && (
                           <div style={{ marginTop: "0.75rem", padding: "0.625rem", borderRadius: "8px", background: "rgba(139,92,246,0.06)", fontSize: "0.8rem", display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
@@ -614,7 +723,7 @@ export default function RoadmapPage() {
                         </motion.div>
                       )}
                     </AnimatePresence>
-                  </>
+                  </div>
                 )}
               </>
             )}
@@ -640,7 +749,11 @@ export default function RoadmapPage() {
           and working professionals alike.
         </p>
 
-        <GenerateModal open={generateOpen} onClose={() => setGenerateOpen(false)} />
+        <GenerateModal
+          open={generateOpen}
+          onClose={() => setGenerateOpen(false)}
+          onCreated={(created) => { void handleCreated(created); }}
+        />
         <SkillDetailModal
           skill={skillDetail}
           roadmapId={activeRoadmap?.id ?? ""}
