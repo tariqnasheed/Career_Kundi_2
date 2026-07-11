@@ -1915,7 +1915,7 @@ Every large feature should show: status label; readiness; known limitations; wha
 | ROAD-F1 | Roadmap UI Repair | Usable list | After F0 | Minimal | Roadmap page | None | No full AI engine | — | Build | List/empty/CTA | ROAD-F1 | Yes | No | ROAD files | Yes | Done (Decision A) |
 | ROAD-F2 | Save/Load Contract | Persist roadmaps | After F1 | Roadmap APIs | Save/load | Maybe | None | Ownership | API tests | Create/refresh | ROAD-F2 | Yes | If contract | ROAD+API | Yes | Done (Decision A) |
 | ROAD-F3 | Detail + Tasks | Tracking | After F2 | Tasks API | Detail UI | Maybe | None | Ownership | API+UI | Complete task persist | ROAD-F3 | Yes | No | ROAD files | Yes | Done (Decision A) |
-| ROAD-F4 | Browser Checkpoint | Close ROAD | After F3 | — | — | — | — | — | Full | Full roadmap journey | ROAD-F4 | Yes | No | evidence | Yes | Planned |
+| ROAD-F4 | Browser Checkpoint | Close ROAD | After F3 | — | — | — | — | — | Full | Full roadmap journey | ROAD-F4 | Yes | No | evidence | Yes | Done (Decision B) |
 | 0051 | Role & Pathway Taxonomy | Taxonomy | After UX0+CVB/ROAD stab | Taxonomy module | Consumers later | Yes | Structured | — | Migration+tests | N/A early | 0051 | Yes | Yes | foundation+module | Yes | Planned |
 | 0052 | Career & Education Passport | Passport | After 0051 | passport | passport UI | Yes | L1 assist | High privacy | Tests | Passport journey | 0052 | Yes | Yes | module | Yes | Planned |
 | 0053 | Claims & Evidence Graph | Evidence | After 0052 | claims/provenance UI | claims UI | Maybe | Validation | Provenance | Tests | Claim+source | 0053 | Yes | Yes | module | Yes | Planned |
@@ -2690,17 +2690,82 @@ Next slice: **ROAD-F4 Roadmap Browser-Tested Checkpoint**
 
 - **ROAD-F3 outcome (2026-07-12):** Decision **A** — skill-based detail tracking stabilized; next = **ROAD-F4**.
 
+### ROAD-F4 Roadmap Browser-Tested Checkpoint
 ### ROAD-F4 — Roadmap Browser-Tested Checkpoint
 - **Type:** BROWSER_CHECKPOINT  
 - **Goal:** Close Roadmap stabilization with full website verification.  
-- **Allowed:** Docs/tracker/evidence; tiny approved fixes only if journey fails.  
-- **Forbidden:** Jumping to 0051 without gate; new engines.  
-- **Browser journey:** login → Roadmaps → create/open → update skill status → refresh → progress persists.  
-- **Tests:** Build + journey + console + dist ignored.  
+- **Allowed:** Docs/tracker/evidence; tiny approved Roadmap fixes if journey fails.  
+- **Forbidden:** Jumping to 0051 without gate; new engines; Task model; shell rewrite.  
+- **Browser journey:** login → `/roadmap` + `/roadmaps` → generate → detail/tracker → skill status persist → refresh skill → delete disposable → console/network.  
+- **Tests:** Build + contract tests + journey.  
 - **Evidence:** `~/Desktop/CareerKundi_ROAD_F4_Browser_Checkpoint_Evidence.txt`  
-- **Commit message:** `test(roadmaps): record Roadmap browser checkpoint`  
+- **Commit message:** `fix(roadmap): pass browser checkpoint` (product fixes applied)  
 - **Push:** Yes  
-- **Done definition:** Full journey PASS; ready for pre-0051 UX checkpoint  
+- **Done definition:** Full journey PASS; ready for post-CV/Roadmap UX checkpoint  
+
+#### Browser Journey Summary
+
+| Journey Area | Result | Evidence | Issue Found | Follow-Up |
+|---|---|---|---|---|
+| runtime setup | Pass | fe:200 api:401 | — | — |
+| auth session | Pass | UI register | — | — |
+| `/roadmap` route | Pass | Playwright | — | — |
+| `/roadmaps` alias | Pass | Playwright | — | — |
+| platform-wide copy | Pass | eyebrow + honesty copy | — | — |
+| roadmap list | Pass | list after generate | — | — |
+| generate roadmap | Pass | 201 + skills after fix | Live LLM taxonomy failure → empty skills | Fallback fix |
+| load/select roadmap | Pass | card + detail | — | — |
+| selected roadmap detail | Pass | detail grid | — | — |
+| milestone display | Pass | timeline | — | — |
+| skill tracker | Pass | selects present | Empty when LLM failed | Fallback + empty copy |
+| skill status update | Pass | not_started→completed | — | — |
+| status persistence after refresh | Pass | reload select value | — | — |
+| progress summary | Pass | status counts | — | — |
+| refresh skill | Pass | toast success | — | — |
+| regenerate roadmap | Pass | control present | Executed visually only on primary | Future optional |
+| delete roadmap | Pass | disposable deleted; no 404 | Post-delete detail refetch 404 | Cancel/remove query fix |
+| console health | Pass | no errors after fix | — | — |
+| network health | Pass | no failed roadmap APIs after fix | — | — |
+| responsive check | Pass w/ limitation | 390/768/1280 | Shell overflow at 390 | Shell slice |
+
+#### Fixes Applied
+
+| File | Bug | Fix | Why Allowed |
+|---|---|---|---|
+| `backend/app/agents/roadmap/agents.py` | Live RoleTaxonomy LLM failure persisted empty skill roadmaps | Catch LLM errors; fall back to `mock_data.infer_required_skills` | Direct runtime contract fix |
+| `frontend/src/pages/RoadmapPage.tsx` | Delete left detail query refetching deleted id (404); empty tracker silent | Cancel/remove detail query + optimistic list filter; empty tracker message | Direct Roadmap checkpoint bugs |
+| `frontend/src/styles/feature-pages.css` | Empty tracker styling | `.roadmap-skill-tracker__empty` | Scoped Roadmap CSS |
+
+#### Roadmap Stabilization Decision
+
+`ROADMAP_BROWSER_CHECKPOINT_PASSED_WITH_MINOR_LIMITATIONS`
+
+#### Known Limitations
+
+- Known app-shell horizontal overflow at 390px; shell-level fix deferred.
+- No separate Task model; skills remain current progress units.
+- Full advanced Roadmap Engine remains future work.
+- Specialized pathway packs remain future work.
+- Live LLM taxonomy may fail; keyword fallback keeps generate usable (not full AI engine rewrite).
+
+#### Remaining Roadmap Work
+
+| Remaining Work | Target Slice | Notes |
+|---|---|---|
+| Full Roadmap Engine / advanced generation | Future engine slice | Beyond fallback |
+| Specialized roadmap pathways | Future pathway slices | Public sector, study abroad, etc. |
+| Separate task model if approved | Future task architecture slice | Not in ROAD-* |
+| Shell/mobile overflow | Future app-shell responsive slice | Confirmed at 390 |
+
+#### ROAD-F4 Decision
+
+**B ROAD_F4_BROWSER_CHECKPOINT_ACCEPTED_WITH_MINOR_LIMITATIONS**
+
+#### Recommended Next Slice
+
+Next slice: **UX-CHECKPOINT-1 Post-CV-and-Roadmap UX Checkpoint**
+
+- **ROAD-F4 outcome (2026-07-12):** Decision **B** — Roadmap ladder closed with minor shell overflow limitation; next = **UX-CHECKPOINT-1**.
 
 ---
 

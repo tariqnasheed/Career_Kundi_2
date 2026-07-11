@@ -10,12 +10,12 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | Post-UX0 Controlled Execution |
-| Current Slice | ROAD-F3 Roadmap Detail + Task Tracking |
+| Current Slice | ROAD-F4 Roadmap Browser-Tested Checkpoint |
 | Current Status | Completed / In review |
-| Last Completed Slice | ROAD-F2 Roadmap Save / Load Contract |
-| Last Commit | `fd2242d6` — `feat(roadmap): stabilize save load contract` |
-| Last Push Status | Pushed (matched `origin/main` at ROAD-F3 start) |
-| Next Slice | **ROAD-F4 Roadmap Browser-Tested Checkpoint** |
+| Last Completed Slice | ROAD-F3 Roadmap Detail + Task Tracking |
+| Last Commit | `51b022c0` — `feat(roadmap): add detail tracking controls` |
+| Last Push Status | Pushed (matched `origin/main` at ROAD-F4 start) |
+| Next Slice | **UX-CHECKPOINT-1 Post-CV-and-Roadmap UX Checkpoint** |
 | Blocked Items | No active blockers |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
 
@@ -28,7 +28,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Master Build Plan | `docs/product/careerkundi_master_build_plan.md` |
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 
-**Pointers:** ROAD-F0…F2 · **ROAD-F3 detail/tracking** (master § ROAD-F3) · Next **ROAD-F4**.
+**Pointers:** ROAD-F0…F3 · **ROAD-F4 browser checkpoint** (master § ROAD-F4) · Next **UX-CHECKPOINT-1**.
 
 ---
 
@@ -36,12 +36,11 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| ROAD-F0 | Roadmap Audit | Done | `~/Desktop/CareerKundi_ROAD_F0_Roadmap_Audit_Evidence.txt` | `7d7e6beb` | Yes | → F1 |
-| ROAD-F1 | Roadmap UI Repair | Done | `~/Desktop/CareerKundi_ROAD_F1_Roadmap_UI_Repair_Evidence.txt` | `8cd3617d` | Yes | → F2 |
-| ROAD-F2 | Save / Load Contract | Done | `~/Desktop/CareerKundi_ROAD_F2_Save_Load_Contract_Evidence.txt` | `fd2242d6` | Yes | → F3 |
-| ROAD-F3 | Detail + Task Tracking | Done | `~/Desktop/CareerKundi_ROAD_F3_Detail_Task_Tracking_Evidence.txt` | This commit | Yes (with this push) | Decision A → F4 |
-| ROAD-F4 | Browser Checkpoint | Planned | — | — | — | **Next** |
-| 0051 | Role & Pathway Taxonomy | Planned | — | — | — | After ROAD gate |
+| ROAD-F0…F2 | Audit → Save/Load | Done | Desktop evidence files | through `fd2242d6` | Yes | — |
+| ROAD-F3 | Detail + Tracking | Done | `~/Desktop/CareerKundi_ROAD_F3_Detail_Task_Tracking_Evidence.txt` | `51b022c0` | Yes | → F4 |
+| ROAD-F4 | Browser Checkpoint | Done | `~/Desktop/CareerKundi_ROAD_F4_Browser_Checkpoint_Evidence.txt` | This commit | Yes (with this push) | Decision B → UX-CHECKPOINT-1 |
+| UX-CHECKPOINT-1 | Post-CV-and-Roadmap UX | Planned | — | — | — | **Next** |
+| 0051 | Role & Pathway Taxonomy | Planned | — | — | — | After UX gate |
 
 ---
 
@@ -49,8 +48,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | ROAD-F2 | `~/Desktop/CareerKundi_ROAD_F2_Save_Load_Contract_Evidence.txt` | A …READY_FOR_ROAD_F3… | Create/load/delete |
-| 2026-07-12 | ROAD-F3 | `~/Desktop/CareerKundi_ROAD_F3_Detail_Task_Tracking_Evidence.txt` | A ROAD_F3_…READY_FOR_ROAD_F4… | Skill tracking |
+| 2026-07-12 | ROAD-F3 | `~/Desktop/CareerKundi_ROAD_F3_Detail_Task_Tracking_Evidence.txt` | A …READY_FOR_ROAD_F4… | Skill tracking |
+| 2026-07-12 | ROAD-F4 | `~/Desktop/CareerKundi_ROAD_F4_Browser_Checkpoint_Evidence.txt` | B …MINOR_LIMITATIONS… | Shell overflow |
 
 ---
 
@@ -58,8 +57,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | ROAD-F2 | `fd2242d6` | Pushed | Contract |
-| 2026-07-12 | ROAD-F3 | This commit (`feat(roadmap): add detail tracking controls`) | Pushed with this slice | Skill tracker |
+| 2026-07-12 | ROAD-F3 | `51b022c0` | Pushed | Skill tracker |
+| 2026-07-12 | ROAD-F4 | This commit (`fix(roadmap): pass browser checkpoint`) | Pushed with this slice | LLM fallback + delete race |
 
 ---
 
@@ -67,8 +66,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Decision | Impact | Status |
 |---|---|---|---|
-| 2026-07 | Skills = progress units (no Task model in F3) | ROAD-F3 tracking | Accepted |
-| 2026-07-12 | ROAD-F3 Decision A | Proceed to ROAD-F4 | Accepted |
+| 2026-07-12 | ROAD-F4 Decision B | Roadmap ladder closed; next UX-CHECKPOINT-1 | Accepted |
+| 2026-07 | Shell overflow deferred | Not a Roadmap blocker | Accepted |
 
 ---
 
@@ -82,13 +81,13 @@ No active product blockers.
 
 | Field | Value |
 |---|---|
-| Next slice | **ROAD-F4 Roadmap Browser-Tested Checkpoint** |
-| Reason | Detail + skill tracking usable; close Roadmap ladder with browser gate |
-| Type | BROWSER_CHECKPOINT |
-| Evidence required | `~/Desktop/CareerKundi_ROAD_F4_Browser_Checkpoint_Evidence.txt` |
-| Commit rule | Per master §43 ROAD-F4 card |
+| Next slice | **UX-CHECKPOINT-1 Post-CV-and-Roadmap UX Checkpoint** |
+| Reason | CVB + ROAD ladders closed; run combined UX gate |
+| Type | UX_CHECKPOINT |
+| Evidence required | Per master plan UX-CHECKPOINT-1 card |
+| Commit rule | Per master plan |
 | Push rule | Push after clean verification |
 
 ---
 
-*Tracker updated: 2026-07-12 — ROAD-F3*
+*Tracker updated: 2026-07-12 — ROAD-F4*

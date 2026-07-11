@@ -188,18 +188,23 @@ class RoleTaxonomyAgent(BaseAgent):
             required_skills = mock_data.infer_required_skills(target_role, additional_context)
         else:
             used_llm = True
-            llm = get_llm(tier)
-            spec = PromptSpec(
-                system_prompt=build_system_prompt(_ROLE_TAXONOMY_ROLE),
-                user_prompt=f"Target role: {target_role}\nAdditional context: {additional_context or 'none provided'}",
-                json_schema=_ROLE_SKILLS_SCHEMA,
-                temperature=0.3,
-            )
-            response = await llm.generate(spec)
-            self.cost_monitor.record(response, tier=tier)
-            required_skills = (response.parsed_json or {}).get("skills") or mock_data.infer_required_skills(
-                target_role, additional_context
-            )
+            try:
+                llm = get_llm(tier)
+                spec = PromptSpec(
+                    system_prompt=build_system_prompt(_ROLE_TAXONOMY_ROLE),
+                    user_prompt=f"Target role: {target_role}\nAdditional context: {additional_context or 'none provided'}",
+                    json_schema=_ROLE_SKILLS_SCHEMA,
+                    temperature=0.3,
+                )
+                response = await llm.generate(spec)
+                self.cost_monitor.record(response, tier=tier)
+                required_skills = (response.parsed_json or {}).get("skills") or mock_data.infer_required_skills(
+                    target_role, additional_context
+                )
+            except Exception:
+                # Live LLM outage must not persist empty roadmaps (ROAD-F4 checkpoint).
+                used_llm = False
+                required_skills = mock_data.infer_required_skills(target_role, additional_context)
 
         if is_novel:
             # Grow the persistent knowledge graph with this role so it's no

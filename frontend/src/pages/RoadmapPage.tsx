@@ -168,13 +168,18 @@ function SkillTracker({
 
   return (
     <section className="roadmap-skill-tracker" aria-label="Skill progress tracker">
-      <div className="roadmap-skill-tracker__head">
+                    <div className="roadmap-skill-tracker__head">
         <h3>Skill progress tracker</h3>
         <p>
           Milestones organize the roadmap; skills are the current actionable progress units.
           Detailed sub-task tracking comes in a later slice.
         </p>
       </div>
+      {rows.length === 0 ? (
+        <p className="roadmap-skill-tracker__empty">
+          No skills in this roadmap yet. Try regenerating, or generate a new roadmap for your target role.
+        </p>
+      ) : (
       <ul className="roadmap-skill-tracker__list">
         {rows.map(({ skill, milestoneTitle }) => {
           const status = (skill.status ?? "not_started") as SkillStatus;
@@ -219,6 +224,7 @@ function SkillTracker({
           );
         })}
       </ul>
+      )}
     </section>
   );
 }
@@ -645,9 +651,14 @@ export default function RoadmapPage() {
   const deleteMutation = useMutation({
     mutationFn: (id: string) => roadmapApi.delete(id),
     onSuccess: async (_void, id) => {
-      await qc.invalidateQueries({ queryKey: ["roadmaps"] });
+      // Cancel/remove detail query first so we never refetch a deleted id (ROAD-F4).
+      await qc.cancelQueries({ queryKey: ["roadmap", id] });
       qc.removeQueries({ queryKey: ["roadmap", id] });
-      if (selectedId === id) setSelectedId(null);
+      setSelectedId((curr) => (curr === id ? null : curr));
+      qc.setQueryData<RoadmapRead[] | undefined>(["roadmaps"], (old) =>
+        Array.isArray(old) ? old.filter((r) => r.id !== id) : old
+      );
+      await qc.invalidateQueries({ queryKey: ["roadmaps"] });
       setRoadmapSuccess("Roadmap deleted.");
       addToast({ type: "success", message: "Roadmap deleted." });
     },
