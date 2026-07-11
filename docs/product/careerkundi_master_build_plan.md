@@ -1093,6 +1093,60 @@ UX0-S5 is a **docs-only** implementation ladder checkpoint.
 
 ---
 
+## PF11-R1 Platform Shell Review / Refinement Audit
+
+**Slice type:** AUDIT_ONLY (no product-code changes in PF11-R1).  
+**Inspected (read-only):** `App.tsx`, `Sidebar.tsx`, `Header.tsx`, `PlatformPage.tsx`, `lib/api.ts` (`platformApi`), `types/api.ts` (Platform* types).  
+**Evidence:** `~/Desktop/CareerKundi_PF11_R1_Platform_Shell_Review_Evidence.txt`
+
+### 7.1 Audit Summary Table
+
+| Area | Result | Evidence | Notes | Follow-up |
+|---|---|---|---|---|
+| Route placement | PASS | `App.tsx` `/platform` under `PrivateRoute` + `AppShell` | Auth-gated; Career Core foundation shell; not a full dashboard/passport/claims system | None for PF11 |
+| Sidebar/navigation fit | PARTIAL | `Sidebar.tsx` Career Tools → Platform | Platform visible; no Interview Pack / Auto Apply nav revival. Stale file comment still mentions Interview Pack. Group label still **Career Tools** vs UX0-S2 target **Career Core** | Deferred nav remap slice (already decided in UX0-S2); not PF11-R2 |
+| Header/breadcrumb fit | PASS | `Header.tsx` `PAGE_LABELS.platform` = "Platform Foundation" | Aligns with UX0-S2 breadcrumb for `/platform`. `chatbot` still lacks explicit label (falls back to segment text) | Future Header cleanup; not PF11-R2 |
+| Platform page product scope | PASS | `PlatformPage.tsx` subjects + goals only | Explicit “Foundation preview” + status card stating claims/evidence/recommendations/privacy/opportunities come later | None |
+| Design system fit | PASS | Button, Card, Input/Textarea, Spinner, toasts | Loading / empty / error / visible create actions present; consistent with existing shell; no giant visual rewrite | Optional polish later |
+| Domain ownership fit | PASS | `platformApi` + Platform* types only | Does not own CV Builder, Roadmaps, Passport, Claims, or Opportunities UIs | None |
+| Browser journey | BLOCKED_BROWSER_SETUP | Local Vite not running; no authenticated test session in this slice | Required journey not claimed. API probe: `GET /api/v1/platform/subjects` → **401** without auth (gate present) | Re-verify during later browser checkpoints if desired; does **not** block next slice |
+| Console/network health | VERIFY_IN_REPO | Not observed in a live browser session | Static review only | Optional browser re-check |
+
+### 7.2 PF11-R1 Decision
+
+**B PF11_PLATFORM_SHELL_ACCEPTED_WITH_MINOR_FOLLOW_UP**
+
+Rationale: `/platform` is correctly auth-gated, scoped to subjects/goals, uses shared UI primitives and platform domain APIs, and does not revive frozen 004E / Auto Apply surfaces. Remaining gaps are known deferred nav/breadcrumb cleanups outside PF11 product files — not shell defects requiring PF11-R2 code changes.
+
+### 7.3 Recommended Next Slice
+
+**Next slice: CVB-F0 CV Builder Audit**
+
+(Decision B → continue immediate ladder; do **not** insert PF11-R2.)
+
+### 7.4 PF11-R2 Recommendation
+
+**PF11-R2 not required.**
+
+No product-code refinement slice is recommended from this audit. If a future decision wants platform shell polish (e.g. friendlier subject labels), open an explicit slice with allowed files — do not invent PF11-R2 from this review.
+
+**Deferred (non-PF11) follow-ups already on the plan:**
+
+1. Sidebar remap Main/Career Tools/… → UX0-S2 groups (Career Core, Build, Roadmaps, …)  
+2. Expand `PAGE_LABELS` for `chatbot` (and other unlabeled segments)  
+3. Stale Sidebar header comment mentioning Interview Pack  
+
+### 7.5 PF11-R1 Implementation Decision
+
+PF11-R1 is **AUDIT_ONLY**.
+
+- No frontend product-code changes.  
+- No backend product-code changes.  
+- Platform shell accepted for ladder progression to **CVB-F0**.  
+- Frozen systems remain protected (old 004E Interview Pack repair; old Auto Apply).
+
+---
+
 ## 13. Dashboard Blueprint
 
 | Section | Purpose | Data | Backend source | Empty state | Primary action | Secondary | MVP | Future | Analytics | Tech notes |
@@ -1718,6 +1772,7 @@ Privacy/logging restrictions / Tests/evals
 - **Commit message:** `docs(product): record PF11 platform shell review` or `fix(frontend): refine platform foundation shell`  
 - **Push:** Yes if committed  
 - **Done definition:** Review complete; subjects/goals-only confirmed; refinement either not needed or verified with journey  
+- **PF11-R1 outcome (2026-07-12):** Decision **B** — accepted with minor follow-up; **no PF11-R2**; next = **CVB-F0**. Full audit in master § PF11-R1 Platform Shell Review / Refinement Audit.
 
 ### CVB-F0 — CV Builder Audit
 - **Type:** AUDIT_ONLY  
