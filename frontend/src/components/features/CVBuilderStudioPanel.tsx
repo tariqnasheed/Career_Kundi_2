@@ -158,7 +158,9 @@ export function CVBuilderStudioPanel({
       </div>
 
       <p className="cv-builder-studio-panel__footnote">
-        Preview accents are frontend layouts. PDF export fidelity is verified in a later slice.
+        Preview shows the full studio layout. PDF export maps this template to the
+        <strong> {template.backendTemplate}</strong> style family until template-specific PDF
+        rendering is expanded later.
       </p>
     </aside>
   );

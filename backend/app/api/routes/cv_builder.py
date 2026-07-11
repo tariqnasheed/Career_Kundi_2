@@ -25,7 +25,7 @@ from __future__ import annotations
 import uuid
 from typing import Literal
 
-from fastapi import APIRouter, Depends, Response
+from fastapi import APIRouter, Depends, HTTPException, Response
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -46,7 +46,13 @@ from app.schemas.cv_builder import (
     CVRegenerateRequest,
 )
 from app.schemas.profile import ProfileRead
-from app.tools.document_export import export_docx, export_markdown, export_pdf
+from app.tools.document_export import (
+    export_docx,
+    export_markdown,
+    export_pdf,
+    resolve_pdf_template_style,
+    safe_cv_export_filename,
+)
 
 router = APIRouter(prefix="/cv-builder", tags=["cv-builder"])
 
@@ -247,6 +253,7 @@ async def regenerate_cv(
 async def export_cv(
     cv_id: uuid.UUID,
     format: Literal["pdf", "docx", "markdown"] = "pdf",
+    template_id: str | None = None,
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ) -> Response:
@@ -256,11 +263,21 @@ async def export_cv(
     snapshot (see `tools/document_export.py`) — no agent pipeline, no LLM
     call, and no additional cost involved no matter how many times a user
     re-exports the same CV in a different format.
+
+    Optional `template_id` (query) accepts either a backend style
+    (modern|classic|compact|creative) or a CVB-F2 studio template id.
+    When omitted, PDF uses the style stored on the CV row. Studio layouts
+    map to the four PDF CSS families — full 15-layout PDF parity is deferred.
     """
     cv = await _get_owned_cv(db, user, cv_id)
 
+    try:
+        pdf_style = resolve_pdf_template_style(template_id, cv.template)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+
     if format == "pdf":
-        content = export_pdf(cv.rendered_content, template=cv.template)
+        content = export_pdf(cv.rendered_content, template=pdf_style)
     elif format == "docx":
         content = export_docx(cv.rendered_content)
     else:
@@ -269,7 +286,14 @@ async def export_cv(
     cv.export_format_last_used = format
     await db.commit()
 
-    filename = f"{(cv.name or 'cv').strip().replace(' ', '_')}.{_EXPORT_EXTENSIONS[format]}"
+    personal = (cv.rendered_content or {}).get("personal_info") or {}
+    candidate_name = personal.get("full_name") or cv.name or "Candidate"
+    template_label = (template_id or cv.template or pdf_style or "Template").replace("-", "_")
+    filename = safe_cv_export_filename(
+        candidate_name=str(candidate_name),
+        template_label=str(template_label),
+        extension=_EXPORT_EXTENSIONS[format],
+    )
     return Response(
         content=content,
         media_type=_EXPORT_CONTENT_TYPES[format],

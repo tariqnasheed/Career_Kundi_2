@@ -10,13 +10,13 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | Post-UX0 Controlled Execution |
-| Current Slice | CVB-F2 Studio Redesign + 15-Template Gallery |
+| Current Slice | CVB-F3 CV PDF Export Verification |
 | Current Status | Completed / In review |
-| Last Completed Slice | CVB-F1 CV Builder UI Repair |
-| Last Commit | `522f6814` — `feat(frontend): repair CV Builder UI` |
-| Last Push Status | Pushed (matched `origin/main` at CVB-F2 start) |
-| Next Slice | **CVB-F3 CV PDF Export Verification** |
-| Blocked Items | Browser journey blocked this slice (does not block F3) |
+| Last Completed Slice | CVB-F2 CV Builder Studio + 15-Template Gallery + Live Preview |
+| Last Commit | `ef3eff65` — `feat(frontend): add CV template gallery and preview` |
+| Last Push Status | Pushed (matched `origin/main` at CVB-F3 start) |
+| Next Slice | **CVB-F4 CV Save/Load Versions** |
+| Blocked Items | Browser export journey blocked this slice (does not block F4) |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
 
 ---
@@ -28,7 +28,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Master Build Plan | `docs/product/careerkundi_master_build_plan.md` |
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 
-**Pointers:** CVB-F1 done · **CVB-F2 15-template studio** (master § CVB-F2) · Next **CVB-F3**.
+**Pointers:** CVB-F2 studio · **CVB-F3 PDF export** (master § CVB-F3) · Next **CVB-F4**.
 
 ---
 
@@ -36,13 +36,12 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| CVB-F0 | CV Builder Audit | Done | `~/Desktop/CareerKundi_CVB_F0_CV_Builder_Audit_Evidence.txt` | `e6fb1435` | Yes | |
-| CVB-F1 | CV Builder UI Repair | Done | `~/Desktop/CareerKundi_CVB_F1_UI_Repair_Evidence.txt` | `522f6814` | Yes | Decision B |
-| CVB-F2 | 15-Template Studio | Done | `~/Desktop/CareerKundi_CVB_F2_Template_Preview_Evidence.txt` | This commit | Yes (with this push) | Decision B → F3 |
-| CVB-F3 | PDF Export Verification | Planned | — | — | — | **Next** |
-| CVB-F4…F5 | Save-Load / Browser | Planned | — | — | — | See master §43 |
+| CVB-F2 | 15-Template Studio | Done | `~/Desktop/CareerKundi_CVB_F2_Template_Preview_Evidence.txt` | `ef3eff65` | Yes | Gallery redesign |
+| CVB-F3 | PDF Export Verification | Done | `~/Desktop/CareerKundi_CVB_F3_PDF_Export_Evidence.txt` | This commit | Yes (with this push) | Decision B → F4 |
+| CVB-F4 | Save/Load Versions | Planned | — | — | — | **Next** |
+| CVB-F5 | Browser Checkpoint | Planned | — | — | — | After F4 |
 | ROAD-F0…F4 | Roadmap stabilization | Planned | — | — | — | After CVB-F5 |
-| 0051 | Role & Pathway Taxonomy | Planned | — | — | — | After ROAD-F4 + gate |
+| 0051 | Role & Pathway Taxonomy | Planned | — | — | — | After ROAD gate |
 
 ---
 
@@ -50,8 +49,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | CVB-F1 | `~/Desktop/CareerKundi_CVB_F1_UI_Repair_Evidence.txt` | B …BROWSER_SETUP_BLOCKED… | |
-| 2026-07-12 | CVB-F2 | `~/Desktop/CareerKundi_CVB_F2_Template_Preview_Evidence.txt` | B CVB_F2_15_TEMPLATE_GALLERY_ACCEPTED_BROWSER_SETUP_BLOCKED_COMMITTED_PUSHED | 15 templates |
+| 2026-07-12 | CVB-F2 | `~/Desktop/CareerKundi_CVB_F2_Template_Preview_Evidence.txt` | B …BROWSER_SETUP_BLOCKED… | |
+| 2026-07-12 | CVB-F3 | `~/Desktop/CareerKundi_CVB_F3_PDF_Export_Evidence.txt` | B CVB_F3_ACCEPTED_BROWSER_SETUP_BLOCKED_COMMITTED_PUSHED | template_id → 4 PDF styles |
 
 ---
 
@@ -59,8 +58,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | CVB-F1 | `522f6814` | Pushed | UI repair |
-| 2026-07-12 | CVB-F2 | This commit (`feat(frontend): add CV template gallery and preview`) | Pushed with this slice | Studio + 15 templates |
+| 2026-07-12 | CVB-F2 | `ef3eff65` | Pushed | Studio + 15 templates |
+| 2026-07-12 | CVB-F3 | This commit (`feat(cv-builder): verify PDF export flow`) | Pushed with this slice | Export + safe filename |
 
 ---
 
@@ -69,13 +68,13 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Date | Decision | Impact | Status |
 |---|---|---|---|
 | 2026-07 | 004E / Auto Apply frozen | Studio + Safe Apply | Accepted |
-| 2026-07-12 | CVB-F2 15 distinct templates + studio redesign | Preview fidelity before PDF harden | Accepted |
+| 2026-07-12 | PDF export maps studio templates to 4 CSS families | Honest limitation; full layout PDF later | Accepted |
 
 ---
 
 ## 7. Active Blockers
 
-No active product blockers. Browser journey `BLOCKED_BROWSER_SETUP` — deferred to CVB-F5.
+No active product blockers. Authenticated PDF download journey `BLOCKED_BROWSER_SETUP` — re-check in CVB-F5.
 
 ---
 
@@ -83,13 +82,13 @@ No active product blockers. Browser journey `BLOCKED_BROWSER_SETUP` — deferred
 
 | Field | Value |
 |---|---|
-| Next slice | **CVB-F3 CV PDF Export Verification** |
-| Reason | Gallery/preview delivered; next verify PDF export reliability |
-| Type | FRONTEND_VISIBLE or FULL_STACK (per F0) |
-| Evidence required | `~/Desktop/CareerKundi_CVB_F3_PDF_Export_Evidence.txt` |
-| Commit rule | `fix(cv-builder): verify and stabilize PDF export` |
+| Next slice | **CVB-F4 CV Save/Load Versions** |
+| Reason | Export path stabilized; next is draft version persistence UX |
+| Type | FULL_STACK if persistence gaps |
+| Evidence required | `~/Desktop/CareerKundi_CVB_F4_Save_Load_Evidence.txt` |
+| Commit rule | Per master §43 CVB-F4 card |
 | Push rule | Push after clean verification |
 
 ---
 
-*Tracker updated: 2026-07-12 — CVB-F2*
+*Tracker updated: 2026-07-12 — CVB-F3*

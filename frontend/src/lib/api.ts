@@ -312,9 +312,16 @@ export const cvApi = {
   },
 
   /** Download a generated CV as PDF (or DOCX / Markdown) via the export route. */
-  downloadPdf: async (cvId: string, format: "pdf" | "docx" | "markdown" = "pdf"): Promise<Blob> => {
+  downloadPdf: async (
+    cvId: string,
+    format: "pdf" | "docx" | "markdown" = "pdf",
+    options?: { templateId?: string },
+  ): Promise<Blob> => {
     const res = await http.get(`/cv-builder/${cvId}/export`, {
-      params: { format },
+      params: {
+        format,
+        ...(options?.templateId ? { template_id: options.templateId } : {}),
+      },
       responseType: "blob",
     });
     return res.data;

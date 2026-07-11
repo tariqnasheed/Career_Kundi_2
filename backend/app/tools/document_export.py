@@ -21,6 +21,7 @@ same `rendered_content` structure directly.
 from __future__ import annotations
 
 import io
+import re
 from typing import Any
 
 import markdown2
@@ -195,6 +196,26 @@ def export_markdown(rendered_content: dict[str, Any]) -> bytes:
 
 # --- PDF export (weasyprint) -----------------------------------------------------------
 
+# Frontend studio template IDs (CVB-F2) → existing PDF CSS style families.
+# Full 15-layout PDF parity is deferred; export maps to these four styles only.
+FRONTEND_TEMPLATE_TO_PDF_STYLE: dict[str, str] = {
+    "minimal-corporate": "classic",
+    "bold-sidebar": "creative",
+    "editorial-modern": "creative",
+    "technical-matrix": "modern",
+    "executive-classic": "classic",
+    "graduate-starter": "compact",
+    "project-portfolio": "modern",
+    "data-analyst-grid": "modern",
+    "creative-professional": "creative",
+    "academic-research": "classic",
+    "healthcare-clinical": "classic",
+    "engineering-blueprint": "modern",
+    "sales-achievement": "classic",
+    "government-ats": "compact",
+    "international-modern": "modern",
+}
+
 TEMPLATE_STYLES: dict[str, str] = {
     "modern": """
         body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1f2937; margin: 40px; line-height: 1.5; }
@@ -232,6 +253,51 @@ TEMPLATE_STYLES: dict[str, str] = {
 }
 
 
+def resolve_pdf_template_style(template_id: str | None, fallback: str | None = "modern") -> str:
+    """
+    Resolve a PDF CSS style family from either a backend style
+    (modern|classic|compact|creative) or a CVB-F2 frontend template id.
+    Unknown values raise ValueError (route layer maps to 422).
+    """
+    candidate = (template_id or "").strip() or (fallback or "modern")
+    if candidate in TEMPLATE_STYLES:
+        return candidate
+    mapped = FRONTEND_TEMPLATE_TO_PDF_STYLE.get(candidate)
+    if mapped and mapped in TEMPLATE_STYLES:
+        return mapped
+    raise ValueError(
+        f"Unknown CV template_id '{candidate}'. "
+        "Use a known studio template id or one of: modern, classic, compact, creative."
+    )
+
+
+def _sanitize_filename_token(value: str | None, fallback: str) -> str:
+    text = (value or "").strip().replace(" ", "_")
+    text = re.sub(r"[^A-Za-z0-9_-]+", "", text)
+    text = re.sub(r"_+", "_", text).strip("_")
+    return text or fallback
+
+
+def safe_cv_export_filename(
+    *,
+    candidate_name: str | None,
+    template_label: str | None,
+    extension: str,
+) -> str:
+    """
+    CareerKundi_<CandidateName>_<TemplateName>_CV.<ext>
+    Letters/numbers/dash/underscore only — no email/phone/path characters.
+    """
+    name = _sanitize_filename_token(candidate_name, "Candidate")
+    template = _sanitize_filename_token(template_label, "Template")
+    ext = (extension or "pdf").lstrip(".").lower()
+    if ext not in {"pdf", "docx", "md", "markdown"}:
+        ext = "pdf"
+    if ext == "markdown":
+        ext = "md"
+    return f"CareerKundi_{name}_{template}_CV.{ext}"
+
+
 def _build_html(rendered_content: dict[str, Any], template: str) -> str:
     body_html = markdown2.markdown(build_markdown(rendered_content))
     css = TEMPLATE_STYLES.get(template, TEMPLATE_STYLES["modern"])
@@ -241,7 +307,8 @@ def _build_html(rendered_content: dict[str, Any], template: str) -> str:
 def export_pdf(rendered_content: dict[str, Any], template: str = "modern") -> bytes:
     from weasyprint import HTML  # imported lazily — weasyprint pulls in native cairo/pango bindings
 
-    html = _build_html(rendered_content, template)
+    style = resolve_pdf_template_style(template, "modern")
+    html = _build_html(rendered_content, style)
     return HTML(string=html).write_pdf()
 
 

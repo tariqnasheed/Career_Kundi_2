@@ -27,6 +27,23 @@ function queryErrorMessage(err: unknown): string {
   return (msg && String(msg).trim()) || "We couldn't load this section. Please try again.";
 }
 
+function sanitizeFilenameToken(value: string | undefined | null, fallback: string): string {
+  const cleaned = (value || "")
+    .trim()
+    .replace(/\s+/g, "_")
+    .replace(/[^A-Za-z0-9_-]/g, "")
+    .replace(/_+/g, "_")
+    .replace(/^_+|_+$/g, "");
+  return cleaned || fallback;
+}
+
+/** CareerKundi_<CandidateName>_<TemplateName>_CV.pdf */
+function buildSafeCvPdfFilename(candidateName: string | undefined | null, templateName: string): string {
+  const name = sanitizeFilenameToken(candidateName, "Candidate");
+  const template = sanitizeFilenameToken(templateName, "Template");
+  return `CareerKundi_${name}_${template}_CV.pdf`;
+}
+
 const DEFAULT_CV_KEY = "ck_default_cv_id";
 
 const BASE_SECTIONS = [
@@ -70,6 +87,8 @@ export default function CVBuilderPage() {
   const [lastCvId, setLastCvId] = useState<string | null>(null);
   const [defaultCvId, setDefaultCvId] = useState<string | null>(localStorage.getItem(DEFAULT_CV_KEY));
   const [loadingCvId, setLoadingCvId] = useState<string | null>(null);
+  const [exportError, setExportError] = useState<string | null>(null);
+  const [exportSuccess, setExportSuccess] = useState<string | null>(null);
 
   const template = getCVTemplate(selectedTemplateId);
   const selectedJob = jobs?.find((j) => j.id === targetJobId);
@@ -127,22 +146,50 @@ export default function CVBuilderPage() {
     mutationFn: async () => {
       const cvId = lastCvId ?? cvs?.[0]?.id;
       if (!cvId) throw new Error("no-cv");
-      const blob = await cvApi.downloadPdf(cvId, "pdf");
+      setExportError(null);
+      setExportSuccess(null);
+      const blob = await cvApi.downloadPdf(cvId, "pdf", { templateId: selectedTemplateId });
+      if (!(blob instanceof Blob) || blob.size === 0) {
+        throw new Error("empty-pdf");
+      }
+      // Guard against API error JSON returned as blob
+      if (blob.type && blob.type.includes("application/json")) {
+        throw new Error("export-rejected");
+      }
+      const filename = buildSafeCvPdfFilename(
+        profile?.full_name || cvName || "Candidate",
+        template.name,
+      );
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `${(cvName || "cv").replace(/\s+/g, "_")}.pdf`;
+      a.download = filename;
       document.body.appendChild(a);
       a.click();
       a.remove();
       URL.revokeObjectURL(url);
+      return filename;
     },
-    onError: (e: unknown) =>
-      addToast(
-        (e as Error)?.message === "no-cv"
-          ? { type: "info", message: "Save a draft first, then export PDF." }
-          : { type: "error", message: "Export failed. PDF hardening continues in a later slice." },
-      ),
+    onSuccess: (filename) => {
+      setExportSuccess(`Downloaded ${filename}`);
+      addToast({
+        type: "success",
+        title: "PDF exported",
+        message: "Download started. PDF uses a mapped style family for the selected studio template.",
+      });
+    },
+    onError: (e: unknown) => {
+      const code = (e as Error)?.message;
+      const message =
+        code === "no-cv"
+          ? "Generate or select a CV draft before exporting."
+          : code === "empty-pdf"
+            ? "Export returned an empty file. Please try again."
+            : "We couldn't export this PDF. Please try again.";
+      setExportError(message);
+      setExportSuccess(null);
+      addToast({ type: code === "no-cv" ? "info" : "error", message });
+    },
   });
 
   const loadCV = async (cv: GeneratedCVRead) => {
@@ -180,7 +227,8 @@ export default function CVBuilderPage() {
           <h1>Design a distinctive CV</h1>
           <p>
             Modern layered studio with {CV_TEMPLATE_CATALOG.length} structurally different templates
-            and a live preview engine. Export reliability and version history continue later.
+            and a live preview engine. PDF export maps the selected template to a supported style
+            family (modern / classic / compact / creative). Full layout-parity PDF rendering is deferred.
           </p>
         </div>
         <div className="cv-builder-studio__actions">
@@ -202,12 +250,32 @@ export default function CVBuilderPage() {
             loading={exportMutation.isPending}
             disabled={!canExport}
             onClick={() => exportMutation.mutate()}
-            title={canExport ? "Export PDF" : "Save a draft first"}
+            title={
+              canExport
+                ? `Export PDF (${template.name} → ${template.backendTemplate} style)`
+                : "Generate or select a CV before exporting"
+            }
           >
-            Export PDF
+            {exportMutation.isPending ? "Exporting..." : "Export PDF"}
           </Button>
         </div>
       </header>
+
+      <div className="cv-builder-export" aria-live="polite">
+        {exportMutation.isPending && (
+          <div className="cv-builder-export-status">Exporting PDF…</div>
+        )}
+        {exportError && (
+          <div className="cv-builder-export-error" role="alert">{exportError}</div>
+        )}
+        {exportSuccess && !exportError && (
+          <div className="cv-builder-export-success">{exportSuccess}</div>
+        )}
+        <p className="cv-builder-export-note">
+          PDF uses mapped backend style <strong>{template.backendTemplate}</strong> for selected
+          template <strong>{template.name}</strong>. Studio preview layouts are richer than PDF CSS families.
+        </p>
+      </div>
 
       <div className="cv-builder-studio__status" aria-live="polite">
         {workspaceLoading && (

@@ -1223,3 +1223,32 @@
   }
   .cv-template-preview--bold-sidebar .cv-preview__sidebar { min-height: auto; }
 }
+
+/* CVB-F3 export status (scoped) */
+.cv-builder-export {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  background: color-mix(in srgb, var(--bg-overlay) 80%, rgba(99, 102, 241, 0.08));
+}
+
+.cv-builder-export-status,
+.cv-builder-export-error,
+.cv-builder-export-success {
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.cv-builder-export-status { color: var(--accent-cyan, #22d3ee); }
+.cv-builder-export-error { color: var(--danger, #ef4444); }
+.cv-builder-export-success { color: #34d399; }
+
+.cv-builder-export-note {
+  margin: 0;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}

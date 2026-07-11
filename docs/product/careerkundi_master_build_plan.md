@@ -1426,6 +1426,65 @@ Rationale: UI repair for workspace L/E/E and honest draft language is in place a
 
 ---
 
+## CVB-F3 CV PDF Export Verification
+
+**Slice type:** FRONTEND_VISIBLE + small FULL_STACK export fix  
+**Evidence:** `~/Desktop/CareerKundi_CVB_F3_PDF_Export_Evidence.txt`
+
+### 14.1 Export Flow Summary
+
+| Area | Before | Change / Verification | Result | Notes |
+|---|---|---|---|---|
+| Export button | Present; basic blob download | Loading copy, disabled guard, tooltip | PASS | |
+| Selected template propagation | Export ignored gallery selection | `template_id` query + FE `downloadPdf(..., { templateId })` | PASS | Maps to 4 PDF CSS families |
+| Safe filename | `Name.pdf` loose | `CareerKundi_<Name>_<Template>_CV.pdf` FE+BE | PASS | Sanitized tokens |
+| Frontend export state | Toast only | exportError / exportSuccess / Exporting… | PASS | |
+| Backend export route | `GET /cv-builder/{id}/export` | Optional `template_id`; ownership unchanged | PASS | |
+| Ownership/auth check | `_get_owned_cv` + `get_current_user` | Unchanged | PASS | |
+| PDF response | `application/pdf` bytes | Unchanged media type + safer Content-Disposition | PASS | |
+| Error handling | Generic toast | User-readable FE errors; unknown template → 422 | PASS | |
+| Build | — | Frontend build PASS | PASS | |
+| Browser journey | — | Not run | BLOCKED_BROWSER_SETUP | |
+
+### 14.2 Files Changed
+
+| File | Change Type | Reason | Scope |
+|---|---|---|---|
+| `frontend/src/pages/CVBuilderPage.tsx` | Update | Export states, safe filename, templateId | Allowed |
+| `frontend/src/lib/api.ts` | Update | `downloadPdf` optional `templateId` | Allowed |
+| `frontend/src/components/features/CVBuilderStudioPanel.tsx` | Update | Honest PDF mapping footnote | Allowed |
+| `frontend/src/styles/feature-pages.css` | Update | `.cv-builder-export*` status styles | Allowed |
+| `backend/app/tools/document_export.py` | Update | resolve style + safe filename helpers | Allowed |
+| `backend/app/api/routes/cv_builder.py` | Update | `template_id` query + safe filename header | Allowed |
+| `backend/tests/unit/test_document_export.py` | Test | Style resolve + filename tests | Allowed |
+| docs master + live tracker | Docs | F3 outcome | Allowed |
+
+### 14.3 Export Capability Decision
+
+**SELECTED_TEMPLATE_ID_WIRED_BUT_RUNTIME_BROWSER_BLOCKED**
+
+Studio `template_id` is accepted and mapped to PDF CSS families (`modern|classic|compact|creative`). Full 15-layout PDF parity remains deferred. Authenticated browser download not verified this slice.
+
+### 14.4 Remaining CV Builder Work
+
+| Remaining Work | Target Slice | Notes |
+|---|---|---|
+| Save/Load Versions | CVB-F4 | Persistence UX |
+| Browser-Tested Checkpoint | CVB-F5 | Full export journey |
+| Template-specific PDF layout parity (beyond 4 CSS families) | Future approved slice / CVB-F3B | Documented limitation |
+| AI CV rewriting | Future AI slice | Out of scope |
+| More templates beyond 15 | Future approved slice | Out of scope |
+
+### 14.5 CVB-F3 Decision
+
+**B CVB_F3_ACCEPTED_BROWSER_SETUP_BLOCKED**
+
+### 14.6 Recommended Next Slice
+
+**Next slice: CVB-F4 CV Save/Load Versions**
+
+---
+
 ## 13. Dashboard Blueprint
 
 | Section | Purpose | Data | Backend source | Empty state | Primary action | Secondary | MVP | Future | Analytics | Tech notes |
@@ -2103,19 +2162,18 @@ Privacy/logging restrictions / Tests/evals
 - **CVB-F2 outcome (2026-07-12):** Decision **B** — 15-template studio accepted; browser setup blocked; next = **CVB-F3**.
 
 ### CVB-F3 — CV PDF Export Verification
-- **Type:** FRONTEND_VISIBLE or FULL_STACK (depending export architecture found in F0)  
-- **Goal:** Verify and stabilize CV PDF export.  
-- **Allowed:** Export-related FE/BE files listed after F0; docs/tracker.  
-- **Forbidden:** Tracking generated PDFs; unrelated refactors.  
-- **Backend/Frontend:** Inspect PDF library/approach; ensure selected template exports; safe filename.  
-- **API/DB/AI:** Existing export path; no AI.  
-- **Security:** Safe filenames; auth.  
-- **Tests:** Build + open/download PDF.  
-- **Browser:** Export succeeds; file opens.  
+- **Type:** FRONTEND_VISIBLE or FULL_STACK (export verification)  
+- **Goal:** Verify and stabilize CV PDF export; wire selected template where safe.  
+- **Allowed:** CV FE export flow; optional small export route/schema/document_export fixes; docs/tracker.  
+- **Forbidden:** Migrations; AI rewrite; save/load product; global redesign; dist assets.  
+- **Backend/Frontend:** Auth/ownership preserved; optional `template_id`; safe filename; honest UI about 4-style PDF mapping.  
+- **Tests:** Frontend build + targeted document_export unit tests.  
+- **Browser:** Export download journey when auth available.  
 - **Evidence:** `~/Desktop/CareerKundi_CVB_F3_PDF_Export_Evidence.txt`  
-- **Commit message:** `fix(cv-builder): verify and stabilize PDF export`  
+- **Commit message:** `feat(cv-builder): verify PDF export flow`  
 - **Push:** Yes  
-- **Done definition:** Export works; dist/artifacts not tracked  
+- **Done definition:** Export path verified; filename safe; template mapping documented  
+- **CVB-F3 outcome (2026-07-12):** Decision **B** — accepted with browser setup blocked; next = **CVB-F4**. Capability: selected template id wired to PDF style families; full layout PDF deferred.
 
 ### CVB-F4 — CV Save/Load Versions
 - **Type:** FULL_STACK (if persistence missing)  
