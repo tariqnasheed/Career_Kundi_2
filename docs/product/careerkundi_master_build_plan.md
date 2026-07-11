@@ -321,6 +321,165 @@ Use these levels in all feature tables.
 
 ---
 
+## UX0-S2 Navigation + Sitemap Contract
+
+**Slice:** UX0-S2  
+**Date:** 2026-07-11  
+**Type:** Docs-only contract (no product route/sidebar implementation in this slice)  
+**Inspected files (read-only):** `frontend/src/App.tsx`, `frontend/src/components/layout/Sidebar.tsx`, `frontend/src/components/layout/Header.tsx`, `frontend/src/main.tsx`, `frontend/src/pages/*`
+
+### 6.1 Current Route Inventory
+
+Verified from `App.tsx` route table + page imports. Status values: `EXISTING_VERIFIED` | `EXISTING_NEEDS_REVIEW` | `PLANNED` | `PLACEHOLDER_NEEDED` | `DEFERRED` | `FROZEN` | `VERIFY_IN_REPO`.
+
+| Route | Page / Component | Access | Current Status | Source File | Notes |
+|---|---|---|---|---|---|
+| `/` | `LandingPage` | Public (`PublicRoute`) | EXISTING_VERIFIED | `pages/LandingPage.tsx` via `App.tsx` | Logged-in users redirected to `/dashboard` |
+| `/login` | `LoginPage` | Public (`PublicRoute`) | EXISTING_VERIFIED | `pages/LoginPage.tsx` | |
+| `/register` | `RegisterPage` | Public (`PublicRoute`) | EXISTING_VERIFIED | `pages/RegisterPage.tsx` | |
+| `/dashboard` | `DashboardPage` | Auth + `AppShell` | EXISTING_VERIFIED | `pages/DashboardPage.tsx` | Sidebar: Dashboard |
+| `/jobs` | `JobSearchPage` | Auth + `AppShell` | EXISTING_VERIFIED | `pages/JobSearchPage.tsx` | Sidebar label: Jobs & Interview Prep; not yet `/jobs/search` |
+| `/interview-pack` | `InterviewPackRedirect` → `/jobs` | Auth + `AppShell` | FROZEN | `App.tsx` redirect | Legacy URL; **do not repair 004E pack**. `InterviewPackPage.tsx` file exists but is **not** mounted |
+| `/cv-builder` | `CVBuilderPage` | Auth + `AppShell` | EXISTING_NEEDS_REVIEW | `pages/CVBuilderPage.tsx` | Single route today; nested templates/editor/preview/export are PLANNED |
+| `/roadmap` | `RoadmapPage` | Auth + `AppShell` | EXISTING_NEEDS_REVIEW | `pages/RoadmapPage.tsx` | Singular path; future contract prefers `/roadmaps` |
+| `/achievements` | `AchievementsPage` | Auth + `AppShell` | EXISTING_VERIFIED | `pages/AchievementsPage.tsx` | Sidebar Community group; re-home later |
+| `/profile` | `ProfilePage` | Auth + `AppShell` | EXISTING_VERIFIED | `pages/ProfilePage.tsx` | Merge toward `/passport` later |
+| `/settings` | `SettingsPage` | Auth + `AppShell` | EXISTING_VERIFIED | `pages/SettingsPage.tsx` | |
+| `/platform` | `PlatformPage` | Auth + `AppShell` | EXISTING_VERIFIED | `pages/PlatformPage.tsx` | PF11; Sidebar Career Tools → Platform; breadcrumb Platform Foundation |
+| `/chatbot` | `ChatbotPage` | Auth + `AppShell` | EXISTING_VERIFIED | `pages/ChatbotPage.tsx` | Route exists; **not** in Sidebar `NAV_GROUPS` (FAB/widget only) |
+| `*` | `NotFoundPage` | Any | EXISTING_VERIFIED | `pages/NotFoundPage.tsx` | Catch-all |
+
+**Current sidebar groups (verified `Sidebar.tsx`):** Main (Dashboard, Jobs); Career Tools (CV Builder, Career Roadmap, Platform); Community (Achievements); Account (Profile, Settings).
+
+**Current breadcrumb labels (verified `Header.tsx` `PAGE_LABELS`):** dashboard, jobs, cv-builder, roadmap, achievements, profile, settings, platform. Missing explicit labels for `chatbot`, `interview-pack` → fall back to segment title-case (`VERIFY_IN_REPO` for runtime).
+
+### 6.2 Planned Route Contract
+
+| Planned Route | Page Name | Navigation Group | Access | Backend Domain | Frontend Owner | MVP Priority | Implementation Slice | Status |
+|---|---|---|---|---|---|---|---|---|
+| `/` | Landing | Public | Public | — | pages/LandingPage | High | Existing | EXISTING_VERIFIED |
+| `/login` | Login | Public | Public | auth | pages/LoginPage | High | Existing | EXISTING_VERIFIED |
+| `/register` | Register | Public | Public | auth | pages/RegisterPage | High | Existing | EXISTING_VERIFIED |
+| `/dashboard` | Dashboard | Home | Auth | aggregate | pages/DashboardPage | High | UX0-S5+ shell polish | EXISTING_VERIFIED |
+| `/platform` | Platform Foundation | Career Core | Auth | platform | pages/PlatformPage | High | PF11 done; PF11-R1 review | EXISTING_VERIFIED |
+| `/passport` | Career Passport | Career Core | Auth | career_passport | features/passport | Medium | After 0052 | PLANNED |
+| `/passport/profile` | Passport Profile | Career Core | Auth | career_passport | features/passport | Medium | After 0052 | PLANNED |
+| `/passport/education` | Education | Career Core | Auth | career_passport | features/passport | Medium | After 0052 | PLANNED |
+| `/passport/experience` | Experience | Career Core | Auth | career_passport | features/passport | Medium | After 0052 | PLANNED |
+| `/passport/projects` | Projects | Career Core | Auth | career_passport | features/passport | Medium | After 0052 | PLANNED |
+| `/passport/skills` | Skills | Career Core | Auth | career_passport / skills | features/passport | Medium | After 0052 | PLANNED |
+| `/passport/targets` | Targets | Career Core | Auth | lifecycle | features/passport | Medium | After 0052 | PLANNED |
+| `/cv-builder` | CV Builder | Build | Auth | cv_builder | pages/CVBuilderPage | High | CVB-F0–F5 | EXISTING_NEEDS_REVIEW |
+| `/cv-builder/templates` | Templates | Build | Auth | cv_builder | features/cv-builder | High | CVB-F2 | PLANNED |
+| `/cv-builder/editor` | Editor | Build | Auth | cv_builder | features/cv-builder | High | CVB-F1/F2 | PLANNED |
+| `/cv-builder/preview` | Preview | Build | Auth | cv_builder | features/cv-builder | High | CVB-F2 | PLANNED |
+| `/cv-builder/export` | Export | Build | Auth | cv_builder | features/cv-builder | High | CVB-F3 | PLANNED |
+| `/roadmaps` | My Roadmaps | Roadmaps | Auth | roadmaps | features/roadmaps | High | ROAD-F1+ | PLANNED |
+| `/roadmap` | Career Roadmap (legacy) | Roadmaps | Auth | roadmaps | pages/RoadmapPage | High | ROAD-F0/F1; alias later | EXISTING_NEEDS_REVIEW |
+| `/roadmaps/new` | Generate/Create Roadmap | Roadmaps | Auth | roadmaps | features/roadmaps | High | ROAD-F2 | PLANNED |
+| `/roadmaps/:id` | Roadmap Detail | Roadmaps | Auth | roadmaps | features/roadmaps | High | ROAD-F3 | PLANNED |
+| `/roadmaps/:id/tasks` | Roadmap Tasks | Roadmaps | Auth | roadmaps | features/roadmaps | High | ROAD-F3 | PLANNED |
+| `/opportunities` | Opportunities Hub | Opportunities | Auth | opportunities | features/opportunities | Medium | After 0054–55 | PLANNED |
+| `/jobs/search` | Job Search | Opportunities | Auth | job_search | jobs | High | Alias of `/jobs` later | PLANNED |
+| `/jobs` | Jobs & Interview Prep | Opportunities | Auth | job_search | pages/JobSearchPage | High | Existing surface | EXISTING_VERIFIED |
+| `/jobs/saved` | Saved Jobs | Opportunities | Auth | job_search | jobs | High | VERIFY_IN_REPO (may be panel inside `/jobs`) | PLANNED / VERIFY_IN_REPO |
+| `/jobs/:id` | Job Detail | Opportunities | Auth | job_search | jobs | High | VERIFY_IN_REPO | PLANNED / VERIFY_IN_REPO |
+| `/interview-studio` | Interview Studio | Prepare | Auth | interview_studio | features/interview-studio | Medium | After 0061 | PLANNED |
+| `/interview-studio/practice` | Practice | Prepare | Auth | interview_studio | features/interview-studio | Medium | After 0061 | PLANNED |
+| `/interview-pack` | Legacy redirect | Prepare | Auth | — | App redirect | Low | Keep redirect only | FROZEN |
+| `/skills` | Skills | Career Core | Auth | skills | features/skills | Medium | After 0060 | PLANNED |
+| `/practice` | Practice Tasks | Prepare | Auth | skills | features/skills | Medium | After 0060 | PLANNED |
+| `/proof` | Proof Artifacts | Prepare | Auth | claims / skills | features/skills | Medium | After 0053/0060 | PLANNED |
+| `/graduate-launch` | Graduate Launch | Roadmaps / Launch | Auth | graduate_launch | features/education | Low | After 0056 | PLANNED |
+| `/public-sector` | Public Sector | Education & Mobility | Auth | public_sector | features/public-sector | Low | After 0063+ | PLANNED |
+| `/education` | Education Hub | Education & Mobility | Auth | education | features/education | Low | After 0069+ | PLANNED |
+| `/study-abroad` | Study Abroad | Education & Mobility | Auth | education | features/education | Low | After 0070 | PLANNED |
+| `/masters-phd` | Masters / PhD | Education & Mobility | Auth | education | features/education | Low | After 0072 | PLANNED |
+| `/migration` | Migration | Education & Mobility | Auth | mobility | features/education | Low | After 0073 | PLANNED |
+| `/applications` | Applications Hub | Applications | Auth | applications | features/applications | Medium | After 0068 prep | PLANNED |
+| `/applications/tracker` | Application Tracker | Applications | Auth | applications | features/applications | Medium | Later | PLANNED |
+| `/applications/drafts` | Drafts | Applications | Auth | applications | features/applications | Medium | Later | PLANNED |
+| `/applications/safe-apply` | Safe Apply | Applications | Auth | applications | features/applications | Low | After 0068 | PLANNED |
+| `/settings` | Settings | Account | Auth | profile/auth | pages/SettingsPage | High | Existing | EXISTING_VERIFIED |
+| `/privacy` | Privacy | Account | Auth | privacy | features/settings | Medium | Later | PLANNED |
+| `/billing` | Billing | Account | Auth | billing | features/settings | Low | After 0075 | DEFERRED |
+| `/achievements` | Achievements | Account / Community | Auth | badges | pages/AchievementsPage | Low | Existing; re-home later | EXISTING_VERIFIED |
+| `/chatbot` | Chatbot | Assistant | Auth | chatbot | pages/ChatbotPage | Medium | Evolve to panel | EXISTING_VERIFIED |
+| `/profile` | Profile | Career Core | Auth | profile | pages/ProfilePage | Medium | Merge toward passport | EXISTING_VERIFIED |
+
+### 6.3 Sidebar Navigation Contract
+
+Target grouped sidebar (future implementation slices only — **not** implemented in UX0-S2):
+
+| Group | Display label | Primary routes (now / first MVP) | Future routes | First MVP page | Icon category | Backend domain | Visibility |
+|---|---|---|---|---|---|---|---|
+| Home | Home | `/dashboard` | `/today`, `/progress` | `/dashboard` | layout / home | aggregate | AUTHENTICATED |
+| Career Core | Career Core | `/platform`, `/profile` | `/passport/*`, Claims & Evidence, `/skills` | `/platform` | identity / layers | platform, passport, claims, skills | AUTHENTICATED |
+| Build | Build | `/cv-builder` | `/cv-builder/templates|editor|preview|export`, cover letters, portfolio, documents | `/cv-builder` | document / book | cv_builder | AUTHENTICATED |
+| Roadmaps | Roadmaps | `/roadmap` (legacy) → `/roadmaps` | `/roadmaps/new`, `/:id`, `/:id/tasks`, specialized plans | `/roadmap` then `/roadmaps` | map / path | roadmaps, lifecycle | AUTHENTICATED |
+| Opportunities | Opportunities | `/jobs` | `/jobs/search`, `/jobs/saved`, `/jobs/:id`, `/opportunities`, company research, remote/public | `/jobs` | search / briefcase | job_search, opportunities | AUTHENTICATED |
+| Prepare | Prepare | (none in sidebar yet; legacy pack frozen) | `/interview-studio`, practice, study, role trials, mocks | `/interview-studio` after 0061 | target / mic | interview_studio, skills | FUTURE_FEATURE |
+| Education & Mobility | Education & Mobility | (none) | `/education`, `/study-abroad`, `/masters-phd`, `/migration`, `/public-sector`, `/graduate-launch` | Level-1 placeholders later | globe / graduation | education, mobility, public_sector | FUTURE_FEATURE |
+| Applications | Applications | (none) | `/applications`, tracker, drafts, `/applications/safe-apply` | tracker later; Safe Apply after 0068 | send / inbox | applications | FUTURE_FEATURE (Safe Apply not Auto Apply) |
+| Account | Account | `/settings`, `/profile`, `/achievements` | `/privacy`, `/billing`, Help | `/settings` | user / gear | profile, privacy, billing | AUTHENTICATED; billing = BILLING_GATED_FUTURE |
+
+**Visibility values used:** `PUBLIC` | `AUTHENTICATED` | `FUTURE_FEATURE` | `ADMIN_FUTURE` | `BILLING_GATED_FUTURE`.
+
+**Current vs target:** Today’s sidebar still uses Main / Career Tools / Community / Account. Remapping to the contract above requires an explicit frontend nav slice **after** UX0-S2 and UX0-S3 — not in this slice.
+
+### 6.4 Breadcrumb Contract
+
+| Route | Breadcrumb Label | Parent | Notes |
+|---|---|---|---|
+| `/dashboard` | Dashboard | Home | Verified `PAGE_LABELS.dashboard` |
+| `/platform` | Platform Foundation | Career Core | Verified `PAGE_LABELS.platform` |
+| `/profile` | Profile | Career Core | Verified |
+| `/cv-builder` | CV Builder | Build | Verified |
+| `/cv-builder/templates` | Templates | CV Builder | PLANNED |
+| `/cv-builder/editor` | Editor | CV Builder | PLANNED |
+| `/cv-builder/preview` | Preview | CV Builder | PLANNED |
+| `/cv-builder/export` | Export | CV Builder | PLANNED |
+| `/roadmap` | Career Roadmap | Roadmaps | Verified `PAGE_LABELS.roadmap` |
+| `/roadmaps` | Roadmaps | Roadmaps | PLANNED (plural) |
+| `/roadmaps/new` | New Roadmap | Roadmaps | PLANNED |
+| `/roadmaps/:id` | Roadmap Detail | Roadmaps | PLANNED |
+| `/jobs` | Jobs & Interview Prep | Opportunities | Verified |
+| `/jobs/search` | Job Search | Opportunities | PLANNED |
+| `/jobs/saved` | Saved Jobs | Opportunities | PLANNED |
+| `/passport` | Career Passport | Career Core | PLANNED |
+| `/interview-studio` | Interview Studio | Prepare | PLANNED |
+| `/applications` | Applications | Applications | PLANNED |
+| `/applications/safe-apply` | Safe Apply | Applications | PLANNED; never “Auto Apply” |
+| `/settings` | Settings | Account | Verified |
+| `/privacy` | Privacy | Account | PLANNED |
+| `/billing` | Billing | Account | DEFERRED |
+| `/chatbot` | Chatbot (fallback) | Assistant | No `PAGE_LABELS` entry today — VERIFY_IN_REPO runtime fallback |
+| `/achievements` | Achievements | Account / Community | Verified |
+
+### 6.5 Access Contract
+
+| Route Group | Access Rule | Auth Behavior | Unauthorized Behavior | Notes |
+|---|---|---|---|---|
+| Public (`/`, `/login`, `/register`) | PUBLIC | `PublicRoute`: if already authenticated → `/dashboard` | N/A (public) | Verified in `App.tsx` |
+| Authenticated app (AppShell children) | AUTHENTICATED | `PrivateRoute` + `useAuthStore().isAuthenticated`; spinner while `isLoading` | Navigate to `/login` | No auth bypass allowed |
+| Catch-all `*` | Any | Renders `NotFoundPage` | — | Exists outside PrivateRoute |
+| Admin / B2B future | ADMIN_FUTURE | Deferred | Deferred | No routes yet |
+| Billing-gated future | BILLING_GATED_FUTURE | Deferred | Deferred | `/billing` DEFERRED |
+| Frozen legacy pack | FROZEN | `/interview-pack` redirects to `/jobs` | Same as auth routes | Do not revive 004E |
+| Frozen Auto Apply | FROZEN | No route | — | Future is Safe Apply only |
+
+### 6.6 UX0-S2 Implementation Decision
+
+UX0-S2 is a **docs-only** sitemap/navigation contract.
+
+- No product route implementation is included in this slice.
+- No sidebar product-code changes are included in this slice.
+- Future route/sidebar implementation must happen through **explicit frontend slices after UX0-S2 and UX0-S3**.
+- Do not invent EXISTING status for planned routes.
+- Frozen: old 004E Interview Pack repair; old Auto Apply.
+
+---
+
 ## 13. Dashboard Blueprint
 
 | Section | Purpose | Data | Backend source | Empty state | Primary action | Secondary | MVP | Future | Analytics | Tech notes |
