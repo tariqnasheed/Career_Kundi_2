@@ -10,12 +10,12 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | Post-UX0 Controlled Execution |
-| Current Slice | CVB-F5 CV Browser-Tested Checkpoint |
+| Current Slice | ROAD-F0 Roadmap Audit |
 | Current Status | Completed / In review |
-| Last Completed Slice | CVB-F4 CV Save / Load Versions |
-| Last Commit | `bfabd845` — `feat(cv-builder): persist CV versions and templates` |
-| Last Push Status | Pushed (matched `origin/main` at CVB-F5 start) |
-| Next Slice | **ROAD-F0 Roadmap Audit** |
+| Last Completed Slice | CVB-F5 CV Browser-Tested Checkpoint |
+| Last Commit | `8a4b67aa` — `docs(product): record CV browser checkpoint` |
+| Last Push Status | Pushed (matched `origin/main` at ROAD-F0 start) |
+| Next Slice | **ROAD-F1 Roadmap UI Repair** |
 | Blocked Items | No active blockers |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
 
@@ -28,7 +28,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Master Build Plan | `docs/product/careerkundi_master_build_plan.md` |
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 
-**Pointers:** CVB-F4 save/load · **CVB-F5 browser checkpoint** (master § CVB-F5) · Next **ROAD-F0**.
+**Pointers:** CVB-F5 closed · **ROAD-F0 Roadmap audit** (master § ROAD-F0) · Next **ROAD-F1**.
 
 ---
 
@@ -36,11 +36,10 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| CVB-F3 | PDF Export Verification | Done | `~/Desktop/CareerKundi_CVB_F3_PDF_Export_Evidence.txt` | `3441a1c6` | Yes | Decision B |
-| CVB-F4 | Save/Load Versions | Done | `~/Desktop/CareerKundi_CVB_F4_Save_Load_Versions_Evidence.txt` | `bfabd845` | Yes | Decision B → F5 |
-| CVB-F5 | Browser Checkpoint | Done | `~/Desktop/CareerKundi_CVB_F5_Browser_Checkpoint_Evidence.txt` | This commit | Yes (with this push) | Decision B → ROAD-F0 |
-| ROAD-F0 | Roadmap Audit | Planned | — | — | — | **Next** |
-| ROAD-F1…F4 | Roadmap stabilization | Planned | — | — | — | After ROAD-F0 |
+| CVB-F5 | Browser Checkpoint | Done | `~/Desktop/CareerKundi_CVB_F5_Browser_Checkpoint_Evidence.txt` | `8a4b67aa` | Yes | Decision B → ROAD-F0 |
+| ROAD-F0 | Roadmap Audit | Done | `~/Desktop/CareerKundi_ROAD_F0_Roadmap_Audit_Evidence.txt` | This commit | Yes (with this push) | Decision A → F1 |
+| ROAD-F1 | Roadmap UI Repair | Planned | — | — | — | **Next** |
+| ROAD-F2…F4 | Roadmap stabilization | Planned | — | — | — | After F1 |
 | 0051 | Role & Pathway Taxonomy | Planned | — | — | — | After ROAD gate |
 
 ---
@@ -49,8 +48,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | CVB-F4 | `~/Desktop/CareerKundi_CVB_F4_Save_Load_Versions_Evidence.txt` | B …BROWSER_SETUP_BLOCKED… | section_config `_studio` |
-| 2026-07-12 | CVB-F5 | `~/Desktop/CareerKundi_CVB_F5_Browser_Checkpoint_Evidence.txt` | B CVB_F5_…MINOR_LIMITATIONS…COMMITTED_PUSHED | Full journey PASS; 4-family PDF caveat |
+| 2026-07-12 | CVB-F5 | `~/Desktop/CareerKundi_CVB_F5_Browser_Checkpoint_Evidence.txt` | B …MINOR_LIMITATIONS… | CV ladder closed |
+| 2026-07-12 | ROAD-F0 | `~/Desktop/CareerKundi_ROAD_F0_Roadmap_Audit_Evidence.txt` | A ROADMAP_READY_FOR_ROAD_F1… | `/roadmap` exists; `/roadmaps` missing |
 
 ---
 
@@ -58,8 +57,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | CVB-F4 | `bfabd845` | Pushed | Save/load + studio template |
-| 2026-07-12 | CVB-F5 | This commit (`docs(product): record CV browser checkpoint`) | Pushed with this slice | Docs-only verification |
+| 2026-07-12 | CVB-F5 | `8a4b67aa` | Pushed | Browser checkpoint docs |
+| 2026-07-12 | ROAD-F0 | This commit (`docs(product): record Roadmap audit`) | Pushed with this slice | Audit-only |
 
 ---
 
@@ -68,7 +67,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Date | Decision | Impact | Status |
 |---|---|---|---|
 | 2026-07 | 004E / Auto Apply frozen | Studio + Safe Apply | Accepted |
-| 2026-07-12 | CV Builder browser checkpoint PASS | CVB ladder closed → ROAD-F0 | Accepted (minor: 4 PDF families) |
+| 2026-07-12 | Roadmaps platform-wide (not Graduate-only) | ROAD-* before 0056 | Accepted |
+| 2026-07-12 | ROAD-F0 Decision A | Proceed to ROAD-F1 UI repair | Accepted |
 
 ---
 
@@ -82,13 +82,13 @@ No active product blockers.
 
 | Field | Value |
 |---|---|
-| Next slice | **ROAD-F0 Roadmap Audit** |
-| Reason | CV Builder F0–F5 complete; start Roadmap stabilization |
-| Type | AUDIT_ONLY |
-| Evidence required | `~/Desktop/CareerKundi_ROAD_F0_Roadmap_Audit_Evidence.txt` |
-| Commit rule | Per master §43 ROAD-F0 card |
-| Push rule | Optional/yes after clean verification |
+| Next slice | **ROAD-F1 Roadmap UI Repair** |
+| Reason | `/roadmap` loads with empty/CTA; repair shell honesty + list/error polish |
+| Type | FRONTEND_VISIBLE |
+| Evidence required | `~/Desktop/CareerKundi_ROAD_F1_UI_Repair_Evidence.txt` |
+| Commit rule | Per master §43 ROAD-F1 card |
+| Push rule | Push after clean verification |
 
 ---
 
-*Tracker updated: 2026-07-12 — CVB-F5*
+*Tracker updated: 2026-07-12 — ROAD-F0*

@@ -1911,7 +1911,7 @@ Every large feature should show: status label; readiness; known limitations; wha
 | CVB-F3 | PDF Export Verification | Export works | After F2 | Export path | Export UI | None | None | Safe filename | Build + open PDF | Export | CVB-F3 | Yes | No | CVB files | Yes | Planned |
 | CVB-F4 | Save/Load Versions | Persist CVs | After F3 | PATCH + section_config meta | Save/load UI | No | None | Ownership | API+UI tests | Save/refresh/load | CVB-F4 | Yes | Existing APIs | CV+API | Yes | Done (Decision B) |
 | CVB-F5 | CV Browser Checkpoint | Close CVB | After F3+F4 | — | — | — | — | — | Full | Full CV journey | CVB-F5 | Yes | No | evidence/docs | Yes | Done (Decision B) |
-| ROAD-F0 | Roadmap Audit | Audit only | Before repair | Inspect | Inspect | None | None | — | Manual | Open page | ROAD-F0 | Yes | No | docs | Optional | Planned |
+| ROAD-F0 | Roadmap Audit | Audit only | Before repair | Inspect | Inspect | None | None | — | Manual | Open page | ROAD-F0 | Yes | No | docs | Optional | Done (Decision A) |
 | ROAD-F1 | Roadmap UI Repair | Usable list | After F0 | Minimal | Roadmap page | None | No full AI engine | — | Build | List/empty/CTA | ROAD-F1 | Yes | No | ROAD files | Yes | Planned |
 | ROAD-F2 | Save/Load Contract | Persist roadmaps | After F1 | Roadmap APIs | Save/load | Maybe | None | Ownership | API tests | Create/refresh | ROAD-F2 | Yes | If contract | ROAD+API | Yes | Planned |
 | ROAD-F3 | Detail + Tasks | Tracking | After F2 | Tasks API | Detail UI | Maybe | None | Ownership | API+UI | Complete task persist | ROAD-F3 | Yes | No | ROAD files | Yes | Planned |
@@ -2311,6 +2311,7 @@ Next slice: **ROAD-F0 Roadmap Audit**
 
 - **CVB-F5 outcome (2026-07-12):** Decision **B** — authenticated browser journey PASS (save/load/template restore/export); minor limitation = 4-family PDF mapping; next = **ROAD-F0**.
 
+### ROAD-F0 Roadmap Audit
 ### ROAD-F0 — Roadmap Audit
 - **Type:** AUDIT_ONLY  
 - **Goal:** Document current roadmap routes/components/APIs vs platform-wide placement; define F1–F4.  
@@ -2322,6 +2323,141 @@ Next slice: **ROAD-F0 Roadmap Audit**
 - **Commit message:** `docs(product): record Roadmap audit`  
 - **Push:** Optional/yes  
 - **Done definition:** Audit complete; F1–F4 scoped  
+
+#### Current Roadmap Route Inventory
+
+| Route | Page / Component | Access | Current Status | Source File | Notes |
+|---|---|---|---|---|---|
+| `/roadmap` | `RoadmapPage` | Auth + AppShell | EXISTING_VERIFIED | `frontend/src/App.tsx`, `pages/RoadmapPage.tsx` | Sidebar “Career Roadmap”; browser load PASS (empty state) |
+| `/roadmaps` | — | Auth expected | MISSING | — | Browser: Not Found; master-plan plural target |
+| `/roadmaps/new` | — | — | PLANNED | — | Generate lives as modal on `/roadmap` today |
+| `/roadmaps/:id` | — | — | PLANNED | — | Detail is in-page selection on `/roadmap` |
+| `/roadmaps/:id/tasks` | — | — | PLANNED | — | Skill status tracking exists; no separate tasks route |
+| `/graduate-launch` | — | — | PLANNED | — | After 0056; must not own Roadmaps |
+
+#### Current Frontend Roadmap Inventory
+
+| Area | Verified File / Component | Current Behavior | Status | Notes |
+|---|---|---|---|---|
+| page component | `pages/RoadmapPage.tsx` | Hero + generate modal + timeline/kanban + skill modal | EXISTING_VERIFIED | Large page-local UI |
+| route registration | `App.tsx` lazy `/roadmap` | Singular path only | EXISTING_VERIFIED | No `/roadmaps*` |
+| sidebar nav | `Sidebar.tsx` | “Career Roadmap” → `/roadmap` | EXISTING_VERIFIED | Career Tools group |
+| roadmap list | `RoadmapPage` chip row when >1 | Selects active roadmap | EXISTING_VERIFIED | Not a dedicated library page |
+| create/generate flow | `GenerateModal` + `roadmapApi.generate` | Target role, pace, level, hours, context | EXISTING_VERIFIED | Sample role chips (tech-heavy list) |
+| detail view | Same page | Progress bar, radar, milestones/skills | EXISTING_VERIFIED | |
+| milestone display | `TimelineView` | Expandable milestone cards + skill chips | EXISTING_VERIFIED | CSS `.roadmap-timeline*` |
+| task display | Skill chips / kanban columns | Skills as work units (not separate Task model) | PARTIAL_EXISTING | Naming: skills ≠ tasks |
+| progress tracking | Skill status cycle + % bar | PATCH skill status | EXISTING_VERIFIED | |
+| API calls | `lib/api.ts` `roadmapApi` | list/get/generate/regenerate/updateSkillStatus/refreshSkill/delete | EXISTING_VERIFIED | delete/regenerate unused in UI |
+| types | `types/api.ts` `RoadmapRead*` | Matches milestones/skills | EXISTING_VERIFIED | No roadmap-level `status` field |
+| loading state | Spinner while list loads | Present | EXISTING_VERIFIED | |
+| empty state | “No roadmap yet” + Generate CTA | Present | EXISTING_VERIFIED | Browser PASS |
+| error state | Toasts on mutate; no list `isError` UI | PARTIAL_EXISTING | List failure not surfaced as banner |
+| success state | Toast on generate / refresh | Present | EXISTING_VERIFIED | |
+| mobile/responsive | `feature-page` + kanban 3-col grid | Hero wraps; kanban may crowd | EXISTING_NEEDS_REVIEW | ROAD-F1 polish if needed |
+| dashboard widget | `DashboardPage.tsx` | Shows active roadmap % | EXISTING_NEEDS_REVIEW | Uses `r.status==="active"` and `milestone.status` — fields not on models (falls back / misleading) |
+| SkillRadar | `components/features/SkillRadar.tsx` | Radar chart | EXISTING_VERIFIED | |
+| platform-wide copy | Roadmap hero subtitle | Generic career path; not Graduate-only | EXISTING_VERIFIED | Browser: no Graduate Launch framing |
+
+#### Current Backend Roadmap Inventory
+
+| Backend Area | Verified File / Endpoint | Current Behavior | Status | Notes |
+|---|---|---|---|---|
+| routes | `api/routes/roadmap.py` | generate, list, get, delete, regenerate, skill status, skill refresh | EXISTING_VERIFIED | Prefix `/api/v1/roadmap` |
+| schemas | `schemas/roadmap.py` | Generate request + Read models + skill status update | EXISTING_VERIFIED | |
+| agents | `agents/roadmap/{graph,agents,mock_data,state}.py` | Multi-node generation + skill refresh | EXISTING_VERIFIED | Mock/live via LLM keys |
+| models/storage | `db/models/roadmap.py` | `Roadmap`, `RoadmapMilestone`, `RoadmapSkill` | EXISTING_VERIFIED | Tables in foundation baseline |
+| generation logic | `run_roadmap_generation_pipeline` | Persists milestones/skills JSON blobs | EXISTING_VERIFIED | Role-targeted pathway |
+| save/load | ORM persist on generate; list/get | EXISTING_VERIFIED | No separate “versions” API |
+| task/milestone | Milestone + skill rows; skill status | PARTIAL_EXISTING | No Task entity; skill status is progress |
+| auth/ownership | `_get_owned_roadmap` / `_get_owned_skill` | EXISTING_VERIFIED | user_id scoped |
+| tests | `backend/tests` | No dedicated roadmap test files found | MISSING | `pytest -k roadmap…` → 0 selected |
+| OpenAPI | Live `:8001` | Paths match route file | EXISTING_VERIFIED | |
+
+#### Current Roadmap Capability Matrix
+
+| Capability | Current Status | Evidence | Gap | Target Slice |
+|---|---|---|---|---|
+| route exists | Yes | `/roadmap` in App + Sidebar | Plural `/roadmaps*` missing | ROAD-F1 (clarify); later alias |
+| page loads | Yes | Browser PASS | — | ROAD-F1 if regressions |
+| roadmap list visible | Partial | Chip selector when >1 | No dedicated list page | ROAD-F1 |
+| empty state exists | Yes | Browser empty CTA | — | ROAD-F1 keep |
+| create/generate roadmap exists | Yes | Generate modal + API | Sample roles tech-heavy | ROAD-F1 copy; Future engine for plan types |
+| roadmap detail exists | Yes | In-page detail | No `/roadmaps/:id` | ROAD-F3 route polish later |
+| milestones visible | Yes | TimelineView | — | ROAD-F3 polish |
+| tasks visible | Partial | Skills as tasks | No Task model/UI label | ROAD-F3 |
+| task completion tracking | Yes | Skill status PATCH | Dashboard milestone.status bug | ROAD-F1/F3 |
+| progress indicator | Yes | % bar + radar | — | ROAD-F1 keep |
+| save/load persistence | Yes | DB + list/get | No explicit version UX; delete UI missing | ROAD-F2 |
+| auth/ownership protection | Yes | `_get_owned_*` | Keep | ROAD-F2 tests |
+| loading/empty/error states | Partial | Load+empty OK; list error weak | Add list error UI | ROAD-F1 |
+| mobile usability | Partial | Page loads; kanban 3-col | Verify narrow layout | ROAD-F1 / F4 |
+| browser journey verified | Partial | Audit observation only | Full generate→track in F4 | ROAD-F4 |
+
+#### Gap Analysis Against Master Plan
+
+**Exists:** Authenticated `/roadmap` page with generate, list/select, milestone timeline, kanban-by-skill-status, skill study/practice modal, markdown export, and full ownership-checked CRUD-ish API + agent pipeline + DB models.
+
+**Partial:** Progress “tasks” are skills; delete/regenerate APIs unused in UI; dashboard progress math inconsistent with schema; list error UX thin; sample roles skew tech.
+
+**Broken / risky:** Dashboard assumes `roadmap.status` and `milestone.status` (neither on `Roadmap` / `RoadmapMilestone` models) — active selection falls back to `[0]`; milestone complete count likely always 0. Plural routes `/roadmaps*` 404.
+
+**Missing:** Master-plan plural IA; specialized plan types (skill gap / career switch / graduate launch / study abroad / public sector); dedicated backend tests; Graduate Launch route (correctly later).
+
+**Route naming:** Current singular `/roadmap` is live; master plan target `/roadmaps` is planned — do not invent plural as existing. ROAD-F1 should keep singular working and state platform-wide copy; alias later.
+
+**Graduate Launch:** Current Roadmap UI is not Graduate-only. Keep it that way.
+
+**Must not build yet in F1:** Full engine rewrite, new plan taxonomies, DB migrations for new entities, AI architecture overhaul, sidebar redesign.
+
+**ROAD-F1 focus:** Usable shell — load, empty/list clarity, create CTA, honest platform-wide copy, loading/empty/error honesty, optional dashboard status bugfix if in allowed F1 files.
+
+#### Roadmap Risk Register
+
+| Risk | Impact | Evidence | Recommended Handling | Target Slice |
+|---|---|---|---|---|
+| Singular vs plural route mismatch | Nav/docs confusion | `/roadmap` works; `/roadmaps` 404 | Keep singular in F1; plan alias | ROAD-F1 / later |
+| Graduate Launch confusion | Wrong ownership | Copy OK today; planned `/graduate-launch` separate | Keep platform-wide framing | ROAD-F1 |
+| Generic / tech-skewed generation | Narrow personas | SAMPLE_ROLES tech list; any free-text role allowed | Broaden copy/CTA; engine later | ROAD-F1 / Future |
+| Missing delete/regenerate UI | Orphan roadmaps | API exists; no page buttons | Add minimal controls | ROAD-F2 |
+| Dashboard status field mismatch | Wrong progress | `r.status`, `m.status` absent on models | Fix dashboard mapping | ROAD-F1 if allowed else F3 |
+| No roadmap backend tests | Regressions | 0 pytest matches | Add ownership/API tests | ROAD-F2 |
+| List error silent | Stuck spinner/blank | No `isError` on list query | Error banner + retry | ROAD-F1 |
+| Kanban mobile crowding | Usability | Fixed 3-column grid | Responsive stack | ROAD-F1 / F4 |
+| Browser full journey not done | Unknown generate latency/UX | Audit observed empty load only | Full journey | ROAD-F4 |
+| AI-heavy without structure | Cost/quality | 9-node agent exists with mock | Do not expand in F1 | Future engine |
+
+#### ROAD-F1 Repair Scope Recommendation
+
+**In scope for ROAD-F1:**
+- Ensure `/roadmap` loads cleanly with clear platform-wide copy (not Graduate-only).
+- Preserve/improve empty state + “Generate / New roadmap” CTA.
+- Clarify list/select of existing roadmaps when present.
+- Loading / empty / list-error honesty.
+- Optional: fix Dashboard roadmap progress field misuse if Dashboard is approved in F1 allowed files — otherwise document for later.
+- No new AI architecture; no new migrations unless page is unusable without them (unlikely).
+
+**Out of scope for ROAD-F1:**
+- Full Roadmap Engine / specialized plan types
+- Plural `/roadmaps*` IA implementation (unless trivial alias approved later)
+- Full task-tracking redesign
+- Public sector / study abroad / career-switch intelligence
+- Large redesign outside Roadmap page / approved files
+
+#### ROAD-F0 Decision
+
+**A ROADMAP_READY_FOR_ROAD_F1_UI_REPAIR**
+
+Recommended next slice: **ROAD-F1 Roadmap UI Repair**
+
+#### ROAD-F0 Audit-Only Decision
+
+ROAD-F0 is audit-only.  
+No Roadmap frontend product code was modified.  
+No Roadmap backend product code was modified.  
+Any repair must happen in ROAD-F1 or later.
+
+- **ROAD-F0 outcome (2026-07-12):** Decision **A** — route/page/API exist; browser empty-state PASS; `/roadmaps` missing; next = **ROAD-F1**.
 
 ### ROAD-F1 — Roadmap UI Repair
 - **Type:** FRONTEND_VISIBLE  
