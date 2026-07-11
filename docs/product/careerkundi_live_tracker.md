@@ -10,12 +10,12 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | UX0 Planning |
-| Current Slice | UX0-S2 Navigation + Sitemap Contract |
-| Current Status | Done (navigation + sitemap contract documented) |
-| Last Completed Slice | UX0-S1 Master Build Plan + Separate Live Tracker |
-| Last Commit | `563f9884` — `docs(product): add CareerKundi master plan and live tracker` |
-| Last Push Status | Pushed (matched `origin/main` at UX0-S2 start) |
-| Next Slice | UX0-S3 Design System + Component Inventory |
+| Current Slice | UX0-S3 Design System + Component Inventory |
+| Current Status | Done (design system + component inventory documented) |
+| Last Completed Slice | UX0-S2 Navigation + Sitemap Contract |
+| Last Commit | `f9acda89` — `docs(product): add navigation and sitemap contract` |
+| Last Push Status | Pushed (matched `origin/main` at UX0-S3 start) |
+| Next Slice | UX0-S4 Backend/Frontend Domain Ownership Map |
 | Blocked Items | None |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
 
@@ -30,7 +30,10 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 **Rules:** Read both before every slice. Update this tracker every slice. Update the master plan only when architecture, ladder, slice cards, or major decisions change.
 
-**UX0-S2 pointer:** Full route/sidebar/breadcrumb/access tables live in master plan section **UX0-S2 Navigation + Sitemap Contract** — do not duplicate here.
+**Pointers (do not duplicate):**
+
+- UX0-S2 → master **UX0-S2 Navigation + Sitemap Contract**
+- UX0-S3 → master **UX0-S3 Design System + Component Inventory**
 
 ---
 
@@ -40,13 +43,11 @@ Readable in under 2 minutes. Update every slice. No secrets.
 |---|---|---|---|---|---|---|
 | 0050 | Platform Foundation | Done | VERIFY_IN_REPO | `29a27493` | Yes | |
 | CP4-B | frontend/dist cleanup | Done | VERIFY_IN_REPO | `6c1ac4fe` | Yes | |
-| 004E | Frozen work cleanup | Done | VERIFY_IN_REPO | N/A | N/A | |
-| Reports | Artifact cleanup | Done | VERIFY_IN_REPO | N/A | N/A | |
 | PF11 | Platform Foundation Shell | Done | VERIFY_IN_REPO | `3b8827ec` | Yes | `/platform` |
-| UX0-S1 | Master Plan + Live Tracker | Done | `~/Desktop/CareerKundi_UX0_S1_Master_Plan_Live_Tracker_Evidence.txt` | `563f9884` | Yes | Docs only |
-| UX0-S2 | Navigation + Sitemap Contract | Done | `~/Desktop/CareerKundi_UX0_S2_Navigation_Sitemap_Evidence.txt` | This commit | Yes (with this push) | Docs only |
-| UX0-S3 | Design System + Component Inventory | Planned | — | — | — | Next |
-| UX0-S4 | Domain Ownership Map | Planned | — | — | — | |
+| UX0-S1 | Master Plan + Live Tracker | Done | `~/Desktop/CareerKundi_UX0_S1_Master_Plan_Live_Tracker_Evidence.txt` | `563f9884` | Yes | Docs |
+| UX0-S2 | Navigation + Sitemap Contract | Done | `~/Desktop/CareerKundi_UX0_S2_Navigation_Sitemap_Evidence.txt` | `f9acda89` | Yes | Docs |
+| UX0-S3 | Design System + Component Inventory | Done | `~/Desktop/CareerKundi_UX0_S3_Design_System_Component_Inventory_Evidence.txt` | This commit | Yes (with this push) | Docs only |
+| UX0-S4 | Domain Ownership Map | Planned | — | — | — | Next |
 | UX0-S5 | Ladder Checkpoint | Planned | — | — | — | |
 | PF11-R1 | Platform Shell Review | Planned | — | — | — | |
 | CVB-F0 | CV Builder Audit | Planned | — | — | — | Audit only |
@@ -61,10 +62,9 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07 | 0050 / PF* | Desktop — VERIFY_IN_REPO | VERIFY_IN_REPO | Foundation series |
-| 2026-07 | PF11 | Desktop — VERIFY_IN_REPO | VERIFY_IN_REPO | Shell |
 | 2026-07-11 | UX0-S1 | `~/Desktop/CareerKundi_UX0_S1_Master_Plan_Live_Tracker_Evidence.txt` | A …COMMITTED_PUSHED | Docs |
-| 2026-07-11 | UX0-S2 | `~/Desktop/CareerKundi_UX0_S2_Navigation_Sitemap_Evidence.txt` | A UX0_NAVIGATION_SITEMAP_CONTRACT_COMMITTED_PUSHED | Docs-only contract |
+| 2026-07-11 | UX0-S2 | `~/Desktop/CareerKundi_UX0_S2_Navigation_Sitemap_Evidence.txt` | A UX0_NAVIGATION_SITEMAP_CONTRACT_COMMITTED_PUSHED | Docs |
+| 2026-07-11 | UX0-S3 | `~/Desktop/CareerKundi_UX0_S3_Design_System_Component_Inventory_Evidence.txt` | A UX0_DESIGN_SYSTEM_COMPONENT_INVENTORY_COMMITTED_PUSHED | Docs-only |
 
 ---
 
@@ -76,7 +76,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | 2026-07 | CP4-B | `6c1ac4fe` | Pushed | dist ignored |
 | 2026-07-11 | PF11 | `3b8827ec` | Pushed | Platform shell |
 | 2026-07-11 | UX0-S1 | `563f9884` | Pushed | Master plan + tracker |
-| 2026-07-11 | UX0-S2 | This commit (`docs(product): add navigation and sitemap contract`) | Pushed with this slice | Nav/sitemap contract |
+| 2026-07-11 | UX0-S2 | `f9acda89` | Pushed | Nav/sitemap contract |
+| 2026-07-11 | UX0-S3 | This commit (`docs(product): add design system and component inventory`) | Pushed with this slice | Design inventory |
 
 ---
 
@@ -84,11 +85,10 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Decision | Impact | Status |
 |---|---|---|---|
-| 2026-07 | Roadmaps platform-wide | ROAD-* before 0056 | Accepted |
-| 2026-07 | CVB + ROAD before 0051 | Stabilization first | Accepted |
-| 2026-07-11 | Separate master plan + live tracker | Two-file model | Accepted |
 | 2026-07 | 004E / Auto Apply frozen | Studio + Safe Apply | Accepted |
-| 2026-07-11 | UX0-S2 docs-only; no route/sidebar code | Implement nav after UX0-S3 via explicit FE slices | Accepted |
+| 2026-07-11 | Separate master plan + live tracker | Two-file model | Accepted |
+| 2026-07-11 | UX0-S2 docs-only nav contract | FE nav after UX0-S3+ | Accepted |
+| 2026-07-11 | UX0-S3 docs-only; extend existing tokens/CSS modules; no new UI library without ADR | CVB/ROAD repair before shared extracts | Accepted |
 
 ---
 
@@ -102,14 +102,14 @@ No active blockers.
 
 | Field | Value |
 |---|---|
-| Next slice | **UX0-S3 Design System + Component Inventory** |
-| Reason | Define visual system and component inventory before UI redesign |
-| Allowed files | Docs (+ component inventory in docs); audit current components only unless approved |
-| Forbidden files | Broad UI rewrite; product route implementation; backend feature work; frozen 004E / Auto Apply |
-| Evidence required | `~/Desktop/CareerKundi_UX0_S3_Design_System_Evidence.txt` |
+| Next slice | **UX0-S4 Backend/Frontend Domain Ownership Map** |
+| Reason | Connect every feature to backend module, frontend folder, API, model, security, and tests |
+| Allowed files | Docs only unless explicitly approved |
+| Forbidden files | Product code; migrations; UI redesign; frozen 004E / Auto Apply |
+| Evidence required | `~/Desktop/CareerKundi_UX0_S4_Domain_Ownership_Evidence.txt` |
 | Commit rule | Docs-only after evidence review |
 | Push rule | Push after clean verification unless paused |
 
 ---
 
-*Tracker updated: 2026-07-11 — UX0-S2*
+*Tracker updated: 2026-07-11 — UX0-S3*

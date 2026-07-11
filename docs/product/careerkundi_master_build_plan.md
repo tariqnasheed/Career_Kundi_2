@@ -480,6 +480,213 @@ UX0-S2 is a **docs-only** sitemap/navigation contract.
 
 ---
 
+## UX0-S3 Design System + Component Inventory
+
+**Slice:** UX0-S3  
+**Date:** 2026-07-11  
+**Type:** Docs-only design system + component inventory contract (no CSS/component implementation in this slice)  
+**Inspected (read-only):** `frontend/package.json`, `frontend/src/main.tsx`, `frontend/src/App.tsx`, `frontend/src/components/**`, `frontend/src/pages/**`, `frontend/src/styles/**`, `frontend/src/store/**`, `frontend/src/lib/api.ts`, `frontend/src/types/api.ts`, `frontend/vite.config.ts`
+
+### 6.1 Current Frontend Design Inventory
+
+| Area | Verified Files / Folders | Current Role | Current Status | Notes |
+|---|---|---|---|---|
+| Routing shell | `App.tsx`, `main.tsx` (`BrowserRouter`) | Public vs Private routes + lazy pages | EXISTING_VERIFIED | No `index.css` / `App.css` at src root |
+| Layout components | `components/layout/AppShell.tsx` + `.module.css` | Sidebar + header + content + chatbot FAB + toasts | EXISTING_VERIFIED | |
+| Sidebar | `components/layout/Sidebar.tsx` + `.module.css` | Auth nav groups | EXISTING_VERIFIED | Groups differ from UX0-S2 target map |
+| Header / topbar | `components/layout/Header.tsx` + `.module.css` | Breadcrumb, theme toggle, user menu | EXISTING_VERIFIED | |
+| Page components | `pages/*.tsx` (14 page files) | Route-level screens | EXISTING_NEEDS_REVIEW | Includes unmounted `InterviewPackPage.tsx` |
+| Global CSS / tokens | `styles/globals.css` | Design tokens, reset, utilities | EXISTING_VERIFIED | Dark/light via `[data-theme]` |
+| Motion CSS | `styles/animations.css` | Shared animations | EXISTING_VERIFIED | |
+| Feature page CSS | `styles/feature-pages.css` | Cross-page feature styles | EXISTING_NEEDS_REVIEW | Prefer tokens over one-off styles over time |
+| Shared UI kit | `components/ui/*` + `index.ts` | Button, Card, Badge, Input, Textarea, Modal, Spinner, Toast | EXISTING_VERIFIED | CSS modules per component |
+| Feature components | `components/features/*` | Jobs/CV/interview/radar panels | EXISTING_NEEDS_REVIEW | Job-heavy; CV/Roadmap mostly page-local |
+| Chatbot | `components/chatbot/ChatbotWidget.tsx` | FAB assistant | EXISTING_VERIFIED | Also `/chatbot` page |
+| Theme / design-system folder | — | — | MISSING | No `src/theme/` or `src/design-system/` |
+| Tailwind / PostCSS | — | — | MISSING | No `tailwind.config.*` / `postcss.config.*` |
+| UI state stores | `store/auth.ts`, `store/ui.ts` | Auth + theme/sidebar/toasts/chatbot | EXISTING_VERIFIED | Zustand |
+| API/types affecting UI | `lib/api.ts`, `types/api.ts` | Typed API client + envelopes | EXISTING_VERIFIED | Platform + legacy domains |
+| Build / styling tooling | Vite 5, `@vitejs/plugin-react`, CSS modules, `clsx`, `framer-motion`, `lucide-react`, `recharts` | Bundler + motion + icons + charts | EXISTING_VERIFIED | No new UI library without ADR |
+
+### 6.2 Current Component Inventory
+
+| Component / Pattern | Source File | Current Use | Shared or Feature-Specific | Reuse Candidate? | Notes |
+|---|---|---|---|---|---|
+| AppShell | `layout/AppShell.tsx` | Authenticated chrome | Shared | Yes | Keep stable |
+| Sidebar | `layout/Sidebar.tsx` | Nav | Shared | Yes | Remap after UX0-S3+ via explicit slice |
+| Header / Breadcrumb | `layout/Header.tsx` | Crumbs + theme + user | Shared | Yes | Expand `PAGE_LABELS` as routes land |
+| Button | `ui/Button.tsx` | Primary/secondary/ghost/danger | Shared | Yes | Exists |
+| Card (+ Header/Title/Content/Footer) | `ui/Card.tsx` | Surfaces | Shared | Yes | Exists |
+| Badge | `ui/Badge.tsx` | Status chips | Shared | Yes | Exists |
+| Input / Textarea | `ui/Input.tsx` | Forms | Shared | Yes | Exists |
+| Modal | `ui/Modal.tsx` | Dialogs | Shared | Yes | Treat as Dialog family |
+| Spinner | `ui/Spinner.tsx` | Loading | Shared | Yes | Exists |
+| Toast / ToastContainer | `ui/Toast.tsx` | Feedback | Shared | Yes | Wired in AppShell |
+| Login / Register patterns | `pages/LoginPage.tsx`, `RegisterPage.tsx` | Auth forms | Feature (auth) | Partial | Uses Input/Button |
+| Landing pattern | `pages/LandingPage.tsx` | Public marketing | Feature | Low | |
+| Dashboard pattern | `pages/DashboardPage.tsx` | Home | Feature | Needs review | EXISTING_NEEDS_REVIEW |
+| Platform page cards/forms | `pages/PlatformPage.tsx` | Subjects + goals | Feature | Yes for L/E/E patterns | PF11 shell |
+| Jobs page patterns | `pages/JobSearchPage.tsx` + `features/Job*` | Discovery/saved/filters/forms | Feature-specific | Selective | Heavy surface |
+| JobDiscoveryPanel | `features/JobDiscoveryPanel.tsx` | Live discovery | Feature | No (jobs) | |
+| JobDetailsForm | `features/JobDetailsForm.tsx` | Job edit form | Feature | No (jobs) | |
+| SavedJobFilters | `features/SavedJobFilters.tsx` | Saved search filters | Feature | No (jobs) | |
+| PopularJobRolesPanel | `features/PopularJobRolesPanel.tsx` | Role catalog UI | Feature | No (jobs) | |
+| MatchScoreRing / SkillRadar | `features/MatchScoreRing.tsx`, `SkillRadar.tsx` | Score/radar visuals | Feature | Maybe later | Charts |
+| InterviewPackView | `features/InterviewPackView.tsx` | Pack display | Feature | Frozen direction | Do not expand 004E repair |
+| DefaultCVSelector | `features/DefaultCVSelector.tsx` | CV pick | Feature (CV) | Yes for CVB | |
+| CV Builder page | `pages/CVBuilderPage.tsx` | CV editing | Feature | Audit CVB-F0 | EXISTING_NEEDS_REVIEW |
+| Roadmap page | `pages/RoadmapPage.tsx` | Roadmap UI | Feature | Audit ROAD-F0 | EXISTING_NEEDS_REVIEW |
+| Profile / Settings | `pages/ProfilePage.tsx`, `SettingsPage.tsx` | Account | Feature | Partial shared forms | |
+| Achievements | `pages/AchievementsPage.tsx` | Badges gallery | Feature | Low priority re-home | |
+| Chatbot page / widget | `pages/ChatbotPage.tsx`, `chatbot/ChatbotWidget.tsx` | Assistant | Feature → future panel | Later | |
+| Tabs | — | — | Shared (planned) | Yes | MISSING as shared |
+| Drawer | — | — | Shared (planned) | Yes | MISSING |
+| Command palette | — | — | Shared (planned) | Later | MISSING |
+| Select / Date picker | — | — | Shared (planned) | Yes | MISSING as shared (native `<select>` used ad hoc on Platform) |
+| Progress / Timeline / Stepper | — | — | Shared (planned) | Roadmaps | MISSING |
+| Data table | — | — | Shared (planned) | Applications later | MISSING |
+| Skeleton | — | — | Shared (planned) | Yes | MISSING (Spinner used) |
+| Dedicated Empty/Error state components | — | Inline per page | Shared (planned) | Yes | PARTIAL patterns; no shared primitives |
+| Evidence card | — | — | Feature (claims) | Later | MISSING |
+| Roadmap milestone card | — | — | Feature (roadmaps) | ROAD-F3 | MISSING |
+| Opportunity card | Partial job cards | Jobs UI | Feature | Evolve | VERIFY_IN_REPO exact card abstraction |
+| CV preview frame | — | — | Feature (CV) | CVB-F2 | MISSING / VERIFY_IN_REPO |
+| Assistant panel (shell) | Chatbot FAB only | Global | Shared (planned) | Later | PARTIAL |
+
+### 6.3 Target Design System Principles
+
+**Visual direction:** modern, premium, clean, trustworthy, career-focused, slightly futuristic, accessible, mobile-responsive.
+
+**Principles:**
+
+- Consistency before decoration.
+- Semantic layout before visual effects.
+- Accessible contrast and focus states.
+- Clear hierarchy; minimal cognitive load.
+- Responsive from the start.
+- Status states must be obvious.
+- AI outputs must be visually distinguished from verified / user-provided data.
+- Prefer existing CSS custom properties in `globals.css` over introducing a new UI library.
+
+### 6.4 Design Tokens Contract
+
+Do **not** implement new tokens in code during UX0-S3. Catalog current vs target rules.
+
+| Token Category | Purpose | Current Status | Target Rule | Notes |
+|---|---|---|---|---|
+| Colors | Brand, surfaces, text, borders | EXISTING_VERIFIED in `globals.css` (`--bg-*`, `--accent-*`, `--text-*`, `--border-*`) | Keep CSS variables; avoid hard-coded one-offs in new UI | Dark default + light theme |
+| Typography | Heading/body/mono + size scale | EXISTING_VERIFIED (`--font-*`, Major Third scale) | Use token scale only | Space Grotesk / Plus Jakarta Sans / JetBrains Mono |
+| Spacing | Rhythm | EXISTING_VERIFIED (`--space-*`) | Prefer spacing tokens | |
+| Border radius | Corners | EXISTING_VERIFIED (`--radius-*`) | Prefer tokens | |
+| Shadows / elevation | Depth | EXISTING_VERIFIED (`--shadow-*`) | Restrain glow; no stack explosion | |
+| Surface levels | base/surface/elevated/overlay/glass | EXISTING_VERIFIED | Map components to surface tokens | |
+| Status colors | success/warn/danger/info | EXISTING_PARTIAL (`--accent-emerald/amber/rose/cyan`) | Semantic aliases (`--status-*`) planned later without breaking existing | Do not rename blindly |
+| Focus states | Keyboard focus | EXISTING_NEEDS_REVIEW | Visible focus ring required everywhere | Utility focus ring mentioned in globals header — VERIFY_IN_REPO coverage |
+| Motion / animation | Transitions | EXISTING_VERIFIED (`--transition-*` + `animations.css` + framer-motion) | Prefer meaningful motion; avoid noise | |
+| Breakpoints | Responsive | VERIFY_IN_REPO | Document standard breakpoints before large redesign | Likely CSS media in modules |
+| Z-index / layers | Stacking | EXISTING_VERIFIED (`--z-*`) | Keep single ladder | sidebar/header/modal/toast/chatbot |
+
+### 6.5 Core Shared Component Contract
+
+| Component | Purpose | Used In | MVP Priority | Accessibility Requirement | Implementation Slice |
+|---|---|---|---|---|---|
+| Button | Actions | All forms/CTAs | Existing | Keyboard, disabled, loading label | Existing; extend only if needed |
+| Card | Surfaces | Lists/panels | Existing | Heading structure inside | Existing |
+| Badge | Status | Jobs, achievements, later claims | Existing | Not color-only | Existing + semantic status later |
+| Tabs | Section switch | CV/Roadmap/Studio later | High after audits | Arrow keys, `aria-selected` | PLANNED shared extract |
+| Dialog (Modal) | Confirm/export | CV export, destructive | Existing Modal | Focus trap, Esc | Existing Modal |
+| Drawer | Mobile nav / panels | Mobile later | Medium | Focus trap | PLANNED |
+| Toast | Transient feedback | AppShell | Existing | Don’t rely on toast alone for errors | Existing |
+| Command palette | Global jump | Future | Deferred | Full keyboard | DEFERRED |
+| Sidebar | Nav | AppShell | Existing | `aria-label`, collapse label | Existing; remap later |
+| Breadcrumb | Wayfinding | Header | Existing | `nav` + current page | Existing |
+| Input / Textarea | Forms | Auth, Platform, Settings | Existing | Labels, errors | Existing |
+| Select | Enum fields | Platform goal kind (native) | High for shared | Label association | PLANNED shared Select |
+| Date picker | Dates | Goals/passport later | Medium | Keyboard | PLANNED |
+| Progress | Completion | Roadmaps | High for ROAD | `aria-valuenow` | PLANNED |
+| Timeline / Stepper | Pathway steps | Roadmaps | High for ROAD | Semantic order | PLANNED |
+| Data table | Trackers | Applications later | Medium | Sortable a11y later | PLANNED |
+| Skeleton | Loading placeholder | Lists | Medium | Pair with status text | PLANNED |
+| Empty state | No data CTA | Platform, lists | High | Clear next action | PLANNED shared pattern |
+| Error state | Failures | All pages | High | `role="alert"` | PLANNED shared pattern |
+| Evidence card | Claims/sources | Passport/proof | Later | Status + source | After 0053 |
+| Roadmap milestone card | Milestones | Roadmaps | High for ROAD-F3 | Progress clarity | ROAD-F3 |
+| Opportunity card | Job/opportunity | Jobs | High | Title/company hierarchy | Evolve from jobs UI |
+| CV preview frame | Live preview | CV Builder | High for CVB-F2 | Readable preview | CVB-F2 |
+| Assistant panel | Contextual help | Shell | Medium | Esc/close, no sensitive dump | Later (evolve chatbot) |
+
+### 6.6 Feature-Specific Component Inventory
+
+| Feature | Required Components | Existing Components | Missing Components | MVP Priority | Notes |
+|---|---|---|---|---|---|
+| Platform | Subject list, goal form, L/E/E | PlatformPage + Card/Button/Input/Spinner/Toast | Shared Empty/Error primitives | High | Subjects/goals only |
+| Dashboard | Snapshot, next actions, links | DashboardPage | Honest widgets; Empty | High | No fake metrics |
+| CV Builder | Sections, template gallery, preview, export | CVBuilderPage, DefaultCVSelector | Template gallery, preview frame, version list | High | CVB-F0→F5 |
+| Roadmaps | List, detail, milestones, tasks, progress | RoadmapPage | Milestone card, timeline, task row | High | ROAD-F0→F3; platform-wide |
+| Career Passport | Section nav, forms | ProfilePage (partial) | Passport section shell | Medium | After 0052 |
+| Opportunities | Search, filters, cards | JobSearchPage + Job* features | Dedicated Opportunity card abstraction | High (jobs) | Not full 0055 yet |
+| Interview Studio | Session, Q panel, study | InterviewPackView (legacy) | Studio shell | Medium | New system; 004E frozen |
+| Applications | Tracker table, draft editor, review gate | — | Table, draft, review UI | Medium | After 0068; no Auto Apply |
+| Education / Mobility | Info cards, checklists | — | Level-1 placeholders | Low | FUTURE_FEATURE |
+| Settings | Forms, toggles | SettingsPage | Privacy panels | Medium | Billing deferred |
+
+### 6.7 Accessibility Contract
+
+**Minimum requirements (planned):** keyboard navigation; visible focus states; semantic headings; form labels; error messages tied to fields; contrast-safe text; button/link distinction; loading announcements where appropriate; empty states with clear next action; mobile-readable layout; no color-only status communication.
+
+| Area | Status |
+|---|---|
+| Overall WCAG claim | Do **not** claim WCAG compliance until tested |
+| Shared UI kit (Button/Input/Modal labels) | ACCESSIBILITY_PARTIAL |
+| Focus ring coverage across pages | VERIFY_IN_REPO |
+| Platform L/E/E alerts | ACCESSIBILITY_PARTIAL (`role="alert"` used on Platform) |
+| Full keyboard nav audit | ACCESSIBILITY_PLANNED |
+| Contrast audit (dark/light) | ACCESSIBILITY_PLANNED |
+
+### 6.8 UI State Contract
+
+Every future user-visible page must define:
+
+- loading state  
+- empty state  
+- error state  
+- unauthorized state  
+- success state  
+- saving/submitting state  
+- disabled state  
+- mobile state  
+
+**Rule:** No user-visible feature is accepted unless its key UI states are implemented or explicitly deferred with a reason.
+
+### 6.9 Design System Implementation Order
+
+1. UX0-S3 document-only inventory (**this slice**)  
+2. UX0-S4 backend/frontend ownership map  
+3. UX0-S5 ladder checkpoint  
+4. PF11-R1 review / small shell refinements  
+5. CVB-F0 audit  
+6. CVB-F1 CV Builder UI repair using approved design patterns  
+7. ROAD-F0 audit  
+8. ROAD-F1 Roadmap UI repair using approved design patterns  
+9. Shared component extraction only after repeated patterns are verified  
+
+**Rules:**
+
+- Do not extract shared components too early.  
+- Do not do a giant visual rewrite.  
+- Do not introduce a new UI library unless approved through a dedicated decision record.
+
+### 6.10 UX0-S3 Implementation Decision
+
+UX0-S3 is a **docs-only** design system and component inventory contract.
+
+- No design implementation is included in this slice.  
+- No CSS rewrite, component creation, or UI redesign is included in this slice.  
+- Future design implementation must happen through **explicit frontend slices after UX0-S3 and UX0-S5**.  
+- Prefer extending the existing token + CSS-module system over a new framework.
+
+---
+
 ## 13. Dashboard Blueprint
 
 | Section | Purpose | Data | Backend source | Empty state | Primary action | Secondary | MVP | Future | Analytics | Tech notes |
