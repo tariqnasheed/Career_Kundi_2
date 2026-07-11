@@ -687,6 +687,247 @@ UX0-S3 is a **docs-only** design system and component inventory contract.
 
 ---
 
+## UX0-S4 Backend / Frontend Domain Ownership Map
+
+**Slice:** UX0-S4  
+**Date:** 2026-07-11  
+**Type:** Docs-only domain ownership contract (no product code, migrations, or folder moves)  
+**Inspected (read-only):** `backend/app/main.py`, `backend/app/api/routes/*`, `backend/app/platform/*`, `backend/app/db/*`, `backend/app/agents/*`, `backend/app/schemas/*`, `backend/app/services/*`, `backend/pyproject.toml`, `frontend/src/{App,main}.tsx`, `frontend/src/components/**`, `frontend/src/pages/**`, `frontend/src/{lib,types,store,styles}/**`
+
+### 7.1 Current Backend Module Inventory
+
+| Backend Area | Verified Path | Current Purpose | Current Status | Owned Domain | Notes |
+|---|---|---|---|---|---|
+| App entry / routers | `backend/app/main.py` | FastAPI app; includes `/api/v1` routers | EXISTING_VERIFIED | platform + legacy domains | Routers: health, auth, profile, job_search, role_packs, cv_builder, roadmap, chatbot, apply, badges, queue, platform |
+| API deps | `backend/app/api/deps.py` | Auth/user dependencies | EXISTING_VERIFIED | auth | |
+| Platform API | `backend/app/api/routes/platform.py` | Subjects + goals envelopes | EXISTING_VERIFIED | Platform Foundation | PF8 |
+| Platform subjects shim | `backend/app/api/routes/platform_subjects.py` | Re-exports platform router | EXISTING_VERIFIED | Platform Foundation | Compatibility only |
+| Auth / profile / badges / queue / health / role_packs | `backend/app/api/routes/*.py` | Legacy product APIs | EXISTING_NEEDS_REVIEW | Settings / Jobs / CV / Roadmaps / Assistant | Per-route review later |
+| Job search API | `backend/app/api/routes/job_search.py` | Discover/save/interview-pack | EXISTING_NEEDS_REVIEW | Opportunities / Jobs | Interview-pack endpoints ≠ Interview Studio |
+| CV Builder API | `backend/app/api/routes/cv_builder.py` | CV routes | EXISTING_NEEDS_REVIEW | CV Builder | Audit in CVB-F0 |
+| Roadmap API | `backend/app/api/routes/roadmap.py` | Roadmap routes | EXISTING_NEEDS_REVIEW | Roadmaps | Platform-wide; not Graduate-only |
+| Apply API | `backend/app/api/routes/apply.py` | Apply flows | FROZEN / EXISTING_NEEDS_REVIEW | Applications (legacy) | Old Auto Apply direction frozen; do not expand as Safe Apply |
+| Chatbot API | `backend/app/api/routes/chatbot.py` | Chat | EXISTING_NEEDS_REVIEW | AI Career Assistant | Evolve carefully |
+| DB session / base | `backend/app/db/session.py`, `base.py` | Async DB | EXISTING_VERIFIED | infrastructure | |
+| Legacy Alembic | `backend/app/db/migrations/` | Legacy migration lineage | EXISTING_NEEDS_REVIEW | infrastructure | Prefer foundation lineage for 0050+ |
+| Foundation migrations | `backend/app/db/foundation_migrations/` | 0050 foundation revisions | EXISTING_VERIFIED | Platform Foundation | Do not edit casually |
+| Migration runner | `backend/app/db/migration_runner.py` | Fail-closed runner | EXISTING_VERIFIED | infrastructure | |
+| ORM models | `backend/app/db/models/*` | Users, jobs, CV, roadmap, claims, lifecycle, geo, privacy, etc. | EXISTING_VERIFIED | multi-domain | Split ownership by table in §7.7 |
+| Platform kernel | `backend/app/platform/kernel/` | Kernel primitives | EXISTING_VERIFIED | Platform Foundation | |
+| Platform identity | `backend/app/platform/identity/` | Subjects / actor refs | EXISTING_VERIFIED | Platform Foundation | |
+| Platform provenance | `backend/app/platform/provenance/` | Sources/snapshots | EXISTING_VERIFIED | Claims & Evidence | UI not built |
+| Platform claims | `backend/app/platform/claims/` | Claims | EXISTING_VERIFIED | Claims & Evidence | UI not built |
+| Platform geo | `backend/app/platform/geo/` | Geo/jurisdiction | EXISTING_VERIFIED | Migration / Mobility (foundation) | UI not built |
+| Platform lifecycle | `backend/app/platform/lifecycle/` | Goals and lifecycle kinds | EXISTING_VERIFIED | Platform Foundation | Goals via platform API |
+| Platform privacy | `backend/app/platform/privacy/` | Privacy policies/consent | EXISTING_VERIFIED | Settings / Privacy | UI partial |
+| Platform observability | `backend/app/platform/observability/` | Correlation/redaction/events | EXISTING_VERIFIED | infrastructure | |
+| Agents job_search | `backend/app/agents/job_search/` | Job/interview-pack agent pipelines | EXISTING_NEEDS_REVIEW / FROZEN parts | Opportunities / legacy prep | 004E repair frozen |
+| Agents cv_builder / roadmap / chatbot | `backend/app/agents/{cv_builder,roadmap,chatbot}/` | Domain agents | EXISTING_NEEDS_REVIEW | CV / Roadmaps / Assistant | |
+| Agents auto_apply | `backend/app/agents/auto_apply/` | Legacy auto-apply | FROZEN | Applications (legacy) | Do not revive as Safe Apply |
+| Schemas | `backend/app/schemas/*` | Pydantic contracts | EXISTING_VERIFIED | multi-domain | Includes `platform.py`, `career_subject.py` |
+| Services | `backend/app/services/*` | Jobs discovery/dedupe/matching, badges, role packs | EXISTING_NEEDS_REVIEW | Opportunities / badges | |
+| Tests | `backend/tests/`, `app/*/tests/`, `app/api/routes/tests/` | Unit/integration + platform tests | EXISTING_VERIFIED | multi-domain | |
+| pyproject.toml | `backend/pyproject.toml` | Backend package config | EXISTING_VERIFIED | infrastructure | |
+| requirements.txt | — | — | MISSING | infrastructure | Use pyproject; VERIFY_IN_REPO if elsewhere |
+
+### 7.2 Current Frontend Module Inventory
+
+| Frontend Area | Verified Path | Current Purpose | Current Status | Owned Domain | Notes |
+|---|---|---|---|---|---|
+| Routing entry | `frontend/src/App.tsx`, `main.tsx` | Public/Private routes + BrowserRouter | EXISTING_VERIFIED | shell | |
+| Layout shell | `components/layout/{AppShell,Sidebar,Header}.*` | Auth chrome | EXISTING_VERIFIED | shell | |
+| Shared UI | `components/ui/*` | Button/Card/Badge/Input/Modal/Spinner/Toast | EXISTING_VERIFIED | design system | |
+| Feature components (jobs-heavy) | `components/features/*` | Job discovery/forms/filters; InterviewPackView; DefaultCVSelector; radar | EXISTING_NEEDS_REVIEW | Opportunities / legacy prep / CV helper | InterviewPackView ≠ Studio |
+| Chatbot | `components/chatbot/*` | FAB widget | EXISTING_VERIFIED | AI Career Assistant | |
+| Placeholder feature dirs | `components/{cvbuilder,dashboard,jobsearch,landing,profile,roadmap,settings}/` | Empty directories today | EXISTING_NEEDS_REVIEW | various | Present but empty — no giant rewrite; fill via slices |
+| Pages | `pages/*` | Route screens including PlatformPage | EXISTING_VERIFIED | multi-domain | See UX0-S2 inventory |
+| Styles / tokens | `styles/{globals,animations,feature-pages}.css` | Design tokens + utilities | EXISTING_VERIFIED | design system | |
+| API client | `lib/api.ts` | Axios `/api/v1` + platformApi | EXISTING_VERIFIED | multi-domain | |
+| API types | `types/api.ts` | TS contracts including platform | EXISTING_VERIFIED | multi-domain | |
+| Store | `store/{auth,ui}.ts` | Auth + theme/toasts/sidebar | EXISTING_VERIFIED | shell | |
+| Lib helpers (jobs) | `lib/job*.ts`, `lib/savedJob*.ts`, `lib/popularJobRoles*.ts` | Jobs UX logic | EXISTING_NEEDS_REVIEW | Opportunities / Jobs | |
+| `features/` folder (target) | `frontend/src/features/` | — | MISSING | target structure | Planned incremental; do not rewrite now |
+| Vite config | `frontend/vite.config.ts` | Build + `/api` proxy | EXISTING_VERIFIED | tooling | |
+
+### 7.3 Product Domain Ownership Matrix
+
+| Product Domain | User-Facing Pages | Backend Owner | Frontend Owner | Primary Models | Primary APIs | Current Status | MVP Slice |
+|---|---|---|---|---|---|---|---|
+| Platform Foundation | `/platform` | `app/platform/*` + `routes/platform.py` | `pages/PlatformPage.tsx` (later `features/platform/`) | career_subjects, career_goals (+ kernel) | `/api/v1/platform/*` | EXISTING_VERIFIED | PF11 done; PF11-R1 |
+| Career Passport | `/passport*`, `/profile` (bridge) | planned `career_passport/` (+ profile today) | planned `features/passport/` + `pages/ProfilePage.tsx` | profile/education/experience (planned + existing profile models) | planned passport APIs; existing profile | PARTIAL_EXISTING | After 0052 |
+| Claims & Evidence | Claims UI planned | `platform/claims`, `platform/provenance` | planned passport/claims UI | career_claims, provenance_* | foundation services; public CRUD limited | PARTIAL_EXISTING (BE) / PLANNED_MVP (UI) | After 0053 |
+| CV Builder | `/cv-builder*` | `routes/cv_builder.py`, `agents/cv_builder`, models `cv.py` | `pages/CVBuilderPage.tsx`, `features/DefaultCVSelector` | CV versions/templates | `/api/v1` cv_builder routes | PARTIAL_EXISTING | CVB-F0–F5 |
+| Roadmaps | `/roadmap`, planned `/roadmaps*` | `routes/roadmap.py`, `agents/roadmap`, models `roadmap.py` | `pages/RoadmapPage.tsx` | roadmaps, milestones/tasks | roadmap routes | PARTIAL_EXISTING | ROAD-F0–F4 |
+| Opportunities / Jobs | `/jobs` | `routes/job_search.py`, `agents/job_search`, `services/job_*` | `pages/JobSearchPage.tsx`, `components/features/Job*` | saved_jobs | job-search APIs | PARTIAL_EXISTING | honesty baseline; 0054–55 later |
+| Interview Studio | planned `/interview-studio*` | planned `interview_studio/` | planned `features/interview-studio/` | sessions/study (planned) | planned | FUTURE | After 0061 |
+| Legacy Interview Pack | `/interview-pack` redirect; `InterviewPackView` | job_search interview-pack paths | InterviewPackView / JobSearch | pack artifacts | job-search pack endpoints | FROZEN | Do not repair 004E |
+| Skills → Practice → Proof | planned `/skills`,`/practice`,`/proof` | planned `skills/` (+ claims) | planned `features/skills/` | skills, proof | planned | FUTURE | After 0060 |
+| Applications / Safe Apply | planned `/applications*` | planned `applications/` | planned `features/applications/` | drafts/submissions | planned | FUTURE | After 0068 |
+| Legacy Auto Apply | apply routes/agents | `routes/apply.py`, `agents/auto_apply` | — | apply models | apply APIs | FROZEN | Not Safe Apply |
+| Education / Study Abroad | planned education hubs | planned `education/` | planned `features/education/` | education plans | planned | FUTURE | After 0069+ |
+| Public Sector / Government | planned `/public-sector` | planned `public_sector/` | planned `features/public-sector/` | exams/sources | planned | FUTURE | After 0063+ |
+| Migration / Mobility | planned `/migration` | planned `mobility/` + `platform/geo` | planned education/mobility UI | geo/jurisdiction | planned | FUTURE | After 0073 |
+| Notifications | shell later | planned `notifications/` | layout later | notifications | planned | DEFERRED | 0074 |
+| Billing | `/billing` | planned `billing/` | planned settings | subscriptions | planned | DEFERRED | 0075 |
+| AI Career Assistant | `/chatbot`, FAB | `routes/chatbot.py`, `agents/chatbot` | chatbot components/pages | chat sessions/messages | chatbot APIs | PARTIAL_EXISTING | evolve; not autonomous agents |
+| Settings / Privacy | `/settings` | profile + `platform/privacy` | `pages/SettingsPage.tsx` | user/profile/privacy | auth/profile | PARTIAL_EXISTING | privacy UI later |
+| Admin / B2B Future | none | planned b2b | planned admin | orgs | planned | DEFERRED | 0076 |
+
+### 7.4 Backend Target Ownership Rules
+
+| Future Backend Module | Owns | Must Not Own | Reads From | Writes To | Security Rule | First Slice |
+|---|---|---|---|---|---|---|
+| `career_passport/` | Passport profile sections | Claims verification, CVs, roadmaps | identity subject, profile | passport tables | Owner checks | After 0052 |
+| `cv_builder/` | CV versions/templates/export metadata | Claims verification; passport ownership | passport (read), skills (read) | CV tables only | Owner checks; export review | CVB-F4+ |
+| `roadmaps/` | Roadmap plans/milestones/tasks | All Graduate Launch product logic | passport/skills (read), lifecycle goals (read) | roadmap tables | Owner checks | ROAD-F2+ |
+| `opportunities/` | Source-backed opportunity/job intelligence records + fit analyses | Invented jobs/salaries/deadlines/company facts | passport/skills (read); job_search saved jobs (read) | opportunity/fit tables | Owner + source freshness | 0054–55 |
+| `interview_studio/` | Interview sessions, study modules (new system) | Old 004E pack repair ownership | passport/skills/opportunity (read) | studio tables | Owner + source grounding | 0061 |
+| `skills/` | Skills inventory, practice tasks, proof artifacts linkage | Unverified claim stamping | passport (read), claims/provenance (via contract) | skills/practice/proof | Owner + provenance for proof | 0060 |
+| `applications/` | Drafts, review state, submissions, outcomes | Blind auto-apply / autonomous submit | CV + opportunity (read) | application tables | Owner + **human review gate** | 0068 |
+| `education/` | Education/study-abroad plans | Fake program certainty | geo (read) | education tables | Owner + source freshness | 0069+ |
+| `public_sector/` | Gov career/exam source records | Unsourced deadlines | geo (read) | public_sector tables | Owner + source freshness | 0063+ |
+| `mobility/` | Migration pathway plans | Visa legal advice without sources | geo/education (read) | mobility tables | Owner + jurisdiction rules | 0073 |
+| `billing/` | Subscriptions/entitlements | Core career data | user | billing tables | Owner + audit | 0075 |
+| `notifications/` | Notification records/delivery state | Sensitive body logging | user prefs | notifications | Owner + consent | 0074 |
+| `agent_orchestration/` | AI workflow orchestration / tool routing | Auth bypass; direct cross-domain writes; skipping human review | domain services (read via contracts) | orchestration logs only (redacted) | Never bypass permissions | Later, after deterministic workflows |
+
+**Also:** Existing `app/platform/*` remains the foundation owner for subjects, goals, claims primitives, provenance, geo, privacy, observability. New modules must call platform services rather than reimplement kernel rules.
+
+### 7.5 Frontend Target Ownership Rules
+
+Current repo may not yet use `frontend/src/features/*`. Move toward it incrementally. Do not do a giant folder rewrite. Use existing `pages/` + `components/` until a dedicated refactor slice is approved.
+
+| Future Frontend Feature Folder | Owns Pages | Owns Components | Depends On | Must Not Own | First Slice |
+|---|---|---|---|---|---|
+| `features/platform/` | `/platform` | Subject/goal UI | ui/, api platform methods | Claims/privacy UIs | PF11-R1 / later extract |
+| `features/passport/` | `/passport*` | Passport sections | ui/, platform subject context | CV export logic | After 0052 |
+| `features/cv-builder/` | `/cv-builder*` | Template gallery, preview, export UI | ui/, passport read | Claims verification | CVB-F1+ |
+| `features/roadmaps/` | `/roadmaps*` | List/detail/tasks/timeline | ui/, platform goals read | Graduate-only ownership of all roadmaps | ROAD-F1+ |
+| `features/opportunities/` | `/jobs*`, `/opportunities` | Job/opportunity cards/filters | ui/, jobs APIs | Fake certainty badges | Jobs stabilize → 0055 |
+| `features/interview-studio/` | `/interview-studio*` | Session/practice/study UI | ui/ | 004E pack repair | After 0061 |
+| `features/skills/` | `/skills`,`/practice`,`/proof` | Practice/proof UI | ui/, claims display contracts | Unverified “verified” stamps | After 0060 |
+| `features/applications/` | `/applications*` | Tracker/drafts/Safe Apply review | ui/, CV + job read | Blind auto-apply UI | After 0068 |
+| `features/education/` | education hubs | Info/checklist | ui/ | Unsourced advice | After 0069 |
+| `features/public-sector/` | `/public-sector` | Gov navigator UI | ui/ | Fake deadlines | After 0063 |
+| `features/settings/` | `/settings`,`/privacy`,`/billing` | Settings panels | ui/ | Billing before value | Privacy before 0075 |
+| `features/assistant/` | chatbot/panel | Assistant panel | ui/, redacted context | Autonomous tool abuse | Evolve chatbot |
+
+### 7.6 API Ownership Matrix
+
+| API Group | Backend Module Owner | Frontend Caller | User-Owned Resource? | Auth Required? | Ownership Check Required? | Status |
+|---|---|---|---|---|---|---|
+| platform | `platform` + `routes/platform.py` | `platformApi` in `lib/api.ts` | Yes (subject/goal) | Yes | Yes | EXISTING_VERIFIED |
+| career passport | planned `career_passport/` | planned passport client | Yes | Yes | Yes | PLANNED |
+| claims/evidence | `platform/claims`, `platform/provenance` | planned | Yes | Yes | Yes | PARTIAL (BE) / PLANNED (FE) |
+| cv builder | `routes/cv_builder` → future `cv_builder/` | CV pages / api | Yes | Yes | Yes | PARTIAL |
+| roadmaps | `routes/roadmap` → future `roadmaps/` | Roadmap page / api | Yes | Yes | Yes | PARTIAL |
+| opportunities/jobs | `job_search` (+ future `opportunities/`) | JobSearchPage / jobApi | Yes (saved jobs) | Yes | Yes | PARTIAL |
+| interview studio | planned `interview_studio/` | planned | Yes | Yes | Yes | FUTURE |
+| legacy interview pack | job_search pack endpoints | JobSearch / InterviewPackView | Yes | Yes | Yes | FROZEN expansion |
+| skills/proof | planned `skills/` | planned | Yes | Yes | Yes (+ provenance) | FUTURE |
+| applications/safe apply | planned `applications/` | planned | Yes | Yes | Yes + human review | FUTURE |
+| legacy apply / auto apply | `routes/apply`, `agents/auto_apply` | VERIFY_IN_REPO FE usage | Yes | Yes | Yes | FROZEN |
+| education | planned `education/` | planned | Yes | Yes | Yes | FUTURE |
+| public sector | planned `public_sector/` | planned | Yes | Yes | Yes | FUTURE |
+| migration/mobility | planned `mobility/` + geo | planned | Yes | Yes | Yes | FUTURE |
+| notifications | planned `notifications/` | planned | Yes | Yes | Yes | DEFERRED |
+| billing | planned `billing/` | planned | Yes | Yes | Yes | DEFERRED |
+| assistant | chatbot routes/agents | chatbot UI | Yes | Yes | Yes | PARTIAL |
+
+**Rules:** Every user-owned object route requires server-side ownership checks. No endpoint should trust user-controlled IDs. No high-impact AI output should bypass validation/human review.
+
+### 7.7 Data Ownership Matrix
+
+| Data Object | Backend Owner | Frontend Owner | Privacy Level | Provenance Needed? | User-Owned? | First Slice |
+|---|---|---|---|---|---|---|
+| career subject | platform/identity | platform UI | HIGH | No | Yes | PF11 |
+| career goal | platform/lifecycle | platform UI | HIGH | Actor on create | Yes | PF11 |
+| passport profile | career_passport (planned) / profile today | passport/profile UI | HIGH | Optional | Yes | 0052 |
+| education record | career_passport / education | passport UI | HIGH | Optional | Yes | 0052 |
+| experience record | career_passport | passport UI | HIGH | Optional | Yes | 0052 |
+| project | career_passport | passport UI | MEDIUM | Optional | Yes | 0052 |
+| skill | skills (planned) | skills/passport UI | MEDIUM | Optional | Yes | 0060 / 0052 |
+| claim | platform/claims | claims UI | HIGH | Yes | Yes | 0053 |
+| evidence/source snapshot | platform/provenance | claims UI | HIGH | Yes | Yes | 0053 |
+| CV version | cv_builder | cv-builder UI | HIGH | Export lineage | Yes | CVB-F4 |
+| CV template | cv_builder | cv-builder UI | LOW | No | Shared catalog | CVB-F2 |
+| roadmap | roadmaps | roadmaps UI | MEDIUM | Optional | Yes | ROAD-F2 |
+| roadmap milestone | roadmaps | roadmaps UI | MEDIUM | No | Yes | ROAD-F3 |
+| roadmap task | roadmaps | roadmaps UI | MEDIUM | No | Yes | ROAD-F3 |
+| saved job | job_search | jobs UI | MEDIUM | source_url | Yes | Existing |
+| opportunity source record | opportunities (planned) | opportunities UI | MEDIUM | Yes | System+user | 0054 |
+| opportunity fit analysis | opportunities | opportunities UI | MEDIUM | Yes | Yes | 0055 |
+| interview session | interview_studio | studio UI | MEDIUM | Sources | Yes | 0061 |
+| study module | interview_studio | studio UI | MEDIUM | Sources | Yes | 0061 |
+| practice task | skills | skills UI | MEDIUM | No | Yes | 0060 |
+| proof artifact | skills + claims | skills/proof UI | HIGH | Yes | Yes | 0060 |
+| application draft | applications | applications UI | HIGH | No | Yes | 0068 |
+| application submission | applications | applications UI | SENSITIVE | Yes | Yes | 0068 |
+| outcome | applications / lifecycle | applications UI | MEDIUM | Optional | Yes | 0062/0068 |
+| notification | notifications | shell | MEDIUM | No body dumps | Yes | 0074 |
+| billing/subscription | billing | settings | SENSITIVE | Audit | Yes | 0075 |
+| assistant context | chatbot / agent_orchestration | assistant UI | HIGH | Redact logs | Yes | Existing → evolve |
+
+### 7.8 Cross-Domain Dependency Rules
+
+- A module may read another domain only through a documented service/API contract.
+- A module must not write another domain’s owned tables directly.
+- Frontend feature pages should call their own feature API adapter or shared API client, not random cross-feature internals.
+- Shared components must not contain domain-specific business logic.
+- AI orchestration must request domain data through approved service contracts.
+- Auth and privacy checks stay server-side.
+
+**Examples:**
+
+- CV Builder may read Career Passport data to prefill a CV, but must not own passport data.
+- Roadmaps may read Skills and Passport data for personalization, but must own roadmap tasks.
+- Opportunity Intelligence may read Passport and Skills, but must own fit analyses.
+- Applications may read CV and Opportunity data, but must own drafts/submission state.
+- Interview Studio may read Passport, Skills, and Opportunity context, but must own interview sessions and study modules.
+
+### 7.9 Frozen / Deferred Domain Register
+
+| Domain / System | Status | Reason | Replacement Direction | Allowed Action |
+|---|---|---|---|---|
+| Old 004E Interview Pack repair | FROZEN | Drift/cost; wrong product direction | Interview Studio (new) | Redirect/legacy only; no repair slices |
+| Old Auto Apply | FROZEN | Unsafe agency | Safe Apply (0068) | Do not expand apply agents as product |
+| Full autonomous agents | DEFERRED | Need deterministic workflows + checkpoints | Agent levels 0–2 first | ADR required |
+| MCP external tool layer | DEFERRED | Core workflows not stable | Later integration | ADR required |
+| Billing | DEFERRED | Core MVP value first | 0075 | Docs only until then |
+| Admin / B2B | DEFERRED | Consumer MVP first | 0076 | Docs only |
+| Migration/visa advisory depth | DEFERRED | Jurisdiction/source rules incomplete | 0073 with sources | No unsourced advice |
+| Public-sector deadline automation | DEFERRED | Source freshness required | 0063–67 | No fake deadlines |
+
+Frozen systems cannot be repaired opportunistically. Deferred systems require a future explicit slice and decision record.
+
+### 7.10 Ownership Gate for Future Slices
+
+Before any future implementation slice, the prompt must identify:
+
+- product domain  
+- backend owner  
+- frontend owner  
+- API owner  
+- data owner  
+- permission rule  
+- privacy classification  
+- provenance rule  
+- tests  
+- browser journey if user-visible  
+
+If any are missing → **`BLOCKED_DOMAIN_OWNERSHIP_UNKNOWN`**.
+
+### 7.11 UX0-S4 Implementation Decision
+
+UX0-S4 is a **docs-only** domain ownership contract.
+
+- No backend implementation is included in this slice.  
+- No frontend implementation is included in this slice.  
+- No folder restructuring or import moves are included in this slice.  
+- Future domain implementation must happen through **explicit implementation slices after UX0-S5**.
+
+---
+
 ## 13. Dashboard Blueprint
 
 | Section | Purpose | Data | Backend source | Empty state | Primary action | Secondary | MVP | Future | Analytics | Tech notes |
