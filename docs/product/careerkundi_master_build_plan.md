@@ -3221,6 +3221,214 @@ Docs-only contract (not implemented in F0). Proposed core entities:
 
 ---
 
+### 0051-F3 Frontend Type / API Alignment Planning
+
+**Status:** Completed (docs-only planning/audit)  
+**Type:** `FRONTEND_TYPE_API_ALIGNMENT_PLANNING`  
+**Date:** 2026-07-12  
+**Preflight HEAD:** `0d1da42baa464dd027d9f40a5210183af0b788d0`  
+**Evidence:** `~/Desktop/CareerKundi_0051_F3_Frontend_Type_API_Alignment_Planning_Evidence.txt`
+
+#### Why F3 Exists
+
+0051-F1 created deterministic taxonomy contracts.  
+0051-F2 created an in-memory backend registry MVP.  
+0051-F3 plans the **safe API/type boundary** before exposing taxonomy to frontend or features.
+
+The goal is to prevent accidental broad wiring into CV Builder, Roadmap, Job Search, or UI before contracts are stable. Product code is **not** changed in F3.
+
+**Prompt-quality carry-forward (Design Fidelity Layer):** Future UI-impacting prompts must include exact layout contract, section order, visual hierarchy, spacing/proportion rules, desktop/tablet/mobile behavior, screenshot/browser comparison requirements, visual acceptance criteria, and an explicit instruction not to settle for functional-but-visually-weak UI. Reason: CV Builder became functional but did not fully match the earlier premium studio visual target. **Do not redesign CV Builder in F3.**
+
+#### Current Backend Taxonomy Capability Inventory
+
+| Capability | Current Verified Source | Current Status | Frontend/API Implication | Notes |
+|---|---|---|---|---|
+| contract entities | `backend/app/taxonomy/contracts.py` | EXISTING_VERIFIED | Need DTO schemas later | Domains/families/roles/skills/goals |
+| SourceType | contracts.py | EXISTING_VERIFIED | Mirror as TS union/enum | 8 values |
+| ConfidenceLevel | contracts.py | EXISTING_VERIFIED | Mirror as TS union/enum | Blocks unsafe verified |
+| PathwayType | contracts.py | EXISTING_VERIFIED | List endpoint later | 11 values |
+| TaxonomyMatch | contracts.py | EXISTING_VERIFIED | Core match DTO | Has `matched_role_id` + `matched_skill_id` |
+| TaxonomyRegistry | `registry.py` | EXISTING_VERIFIED | Backend service for routes | In-memory seed only |
+| role lookup | `get_role` | EXISTING_VERIFIED | GET `/roles/{id}` | None → 404 later |
+| role title/alias match | `match_role` | EXISTING_VERIFIED | POST `/roles/match` | No nearest-neighbor |
+| skill lookup | `get_skill` | EXISTING_VERIFIED | Optional later | Not required in first API set |
+| skill label/alias match | `match_skill` | EXISTING_VERIFIED | POST `/skills/match` | Sets `matched_skill_id` |
+| pathway validation | `validate_pathway_type` | EXISTING_VERIFIED | GET pathway-types | Rejects invalid |
+| role-to-skill lookup | `skills_for_role` | EXISTING_VERIFIED | GET `/roles/{id}/skills` | Skips missing seed refs |
+| related-role lookup | `related_roles` | EXISTING_VERIFIED | GET `/roles/{id}/related` | Deterministic |
+| unknown/no-match behavior | registry match | EXISTING_VERIFIED | Explicit unknown DTO | Must not hard-fail UI |
+| import boundary | taxonomy tests | EXISTING_VERIFIED | Keep API thin wrappers | No LLM/HTTP in registry |
+| seed catalog only | `catalog.py` | EXISTING_VERIFIED | Responses must say internal seed | No O*NET claim |
+| API exposure | routes | MISSING | F4 creates read-only routes | No taxonomy router yet |
+| frontend type exposure | `types/api.ts` | MISSING | F5 adds TS + client | No taxonomy types yet |
+
+#### Current Frontend API / Type Inventory
+
+| Area | Verified File | Current Pattern | Taxonomy Alignment Need | Risk |
+|---|---|---|---|---|
+| api.ts client pattern | `frontend/src/lib/api.ts` | Named `*Api` objects over Axios `http` at `/api/v1` | Add `taxonomyApi` later (F5) | Premature feature calls |
+| types/api.ts interfaces | `frontend/src/types/api.ts` | Manual `*Read` / request interfaces | Add Taxonomy* types (F5) | Manual sync drift |
+| CV Builder types | GeneratedCVRead; cvApi | Freeform `target_role_title`; templates | Optional resolve later | Hook too early |
+| Roadmap types | RoadmapRead; roadmapApi | Freeform `target_role` | PathwayType + match later | Hook too early |
+| Job Search types | SavedJobRead; jobApi; InterviewPackRead | job_title / packs | Shared CanonicalRole later | 004E freeze |
+| Profile types | ProfileRead; profileApi | `job_title` string | Alias map later | SoT conflicts |
+| Platform types | PlatformSubject/Goal | Subjects/goals envelopes | PathwayGoal link deferred | CORS watch |
+| Dashboard usage | DashboardPage | Displays roadmap `target_role` | Display-only until F11 | Cosmetic |
+| error handling | ApiError + interceptor | `{error,code,message,details}` | Taxonomy errors → ApiError | Unknown ≠ failure |
+| loading/empty states | Feature pages | Page-local | Match UX for no-match | Treat as soft empty |
+| manual type sync risk | api.ts ↔ schemas | Hand-maintained | F4/F5 checklist + tests | Stale fields |
+
+**Backend conventions (verified):** routers use `APIRouter(prefix=...)` + mount under `/api/v1`; auth via `Depends(get_current_user)`; DB via `Depends(get_db)` where needed; Pydantic `*Read` / request models; unversioned `/health` exists separately. Taxonomy API should follow `/api/v1/taxonomy` + auth by default; **no DB session required** for seed registry.
+
+#### Proposed Read-Only Taxonomy API Contract
+
+Plan only — **do not implement in F3**.
+
+| Endpoint | Method | Purpose | Request | Response | Auth | Notes |
+|---|---|---|---|---|---|---|
+| `/api/v1/taxonomy/health` | GET | Registry availability + seed counts | — | `TaxonomyHealthRead` | Required (or intentionally public) | Not `/health`; no external coverage claim |
+| `/api/v1/taxonomy/pathway-types` | GET | Allowed pathway types | — | `TaxonomyPathwayTypeRead[]` | Required | Labels/descriptions |
+| `/api/v1/taxonomy/roles/match` | POST | Deterministic role match | `TaxonomyMatchRequest` | `TaxonomyMatchRead` | Required | Unknown explicit |
+| `/api/v1/taxonomy/skills/match` | POST | Deterministic skill match | `TaxonomyMatchRequest` | `TaxonomyMatchRead` | Required | `matched_skill_id` |
+| `/api/v1/taxonomy/roles/{role_id}` | GET | Canonical role detail | path id | `TaxonomyRoleRead` | Required | 404 if missing |
+| `/api/v1/taxonomy/roles/{role_id}/skills` | GET | Seed skills for role | path id | `TaxonomyRoleSkillsRead` | Required | May be empty |
+| `/api/v1/taxonomy/roles/{role_id}/related` | GET | Related seed roles | path id | `TaxonomyRelatedRolesRead` | Required | Deterministic |
+
+**Rules:** read-only; no DB; no external calls; no LLM; no user writes; preserve source/confidence; never claim O*NET/ESCO/NIST coverage; unknown/no-match explicit (not guessed).
+
+#### Proposed Backend Schema Contract
+
+Plan only — **do not implement in F3**. Likely home: `backend/app/schemas/taxonomy.py` (F4).
+
+| Schema | Purpose | Fields | Maps From | Notes |
+|---|---|---|---|---|
+| TaxonomyHealthRead | Health/counts | available, role_count, skill_count, pathway_type_count, catalog_kind=`internal_seed` | SEED_CATALOG | No external claim |
+| TaxonomyPathwayTypeRead | Pathway enum DTO | id, label, description | PathwayType | Static labels OK |
+| TaxonomyMatchRequest | Match input | input_text, source?, confidence? | Registry kwargs | Defaults inferred |
+| TaxonomyMatchRead | Match output | input_text, normalized_text, matched_role_id, matched_skill_id, source, confidence, explanation | TaxonomyMatch | Preserve provenance |
+| TaxonomyRoleRead | Role detail | id, title, aliases, description, common_skills, related_roles, source, confidence | CanonicalRole | source often seed/reference |
+| TaxonomySkillRead | Skill detail | id, label, aliases, evidence_examples, tool_examples, source, confidence | Skill | — |
+| TaxonomyRoleSkillsRead | Role→skills | role_id, skills[] | skills_for_role | — |
+| TaxonomyRelatedRolesRead | Related roles | role_id, related_roles[] | related_roles | — |
+| TaxonomyErrorRead | Error body | Align with platform ApiError | CareerkundiError | Optional if reuse global |
+
+#### Proposed Frontend Type Contract
+
+Plan only — **do not implement in F3**. Likely home: `frontend/src/types/api.ts` (F5).
+
+| TypeScript Type | Purpose | Fields | Backend Schema | Notes |
+|---|---|---|---|---|
+| TaxonomySourceType | Provenance union | string literals | SourceType | Manual sync |
+| TaxonomyConfidenceLevel | Confidence union | string literals | ConfidenceLevel | Never auto-verified |
+| TaxonomyPathwayType | Pathway union | 11 literals | PathwayType | — |
+| TaxonomyMatchRequest | Client POST body | input_text, source?, confidence? | TaxonomyMatchRequest | — |
+| TaxonomyMatchRead | Match result | as API | TaxonomyMatchRead | Soft-handle unknown |
+| TaxonomyRoleRead | Role card | as API | TaxonomyRoleRead | — |
+| TaxonomySkillRead | Skill card | as API | TaxonomySkillRead | — |
+| TaxonomyHealthRead | Health panel | as API | TaxonomyHealthRead | Dev/ops + smoke |
+
+**Rules:** no registry internals; treat match as suggested unless source/confidence say otherwise; display unknown safely; never label model-inferred as verified.
+
+#### Proposed Frontend API Client Contract
+
+Plan only — **do not implement in F3**. Likely home: `taxonomyApi` in `frontend/src/lib/api.ts` (F5).
+
+| Client Method | Backend Endpoint | Purpose | Caller Features Later | Notes |
+|---|---|---|---|---|
+| `taxonomyApi.health()` | GET `/taxonomy/health` | Smoke | F6 checkpoint | Read-only |
+| `taxonomyApi.listPathwayTypes()` | GET `/taxonomy/pathway-types` | Pathway UI later | Roadmap F9/F10 | — |
+| `taxonomyApi.matchRole(input)` | POST `/taxonomy/roles/match` | Resolve free text | CV/Roadmap later | Unknown soft |
+| `taxonomyApi.matchSkill(input)` | POST `/taxonomy/skills/match` | Resolve skill text | Study/Roadmap later | — |
+| `taxonomyApi.getRole(roleId)` | GET `/taxonomy/roles/{id}` | Detail | Hooks later | 404 handled |
+| `taxonomyApi.getRoleSkills(roleId)` | GET `/taxonomy/roles/{id}/skills` | Skills list | Roadmap later | — |
+| `taxonomyApi.getRelatedRoles(roleId)` | GET `/taxonomy/roles/{id}/related` | Related | Roadmap later | — |
+
+**Rules:** read-only client; user-readable errors; **no feature hard-fail** on unknown match.
+
+#### Future UI Design Fidelity Requirement
+
+| Future UI Slice | Design Fidelity Requirement | Browser/Screenshot Requirement | Notes |
+|---|---|---|---|
+| CV Builder taxonomy hook | Exact layout for role-resolve affordance; preserve studio hierarchy | Desktop + 390px; before/after screenshots | Do not redesign whole studio in hook slice |
+| Roadmap taxonomy hook | Pathway type + role resolve placement; progress skills unchanged | Desktop + 390px | No Task model |
+| Job Search taxonomy hook | Soft resolve chips only; no pack rewrite | Smoke journey | 004E frozen |
+| Profile taxonomy preferences | Compact preference row; profile SoT clear | Desktop + mobile | Optional later |
+| Dashboard taxonomy widgets | One composition; no dashboard clutter | Desktop | Optional |
+| Platform taxonomy page | Subjects/goals first; taxonomy read-only panel if any | CORS watch | Deferred |
+
+**Rules:** every future UI prompt must include exact layout contract, responsive rules, visual acceptance checklist, and browser screenshot/checkpoint notes. Do not accept merely functional UI if it misses intended product design. **CV Builder premium studio mismatch is a planning lesson, not an F3 redesign.**
+
+#### Feature Integration Guardrails
+
+| Feature | Future Taxonomy Use | Not Allowed Yet | First Safe Hook Slice |
+|---|---|---|---|
+| CV Builder | Resolve `target_role_title` | Any UI/API hook in F3–F6 | F7 plan → F8 impl |
+| Roadmap | PathwayType + `target_role` resolve | Wiring in F3–F6 | F9 plan → F10 impl |
+| Job Search | Shared role match before packs | Pack/compiler rewrite | After F6; respect 004E freeze |
+| Interview Packs | Alias → pack routing labels | 004E repair | Deferred / freeze |
+| Study Materials | SkillCluster depth | Content rewrite | After API boundary |
+| Profile | Optional canonical role id | Forced remapping | After F5 |
+| Dashboard | Display canonical title | New widgets now | After F10/F11 |
+| Platform | PathwayGoal link | CORS/page redesign | Deferred |
+| Safe Apply future | Application path type | Any apply work | Frozen / future |
+| Badges/Achievements future | EvidenceRequirement | Badge rewrite | Future |
+
+**Rules:** F3 planning only. **F4 = read-only backend taxonomy API + schemas.** CV/Roadmap hooks wait until API/type boundary is browser/test verified (F6).
+
+#### Proposed 0051 Implementation Ladder Update
+
+| Slice | Status / Purpose |
+|---|---|
+| 0051-F0 Universal Role & Pathway Taxonomy Planning | Done |
+| 0051-F1 Taxonomy Contract Boundary | Done |
+| 0051-F2 Backend Taxonomy Registry MVP | Done |
+| **0051-F3 Frontend Type / API Alignment Planning** | **Done (this slice)** |
+| 0051-F4 Read-Only Backend Taxonomy API | Next |
+| 0051-F5 Frontend Taxonomy API Client + Types | Planned |
+| 0051-F6 Browser-Tested Taxonomy API Checkpoint | Planned |
+| 0051-F7 CV Builder Taxonomy Hook Planning | Planned |
+| 0051-F8 CV Builder Taxonomy Hook Implementation | Planned |
+| 0051-F9 Roadmap Taxonomy Hook Planning | Planned |
+| 0051-F10 Roadmap Taxonomy Hook Implementation | Planned |
+| 0051-F11 Cross-Feature Taxonomy Checkpoint | Planned |
+
+**Do not jump from F3 into CV Builder/Roadmap hooks.** Expose and verify the taxonomy API/type boundary first.
+
+#### Risk Register
+
+| Risk | Impact | Evidence | Mitigation | Target Slice |
+|---|---|---|---|---|
+| frontend/backend type drift | Broken client | Manual `types/api.ts` | F4/F5 paired schemas + tests | F4–F5 |
+| taxonomy unknown treated as failure | UX breakage | Soft-empty needed | Explicit unknown contract | F4–F6 |
+| model-inferred shown as verified | Trust harm | Confidence rules | UI labels + API preserve source | F5–F8 |
+| feature hooks break CV Builder | Regress UX-CHECKPOINT | Freeform role fields | Plan→impl ladder; Design Fidelity | F7–F8 |
+| feature hooks break Roadmap | Regress skill progress | No Task model | Additive PathwayType only | F9–F10 |
+| API before source/confidence UX ready | Misleading UI | Match defaults inferred | F6 checkpoint before hooks | F4–F6 |
+| external taxonomy overclaim | Legal/trust | Seed-only catalog | `catalog_kind=internal_seed` in health | F4 |
+| manual types stale | Drift | Hand-maintained TS | Checklist + contract tests | F5 |
+| visual UI mismatch from vague prompts | Weak product | CV Builder lesson | Design Fidelity Layer in UI prompts | F7+ |
+| Platform CORS watch | Noisy Platform | UX-CHECKPOINT-1 | Do not block taxonomy API | Carry |
+| shell overflow @390 | Usable but overflow | UX-CHECKPOINT-1 | Observe in F6/F11; no shell redesign | Carry |
+
+#### 0051-F3 Decision
+
+**B FRONTEND_TYPE_API_ALIGNMENT_PLAN_ACCEPTED_WITH_WATCH_ITEMS**
+
+- Plan accepted; UX watch items + Design Fidelity Layer + manual type-sync risk carried forward.
+- **Recommended next slice:** **0051-F4 Read-Only Backend Taxonomy API**
+- Product code modified in F3: **NO**
+
+#### 0051-F4 Guardrails
+
+- 0051-F4 may add read-only FastAPI taxonomy routes + Pydantic schemas wrapping `TaxonomyRegistry`.
+- 0051-F4 must not add database migrations or ORM models.
+- 0051-F4 must not ingest external datasets.
+- 0051-F4 must not wire CV Builder, Roadmap, Job Search, or frontend UI.
+- 0051-F4 must preserve source/confidence and unknown/no-match semantics.
+- 0051-F4 must not claim external taxonomy coverage.
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:
