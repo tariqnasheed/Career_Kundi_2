@@ -10,13 +10,13 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | Post-UX0 Controlled Execution |
-| Current Slice | CVB-F0 CV Builder Audit |
+| Current Slice | CVB-F1 CV Builder UI Repair |
 | Current Status | Completed / In review |
-| Last Completed Slice | PF11-R1 Platform Shell Review / Refinement Audit |
-| Last Commit | `47f576fc` — `docs(product): record PF11 platform shell review` |
-| Last Push Status | Pushed (matched `origin/main` at CVB-F0 start) |
-| Next Slice | **CVB-F1 CV Builder UI Repair** |
-| Blocked Items | None (browser journey not run; does not block F1) |
+| Last Completed Slice | CVB-F0 CV Builder Audit |
+| Last Commit | `e6fb1435` — `docs(product): record CV Builder audit` |
+| Last Push Status | Pushed (matched `origin/main` at CVB-F1 start) |
+| Next Slice | **CVB-F2 CV Template Gallery + Preview** |
+| Blocked Items | Browser journey blocked this slice (does not block F2) |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
 
 ---
@@ -30,7 +30,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 **Rules:** Read both before every slice. Update this tracker every slice. Update the master plan only when architecture, ladder, slice cards, or major decisions change.
 
-**Pointers:** PF11-R1 done · **CVB-F0 audit** (master § CVB-F0) · Next **CVB-F1**.
+**Pointers:** CVB-F0 audit · **CVB-F1 UI repair** (master § CVB-F1) · Next **CVB-F2**.
 
 ---
 
@@ -40,9 +40,10 @@ Readable in under 2 minutes. Update every slice. No secrets.
 |---|---|---|---|---|---|---|
 | UX0-S1…S5 | UX0 Planning | Done | See evidence log | `563f9884`…`c22491a9` | Yes | Closed |
 | PF11-R1 | Platform Shell Review | Done | `~/Desktop/CareerKundi_PF11_R1_Platform_Shell_Review_Evidence.txt` | `47f576fc` | Yes | Decision B |
-| CVB-F0 | CV Builder Audit | Done | `~/Desktop/CareerKundi_CVB_F0_CV_Builder_Audit_Evidence.txt` | This commit | Yes (with this push) | Decision A → F1 |
-| CVB-F1 | CV Builder UI Repair | Planned | — | — | — | **Next** |
-| CVB-F2…F5 | CV stabilization | Planned | — | — | — | See master §43 |
+| CVB-F0 | CV Builder Audit | Done | `~/Desktop/CareerKundi_CVB_F0_CV_Builder_Audit_Evidence.txt` | `e6fb1435` | Yes | Decision A |
+| CVB-F1 | CV Builder UI Repair | Done | `~/Desktop/CareerKundi_CVB_F1_UI_Repair_Evidence.txt` | This commit | Yes (with this push) | Decision B → F2 |
+| CVB-F2 | Template Gallery + Preview | Planned | — | — | — | **Next** |
+| CVB-F3…F5 | PDF / Save-Load / Browser | Planned | — | — | — | See master §43 |
 | ROAD-F0…F4 | Roadmap stabilization | Planned | — | — | — | After CVB-F5 |
 | 0051 | Role & Pathway Taxonomy | Planned | — | — | — | After ROAD-F4 + gate |
 
@@ -52,9 +53,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-11 | UX0-S5 | `~/Desktop/CareerKundi_UX0_S5_Implementation_Ladder_Checkpoint_Evidence.txt` | A …COMMITTED_PUSHED | |
-| 2026-07-12 | PF11-R1 | `~/Desktop/CareerKundi_PF11_R1_Platform_Shell_Review_Evidence.txt` | B …ACCEPTED_WITH_MINOR_FOLLOW_UP_COMMITTED_PUSHED | |
-| 2026-07-12 | CVB-F0 | `~/Desktop/CareerKundi_CVB_F0_CV_Builder_Audit_Evidence.txt` | A CV_BUILDER_READY_FOR_CVB_F1_UI_REPAIR_COMMITTED_PUSHED | Audit-only |
+| 2026-07-12 | CVB-F0 | `~/Desktop/CareerKundi_CVB_F0_CV_Builder_Audit_Evidence.txt` | A …READY_FOR_CVB_F1… | Audit-only |
+| 2026-07-12 | CVB-F1 | `~/Desktop/CareerKundi_CVB_F1_UI_Repair_Evidence.txt` | B …ACCEPTED_BROWSER_SETUP_BLOCKED_COMMITTED_PUSHED | FE repair |
 
 ---
 
@@ -62,9 +62,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-11 | UX0-S5 | `c22491a9` | Pushed | Ladder checkpoint |
-| 2026-07-12 | PF11-R1 | `47f576fc` | Pushed | Platform shell review |
-| 2026-07-12 | CVB-F0 | This commit (`docs(product): record CV Builder audit`) | Pushed with this slice | Audit A → CVB-F1 |
+| 2026-07-12 | CVB-F0 | `e6fb1435` | Pushed | CV Builder audit |
+| 2026-07-12 | CVB-F1 | This commit (`feat(frontend): repair CV Builder UI`) | Pushed with this slice | L/E/E + draft honesty |
 
 ---
 
@@ -73,14 +72,14 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Date | Decision | Impact | Status |
 |---|---|---|---|
 | 2026-07 | 004E / Auto Apply frozen | Studio + Safe Apply | Accepted |
-| 2026-07-12 | PF11 shell accepted (B) | Proceed CVB ladder | Accepted |
-| 2026-07-12 | CV Builder ready for F1 (A) | UI repair next; F2–F4 scoped | Accepted |
+| 2026-07-12 | CV Builder ready for F1 (A) | UI repair | Accepted |
+| 2026-07-12 | CVB-F1 accepted (B); browser blocked | Proceed to CVB-F2 | Accepted |
 
 ---
 
 ## 7. Active Blockers
 
-No active blockers. CV Builder browser journey `BLOCKED_BROWSER_SETUP` this slice — does not block CVB-F1.
+No active product blockers. Authenticated `/cv-builder` browser journey remains `BLOCKED_BROWSER_SETUP` — deferred to CVB-F5 (optional smoke earlier).
 
 ---
 
@@ -88,16 +87,16 @@ No active blockers. CV Builder browser journey `BLOCKED_BROWSER_SETUP` this slic
 
 | Field | Value |
 |---|---|
-| Next slice | **CVB-F1 CV Builder UI Repair** |
-| Reason | Audit found usable route + APIs; F1 fixes load/L/E/E/usability only |
+| Next slice | **CVB-F2 CV Template Gallery + Preview** |
+| Reason | F1 made workspace usable; next aligns template preview fidelity |
 | Type | FRONTEND_VISIBLE |
-| Allowed files | Finalize in F1 prompt (expect `CVBuilderPage.tsx` + CV CSS selectors + docs) |
-| Forbidden | Template gallery expansion; PDF harden; save/load product; AI rewrite; migrations; redesign; frozen systems; dist |
-| Evidence required | `~/Desktop/CareerKundi_CVB_F1_UI_Repair_Evidence.txt` |
-| Browser journey | login → `/cv-builder` → load sections without crash |
-| Commit rule | `fix(cv-builder): repair CV Builder UI shell` |
+| Allowed files | Finalize in F2 prompt (CV FE + docs) |
+| Forbidden | PDF harden; save/load product; AI rewrite; backend migrations; redesign; frozen systems; dist |
+| Evidence required | `~/Desktop/CareerKundi_CVB_F2_Template_Preview_Evidence.txt` |
+| Browser journey | Choose template → preview updates |
+| Commit rule | `feat(frontend): add CV template gallery and preview` |
 | Push rule | Push after clean verification |
 
 ---
 
-*Tracker updated: 2026-07-12 — CVB-F0*
+*Tracker updated: 2026-07-12 — CVB-F1*

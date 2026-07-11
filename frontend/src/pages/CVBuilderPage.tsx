@@ -1,7 +1,7 @@
 /**
  * CVBuilderPage.tsx
- * Premium AI CV builder — profile-driven, live CV viewer, template gallery,
- * section toggles + reorder, target job import, multi-format export.
+ * CV Builder MVP shell — profile-driven preview, section toggles, template
+ * accents, generate/export actions. Template/PDF/save polish continue in later slices.
  */
 
 import { useEffect, useMemo, useState } from "react";
@@ -9,8 +9,8 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSearchParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  FileText, Download, Zap, ChevronUp, ChevronDown,
-  Info, ZoomIn, ZoomOut, RefreshCw, Briefcase,
+  FileText, Zap, ChevronUp, ChevronDown,
+  Info, ZoomIn, ZoomOut, RefreshCw,
   Monitor, Smartphone, Printer, Star, GripVertical, User, Sparkles,
 } from "lucide-react";
 import { cvApi, jobApi, profileApi } from "../lib/api";
@@ -19,7 +19,12 @@ import { Input, Textarea } from "../components/ui/Input";
 import { Badge } from "../components/ui/Badge";
 import { Spinner } from "../components/ui/Spinner";
 import { useUIStore } from "../store/ui";
-import type { GeneratedCVRead, SavedJobRead } from "../types/api";
+import type { ApiError, GeneratedCVRead, SavedJobRead } from "../types/api";
+
+function queryErrorMessage(err: unknown): string {
+  const msg = (err as ApiError | undefined)?.message;
+  return (msg && String(msg).trim()) || "We couldn't load this section. Please try again.";
+}
 
 const DEFAULT_CV_KEY = "ck_default_cv_id";
 
@@ -314,9 +319,13 @@ export default function CVBuilderPage() {
   const [searchParams] = useSearchParams();
   const jobIdParam = searchParams.get("jobId");
 
-  const { data: profile } = useQuery({ queryKey: ["profile"], queryFn: () => profileApi.get() });
-  const { data: jobs } = useQuery({ queryKey: ["jobs"], queryFn: () => jobApi.list() });
-  const { data: cvs } = useQuery({ queryKey: ["cvs"], queryFn: () => cvApi.list() });
+  const profileQuery = useQuery({ queryKey: ["profile"], queryFn: () => profileApi.get() });
+  const jobsQuery = useQuery({ queryKey: ["jobs"], queryFn: () => jobApi.list() });
+  const cvsQuery = useQuery({ queryKey: ["cvs"], queryFn: () => cvApi.list() });
+
+  const profile = profileQuery.data;
+  const jobs = jobsQuery.data;
+  const cvs = cvsQuery.data;
 
   const [selectedTemplate, setSelectedTemplate] = useState("modern");
   const [mode, setMode] = useState<PreviewMode>("visual");
@@ -334,8 +343,9 @@ export default function CVBuilderPage() {
   const [zoom, setZoom] = useState(0.48);
   const [lastCvId, setLastCvId] = useState<string | null>(null);
   const [defaultCvId, setDefaultCvId] = useState<string | null>(localStorage.getItem(DEFAULT_CV_KEY));
+  const [loadingCvId, setLoadingCvId] = useState<string | null>(null);
 
-  const { data: generatedCv } = useQuery({
+  const { data: generatedCv, isLoading: generatedCvLoading, isError: generatedCvError } = useQuery({
     queryKey: ["cv", lastCvId],
     queryFn: () => cvApi.get(lastCvId!),
     enabled: !!lastCvId,
@@ -343,6 +353,13 @@ export default function CVBuilderPage() {
 
   const template = TEMPLATES.find((t) => t.id === selectedTemplate) ?? TEMPLATES[0];
   const selectedJob = jobs?.find((j) => j.id === targetJobId);
+
+  const workspaceLoading = profileQuery.isLoading || jobsQuery.isLoading || cvsQuery.isLoading;
+  const profileThin =
+    profileQuery.isSuccess &&
+    !profile?.bio_summary &&
+    !profile?.professional_headline &&
+    !(profile?.work_experiences?.length);
 
   const sectionDefs = useMemo(() => {
     const defs = [...BASE_SECTIONS];
@@ -426,14 +443,21 @@ export default function CVBuilderPage() {
   });
 
   const loadCV = async (cv: GeneratedCVRead) => {
-    setSelectedTemplate(TEMPLATES.find((t) => t.backend === cv.template)?.id ?? cv.template);
-    setEnabledSections(cv.section_config?.filter((s) => s.enabled).map((s) => s.section_id) ?? []);
-    setCvName(cv.name);
-    setLastCvId(cv.id);
-    if (cv.target_job_id) setTargetJobId(cv.target_job_id);
-    const full = await cvApi.get(cv.id);
-    setLastCvId(full.id);
-    addToast({ type: "info", message: `Loaded: ${cv.name}` });
+    setLoadingCvId(cv.id);
+    try {
+      setSelectedTemplate(TEMPLATES.find((t) => t.backend === cv.template)?.id ?? cv.template);
+      setEnabledSections(cv.section_config?.filter((s) => s.enabled).map((s) => s.section_id) ?? []);
+      setCvName(cv.name);
+      setLastCvId(cv.id);
+      if (cv.target_job_id) setTargetJobId(cv.target_job_id);
+      const full = await cvApi.get(cv.id);
+      setLastCvId(full.id);
+      addToast({ type: "info", message: `Loaded draft: ${cv.name}` });
+    } catch (err) {
+      addToast({ type: "error", message: queryErrorMessage(err) });
+    } finally {
+      setLoadingCvId(null);
+    }
   };
 
   const setAsDefault = (id: string) => {
@@ -448,19 +472,55 @@ export default function CVBuilderPage() {
     if (targetJobDescription.toLowerCase().includes("certif")) suggestions.push("Highlight Certifications — detected in the job description.");
     if (enabledSections.includes("skills") && !enabledSections.includes("projects")) suggestions.push("Consider enabling Projects to showcase applied skills.");
     if (tone === "executive") suggestions.push("Executive tone pairs well with Summary + Experience first.");
-    return suggestions.length ? suggestions : ["Import a target job to receive AI section recommendations tailored to the role."];
+    return suggestions.length ? suggestions : ["Import a saved job or paste a JD for role-aligned section tips."];
   }, [targetJobDescription, enabledSections, tone]);
+
+  const canGenerate = !generateMutation.isPending && !profileQuery.isLoading && !profileQuery.isError;
+  const canExport = !exportMutation.isPending && Boolean(lastCvId || cvs?.[0]?.id);
 
   return (
     <div className="cv-studio">
       <div className="cv-studio__sidebar">
-        <span className="feature-hero__eyebrow" style={{ marginBottom: "0.75rem" }}><Sparkles size={12} /> AI CV Studio</span>
+        <span className="feature-hero__eyebrow" style={{ marginBottom: "0.75rem" }}><Sparkles size={12} /> CV Builder</span>
         <h1 style={{ fontFamily: "var(--font-heading)", fontSize: "1.3rem", fontWeight: 700, marginBottom: "0.25rem" }}>CV Builder</h1>
         <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", marginBottom: "1rem" }}>
           {roleTargetedMode
-            ? "Role-targeted mode — toggles control which sections the AI writes for a different job role."
-            : "Profile-driven · AI improves writing only · never invents experience."}
+            ? "Draft mode — section toggles choose what AI writes for a target role."
+            : "Profile-driven draft preview · AI can refine wording · does not invent experience."}
         </p>
+
+        <div className="cv-studio__status" aria-live="polite">
+          {workspaceLoading && (
+            <div className="cv-studio__status-row cv-studio__status-row--loading">
+              <Spinner size="sm" />
+              <span>Loading your CV workspace…</span>
+            </div>
+          )}
+          {profileQuery.isError && (
+            <div className="cv-studio__status-row cv-studio__status-row--error" role="alert">
+              <span>Profile: {queryErrorMessage(profileQuery.error)}</span>
+              <Button variant="ghost" size="sm" onClick={() => profileQuery.refetch()}>Retry</Button>
+            </div>
+          )}
+          {cvsQuery.isError && (
+            <div className="cv-studio__status-row cv-studio__status-row--error" role="alert">
+              <span>Saved CVs: {queryErrorMessage(cvsQuery.error)}</span>
+              <Button variant="ghost" size="sm" onClick={() => cvsQuery.refetch()}>Retry</Button>
+            </div>
+          )}
+          {jobsQuery.isError && (
+            <div className="cv-studio__status-row cv-studio__status-row--error" role="alert">
+              <span>Jobs: {queryErrorMessage(jobsQuery.error)}</span>
+              <Button variant="ghost" size="sm" onClick={() => jobsQuery.refetch()}>Retry</Button>
+            </div>
+          )}
+          {profileThin && (
+            <div className="cv-studio__status-row cv-studio__status-row--empty">
+              <span>Complete your profile first to improve CV quality.</span>
+              <Link to="/profile" className="cv-studio__status-link">Open profile</Link>
+            </div>
+          )}
+        </div>
 
         <Link to="/profile" style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.6rem 0.75rem", borderRadius: "10px", background: "rgba(139,92,246,0.08)", border: "1px solid var(--border-subtle)", marginBottom: "1rem", fontSize: "0.75rem", color: "var(--accent-violet-bright)", textDecoration: "none" }}>
           <User size={14} /> Edit profile data →
@@ -469,8 +529,8 @@ export default function CVBuilderPage() {
         <div style={{ display: "flex", gap: "0.5rem", padding: "0.6rem", borderRadius: "10px", background: roleTargetedMode ? "rgba(249,115,22,0.08)" : "rgba(6,182,212,0.07)", border: `1px solid ${roleTargetedMode ? "rgba(249,115,22,0.25)" : "rgba(6,182,212,0.2)"}`, marginBottom: "1.25rem", fontSize: "0.72rem", color: "var(--text-secondary)" }}>
           <Info size={13} style={{ flexShrink: 0, marginTop: "1px", color: roleTargetedMode ? "#F97316" : "var(--accent-cyan)" }} />
           {roleTargetedMode
-            ? "Section toggles are on/off only. The model fully generates content for each enabled section toward your target role."
-            : "All content is sourced from your profile. AI rewrites bullets for clarity and impact without fabricating facts."}
+            ? "Section toggles are on/off only. Enabled sections are drafted toward your target role."
+            : "Preview uses your profile. Generate creates a saved draft; template/export polish continues in later slices."}
         </div>
 
         <div className="feature-glass" style={{ padding: "0.75rem", marginBottom: "1rem" }}>
@@ -510,9 +570,18 @@ export default function CVBuilderPage() {
 
         <div style={{ marginBottom: "1rem" }}>
           <label style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-secondary)", display: "block", marginBottom: "0.4rem" }}>Target job (import)</label>
+          {jobsQuery.isLoading && (
+            <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginBottom: "0.5rem" }}>Loading saved jobs…</p>
+          )}
+          {jobsQuery.isSuccess && !jobs?.length && (
+            <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginBottom: "0.5rem" }}>
+              No saved jobs found yet. You can still draft a general CV.
+            </p>
+          )}
           <select
             value={targetJobId}
             onChange={(e) => setTargetJobId(e.target.value)}
+            disabled={jobsQuery.isLoading || jobsQuery.isError}
             style={{ width: "100%", padding: "0.55rem", borderRadius: "8px", background: "var(--bg-overlay)", border: "1px solid var(--border-subtle)", color: "var(--text-primary)", fontSize: "0.8rem", marginBottom: "0.5rem" }}
           >
             <option value="">No target job</option>
@@ -534,17 +603,20 @@ export default function CVBuilderPage() {
         </div>
 
         <div className="feature-glass" style={{ padding: "0.75rem", marginBottom: "1.25rem", fontSize: "0.72rem" }}>
-          <p style={{ fontWeight: 600, marginBottom: "0.35rem", color: "var(--accent-cyan)" }}><Sparkles size={12} style={{ display: "inline", marginRight: 4 }} />AI section suggestions</p>
+          <p style={{ fontWeight: 600, marginBottom: "0.35rem", color: "var(--accent-cyan)" }}><Sparkles size={12} style={{ display: "inline", marginRight: 4 }} />Section tips (draft)</p>
           <ul style={{ margin: 0, paddingLeft: "1rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>
             {aiSuggestions.map((s, i) => <li key={i}>{s}</li>)}
           </ul>
         </div>
 
         <div style={{ marginBottom: "1.25rem" }}>
-          <p style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-secondary)", marginBottom: "0.5rem" }}>TEMPLATE GALLERY (12)</p>
+          <p style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-secondary)", marginBottom: "0.5rem" }}>TEMPLATE PREVIEW ACCENTS</p>
+          <p style={{ fontSize: "0.68rem", color: "var(--text-secondary)", marginBottom: "0.5rem" }}>
+            Preview accents only — export template mapping is refined in a later slice.
+          </p>
           <div className="cv-template-grid">
             {TEMPLATES.map((t) => (
-              <button key={t.id} onClick={() => setSelectedTemplate(t.id)} className={`cv-template-tile${selectedTemplate === t.id ? " cv-template-tile--active" : ""}`}>
+              <button key={t.id} type="button" onClick={() => setSelectedTemplate(t.id)} className={`cv-template-tile${selectedTemplate === t.id ? " cv-template-tile--active" : ""}`}>
                 <div className="cv-template-tile__swatch" style={{ background: t.accent }} />
                 {t.label}
                 <span style={{ display: "block", fontSize: "0.6rem", opacity: 0.7 }}>{t.category.toUpperCase()}</span>
@@ -557,7 +629,7 @@ export default function CVBuilderPage() {
           <p style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-secondary)", marginBottom: "0.5rem" }}>TONE</p>
           <div style={{ display: "flex", gap: "0.4rem" }}>
             {(["concise", "detailed", "executive"] as const).map((t) => (
-              <button key={t} onClick={() => setTone(t)} style={{
+              <button key={t} type="button" onClick={() => setTone(t)} style={{
                 flex: 1, padding: "0.4rem", borderRadius: "8px", fontSize: "0.72rem", cursor: "pointer", textTransform: "capitalize",
                 border: tone === t ? "2px solid var(--accent-violet)" : "1px solid var(--border-subtle)",
                 background: tone === t ? "rgba(139,92,246,0.08)" : "transparent",
@@ -567,21 +639,55 @@ export default function CVBuilderPage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1.5rem" }}>
-          <Button variant="primary" fullWidth onClick={() => generateMutation.mutate()} loading={generateMutation.isPending} leftIcon={<Zap size={15} />}>
-            Generate & Save CV
+          <Button
+            variant="primary"
+            fullWidth
+            onClick={() => generateMutation.mutate()}
+            loading={generateMutation.isPending}
+            disabled={!canGenerate}
+            leftIcon={<Zap size={15} />}
+          >
+            {generateMutation.isPending ? "Generating draft…" : "Generate & Save draft"}
           </Button>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "0.4rem" }}>
             {(["pdf", "docx", "markdown"] as const).map((fmt) => (
-              <Button key={fmt} variant="secondary" size="sm" onClick={() => exportMutation.mutate(fmt)} loading={exportMutation.isPending}>
+              <Button
+                key={fmt}
+                variant="secondary"
+                size="sm"
+                onClick={() => exportMutation.mutate(fmt)}
+                loading={exportMutation.isPending}
+                disabled={!canExport}
+                title={canExport ? `Export ${fmt}` : "Generate a draft first"}
+              >
                 {fmt.toUpperCase()}
               </Button>
             ))}
           </div>
+          <p style={{ fontSize: "0.65rem", color: "var(--text-secondary)", margin: 0 }}>
+            Export uses the last saved draft. Reliability checks continue in a later slice.
+          </p>
         </div>
 
         <div>
           <p style={{ fontSize: "0.75rem", fontWeight: 600, color: "var(--text-secondary)", marginBottom: "0.5rem" }}>SAVED CV LIBRARY</p>
-          {!cvs?.length ? <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)" }}>No CVs yet.</p> : (
+          {cvsQuery.isLoading && (
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.5rem 0" }}>
+              <Spinner size="sm" />
+              <span style={{ fontSize: "0.75rem", color: "var(--text-secondary)" }}>Loading saved CVs…</span>
+            </div>
+          )}
+          {cvsQuery.isError && (
+            <p role="alert" style={{ fontSize: "0.75rem", color: "var(--danger, #ef4444)", margin: 0 }}>
+              We couldn&apos;t load saved CVs. Use Retry above.
+            </p>
+          )}
+          {cvsQuery.isSuccess && !cvs?.length && (
+            <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)" }}>
+              No saved CVs yet. Start by generating your first draft.
+            </p>
+          )}
+          {cvsQuery.isSuccess && !!cvs?.length && (
             <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
               {cvs.map((cv) => (
                 <div key={cv.id} style={{ display: "flex", alignItems: "center", gap: "0.4rem", padding: "0.5rem", borderRadius: "8px", border: "1px solid var(--border-subtle)" }}>
@@ -591,7 +697,9 @@ export default function CVBuilderPage() {
                     <p style={{ fontSize: "0.65rem", color: "var(--text-secondary)" }}>{cv.template}</p>
                   </div>
                   {defaultCvId === cv.id && <Star size={12} style={{ color: "var(--accent-amber)" }} />}
-                  <Button variant="ghost" size="sm" onClick={() => loadCV(cv)}>Load</Button>
+                  <Button variant="ghost" size="sm" onClick={() => loadCV(cv)} loading={loadingCvId === cv.id} disabled={!!loadingCvId}>
+                    Load
+                  </Button>
                   <Button variant="ghost" size="sm" onClick={() => setAsDefault(cv.id)} title="Set as default"><Star size={12} /></Button>
                 </div>
               ))}
@@ -602,11 +710,11 @@ export default function CVBuilderPage() {
 
       <div className="cv-studio__viewer">
         <div className="cv-studio__toolbar">
-          <span style={{ fontWeight: 700, fontSize: "0.8rem" }}>CV Viewer</span>
+          <span style={{ fontWeight: 700, fontSize: "0.8rem" }}>CV Preview</span>
           <Badge color="violet" size="sm">{template.label}</Badge>
           <div style={{ display: "flex", gap: "0.25rem" }}>
             {(["visual", "ats"] as const).map((m) => (
-              <button key={m} onClick={() => setMode(m)} style={{ padding: "0.25rem 0.5rem", borderRadius: "6px", fontSize: "0.7rem", border: "none", cursor: "pointer", background: mode === m ? "var(--accent-violet)" : "var(--bg-overlay)", color: mode === m ? "#fff" : "var(--text-secondary)" }}>
+              <button key={m} type="button" onClick={() => setMode(m)} style={{ padding: "0.25rem 0.5rem", borderRadius: "6px", fontSize: "0.7rem", border: "none", cursor: "pointer", background: mode === m ? "var(--accent-violet)" : "var(--bg-overlay)", color: mode === m ? "#fff" : "var(--text-secondary)" }}>
                 {m === "visual" ? "Visual" : "ATS"}
               </button>
             ))}
@@ -617,7 +725,7 @@ export default function CVBuilderPage() {
               { id: "mobile", icon: <Smartphone size={13} /> },
               { id: "print", icon: <Printer size={13} /> },
             ] as const).map((v) => (
-              <button key={v.id} onClick={() => setViewport(v.id)} style={{ padding: "0.3rem 0.5rem", borderRadius: "6px", border: viewport === v.id ? "2px solid var(--accent-violet)" : "1px solid var(--border-subtle)", background: "transparent", cursor: "pointer", color: viewport === v.id ? "var(--accent-violet)" : "var(--text-secondary)" }}>
+              <button key={v.id} type="button" onClick={() => setViewport(v.id)} style={{ padding: "0.3rem 0.5rem", borderRadius: "6px", border: viewport === v.id ? "2px solid var(--accent-violet)" : "1px solid var(--border-subtle)", background: "transparent", cursor: "pointer", color: viewport === v.id ? "var(--accent-violet)" : "var(--text-secondary)" }}>
                 {v.icon}
               </button>
             ))}
@@ -634,8 +742,18 @@ export default function CVBuilderPage() {
           {generateMutation.isPending && (
             <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "rgba(10,16,32,0.85)", zIndex: 10, gap: "1rem" }}>
               <div className="skeleton shimmer" style={{ width: 210, height: 297, borderRadius: 8 }} />
-              <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>AI agents enhancing your CV…</p>
+              <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>Generating draft preview…</p>
             </div>
+          )}
+          {generatedCvLoading && !generateMutation.isPending && (
+            <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 5 }}>
+              <Spinner />
+            </div>
+          )}
+          {generatedCvError && (
+            <p role="alert" style={{ color: "var(--danger, #ef4444)", fontSize: "0.8rem", padding: "1rem" }}>
+              We couldn&apos;t load this saved draft. Try Load again from the library.
+            </p>
           )}
           <motion.div
             animate={{ scale: zoom }}

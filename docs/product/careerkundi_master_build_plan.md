@@ -1322,6 +1322,59 @@ CVB-F0 is **audit-only**.
 
 ---
 
+## CVB-F1 CV Builder UI Repair
+
+**Slice type:** FRONTEND_VISIBLE  
+**Evidence:** `~/Desktop/CareerKundi_CVB_F1_UI_Repair_Evidence.txt`
+
+### 11.1 Repair Summary
+
+| Area | Before | Change Made | Result | Notes |
+|---|---|---|---|---|
+| page load | Studio rendered; weak workspace feedback | Workspace status strip + cleaner draft copy | PASS (build) | Browser not run |
+| profile query state | `data` only | Loading / error + Retry / thin-profile empty CTA | PASS | |
+| saved CVs query state | Empty “No CVs yet” only | Loading spinner, error, clearer empty | PASS | |
+| jobs query state | Silent empty select | Loading / empty copy; disable select on load/error | PASS | |
+| empty states | Minimal | Profile thin + jobs empty + CV library empty | PASS | Action-oriented |
+| error states | Generate/export toasts only | Query errors + loadCV try/catch + Retry | PASS | |
+| disabled/submitting states | Generate/export loading only | Disable generate when profile loading/error; disable export without draft; Load button loading | PASS | |
+| visual consistency | Existing studio CSS | Small `.cv-studio__status*` styles only | PASS | No redesign |
+| build result | Previously passing | `npm run build` (tsc + vite) PASS | PASS | |
+| browser journey | Blocked in F0 | Not run this slice | BLOCKED_BROWSER_SETUP | Vite down; no auth session |
+
+### 11.2 Files Changed
+
+| File | Change Type | Reason | Scope |
+|---|---|---|---|
+| `frontend/src/pages/CVBuilderPage.tsx` | Repair | L/E/E, honest draft copy, safe disabled states, unused import cleanup | Allowed |
+| `frontend/src/components/features/DefaultCVSelector.tsx` | Repair | Loading/empty/error for CV list selector | Allowed |
+| `frontend/src/styles/feature-pages.css` | Repair | Status row styles for CV studio | Allowed |
+| `docs/product/careerkundi_master_build_plan.md` | Docs | F1 outcome section | Allowed |
+| `docs/product/careerkundi_live_tracker.md` | Docs | Progress + next = F2 | Allowed |
+
+`frontend/src/lib/api.ts` / `types/api.ts`: **not modified**.
+
+### 11.3 Remaining CV Builder Work
+
+| Remaining Work | Target Slice | Notes |
+|---|---|---|
+| Template Gallery + Preview | CVB-F2 | Align FE accents with export templates; preview fidelity |
+| PDF Export Verification | CVB-F3 | Reliability, formats, safe filename |
+| Save/Load Versions | CVB-F4 | Library UX (delete/regenerate), version clarity |
+| Browser-Tested Checkpoint | CVB-F5 | Full authenticated journey + console/network |
+
+### 11.4 CVB-F1 Decision
+
+**B CVB_F1_UI_REPAIR_ACCEPTED_BROWSER_SETUP_BLOCKED**
+
+Rationale: UI repair for workspace L/E/E and honest draft language is in place and builds cleanly. Authenticated browser journey was not available this slice; does **not** require F1B before F2.
+
+### 11.5 Recommended Next Slice
+
+**Next slice: CVB-F2 CV Template Gallery + Preview**
+
+---
+
 ## 13. Dashboard Blueprint
 
 | Section | Purpose | Data | Backend source | Empty state | Primary action | Secondary | MVP | Future | Analytics | Tech notes |
@@ -1979,6 +2032,7 @@ Privacy/logging restrictions / Tests/evals
 - **Commit message:** `fix(cv-builder): repair CV Builder UI shell`  
 - **Push:** Yes  
 - **Done definition:** Usable shell with required UI states  
+- **CVB-F1 outcome (2026-07-12):** Decision **B** — UI repair accepted; browser setup blocked; next = **CVB-F2**. See master § CVB-F1 CV Builder UI Repair.
 
 ### CVB-F2 — CV Template Gallery + Preview
 - **Type:** FRONTEND_VISIBLE  
