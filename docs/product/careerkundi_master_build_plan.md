@@ -3637,6 +3637,85 @@ Plan only — **do not implement in F3**. Likely home: `taxonomyApi` in `fronten
 
 ---
 
+### 0051-F6 Browser/API Taxonomy Boundary Checkpoint
+
+**Status:** Completed  
+**Type:** `BROWSER_API_BOUNDARY_CHECKPOINT`  
+**Date:** 2026-07-12  
+**Preflight HEAD:** `4bd7b486f8c404f510a13cb595348d36b15d63a6`  
+**Evidence:** `~/Desktop/CareerKundi_0051_F6_Taxonomy_Browser_API_Boundary_Checkpoint_Evidence.txt`
+
+#### Boundary Check Summary
+
+| Area | Result | Evidence | Issue Found | Follow-Up |
+|---|---|---|---|---|
+| backend taxonomy contract | PASS | `contracts.py` + unit tests | None | — |
+| backend registry | PASS | `registry.py` + unit tests | None | — |
+| read-only taxonomy API | PASS | routes + TestClient tests | None | — |
+| router/OpenAPI | PASS | `/api/openapi.json` lists 7 taxonomy paths | None | — |
+| taxonomy health | PASS | curl `200` + `external_dataset_ingestion:false` | None | — |
+| pathway types | PASS | API tests (11 types) | None | — |
+| role match | PASS | API tests title/alias/unknown | None | — |
+| skill match | PASS | API tests alias/unknown | None | — |
+| role detail | PASS | API tests 200/404 | None | — |
+| role skills | PASS | API tests | None | — |
+| related roles | PASS | API tests | None | — |
+| auth behavior | PASS | health public; pathway-types curl `401`; TestClient override for auth paths | None | — |
+| frontend taxonomy types | PASS | `types/api.ts` | None | — |
+| frontend taxonomyApi client | PASS | `lib/api.ts` 7 methods | None | — |
+| frontend build | PASS | `npm run build` | None | — |
+| frontend tests | PASS | `vitest tests/unit/api.test.ts` 3 passed | None | — |
+| backend tests | PASS | 38 taxonomy unit tests | None | — |
+| runtime smoke | PASS | curl health + OpenAPI on `:8001` | None | — |
+| browser/API smoke if run | SKIPPED | `BROWSER_PROTECTED_TAXONOMY_SMOKE_SKIPPED_BACKEND_TESTS_COVER_AUTH` | None | Optional later |
+| feature integration guard | PASS | No page/component taxonomy imports | None | — |
+| external ingestion guard | PASS | health flag false; seed only | None | — |
+| DB write guard | PASS | No commit/flush/add in taxonomy | None | — |
+
+#### Fixes Applied
+
+No product-code fixes were required in 0051-F6.
+
+#### Boundary Stabilization Decision
+
+**TAXONOMY_BOUNDARY_CHECKPOINT_PASSED_WITH_WATCH_ITEMS**
+
+Watch items (non-blocking; not taxonomy boundary defects):
+
+- Design Fidelity Layer required for future UI-impacting taxonomy hooks (CV Builder lesson).
+- Shell overflow @390 usable; Platform CORS watch; CV PDF 4-family; Roadmap no Task model.
+- Old 004E / Auto Apply remain frozen.
+- Protected browser JWT smoke not run; covered by backend API auth tests + runtime 401 check.
+
+#### Remaining 0051 Work
+
+| Remaining Work | Target Slice | Notes |
+|---|---|---|
+| CV Builder Taxonomy Hook Planning | 0051-F7 | Planning-only; Design Fidelity Layer |
+| CV Builder Taxonomy Hook Implementation | 0051-F8 | After F7 |
+| Roadmap Taxonomy Hook Planning | 0051-F9 | Preserve skill progress; no Task model |
+| Roadmap Taxonomy Hook Implementation | 0051-F10 | After F9 |
+| Cross-Feature Taxonomy Checkpoint | 0051-F11 | After hooks |
+| Future external taxonomy ingestion | post-MVP | Licensing/storage/attribution gate |
+
+#### 0051-F6 Decision
+
+**B TAXONOMY_BOUNDARY_CHECKPOINT_ACCEPTED_WITH_WATCH_ITEMS**
+
+#### Recommended Next Slice
+
+**Next slice: 0051-F7 CV Builder Taxonomy Hook Planning**
+
+#### 0051-F7 Guardrails
+
+- 0051-F7 must be planning-only for CV Builder taxonomy hook.
+- 0051-F7 must not redesign CV Builder yet.
+- 0051-F7 must include the user-approved Design Fidelity Layer for any later UI-impacting implementation.
+- 0051-F7 must preserve CV Builder browser-tested save/load/export flows.
+- 0051-F7 must define exact taxonomy hook points before implementation.
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:
