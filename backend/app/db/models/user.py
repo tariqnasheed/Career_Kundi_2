@@ -87,6 +87,11 @@ class User(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     job_applications: Mapped[list["JobApplication"]] = relationship(  # noqa: F821
         back_populates="user", cascade="all, delete-orphan"
     )
+    passport: Mapped["CareerPassport | None"] = relationship(  # noqa: F821
+        back_populates="owner",
+        uselist=False,
+        cascade="all, delete-orphan",
+    )
 
     def __repr__(self) -> str:  # pragma: no cover - debug helper
         return f"<User id={self.id} email={self.email!r} plan={self.plan}>"

@@ -49,6 +49,7 @@ from app.db.models.provenance import SourceRecord, SourceSnapshot
 from app.db.models.queue import GenerationJob
 from app.db.models.roadmap import Roadmap, RoadmapMilestone, RoadmapSkill
 from app.db.models.user import User
+from app.db.models.passport import CareerPassport, PassportTarget
 
 __all__ = [
     "User",
@@ -97,4 +98,6 @@ __all__ = [
     "PrivacyPolicy",
     "ConsentRecord",
     "RetentionPolicy",
+    "CareerPassport",
+    "PassportTarget",
 ]

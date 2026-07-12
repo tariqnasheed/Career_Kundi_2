@@ -4945,6 +4945,144 @@ Profile FE↔BE mismatch; missing Profile tests; Platform subjects 500; shell ov
 - Must not require non-null Subject until resolver is stable.  
 - Must not invent verification or evidence requirements.
 
+### 0052-F2 Passport Persistence and Migration
+
+**Type:** `PERSISTENCE_AND_FOUNDATION_MIGRATION`  
+**Status:** Done (this slice)  
+**Depends on:** 0052-F1 Decision B  
+
+#### Purpose
+
+Create reversible physical storage for accepted Passport contracts while preserving the existing Profile Data Hub as the single physical source for career-section records. No Passport HTTP APIs, frontend, services, AI, evidence, sharing, CV, or Roadmap integration.
+
+#### Persistence strategy (locked)
+
+**Profile-wrapper.** `CareerPassport` references one existing `Profile` (and optionally one `CareerSubject`), owns Passport preferences/metadata and `PassportTarget` rows, and adapts existing Profile section tables in place.
+
+Parallel Passport section tables (`passport_experiences`, `passport_educations`, etc.) were **rejected** to avoid dual truth, sync jobs, and dual-write drift. The same physical section rows serve both the transitional Profile API and future Passport API (single-write doctrine).
+
+#### Tables created
+
+| Table | Role |
+|---|---|
+| `career_passports` | Aggregate: owner, profile, optional subject, visibility, version, section prefs, profile meta |
+| `passport_targets` | Passport-owned targets (ordering + native record meta) |
+
+#### Existing tables extended
+
+| Table | New fields |
+|---|---|
+| `work_experiences` | `passport_role_taxonomy`, `passport_record_meta` |
+| `educations` | `passport_record_meta` |
+| `projects` | `passport_skill_taxonomy`, `passport_record_meta` |
+| `skills` | `passport_taxonomy`, `passport_record_meta` |
+| `certifications` | `passport_credential_type`, `passport_record_meta` |
+
+#### Aggregate ↔ Profile mapping
+
+| Logical field | Physical source |
+|---|---|
+| `display_name` | `User.full_name` |
+| `headline` | `Profile.professional_headline` |
+| `summary` | `Profile.bio_summary` |
+| Experience / education / projects / skills / credentials | Existing Profile child tables |
+
+Do not duplicate top-level Profile fields on `career_passports`.
+
+#### Subject handling
+
+`career_passports.subject_id` is **nullable**, FK `career_subjects.id` **ON DELETE SET NULL**. Migration does not require, backfill, or call Platform subject APIs. A Passport is persistable with `subject_id = NULL`.
+
+#### Ownership and delete behavior
+
+| FK | On delete |
+|---|---|
+| `owner_user_id` → `users.id` | CASCADE (unique) |
+| `profile_id` → `profiles.id` | CASCADE (unique) |
+| `subject_id` → `career_subjects.id` | SET NULL |
+| `passport_targets.passport_id` → `career_passports.id` | CASCADE |
+
+Deleting a Passport cascades to targets and does **not** delete the Profile. One owner / one Profile maps to at most one Passport.
+
+#### Record metadata / backfill
+
+Profile-backed (migrated + inherited) default:
+
+```json
+{"source_status":"user_asserted","support_status":"profile_supported","verification_status":"unverified"}
+```
+
+Native target default uses `support_status: not_provided`. Never verified / evidence-backed. Projects taxonomy → `[]`. Certifications type → `certification`.
+
+#### Taxonomy storage
+
+Role/skill taxonomy references stored as **JSONB** on section/target rows (object or array as specified). No foreign keys to in-memory taxonomy IDs. No registry lookups in F2.
+
+#### Migration
+
+| Field | Value |
+|---|---|
+| Revision | `f0008_passport_persistence` |
+| Parent | `f0007_privacy_foundation` |
+| Foundation head | `f0008_passport_persistence` (single head) |
+
+Upgrade: create tables/indexes/checks → add columns → backfill → NOT NULL + server defaults → named constraints. Creates **zero** automatic Passport/target rows. Leaves legacy Profile content unchanged.
+
+Downgrade to F7: drops Passport tables/columns/checks only; preserves users, profiles, and all original Profile field values. Passport aggregate/target/meta data may be lost (documented).
+
+#### Journey results (disposable PostgreSQL)
+
+| Step | Result |
+|---|---|
+| Empty upgrade | PASS → head F8; tables/columns/constraints present; 0 Passport rows |
+| Legacy-data upgrade | PASS → original IDs/values preserved; meta/taxonomy/type backfilled |
+| Persistence | PASS → null subject; defaults; unique owner/profile; target cascade; Profile preserved |
+| Downgrade | PASS → Passport gone; Profile intact; revision F7 |
+| Re-upgrade | PASS → schema + backfill restored; revision F8 |
+| ORM/database drift | `compare_metadata(...) == []` |
+
+#### Profile compatibility
+
+Existing Profile request schemas do not require Passport fields. Section ORM defaults supply Passport meta. `ProfileRead` still serializes legacy fields. No Profile endpoint or request schema changed.
+
+#### Tests
+
+| Suite | Result |
+|---|---|
+| `test_passport_contract_boundary.py` | **61 passed** |
+| `test_migration_policy.py` | PASS (head F8; lineage F8→F7→…→F1) |
+| `test_passport_persistence.py` | PASS (real disposable PG journey; no skips) |
+| `test_migration_runner.py` | PASS |
+| `-k "passport or profile or migration"` (db+unit) | **88 passed** |
+| compile + import + foundation-head smoke | **PASSPORT_PERSISTENCE_IMPORT_OK** / **PASSPORT_FOUNDATION_HEAD_OK** |
+
+#### Scope
+
+No frontend, Passport API routes, services, schemas, LLM, dual-write, or Subject API dependency. `NO_FRONTEND_API_SCHEMA_OR_SERVICE_CHANGES`.
+
+#### 0052-F2 Decision
+
+**B PASSPORT_PERSISTENCE_MIGRATION_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_0052_F3**
+
+#### F3 handoff — Passport API MVP
+
+- Create authenticated Passport API schemas and routes.  
+- Lazy-create Passport from the current user’s Profile.  
+- No owner ID accepted from clients.  
+- `subject_id` remains optional.  
+- Section operations use existing Profile-backed rows.  
+- Targets use `passport_targets`.  
+- All ownership checked server-side.  
+- No evidence requirement; no verified status; no public sharing.  
+- No frontend in F3.  
+- No dual write.
+
+#### Remaining watch items
+
+Profile FE↔BE mismatch; incomplete legacy Profile test coverage; Platform subjects local 500 (subject_id stays nullable); shell overflow @390/@768; PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051 API; 004E/Auto Apply frozen.
+
+**Next slice: 0052-F3 Passport API MVP**
+
 ---
 
 ## 44. Key Technical Slice Notes

@@ -19,12 +19,29 @@ Design choice — relational tables vs JSON columns:
 import uuid
 from datetime import date
 
-from sqlalchemy import JSON, Boolean, Date, ForeignKey, String, Text
-from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy import JSON, Boolean, CheckConstraint, Date, ForeignKey, String, Text, text
+from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
 from app.db.models.mixins import OrderableMixin, TimestampMixin, UUIDPrimaryKeyMixin
+
+
+def _profile_backed_passport_record_meta() -> dict[str, str]:
+    return {
+        "source_status": "user_asserted",
+        "support_status": "profile_supported",
+        "verification_status": "unverified",
+    }
+
+
+_PROFILE_BACKED_META_SQL = (
+    "'{"
+    '"source_status": "user_asserted", '
+    '"support_status": "profile_supported", '
+    '"verification_status": "unverified"'
+    "}'::jsonb"
+)
 
 
 class Profile(UUIDPrimaryKeyMixin, TimestampMixin, Base):
@@ -100,6 +117,11 @@ class Profile(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     custom_sections: Mapped[list["CustomSection"]] = relationship(
         back_populates="profile", cascade="all, delete-orphan", order_by="CustomSection.order_index"
     )
+    passport: Mapped["CareerPassport | None"] = relationship(  # noqa: F821
+        back_populates="profile",
+        uselist=False,
+        cascade="all, delete-orphan",
+    )
 
     def calculate_completeness_score(self) -> float:
         """
@@ -127,6 +149,12 @@ class Profile(UUIDPrimaryKeyMixin, TimestampMixin, Base):
 
 class Education(UUIDPrimaryKeyMixin, OrderableMixin, Base):
     __tablename__ = "educations"
+    __table_args__ = (
+        CheckConstraint(
+            "jsonb_typeof(passport_record_meta) = 'object'",
+            name="ck_educations_passport_record_meta_is_object",
+        ),
+    )
     profile_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("profiles.id", ondelete="CASCADE"))
     degree: Mapped[str] = mapped_column(String(255))
     field_of_study: Mapped[str | None] = mapped_column(String(255), nullable=True)
@@ -138,11 +166,27 @@ class Education(UUIDPrimaryKeyMixin, OrderableMixin, Base):
     grade: Mapped[str | None] = mapped_column(String(50), nullable=True)
     description_bullets: Mapped[list] = mapped_column(JSON, default=list)  # list[str]
     relevant_coursework: Mapped[list] = mapped_column(JSON, default=list)  # list[str] tags
+    passport_record_meta: Mapped[dict] = mapped_column(
+        JSONB,
+        nullable=False,
+        default=_profile_backed_passport_record_meta,
+        server_default=text(_PROFILE_BACKED_META_SQL),
+    )
     profile: Mapped["Profile"] = relationship(back_populates="educations")
 
 
 class WorkExperience(UUIDPrimaryKeyMixin, OrderableMixin, Base):
     __tablename__ = "work_experiences"
+    __table_args__ = (
+        CheckConstraint(
+            "passport_role_taxonomy IS NULL OR jsonb_typeof(passport_role_taxonomy) = 'object'",
+            name="ck_work_experiences_passport_role_taxonomy_object",
+        ),
+        CheckConstraint(
+            "jsonb_typeof(passport_record_meta) = 'object'",
+            name="ck_work_experiences_passport_record_meta_is_object",
+        ),
+    )
     profile_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("profiles.id", ondelete="CASCADE"))
     job_title: Mapped[str] = mapped_column(String(255))
     company_name: Mapped[str] = mapped_column(String(255))
@@ -153,11 +197,28 @@ class WorkExperience(UUIDPrimaryKeyMixin, OrderableMixin, Base):
     end_date: Mapped[date | None] = mapped_column(Date, nullable=True)
     is_current: Mapped[bool] = mapped_column(Boolean, default=False)
     description_bullets: Mapped[list] = mapped_column(JSON, default=list)  # list[str], AI-enhanceable
+    passport_role_taxonomy: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+    passport_record_meta: Mapped[dict] = mapped_column(
+        JSONB,
+        nullable=False,
+        default=_profile_backed_passport_record_meta,
+        server_default=text(_PROFILE_BACKED_META_SQL),
+    )
     profile: Mapped["Profile"] = relationship(back_populates="work_experiences")
 
 
 class Project(UUIDPrimaryKeyMixin, OrderableMixin, Base):
     __tablename__ = "projects"
+    __table_args__ = (
+        CheckConstraint(
+            "jsonb_typeof(passport_skill_taxonomy) = 'array'",
+            name="ck_projects_passport_skill_taxonomy_is_array",
+        ),
+        CheckConstraint(
+            "jsonb_typeof(passport_record_meta) = 'object'",
+            name="ck_projects_passport_record_meta_is_object",
+        ),
+    )
     profile_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("profiles.id", ondelete="CASCADE"))
     title: Mapped[str] = mapped_column(String(255))
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
@@ -167,11 +228,36 @@ class Project(UUIDPrimaryKeyMixin, OrderableMixin, Base):
     end_date: Mapped[date | None] = mapped_column(Date, nullable=True)
     role: Mapped[str | None] = mapped_column(String(255), nullable=True)
     key_achievements: Mapped[list] = mapped_column(JSON, default=list)  # list[str]
+    passport_skill_taxonomy: Mapped[list] = mapped_column(
+        JSONB,
+        nullable=False,
+        default=list,
+        server_default=text("'[]'::jsonb"),
+    )
+    passport_record_meta: Mapped[dict] = mapped_column(
+        JSONB,
+        nullable=False,
+        default=_profile_backed_passport_record_meta,
+        server_default=text(_PROFILE_BACKED_META_SQL),
+    )
     profile: Mapped["Profile"] = relationship(back_populates="projects")
 
 
 class Certification(UUIDPrimaryKeyMixin, OrderableMixin, Base):
     __tablename__ = "certifications"
+    __table_args__ = (
+        CheckConstraint(
+            "passport_credential_type IN ("
+            "'certification', 'license', 'course_certificate', "
+            "'education_award', 'professional_membership', 'other'"
+            ")",
+            name="ck_certifications_passport_credential_type",
+        ),
+        CheckConstraint(
+            "jsonb_typeof(passport_record_meta) = 'object'",
+            name="ck_certifications_passport_record_meta_is_object",
+        ),
+    )
     profile_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("profiles.id", ondelete="CASCADE"))
     name: Mapped[str] = mapped_column(String(255))
     issuing_organization: Mapped[str] = mapped_column(String(255))
@@ -179,8 +265,19 @@ class Certification(UUIDPrimaryKeyMixin, OrderableMixin, Base):
     expiry_date: Mapped[date | None] = mapped_column(Date, nullable=True)
     credential_id: Mapped[str | None] = mapped_column(String(255), nullable=True)
     credential_url: Mapped[str | None] = mapped_column(String(512), nullable=True)
+    passport_credential_type: Mapped[str] = mapped_column(
+        String(64),
+        nullable=False,
+        default="certification",
+        server_default="certification",
+    )
+    passport_record_meta: Mapped[dict] = mapped_column(
+        JSONB,
+        nullable=False,
+        default=_profile_backed_passport_record_meta,
+        server_default=text(_PROFILE_BACKED_META_SQL),
+    )
     profile: Mapped["Profile"] = relationship(back_populates="certifications")
-
 
 class Publication(UUIDPrimaryKeyMixin, OrderableMixin, Base):
     __tablename__ = "publications"
@@ -244,11 +341,28 @@ class Skill(UUIDPrimaryKeyMixin, OrderableMixin, Base):
     """
 
     __tablename__ = "skills"
+    __table_args__ = (
+        CheckConstraint(
+            "passport_taxonomy IS NULL OR jsonb_typeof(passport_taxonomy) = 'object'",
+            name="ck_skills_passport_taxonomy_object",
+        ),
+        CheckConstraint(
+            "jsonb_typeof(passport_record_meta) = 'object'",
+            name="ck_skills_passport_record_meta_is_object",
+        ),
+    )
     profile_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("profiles.id", ondelete="CASCADE"))
     name: Mapped[str] = mapped_column(String(100))
     skill_type: Mapped[str] = mapped_column(String(20), default="technical")  # technical | soft
     category: Mapped[str | None] = mapped_column(String(100), nullable=True)  # custom group label
     proficiency: Mapped[str | None] = mapped_column(String(20), nullable=True)  # Beginner..Expert
+    passport_taxonomy: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+    passport_record_meta: Mapped[dict] = mapped_column(
+        JSONB,
+        nullable=False,
+        default=_profile_backed_passport_record_meta,
+        server_default=text(_PROFILE_BACKED_META_SQL),
+    )
     profile: Mapped["Profile"] = relationship(back_populates="skills")
 
 
