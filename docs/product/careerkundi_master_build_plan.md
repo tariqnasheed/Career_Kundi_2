@@ -3387,9 +3387,9 @@ Plan only — **do not implement in F3**. Likely home: `taxonomyApi` in `fronten
 | 0051-F5 Frontend Taxonomy API Client + Types | Done |
 | 0051-F6 Browser-Tested Taxonomy API Checkpoint | Done |
 | 0051-F7 CV Builder Taxonomy Hook Planning | Done |
-| 0051-F8 CV Builder Taxonomy Hook Implementation | Done (this slice) |
-| 0051-F9 Roadmap Taxonomy Hook Planning | Next |
-| 0051-F10 Roadmap Taxonomy Hook Implementation | Planned |
+| 0051-F8 CV Builder Taxonomy Hook Implementation | Done |
+| 0051-F9 Roadmap Taxonomy Hook Planning | Done (this slice) |
+| 0051-F10 Roadmap Taxonomy Hook Implementation | Next |
 | 0051-F11 Cross-Feature Taxonomy Checkpoint | Planned |
 
 **Do not jump from F3 into CV Builder/Roadmap hooks.** Expose and verify the taxonomy API/type boundary first.
@@ -4021,9 +4021,9 @@ F8 must include exact layout + browser screenshot acceptance requirements from t
 - Hook accepted. Watch: shell/studio overflow @390 and tablet; PDF still 4 CSS families; Platform CORS; Design Fidelity remains a standing rule for future UI; 004E/Auto Apply frozen.  
 - **Recommended next slice:** **0051-F9 Roadmap Taxonomy Hook Planning**
 
-#### Recommended Next Slice
+#### Recommended Next Slice (after F8; superseded by F9 Decision)
 
-**Next slice: 0051-F9 Roadmap Taxonomy Hook Planning**
+F8 recommended **0051-F9**. F9 is now Done — see **0051-F9 Decision** → **0051-F10**.
 
 #### 0051-F9 Guardrails
 
@@ -4031,6 +4031,252 @@ F8 must include exact layout + browser screenshot acceptance requirements from t
 - 0051-F9 must preserve Roadmap browser-tested flows.  
 - 0051-F9 must include Design Fidelity Layer if any UI is later affected.  
 - 0051-F9 must not integrate Roadmap until exact hook points are planned.
+
+---
+
+### 0051-F9 Roadmap Taxonomy Hook Planning
+
+**Status:** Completed (docs-only planning/audit)  
+**Type:** `ROADMAP_TAXONOMY_HOOK_PLANNING`  
+**Date:** 2026-07-12  
+**Preflight HEAD:** `627cbfbb2271582bd9dc3ac64a4f118476de6222`  
+**Evidence:** `~/Desktop/CareerKundi_0051_F9_Roadmap_Taxonomy_Hook_Planning_Evidence.txt`
+
+#### Why F9 Exists
+
+0051-F9 plans how Roadmap should later use the taxonomy boundary without breaking the already browser-tested Roadmap feature (ROAD-F4 Decision B).
+
+The goal is to let Roadmap understand the user’s target role, pathway direction, and optional skill hints with **deterministic taxonomy assistance**, while keeping generation, list/load, detail view, progress tracking, refresh, and delete behavior stable.
+
+F9 is planning-only. **0051-F10** implements the hook if this plan is accepted.
+
+**Prior outcomes used:** ROAD-F0…F4 Done (skill-status progress; no Task model; shell overflow @390 watch); 0051-F0…F8 Done (taxonomy API/client + CV Role Intelligence with `_taxonomy` pattern); UX-CHECKPOINT-1 Done; 004E/Auto Apply frozen.
+
+#### Current Roadmap Capability Inventory
+
+| Area | Verified File / Module | Current Behavior | Taxonomy Relevance | Risk |
+|---|---|---|---|---|
+| Roadmap route/page | `frontend/src/pages/RoadmapPage.tsx` | Hero + status strip + list + detail + skill tracker | Hook host | Clutter / design miss |
+| generate form | Modal in RoadmapPage | `target_role`, pace, starting_skill_level, personalization_inputs | Natural Role Intelligence placement | Blocking generate |
+| target role input | Generate modal `role` state | Freeform string → `roadmapApi.generate` | Match input | Silent overwrite |
+| pathway/goal input | Pathway examples + freeform role | Examples are UX copy only | Optional pathway-type hint later | Confusing with PathwayType |
+| roadmap list | List cards from `roadmapApi.list` | Select loads detail | Restore taxonomy meta on select | Old rows without meta |
+| roadmap detail | Detail header + milestones | Shows target_role, pace, progress | Compact card near header/form | Shrink detail |
+| milestones | Timeline/kanban views | Organize skills | Must stay dominant | Visual displacement |
+| skill tracker | `SkillTracker` in page | Skills are progress units | Must not be replaced by taxonomy skills | Progress break |
+| skill status update | `roadmapApi.updateSkillStatus` | not_started/in_progress/completed | Independent of taxonomy | Coupling |
+| progress summary | Counts from `skill.status` | % complete skill-based | Must remain skill-based | Wrong progress source |
+| refresh/regenerate | Skill refresh + roadmap regenerate | Regenerate replaces milestones/skills; passes personalization_inputs | Preserve `_taxonomy` unless role changes | Meta loss |
+| delete | `roadmapApi.delete` | Ownership-checked | Unchanged | Accidental change |
+| roadmapApi client | `frontend/src/lib/api.ts` | list/get/generate/regenerate/status/refresh/delete | Call taxonomyApi separately | Auth soft-fail |
+| RoadmapRead type | `frontend/src/types/api.ts` | target_role, personalization_inputs, milestones/skills | No taxonomy fields yet | Type drift |
+| backend generate | `POST /roadmap/generate` | Pipeline + persist ORM | Optional meta in personalization_inputs | Required taxonomy |
+| backend list/get/delete | Ownership-checked | Eager milestones/skills | Load must tolerate missing meta | Ownership weaken |
+| backend skill status | `PATCH .../skills/{id}/status` | Status only | No taxonomy | Scope creep |
+| roadmap agent/fallback | `agents/roadmap/*` | Has **agent** `RoleTaxonomyAgent` (not 0051 API) | Do not conflate with taxonomyApi | Engine rewrite |
+| tests | `test_roadmap_contract.py` | Contract coverage | F10 adds hook tests | Weak UI acceptance |
+| responsive behavior | feature-pages.css + ROAD-F4 | Shell overflow @390 known | Card must not worsen | Overflow watch |
+
+Status notes: most rows **EXISTING_VERIFIED**. Taxonomy UI **MISSING**. Safe storage candidate **EXISTING_VERIFIED** (`personalization_inputs` JSON). Agent RoleTaxonomy ≠ 0051 taxonomy (**VERIFY_IN_REPO** naming collision risk for F10 docs/code comments).
+
+#### Current Taxonomy Boundary Available to Roadmap
+
+| Taxonomy Capability | Available Now | Roadmap Use Later | Limitation |
+|---|---|---|---|
+| `taxonomyApi.matchRole` | YES | Resolve target_role text | Auth required; advisory |
+| `taxonomyApi.getRole` | YES | Canonical title/aliases after match | Soft-fail to id |
+| `taxonomyApi.getRoleSkills` | YES | Optional “suggested skills” chips | Never replace roadmap skills |
+| `taxonomyApi.listPathwayTypes` | YES | Optional pathway label later | Seed pathway types only |
+| `TaxonomyMatchRead` | YES | Drive Role Intelligence card | Never treat inferred as verified |
+| `TaxonomyRoleRead` | YES | Display canonical title | Seed catalog |
+| `TaxonomySkillRead` | YES | Optional suggestions | Not progress units |
+| `TaxonomyPathwayType` | YES | Optional pathway context | Not required for F10 |
+| SourceType | YES | Provenance label | No O*NET claim |
+| ConfidenceLevel | YES | Confidence chip | Ban verified for suggested |
+| unknown/no-match behavior | YES | Safe empty; continue generate | Must not block |
+| protected endpoint auth | YES | JWT via existing client | Soft-fail UI |
+
+#### Proposed Roadmap Taxonomy Hook User Flow
+
+| Step | User/System Action | Taxonomy Behavior | UI Feedback | Data Stored |
+|---|---|---|---|---|
+| 1 | User enters target role in generate modal (or views existing roadmap) | Derive match input from freeform `target_role` | Compact Role Intelligence near form/header | Pending |
+| 2 | User clicks “Check role match” (preferred; explicit) | `taxonomyApi.matchRole` | Loading state; controls stay usable | Ephemeral |
+| 3 | Deterministic match | Optional `getRole` + `getRoleSkills` | Suggested role + confidence + optional skill chips | Draft meta |
+| 4 | Unknown / no match | Continue | “No deterministic match found” | `matched_role_id: null` |
+| 5 | Accept or keep freeform | Never overwrite without accept | Accept / Keep my wording | `accepted_by_user` / `kept_freeform` |
+| 6 | Optional suggested skills | Advisory chips only | “Suggested skills from role intelligence” | `suggested_skill_ids` |
+| 7 | Generate roadmap | Taxonomy optional | Generate works if unknown/unavailable | Persist meta in personalization_inputs if present |
+| 8 | Skill tracker | Unchanged status logic | Tracker remains primary progress UI | RoadmapSkill rows only |
+| 9 | Save/load (list/get) | Restore `_taxonomy` from personalization_inputs | Card restores | Nested JSON |
+| 10 | Regenerate | Preserve taxonomy unless role text changes | Confirm dialog unchanged | Merge `_taxonomy` |
+| 11 | Delete | Unchanged | Unchanged | Row deleted |
+
+**Rules:** Advisory only; no overwrite without confirmation; never label suggested as verified; unknown must not block generation; older roadmaps without meta must load; progress remains skill.status-based.
+
+#### Proposed Data Contract
+
+| Data Field | Location Candidate | Purpose | Migration Needed? | Notes |
+|---|---|---|---|---|
+| freeform_target_role | `Roadmap.target_role` (+ meta mirror) | User wording | No | Canonical freeform column already exists |
+| taxonomy_matched_role_id | `personalization_inputs._taxonomy.matched_role_id` | Canonical id | No | Preferred nest |
+| taxonomy_normalized_text | `...normalized_text` | Restore/debug | No | |
+| taxonomy_source | `...source` | Provenance | No | |
+| taxonomy_confidence | `...confidence` | Confidence | No | |
+| taxonomy_match_explanation | `...explanation` | Short reason | No | |
+| taxonomy_accepted_by_user | `...accepted_by_user` | Explicit accept | No | |
+| taxonomy_kept_freeform | `...kept_freeform` | Keep wording | No | |
+| taxonomy_skill_suggestions | `...suggested_skill_ids` | Advisory skill ids | No | Not tracker rows |
+| taxonomy_updated_at | `...updated_at` | Freshness | No | Optional ISO |
+
+**Storage rule:** Prefer nesting under existing `personalization_inputs` JSON (`_taxonomy` key). **Avoid DB migration.** If F10 cannot safely merge on regenerate, keep first hook frontend-advisory and record persistence as follow-up — do not invent a migration by default.
+
+Recommended metadata shape (plan only — not implemented in F9):
+
+```json
+{
+  "_taxonomy": {
+    "target_role_text": "Electrical Engineer",
+    "matched_role_id": "electrical_engineer",
+    "normalized_text": "electrical engineer",
+    "source": "user_provided",
+    "confidence": "suggested",
+    "explanation": "Deterministic match from internal seed catalog.",
+    "accepted_by_user": false,
+    "kept_freeform": false,
+    "suggested_skill_ids": ["load_calculations"]
+  }
+}
+```
+
+**Reuse note from F8:** CV stores `_taxonomy` as a reserved `section_config` row. Roadmap should **adapt** the pattern into `personalization_inputs._taxonomy` (object nest), not invent a fake milestone/skill row.
+
+#### Proposed Frontend Hook Points
+
+| Frontend File | Future Change | Why | Risk | F10 Guardrail |
+|---|---|---|---|---|
+| `RoadmapPage.tsx` | Role Intelligence in generate modal + optional detail header restore | Owns target_role UX | Clutter | Compact card; explicit Check button |
+| `frontend/src/lib/api.ts` | Already has taxonomyApi; optional typed personalization merge | Client ready | Path drift | Do not invent endpoints |
+| `frontend/src/types/api.ts` | Optional RoadmapTaxonomyMeta type | Type safety | Overbuild | Minimal types |
+| `feature-pages.css` | Compact card styles under roadmap tokens | Design fidelity | Admin look | Match roadmap visual language |
+| `DashboardPage.tsx` | **No F10 change** | Progress ring only | Scope drift | Forbidden taxonomyApi |
+
+**Rules:** No taxonomyApi from Dashboard; generation must not depend on taxonomy; do not replace roadmap skills; do not hide skill tracker; keep UI compact; no full Roadmap redesign in F10.
+
+#### Proposed Backend Hook Points
+
+| Backend File | Future Change | Why | Risk | F10 Guardrail |
+|---|---|---|---|---|
+| `api/routes/roadmap.py` | Optionally merge/preserve `personalization_inputs._taxonomy` on generate/regenerate | Persist without migration | Meta wipe on regenerate | Preserve unless role changes |
+| `schemas/roadmap.py` | Document optional `_taxonomy` nest; do not require it | Contract clarity | Schema churn | Opaque JSON preferred |
+| `db/models/roadmap.py` | **No change preferred** | personalization_inputs already JSON | Migration temptation | No migration by default |
+| `agents/roadmap/*` | **No 0051 registry call in F10 MVP** | Agent RoleTaxonomy is separate | Engine rewrite / naming confusion | Forbidden coupling |
+| `tests/unit/test_roadmap_contract.py` | Persist/restore meta; unknown non-blocking | Regression | Weak coverage | Targeted tests |
+
+**Rules:** Prefer no DB migration; do not call taxonomy registry from generation engine in F10; taxonomy not required; do not weaken ownership; do not change progress away from skill.status; do not change delete/refresh semantics.
+
+#### Design Fidelity Layer — Future Roadmap Taxonomy Hook
+
+**Principle:** Do not settle for a functional but visually weak UI. The Roadmap taxonomy hook must feel integrated into the Roadmap planning experience, not bolted on as a generic debug/admin form.
+
+**Desktop visual contract**
+
+1. Top planning/status region: clear title, target role/pathway context, generation/status feedback — no clutter.  
+2. Main workspace: roadmap detail + milestones remain dominant; skill tracker remains visible/readable; taxonomy is compact and advisory.  
+3. Placement: near generate target-role input and/or detail header as a compact **Role Intelligence** / **Pathway Intelligence** card/chip. Show: original target role, suggested canonical role, source/confidence, optional suggested skills, accept/keep-freeform, unknown safe state.  
+4. Must not: shrink milestones excessively; hide/replace skill tracker; add full-width debug panel; look like raw API JSON; leave large empty whitespace; feel like an admin dashboard.
+
+**Tablet visual contract**
+
+- Card stacks cleanly above/beside controls; milestones readable; skill tracker usable; buttons wrap.
+
+**Mobile 390px visual contract**
+
+- No **new** horizontal overflow from the taxonomy card; full-width card; stacked actions; no tiny chips; skill tracker accessible; roadmap usable despite known shell overflow watch.
+
+**Visual acceptance checklist (F10 cannot pass on build/tests alone)**
+
+- Card aligns with Roadmap visual language; not admin/debug; intentional spacing; detail dominant; tracker visible; unknown/accepted/freeform intentional; screenshots/browser notes included.
+
+**Browser evidence requirement for F10**
+
+- empty; matched; unknown; accepted (if implemented); keep freeform; persistence if implemented; generate still works; skill status still works; delete still works; 390 / 768 / desktop; console/network.
+
+#### Copy and Confidence Rules
+
+| State | User-Facing Copy Direction | Must Not Say |
+|---|---|---|
+| matched suggested role | “Suggested role match: …” + confidence | “Verified role” / O*NET coverage |
+| unknown/no match | “No deterministic match found. You can continue with your target role.” | Blocking error |
+| accepted suggested role | “Using suggested role for this roadmap.” | Job/visa/career guarantees |
+| freeform role kept | “Using your wording.” | Taxonomy failed the roadmap |
+| taxonomy unavailable | “Role intelligence is unavailable right now. You can continue without it.” | Hard-disable Generate |
+| older roadmap without taxonomy metadata | Empty/neutral advisory | Forced rematch |
+| suggested taxonomy skills | “Suggested skills from role intelligence” | “Required skills” / replace tracker |
+
+#### F10 Implementation Scope Recommendation
+
+0051-F10 should implement a **small advisory** Roadmap taxonomy hook:
+
+**Allowed**
+
+- Call `taxonomyApi.matchRole` when target role text is present (explicit Check button preferred).  
+- Optionally `getRole` / `getRoleSkills` after match for title + advisory skill chips.  
+- Compact Role/Pathway Intelligence card in generate modal (+ restore on detail if meta exists).  
+- Preserve freeform `target_role`.  
+- Store optional `_taxonomy` under `personalization_inputs` if merge-safe; else frontend-advisory first and document persistence follow-up.  
+- Generate/skill tracker/refresh/delete remain independent of taxonomy success.  
+- Soft-fail taxonomy auth/network errors.  
+- Tests/build + Design Fidelity browser evidence.
+
+**Not allowed**
+
+- Full Roadmap redesign; DB migration by default.  
+- Replacing generated roadmap skills with taxonomy seed skills.  
+- Changing progress calculation; Roadmap agent rewrite; wiring agent RoleTaxonomy to 0051 registry.  
+- CV Builder changes; Job Search integration; Dashboard widget/taxonomy changes.  
+- External taxonomy ingestion.
+
+#### Risks and Mitigations
+
+| Risk | Impact | Mitigation | Target Slice |
+|---|---|---|---|
+| Generation blocked by unknown taxonomy | Breaks ROAD-F4 | Advisory only; never gate Generate | F10 |
+| User target role overwritten | Trust loss | Accept/keep-freeform | F10 |
+| Inferred shown as verified | Trust harm | Copy rules; ban verified for suggested | F10 |
+| Taxonomy skills replace roadmap skills | Tracker/progress break | Chips advisory only | F10 |
+| Progress calculation broken | Feature regression | Keep skill.status source of truth | F10 |
+| Regenerate loses metadata | Persistence miss | Merge `_taxonomy` unless role changes | F10 |
+| Delete behavior changed | Regression | No delete logic change | F10 |
+| UI cluttered/generic | Design miss | Design Fidelity Layer | F10 |
+| Visual fails design target | User rejection | Screenshot checklist mandatory | F10 |
+| Taxonomy auth failure breaks page | Hard fail | Soft-fail card | F10 |
+| Frontend/backend type drift | Bugs | Mirror F4/F5 contracts | F10 |
+| DB migration pressure | Scope creep | Use personalization_inputs | F10 |
+| Shell overflow worsens | UX regression | Card full-width; no new overflow | F10 |
+| Confusing agent RoleTaxonomy vs 0051 API | Wrong architecture | Document naming; no agent coupling | F10 |
+
+#### 0051-F9 Decision
+
+**B ROADMAP_TAXONOMY_HOOK_PLAN_ACCEPTED_WITH_WATCH_ITEMS**
+
+- Plan accepted. Watch items: shell overflow @390; agent `RoleTaxonomyAgent` must stay decoupled from 0051 taxonomyApi; regenerate meta-merge care; PDF/CORS/CV design watches from prior slices; no Task model; 004E/Auto Apply frozen; Design Fidelity mandatory for F10.  
+- **Recommended next slice:** **0051-F10 Roadmap Taxonomy Hook Implementation**  
+- Product code modified in F9: **NO**
+
+#### Recommended Next Slice
+
+**Next slice: 0051-F10 Roadmap Taxonomy Hook Implementation**
+
+#### 0051-F10 Guardrails
+
+- 0051-F10 implements advisory Roadmap Role Intelligence only; must not redesign the full Roadmap page.  
+- 0051-F10 must include the Design Fidelity Layer and browser evidence checklist from F9.  
+- 0051-F10 must preserve generate/list/load/detail/skill status/refresh/delete and skill-based progress.  
+- 0051-F10 must not add DB migrations by default; prefer `personalization_inputs._taxonomy`.  
+- 0051-F10 must not call taxonomy registry from the Roadmap agent pipeline.  
+- 0051-F10 must soft-fail taxonomy API errors and never block roadmap generation on unknown match.  
+- 0051-F10 must not call taxonomyApi from Dashboard.
 
 ---
 

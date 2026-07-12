@@ -10,12 +10,12 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | 0051 Universal Role & Pathway Taxonomy |
-| Current Slice | 0051-F8 CV Builder Taxonomy Hook Implementation |
+| Current Slice | 0051-F9 Roadmap Taxonomy Hook Planning |
 | Current Status | Completed / In review |
-| Last Completed Slice | 0051-F7 CV Builder Taxonomy Hook Planning |
-| Last Commit | `10b62f3f` — `docs(product): plan CV taxonomy hook` |
-| Last Push Status | Pushed (matched `origin/main` at 0051-F8 start) |
-| Next Slice | **0051-F9 Roadmap Taxonomy Hook Planning** |
+| Last Completed Slice | 0051-F8 CV Builder Taxonomy Hook Implementation |
+| Last Commit | `627cbfbb` — `feat(cv-builder): add taxonomy role intelligence hook` |
+| Last Push Status | Pushed (matched `origin/main` at 0051-F9 start) |
+| Next Slice | **0051-F10 Roadmap Taxonomy Hook Implementation** |
 | Blocked Items | No active blockers |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
 
@@ -28,7 +28,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Master Build Plan | `docs/product/careerkundi_master_build_plan.md` |
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 
-**Pointers:** 0051-F7 Done · **0051-F8** Role Intelligence Done · Next **0051-F9**.
+**Pointers:** 0051-F8 Done · **0051-F9** Roadmap hook plan Done · Next **0051-F10**.
 
 ---
 
@@ -36,11 +36,11 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| 0051-F5 | Frontend Taxonomy API Client + Types | Done | Desktop F5 evidence | `4bd7b486` | Yes | taxonomyApi |
 | 0051-F6 | Browser/API Taxonomy Boundary Checkpoint | Done | Desktop F6 evidence | `ffeca771` | Yes | Decision B |
 | 0051-F7 | CV Builder Taxonomy Hook Planning | Done | Desktop F7 evidence | `10b62f3f` | Yes | Decision B |
-| 0051-F8 | CV Builder Taxonomy Hook Implementation | Done | `~/Desktop/CareerKundi_0051_F8_CV_Builder_Taxonomy_Hook_Implementation_Evidence.txt` | This commit | Yes (with this push) | Decision B |
-| 0051-F9 | Roadmap Taxonomy Hook Planning | Planned | — | — | — | **Next** |
+| 0051-F8 | CV Builder Taxonomy Hook Implementation | Done | Desktop F8 evidence | `627cbfbb` | Yes | Decision B |
+| 0051-F9 | Roadmap Taxonomy Hook Planning | Done | `~/Desktop/CareerKundi_0051_F9_Roadmap_Taxonomy_Hook_Planning_Evidence.txt` | This commit | Yes (with this push) | Docs-only; Decision B |
+| 0051-F10 | Roadmap Taxonomy Hook Implementation | Planned | — | — | — | **Next** |
 
 ---
 
@@ -48,8 +48,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | 0051-F7 | `~/Desktop/CareerKundi_0051_F7_CV_Builder_Taxonomy_Hook_Planning_Evidence.txt` | B …WITH_WATCH_ITEMS… | Plan + Design Fidelity |
 | 2026-07-12 | 0051-F8 | `~/Desktop/CareerKundi_0051_F8_CV_Builder_Taxonomy_Hook_Implementation_Evidence.txt` | B …WITH_WATCH_ITEMS… | Role Intelligence |
+| 2026-07-12 | 0051-F9 | `~/Desktop/CareerKundi_0051_F9_Roadmap_Taxonomy_Hook_Planning_Evidence.txt` | B …WITH_WATCH_ITEMS… | Plan + Design Fidelity |
 
 ---
 
@@ -57,8 +57,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | 0051-F7 | `10b62f3f` | Pushed | Docs-only plan |
-| 2026-07-12 | 0051-F8 | This commit (`feat(cv-builder): add taxonomy role intelligence hook`) | Pushed with this slice | Hook + meta |
+| 2026-07-12 | 0051-F8 | `627cbfbb` | Pushed | CV taxonomy hook |
+| 2026-07-12 | 0051-F9 | This commit (`docs(product): plan Roadmap taxonomy hook`) | Pushed with this slice | Docs-only |
 
 ---
 
@@ -66,14 +66,14 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Decision | Impact | Status |
 |---|---|---|---|
-| 2026-07-12 | 0051-F7 Decision B | Proceed to F8 implementation | Accepted |
-| 2026-07-12 | 0051-F8 Decision B | Proceed to F9 Roadmap planning; overflow/PDF watches | Accepted |
+| 2026-07-12 | 0051-F8 Decision B | Proceed to F9 Roadmap planning | Accepted |
+| 2026-07-12 | 0051-F9 Decision B | Proceed to F10 Roadmap hook; agent RoleTaxonomy stay decoupled | Accepted |
 
 ---
 
 ## 7. Active Blockers
 
-No active product blockers. Watch: shell/studio overflow @390/tablet; PDF 4-family; Platform CORS; Design Fidelity for future UI; 004E/Auto Apply frozen.
+No active product blockers. Watch: shell overflow @390; agent RoleTaxonomy ≠ 0051 API; regenerate meta-merge; PDF 4-family; CORS; Design Fidelity; 004E/Auto Apply frozen.
 
 ---
 
@@ -81,13 +81,13 @@ No active product blockers. Watch: shell/studio overflow @390/tablet; PDF 4-fami
 
 | Field | Value |
 |---|---|
-| Next slice | **0051-F9 Roadmap Taxonomy Hook Planning** |
-| Reason | F8 CV taxonomy hook accepted with watch items |
-| Type | Planning-only; preserve Roadmap flows |
-| Evidence required | Per master § 0051-F9 Guardrails |
+| Next slice | **0051-F10 Roadmap Taxonomy Hook Implementation** |
+| Reason | F9 plan accepted with watch items |
+| Type | Advisory Role Intelligence; no agent rewrite |
+| Evidence required | Per master § 0051-F10 Guardrails + Design Fidelity |
 | Commit rule | Per master plan |
 | Push rule | Push after clean verification |
 
 ---
 
-*Tracker updated: 2026-07-12 — 0051-F8*
+*Tracker updated: 2026-07-12 — 0051-F9*
