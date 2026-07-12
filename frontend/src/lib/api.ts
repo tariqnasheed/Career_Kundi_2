@@ -41,6 +41,13 @@ import type {
   PlatformGoalRead,
   PlatformGoalEnvelope,
   PlatformGoalListEnvelope,
+  TaxonomyHealthRead,
+  TaxonomyPathwayTypeRead,
+  TaxonomyMatchRequest,
+  TaxonomyMatchRead,
+  TaxonomyRoleRead,
+  TaxonomyRoleSkillsRead,
+  TaxonomyRelatedRolesRead,
 } from "@/types/api";
 import {
   buildSavedJobSearchPageRequest,
@@ -611,6 +618,56 @@ export const platformApi = {
       payload,
     );
     return res.data.data;
+  },
+};
+
+// ---------------------------------------------------------------------------
+// Taxonomy endpoints (0051-F5) — read-only contract client; no feature wiring
+// Paths are relative to BASE_URL (.../api/v1). Auth interceptor attaches JWT;
+// /taxonomy/health is public on the backend but still works with/without token.
+// ---------------------------------------------------------------------------
+
+export const taxonomyApi = {
+  /** Registry availability + internal seed counts (public backend endpoint). */
+  health: async (): Promise<TaxonomyHealthRead> => {
+    const res = await http.get<TaxonomyHealthRead>("/taxonomy/health");
+    return res.data;
+  },
+
+  /** List the 11 pathway types. */
+  listPathwayTypes: async (): Promise<TaxonomyPathwayTypeRead[]> => {
+    const res = await http.get<TaxonomyPathwayTypeRead[]>("/taxonomy/pathway-types");
+    return res.data;
+  },
+
+  /** Deterministic role match (read-only POST). */
+  matchRole: async (payload: TaxonomyMatchRequest): Promise<TaxonomyMatchRead> => {
+    const res = await http.post<TaxonomyMatchRead>("/taxonomy/roles/match", payload);
+    return res.data;
+  },
+
+  /** Deterministic skill match (read-only POST). */
+  matchSkill: async (payload: TaxonomyMatchRequest): Promise<TaxonomyMatchRead> => {
+    const res = await http.post<TaxonomyMatchRead>("/taxonomy/skills/match", payload);
+    return res.data;
+  },
+
+  /** Canonical role detail by id. */
+  getRole: async (roleId: string): Promise<TaxonomyRoleRead> => {
+    const res = await http.get<TaxonomyRoleRead>(`/taxonomy/roles/${roleId}`);
+    return res.data;
+  },
+
+  /** Seed skills linked to a role. */
+  getRoleSkills: async (roleId: string): Promise<TaxonomyRoleSkillsRead> => {
+    const res = await http.get<TaxonomyRoleSkillsRead>(`/taxonomy/roles/${roleId}/skills`);
+    return res.data;
+  },
+
+  /** Related seed roles for a role. */
+  getRelatedRoles: async (roleId: string): Promise<TaxonomyRelatedRolesRead> => {
+    const res = await http.get<TaxonomyRelatedRolesRead>(`/taxonomy/roles/${roleId}/related`);
+    return res.data;
   },
 };
 

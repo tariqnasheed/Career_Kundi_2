@@ -21,7 +21,7 @@ vi.mock("axios", () => {
   return { default: { create: () => instance } };
 });
 
-import { authApi, jobApi, cvApi, roadmapApi, profileApi } from "../../src/lib/api";
+import { authApi, jobApi, cvApi, roadmapApi, profileApi, taxonomyApi } from "../../src/lib/api";
 
 describe("API client surface", () => {
   it("exposes the job-search endpoints used across the app", () => {
@@ -38,5 +38,15 @@ describe("API client surface", () => {
     expect(typeof authApi.login).toBe("function");
     expect(typeof profileApi.get).toBe("function");
     expect(typeof roadmapApi.generate).toBe("function");
+  });
+
+  it("exposes taxonomy read-only client methods (0051-F5)", () => {
+    expect(typeof taxonomyApi.health).toBe("function");
+    expect(typeof taxonomyApi.listPathwayTypes).toBe("function");
+    expect(typeof taxonomyApi.matchRole).toBe("function");
+    expect(typeof taxonomyApi.matchSkill).toBe("function");
+    expect(typeof taxonomyApi.getRole).toBe("function");
+    expect(typeof taxonomyApi.getRoleSkills).toBe("function");
+    expect(typeof taxonomyApi.getRelatedRoles).toBe("function");
   });
 });

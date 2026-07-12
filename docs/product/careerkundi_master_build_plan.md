@@ -3536,6 +3536,107 @@ Plan only — **do not implement in F3**. Likely home: `taxonomyApi` in `fronten
 
 ---
 
+### 0051-F5 Frontend Taxonomy API Client + Types
+
+**Status:** Completed  
+**Type:** `FRONTEND_API_CLIENT_TYPES`  
+**Date:** 2026-07-12  
+**Preflight HEAD:** `b0ee616c38f13bea295f8bbad56a17db76211086`  
+**Evidence:** `~/Desktop/CareerKundi_0051_F5_Frontend_Taxonomy_API_Client_Types_Evidence.txt`
+
+#### Frontend Contract Summary
+
+| Area | Before | Change Made | Result | Notes |
+|---|---|---|---|---|
+| frontend taxonomy types | Missing | Added to `types/api.ts` | Implemented | Mirrors F4 schemas |
+| source/confidence unions | Missing | `TaxonomySourceType` / `TaxonomyConfidenceLevel` | Implemented | Exact backend strings |
+| pathway type union | Missing | `TaxonomyPathwayType` | Implemented | 11 values |
+| health response type | Missing | `TaxonomyHealthRead` | Implemented | — |
+| match request/response types | Missing | Match request/read | Implemented | nullable ids |
+| role/skill response types | Missing | Role/Skill/Skills/Related | Implemented | + TaxonomyErrorRead |
+| taxonomyApi client | Missing | `taxonomyApi` in `lib/api.ts` | Implemented | 7 methods |
+| API path alignment | N/A | Paths under `/taxonomy/...` | Aligned | BASE_URL already `/api/v1` |
+| protected endpoint handling | N/A | JWT interceptor unchanged | OK | Health public; others need auth |
+| feature integration | None | None | NONE | No page imports |
+| UI behavior | Unchanged | No UI edits | NONE | Design Fidelity remains watch |
+
+#### Files Changed
+
+| File | Change Type | Reason | Scope |
+|---|---|---|---|
+| `frontend/src/types/api.ts` | Updated | Taxonomy TS types | Frontend contract |
+| `frontend/src/lib/api.ts` | Updated | `taxonomyApi` client | Frontend contract |
+| `frontend/tests/unit/api.test.ts` | Updated | Surface coverage for taxonomyApi | Existing vitest convention |
+| `docs/product/careerkundi_master_build_plan.md` | Updated | Record F5 | Docs |
+| `docs/product/careerkundi_live_tracker.md` | Updated | Position → F5 done / F6 next | Docs |
+
+#### Type Contract Implemented
+
+| Type | Implemented | Backend Schema | Notes |
+|---|---|---|---|
+| TaxonomySourceType | YES | SourceType enum | 8 literals |
+| TaxonomyConfidenceLevel | YES | ConfidenceLevel enum | 7 literals |
+| TaxonomyPathwayType | YES | PathwayType enum | 11 literals |
+| TaxonomyHealthRead | YES | TaxonomyHealthRead | — |
+| TaxonomyPathwayTypeRead | YES | TaxonomyPathwayTypeRead | description nullable |
+| TaxonomyMatchRequest | YES | TaxonomyMatchRequest | optional source/confidence |
+| TaxonomyMatchRead | YES | TaxonomyMatchRead | null ids |
+| TaxonomyRoleRead | YES | TaxonomyRoleRead | — |
+| TaxonomySkillRead | YES | TaxonomySkillRead | — |
+| TaxonomyRoleSkillsRead | YES | TaxonomyRoleSkillsRead | — |
+| TaxonomyRelatedRolesRead | YES | TaxonomyRelatedRolesRead | — |
+| TaxonomyErrorRead | YES | TaxonomyErrorRead | Documented shape |
+
+#### API Client Contract Implemented
+
+| Client Method | Endpoint | Implemented | Notes |
+|---|---|---|---|
+| `taxonomyApi.health` | GET `/taxonomy/health` | YES | Public backend |
+| `taxonomyApi.listPathwayTypes` | GET `/taxonomy/pathway-types` | YES | Auth required |
+| `taxonomyApi.matchRole` | POST `/taxonomy/roles/match` | YES | Read-only POST |
+| `taxonomyApi.matchSkill` | POST `/taxonomy/skills/match` | YES | Read-only POST |
+| `taxonomyApi.getRole` | GET `/taxonomy/roles/{id}` | YES | — |
+| `taxonomyApi.getRoleSkills` | GET `/taxonomy/roles/{id}/skills` | YES | — |
+| `taxonomyApi.getRelatedRoles` | GET `/taxonomy/roles/{id}/related` | YES | — |
+
+#### Boundary Rules Verified
+
+| Boundary Rule | Result | Evidence | Notes |
+|---|---|---|---|
+| No page/component integration | PASS | grep pages/components | — |
+| No CV Builder behavior change | PASS | No CV files touched | — |
+| No Roadmap behavior change | PASS | No Roadmap files touched | — |
+| No Job Search behavior change | PASS | No Job Search files touched | — |
+| No backend changes unless documented | PASS | No backend dirty | — |
+| No external dataset ingestion | PASS | N/A frontend | — |
+| No localStorage persistence | PASS | No new storage keys | Existing JWT interceptor only |
+| No UI changes | PASS | Pages/components untouched | — |
+
+#### Test / Build Decision
+
+**FRONTEND_TAXONOMY_TYPES_TESTS_ADDED_AND_PASSING**
+
+- `npm run build` (tsc + vite): PASS  
+- `vitest run tests/unit/api.test.ts`: 3 passed  
+- Backend `taxonomy` tests: 38 passed  
+
+#### 0051-F5 Decision
+
+**A FRONTEND_TAXONOMY_CLIENT_TYPES_ACCEPTED_READY_FOR_0051_F6**
+
+#### Recommended Next Slice
+
+**Next slice: 0051-F6 Browser/API Taxonomy Boundary Checkpoint**
+
+#### 0051-F6 Guardrails
+
+- 0051-F6 should verify backend taxonomy API + frontend taxonomyApi contract.
+- 0051-F6 may use a small non-UI smoke script or existing browser/runtime checks.
+- 0051-F6 must not integrate taxonomy into CV Builder, Roadmap, or Job Search yet.
+- 0051-F6 must preserve all CV Builder and Roadmap browser-tested flows.
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:

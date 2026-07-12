@@ -504,6 +504,110 @@ export interface PlatformGoalListEnvelope {
 }
 
 // ---------------------------------------------------------------------------
+// Taxonomy (0051-F5) — mirrors backend/app/schemas/taxonomy.py
+// ---------------------------------------------------------------------------
+
+export type TaxonomySourceType =
+  | "user_provided"
+  | "profile_supported"
+  | "document_supported"
+  | "job_description_supported"
+  | "external_taxonomy_reference"
+  | "model_inferred"
+  | "fallback_default"
+  | "unknown";
+
+export type TaxonomyConfidenceLevel =
+  | "verified"
+  | "evidence_backed"
+  | "profile_supported"
+  | "suggested"
+  | "inferred"
+  | "default"
+  | "unknown";
+
+export type TaxonomyPathwayType =
+  | "skill_gap"
+  | "career_switch"
+  | "graduate_launch"
+  | "interview_preparation"
+  | "job_application"
+  | "study_education"
+  | "professional_certification"
+  | "public_sector"
+  | "regional_readiness"
+  | "portfolio_project"
+  | "promotion_growth";
+
+export interface TaxonomyHealthRead {
+  available: boolean;
+  catalog_name: string;
+  domain_count: number;
+  role_count: number;
+  skill_count: number;
+  pathway_type_count: number;
+  external_dataset_ingestion: boolean;
+}
+
+export interface TaxonomyPathwayTypeRead {
+  id: TaxonomyPathwayType | string;
+  label: string;
+  description: string | null;
+}
+
+export interface TaxonomyMatchRequest {
+  input_text: string;
+  source?: TaxonomySourceType | null;
+  confidence?: TaxonomyConfidenceLevel | null;
+}
+
+export interface TaxonomyMatchRead {
+  input_text: string;
+  normalized_text: string;
+  matched_role_id: string | null;
+  matched_skill_id: string | null;
+  source: TaxonomySourceType;
+  confidence: TaxonomyConfidenceLevel;
+  explanation: string;
+}
+
+export interface TaxonomyRoleRead {
+  id: string;
+  title: string;
+  aliases: string[];
+  description: string;
+  common_skills: string[];
+  related_roles: string[];
+  source: TaxonomySourceType;
+  confidence: TaxonomyConfidenceLevel;
+}
+
+export interface TaxonomySkillRead {
+  id: string;
+  label: string;
+  aliases: string[];
+  evidence_examples: string[];
+  tool_examples: string[];
+  source: TaxonomySourceType;
+  confidence: TaxonomyConfidenceLevel;
+}
+
+export interface TaxonomyRoleSkillsRead {
+  role_id: string;
+  skills: TaxonomySkillRead[];
+}
+
+export interface TaxonomyRelatedRolesRead {
+  role_id: string;
+  related_roles: TaxonomyRoleRead[];
+}
+
+export interface TaxonomyErrorRead {
+  message: string;
+  code: string;
+}
+
+// ---------------------------------------------------------------------------
 // Shared error envelope
 // ---------------------------------------------------------------------------
 
