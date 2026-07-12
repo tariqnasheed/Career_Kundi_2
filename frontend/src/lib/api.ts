@@ -26,6 +26,7 @@ import type {
   SavedJobRead,
   InterviewPackRead,
   GeneratedCVRead,
+  CVTaxonomyMeta,
   RoadmapRead,
   RoadmapSkillRead,
   ChatSessionRead,
@@ -309,12 +310,13 @@ export const cvApi = {
     generation_mode?: "profile" | "role_targeted";
     target_role_title?: string;
     target_role_description?: string;
+    taxonomy?: CVTaxonomyMeta;
   }): Promise<GeneratedCVRead> => {
     const res = await http.post<GeneratedCVRead>("/cv-builder/generate", payload);
     return res.data;
   },
 
-  /** Update draft metadata (name/template/studio id/sections) without re-running AI. */
+  /** Update draft metadata (name/template/studio id/sections/taxonomy) without re-running AI. */
   update: async (
     cvId: string,
     payload: {
@@ -322,6 +324,7 @@ export const cvApi = {
       template?: string;
       studio_template_id?: string;
       section_ids?: string[];
+      taxonomy?: CVTaxonomyMeta;
     },
   ): Promise<GeneratedCVRead> => {
     const res = await http.patch<GeneratedCVRead>(`/cv-builder/${cvId}`, payload);

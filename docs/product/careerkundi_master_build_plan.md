@@ -3386,9 +3386,9 @@ Plan only — **do not implement in F3**. Likely home: `taxonomyApi` in `fronten
 | 0051-F4 Read-Only Backend Taxonomy API | Done |
 | 0051-F5 Frontend Taxonomy API Client + Types | Done |
 | 0051-F6 Browser-Tested Taxonomy API Checkpoint | Done |
-| 0051-F7 CV Builder Taxonomy Hook Planning | Done (this slice) |
-| 0051-F8 CV Builder Taxonomy Hook Implementation | Next |
-| 0051-F9 Roadmap Taxonomy Hook Planning | Planned |
+| 0051-F7 CV Builder Taxonomy Hook Planning | Done |
+| 0051-F8 CV Builder Taxonomy Hook Implementation | Done (this slice) |
+| 0051-F9 Roadmap Taxonomy Hook Planning | Next |
 | 0051-F10 Roadmap Taxonomy Hook Implementation | Planned |
 | 0051-F11 Cross-Feature Taxonomy Checkpoint | Planned |
 
@@ -3938,6 +3938,99 @@ F8 must include exact layout + browser screenshot acceptance requirements from t
 - 0051-F8 must preserve save/load/export and template independence.  
 - 0051-F8 must not add DB migrations by default; prefer `_taxonomy` section_config meta.  
 - 0051-F8 must soft-fail taxonomy API errors and never block CV creation on unknown match.
+
+---
+
+### 0051-F8 CV Builder Taxonomy Hook Implementation
+
+**Status:** Completed  
+**Type:** `CV_BUILDER_TAXONOMY_HOOK_IMPLEMENTATION`  
+**Date:** 2026-07-12  
+**Preflight HEAD:** `10b62f3f50acc0d51ac63d07eb13310bb684ddb9`  
+**Evidence:** `~/Desktop/CareerKundi_0051_F8_CV_Builder_Taxonomy_Hook_Implementation_Evidence.txt`
+
+#### Implementation Summary
+
+| Area | Before | Change Made | Result | Notes |
+|---|---|---|---|---|
+| Role Intelligence card | Missing | Compact card in `CVBuilderStudioPanel` | PASS | Explicit “Check role match” |
+| taxonomyApi.matchRole | Unused by CV | Called on check | PASS | Soft-fail → unavailable |
+| taxonomy role detail lookup | N/A | Optional `getRole` after match | PASS | Falls back to role id |
+| `_taxonomy` metadata | Missing | Reserved section_config row | PASS | Parallel to `_studio` |
+| save/load persistence | Studio only | Generate/update inject/preserve taxonomy | PASS | API + browser verified |
+| template independence | N/A | Gallery never calls taxonomyApi | PASS | Browser verified |
+| export preservation | Existing PDF | No PDF redesign; export still works | PASS | API + browser download |
+| unknown/no-match behavior | N/A | Safe unknown + keep wording | PASS | “Galactic Tea Router” |
+| source/confidence copy | N/A | Suggested/unknown labels only | PASS | No “verified” claim |
+| Design Fidelity Layer | Required by F7 | Studio-panel card + CSS tokens | PASS w/ watch | Compact; not admin form |
+| responsive behavior | Studio known overflow | Card usable; shell overflow remains | WATCH | @390 / tablet overflow known |
+| tests/build/browser | Pre-F8 green | Build + unit + browser journey | PASS | See decision |
+
+#### Files Changed
+
+| File | Change Type | Reason | Scope |
+|---|---|---|---|
+| `frontend/src/pages/CVBuilderPage.tsx` | Modified | Orchestrate match/save/load taxonomy state | Allowed |
+| `frontend/src/components/features/CVBuilderStudioPanel.tsx` | Modified | Role Intelligence UI | Allowed |
+| `frontend/src/types/api.ts` | Modified | `CVTaxonomyMeta` / section config fields | Allowed |
+| `frontend/src/lib/api.ts` | Modified | Pass optional `taxonomy` on generate/update | Allowed |
+| `frontend/src/styles/feature-pages.css` | Modified | Role Intelligence card styles | Allowed |
+| `backend/app/schemas/cv_builder.py` | Modified | Taxonomy meta helpers + request fields | Allowed (required for persist) |
+| `backend/app/api/routes/cv_builder.py` | Modified | Inject/preserve `_taxonomy` on generate/update | Allowed |
+| `backend/tests/unit/test_cv_studio_template_persistence.py` | Modified | Taxonomy meta roundtrip tests | Allowed |
+| `docs/product/careerkundi_master_build_plan.md` | Modified | F8 record | Allowed |
+| `docs/product/careerkundi_live_tracker.md` | Modified | Tracker | Allowed |
+
+#### User Flow Verified
+
+| Flow | Result | Evidence | Notes |
+|---|---|---|---|
+| empty state | PASS | Playwright | “Add a target role…” |
+| suggested match | PASS | Playwright + API | Software Developer → software_engineer |
+| accepted match | PASS | Playwright | “Using suggested role” |
+| kept freeform | PASS | Playwright | After unknown |
+| unknown match | PASS | Playwright | Galactic Tea Router |
+| save/load | PASS | Playwright + API | Persist `_taxonomy` |
+| template switch | PASS | Playwright | 15 templates; taxonomy kept |
+| export | PASS | Playwright + API PDF bytes | Safe filename |
+| mobile | PASS w/ watch | Playwright 390 | Card usable; shell overflow watch |
+| tablet | PASS w/ watch | Playwright 768 | Overflow known from studio shell |
+| desktop | PASS | Playwright 1440 | Preview + gallery present |
+
+#### Boundary Rules Verified
+
+| Rule | Result | Evidence | Notes |
+|---|---|---|---|
+| no required taxonomy | PASS | Save without taxonomy still works | Advisory only |
+| no role overwrite without confirmation | PASS | Accept button required | Keep wording path |
+| no verified claim for suggested match | PASS | Copy checklist | Confidence: suggested |
+| no template dependency | PASS | Gallery unused taxonomyApi | |
+| no PDF redesign | PASS | Export only | 4-family unchanged |
+| no DB migration | PASS | section_config JSON meta | |
+| no external taxonomy ingestion | PASS | Seed catalog only | |
+| no Roadmap/Job Search integration | PASS | Scope guard | |
+
+#### Test / Browser Decision
+
+**CV_TAXONOMY_HOOK_BUILD_TEST_BROWSER_PASSING** (with responsive overflow watch items)
+
+#### 0051-F8 Decision
+
+**B CV_BUILDER_TAXONOMY_HOOK_ACCEPTED_WITH_WATCH_ITEMS**
+
+- Hook accepted. Watch: shell/studio overflow @390 and tablet; PDF still 4 CSS families; Platform CORS; Design Fidelity remains a standing rule for future UI; 004E/Auto Apply frozen.  
+- **Recommended next slice:** **0051-F9 Roadmap Taxonomy Hook Planning**
+
+#### Recommended Next Slice
+
+**Next slice: 0051-F9 Roadmap Taxonomy Hook Planning**
+
+#### 0051-F9 Guardrails
+
+- 0051-F9 must be planning-only for Roadmap taxonomy hook.  
+- 0051-F9 must preserve Roadmap browser-tested flows.  
+- 0051-F9 must include Design Fidelity Layer if any UI is later affected.  
+- 0051-F9 must not integrate Roadmap until exact hook points are planned.
 
 ---
 

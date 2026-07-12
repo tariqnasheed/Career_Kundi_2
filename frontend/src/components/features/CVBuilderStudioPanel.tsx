@@ -1,16 +1,38 @@
 /**
- * CVBuilderStudioPanel.tsx — right-side content/style controls (CVB-F2).
+ * CVBuilderStudioPanel.tsx — right-side content/style controls (CVB-F2)
+ * + advisory Role Intelligence card (0051-F8).
  */
 
 import { Link } from "react-router-dom";
 import { User } from "lucide-react";
 import { Input, Textarea } from "../ui/Input";
+import { Button } from "../ui/Button";
 import type { CVTemplateMeta } from "./CVTemplateGallery";
 import type { SavedJobRead } from "../../types/api";
 
 interface SectionDef {
   id: string;
   label: string;
+}
+
+export type RoleIntelligencePhase =
+  | "empty"
+  | "ready"
+  | "loading"
+  | "suggested"
+  | "unknown"
+  | "accepted"
+  | "kept_freeform"
+  | "unavailable";
+
+export interface RoleIntelligenceView {
+  phase: RoleIntelligencePhase;
+  targetRoleText: string;
+  matchedRoleId: string | null;
+  matchedRoleTitle: string | null;
+  source: string | null;
+  confidence: string | null;
+  explanation: string | null;
 }
 
 interface CVBuilderStudioPanelProps {
@@ -30,6 +52,17 @@ interface CVBuilderStudioPanelProps {
   jobsLoading: boolean;
   jobsError: boolean;
   jobsEmpty: boolean;
+  roleIntelligence: RoleIntelligenceView;
+  onRoleTextChange: (v: string) => void;
+  onCheckRoleMatch: () => void;
+  onAcceptSuggestedRole: () => void;
+  onKeepFreeform: () => void;
+  onRecheckRole: () => void;
+}
+
+function formatLabel(value: string | null): string {
+  if (!value) return "—";
+  return value.replace(/_/g, " ");
 }
 
 export function CVBuilderStudioPanel({
@@ -49,6 +82,12 @@ export function CVBuilderStudioPanel({
   jobsLoading,
   jobsError,
   jobsEmpty,
+  roleIntelligence,
+  onRoleTextChange,
+  onCheckRoleMatch,
+  onAcceptSuggestedRole,
+  onKeepFreeform,
+  onRecheckRole,
 }: CVBuilderStudioPanelProps) {
   const toggle = (id: string) => {
     onSectionsChange(
@@ -57,6 +96,10 @@ export function CVBuilderStudioPanel({
         : [...enabledSections, id],
     );
   };
+
+  const phase = roleIntelligence.phase;
+  const canCheck =
+    phase !== "loading" && roleIntelligence.targetRoleText.trim().length > 0;
 
   return (
     <aside className="cv-builder-studio-panel" aria-label="CV content and style controls">
@@ -156,6 +199,164 @@ export function CVBuilderStudioPanel({
           fullWidth
         />
       </div>
+
+      <section
+        className="cv-role-intelligence"
+        aria-label="Role Intelligence"
+        aria-live="polite"
+      >
+        <div className="cv-role-intelligence__header">
+          <div>
+            <p className="cv-role-intelligence__eyebrow">Role intelligence</p>
+            <h3>Canonical role hint</h3>
+          </div>
+          {phase !== "empty" && phase !== "ready" && (
+            <span
+              className={`cv-role-intelligence__chip cv-role-intelligence__chip--${
+                phase === "accepted"
+                  ? "accepted"
+                  : phase === "unknown" || phase === "unavailable"
+                    ? "unknown"
+                    : phase === "kept_freeform"
+                      ? "freeform"
+                      : "suggested"
+              }`}
+            >
+              {phase === "loading"
+                ? "Checking"
+                : phase === "accepted"
+                  ? "Using suggested"
+                  : phase === "kept_freeform"
+                    ? "Using your wording"
+                    : phase === "unknown"
+                      ? "No match"
+                      : phase === "unavailable"
+                        ? "Unavailable"
+                        : "Suggested"}
+            </span>
+          )}
+        </div>
+        <p className="cv-role-intelligence__advisory">
+          Role intelligence is advisory. It never blocks save or export.
+        </p>
+
+        <Input
+          label="Target role wording"
+          value={roleIntelligence.targetRoleText}
+          onChange={(e) => onRoleTextChange(e.target.value)}
+          placeholder="e.g. Software Developer"
+          fullWidth
+        />
+
+        {phase === "empty" && (
+          <p className="cv-role-intelligence__body">
+            Add a target role to check role intelligence.
+          </p>
+        )}
+        {phase === "ready" && (
+          <p className="cv-role-intelligence__body">
+            Check for a deterministic suggested role match when you are ready.
+          </p>
+        )}
+        {phase === "loading" && (
+          <p className="cv-role-intelligence__body">Checking role match…</p>
+        )}
+        {phase === "suggested" && (
+          <div className="cv-role-intelligence__result">
+            <p className="cv-role-intelligence__result-label">Suggested role match</p>
+            <p className="cv-role-intelligence__canonical">
+              {roleIntelligence.matchedRoleTitle ||
+                roleIntelligence.matchedRoleId ||
+                "Suggested role"}
+            </p>
+            <p className="cv-role-intelligence__original">
+              Your wording: <strong>{roleIntelligence.targetRoleText}</strong>
+            </p>
+            <div className="cv-role-intelligence__meta">
+              <span>Source: {formatLabel(roleIntelligence.source)}</span>
+              <span>Confidence: {formatLabel(roleIntelligence.confidence)}</span>
+            </div>
+            {roleIntelligence.explanation && (
+              <p className="cv-role-intelligence__explain">{roleIntelligence.explanation}</p>
+            )}
+          </div>
+        )}
+        {phase === "unknown" && (
+          <div className="cv-role-intelligence__result">
+            <p className="cv-role-intelligence__result-label">No deterministic role match found</p>
+            <p className="cv-role-intelligence__body">
+              You can still continue with your own role wording.
+            </p>
+          </div>
+        )}
+        {phase === "accepted" && (
+          <div className="cv-role-intelligence__result">
+            <p className="cv-role-intelligence__result-label">Using suggested role</p>
+            <p className="cv-role-intelligence__canonical">
+              {roleIntelligence.matchedRoleTitle || roleIntelligence.matchedRoleId}
+            </p>
+            <div className="cv-role-intelligence__meta">
+              <span>Source: {formatLabel(roleIntelligence.source)}</span>
+              <span>Confidence: {formatLabel(roleIntelligence.confidence)}</span>
+            </div>
+          </div>
+        )}
+        {phase === "kept_freeform" && (
+          <div className="cv-role-intelligence__result">
+            <p className="cv-role-intelligence__result-label">Using your wording</p>
+            <p className="cv-role-intelligence__original">
+              <strong>{roleIntelligence.targetRoleText}</strong>
+            </p>
+          </div>
+        )}
+        {phase === "unavailable" && (
+          <p className="cv-role-intelligence__body">
+            Role intelligence is unavailable right now. You can continue without it.
+          </p>
+        )}
+
+        <div className="cv-role-intelligence__actions">
+          {phase === "loading" && (
+            <Button variant="secondary" size="sm" loading disabled>
+              Checking role match…
+            </Button>
+          )}
+          {(phase === "empty" ||
+            phase === "ready" ||
+            phase === "suggested" ||
+            phase === "unknown" ||
+            phase === "unavailable") && (
+            <Button
+              variant="secondary"
+              size="sm"
+              disabled={!canCheck}
+              onClick={onCheckRoleMatch}
+            >
+              Check role match
+            </Button>
+          )}
+          {phase === "suggested" && (
+            <>
+              <Button variant="primary" size="sm" onClick={onAcceptSuggestedRole}>
+                Use suggested role
+              </Button>
+              <Button variant="ghost" size="sm" onClick={onKeepFreeform}>
+                Keep my wording
+              </Button>
+            </>
+          )}
+          {phase === "unknown" && (
+            <Button variant="ghost" size="sm" onClick={onKeepFreeform}>
+              Keep my wording
+            </Button>
+          )}
+          {(phase === "accepted" || phase === "kept_freeform") && (
+            <Button variant="ghost" size="sm" onClick={onRecheckRole}>
+              Re-check
+            </Button>
+          )}
+        </div>
+      </section>
 
       <p className="cv-builder-studio-panel__footnote">
         Preview shows the full studio layout. PDF export maps this template to the

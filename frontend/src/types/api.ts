@@ -243,11 +243,43 @@ export interface GeneratedCVRead {
   template: string;
   /** CVB-F2 gallery id when persisted; null on older CVs → UI defaults to minimal-corporate */
   studio_template_id?: string | null;
-  section_config: { section_id: string; enabled: boolean; studio_template_id?: string }[];
+  section_config: CVSectionConfigItem[];
   rendered_content: Record<string, unknown>;
   export_format_last_used: string | null;
   created_at: string;
   updated_at: string;
+}
+
+/** Content section row or reserved `_studio` / `_taxonomy` meta rows. */
+export interface CVSectionConfigItem {
+  section_id: string;
+  enabled: boolean;
+  studio_template_id?: string;
+  /** 0051-F8 advisory taxonomy fields when section_id === "_taxonomy" */
+  target_role_text?: string | null;
+  matched_role_id?: string | null;
+  matched_skill_id?: string | null;
+  normalized_text?: string | null;
+  source?: TaxonomySourceType | string | null;
+  confidence?: TaxonomyConfidenceLevel | string | null;
+  explanation?: string | null;
+  accepted_by_user?: boolean;
+  kept_freeform?: boolean;
+  matched_role_title?: string | null;
+}
+
+/** Optional Role Intelligence payload sent on CV generate/update (0051-F8). */
+export interface CVTaxonomyMeta {
+  target_role_text?: string | null;
+  matched_role_id?: string | null;
+  matched_skill_id?: string | null;
+  normalized_text?: string | null;
+  source?: TaxonomySourceType | string | null;
+  confidence?: TaxonomyConfidenceLevel | string | null;
+  explanation?: string | null;
+  accepted_by_user?: boolean;
+  kept_freeform?: boolean;
+  matched_role_title?: string | null;
 }
 
 // ---------------------------------------------------------------------------

@@ -7,11 +7,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSearchParams, Link } from "react-router-dom";
 import { Eye, FileDown, Save, Sparkles, Star, FileText } from "lucide-react";
-import { cvApi, jobApi, profileApi } from "../lib/api";
+import { cvApi, jobApi, profileApi, taxonomyApi } from "../lib/api";
 import { Button } from "../components/ui/Button";
 import { Spinner } from "../components/ui/Spinner";
 import { useUIStore } from "../store/ui";
-import type { ApiError, GeneratedCVRead } from "../types/api";
+import type { ApiError, CVTaxonomyMeta, GeneratedCVRead } from "../types/api";
 import {
   CVTemplateGallery,
   CV_TEMPLATE_CATALOG,
@@ -19,10 +19,16 @@ import {
   type CVTemplateId,
 } from "../components/features/CVTemplateGallery";
 import { CVTemplatePreview } from "../components/features/CVTemplatePreview";
-import { CVBuilderStudioPanel } from "../components/features/CVBuilderStudioPanel";
+import {
+  CVBuilderStudioPanel,
+  type RoleIntelligencePhase,
+  type RoleIntelligenceView,
+} from "../components/features/CVBuilderStudioPanel";
 
 const DEFAULT_TEMPLATE_ID: CVTemplateId = "minimal-corporate";
 const STUDIO_META_SECTION = "_studio";
+const TAXONOMY_META_SECTION = "_taxonomy";
+const META_SECTION_IDS = new Set([STUDIO_META_SECTION, TAXONOMY_META_SECTION]);
 
 function queryErrorMessage(err: unknown): string {
   const msg = (err as ApiError | undefined)?.message;
@@ -71,8 +77,37 @@ function resolveLoadedTemplateId(cv: GeneratedCVRead): {
 
 function enabledSectionIdsFromCv(cv: GeneratedCVRead): string[] {
   return (cv.section_config ?? [])
-    .filter((s) => s.enabled && s.section_id !== STUDIO_META_SECTION)
+    .filter((s) => s.enabled && !META_SECTION_IDS.has(s.section_id))
     .map((s) => s.section_id);
+}
+
+function extractTaxonomyMetaFromCv(cv: GeneratedCVRead): CVTaxonomyMeta | null {
+  const row = cv.section_config?.find((s) => s.section_id === TAXONOMY_META_SECTION);
+  if (!row) return null;
+  return {
+    target_role_text: row.target_role_text ?? null,
+    matched_role_id: row.matched_role_id ?? null,
+    matched_skill_id: row.matched_skill_id ?? null,
+    normalized_text: row.normalized_text ?? null,
+    source: row.source ?? null,
+    confidence: row.confidence ?? null,
+    explanation: row.explanation ?? null,
+    accepted_by_user: Boolean(row.accepted_by_user),
+    kept_freeform: Boolean(row.kept_freeform),
+    matched_role_title: row.matched_role_title ?? null,
+  };
+}
+
+function phaseFromTaxonomyMeta(meta: CVTaxonomyMeta | null, roleText: string): RoleIntelligencePhase {
+  if (!roleText.trim()) return "empty";
+  if (!meta) return "ready";
+  if (meta.accepted_by_user) return "accepted";
+  if (meta.kept_freeform) return "kept_freeform";
+  if (meta.matched_role_id) return "suggested";
+  if ((meta.confidence || "").toLowerCase() === "unknown" || !meta.matched_role_id) {
+    return "unknown";
+  }
+  return "ready";
 }
 
 const DEFAULT_CV_KEY = "ck_default_cv_id";
@@ -126,6 +161,11 @@ export default function CVBuilderPage() {
   const [templateRestoredNote, setTemplateRestoredNote] = useState<string | null>(null);
   const [exportError, setExportError] = useState<string | null>(null);
   const [exportSuccess, setExportSuccess] = useState<string | null>(null);
+  const [roleText, setRoleText] = useState("");
+  const [roleIntelPhase, setRoleIntelPhase] = useState<RoleIntelligencePhase>("empty");
+  const [taxonomyMeta, setTaxonomyMeta] = useState<CVTaxonomyMeta | null>(null);
+  const [matchedRoleTitle, setMatchedRoleTitle] = useState<string | null>(null);
+  const roleTextAutoFromJobRef = useRef(true);
 
   const template = getCVTemplate(selectedTemplateId);
   const selectedJob = jobs?.find((j) => j.id === targetJobId);
@@ -146,6 +186,19 @@ export default function CVBuilderPage() {
     return defs;
   }, [profile?.custom_sections?.length]);
 
+  const roleIntelligence: RoleIntelligenceView = useMemo(
+    () => ({
+      phase: roleIntelPhase,
+      targetRoleText: roleText,
+      matchedRoleId: taxonomyMeta?.matched_role_id ?? null,
+      matchedRoleTitle: matchedRoleTitle || taxonomyMeta?.matched_role_title || null,
+      source: (taxonomyMeta?.source as string | null) ?? null,
+      confidence: (taxonomyMeta?.confidence as string | null) ?? null,
+      explanation: taxonomyMeta?.explanation ?? null,
+    }),
+    [roleIntelPhase, roleText, taxonomyMeta, matchedRoleTitle],
+  );
+
   useEffect(() => {
     if (jobIdParam && jobs?.length) setTargetJobId(jobIdParam);
   }, [jobIdParam, jobs]);
@@ -154,8 +207,121 @@ export default function CVBuilderPage() {
     if (selectedJob) {
       setTargetJobDescription(selectedJob.description_raw ?? "");
       if (!cvName) setCvName(`${selectedJob.title} — ${selectedJob.company_name ?? "CV"}`);
+      if (roleTextAutoFromJobRef.current) {
+        const title = (selectedJob.title || "").trim();
+        if (title) {
+          setRoleText(title);
+          setRoleIntelPhase("ready");
+          setTaxonomyMeta(null);
+          setMatchedRoleTitle(null);
+        }
+      }
     }
   }, [selectedJob]);
+
+  const handleRoleTextChange = (value: string) => {
+    roleTextAutoFromJobRef.current = false;
+    setRoleText(value);
+    setTaxonomyMeta(null);
+    setMatchedRoleTitle(null);
+    setRoleIntelPhase(value.trim() ? "ready" : "empty");
+  };
+
+  const buildTaxonomyPayload = (): CVTaxonomyMeta | undefined => {
+    if (!taxonomyMeta) return undefined;
+    return {
+      ...taxonomyMeta,
+      target_role_text: roleText.trim() || taxonomyMeta.target_role_text || null,
+      matched_role_title: matchedRoleTitle || taxonomyMeta.matched_role_title || null,
+    };
+  };
+
+  const checkRoleMatch = async () => {
+    const text = roleText.trim();
+    if (!text) {
+      setRoleIntelPhase("empty");
+      return;
+    }
+    setRoleIntelPhase("loading");
+    try {
+      const match = await taxonomyApi.matchRole({
+        input_text: text,
+        source: "user_provided",
+        confidence: "suggested",
+      });
+      let title: string | null = null;
+      if (match.matched_role_id) {
+        try {
+          const role = await taxonomyApi.getRole(match.matched_role_id);
+          title = role.title;
+        } catch {
+          title = match.matched_role_id;
+        }
+      }
+      const meta: CVTaxonomyMeta = {
+        target_role_text: text,
+        matched_role_id: match.matched_role_id,
+        matched_skill_id: match.matched_skill_id,
+        normalized_text: match.normalized_text,
+        source: match.source,
+        confidence: match.confidence,
+        explanation: match.explanation,
+        accepted_by_user: false,
+        kept_freeform: false,
+        matched_role_title: title,
+      };
+      setTaxonomyMeta(meta);
+      setMatchedRoleTitle(title);
+      setRoleIntelPhase(match.matched_role_id ? "suggested" : "unknown");
+    } catch {
+      setRoleIntelPhase("unavailable");
+      setTaxonomyMeta(null);
+      setMatchedRoleTitle(null);
+    }
+  };
+
+  const acceptSuggestedRole = () => {
+    if (!taxonomyMeta?.matched_role_id) return;
+    const canonical =
+      matchedRoleTitle || taxonomyMeta.matched_role_title || taxonomyMeta.matched_role_id;
+    roleTextAutoFromJobRef.current = false;
+    setRoleText(canonical);
+    const next: CVTaxonomyMeta = {
+      ...taxonomyMeta,
+      target_role_text: canonical,
+      accepted_by_user: true,
+      kept_freeform: false,
+      matched_role_title: canonical,
+    };
+    setTaxonomyMeta(next);
+    setMatchedRoleTitle(canonical);
+    setRoleIntelPhase("accepted");
+  };
+
+  const keepFreeform = () => {
+    const text = roleText.trim();
+    const next: CVTaxonomyMeta = {
+      ...(taxonomyMeta || {}),
+      target_role_text: text,
+      accepted_by_user: false,
+      kept_freeform: true,
+      matched_role_id: taxonomyMeta?.matched_role_id ?? null,
+      matched_skill_id: taxonomyMeta?.matched_skill_id ?? null,
+      normalized_text: taxonomyMeta?.normalized_text ?? null,
+      source: taxonomyMeta?.source ?? "user_provided",
+      confidence: taxonomyMeta?.confidence ?? "unknown",
+      explanation: taxonomyMeta?.explanation ?? "Keeping freeform role wording.",
+      matched_role_title: matchedRoleTitle || taxonomyMeta?.matched_role_title || null,
+    };
+    setTaxonomyMeta(next);
+    setRoleIntelPhase("kept_freeform");
+  };
+
+  const recheckRole = () => {
+    setTaxonomyMeta(null);
+    setMatchedRoleTitle(null);
+    setRoleIntelPhase(roleText.trim() ? "ready" : "empty");
+  };
 
   const saveDraft = async () => {
     if (!profile && profileQuery.isError) {
@@ -167,14 +333,16 @@ export default function CVBuilderPage() {
     setIsSavingDraft(true);
     try {
       const name = cvName || `${profile?.full_name ?? "My"} CV`;
+      const taxonomy = buildTaxonomyPayload();
       const payload = {
         name,
         target_job_id: targetJobId || undefined,
         template: template.backendTemplate,
         studio_template_id: selectedTemplateId,
-        section_ids: enabledSections,
+        section_ids: enabledSections.filter((id) => !META_SECTION_IDS.has(id)),
         tone,
         generation_mode: "profile" as const,
+        ...(taxonomy ? { taxonomy } : {}),
       };
 
       let cv: GeneratedCVRead;
@@ -184,6 +352,7 @@ export default function CVBuilderPage() {
           template: payload.template,
           studio_template_id: payload.studio_template_id,
           section_ids: payload.section_ids,
+          ...(taxonomy ? { taxonomy } : {}),
         });
         setSaveSuccess("Draft saved");
         addToast({
@@ -201,6 +370,13 @@ export default function CVBuilderPage() {
         });
       }
       setSelectedCvId(cv.id);
+      const restored = extractTaxonomyMetaFromCv(cv);
+      if (restored) {
+        setTaxonomyMeta(restored);
+        setMatchedRoleTitle(restored.matched_role_title ?? null);
+        setRoleText((restored.target_role_text || roleText).trim());
+        setRoleIntelPhase(phaseFromTaxonomyMeta(restored, restored.target_role_text || roleText));
+      }
       await qc.invalidateQueries({ queryKey: ["cvs"] });
     } catch (err) {
       const message = "Could not save this CV. Please try again.";
@@ -274,6 +450,21 @@ export default function CVBuilderPage() {
       setCvName(full.name);
       setSelectedCvId(full.id);
       if (full.target_job_id) setTargetJobId(full.target_job_id);
+      const tax = extractTaxonomyMetaFromCv(full);
+      if (tax) {
+        roleTextAutoFromJobRef.current = false;
+        const text = (tax.target_role_text || "").trim();
+        setRoleText(text);
+        setTaxonomyMeta(tax);
+        setMatchedRoleTitle(tax.matched_role_title ?? null);
+        setRoleIntelPhase(phaseFromTaxonomyMeta(tax, text));
+      } else {
+        roleTextAutoFromJobRef.current = true;
+        setRoleText("");
+        setTaxonomyMeta(null);
+        setMatchedRoleTitle(null);
+        setRoleIntelPhase("empty");
+      }
       setLoadSuccess("Loaded saved CV");
       if (usedDefault) {
         setTemplateRestoredNote("Older CV version uses default template.");
@@ -449,6 +640,12 @@ export default function CVBuilderPage() {
           jobsLoading={jobsQuery.isLoading}
           jobsError={jobsQuery.isError}
           jobsEmpty={jobsQuery.isSuccess && !jobs?.length}
+          roleIntelligence={roleIntelligence}
+          onRoleTextChange={handleRoleTextChange}
+          onCheckRoleMatch={() => void checkRoleMatch()}
+          onAcceptSuggestedRole={acceptSuggestedRole}
+          onKeepFreeform={keepFreeform}
+          onRecheckRole={recheckRole}
         />
       </div>
 

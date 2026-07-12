@@ -28,6 +28,7 @@ from typing import Any, Literal
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from app.agents.cv_builder.studio_template import (
+    STUDIO_META_SECTION_ID,
     extract_studio_template_id,
     validate_studio_template_id,
 )
@@ -35,6 +36,88 @@ from app.agents.cv_builder.studio_template import (
 
 class _ORMModel(BaseModel):
     model_config = ConfigDict(from_attributes=True)
+
+
+# --- Advisory taxonomy meta (0051-F8; stored in section_config, no DB migration) -------
+
+TAXONOMY_META_SECTION_ID = "_taxonomy"
+CV_META_SECTION_IDS: frozenset[str] = frozenset({STUDIO_META_SECTION_ID, TAXONOMY_META_SECTION_ID})
+
+
+class CVTaxonomyMeta(BaseModel):
+    """
+    Optional advisory Role Intelligence payload persisted as a reserved
+    section_config row (`section_id="_taxonomy"`). Never required for CV
+    create/save/export. Does not imply verified external taxonomy coverage.
+    """
+
+    target_role_text: str | None = None
+    matched_role_id: str | None = None
+    matched_skill_id: str | None = None
+    normalized_text: str | None = None
+    source: str | None = None
+    confidence: str | None = None
+    explanation: str | None = None
+    accepted_by_user: bool = False
+    kept_freeform: bool = False
+    matched_role_title: str | None = None
+
+
+def extract_taxonomy_meta(section_config: list[Any] | None) -> CVTaxonomyMeta | None:
+    """Pull `_taxonomy` meta from section_config if present."""
+    for item in section_config or []:
+        if not isinstance(item, dict):
+            continue
+        if item.get("section_id") != TAXONOMY_META_SECTION_ID:
+            continue
+        payload = {k: v for k, v in item.items() if k not in ("section_id", "enabled")}
+        return CVTaxonomyMeta.model_validate(payload)
+    return None
+
+
+def inject_taxonomy_meta(
+    section_config: list[Any] | None,
+    taxonomy: CVTaxonomyMeta | None,
+) -> list[dict[str, Any]]:
+    """
+    Return a copy of section_config with the `_taxonomy` meta entry replaced
+    (or removed when taxonomy is None). Preserves `_studio` and content rows.
+    """
+    cleaned: list[dict[str, Any]] = []
+    for item in section_config or []:
+        if isinstance(item, dict) and item.get("section_id") == TAXONOMY_META_SECTION_ID:
+            continue
+        if isinstance(item, dict):
+            cleaned.append(dict(item))
+    if taxonomy is None:
+        return cleaned
+    row: dict[str, Any] = {
+        "section_id": TAXONOMY_META_SECTION_ID,
+        "enabled": True,
+        **taxonomy.model_dump(exclude_none=False),
+    }
+    cleaned.append(row)
+    return cleaned
+
+
+def content_section_config(section_config: list[Any] | None) -> list[dict[str, Any]]:
+    """section_config without reserved `_studio` / `_taxonomy` meta rows."""
+    out: list[dict[str, Any]] = []
+    for item in section_config or []:
+        if not isinstance(item, dict):
+            continue
+        sid = item.get("section_id")
+        if sid in CV_META_SECTION_IDS:
+            continue
+        out.append(dict(item))
+    return out
+
+
+def filter_content_section_ids(section_ids: list[str] | None) -> list[str] | None:
+    """Drop reserved meta ids if a client accidentally includes them."""
+    if section_ids is None:
+        return None
+    return [sid for sid in section_ids if sid not in CV_META_SECTION_IDS]
 
 
 # --- CV generation request/response ---------------------------------------------------
@@ -58,6 +141,8 @@ class CVGenerateRequest(BaseModel):
 
     `studio_template_id` is the CVB-F2 gallery id (15 templates). Persisted in
     section_config JSON meta — not the same as `template` (PDF style family).
+
+    `taxonomy` is optional advisory Role Intelligence meta (0051-F8).
     """
 
     name: str | None = Field(default=None, description="Display name for this saved CV, e.g. 'Backend Eng — Acme'")
@@ -80,6 +165,10 @@ class CVGenerateRequest(BaseModel):
     target_role_description: str | None = Field(
         default=None,
         description="Optional role/JD context when generation_mode=role_targeted",
+    )
+    taxonomy: CVTaxonomyMeta | None = Field(
+        default=None,
+        description="Optional advisory taxonomy meta stored in section_config._taxonomy",
     )
 
     @field_validator("studio_template_id")
@@ -115,7 +204,11 @@ class CVUpdateRequest(BaseModel):
     )
     section_ids: list[str] | None = Field(
         default=None,
-        description="When set, replaces enabled section toggles (studio meta preserved/merged)",
+        description="When set, replaces enabled section toggles (studio + taxonomy meta preserved/merged)",
+    )
+    taxonomy: CVTaxonomyMeta | None = Field(
+        default=None,
+        description="When set, replaces section_config._taxonomy; when omitted, existing taxonomy meta is preserved",
     )
 
     @field_validator("studio_template_id")

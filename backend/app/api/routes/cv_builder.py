@@ -35,7 +35,6 @@ from app.agents.cv_builder.render import render_cv
 from app.agents.cv_builder.studio_template import (
     extract_studio_template_id,
     inject_studio_template_id,
-    visible_section_config,
 )
 from app.api.deps import get_current_user
 from app.api.routes.profile import _get_or_create_profile
@@ -51,6 +50,10 @@ from app.schemas.cv_builder import (
     CVRead,
     CVRegenerateRequest,
     CVUpdateRequest,
+    content_section_config,
+    extract_taxonomy_meta,
+    filter_content_section_ids,
+    inject_taxonomy_meta,
 )
 from app.schemas.profile import ProfileRead
 from app.tools.document_export import (
@@ -160,6 +163,8 @@ async def _generate_and_render(*, db: AsyncSession, user: User, payload: CVGener
     )
     section_config = [{"section_id": section_id, "enabled": True} for section_id in section_ids]
     section_config = inject_studio_template_id(section_config, payload.studio_template_id)
+    if payload.taxonomy is not None:
+        section_config = inject_taxonomy_meta(section_config, payload.taxonomy)
     return rendered_content, section_config, cost_monitor, final_state
 
 
@@ -226,7 +231,8 @@ async def update_cv(
 ) -> GeneratedCV:
     """
     Persist draft metadata (name, backend template style, studio gallery id,
-    section toggles) without re-running the AI pipeline. Ownership-checked.
+    section toggles, optional taxonomy meta) without re-running the AI pipeline.
+    Ownership-checked. Taxonomy is advisory and never required.
     """
     cv = await _get_owned_cv(db, user, cv_id)
 
@@ -239,18 +245,27 @@ async def update_cv(
         cv.template = payload.template
 
     section_config = list(cv.section_config or [])
-    if payload.section_ids is not None:
+    touch_sections = (
+        payload.section_ids is not None
+        or payload.studio_template_id is not None
+        or payload.taxonomy is not None
+    )
+    if touch_sections:
         existing_studio = extract_studio_template_id(section_config)
-        section_config = [{"section_id": sid, "enabled": True} for sid in payload.section_ids]
+        existing_taxonomy = extract_taxonomy_meta(section_config)
+
+        if payload.section_ids is not None:
+            content_ids = filter_content_section_ids(payload.section_ids) or []
+            section_config = [{"section_id": sid, "enabled": True} for sid in content_ids]
+        else:
+            section_config = content_section_config(section_config)
+
         studio_to_keep = (
             payload.studio_template_id if payload.studio_template_id is not None else existing_studio
         )
         section_config = inject_studio_template_id(section_config, studio_to_keep)
-    elif payload.studio_template_id is not None:
-        section_config = inject_studio_template_id(
-            visible_section_config(section_config),
-            payload.studio_template_id,
-        )
+        taxonomy_to_keep = payload.taxonomy if payload.taxonomy is not None else existing_taxonomy
+        section_config = inject_taxonomy_meta(section_config, taxonomy_to_keep)
 
     cv.section_config = section_config
     await db.commit()

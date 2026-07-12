@@ -98,3 +98,67 @@ def test_cv_read_missing_studio_meta_returns_none():
     }
     read = CVRead.model_validate(data)
     assert read.studio_template_id is None
+
+
+def test_taxonomy_meta_inject_extract_roundtrip_preserves_studio():
+    from app.schemas.cv_builder import (
+        CVTaxonomyMeta,
+        content_section_config,
+        extract_taxonomy_meta,
+        inject_taxonomy_meta,
+    )
+
+    base = [
+        {"section_id": "summary", "enabled": True},
+        {"section_id": "_studio", "enabled": True, "studio_template_id": "bold-sidebar"},
+    ]
+    meta = CVTaxonomyMeta(
+        target_role_text="Software Developer",
+        matched_role_id="software_engineer",
+        matched_skill_id=None,
+        normalized_text="software developer",
+        source="user_provided",
+        confidence="suggested",
+        explanation="Deterministic match from internal seed catalog.",
+        accepted_by_user=False,
+        kept_freeform=False,
+        matched_role_title="Software Engineer",
+    )
+    with_tax = inject_taxonomy_meta(base, meta)
+    assert extract_studio_template_id(with_tax) == "bold-sidebar"
+    restored = extract_taxonomy_meta(with_tax)
+    assert restored is not None
+    assert restored.matched_role_id == "software_engineer"
+    assert restored.target_role_text == "Software Developer"
+    assert {"summary"} == {r["section_id"] for r in content_section_config(with_tax)}
+    cleared = inject_taxonomy_meta(with_tax, None)
+    assert extract_taxonomy_meta(cleared) is None
+    assert extract_studio_template_id(cleared) == "bold-sidebar"
+
+
+def test_cv_generate_and_update_accept_optional_taxonomy():
+    from app.schemas.cv_builder import CVTaxonomyMeta
+
+    tax = CVTaxonomyMeta(
+        target_role_text="Electrical Engineer",
+        matched_role_id="electrical_engineer",
+        source="user_provided",
+        confidence="suggested",
+        accepted_by_user=True,
+        kept_freeform=False,
+    )
+    gen = CVGenerateRequest(studio_template_id="minimal-corporate", taxonomy=tax)
+    assert gen.taxonomy is not None
+    assert gen.taxonomy.matched_role_id == "electrical_engineer"
+    upd = CVUpdateRequest(taxonomy=tax, section_ids=["summary", "skills"])
+    assert upd.taxonomy is not None
+    assert upd.section_ids == ["summary", "skills"]
+
+
+def test_filter_content_section_ids_drops_meta_rows():
+    from app.schemas.cv_builder import filter_content_section_ids
+
+    assert filter_content_section_ids(["summary", "_studio", "_taxonomy", "skills"]) == [
+        "summary",
+        "skills",
+    ]
