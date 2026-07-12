@@ -3383,11 +3383,11 @@ Plan only — **do not implement in F3**. Likely home: `taxonomyApi` in `fronten
 | 0051-F1 Taxonomy Contract Boundary | Done |
 | 0051-F2 Backend Taxonomy Registry MVP | Done |
 | **0051-F3 Frontend Type / API Alignment Planning** | **Done (this slice)** |
-| 0051-F4 Read-Only Backend Taxonomy API | Next |
-| 0051-F5 Frontend Taxonomy API Client + Types | Planned |
-| 0051-F6 Browser-Tested Taxonomy API Checkpoint | Planned |
-| 0051-F7 CV Builder Taxonomy Hook Planning | Planned |
-| 0051-F8 CV Builder Taxonomy Hook Implementation | Planned |
+| 0051-F4 Read-Only Backend Taxonomy API | Done |
+| 0051-F5 Frontend Taxonomy API Client + Types | Done |
+| 0051-F6 Browser-Tested Taxonomy API Checkpoint | Done |
+| 0051-F7 CV Builder Taxonomy Hook Planning | Done (this slice) |
+| 0051-F8 CV Builder Taxonomy Hook Implementation | Next |
 | 0051-F9 Roadmap Taxonomy Hook Planning | Planned |
 | 0051-F10 Roadmap Taxonomy Hook Implementation | Planned |
 | 0051-F11 Cross-Feature Taxonomy Checkpoint | Planned |
@@ -3702,9 +3702,9 @@ Watch items (non-blocking; not taxonomy boundary defects):
 
 **B TAXONOMY_BOUNDARY_CHECKPOINT_ACCEPTED_WITH_WATCH_ITEMS**
 
-#### Recommended Next Slice
+#### Recommended Next Slice (after F6; superseded by F7 Decision)
 
-**Next slice: 0051-F7 CV Builder Taxonomy Hook Planning**
+F6 recommended **0051-F7**. F7 is now Done — see **0051-F7 Decision** → **0051-F8**.
 
 #### 0051-F7 Guardrails
 
@@ -3713,6 +3713,231 @@ Watch items (non-blocking; not taxonomy boundary defects):
 - 0051-F7 must include the user-approved Design Fidelity Layer for any later UI-impacting implementation.
 - 0051-F7 must preserve CV Builder browser-tested save/load/export flows.
 - 0051-F7 must define exact taxonomy hook points before implementation.
+
+---
+
+### 0051-F7 CV Builder Taxonomy Hook Planning
+
+**Status:** Completed (docs-only planning/audit)  
+**Type:** `CV_BUILDER_TAXONOMY_HOOK_PLANNING`  
+**Date:** 2026-07-12  
+**Preflight HEAD:** `ffeca771edc3fea57bb8cfd5d835384c695eed54`  
+**Evidence:** `~/Desktop/CareerKundi_0051_F7_CV_Builder_Taxonomy_Hook_Planning_Evidence.txt`
+
+#### Why F7 Exists
+
+0051-F7 plans how CV Builder should later use the taxonomy boundary without breaking browser-tested CV Builder flows.
+
+The goal is to let CV Builder understand and preserve a **canonical role match** for the user's target role context (saved-job title and/or freeform role text) while keeping current CV creation, template selection, save/load, and export behavior stable.
+
+**Prior outcomes used:** CVB-F0…F5 Done (15-template gallery, save/load, template persistence, PDF 4-family export); UX-CHECKPOINT-1 Decision B; 0051-F0…F6 Done (taxonomy contract → registry → API → frontend client → boundary checkpoint with watch items). No CV/Roadmap/Job Search taxonomy integration yet.
+
+#### Current CV Builder Capability Inventory
+
+| Area | Verified File / Module | Current Behavior | Taxonomy Relevance | Risk |
+|---|---|---|---|---|
+| CV Builder route/page | `frontend/src/pages/CVBuilderPage.tsx` | Studio layout: header actions + gallery + preview + studio panel; `generation_mode: "profile"` on save | Hook host | Scope creep / visual clutter |
+| template gallery | `CVTemplateGallery.tsx` | 15-template structural gallery | Must stay independent of taxonomy | Accidental coupling |
+| template preview | `CVTemplatePreview.tsx` | Live preview from profile + template | No taxonomy dependency | Preview shrink if UI bolted on |
+| studio panel | `CVBuilderStudioPanel.tsx` | Name, tone, sections, **optional target job** select + JD textarea | Natural Role Intelligence placement near target job | Generic admin look |
+| save/load | CVBuilderPage + `cvApi` | Save Draft generate-or-update; load restores template via `_studio` meta | Must preserve optional taxonomy meta | Old CVs without meta |
+| selected template persistence | `_studio` in `section_config` via `studio_template.py` | Gallery id persisted without DB column | Pattern for `_taxonomy` meta | Meta collision if careless |
+| export PDF | `cvApi.downloadPdf` + export route | Maps studio template → 4 style families | Must work with/without taxonomy | Export regression |
+| target role/title input | Studio panel target job; backend `target_role_title` for `role_targeted` | UI today: optional saved job, not freeform `target_role_title` | Match input = job title / future freeform | VERIFY_IN_REPO if F8 adds freeform |
+| GeneratedCVRead type | `frontend/src/types/api.ts` | id, target_job_id, template, studio_template_id, section_config, rendered_content | No taxonomy fields yet | Type drift in F8 |
+| cvApi client | `frontend/src/lib/api.ts` | list/generate/update/get/export/delete | Call taxonomyApi separately in F8 | Auth/latency |
+| backend generate | `POST /cv-builder/generate` | Profile/role_targeted; injects studio template into section_config | Do not require taxonomy for generate | Blocking unknown match |
+| backend list/get/patch | ownership-checked CRUD | Patch updates name/template/studio/sections | Persist taxonomy via section_config meta preferred | Ownership must stay |
+| backend export | `GET /cv-builder/{id}/export` | PDF using studio/template mapping | No taxonomy required | PDF engine rewrite forbidden |
+| section_config metadata | `_studio` reserved row | JSON list on `GeneratedCV` | Add `_taxonomy` sibling meta | Avoid DB migration |
+| tests | CV studio/export unit tests | Contract coverage for templates/export | F8 adds taxonomy hook tests | Weak UI acceptance |
+
+#### Current Taxonomy Boundary Available to CV Builder
+
+| Taxonomy Capability | Available Now | CV Builder Use Later | Limitation |
+|---|---|---|---|
+| `taxonomyApi.matchRole` | YES | Resolve job title / role text → match | Auth required; advisory only |
+| `taxonomyApi.getRole` | YES | Optional detail after match | 404 if unknown id |
+| `taxonomyApi.getRoleSkills` | YES | Optional later enrichment | Not required for F8 MVP |
+| `TaxonomyMatchRead` | YES | Drive Role Intelligence card | Never treat inferred as verified |
+| `TaxonomyRoleRead` | YES | Display canonical title/aliases | Seed catalog only |
+| `TaxonomySkillRead` | YES | Deferred | Don't clutter F8 |
+| SourceType | YES | Show provenance label | No O*NET claim |
+| ConfidenceLevel | YES | Show confidence label | Ban verified for inferred |
+| unknown/no-match behavior | YES | Safe empty state | Must not block CV |
+| protected endpoint auth | YES | Uses existing JWT interceptor | Auth failure must soft-fail UI |
+
+#### Proposed CV Builder Taxonomy Hook User Flow
+
+| Step | User Action / System Action | Taxonomy Behavior | UI Feedback | Data Stored |
+|---|---|---|---|---|
+| 1 | User selects optional target job (or future freeform role text) | Derive match input from job title / role text | No modal required | Pending match input |
+| 2 | System offers non-blocking role match | `taxonomyApi.matchRole` (debounced) | Compact Role Intelligence card | Ephemeral UI state |
+| 3 | Confident deterministic match | Show suggested canonical role + confidence | “Suggested role match” | Draft match fields |
+| 4 | Unknown / no match | Continue without blocking | “No deterministic match found” | `matched_role_id: null` |
+| 5 | User accepts suggestion or keeps freeform | Never overwrite text without accept | Accept / Keep freeform | `accepted_by_user` flag |
+| 6 | Save / load CV | Persist freeform context + taxonomy meta | Restore card on load | `_taxonomy` in section_config |
+| 7 | Template selection | Independent | Unchanged gallery/preview | Studio meta unchanged |
+| 8 | Export PDF | Ignore taxonomy for layout | Export still works | No PDF rewrite |
+
+**Rules:** Taxonomy is advisory; never overwrite role text without confirmation; never label inferred as verified; unknown must not block creation; older CVs without taxonomy meta must load.
+
+#### Proposed Data Contract
+
+| Data Field | Location Candidate | Purpose | Migration Needed? | Notes |
+|---|---|---|---|---|
+| freeform / target role text | `_taxonomy.target_role_text` | Preserve user/job title text | No | From job title or freeform |
+| taxonomy_matched_role_id | `_taxonomy.matched_role_id` | Canonical id | No | null if unknown |
+| taxonomy_normalized_text | `_taxonomy.normalized_text` | Debug/restore | No | From match |
+| taxonomy_source | `_taxonomy.source` | Provenance | No | e.g. user_provided |
+| taxonomy_confidence | `_taxonomy.confidence` | Confidence label | No | suggested/unknown/… |
+| taxonomy_match_explanation | `_taxonomy.explanation` | Short reason | No | Seed match text |
+| taxonomy_accepted_by_user | `_taxonomy.accepted_by_user` | Explicit accept | No | boolean |
+| taxonomy_updated_at | `_taxonomy.updated_at` | Freshness | No | ISO string optional |
+
+**Storage rule:** Prefer `section_config` meta namespace `_taxonomy` parallel to `_studio`. Avoid DB migration in F8. Old CVs default to no taxonomy metadata.
+
+Recommended metadata shape (plan only — not implemented in F7):
+
+```json
+{
+  "section_id": "_taxonomy",
+  "enabled": true,
+  "target_role_text": "Software Developer",
+  "matched_role_id": "software_engineer",
+  "normalized_text": "software developer",
+  "source": "user_provided",
+  "confidence": "suggested",
+  "explanation": "Deterministic match from internal seed catalog.",
+  "accepted_by_user": false,
+  "updated_at": "2026-07-12T00:00:00Z"
+}
+```
+
+#### Proposed Frontend Hook Points
+
+| Frontend File | Future Change | Why | Risk | F8 Guardrail |
+|---|---|---|---|---|
+| `CVBuilderPage.tsx` | Orchestrate match call, persist/restore meta, soft-fail auth | Page owns save/load | Clutter header | Keep card in panel region |
+| `CVBuilderStudioPanel.tsx` | Compact Role Intelligence UI near target job | Natural control area | Generic form look | Design Fidelity Layer |
+| `CVTemplatePreview.tsx` | Usually no change | Preview stays dominant | Preview shrink | Do not inject taxonomy UI |
+| `DefaultCVSelector.tsx` | Usually no change | Load versions only | Accidental wiring | No taxonomyApi |
+| `CVTemplateGallery.tsx` | No change | Gallery independence | Coupling | Forbidden to call taxonomyApi |
+| `frontend/src/lib/api.ts` | Already has taxonomyApi | Use existing client | Path drift | Do not invent endpoints |
+| `frontend/src/types/api.ts` | Optional CV meta helpers / typed taxonomy blob | Type safety | Overbuild | Minimal types only |
+| `feature-pages.css` | Compact card styles under studio tokens | Visual fidelity | Dashboard look | Match studio CSS variables |
+
+**Rules:** Do not call taxonomyApi from gallery; template selection independent; keep taxonomy UI compact and advisory; do not redesign whole studio unless F8 explicitly includes polish scoped to the card.
+
+#### Proposed Backend Hook Points
+
+| Backend File | Future Change | Why | Risk | F8 Guardrail |
+|---|---|---|---|---|
+| `api/routes/cv_builder.py` | Optionally accept/pass through taxonomy meta in generate/patch via section_config | Persist without new columns | Required taxonomy | Taxonomy optional |
+| `schemas/cv_builder.py` | Optional documented meta shape only if needed | Contract clarity | Schema churn | Prefer opaque JSON meta |
+| `db/models/cv.py` | No change preferred | Avoid migration | Migration temptation | No migration by default |
+| `agents/cv_builder/*` | No taxonomy registry call in F8 MVP | Keep generation stable | Engine rewrite | Forbidden unless later slice |
+| `tools/document_export.py` | No change | Export independence | PDF break | Forbidden redesign |
+| `tests/*` | Persist/restore meta + non-blocking unknown | Regression safety | Weak coverage | Add targeted tests |
+
+**Rules:** Prefer no DB migration; do not call taxonomy from generation engine in F8; do not change PDF export; do not weaken ownership; do not require taxonomy for generate.
+
+#### Design Fidelity Layer — Future CV Builder Taxonomy Hook
+
+**Principle:** Do not settle for a functional but visually weak UI. The taxonomy hook must feel integrated into the premium CV Builder Studio, not bolted on as a generic admin form.
+
+**Desktop visual contract**
+
+1. Top hero/status region: clear title, short subtitle, save/export status — no clutter.  
+2. Main studio workspace: polished template gallery; **dominant** CV preview; studio panel as controls.  
+3. Taxonomy hook placement: near target job / role controls in the studio panel as a compact **Role intelligence** card/chip — not a new column. Show: original role text, suggested canonical role (if matched), source/confidence label, accept/keep-freeform, unknown safe state.  
+4. Must not: shrink preview excessively; crush gallery; add debug metadata boxes; create dashboard-table feel; leave large empty whitespace.
+
+**Tablet visual contract**
+
+- Gallery and Role intelligence stack cleanly; preview remains readable; controls do not crush preview; Role intelligence appears before advanced actions.
+
+**Mobile visual contract**
+
+- No horizontal overflow in CV feature content; Role intelligence full-width; buttons stack/wrap; preview accessible below; no tiny unreadable taxonomy text. (Shell overflow @390 remains a known watch item outside F8 taxonomy card.)
+
+**Visual acceptance checklist (F8 cannot pass on build/tests alone)**
+
+- Card aligns with CV Builder Studio design language  
+- No generic admin dashboard look  
+- Intentional spacing and clear hierarchy  
+- Preview remains dominant; gallery remains readable  
+- Empty/unknown and accepted states look intentional/polished  
+- Screenshot/browser notes included  
+
+**Browser evidence requirement for F8**
+
+- empty/no taxonomy; matched; unknown; accepted (if implemented); reload persistence; 390px; 768px; desktop  
+
+#### Copy and Confidence Rules
+
+| State | User-Facing Copy Direction | Must Not Say |
+|---|---|---|
+| matched suggested role | “Suggested role match: …” + confidence | “Verified role” / O*NET coverage |
+| unknown/no match | “No deterministic match found. You can continue with your role text.” | Error that blocks save |
+| accepted suggested role | “Using suggested role for this CV version.” | Job/visa guarantees |
+| freeform role kept | “Keeping your role text.” | That taxonomy failed the CV |
+| taxonomy unavailable | Soft: “Role suggestions unavailable right now.” | Crash / hard disable Save |
+| older CV without taxonomy metadata | No card or empty advisory state | Forced rematch on load |
+
+#### F8 Implementation Scope Recommendation
+
+0051-F8 should implement a **small advisory** CV Builder taxonomy hook:
+
+**Allowed**
+
+- Call `taxonomyApi.matchRole` when target job title / role text is present (debounced).  
+- Show compact Role Intelligence card in studio panel.  
+- Preserve freeform / job title text.  
+- Store optional `_taxonomy` metadata in `section_config` (no DB migration).  
+- Restore taxonomy metadata on load.  
+- Keep template selection and PDF export independent.  
+- Soft-fail on auth/network taxonomy errors.  
+- Add tests/build + Design Fidelity browser evidence.
+
+**Not allowed**
+
+- Full CV Builder redesign; template redesign; PDF engine redesign.  
+- DB migration by default; external taxonomy ingestion.  
+- Role-based generation engine rewrite; Roadmap/Job Search integration.  
+
+F8 must include exact layout + browser screenshot acceptance requirements from this Design Fidelity Layer.
+
+#### Risks and Mitigations
+
+| Risk | Impact | Mitigation | Target Slice |
+|---|---|---|---|
+| CV generation blocked by unknown taxonomy | Breaks CVB flows | Advisory only; never gate Save/Generate | F8 |
+| User role text overwritten | Trust loss | Accept/keep-freeform; no silent overwrite | F8 |
+| Inferred shown as verified | Trust harm | Confidence labels; ban verified for inferred | F8 |
+| Template selection tied to taxonomy | Gallery breakage | Gallery forbidden from taxonomyApi | F8 |
+| Save/load meta breaks old CVs | Load failures | Default missing `_taxonomy` to empty | F8 |
+| PDF export breaks | Regression | No export changes | F8 |
+| UI cluttered/generic | Design miss | Design Fidelity Layer + screenshots | F8 |
+| Visual result fails design target | User rejection | Visual checklist mandatory | F8 |
+| Taxonomy API auth failure breaks CV page | Hard fail | Soft-fail card; CV continues | F8 |
+| Frontend/backend type drift | Runtime bugs | Mirror F4/F5 contracts; tests | F8 |
+
+#### 0051-F7 Decision
+
+**B CV_BUILDER_TAXONOMY_HOOK_PLAN_ACCEPTED_WITH_WATCH_ITEMS**
+
+- Plan accepted. Watch items: Design Fidelity mandatory for F8; PDF 4-family limit; shell overflow @390; Platform CORS; current UI uses target **job** more than freeform `target_role_title` (F8 should match on job title and optionally add minimal freeform later); 004E/Auto Apply frozen.  
+- **Recommended next slice:** **0051-F8 CV Builder Taxonomy Hook Implementation**  
+- Product code modified in F7: **NO**
+
+#### 0051-F8 Guardrails
+
+- 0051-F8 implements advisory Role Intelligence only; must not redesign the full CV Builder Studio.  
+- 0051-F8 must include the Design Fidelity Layer and browser evidence checklist from F7.  
+- 0051-F8 must preserve save/load/export and template independence.  
+- 0051-F8 must not add DB migrations by default; prefer `_taxonomy` section_config meta.  
+- 0051-F8 must soft-fail taxonomy API errors and never block CV creation on unknown match.
 
 ---
 
