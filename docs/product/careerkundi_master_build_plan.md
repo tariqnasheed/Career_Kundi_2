@@ -3389,8 +3389,8 @@ Plan only — **do not implement in F3**. Likely home: `taxonomyApi` in `fronten
 | 0051-F7 CV Builder Taxonomy Hook Planning | Done |
 | 0051-F8 CV Builder Taxonomy Hook Implementation | Done |
 | 0051-F9 Roadmap Taxonomy Hook Planning | Done |
-| 0051-F10 Roadmap Taxonomy Hook Implementation | Done (this slice) |
-| 0051-F11 Cross-Feature Taxonomy Checkpoint | Next |
+| 0051-F10 Roadmap Taxonomy Hook Implementation | Done |
+| 0051-F11 Cross-Feature Taxonomy Checkpoint | Done (this slice) |
 
 **Do not jump from F3 into CV Builder/Roadmap hooks.** Expose and verify the taxonomy API/type boundary first.
 
@@ -4377,6 +4377,106 @@ Watch items: shell overflow @390 (pre-existing; Role Intelligence card itself wi
 - F11 must not start Job Search/Interview integration.  
 - F11 must not redesign UI.  
 - F11 should record remaining watch items before moving to the next planned task phase.
+
+### 0051-F11 Cross-Feature Taxonomy Checkpoint
+
+**Type:** `BROWSER_CHECKPOINT + CONTRACT_CHECKPOINT` (docs-only closeout)  
+**Status:** Done (this slice)  
+**Depends on:** 0051-F10 Decision B  
+
+Evidence-backed verification across the complete 0051 taxonomy chain. No production feature code changed. No Job Search / Interview Pack taxonomy hooks. No UI redesign. No silent product repairs.
+
+#### Purpose
+
+Confirm phase 0051 can close: deterministic backend contracts + registry, read-only taxonomy API, frontend types/client, CV Builder Role Intelligence, Roadmap Role Intelligence, and cross-feature consistency/isolation.
+
+#### F4–F10 implementation chain reviewed
+
+| Slice | Commit | Scope |
+|---|---|---|
+| F4 Read-Only Backend Taxonomy API | `b0ee616c` | Routes + schemas + API tests |
+| F5 Frontend Taxonomy API Client + Types | `4bd7b486` | `taxonomyApi` + types + unit test |
+| F6 Taxonomy Boundary Checkpoint | `ffeca771` | Docs/evidence boundary closeout |
+| F8 CV Builder Taxonomy Hook | `627cbfbb` | `section_config._taxonomy` Role Intelligence |
+| F10 Roadmap Taxonomy Hook | `e05ccd0c` | `personalization_inputs._taxonomy` Role Intelligence |
+
+#### Backend taxonomy result
+
+PASS — contracts use typed enums/models; matching is deterministic; aliases normalize; unknown returns explicit unknown/no-match; no nearest-role fabrication; source/confidence guards prevent unsupported verified claims; seed catalog remains internal; no external dataset loading; registry independent of CV/Roadmap persistence.
+
+#### API/client alignment result
+
+PASS — seven read-only endpoints only (`health` public; others auth-required). No taxonomy mutation endpoints. Health reports `external_dataset_ingestion=false`. Frontend types mirror backend field names; seven `taxonomyApi` methods use correct paths with JWT interceptor. No separate taxonomy localStorage key.
+
+#### CV Builder integration result
+
+PASS — advisory Role Intelligence; explicit “Check role match”; suggestion does not overwrite role text; Accept vs Keep freeform distinct; unknown does not block save; metadata only under `section_config._taxonomy`; load/template change preserves meta; PDF export succeeds without requiring taxonomy; soft-fail does not block creation.
+
+#### Roadmap integration result
+
+PASS — advisory Role Intelligence in generate modal + compact detail restore; explicit check; no silent overwrite of `target_role`; unknown does not block generate; metadata only under `personalization_inputs._taxonomy`; same-role regenerate preserves `_taxonomy`; changed-role regenerate removes stale `_taxonomy`; suggested skills advisory only (not injected into tracker); progress remains `skill.status`-based; routes do not import `TaxonomyRegistry` or couple to `RoleTaxonomyAgent`; Dashboard not integrated.
+
+#### Cross-feature consistency result
+
+PASS — same input `Electrical Engineer` → both features resolve `matched_role_id=electrical_engineer` with compatible display title `Electrical Engineer`; source=`user_provided`, confidence=`suggested`.
+
+#### Unknown/no-match result
+
+PASS — `Galactic Tea Router` → explicit unknown in both features; freeform retained; CV save and roadmap generate not blocked; no verified claim.
+
+#### Provenance/source/confidence result
+
+PASS — UI shows honest source/confidence labels; seed role detail uses `external_taxonomy_reference` + `suggested`; match path preserves `user_provided`/`suggested` or `unknown`/`unknown`.
+
+#### Metadata isolation result
+
+PASS — CV stores only in `section_config._taxonomy`; Roadmap stores only in `personalization_inputs._taxonomy`; Roadmap ops did not mutate CV taxonomy/template; CV delete did not break Roadmap list; neither mutates the taxonomy registry.
+
+#### Automated test results
+
+| Suite | Result |
+|---|---|
+| Backend focused (5 files) | **65 passed** |
+| Backend broader `-k "taxonomy or cv or export or studio_template or roadmap"` | **70 passed**, 17 deselected |
+| Frontend `tests/unit/api.test.ts` | **3 passed** |
+| Frontend `npm run build` | **PASS** |
+| `frontend/dist` | ignored / unstaged |
+
+#### Runtime/API result
+
+PASS — local backend `:8001` (Docker `:8000` was stale without taxonomy routes); frontend `:5173`. Health 200; unauthenticated pathway-types 401; OpenAPI lists exactly the seven taxonomy endpoints (GET health, GET pathway-types, POST roles/match, POST skills/match, GET roles/{id}, GET roles/{id}/skills, GET roles/{id}/related). No taxonomy write endpoints.
+
+#### Browser journey result
+
+PASS — Playwright `channel: chrome` disposable user. Journey A (CV), Journey B (Roadmap), Journey C (isolation) executed. Role Intelligence selectors scoped by CV studio panel, generate dialog, and roadmap detail (no global ambiguous locator treated as product failure). Console errors: none. Page errors: none. Failed network requests: none.
+
+#### Responsive result
+
+PASS — Role Intelligence card stays within usable viewport at 1280×900, 768×1024, and 390×844; text readable; controls reachable; no card-specific overflow. Known app-shell horizontal overflow remains at tablet/mobile (watch item; not fixed in F11).
+
+#### Runtime artifact hygiene result
+
+PASS — `knowledge_graph.gpickle` mutated by roadmap generation; restored to committed HEAD bytes via atomic write (not `git restore`). Working tree clean of runtime artifact after cleanup. Backup at `~/Desktop/CareerKundi_0051_F11_Preflight_knowledge_graph_runtime_backup.gpickle`.
+
+#### Remaining watch items
+
+- App-shell horizontal overflow @390 (and observed @768) — do not expand into shell redesign here  
+- PDF export remains four style families mapped from studio templates  
+- Roadmap agent `RoleTaxonomyAgent` ≠ 0051 taxonomy API (intentional decoupling)  
+- Platform CORS watch (non-blocking)  
+- Design Fidelity Layer remains required for future UI slices  
+- Old 004E Interview Pack repair and old Auto Apply remain frozen  
+- Job Search / Interview Pack taxonomy hooks not started (deferred beyond 0051)
+
+#### 0051-F11 Decision
+
+**B TAXONOMY_CROSS_FEATURE_CHECKPOINT_ACCEPTED_WITH_WATCH_ITEMS**
+
+- All product and contract requirements passed.  
+- Phase **0051 Universal Role & Pathway Taxonomy** is accepted closed with carried watch items.  
+- Product code modified in F11: **NO** (docs only).
+
+**Next gate:** **0052 Career & Education Passport** (phase ladder §6.3 item 15; no intervening architecture gate). Detailed 0052-F0 slice card is not yet expanded in §43 — begin Passport planning/audit as the first 0052 slice when generating the next prompt. Do not invent Job Search taxonomy or reopen frozen systems.
 
 ---
 
