@@ -4855,6 +4855,96 @@ Contract, persistence, API, frontend, and browser journeys as specified in F0 pr
 - Preserve Profile compatibility strategy from this F0 plan.  
 - Do not reopen 004E / Auto Apply / Job Search taxonomy.
 
+### 0052-F1 Passport Contract Boundary
+
+**Type:** `CONTRACT_BOUNDARY`  
+**Status:** Done (this slice)  
+**Depends on:** 0052-F0 Decision B  
+
+#### Purpose
+
+Pure Passport vocabulary: Pydantic contracts, enums, validation, Profile-compatible field names, advisory taxonomy references, and lightweight record-status axes. No persistence, routes, services, frontend, AI, or evidence handling.
+
+#### Files created
+
+| Path | Role |
+|---|---|
+| `backend/app/career_passport/__init__.py` | Public exports |
+| `backend/app/career_passport/contracts.py` | Domain contracts |
+| `backend/tests/unit/test_passport_contract_boundary.py` | Boundary tests |
+
+#### Contract package boundary
+
+Dependency-light; importable without app startup. Permitted: `pydantic`, stdlib, `app.taxonomy.contracts`, `app.taxonomy.normalization`, `app.platform.claims.status`. Forbidden: FastAPI, SQLAlchemy, `app.db`, `app.api`, `app.schemas`, LLM providers.
+
+#### Enums
+
+Passport-owned: `PassportVisibility` (private only), `PassportSectionKey` (7), `PassportSourceStatus`, `PassportTaxonomyKind`, `PassportCredentialType`.  
+Reused: `PathwayType`, `SeniorityLevel`, `SourceType`, `ConfidenceLevel`, `SupportStatus`, `VerificationStatus`.
+
+#### Record-status rules
+
+`PassportRecordMeta` defaults to user_asserted / not_provided / unverified. Verification locked to `unverified`. Support limited to `not_provided` | `profile_supported`. No evidence-backed / verified / assessment axes in 0052 writes. No silent axis upgrades.
+
+#### Taxonomy-reference rules
+
+`PassportTaxonomyReference` keeps freeform `input_text`; optional `taxonomy_id`; normalizes text; validates ID shape and source/confidence; unknown ⇒ unknown/unknown; acceptance requires ID; kind must match field (role vs skill); no registry membership check in F1.
+
+#### Profile compatibility mapping
+
+Preserved field names for Profile, Experience, Education, Project, Skill, Certification/credential shapes. Passport adds only contract metadata (`record_meta`, taxonomy refs, `credential_type`, targets, section prefs).
+
+#### Aggregate contract
+
+`CareerPassportContract`: nullable `subject_id`, private visibility, `version >= 1`, default section order, empty sections valid, no owner/public/org/claims/evidence/CV/roadmap fields.
+
+#### Validation matrix
+
+Required nonblank strings; optional blank → None; date order; current ⇒ no end_date; priority 1–5; order_index ≥ 0; list trim/dedupe; duplicate section prefs rejected; extra fields forbidden.
+
+#### Import-boundary / no-route / no-DB result
+
+PASS — package scan clean; `NO_ROUTES_DB_MIGRATIONS_OR_FRONTEND`.
+
+#### Platform subject nullable decision
+
+`subject_id: UUID | None` remains nullable until Platform subject resolver is stable. F1 does not depend on `/platform/subjects`.
+
+#### Tests
+
+| Suite | Result |
+|---|---|
+| `test_passport_contract_boundary.py` | **61 passed** |
+| + `test_taxonomy_contract_boundary.py` | **72 passed** |
+| `-k "passport or taxonomy or claim"` | **107 passed**, 41 deselected |
+| `compileall` + import smoke | **PASSPORT_CONTRACT_IMPORT_OK** |
+
+#### 0052-F1 Decision
+
+**B PASSPORT_CONTRACT_BOUNDARY_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_0052_F2**
+
+#### F2 persistence handoff
+
+- Contract models do **not** imply one table per model.  
+- F2 must re-inspect existing Profile relational tables.  
+- F2 chooses adapter/reuse vs explicit migration with upgrade/downgrade tests.  
+- F2 must resolve or safely isolate Platform subjects 500 before hard subject dependency.  
+- F2 must not create dual-write Profile/Passport drift.  
+- No frontend in F2.
+
+#### Remaining watch items
+
+Profile FE↔BE mismatch; missing Profile tests; Platform subjects 500; shell overflow; PDF 4-family; CORS; RoleTaxonomyAgent ≠ 0051 API; 004E/Auto Apply frozen; nullable subject_id.
+
+**Next slice: 0052-F2 Passport Persistence and Migration**
+
+#### 0052-F2 Guardrails
+
+- May add models + foundation Alembic migration + ownership/compat tests.  
+- Must not add frontend, FastAPI Passport routes (unless explicitly re-scoped), or dual-write drift.  
+- Must not require non-null Subject until resolver is stable.  
+- Must not invent verification or evidence requirements.
+
 ---
 
 ## 44. Key Technical Slice Notes
