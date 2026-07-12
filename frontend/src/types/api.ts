@@ -294,12 +294,30 @@ export interface RoadmapRead {
   target_role: string;
   pace: "fast" | "normal" | "thorough" | string;
   starting_skill_level: string | null;
-  personalization_inputs?: Record<string, unknown>;
+  personalization_inputs?: Record<string, unknown> & {
+    _taxonomy?: RoadmapTaxonomyMeta | null;
+  };
   milestones: RoadmapMilestoneRead[];
   generation_confidence: number | null;
   generation_citations: Citation[];
   created_at: string;
   updated_at: string;
+}
+
+/** Optional Role Intelligence nested under personalization_inputs._taxonomy (0051-F10). */
+export interface RoadmapTaxonomyMeta {
+  target_role_text?: string | null;
+  matched_role_id?: string | null;
+  matched_skill_id?: string | null;
+  normalized_text?: string | null;
+  source?: TaxonomySourceType | string | null;
+  confidence?: TaxonomyConfidenceLevel | string | null;
+  explanation?: string | null;
+  accepted_by_user?: boolean;
+  kept_freeform?: boolean;
+  suggested_skill_ids?: string[];
+  suggested_skill_labels?: string[];
+  matched_role_title?: string | null;
 }
 
 export interface RoadmapMilestoneRead {

@@ -3388,9 +3388,9 @@ Plan only — **do not implement in F3**. Likely home: `taxonomyApi` in `fronten
 | 0051-F6 Browser-Tested Taxonomy API Checkpoint | Done |
 | 0051-F7 CV Builder Taxonomy Hook Planning | Done |
 | 0051-F8 CV Builder Taxonomy Hook Implementation | Done |
-| 0051-F9 Roadmap Taxonomy Hook Planning | Done (this slice) |
-| 0051-F10 Roadmap Taxonomy Hook Implementation | Next |
-| 0051-F11 Cross-Feature Taxonomy Checkpoint | Planned |
+| 0051-F9 Roadmap Taxonomy Hook Planning | Done |
+| 0051-F10 Roadmap Taxonomy Hook Implementation | Done (this slice) |
+| 0051-F11 Cross-Feature Taxonomy Checkpoint | Next |
 
 **Do not jump from F3 into CV Builder/Roadmap hooks.** Expose and verify the taxonomy API/type boundary first.
 
@@ -4277,6 +4277,106 @@ Recommended metadata shape (plan only — not implemented in F9):
 - 0051-F10 must not call taxonomy registry from the Roadmap agent pipeline.  
 - 0051-F10 must soft-fail taxonomy API errors and never block roadmap generation on unknown match.  
 - 0051-F10 must not call taxonomyApi from Dashboard.
+
+### 0051-F10 Roadmap Taxonomy Hook Implementation
+
+**Type:** `ROADMAP_TAXONOMY_HOOK_IMPLEMENTATION`  
+**Status:** Done (this slice)  
+**Depends on:** 0051-F9 Decision B  
+
+Implements the compact advisory **Role Intelligence** hook inside the existing Roadmap generate modal and restores accepted/freeform metadata on roadmap detail. Uses `taxonomyApi` only; persists under `personalization_inputs._taxonomy`. No DB migration. No coupling to `agents.roadmap.RoleTaxonomyAgent`.
+
+#### Implementation Summary
+
+| Area | Before | Change Made | Result | Notes |
+|---|---|---|---|---|
+| Role/Pathway Intelligence card | Absent | Compact card in generate modal + detail restore | PASS | Title: Role Intelligence |
+| taxonomyApi.matchRole | Unused on Roadmap | Explicit “Check role match” | PASS | No keystroke spam |
+| taxonomy role detail lookup | N/A | Optional `getRole` after match | PASS | Falls back to role id |
+| taxonomy role skills lookup | N/A | Optional `getRoleSkills` advisory list | PASS | Not inserted into tracker |
+| personalization_inputs._taxonomy metadata | Stripped by strict schema | Schema + dump by alias | PASS | No migration |
+| generate/load persistence | No taxonomy | Nested `_taxonomy` on generate; restore on load | PASS | Older roadmaps OK |
+| refresh/regenerate preservation | Would drop unknown keys | `_merge_personalization_on_regenerate` | PASS | Dropped when role changes |
+| skill tracker independence | skill.status only | Unchanged | PASS | Advisory skills separate |
+| progress preservation | skill.status | Unchanged | PASS | |
+| delete preservation | Ownership delete | Unchanged | PASS | |
+| unknown/no-match behavior | N/A | Soft continue copy | PASS | Never blocks generate |
+| source/confidence copy | N/A | Suggested / user provided chips | PASS | No “verified” |
+| Design Fidelity Layer | Planned in F9 | Roadmap-token card styling | PASS | Not admin/debug box |
+| responsive behavior | Shell overflow @390 known | Card full-width; actions stack @430 | PASS | Shell overflow watch remains |
+| tests/build/browser | F9 docs-only | Build + API + roadmap contract + browser | PASS | Decision B watch items |
+
+#### Files Changed
+
+| File | Change Type | Reason | Scope |
+|---|---|---|---|
+| `frontend/src/pages/RoadmapPage.tsx` | Feature | Role Intelligence UI + generate/detail wiring | Allowed |
+| `frontend/src/types/api.ts` | Types | `RoadmapTaxonomyMeta` + `_taxonomy` on personalization | Allowed |
+| `frontend/src/styles/feature-pages.css` | Style | `.roadmap-role-intelligence*` Design Fidelity | Allowed |
+| `backend/app/schemas/roadmap.py` | Schema | `RoadmapTaxonomyMeta` + `_taxonomy` alias | Allowed |
+| `backend/app/api/routes/roadmap.py` | Preserve | dump/merge helpers for regenerate | Allowed |
+| `backend/tests/unit/test_roadmap_contract.py` | Test | Taxonomy accept/merge/decouple | Allowed |
+| `docs/product/careerkundi_master_build_plan.md` | Docs | This section | Allowed |
+| `docs/product/careerkundi_live_tracker.md` | Docs | Position → F11 | Allowed |
+
+`frontend/src/lib/api.ts` and `frontend/tests/unit/api.test.ts` unchanged (existing `taxonomyApi` sufficient).
+
+#### User Flow Verified
+
+| Flow | Result | Evidence | Notes |
+|---|---|---|---|
+| empty state | PASS | Playwright | “Add a target role…” |
+| suggested match | PASS | Playwright + API | Electrical Engineer |
+| accepted match | PASS | Playwright | Use suggested role |
+| kept freeform | PASS | Playwright | Keep my wording |
+| unknown match | PASS | Playwright + API | Galactic Tea Router |
+| generate | PASS | Playwright + HTTP 201 | `_taxonomy` persisted |
+| load/detail | PASS | Playwright restored card | Compact detail card |
+| skill status update | PASS | Playwright select → in_progress | Tracker unchanged shape |
+| progress summary | PASS | Playwright | Still skill-based |
+| refresh/regenerate | PASS | Playwright + API merge | Preserved when role same |
+| delete | PASS | Playwright confirm dialog | Dismissed after prove |
+| mobile | PASS | 390 card within viewport | Shell overflow watch |
+| tablet | PASS | 768 no new overflow | |
+| desktop | PASS | Balanced layout | |
+
+#### Boundary Rules Verified
+
+| Rule | Result | Evidence | Notes |
+|---|---|---|---|
+| no required taxonomy | PASS | Generate without meta still works | |
+| no role overwrite without confirmation | PASS | Accept button only | |
+| no verified claim for suggested match | PASS | Copy audit in browser | |
+| no taxonomy skills replacing Roadmap skills | PASS | Advisory list only | |
+| no progress calculation rewrite | PASS | skill.status unchanged | |
+| no Roadmap agent coupling | PASS | Route source + contract test | |
+| no Dashboard integration | PASS | Scope guard | |
+| no DB migration unless documented | PASS | JSON personalization only | |
+| no external taxonomy ingestion | PASS | Seed catalog API only | |
+| no CV Builder changes | PASS | Allowed-file diff | |
+
+#### Test / Browser Decision
+
+**ROADMAP_TAXONOMY_HOOK_BUILD_TEST_BROWSER_PASSING**
+
+#### 0051-F10 Decision
+
+**B ROADMAP_TAXONOMY_HOOK_ACCEPTED_WITH_WATCH_ITEMS**
+
+Watch items: shell overflow @390 (pre-existing; Role Intelligence card itself within viewport); agent `RoleTaxonomyAgent` remains decoupled from 0051 `taxonomyApi`; regenerate must continue to preserve `_taxonomy` unless target role changes; PDF 4-family / Platform CORS / 004E + Auto Apply remain frozen; Design Fidelity carried into F11 checkpoint.
+
+#### Recommended Next Slice
+
+**Next slice: 0051-F11 Cross-Feature Taxonomy Checkpoint**
+
+#### 0051-F11 Guardrails
+
+- F11 must verify CV Builder + Roadmap taxonomy hooks together.  
+- F11 must confirm taxonomy metadata does not cross-contaminate features.  
+- F11 must confirm CV Builder and Roadmap browser-tested flows still pass.  
+- F11 must not start Job Search/Interview integration.  
+- F11 must not redesign UI.  
+- F11 should record remaining watch items before moving to the next planned task phase.
 
 ---
 

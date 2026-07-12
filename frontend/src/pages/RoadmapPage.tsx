@@ -12,7 +12,7 @@ import {
   ChevronDown, ChevronUp, TrendingUp, BookOpen,
   RefreshCw, Play, Lightbulb, Download, Search, Trash2,
 } from "lucide-react";
-import { roadmapApi } from "../lib/api";
+import { roadmapApi, taxonomyApi } from "../lib/api";
 import { Button } from "../components/ui/Button";
 import { Input, Textarea } from "../components/ui/Input";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card";
@@ -21,7 +21,7 @@ import { Modal, ModalBody, ModalFooter } from "../components/ui/Modal";
 import { Spinner } from "../components/ui/Spinner";
 import { SkillRadar } from "../components/features/SkillRadar";
 import { useUIStore } from "../store/ui";
-import type { RoadmapRead, RoadmapSkillRead } from "../types/api";
+import type { RoadmapRead, RoadmapSkillRead, RoadmapTaxonomyMeta } from "../types/api";
 
 const STATUS_CONFIG = {
   not_started: { label: "Not started", color: "var(--text-secondary)", icon: <Circle size={13} /> },
@@ -497,6 +497,227 @@ function KanbanView({ roadmap, onRefresh, onOpenSkill, onActionMessage }: {
   );
 }
 
+type RoleIntelPhase =
+  | "empty"
+  | "ready"
+  | "loading"
+  | "suggested"
+  | "unknown"
+  | "accepted"
+  | "kept_freeform"
+  | "unavailable";
+
+function extractRoadmapTaxonomy(inputs: RoadmapRead["personalization_inputs"] | undefined): RoadmapTaxonomyMeta | null {
+  const raw = inputs && typeof inputs === "object" ? (inputs as { _taxonomy?: unknown })._taxonomy : null;
+  if (!raw || typeof raw !== "object") return null;
+  return raw as RoadmapTaxonomyMeta;
+}
+
+function phaseFromTaxonomyMeta(meta: RoadmapTaxonomyMeta | null, roleText: string): RoleIntelPhase {
+  if (!roleText.trim()) return "empty";
+  if (!meta) return "ready";
+  if (meta.accepted_by_user) return "accepted";
+  if (meta.kept_freeform) return "kept_freeform";
+  if (meta.matched_role_id) return "suggested";
+  return "unknown";
+}
+
+function formatTaxonomyLabel(value: string | null | undefined): string {
+  if (!value) return "—";
+  return String(value).replace(/_/g, " ");
+}
+
+function RoleIntelligenceCard({
+  phase,
+  roleText,
+  meta,
+  onCheck,
+  onAccept,
+  onKeepFreeform,
+  onRecheck,
+  compact = false,
+}: {
+  phase: RoleIntelPhase;
+  roleText: string;
+  meta: RoadmapTaxonomyMeta | null;
+  onCheck?: () => void;
+  onAccept?: () => void;
+  onKeepFreeform?: () => void;
+  onRecheck?: () => void;
+  compact?: boolean;
+}) {
+  const canCheck = phase !== "loading" && roleText.trim().length > 0 && Boolean(onCheck);
+  const title = meta?.matched_role_title || meta?.matched_role_id || null;
+  const skillLabels = meta?.suggested_skill_labels?.length
+    ? meta.suggested_skill_labels
+    : (meta?.suggested_skill_ids || []).map(formatTaxonomyLabel);
+
+  return (
+    <section
+      className={`roadmap-role-intelligence${compact ? " roadmap-role-intelligence--compact" : ""}`}
+      aria-label="Role Intelligence"
+      aria-live="polite"
+    >
+      <div className="roadmap-role-intelligence__header">
+        <div>
+          <p className="roadmap-role-intelligence__eyebrow">Role intelligence</p>
+          <h3>Canonical role hint</h3>
+        </div>
+        {phase !== "empty" && phase !== "ready" && (
+          <span
+            className={`roadmap-role-intelligence__chip roadmap-role-intelligence__chip--${
+              phase === "accepted"
+                ? "accepted"
+                : phase === "unknown" || phase === "unavailable"
+                  ? "unknown"
+                  : phase === "kept_freeform"
+                    ? "freeform"
+                    : "suggested"
+            }`}
+          >
+            {phase === "loading"
+              ? "Checking"
+              : phase === "accepted"
+                ? "Using suggested"
+                : phase === "kept_freeform"
+                  ? "Using your wording"
+                  : phase === "unknown"
+                    ? "No match"
+                    : phase === "unavailable"
+                      ? "Unavailable"
+                      : "Suggested"}
+          </span>
+        )}
+      </div>
+      <p className="roadmap-role-intelligence__advisory">
+        Role intelligence is advisory. It never blocks roadmap generation.
+      </p>
+
+      {phase === "empty" && (
+        <p className="roadmap-role-intelligence__body">
+          Add a target role to check role intelligence.
+        </p>
+      )}
+      {phase === "ready" && (
+        <p className="roadmap-role-intelligence__body">
+          Check for a deterministic suggested role match when you are ready.
+        </p>
+      )}
+      {phase === "loading" && (
+        <p className="roadmap-role-intelligence__body">Checking role match…</p>
+      )}
+      {phase === "suggested" && (
+        <div className="roadmap-role-intelligence__result">
+          <p className="roadmap-role-intelligence__result-label">Suggested role match</p>
+          <p className="roadmap-role-intelligence__canonical">{title || "Suggested role"}</p>
+          <p className="roadmap-role-intelligence__original">
+            Your wording: <strong>{roleText}</strong>
+          </p>
+          <div className="roadmap-role-intelligence__meta">
+            <span>Source: {formatTaxonomyLabel(meta?.source)}</span>
+            <span>Confidence: {formatTaxonomyLabel(meta?.confidence)}</span>
+          </div>
+          {meta?.explanation && (
+            <p className="roadmap-role-intelligence__explain">{meta.explanation}</p>
+          )}
+          {skillLabels.length > 0 && (
+            <div className="roadmap-role-intelligence__skills">
+              <p className="roadmap-role-intelligence__result-label">Suggested skills from role intelligence</p>
+              <ul>
+                {skillLabels.slice(0, 6).map((label) => (
+                  <li key={label}>{label}</li>
+                ))}
+              </ul>
+              <p className="roadmap-role-intelligence__skills-note">
+                Suggested skills are advisory only. They do not replace roadmap tracker skills.
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+      {phase === "unknown" && (
+        <div className="roadmap-role-intelligence__result">
+          <p className="roadmap-role-intelligence__result-label">No deterministic role match found</p>
+          <p className="roadmap-role-intelligence__body">
+            You can still continue with your own roadmap target.
+          </p>
+        </div>
+      )}
+      {phase === "accepted" && (
+        <div className="roadmap-role-intelligence__result">
+          <p className="roadmap-role-intelligence__result-label">Using suggested role</p>
+          <p className="roadmap-role-intelligence__canonical">{title}</p>
+          <div className="roadmap-role-intelligence__meta">
+            <span>Source: {formatTaxonomyLabel(meta?.source)}</span>
+            <span>Confidence: {formatTaxonomyLabel(meta?.confidence)}</span>
+          </div>
+          {skillLabels.length > 0 && (
+            <div className="roadmap-role-intelligence__skills">
+              <p className="roadmap-role-intelligence__result-label">Suggested skills from role intelligence</p>
+              <ul>
+                {skillLabels.slice(0, 6).map((label) => (
+                  <li key={label}>{label}</li>
+                ))}
+              </ul>
+              <p className="roadmap-role-intelligence__skills-note">
+                Suggested skills are advisory only.
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+      {phase === "kept_freeform" && (
+        <div className="roadmap-role-intelligence__result">
+          <p className="roadmap-role-intelligence__result-label">Using your wording</p>
+          <p className="roadmap-role-intelligence__original">
+            <strong>{roleText || meta?.target_role_text}</strong>
+          </p>
+        </div>
+      )}
+      {phase === "unavailable" && (
+        <p className="roadmap-role-intelligence__body">
+          Role intelligence is unavailable right now. You can continue without it.
+        </p>
+      )}
+
+      {(onCheck || onAccept || onKeepFreeform || onRecheck) && (
+        <div className="roadmap-role-intelligence__actions">
+          {phase === "loading" && (
+            <Button variant="secondary" size="sm" loading disabled>
+              Checking role match…
+            </Button>
+          )}
+          {(phase === "empty" ||
+            phase === "ready" ||
+            phase === "suggested" ||
+            phase === "unknown" ||
+            phase === "unavailable") &&
+            onCheck && (
+              <Button variant="secondary" size="sm" disabled={!canCheck} onClick={onCheck}>
+                Check role match
+              </Button>
+            )}
+          {phase === "suggested" && onAccept && (
+            <Button variant="primary" size="sm" onClick={onAccept}>
+              Use suggested role
+            </Button>
+          )}
+          {(phase === "suggested" || phase === "unknown") && onKeepFreeform && (
+            <Button variant="ghost" size="sm" onClick={onKeepFreeform}>
+              Keep my wording
+            </Button>
+          )}
+          {(phase === "accepted" || phase === "kept_freeform") && onRecheck && (
+            <Button variant="ghost" size="sm" onClick={onRecheck}>
+              Re-check
+            </Button>
+          )}
+        </div>
+      )}
+    </section>
+  );
+}
+
 function GenerateModal({
   open,
   onClose,
@@ -514,18 +735,137 @@ function GenerateModal({
   const [weeklyHours, setWeeklyHours] = useState("");
   const [timelineMonths, setTimelineMonths] = useState("");
   const [context, setContext] = useState("");
+  const [roleIntelPhase, setRoleIntelPhase] = useState<RoleIntelPhase>("empty");
+  const [taxonomyMeta, setTaxonomyMeta] = useState<RoadmapTaxonomyMeta | null>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    setRole("");
+    setRoleQuery("");
+    setPace("normal");
+    setSkillLevel("");
+    setWeeklyHours("");
+    setTimelineMonths("");
+    setContext("");
+    setRoleIntelPhase("empty");
+    setTaxonomyMeta(null);
+  }, [open]);
+
+  const handleRoleChange = (value: string) => {
+    setRole(value);
+    setTaxonomyMeta(null);
+    setRoleIntelPhase(value.trim() ? "ready" : "empty");
+  };
+
+  const checkRoleMatch = async () => {
+    const text = role.trim();
+    if (!text) {
+      setRoleIntelPhase("empty");
+      return;
+    }
+    setRoleIntelPhase("loading");
+    try {
+      const match = await taxonomyApi.matchRole({
+        input_text: text,
+        source: "user_provided",
+        confidence: "suggested",
+      });
+      let title: string | null = null;
+      let skillIds: string[] = [];
+      let skillLabels: string[] = [];
+      if (match.matched_role_id) {
+        try {
+          const roleDetail = await taxonomyApi.getRole(match.matched_role_id);
+          title = roleDetail.title;
+        } catch {
+          title = match.matched_role_id;
+        }
+        try {
+          const skills = await taxonomyApi.getRoleSkills(match.matched_role_id);
+          skillIds = skills.skills.map((s) => s.id);
+          skillLabels = skills.skills.map((s) => s.label);
+        } catch {
+          skillIds = [];
+          skillLabels = [];
+        }
+      }
+      const meta: RoadmapTaxonomyMeta = {
+        target_role_text: text,
+        matched_role_id: match.matched_role_id,
+        matched_skill_id: match.matched_skill_id,
+        normalized_text: match.normalized_text,
+        source: match.source,
+        confidence: match.confidence,
+        explanation: match.explanation,
+        accepted_by_user: false,
+        kept_freeform: false,
+        matched_role_title: title,
+        suggested_skill_ids: skillIds,
+        suggested_skill_labels: skillLabels,
+      };
+      setTaxonomyMeta(meta);
+      setRoleIntelPhase(match.matched_role_id ? "suggested" : "unknown");
+    } catch {
+      setTaxonomyMeta(null);
+      setRoleIntelPhase("unavailable");
+    }
+  };
+
+  const acceptSuggestedRole = () => {
+    if (!taxonomyMeta?.matched_role_id) return;
+    const canonical =
+      taxonomyMeta.matched_role_title || taxonomyMeta.matched_role_id;
+    setRole(canonical);
+    setTaxonomyMeta({
+      ...taxonomyMeta,
+      target_role_text: canonical,
+      accepted_by_user: true,
+      kept_freeform: false,
+      matched_role_title: canonical,
+    });
+    setRoleIntelPhase("accepted");
+  };
+
+  const keepFreeform = () => {
+    const text = role.trim();
+    setTaxonomyMeta({
+      ...(taxonomyMeta || {}),
+      target_role_text: text,
+      accepted_by_user: false,
+      kept_freeform: true,
+      matched_role_id: taxonomyMeta?.matched_role_id ?? null,
+      matched_skill_id: taxonomyMeta?.matched_skill_id ?? null,
+      normalized_text: taxonomyMeta?.normalized_text ?? null,
+      source: taxonomyMeta?.source ?? "user_provided",
+      confidence: taxonomyMeta?.confidence ?? "unknown",
+      explanation: taxonomyMeta?.explanation ?? "Keeping freeform role wording.",
+      matched_role_title: taxonomyMeta?.matched_role_title ?? null,
+      suggested_skill_ids: taxonomyMeta?.suggested_skill_ids ?? [],
+      suggested_skill_labels: taxonomyMeta?.suggested_skill_labels ?? [],
+    });
+    setRoleIntelPhase("kept_freeform");
+  };
 
   const mutation = useMutation({
-    mutationFn: () => roadmapApi.generate({
-      target_role: role.trim(),
-      pace,
-      starting_skill_level: skillLevel || undefined,
-      personalization_inputs: {
+    mutationFn: () => {
+      const personalization_inputs: Record<string, unknown> = {
         weekly_hours_available: weeklyHours ? Number(weeklyHours) : undefined,
         target_timeframe_months: timelineMonths ? Number(timelineMonths) : undefined,
         additional_context: context || undefined,
-      },
-    }),
+      };
+      if (taxonomyMeta) {
+        personalization_inputs._taxonomy = {
+          ...taxonomyMeta,
+          target_role_text: role.trim() || taxonomyMeta.target_role_text || null,
+        };
+      }
+      return roadmapApi.generate({
+        target_role: role.trim(),
+        pace,
+        starting_skill_level: skillLevel || undefined,
+        personalization_inputs,
+      });
+    },
     onSuccess: (created) => {
       addToast({ type: "success", message: "Roadmap created." });
       onCreated(created);
@@ -543,11 +883,25 @@ function GenerateModal({
         {roleQuery && filteredRoles.length > 0 && (
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem", margin: "0.5rem 0 1rem" }}>
             {filteredRoles.slice(0, 6).map((r) => (
-              <button key={r} type="button" onClick={() => { setRole(r); setRoleQuery(r); }} style={{ padding: "0.3rem 0.6rem", borderRadius: "999px", border: "1px solid var(--border-subtle)", background: role === r ? "rgba(139,92,246,0.12)" : "transparent", fontSize: "0.72rem", cursor: "pointer", color: "var(--text-secondary)" }}>{r}</button>
+              <button key={r} type="button" onClick={() => { handleRoleChange(r); setRoleQuery(r); }} style={{ padding: "0.3rem 0.6rem", borderRadius: "999px", border: "1px solid var(--border-subtle)", background: role === r ? "rgba(139,92,246,0.12)" : "transparent", fontSize: "0.72rem", cursor: "pointer", color: "var(--text-secondary)" }}>{r}</button>
             ))}
           </div>
         )}
-        <Input label="Target role *" value={role} onChange={(e) => setRole(e.target.value)} placeholder="e.g. Senior Data Engineer" fullWidth />
+        <Input label="Target role *" value={role} onChange={(e) => handleRoleChange(e.target.value)} placeholder="e.g. Senior Data Engineer" fullWidth />
+
+        <RoleIntelligenceCard
+          phase={roleIntelPhase}
+          roleText={role}
+          meta={taxonomyMeta}
+          onCheck={() => void checkRoleMatch()}
+          onAccept={acceptSuggestedRole}
+          onKeepFreeform={keepFreeform}
+          onRecheck={() => {
+            setTaxonomyMeta(null);
+            setRoleIntelPhase(role.trim() ? "ready" : "empty");
+          }}
+        />
+
         <div style={{ marginTop: "1rem" }}>
           <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)", marginBottom: "0.5rem" }}>Current skill level</p>
           <div style={{ display: "flex", gap: "0.4rem" }}>
@@ -914,6 +1268,31 @@ export default function RoadmapPage() {
 
                 {activeRoadmap && !detailLoading && (
                   <div className="roadmap-detail">
+                    {(() => {
+                      const savedTaxonomy = extractRoadmapTaxonomy(activeRoadmap.personalization_inputs);
+                      if (!savedTaxonomy) return null;
+                      const roleText = activeRoadmap.target_role || "";
+                      const roleChanged =
+                        !!savedTaxonomy.target_role_text &&
+                        savedTaxonomy.target_role_text.trim().toLowerCase() !== roleText.trim().toLowerCase() &&
+                        !(
+                          savedTaxonomy.accepted_by_user &&
+                          (savedTaxonomy.matched_role_title || savedTaxonomy.matched_role_id || "")
+                            .trim()
+                            .toLowerCase() === roleText.trim().toLowerCase()
+                        );
+                      const detailPhase: RoleIntelPhase = roleChanged
+                        ? "ready"
+                        : phaseFromTaxonomyMeta(savedTaxonomy, roleText);
+                      return (
+                        <RoleIntelligenceCard
+                          compact
+                          phase={detailPhase}
+                          roleText={roleText}
+                          meta={roleChanged ? null : savedTaxonomy}
+                        />
+                      );
+                    })()}
                     <div className="roadmap-detail-grid feature-grid-2" style={{ marginBottom: "1.5rem" }}>
                       <Card padding="lg" className="feature-glass roadmap-progress-summary">
                         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>

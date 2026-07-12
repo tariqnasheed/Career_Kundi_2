@@ -30,13 +30,39 @@ class _ORMModel(BaseModel):
 # --- Request -------------------------------------------------------------------------
 
 
+class RoadmapTaxonomyMeta(BaseModel):
+    """
+    Optional advisory Role Intelligence payload nested under
+    personalization_inputs._taxonomy (0051-F10). Never required for generate.
+    Decoupled from agents.roadmap.RoleTaxonomyAgent.
+    """
+
+    target_role_text: str | None = None
+    matched_role_id: str | None = None
+    matched_skill_id: str | None = None
+    normalized_text: str | None = None
+    source: str | None = None
+    confidence: str | None = None
+    explanation: str | None = None
+    accepted_by_user: bool = False
+    kept_freeform: bool = False
+    suggested_skill_ids: list[str] = Field(default_factory=list)
+    suggested_skill_labels: list[str] = Field(default_factory=list)
+    matched_role_title: str | None = None
+
+
 class RoadmapPersonalizationInputs(BaseModel):
     """
     Optional steering inputs beyond `target_role`/`pace`/`starting_skill_level`.
     Every field is optional — the TimelineOptimizerAgent falls back to
     pace-derived defaults (see `app/agents/roadmap/mock_data.py`) when these
     are left unset.
+
+    `_taxonomy` is optional advisory metadata (0051-F10) and must not affect
+    generation when absent or unknown.
     """
+
+    model_config = ConfigDict(extra="ignore", populate_by_name=True)
 
     weekly_hours_available: float | None = Field(
         default=None, gt=0, description="Overrides the pace-derived default weekly study-hours budget."
@@ -45,6 +71,11 @@ class RoadmapPersonalizationInputs(BaseModel):
     target_timeframe_months: int | None = Field(default=None, gt=0)
     additional_context: str | None = Field(
         default=None, description="Free-text context, e.g. 'I already know basic SQL from a bootcamp.'"
+    )
+    taxonomy: RoadmapTaxonomyMeta | None = Field(
+        default=None,
+        alias="_taxonomy",
+        description="Optional advisory Role Intelligence meta nested as personalization_inputs._taxonomy",
     )
 
 

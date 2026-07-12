@@ -476,6 +476,169 @@
   min-width: 0;
 }
 
+/* 0051-F10 Role Intelligence — compact roadmap advisory card */
+.roadmap-role-intelligence {
+  margin: 0 0 1rem;
+  padding: 0.85rem 0.95rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  background:
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--accent-violet, #8b5cf6) 8%, transparent),
+      color-mix(in srgb, var(--bg-overlay, #f8fafc) 90%, transparent)
+    );
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.roadmap-role-intelligence--compact {
+  margin-bottom: 1.15rem;
+}
+.roadmap-role-intelligence__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+.roadmap-role-intelligence__eyebrow {
+  margin: 0;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.roadmap-role-intelligence__header h3 {
+  margin: 0.15rem 0 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.roadmap-role-intelligence__advisory {
+  margin: 0;
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+.roadmap-role-intelligence__chip {
+  flex-shrink: 0;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.22rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-overlay);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.roadmap-role-intelligence__chip--suggested {
+  border-color: color-mix(in srgb, var(--accent-violet, #8b5cf6) 45%, transparent);
+  color: var(--accent-violet, #8b5cf6);
+  background: color-mix(in srgb, var(--accent-violet, #8b5cf6) 10%, transparent);
+}
+.roadmap-role-intelligence__chip--accepted {
+  border-color: color-mix(in srgb, #16a34a 40%, transparent);
+  color: #166534;
+  background: color-mix(in srgb, #16a34a 12%, transparent);
+}
+.roadmap-role-intelligence__chip--unknown,
+.roadmap-role-intelligence__chip--freeform {
+  border-color: var(--border-subtle);
+  color: var(--text-secondary);
+}
+.roadmap-role-intelligence__body {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+.roadmap-role-intelligence__result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.55rem 0.6rem;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--bg-primary, #fff) 70%, transparent);
+  border: 1px solid var(--border-subtle);
+  min-width: 0;
+}
+.roadmap-role-intelligence__result-label {
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.roadmap-role-intelligence__canonical {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.roadmap-role-intelligence__original {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
+}
+.roadmap-role-intelligence__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+}
+.roadmap-role-intelligence__explain {
+  margin: 0.15rem 0 0;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+.roadmap-role-intelligence__skills ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+.roadmap-role-intelligence__skills-note {
+  margin: 0.35rem 0 0;
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+.roadmap-role-intelligence__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .roadmap-role-intelligence {
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .roadmap-role-intelligence {
+    padding: 0.75rem;
+  }
+  .roadmap-role-intelligence__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .roadmap-role-intelligence__actions .btn,
+  .roadmap-role-intelligence__actions button {
+    width: 100%;
+  }
+}
+
 .roadmap-progress {
   font-variant-numeric: tabular-nums;
 }

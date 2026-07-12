@@ -40,6 +40,31 @@ from app.schemas.roadmap import RoadmapGenerateRequest, RoadmapRead, RoadmapSkil
 router = APIRouter(prefix="/roadmap", tags=["roadmap"])
 
 
+def _dump_personalization(inputs) -> dict:
+    """Serialize personalization including `_taxonomy` alias when present."""
+    return inputs.model_dump(by_alias=True, exclude_none=True)
+
+
+def _merge_personalization_on_regenerate(
+    existing: dict | None,
+    incoming: dict,
+    *,
+    previous_role: str,
+    new_role: str,
+) -> dict:
+    """
+    Preserve personalization_inputs._taxonomy unless target_role changed
+    (or incoming already supplies a new _taxonomy).
+    """
+    out = dict(incoming or {})
+    role_changed = (previous_role or "").strip().lower() != (new_role or "").strip().lower()
+    if role_changed:
+        return out
+    if "_taxonomy" not in out and isinstance(existing, dict) and "_taxonomy" in existing:
+        out["_taxonomy"] = existing["_taxonomy"]
+    return out
+
+
 async def _get_owned_roadmap(db: AsyncSession, user: User, roadmap_id: uuid.UUID) -> Roadmap:
     """Fetch a `Roadmap` the current user actually owns, with milestones/skills eager-loaded, or raise `NotFoundError` (never leaks existence of other users' rows)."""
     result = await db.execute(
@@ -119,7 +144,7 @@ async def generate_roadmap(
 ) -> RoadmapRead:
     """Run the full 9-node Career Roadmap generation pipeline and persist the result as a new `Roadmap` row."""
     existing_skills = await _existing_profile_skill_names(db, user)
-    personalization_inputs = payload.personalization_inputs.model_dump()
+    personalization_inputs = _dump_personalization(payload.personalization_inputs)
 
     result = await run_roadmap_generation_pipeline(
         user_id=str(user.id),
@@ -197,7 +222,13 @@ async def regenerate_roadmap(
     """Re-run roadmap generation (e.g. after changing pace or personalization inputs) against an existing roadmap row, replacing its milestones/skills in place rather than creating a new row."""
     roadmap = await _get_owned_roadmap(db, user, roadmap_id)
     existing_skills = await _existing_profile_skill_names(db, user)
-    personalization_inputs = payload.personalization_inputs.model_dump()
+    incoming = _dump_personalization(payload.personalization_inputs)
+    personalization_inputs = _merge_personalization_on_regenerate(
+        roadmap.personalization_inputs if isinstance(roadmap.personalization_inputs, dict) else {},
+        incoming,
+        previous_role=roadmap.target_role,
+        new_role=payload.target_role,
+    )
 
     result = await run_roadmap_generation_pipeline(
         user_id=str(user.id),
