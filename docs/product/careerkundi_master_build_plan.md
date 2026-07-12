@@ -4476,7 +4476,384 @@ PASS — `knowledge_graph.gpickle` mutated by roadmap generation; restored to co
 - Phase **0051 Universal Role & Pathway Taxonomy** is accepted closed with carried watch items.  
 - Product code modified in F11: **NO** (docs only).
 
-**Next gate:** **0052 Career & Education Passport** (phase ladder §6.3 item 15; no intervening architecture gate). Detailed 0052-F0 slice card is not yet expanded in §43 — begin Passport planning/audit as the first 0052 slice when generating the next prompt. Do not invent Job Search taxonomy or reopen frozen systems.
+**Next gate:** **0052 Career & Education Passport** — see **0052-F0** (this phase) → **0052-F1**.
+
+
+### 0052-F0 Career & Education Passport Planning and Repository Audit
+
+**Type:** `PLANNING_AUDIT_ONLY` (docs-only)  
+**Status:** Done (this slice)  
+**Depends on:** 0051 Decision B (taxonomy phase closed)  
+
+#### 1. Purpose
+
+Plan Career & Education Passport as CareerKundi’s durable, user-owned career and education record — not a renamed Profile page, not Claims & Evidence (0053), not a wallet, not a verification service, and not an AI biography.
+
+Passport must organize personal/profile information, experience, education, projects, skills (with taxonomy references), thin credential references, career targets, lightweight provenance/status summaries, and reusable reads for CV Builder, Roadmaps, Opportunities, Education, and later features.
+
+**Doctrine locks (carried):** `FEATURE ACCESS ≠ EVIDENCE STATUS`; user-stated data usable without evidence; `uploaded ≠ verified`; modular monolith; deterministic CRUD; no microservices; no god entity.
+
+#### 2. Current repository inventory
+
+| Area | State | Evidence |
+|---|---|---|
+| `/passport*` routes | **NONE** (planned only) | `App.tsx`; OpenAPI has no passport paths |
+| `backend/app/career_passport/` | **MISSING** | package listing |
+| `frontend/src/features/passport/` | **MISSING** | `frontend/src` has pages/, not features/ yet |
+| Profile backend | **RICH EXISTING** | `db/models/profile.py` + `/api/v1/profile/*` section CRUD |
+| Profile frontend | **THIN STUB / SCHEMA MISMATCH** | `ProfilePage.tsx` vs `ProfileUpdate`/`ProfileRead` |
+| Platform subjects/goals | **EXISTING (PF11)** | `/platform` + `/api/v1/platform/subjects*` |
+| Claims/provenance tables | **FOUNDATION EXISTING, NO PUBLIC API** | `career_claims`, `provenance_*`; internal services only |
+| Taxonomy | **0051 CLOSED** | in-memory seed; advisory JSON refs |
+| CV Builder / Roadmap | **STABILIZED** | read Profile (or skills); snapshots at generate |
+| Passport DB tables | **NONE** | zero `passport` matches under `backend/app/db` |
+| Prior Desktop evidence (0050/PF11/UX0/CVB/ROAD) | **MISSING on Desktop** at audit time | recorded honestly |
+
+#### 3. Existing Profile ownership map
+
+| Concern | Truth |
+|---|---|
+| Account identity | `users` (`User`: email, full_name, auth) |
+| Profile | 1:1 `profiles.user_id` unique; created at registration |
+| Sections | Relational children: `educations`, `work_experiences`, `projects`, `certifications`, `publications`, `languages`, `volunteer_entries`, `awards`, `references_`, `skills`, `custom_sections` (+ entries) |
+| JSON fields | bullets/tags/technologies on rows; `other_social_links`, `interests` on Profile |
+| Ownership | Auth JWT; section CRUD scoped to current user’s `profile_id` |
+| API | `GET/PATCH /api/v1/profile`; `POST/PUT/DELETE /api/v1/profile/{section}…`; reorder; export; **import documented but not implemented** |
+| Frontend | Manual save; **does not call section CRUD**; field names diverge (`summary` vs `bio_summary`, string skills vs skill rows, etc.) |
+| Tests | **No dedicated Profile API/model tests** found |
+| Completeness | `calculate_completeness_score()` weighted heuristic — must not become disclosure pressure in Passport |
+
+**Critical planning fact:** Backend Profile is already a comprehensive CV Data Hub. Passport planning must reconcile with this schema — not invent a parallel empty model that ignores it.
+
+#### 4. Platform Foundation relationship
+
+| Concern | Truth | Passport rule |
+|---|---|---|
+| `/platform` | Subjects + goals foundation shell only | Do not absorb Platform UI |
+| `CareerSubject` | Table `career_subjects`; multi-subject per user; **no biography** | Passport **references** `subject_id`; does **not** own Subject |
+| Goals | `career_goals` subject-scoped | Lifecycle stays Platform; Passport Targets may optionally link later |
+| Claims/provenance | Internal services + DB; **no public HTTP** | Consume later via 0053; do not reimplement |
+| Privacy/geo | Foundation tables/services | Consume contracts later; do not reimplement |
+| Local smoke (F0) | `GET /platform/subjects` returned **500** in one local probe | Watch: diagnose before hard subject dependency in F2/F3 |
+
+#### 5. Taxonomy relationship
+
+| Available | Notes |
+|---|---|
+| Seed roles | `software_engineer`, `electrical_engineer`, `clinical_pharmacist`, `project_manager` |
+| Seed skills | `python`, `load_calculations`, `medication_safety`, `stakeholder_coordination` |
+| Pathway types | 11 `PathwayType` values |
+| Semantics | source/confidence guards; unknown explicit; advisory |
+| Storage pattern | Persist **refs + meta** (IDs, source, confidence, acceptance) — never copy catalog objects |
+| Freeform | Always allowed; taxonomy never silently overwrites user text |
+
+#### 6. CV Builder relationship
+
+| Fact | Implication |
+|---|---|
+| Generate/regenerate builds `_profile_snapshot()` from live Profile + User name/email | Passport must eventually supply equivalent snapshot shape |
+| `rendered_content` is a **full copy** at generate time | Old CVs remain valid after Passport migration |
+| Export reads saved CV only | No live Passport required for export |
+| Gallery preview reads live `profileApi.get()` | Future: optional Passport read without breaking old CVs |
+| `section_config._taxonomy` advisory | Independent of Passport skill rows |
+| Must not auto-overwrite | CV edits never write Passport/Profile without explicit user action |
+
+#### 7. Roadmap relationship
+
+| Fact | Implication |
+|---|---|
+| `target_role` + `personalization_inputs` (+ `_taxonomy`) | Passport Targets may **prefill** generate form only |
+| Progress = `roadmap_skills.status` | Passport must never mutate progress |
+| Reads Profile skill **names** only | Optional future Passport skills read |
+| Does not write Profile | Roadmap must not dump biography into Passport |
+| Agent `RoleTaxonomyAgent` ≠ 0051 API | Keep decoupling |
+
+#### 8. Achievement / credential terminology audit
+
+| Term | Repo meaning | Passport treatment |
+|---|---|---|
+| Achievement (UI) | Label for **badge gallery** (`AchievementsPage`) | Non-owner; gamification stays badges |
+| Badge | `badge_definitions` / `user_badges` progress metrics | Non-owner |
+| Qualification | Job-extraction concept | Not a Passport entity |
+| Certification (Profile) | `certifications` rows (`credential_id`, `credential_url`, …) | Map to thin **credential references** |
+| Claim | `career_claims` (foundation) | 0053 owner |
+| Evidence / source snapshot | `provenance_*` | 0053 owner |
+| Verification | `VerificationStatus` axis | 0053 only; never auto-set in 0052 |
+
+#### 9. Passport domain boundary
+
+**Backend owner (preferred):** `backend/app/career_passport/` — matches master-plan §7.4 and existing package style (`platform/`, `taxonomy/`).  
+**Frontend owner (preferred):** `frontend/src/features/passport/` — planned; today UI lives in `pages/` (ProfilePage is interim bridge).
+
+| Concern | Passport owns | Reuses | Later owner | Explicit non-owner |
+|---|---|---|---|---|
+| Aggregate + sections CRUD | Yes | — | — | — |
+| Subject identity | — | `CareerSubject` / identity service | — | Subject CRUD |
+| Auth/login | — | auth | — | Auth |
+| Taxonomy catalog | — | taxonomy API refs | — | Catalog contents |
+| Claim verification | — | claim status enums (display) | 0053 | Verification workflows |
+| Evidence bytes | — | optional `claim_id`/`source_id` later | 0053 | File storage |
+| VC/wallet/DID | — | conceptual refs only | Later | Crypto/wallet |
+| CV snapshots | — | read source for generate | CV Builder | Rendered CV ownership |
+| Roadmap progress | — | prefills only | Roadmap | Skill status |
+| Badges | — | — | Achievements | Gamification |
+| Platform goals engine | optional target link | lifecycle | Platform | Goal CRUD UI |
+| Public share platform | — | — | Later | Public URLs MVP |
+
+#### 10. Conceptual entity model (no implementation in F0)
+
+| Entity | Purpose | Phase |
+|---|---|---|
+| `CareerPassport` | Aggregate: owner, subject link, visibility, version | 0052 |
+| Section ordering metadata | Display order / section prefs | 0052 |
+| `PassportProfile` | Personal/headline/contact/summary view | 0052 — **prefer adapter over existing Profile top-level fields initially** |
+| `PassportExperience` | Work history | 0052 — maps from `work_experiences` |
+| `PassportEducation` | Education | 0052 — maps from `educations` |
+| `PassportProject` | Projects | 0052 — maps from `projects` |
+| `PassportSkill` | Skills + optional taxonomy_skill_id | 0052 — maps from `skills` |
+| `PassportCredentialRef` | Thin credential/cert reference | 0052 MVP — maps from `certifications` |
+| `PassportTarget` | Career targets / pathway prefs | 0052 MVP — new (not badges; not goals ownership) |
+| Full Claim rows per field | — | **DEFER_0053** |
+| Evidence attachments | — | **DEFER_0053** |
+| Publications/languages/volunteer/awards/references/custom | Existing Profile sections | **OPTIONAL_0052 late / DEFER_LATER** (F6+ or post-MVP) |
+
+**Aggregate strategy (RECOMMENDED_FOR_APPROVAL):**  
+Passport becomes the **product SoT** via `career_passport` domain. Persistence F2 should **migrate/wrap existing Profile relational tables** rather than create a second parallel set of education/experience tables in the same release. Preferred sequence:
+
+1. Introduce `career_passports` aggregate row (`owner_user_id`, optional `subject_id`, `visibility`, `version`).  
+2. Reuse existing Profile child tables as section persistence for MVP (adapter), **or** migrate into passport-owned tables in one explicit F2 migration after contracts lock — **choose in F1/F2 with upgrade/downgrade tests**.  
+3. Keep `/api/v1/profile` temporarily compatible (F7).  
+4. Avoid dual-write drift: single write path through Passport services once F3 lands.
+
+#### 11. Field classification (selected)
+
+**CareerPassport**
+
+| Field | Class |
+|---|---|
+| id, owner_user_id, created_at, updated_at | REQUIRED_0052 |
+| subject_id | REQUIRED_0052 (nullable until default-subject resolver stable) |
+| visibility (default private) | REQUIRED_0052 |
+| version (optimistic concurrency) | OPTIONAL_0052 → RECOMMENDED |
+| display_name / headline / summary | OPTIONAL_0052 (may mirror Profile/User) |
+| public URL / org access | REJECT (MVP) / DEFER_LATER |
+
+**Experience / Education / Project / Skill** — required identity + ownership + ordering; dates optional; grades optional; taxonomy refs optional; freeform labels required when no taxonomy match; no auto-verified.
+
+**Credential reference** — thin fields only (`credential_type`, `title`, `issuer_name`, dates, identifier, url, status=`user_asserted` default, `source_type`). Crypto proofs / DID / wallet: **REJECT** for 0052.
+
+**Target** — `target_role_text` required; `taxonomy_role_id` / `pathway_type` optional advisory; geography/seniority optional; never auto-accepted from AI.
+
+#### 12. Claim / provenance boundary
+
+Use independent axes already in platform claims (do not collapse):
+
+| Axis | 0052 needs | 0053 |
+|---|---|---|
+| Origin / source_status (lightweight) | `user_asserted` / `unknown` / optional `suggested` (accepted) | Full `ClaimOrigin` |
+| Support | Usually `not_provided` or `profile_supported` | `source_linked`, `evidence_backed`, … |
+| Verification | Always treat as **unverified** for MVP display; never store `verified` via Passport CRUD | Verification workflows |
+
+Recommended Passport field meta (lightweight, not full Claim row):
+
+```text
+source_status: user_asserted | suggested_accepted | unknown | not_provided
+support_status: not_provided | profile_supported   # evidence_backed deferred
+verification_status: unverified                    # fixed for 0052 writes
+optional future: claim_id, source_id, snapshot_id
+```
+
+Rules: suggested taxonomy/AI never becomes owned without explicit accept; deleting evidence later must not erase underlying user claim (0053); credential ref ≠ verified credential.
+
+#### 13. External interoperability references
+
+| Standard | Adopt conceptually | Defer | Reject for 0052 MVP |
+|---|---|---|---|
+| W3C VC Data Model 2.0 | issuer/subject/claims/validity/status/format; authenticity ≠ claim truth; minimization | crypto, presentations, wallets, DIDs, selective disclosure, status registries | blockchain; calling uploads “VCs”; auto-trust issuer name |
+| Open Badges / CLR | issuer/earner/achievement; criteria; evidence refs; skill alignment; longitudinal record | badge issuing, Badge Connect, signed credentials, CLR export | merging badges with Passport credentials |
+| Europass concepts | structured education/qualification/portable profile | Europe-only UI; copy Europass chrome | geo lock-in |
+
+Global-first regions: India, UAE/GCC, UK, Global Remote (+ future).
+
+#### 14. API contract plan (not implemented)
+
+**Recommended MVP family** (authenticated, owner-scoped, private default, no LLM, no evidence gate, no public share):
+
+| Method | Path | Notes |
+|---|---|---|
+| GET | `/api/v1/passport` | Default aggregate (+ section summaries) |
+| POST | `/api/v1/passport` | Lazy create if missing |
+| PATCH | `/api/v1/passport` | Aggregate meta + version |
+| GET/PATCH | `/api/v1/passport/profile` | Profile section |
+| GET/POST | `/api/v1/passport/experiences` | List/create |
+| GET/PATCH/DELETE | `/api/v1/passport/experiences/{id}` | Owned |
+| GET/POST + item routes | `/api/v1/passport/education` | Same pattern |
+| GET/POST + item routes | `/api/v1/passport/projects` | Same |
+| GET/POST + item routes | `/api/v1/passport/skills` | Same |
+| GET/POST + item routes | `/api/v1/passport/credentials` | Thin refs |
+| GET/POST + item routes | `/api/v1/passport/targets` | Targets |
+
+**MVP simplification allowed:** single aggregate GET with nested sections for first UI shell (F4), then split write endpoints (F3/F5). Prefer explicit section writes over silent nested PATCH of everything.
+
+Hard rules: no client-supplied owner id; cross-user → 404 (match platform convention); empty lists not errors; unknown taxonomy → freeform retained; optimistic concurrency via `version` when present; structured errors; pagination deferred for early MVP (order_index lists).
+
+Example (conceptual) match response field names must follow F1 contracts — do not invent at implementation time without F1.
+
+#### 15. Route / navigation plan
+
+Planned family (Career Core):
+
+```text
+/passport
+/passport/profile
+/passport/experience
+/passport/education
+/passport/projects
+/passport/skills
+/passport/credentials   # RECOMMENDED in MVP nav
+/passport/targets
+```
+
+| Topic | Plan |
+|---|---|
+| `/profile` | Remain during transition; migrate UX toward `/passport/*` (F4–F7) |
+| `/platform` | Stay foundation subjects/goals — not Passport |
+| Save model | **Explicit save** for section forms (RECOMMENDED); optional later autosave |
+| Completeness | Optional indicators only; no “100% required”; evidence never required |
+| Mobile | Section nav + one job per screen; respect shell-overflow watch |
+
+#### 16. Design Fidelity Layer (planning contract)
+
+Personal professional portfolio feel; timeline for experience/education; clear section hierarchy; restrained completeness; no fake verified badges; no spreadsheet admin UI; no giant debug provenance panels; source/status visually secondary; polished empty states; accessible labels/focus/errors.
+
+Viewport acceptance (future F4+): **1280×900**, **768×1024**, **390×844** — section cards usable; known shell overflow recorded, not fixed in Passport slices by default.
+
+#### 17. Privacy / security plan
+
+Defaults: `visibility=private`; sharing disabled; org access none; public URL none; AI context only when feature explicitly requests Passport read.
+
+Risks: PII, education/employment sensitivity, credential identifiers, IDOR, mass assignment, log leakage, export leakage, future org access. Object-level ownership tests mandatory in F2/F3. No compliance completion claimed in F0.
+
+#### 18. Migration / compatibility strategy
+
+| Question | Answer |
+|---|---|
+| New tables required? | Likely `career_passports` (+ maybe section tables) — **decide in F1/F2** |
+| Reuse Profile tables? | **Yes for MVP preferred** via adapter or one migration |
+| Existing users | Lazy Passport create on first GET; backfill from Profile |
+| Dual write | Avoid; single write path after F3 |
+| Old Profile API | Temporary support through F7 |
+| CV/Roadmap validity | Preserved (snapshots / independent progress) |
+| Downgrade | Required if F2 adds migrations |
+| Principle | **No migration until F1 contracts accepted** |
+
+#### 19. Decision register
+
+| # | Item | Class |
+|---|---|---|
+| 1 | Passport name “Career & Education Passport” | LOCKED_FROM_EXISTING_DECISION |
+| 2 | Backend owner `career_passport/` | RECOMMENDED_FOR_APPROVAL |
+| 3 | Frontend owner `features/passport/` | RECOMMENDED_FOR_APPROVAL |
+| 4 | Reference `subject_id`; do not own Subject | RECOMMENDED_FOR_APPROVAL |
+| 5 | Relationship with Profile: bridge → Passport SoT | RECOMMENDED_FOR_APPROVAL |
+| 6 | Aggregate + wrap/migrate Profile tables | RECOMMENDED_FOR_APPROVAL |
+| 7 | Lazy Passport creation on first access | RECOMMENDED_FOR_APPROVAL |
+| 8 | Sections: profile, experience, education, projects, skills, credentials, targets | RECOMMENDED_FOR_APPROVAL |
+| 9 | Credentials in MVP (thin refs) | RECOMMENDED_FOR_APPROVAL |
+| 10 | Targets in MVP | RECOMMENDED_FOR_APPROVAL |
+| 11 | Taxonomy refs advisory | LOCKED_FROM_EXISTING_DECISION |
+| 12 | Freeform role/skill support | LOCKED_FROM_EXISTING_DECISION |
+| 13 | Evidence optional / never access-gate | LOCKED_FROM_EXISTING_DECISION |
+| 14 | Lightweight source/status meta | RECOMMENDED_FOR_APPROVAL |
+| 15 | Public sharing | REJECT (MVP) / DEFER_LATER |
+| 16 | Organization sharing | DEFER_LATER |
+| 17 | Explicit save (not autosave) MVP | RECOMMENDED_FOR_APPROVAL |
+| 18 | Section reordering | RECOMMENDED_FOR_APPROVAL (exists on Profile API) |
+| 19 | Completion score | OPTIONAL — non-punitive only |
+| 20 | Credential interoperability concepts only | RECOMMENDED_FOR_APPROVAL |
+| 21 | AI-assisted summary | DEFER_LATER / REJECT auto-write |
+| 22 | CV Builder read integration | DEFER to **0052-F7** |
+| 23 | Roadmap prefill integration | DEFER to **0052-F7** |
+| 24 | Claims/Evidence handoff | DEFER_TO_0053 |
+| 25 | Migration approach details | VERIFY_IN_REPO in F1/F2 |
+| 26 | Deletion/retention | RECOMMENDED private delete; retention DEFER with privacy foundation |
+| 27 | Optimistic concurrency `version` | RECOMMENDED_FOR_APPROVAL |
+| 28 | Mobile/nav Career Core | LOCKED_FROM_EXISTING_DECISION |
+| 29 | Publications/volunteer/etc. in first MVP | DEFER_LATER (post F6 or later) |
+| 30 | Repair Platform subjects 500 before subject hard-dep | VERIFY_IN_REPO (watch) |
+
+No Decision-C blockers: recommendations are sufficient to start F1 contracts without forcing irreversible product choices (F1 is still docs/contracts-only).
+
+#### 20. 0052 implementation ladder
+
+| Slice | Type | Scope | Must not |
+|---|---|---|---|
+| **0052-F0** | PLANNING_AUDIT | This slice | Product code |
+| **0052-F1** | CONTRACT_BOUNDARY | `career_passport` package; Pydantic/domain contracts; enums; validation; pure tests; no routes/DB writes | UI, migrations, claims |
+| **0052-F2** | PERSISTENCE | Models + Alembic foundation migration; ownership; Profile compatibility; upgrade/downgrade tests | Frontend |
+| **0052-F3** | API_MVP | Auth CRUD; ownership; section endpoints; errors; API tests | UI, LLM, evidence |
+| **0052-F4** | FRONTEND_SHELL | `/passport` overview; nav; L/E/E; Design Fidelity | Full section editors (unless tiny) |
+| **0052-F5** | EDITING | Profile + Experience + Education CRUD; dates; reorder; browser | Claims, wallet |
+| **0052-F6** | EDITING | Projects, Skills, Credentials, Targets; taxonomy refs; freeform | Verification, evidence graph |
+| **0052-F7** | COMPAT_INTEGRATION | Profile shim; CV/Roadmap optional Passport read; no silent overwrites | Broad rewrites |
+| **0052-F8** | CHECKPOINT | Full browser/API/privacy/responsive phase close | New features |
+
+#### 21. Risk register
+
+| Risk | Failure mode | Mitigation | Target |
+|---|---|---|---|
+| God domain | Owns claims/CV/goals | Boundary table | F0/F1 |
+| Duplicate Profile truth | Profile ≠ Passport | Single write path; F7 shim | F2/F7 |
+| FE Profile stub drift | Users think Profile works fully | Passport UI replaces stub | F4–F5 |
+| “Verified” credential | False trust | Thin refs + unverified default | F1/F6 |
+| Evidence mandatory | Locked features | Doctrine lock | All |
+| AI biography | Invented facts | No auto AI writes | F3+ |
+| Cross-user access | PII leak | Ownership tests | F2/F3 |
+| Taxonomy overwrite | Lost wording | Advisory + accept | F5/F6 |
+| Migration damage | Broken CV/Profile | Upgrade/downgrade + compat | F2 |
+| Public share leak | Overshare | Private default | F0/F4 |
+| Admin UI | Weak UX | Design Fidelity | F4+ |
+| Completion pressure | Over-disclosure | Optional sections | F4 |
+| Credential scope balloon | Wallet complexity | Interop concepts only | F0/F6 |
+| Claims duplication | Fight 0053 | Thin refs | F0/F1 |
+| Shell overflow | Unusable forms | Layout contract | F4+ |
+| Platform subjects 500 | Block subject link | Watch; nullable subject_id | F2/F3 |
+| No Profile tests | Regressions | Add with F2/F3 | F2/F3 |
+
+#### 22. Future testing / browser plan
+
+Contract, persistence, API, frontend, and browser journeys as specified in F0 prompt §24 — owned by F1–F8. Cross-user isolation via API tests. Responsive 1280/768/390. CV and Roadmap isolation required at F7/F8.
+
+#### 23. Watch items
+
+- App-shell overflow @390/@768  
+- Profile frontend ↔ backend schema mismatch  
+- Missing Profile automated tests  
+- Platform subjects list local 500 during F0 smoke  
+- PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051 API  
+- 004E / Auto Apply frozen  
+- Job Search/Interview taxonomy not in 0052  
+- Desktop prior-evidence files missing at audit time  
+
+#### 24. 0052-F0 Decision
+
+**B PASSPORT_PLAN_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_0052_F1**
+
+- Repository ownership understood; domain boundary clear; ladder bounded.  
+- Non-blocking watch items remain (Profile stub, subjects smoke, shell overflow).  
+- Product code modified in F0: **NO**.
+
+#### 25. Exact next slice
+
+**Next slice: 0052-F1 Passport Contract Boundary**
+
+#### 0052-F1 Guardrails
+
+- Create `backend/app/career_passport/` contracts/enums/validation + pure tests only.  
+- Do not add FastAPI routes, migrations, or frontend.  
+- Do not invent claim verification or evidence requirements.  
+- Preserve Profile compatibility strategy from this F0 plan.  
+- Do not reopen 004E / Auto Apply / Job Search taxonomy.
 
 ---
 

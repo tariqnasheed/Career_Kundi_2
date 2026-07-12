@@ -9,13 +9,13 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Field | Value |
 |---|---|
-| Current Phase | 0051 Universal Role & Pathway Taxonomy — **closed** |
-| Current Slice | 0051-F11 Cross-Feature Taxonomy Checkpoint |
+| Current Phase | **0052 Career & Education Passport** |
+| Current Slice | 0052-F0 Career & Education Passport Planning and Repository Audit |
 | Current Status | Completed / Accepted (Decision B) |
-| Last Completed Slice | 0051-F11 Cross-Feature Taxonomy Checkpoint |
-| Last Commit | This commit — `docs(product): close taxonomy cross-feature checkpoint` |
+| Last Completed Slice | 0052-F0 Passport Planning and Repository Audit |
+| Last Commit | This commit — `docs(product): plan career education passport` |
 | Last Push Status | Push with this slice |
-| Next Slice | **0052 Career & Education Passport** (first Passport planning/audit slice) |
+| Next Slice | **0052-F1 Passport Contract Boundary** |
 | Blocked Items | No active blockers |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
 
@@ -28,7 +28,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Master Build Plan | `docs/product/careerkundi_master_build_plan.md` |
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 
-**Pointers:** 0051-F0…F11 Done · Phase 0051 closed · Next **0052**.
+**Pointers:** 0051 closed · **0052-F0** Done · Next **0052-F1**.
 
 ---
 
@@ -36,10 +36,9 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| 0051-F8 | CV Builder Taxonomy Hook Implementation | Done | Desktop F8 evidence | `627cbfbb` | Yes | Decision B |
-| 0051-F9 | Roadmap Taxonomy Hook Planning | Done | Desktop F9 evidence | `0fb8f290` | Yes | Docs-only; Decision B |
-| 0051-F10 | Roadmap Taxonomy Hook Implementation | Done | Desktop F10 evidence | `e05ccd0c` | Yes | Decision B |
-| 0051-F11 | Cross-Feature Taxonomy Checkpoint | Done | `~/Desktop/CareerKundi_0051_F11_Cross_Feature_Taxonomy_Checkpoint_Evidence.txt` | This commit | Yes (with this push) | Decision B; phase close |
+| 0051-F11 | Cross-Feature Taxonomy Checkpoint | Done | Desktop F11 evidence | `dff79061` | Yes | Phase 0051 closed |
+| 0052-F0 | Passport Planning and Repository Audit | Done | `~/Desktop/CareerKundi_0052_F0_Passport_Planning_Audit_Evidence.txt` | This commit | Yes (with this push) | Decision B; docs-only |
+| 0052-F1 | Passport Contract Boundary | Planned | — | — | — | **Next** |
 
 ---
 
@@ -47,8 +46,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | 0051-F10 | `~/Desktop/CareerKundi_0051_F10_Roadmap_Taxonomy_Hook_Implementation_Evidence.txt` | B …WITH_WATCH_ITEMS… | Role Intelligence |
-| 2026-07-12 | 0051-F11 | `~/Desktop/CareerKundi_0051_F11_Cross_Feature_Taxonomy_Checkpoint_Evidence.txt` | B …WITH_WATCH_ITEMS… | Cross-feature closeout |
+| 2026-07-12 | 0051-F11 | `~/Desktop/CareerKundi_0051_F11_Cross_Feature_Taxonomy_Checkpoint_Evidence.txt` | B …WITH_WATCH_ITEMS… | Taxonomy phase close |
+| 2026-07-12 | 0052-F0 | `~/Desktop/CareerKundi_0052_F0_Passport_Planning_Audit_Evidence.txt` | B …READY_FOR_0052_F1… | Profile hub + subject refs |
 
 ---
 
@@ -56,8 +55,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-12 | 0051-F10 | `e05ccd0c` | Pushed | Advisory Roadmap hook |
-| 2026-07-12 | 0051-F11 | This commit (`docs(product): close taxonomy cross-feature checkpoint`) | Push with this slice | Docs-only checkpoint |
+| 2026-07-12 | 0051-F11 | `dff79061` | Pushed | Taxonomy checkpoint |
+| 2026-07-12 | 0052-F0 | This commit (`docs(product): plan career education passport`) | Push with this slice | Docs-only plan |
 
 ---
 
@@ -65,8 +64,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Decision | Impact | Status |
 |---|---|---|---|
-| 2026-07-12 | 0051-F10 Decision B | Proceed to F11 cross-feature checkpoint | Accepted |
-| 2026-07-12 | 0051-F11 Decision B | Close 0051; proceed to 0052 Passport | Accepted |
+| 2026-07-12 | 0051-F11 Decision B | Close 0051; start 0052 | Accepted |
+| 2026-07-12 | 0052-F0 Decision B | Proceed to F1 contracts | Accepted |
 
 ---
 
@@ -74,7 +73,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 No active product blockers.
 
-**Watch (carried):** shell overflow @390/@768; PDF 4-family mapping; agent `RoleTaxonomyAgent` ≠ 0051 API; Platform CORS; Design Fidelity for future UI; 004E/Auto Apply frozen; Job Search/Interview taxonomy not started.
+**Watch:** Profile FE↔BE schema mismatch; missing Profile tests; Platform subjects local 500 smoke; shell overflow @390/@768; PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051 API; 004E/Auto Apply frozen; Job Search/Interview taxonomy deferred.
 
 ---
 
@@ -82,13 +81,13 @@ No active product blockers.
 
 | Field | Value |
 |---|---|
-| Next slice | **0052 Career & Education Passport** (planning/audit first) |
-| Reason | 0051 taxonomy phase accepted closed with watch items |
-| Type | Follow master ladder §6.3 — no inventing Job Search taxonomy |
-| Evidence required | Per master plan when 0052 card is expanded |
+| Next slice | **0052-F1 Passport Contract Boundary** |
+| Reason | F0 plan accepted with watch items |
+| Type | Contracts/enums/tests only; no routes/migrations/UI |
+| Evidence required | Per master § 0052-F1 Guardrails |
 | Commit rule | Per master plan |
 | Push rule | Push after clean verification |
 
 ---
 
-*Tracker updated: 2026-07-12 — 0051-F11*
+*Tracker updated: 2026-07-12 — 0052-F0*
