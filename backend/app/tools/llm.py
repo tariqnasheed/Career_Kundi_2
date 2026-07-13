@@ -268,6 +268,118 @@ class MockGeminiProvider(BaseLLMProvider):
         return build(schema)
 
 
+def _hoist_defs_to_root(schema: dict) -> dict:
+    """
+    Return a copy of `schema` with every nested `$defs` block merged into a
+    single top-level `$defs`, so `#/$defs/Name` references resolve. Needed
+    because Ollama's structured-output schema converter only looks for `$defs`
+    at the document root, while Pydantic nests them under the array item.
+    """
+    import copy
+
+    schema = copy.deepcopy(schema)
+    collected: dict[str, Any] = {}
+
+    def walk(node: Any) -> None:
+        if isinstance(node, dict):
+            defs = node.pop("$defs", None)
+            if isinstance(defs, dict):
+                collected.update(defs)
+            for value in node.values():
+                walk(value)
+        elif isinstance(node, list):
+            for item in node:
+                walk(item)
+
+    walk(schema)
+    if collected:
+        schema["$defs"] = collected
+    return schema
+
+
+class OllamaProvider(BaseLLMProvider):
+    """
+    Local Ollama provider — free, no API quota — used when
+    `settings.resolved_llm_provider == "ollama"`.
+
+    Talks to a native Ollama server over its REST `/api/chat` endpoint (via
+    httpx, which is already a dependency), so it needs no extra package and no
+    LangChain client. Structured output is enforced with Ollama's `format`
+    field set to the requested JSON schema — the local-model equivalent of
+    Gemini's `with_structured_output`. Because this is a *real* model, the
+    pipeline treats it as a live path (`llm_mode == "live"`), so the per-question
+    content it produces is preserved rather than overwritten by the template
+    engine (see mock_data._finalize_question).
+    """
+
+    def __init__(self, tier: ModelTier):
+        self.tier = tier
+        # One local model serves both tiers — quality tiers don't apply to a
+        # single self-hosted model, and this keeps the test setup simple.
+        self.model_name = settings.ollama_model
+        self._base_url = settings.ollama_base_url.rstrip("/")
+
+    def _payload(self, spec: PromptSpec, *, stream: bool) -> dict:
+        payload: dict[str, Any] = {
+            "model": self.model_name,
+            "messages": [
+                {"role": "system", "content": spec.system_prompt},
+                {"role": "user", "content": spec.user_prompt},
+            ],
+            "stream": stream,
+            "options": {"temperature": spec.temperature, "num_predict": spec.max_output_tokens},
+        }
+        if spec.json_schema:
+            # Ollama's JSON-schema converter only resolves "#/$defs/X" refs when
+            # $defs sits at the schema ROOT. Pydantic emits $defs nested under the
+            # array item, so Ollama 400s ("$defs not in {root}"). Hoisting the
+            # definitions to the top level makes the refs resolve. (Gemini handles
+            # the original nested schema fine, so this transform is Ollama-only.)
+            payload["format"] = _hoist_defs_to_root(spec.json_schema)
+        return payload
+
+    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=8))
+    async def generate(self, spec: PromptSpec) -> LLMResponse:
+        import httpx
+
+        async with httpx.AsyncClient(timeout=httpx.Timeout(600.0)) as client:
+            resp = await client.post(f"{self._base_url}/api/chat", json=self._payload(spec, stream=False))
+            resp.raise_for_status()
+            data = resp.json()
+
+        text = (data.get("message") or {}).get("content", "") or ""
+        parsed = None
+        if spec.json_schema and text:
+            try:
+                parsed = json.loads(text)
+            except json.JSONDecodeError:
+                parsed = None  # let the caller's retry/reflection loop handle malformed JSON
+        return LLMResponse(
+            text=text,
+            parsed_json=parsed,
+            prompt_tokens=data.get("prompt_eval_count") or _estimate_tokens(spec.system_prompt + spec.user_prompt),
+            completion_tokens=data.get("eval_count") or _estimate_tokens(text),
+            model=self.model_name,
+        )
+
+    async def stream(self, spec: PromptSpec) -> AsyncIterator[str]:
+        import httpx
+
+        async with httpx.AsyncClient(timeout=httpx.Timeout(600.0)) as client:
+            async with client.stream("POST", f"{self._base_url}/api/chat", json=self._payload(spec, stream=True)) as resp:
+                resp.raise_for_status()
+                async for line in resp.aiter_lines():
+                    if not line.strip():
+                        continue
+                    try:
+                        chunk = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    piece = (chunk.get("message") or {}).get("content")
+                    if piece:
+                        yield piece
+
+
 _PROVIDER_CACHE: dict[str, BaseLLMProvider] = {}
 
 
@@ -276,15 +388,18 @@ def get_llm(tier: ModelTier = "flash") -> BaseLLMProvider:
     Return the LLM provider for the given cost tier ("flash" for routine
     tasks, "pro" for complex generation — see CostMonitorAgent for the
     escalation policy described in §3.3 "Tiered Model Selection"). Cached
-    per-tier so we don't reconstruct a LangChain client on every call.
+    per-(provider, tier) so we don't reconstruct a client on every call.
     """
-    cache_key = f"{settings.llm_mode}:{tier}"
+    provider = settings.resolved_llm_provider
+    cache_key = f"{provider}:{tier}"
     if cache_key not in _PROVIDER_CACHE:
-        if settings.llm_mode == "live":
+        if provider == "gemini":
             _PROVIDER_CACHE[cache_key] = GeminiProvider(tier)
+        elif provider == "ollama":
+            _PROVIDER_CACHE[cache_key] = OllamaProvider(tier)
         else:
             _PROVIDER_CACHE[cache_key] = MockGeminiProvider(tier)
-        logger.info("llm_provider_initialized", tier=tier, mode=settings.llm_mode)
+        logger.info("llm_provider_initialized", tier=tier, provider=provider)
     return _PROVIDER_CACHE[cache_key]
 
 

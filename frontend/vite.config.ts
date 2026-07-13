@@ -34,6 +34,10 @@ export default defineConfig({
       "/api": {
         target: process.env.VITE_API_BASE_URL ?? "http://localhost:8000",
         changeOrigin: true,
+        // Interview-pack generation on a local LLM can take minutes; keep the
+        // dev proxy from cutting the request off before the backend responds.
+        timeout: 600_000,
+        proxyTimeout: 600_000,
       },
     },
   },

@@ -16,6 +16,7 @@ the LLM/search API calls themselves are swapped.
 
 from __future__ import annotations
 
+import re
 from typing import Any
 
 from langchain_core.documents import Document
@@ -25,6 +26,7 @@ from app.agents.common.cost_monitor import CostMonitor
 from app.agents.common.guardrail import BaseGuardrailAgent
 from app.agents.common.prompts import build_system_prompt
 from app.agents.common.reflector import BaseReflectorAgent
+from app.agents.job_search.knowledge.evidence_packs import get_evidence_pack, resolve_role_family
 from app.core.config import settings
 from app.schemas.job_search import InterviewQuestion, JobEnrichmentResult
 from app.tools.graph_rag import ensure_role_node
@@ -222,6 +224,16 @@ For EVERY question provide: comprehensive model_answer, rich study_material,
 evaluation_criteria, common_mistakes, follow_up_questions, difficulty,
 estimated_answer_time_minutes.
 
+QUESTION-SPECIFICITY (mandatory — this is what makes the pack useful):
+- common_mistakes must be SPECIFIC TO THIS QUESTION's topic and skill. Do NOT reuse the
+  same generic role-level mistakes across questions. Two different questions must not share
+  an identical common_mistakes list. If a question is about JavaScript closures, its mistakes
+  are about closures — not "deploy without a rollback plan".
+- model_answer must be distinct per question — never a boilerplate opener reused verbatim.
+- If a DOMAIN GROUNDING block is supplied below, use it as VOCABULARY and a checklist to make
+  answers concrete (reference the relevant terms/checks), NOT as text to copy. Only pull in the
+  terms that actually apply to the specific question.
+
 Include behavioral (STAR), technical (one question per extracted skill), system-design
 if warranted, and role/company-specific closing questions. Generate as many questions
 as the input genuinely supports.
@@ -234,6 +246,21 @@ class _InterviewPackQuestionList:
     @staticmethod
     def json_schema() -> dict:
         item_schema = InterviewQuestion.model_json_schema()
+        # Force the fields we actually consume to be REQUIRED in the structured
+        # output. Pydantic marks model_answer/common_mistakes optional (they have
+        # defaults), so a model — especially a smaller local one — will happily
+        # emit minimal JSON that leaves them empty, which then falls back to the
+        # deterministic template engine (the very bug we're fixing). Requiring
+        # them makes both Gemini and Ollama actually produce per-question content.
+        required = list(item_schema.get("required") or [])
+        for field in ("question", "why_asked", "model_answer", "common_mistakes"):
+            if field not in required:
+                required.append(field)
+        item_schema["required"] = required
+        # Nudge the model to produce a real, non-trivial mistakes list.
+        props = item_schema.get("properties") or {}
+        if isinstance(props.get("common_mistakes"), dict):
+            props["common_mistakes"]["minItems"] = 2
         return {
             "title": "InterviewPackQuestions",
             "type": "object",
@@ -268,6 +295,41 @@ class InterviewPackPlannerAgent(BaseAgent):
         return {"plan": plan}
 
 
+def _evidence_grounding_block(job: dict[str, Any]) -> str:
+    """
+    Build a DOMAIN GROUNDING block for the interview prompt from the role-family
+    evidence pack.
+
+    This is inversion #1 of the "Gemini authors, templates ground & validate"
+    redesign: the evidence pack's vocabulary and checks are handed to the model
+    as *grounding hints* (terms to reference, checks to consider) instead of
+    being concatenated into the output afterwards. The model still writes its
+    own question-specific prose — it is just anchored in real domain vocabulary,
+    which preserves the zero-hallucination grounding without producing identical
+    template text across questions. Returns "" for the generic default pack so
+    we never over-constrain roles we have no curated vocabulary for.
+    """
+    role_family = resolve_role_family(job.get("title") or "", job.get("role_family"))
+    if role_family == "default":
+        return ""
+    pack = get_evidence_pack(role_family)
+    terms = [str(t) for t in (pack.get("domain_terms") or []) if str(t).strip()]
+    checks = [str(c) for c in (pack.get("verification_checks") or []) if str(c).strip()]
+    if not terms and not checks:
+        return ""
+    lines = ["\n\nDOMAIN GROUNDING (vocabulary + checklist — reference where relevant, do NOT copy verbatim):"]
+    if terms:
+        lines.append(f"- Domain terms: {', '.join(terms)}")
+    if checks:
+        lines.append(f"- Verification checks a strong answer may reference: {'; '.join(checks)}")
+    lines.append(
+        "- Use ONLY the items relevant to each specific question. Different questions should "
+        "reference different subsets, and each question's common_mistakes must be about THAT "
+        "question's topic — not a shared role-level list."
+    )
+    return "\n".join(lines)
+
+
 class InterviewPackExecutorAgent(BaseAgent):
     name = "InterviewPackAgent"
 
@@ -300,11 +362,13 @@ class InterviewPackExecutorAgent(BaseAgent):
                     q["citations"] = citations
         else:
             llm = get_llm(tier)
+            grounding = _evidence_grounding_block(job)
             user_prompt = (
                 f"Numbered interview-methodology context:\n{context}\n\n"
                 f"Job fields:\n{job}\n\nFocus areas requested: {state.get('focus_areas') or 'none specified'}\n"
                 f"Difficulty: {state.get('difficulty', 'auto')}\n"
                 f"Include study material for zero-prior-knowledge candidates: {state.get('include_study_material', True)}"
+                f"{grounding}"
             )
             if revision_issues:
                 user_prompt += "\n\nThe previous pack had these issues — fix them:\n" + "\n".join(
@@ -384,5 +448,63 @@ class InterviewPackReflectorAgent(BaseReflectorAgent):
             overview = (study.get("overview") or "").strip()
             if overview and is_generic_content(overview):
                 issues.append(f"Study material appears generic — needs PhD-level teaching content: '{q.get('question', '')[:60]}'")
+
+        # Cross-question uniqueness (inversion #4). The deterministic template
+        # engine produced identical common_mistakes and near-identical model
+        # answers across a whole role; flag repeats so the executor regenerates
+        # the offenders (fed back via reflection_issues) instead of shipping
+        # duplicates. LIVE-ONLY: in mock mode duplicates are expected (templates
+        # are deterministic) and the mock generator cannot regenerate them, so
+        # flagging there would only spin the revision loop for no benefit.
+        if settings.llm_mode == "live":
+            issues.extend(self._cross_question_issues(questions))
+
+        return issues
+
+    @staticmethod
+    def _cross_question_issues(questions: list[dict[str, Any]]) -> list[str]:
+        """Detect near-duplicate model answers and reused common_mistakes lists across questions."""
+
+        def _norm(text: str) -> str:
+            return re.sub(r"\s+", " ", (text or "").strip().lower())
+
+        def _tokens(text: str) -> set[str]:
+            return set(re.findall(r"[a-z0-9]+", (text or "").lower()))
+
+        def _jaccard(a: str, b: str) -> float:
+            ta, tb = _tokens(a), _tokens(b)
+            if not ta or not tb:
+                return 0.0
+            return len(ta & tb) / len(ta | tb)
+
+        issues: list[str] = []
+
+        # Near-duplicate model answers (O(n^2), fine for a single pack's size).
+        answered = [q for q in questions if (q.get("model_answer") or "").strip()]
+        for i in range(len(answered)):
+            for j in range(i + 1, len(answered)):
+                sim = _jaccard(answered[i].get("model_answer", ""), answered[j].get("model_answer", ""))
+                if sim >= 0.85:
+                    issues.append(
+                        f"Two model answers are near-duplicates ({int(sim * 100)}% word overlap) — "
+                        f"make each answer specific to its own question: "
+                        f"'{(answered[i].get('question') or '')[:50]}' vs '{(answered[j].get('question') or '')[:50]}'"
+                    )
+                    break  # one report per outer question keeps the feedback actionable
+
+        # Reused common_mistakes lists (the exact symptom that started this work).
+        mistakes_seen: dict[tuple[str, ...], str] = {}
+        for q in questions:
+            mistakes = tuple(_norm(m) for m in (q.get("common_mistakes") or []) if _norm(m))
+            if not mistakes:
+                continue
+            if mistakes in mistakes_seen:
+                issues.append(
+                    f"Identical common_mistakes reused across questions "
+                    f"('{(q.get('question') or '')[:50]}' repeats those of "
+                    f"'{mistakes_seen[mistakes][:50]}') — write mistakes specific to each question's topic."
+                )
+            else:
+                mistakes_seen[mistakes] = q.get("question") or ""
 
         return issues

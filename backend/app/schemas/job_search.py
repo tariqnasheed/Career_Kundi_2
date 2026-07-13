@@ -507,6 +507,18 @@ class InterviewQuestion(BaseModel):
     citations: list[dict] = Field(default_factory=list)
     skill_tag: str | None = None
     estimated_answer_time_minutes: int = 5
+    # Provenance of the authored prose (model_answer / common_mistakes / study).
+    # "gemini" = fully LLM-authored & preserved; "gemini_partial" = some fields
+    # LLM-authored, others filled deterministically; "deterministic_fallback" =
+    # live mode but the LLM produced nothing usable so templates were used;
+    # "deterministic_mock" = offline/mock mode. Lets us verify a pack was truly
+    # dynamic rather than silently falling back to the family template engine.
+    content_source: Literal[
+        "gemini",
+        "gemini_partial",
+        "deterministic_fallback",
+        "deterministic_mock",
+    ] | None = None
 
 
 class InterviewPackResult(BaseModel):

@@ -57,10 +57,25 @@ class Settings(BaseSettings):
 
     # --- LLM providers ---------------------------------------------------------
     gemini_api_key: str = Field(default="")
-    gemini_model_flash: str = Field(default="gemini-2.5-flash")
-    gemini_model_pro: str = Field(default="gemini-2.5-pro")
+    # Use the "-latest" aliases rather than pinned dated versions: Google returns
+    # 404 "no longer available to new users" for specific old IDs (e.g.
+    # gemini-2.5-flash) on newly-issued keys, whereas the -latest aliases always
+    # resolve to a currently-served model.
+    gemini_model_flash: str = Field(default="gemini-flash-latest")
+    gemini_model_pro: str = Field(default="gemini-pro-latest")
     gemini_embedding_model: str = Field(default="text-embedding-004")
     serpapi_key: str = Field(default="")
+
+    # --- LLM backend selection -------------------------------------------------
+    # "auto"   → gemini if GEMINI_API_KEY is set, else mock (original behavior).
+    # "gemini" → force the live Gemini provider.
+    # "ollama" → use a local Ollama server (free, no quota) — for testing.
+    # "mock"   → force the deterministic offline provider.
+    llm_provider: Literal["auto", "gemini", "ollama", "mock"] = Field(default="auto")
+    # Base URL of the Ollama server. From inside Docker use host.docker.internal;
+    # from the host directly use http://localhost:11434.
+    ollama_base_url: str = Field(default="http://host.docker.internal:11434")
+    ollama_model: str = Field(default="llama3.1:8b")
 
     # --- Database ---------------------------------------------------------------
     database_url: str = Field(
@@ -173,14 +188,27 @@ class Settings(BaseSettings):
         return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
 
     @property
+    def resolved_llm_provider(self) -> Literal["gemini", "ollama", "mock"]:
+        """
+        The concrete LLM backend to use, resolving the "auto" default. An
+        explicit `LLM_PROVIDER` wins; otherwise we use Gemini when an API key
+        is present and fall back to the deterministic mock provider.
+        """
+        p = (self.llm_provider or "auto").strip().lower()
+        if p in ("gemini", "ollama", "mock"):
+            return p  # explicit override
+        return "gemini" if self.gemini_api_key.strip() else "mock"
+
+    @property
     def llm_mode(self) -> Literal["live", "mock"]:
         """
-        Decide whether agents should call the real Gemini API or the
-        deterministic mock provider. Resolves to "live" only when a
-        non-empty API key is configured — otherwise the platform runs
-        fully offline/mocked so it stays demoable with zero setup cost.
+        "live" means "call a real LLM" (Gemini OR a local Ollama model);
+        "mock" means the deterministic offline provider. Kept as a two-value
+        property because the whole pipeline branches on it — a real local
+        model is still a live path (so LLM-authored content is preserved
+        rather than overwritten by the template engine).
         """
-        return "live" if self.gemini_api_key.strip() else "mock"
+        return "mock" if self.resolved_llm_provider == "mock" else "live"
 
     @property
     def search_mode(self) -> Literal["live", "mock"]:

@@ -257,10 +257,16 @@ export const jobApi = {
     jobId: string,
     options?: { focus_areas?: string[]; difficulty?: string; include_study_material?: boolean },
   ): Promise<InterviewPackRead> => {
-    const res = await http.post<InterviewPackRead>(`/job-search/${jobId}/interview-pack`, {
-      include_study_material: true,
-      ...options,
-    });
+    const res = await http.post<InterviewPackRead>(
+      `/job-search/${jobId}/interview-pack`,
+      {
+        include_study_material: true,
+        ...options,
+      },
+      // Interview-pack generation runs the full multi-agent LLM pipeline and can
+      // take minutes on a local model (Ollama) — far longer than the 30s default.
+      { timeout: 600_000 },
+    );
     return res.data;
   },
 

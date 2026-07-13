@@ -1,0 +1,26 @@
+# Temporary overlay: run the backend WITHOUT the PF1 migration_runner startup guard.
+#
+# Why this exists: the production Dockerfile CMD runs
+#   python -m app.db.migration_runner && uvicorn app.main:app ...
+# The migration_runner refuses to start against this database because it is a
+# non-empty *legacy* DB (31 tables, created by the older alembic system) that
+# has not been "adopted" into the new passport/foundation migration system
+# (public.careerkundi_foundation_version). That guard FATALs -> the container
+# crash-loops. The previously-running container was created from an older image
+# built before this guard, which is why it only surfaced on container recreate.
+#
+# This overlay overrides ONLY the startup command to launch uvicorn directly,
+# skipping the migration step. It does NOT mutate the database (it simply does
+# not run migrations), so it is non-destructive and restores the exact runtime
+# behavior the app had before. Adopting the DB into the foundation system is a
+# separate, deliberate decision (see docs/reports/interview_pack_llm_authoring.md).
+#
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.nomigrate.yml up -d --force-recreate backend
+services:
+  backend:
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    # Reach the native (host) Ollama server at http://host.docker.internal:11434.
+    # Ollama is run on the host (not in Docker) so it can use the Apple Metal GPU.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

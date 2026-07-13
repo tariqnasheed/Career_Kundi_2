@@ -21,6 +21,8 @@ from __future__ import annotations
 import re
 from datetime import datetime, timezone
 
+from app.core.config import settings
+
 # A broader, job-posting-flavored skill keyword list than the small
 # GraphRAG seed graph (which is tuned for roadmap traversal) — this is
 # specifically for scanning raw job description text for mentioned skills.
@@ -811,6 +813,27 @@ def _sanitize_study_material_recursive(
 def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> dict:
     """Enrich a draft question with model answer, study material, and evaluation metadata."""
     enriched = dict(q)
+    # --- LLM-authoring preservation (live mode) ------------------------------
+    # When running against a real LLM, the per-question prose the model produced
+    # is authoritative: we must NOT overwrite it with the deterministic family
+    # template engine. That overwrite is exactly what made every question in a
+    # role show the SAME "common mistakes" and near-identical model answers,
+    # because the templates are keyed on role-family, not on the question.
+    #
+    # We capture the model's original content up front and, when it is present
+    # and non-generic, set preserve-flags that guard every deterministic
+    # authoring/substitution step below. Questions the LLM never authored (e.g.
+    # coverage-plan fillers added during finalization) have empty content here,
+    # so they are still authored deterministically as before. In mock/offline
+    # mode `_llm_authoring` is False, so every guard is a no-op and existing
+    # behaviour (and the whole mock-mode test suite) is unchanged.
+    _llm_authoring = settings.llm_mode == "live"
+    _orig_model_answer = (q.get("model_answer") or "").strip()
+    _orig_common_mistakes = [str(m).strip() for m in (q.get("common_mistakes") or []) if str(m).strip()]
+    _orig_evaluation = [str(c).strip() for c in (q.get("evaluation_criteria") or []) if str(c).strip()]
+    _preserve_answer = _llm_authoring and bool(_orig_model_answer) and not is_generic_content(_orig_model_answer)
+    _preserve_mistakes = _llm_authoring and bool(_orig_common_mistakes)
+    _preserve_eval = _llm_authoring and bool(_orig_evaluation)
     slug = re.sub(r"[^A-Z0-9]+", "-", (job.get("title") or "ROLE").upper())[:20]
     skill_part = re.sub(r"[^A-Z0-9]+", "-", (enriched.get("skill_tag") or enriched.get("category", "GEN")).upper())[:12]
     type_suffix = _QUESTION_TYPE_SUFFIX.get(enriched.get("question_type", ""), "")
@@ -832,21 +855,34 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
     enriched.setdefault("expert_reference_answer", enriched.get("model_answer", ""))
     contract = create_question_contract(enriched, job)
     compiler_only = must_use_contract_compiler(enriched, contract)
-    if not compiler_only:
+    # A preserved LLM answer must never be forced through the contract compiler
+    # (which rebuilds the answer from the family template), so neutralise the
+    # compiler-only path for it.
+    if _preserve_answer:
+        compiler_only = False
+    if not compiler_only and not _preserve_answer:
         enriched["model_answer"] = polish_spoken_answer(enriched.get("model_answer", ""), enriched, job)
         enriched["used_legacy_polisher"] = True
     else:
         enriched["used_legacy_polisher"] = False
     enriched.setdefault("answer_explanation", _answer_explanation(enriched, job))
     enriched.setdefault("study_material", _study_material_for_question(enriched, job))
-    # Upgrade thin or generic LLM content from live path
-    if is_generic_content(enriched.get("model_answer", "")) and not enriched.get("export_blocked"):
+    # Upgrade thin or generic LLM content from live path (skipped when the LLM
+    # answer is preserved — it is non-empty and non-generic by construction).
+    if not _preserve_answer and is_generic_content(enriched.get("model_answer", "")) and not enriched.get("export_blocked"):
         enriched["model_answer"] = build_model_answer(enriched, job)
-    if not compiler_only:
+    if not compiler_only and not _preserve_answer:
         enriched["model_answer"] = polish_spoken_answer(enriched.get("model_answer", ""), enriched, job)
-    # Force at least one role anchor in technical answers.
+    # Force at least one role anchor in technical answers (deterministic path
+    # only — we never rewrite a preserved LLM answer just to inject the role
+    # title; the Reflector flags a missing anchor and asks the LLM to regenerate).
     role_anchor = (job.get("title") or "").lower()
-    if role_anchor and enriched.get("category") in ("technical", "role_specific") and not enriched.get("export_blocked"):
+    if (
+        not _preserve_answer
+        and role_anchor
+        and enriched.get("category") in ("technical", "role_specific")
+        and not enriched.get("export_blocked")
+    ):
         if role_anchor not in enriched.get("model_answer", "").lower():
             enriched["model_answer"] = build_model_answer(enriched, job)
     study = enriched.get("study_material") or {}
@@ -910,7 +946,12 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
     quality["slot_rejection_count"] = quality.get("slot_rejection_count", 0)
     quality["slot_retry_count"] = quality.get("slot_retry_count", 0)
     quality["quality_gate_status"] = enriched.get("quality_gate_status", "unknown")
-    if quality["domain_density"] < 15 and enriched.get("skill_card") and not enriched.get("export_blocked"):
+    if (
+        not _preserve_answer
+        and quality["domain_density"] < 15
+        and enriched.get("skill_card")
+        and not enriched.get("export_blocked")
+    ):
         enriched["model_answer"] = build_model_answer(enriched, job)
         if not compiler_only:
             enriched["model_answer"] = polish_spoken_answer(enriched.get("model_answer", ""), enriched, job)
@@ -931,8 +972,23 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
         enriched.pop("expert_reference_answer", None)
     study = enriched.get("study_material") or {}
     _boost_specificity(enriched, job)
-    enriched["evaluation_criteria"] = study.get("principles") or study.get("key_concepts") or enriched.get("evaluation_criteria", [])
-    enriched["common_mistakes"] = study.get("common_mistakes") or enriched.get("common_mistakes", [])
+    # `study_material` is built from the role-family evidence pack, so pulling
+    # evaluation_criteria / common_mistakes from it is what forced every question
+    # in a role to show the SAME list. When the LLM authored its own
+    # question-specific lists we keep them; otherwise we fall back to the study
+    # (deterministic) content as before.
+    if _preserve_eval:
+        enriched["evaluation_criteria"] = _orig_evaluation
+    else:
+        enriched["evaluation_criteria"] = study.get("principles") or study.get("key_concepts") or enriched.get("evaluation_criteria", [])
+    if _preserve_mistakes:
+        enriched["common_mistakes"] = _orig_common_mistakes
+        # Keep the nested study copy consistent with what the UI renders so the
+        # study tab doesn't resurrect the family-template mistakes.
+        if isinstance(study, dict):
+            study["common_mistakes"] = _orig_common_mistakes
+    else:
+        enriched["common_mistakes"] = study.get("common_mistakes") or enriched.get("common_mistakes", [])
     enriched["practice_tasks"] = study.get("practice_exercises") or [
         f"Review the key facts for this topic and write a 200-word summary from memory.",
     ]
@@ -979,6 +1035,24 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
         if key in _QUESTION_PROSE_SKIP_KEYS:
             continue
         enriched[key] = _sanitize_study_material_recursive(value, job, role_title, scrub_rules)
+    # Re-assert preserved LLM lists in case the study-module synthesis above
+    # repopulated them from the family template (the UI renders the top-level
+    # common_mistakes / evaluation_criteria).
+    if _preserve_mistakes:
+        enriched["common_mistakes"] = _orig_common_mistakes
+    if _preserve_eval:
+        enriched["evaluation_criteria"] = _orig_evaluation
+    # Record where this question's authored prose actually came from, so a pack
+    # can be inspected to confirm it was genuinely LLM-authored rather than
+    # silently served from the deterministic template engine.
+    if _preserve_answer and _preserve_mistakes:
+        enriched["content_source"] = "gemini"
+    elif _preserve_answer or _preserve_mistakes or _preserve_eval:
+        enriched["content_source"] = "gemini_partial"
+    elif _llm_authoring:
+        enriched["content_source"] = "deterministic_fallback"
+    else:
+        enriched["content_source"] = "deterministic_mock"
     return attach_obligation_profile(enriched, job)
 
 
