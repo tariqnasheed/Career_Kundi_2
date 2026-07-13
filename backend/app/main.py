@@ -27,6 +27,7 @@ from app.api.routes import (
     cv_builder,
     health,
     job_search,
+    passport,
     platform,
     profile,
     roadmap,
@@ -166,6 +167,7 @@ def create_app() -> FastAPI:
     api_v1_prefix = "/api/v1"
     app.include_router(auth.router, prefix=api_v1_prefix)
     app.include_router(profile.router, prefix=api_v1_prefix)
+    app.include_router(passport.router, prefix=api_v1_prefix)
     app.include_router(job_search.router, prefix=api_v1_prefix)
     app.include_router(role_packs.router, prefix=api_v1_prefix)
     app.include_router(cv_builder.router, prefix=api_v1_prefix)

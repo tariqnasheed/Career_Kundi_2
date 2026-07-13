@@ -5085,6 +5085,103 @@ Profile FE↔BE mismatch; incomplete legacy Profile test coverage; Platform subj
 
 ---
 
+### 0052-F3 Passport API MVP
+
+**Type:** `AUTHENTICATED_API_MVP`  
+**Status:** Done (this slice)  
+**Depends on:** 0052-F2 Decision B  
+
+#### Purpose
+
+Expose a bounded authenticated Passport API over F1 contracts and F2 Profile-wrapper persistence: lazy-create one Passport, wrap the existing Profile, mutate Profile-backed rows and Passport targets, enforce ownership and optimistic concurrency. No frontend, migration, public sharing, evidence, claims, LLM, CV, or Roadmap integration.
+
+#### Route-surface decision
+
+One aggregate read + explicit section-write endpoints (27 authenticated path operations). Aggregate POST omitted because GET lazy-creates. Separate item/list GET endpoints omitted — the complete aggregate read supplies all current Passport data.
+
+| Method | Path | Purpose |
+|---|---|---|
+| GET | `/api/v1/passport` | Lazy-create and read full aggregate |
+| PATCH | `/api/v1/passport` | Subject link / section preferences |
+| PATCH | `/api/v1/passport/profile` | Profile-backed personal information |
+| POST/PUT/PATCH/DELETE | `/api/v1/passport/{collection}…` | experiences, education, projects, skills, credentials, targets |
+
+#### Lazy-create behavior
+
+GET ensures Profile (legacy users) then one Passport wrapping that Profile. No Subject, no targets, no section copies. Idempotent; unique constraints are the race guard. Version starts at 1; GET does not increment version.
+
+#### Profile-wrapper write behavior
+
+Mutations write directly to existing Profile child tables / `passport_targets`. No Profile HTTP calls, no dual-write, no Passport section tables.
+
+#### Response model and output filtering
+
+All successes return `{ "data": PassportRead }`. Derived: `display_name`←User.full_name, `headline`←professional_headline, `summary`←bio_summary. Never exposes `owner_user_id`, `profile_id`, auth secrets, or email.
+
+#### Authentication / ownership
+
+Every operation requires `get_current_user`. Ownership derived server-side. Missing or cross-user entries → **404** (non-disclosing). No client `passport_id` / `owner_user_id` / `profile_id`.
+
+#### Subject linking
+
+Optional. Non-null `subject_id` validated via `ensure_owned_subject` (direct DB). Explicit null clears. No auto-create; no Platform HTTP call.
+
+#### Version / concurrency
+
+Every mutation requires `expected_version` (body or DELETE query). Passport row locked `FOR UPDATE`; mismatch → **409 CONFLICT** with `{expected_version, current_version}`. Success increments version by exactly one. Failed 404/409/422 leave data and version unchanged.
+
+#### Record metadata / taxonomy
+
+Clients cannot submit record metadata. Profile-backed creates use `user_asserted` / `profile_supported` / `unverified`. Targets use `not_provided` / `unverified`. Taxonomy refs advisory JSONB only — freeform text retained; no registry FK; no verification implication.
+
+#### Profile compatibility
+
+Passport profile/section writes are visible via existing `/api/v1/profile`. Profile writes remain visible on Passport GET. Single Profile row; no duplicates.
+
+#### Journey results (disposable PostgreSQL)
+
+Real guarded disposable DB (`ck_0052f3_`), TestClient, foundation head F8, two users. Coverage: 27 routes, auth 401, lazy-create, output filtering, legacy Profile rows, shared-row CRUD all six collections, subject link/cross-user 404, version conflicts, exact-set reorder, mass-assignment 422, no claims/provenance/goals/LLM. **Zero skips.**
+
+#### Tests
+
+| Suite | Result |
+|---|---|
+| `test_passport_api.py` | **2 passed** (real disposable PG; 0 skips) |
+| `test_passport_contract_boundary.py` | **61 passed** |
+| `test_passport_persistence.py` | PASS |
+| `test_migration_policy.py` | PASS (head F8) |
+| Focused passport+persistence+API | **79 passed** |
+| compile + route/foundation smoke | **PASSPORT_API_ROUTE_SMOKE_OK** / **PASSPORT_API_FOUNDATION_UNCHANGED_OK** |
+
+#### Scope
+
+`NO_FRONTEND_MODEL_OR_MIGRATION_CHANGES`. No LLM/provider. Foundation remains `f0008_passport_persistence`.
+
+#### 0052-F3 Decision
+
+**B PASSPORT_API_MVP_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_0052_F4**
+
+#### F4 handoff — Passport Frontend Shell + Design Fidelity
+
+- Add frontend Passport API types and client methods.  
+- Add `/passport` frontend shell only.  
+- Use aggregate GET for overview.  
+- No complete section editors in F4.  
+- Show loading, empty, error, and retry states.  
+- Display private/unverified copy honestly.  
+- Do not expose raw metadata as debug panels.  
+- Design Fidelity required at 1280/768/390.  
+- Carry shell-overflow watch.  
+- No CV/Roadmap integration until F7.
+
+#### Remaining watch items
+
+Platform subjects list may still fail while direct optional linkage works; Profile FE↔BE mismatch; incomplete legacy Profile coverage; shell overflow @390/@768; PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051 API; 004E/Auto Apply frozen.
+
+**Next slice: 0052-F4 Passport Frontend Shell + Design Fidelity**
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:

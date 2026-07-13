@@ -70,6 +70,11 @@ class AuthorizationError(CareerkundiError):
     status_code = status.HTTP_403_FORBIDDEN
 
 
+class ConflictError(CareerkundiError):
+    code = "CONFLICT"
+    status_code = status.HTTP_409_CONFLICT
+
+
 class RateLimitedError(CareerkundiError):
     code = "RATE_LIMITED"
     status_code = status.HTTP_429_TOO_MANY_REQUESTS
@@ -137,13 +142,22 @@ def register_exception_handlers(app: FastAPI) -> None:
     async def handle_validation_error(request: Request, exc: RequestValidationError) -> JSONResponse:
         # This catches errors when a user sends bad data (e.g., missing a required field)
         # FastAPI raises this automatically before our route code even runs!
-        logger.warning("request_validation_failed", path=request.url.path, errors=exc.errors())
+        safe_errors: list[dict[str, Any]] = []
+        for err in exc.errors():
+            safe_errors.append(
+                {
+                    "loc": [str(part) for part in err.get("loc", ())],
+                    "msg": str(err.get("msg", "validation error")),
+                    "type": str(err.get("type", "value_error")),
+                }
+            )
+        logger.warning("request_validation_failed", path=request.url.path, errors=safe_errors)
         return JSONResponse(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
             content=_error_envelope(
                 "VALIDATION_FAILED",
                 "The request body failed validation.",
-                {"errors": exc.errors()},
+                {"errors": safe_errors},
             ),
         )
 

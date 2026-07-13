@@ -30,6 +30,7 @@ APPROVED_DISPOSABLE_PREFIXES = (
     "ck_pf7s1_",
     "ck_pf8s1_",
     "ck_pf9s1_",
+    "ck_0052f3_",
 )
 _DISPOSABLE_NAME_RE = re.compile(
     rf"^({'|'.join(re.escape(p) for p in APPROVED_DISPOSABLE_PREFIXES)})[a-z0-9_]+$"
