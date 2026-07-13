@@ -81,11 +81,17 @@ def test_no_vendor_sdk_imports_in_package() -> None:
     assert not violations, violations
 
 
-def test_no_f0008_or_observability_migration() -> None:
+def test_no_observability_migration() -> None:
+    """
+    Observability must not introduce its own foundation migration or storage.
+
+    F8 belongs to Passport persistence and does not violate the observability
+    no-storage boundary.
+    """
     names = {p.name for p in FOUNDATION_VERSIONS.glob("*.py") if p.name != "__init__.py"}
-    assert not any(n.startswith("f0008") for n in names)
     assert not any("observability" in n.lower() for n in names)
     assert "f0007_privacy_foundation.py" in names
+    assert "f0008_passport_persistence.py" in names
 
 
 def test_no_observability_orm_models() -> None:

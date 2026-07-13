@@ -5182,6 +5182,62 @@ Platform subjects list may still fail while direct optional linkage works; Profi
 
 ---
 
+### 0052-F3R1 Migration-Head Regression Alignment
+
+**Type:** `BOUNDED_TEST_MAINTENANCE`  
+**Status:** Done (this slice)  
+**Depends on:** 0052-F3 Decision B  
+
+#### Why
+
+After F3, the wider `-k "passport or profile or platform or migration"` run showed **3 failures**. Root cause: stale historical test assumptions, not a Passport API defect.
+
+| Failure | Stale assumption | Reality |
+|---|---|---|
+| `test_f0007_migration_empty_to_head` | `foundation_heads() == [F7]` after `prepare_database()` | Current head is F8 |
+| `test_f0007_downgrade_upgrade` | `upgrade("head")` leaves revision F7 | `head` means F8 |
+| `test_no_f0008_or_observability_migration` | Any `f0008*` migration is forbidden | F8 is Passport persistence |
+
+**F3 implementation accepted.** F3R1 repaired repository test assumptions introduced by later foundation-head advancement. No production, migration, model, API, frontend, or LLM file changed.
+
+#### Repair strategy
+
+- Historical F7: upgrade explicitly to `f0007_privacy_foundation` (not `prepare_database` / `"head"`).  
+- Downgrade: F8 → F6 → F7 → `"head"` (F8), asserting privacy tables at F7 and Passport tables at current head.  
+- Drift-at-head: assert `foundation_heads() == [CURRENT_HEAD]` where `CURRENT_HEAD = f0008_passport_persistence`.  
+- Observability: forbid observability-named migrations only; require F7 and F8 filenames; preserve ORM/table/vendor boundaries.
+
+#### Files changed
+
+| File | Change |
+|---|---|
+| `backend/app/platform/privacy/tests/test_privacy_service.py` | Historical F7 + F7→head journeys |
+| `backend/app/platform/observability/tests/test_observability_boundaries.py` | `test_no_observability_migration` |
+| Docs | Master plan + live tracker |
+
+#### Tests
+
+| Suite | Result |
+|---|---|
+| Privacy + observability targeted | **10 passed**, 0 skips |
+| Wider previously-failing run | **339 passed**, 87 deselected, **0 failed** |
+| Combined Passport + privacy + observability | **89 passed** |
+| Foundation head | unchanged `f0008_passport_persistence` |
+
+#### 0052-F3R1 Decision
+
+**B MIGRATION_HEAD_REGRESSION_ALIGNMENT_ACCEPTED_WITH_NONBLOCKING_WATCHES_F4_UNBLOCKED**
+
+F4 frontend gate unblocked.
+
+#### Remaining watch items
+
+Platform subjects list may 500 while direct subject link works; Profile FE↔BE mismatch; incomplete Profile tests; shell overflow @390/@768; PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051 API; 004E/Auto Apply frozen.
+
+**Next slice: 0052-F4 Passport Frontend Shell + Design Fidelity**
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:

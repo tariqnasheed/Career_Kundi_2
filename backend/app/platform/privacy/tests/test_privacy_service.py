@@ -53,6 +53,7 @@ from app.platform.privacy.service import (
 PF9_PREFIX = "ck_pf9s1_"
 F0006 = "f0006_lifecycle_loop_foundation"
 F0007 = "f0007_privacy_foundation"
+CURRENT_HEAD = "f0008_passport_persistence"
 MIGRATION_FILE = (
     Path(__file__).resolve().parents[3]
     / "db"
@@ -61,6 +62,7 @@ MIGRATION_FILE = (
     / "f0007_privacy_foundation.py"
 )
 PRIVACY_TABLES = {"privacy_policies", "consent_records", "retention_policies"}
+PASSPORT_TABLES = {"career_passports", "passport_targets"}
 FORBIDDEN_TABLES = {
     "privacy_requests",
     "data_exports",
@@ -106,16 +108,22 @@ def _insert_user(sync_url: str) -> uuid.UUID:
 
 
 @require_disposable_postgres
-def test_f0007_migration_empty_to_head() -> None:
+def test_f0007_migration_empty_to_f0007() -> None:
+    """Historical F7 journey: upgrade explicitly to F7, not current head."""
     with temporary_database(prefix=PF9_PREFIX) as (_name, url):
-        result = prepare_database(url)
-        assert foundation_heads() == [F0007]
-        assert result.foundation_revisions == (F0007,)
+        cfg = build_foundation_alembic_config()
         engine = create_engine(url)
         try:
+            with engine.begin() as conn:
+                cfg.attributes["connection"] = conn
+                command.upgrade(cfg, F0007)
+            with engine.connect() as conn:
+                assert read_foundation_revisions(conn) == (F0007,)
             tables = set(inspect(engine).get_table_names())
             assert PRIVACY_TABLES.issubset(tables)
             assert not (FORBIDDEN_TABLES & tables)
+            # Passport tables belong to F8 — absent at historical F7.
+            assert not (PASSPORT_TABLES & tables)
             for table in PRIVACY_TABLES:
                 fks = inspect(engine).get_foreign_keys(table)
                 assert any(fk["referred_table"] == "career_subjects" for fk in fks)
@@ -133,9 +141,11 @@ def test_f0007_migration_empty_to_head() -> None:
 
 
 @require_disposable_postgres
-def test_f0007_downgrade_upgrade() -> None:
+def test_f0007_downgrade_historical_upgrade_then_current_head() -> None:
+    """Downgrade privacy, restore F7 historically, then advance to current F8 head."""
     with temporary_database(prefix=PF9_PREFIX) as (_name, url):
         prepare_database(url)
+        assert foundation_heads() == [CURRENT_HEAD]
         cfg = build_foundation_alembic_config()
         engine = create_engine(url)
         try:
@@ -144,13 +154,26 @@ def test_f0007_downgrade_upgrade() -> None:
                 command.downgrade(cfg, F0006)
             tables = set(inspect(engine).get_table_names())
             assert not (PRIVACY_TABLES & tables)
+            assert not (PASSPORT_TABLES & tables)
             assert "career_goals" in tables
+
+            with engine.begin() as conn:
+                cfg.attributes["connection"] = conn
+                command.upgrade(cfg, F0007)
+            tables_f7 = set(inspect(engine).get_table_names())
+            assert PRIVACY_TABLES.issubset(tables_f7)
+            assert not (PASSPORT_TABLES & tables_f7)
+            with engine.connect() as conn:
+                assert read_foundation_revisions(conn) == (F0007,)
+
             with engine.begin() as conn:
                 cfg.attributes["connection"] = conn
                 command.upgrade(cfg, "head")
-            assert PRIVACY_TABLES.issubset(set(inspect(engine).get_table_names()))
+            tables_head = set(inspect(engine).get_table_names())
+            assert PRIVACY_TABLES.issubset(tables_head)
+            assert PASSPORT_TABLES.issubset(tables_head)
             with engine.connect() as conn:
-                assert read_foundation_revisions(conn) == (F0007,)
+                assert read_foundation_revisions(conn) == (CURRENT_HEAD,)
         finally:
             engine.dispose()
 
@@ -159,6 +182,7 @@ def test_f0007_downgrade_upgrade() -> None:
 def test_drift_zero_at_head() -> None:
     with temporary_database(prefix=PF9_PREFIX) as (_name, url):
         prepare_database(url)
+        assert foundation_heads() == [CURRENT_HEAD]
         engine = create_engine(url)
 
         def _include_object(object, name, type_, reflected, compare_to):
@@ -168,6 +192,7 @@ def test_drift_zero_at_head() -> None:
 
         try:
             with engine.connect() as conn:
+                assert read_foundation_revisions(conn) == (CURRENT_HEAD,)
                 mc = MigrationContext.configure(
                     conn,
                     opts={
@@ -180,7 +205,6 @@ def test_drift_zero_at_head() -> None:
             assert diffs == [], diffs
         finally:
             engine.dispose()
-
 
 def test_f0007_no_create_all_or_orm_imports() -> None:
     tree = ast.parse(MIGRATION_FILE.read_text(encoding="utf-8"))
