@@ -160,3 +160,50 @@
   color: var(--text-primary);
   background: var(--bg-overlay);
 }
+
+/* --- Tablet: icon rail ------------------------------------------------ */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .sidebar,
+  .sidebar.collapsed {
+    width: 64px;
+  }
+
+  .brandName,
+  .groupHeading,
+  .navLabel {
+    display: none !important;
+  }
+
+  .collapseBtn {
+    display: none;
+  }
+}
+
+/* --- Mobile: off-canvas drawer ---------------------------------------- */
+@media (max-width: 767px) {
+  .sidebar {
+    width: min(84vw, 280px);
+    transform: translateX(-105%);
+    transition: transform var(--transition-normal);
+    z-index: var(--z-sidebar);
+    box-shadow: var(--shadow-md);
+  }
+
+  .sidebar.collapsed {
+    width: min(84vw, 280px);
+  }
+
+  .sidebar.mobileOpen {
+    transform: translateX(0);
+  }
+
+  .collapseBtn {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar {
+    transition: none;
+  }
+}

@@ -658,6 +658,208 @@ export interface TaxonomyErrorRead {
 }
 
 // ---------------------------------------------------------------------------
+// Passport (0052-F3/F4) — mirrors backend/app/schemas/passport.py
+// ---------------------------------------------------------------------------
+
+export type PassportVisibility = "private";
+
+export type PassportSectionKey =
+  | "profile"
+  | "experience"
+  | "education"
+  | "projects"
+  | "skills"
+  | "credentials"
+  | "targets";
+
+export type PassportTaxonomyKind = "role" | "skill";
+
+export type PassportCredentialType =
+  | "certification"
+  | "license"
+  | "course_certificate"
+  | "education_award"
+  | "professional_membership"
+  | "other";
+
+export type PassportSeniorityLevel =
+  | "entry"
+  | "junior"
+  | "mid"
+  | "senior"
+  | "lead"
+  | "principal"
+  | "manager"
+  | "director"
+  | "executive"
+  | "unknown";
+
+export interface PassportRecordMetaRead {
+  source_status: string;
+  support_status: "not_provided" | "profile_supported" | string;
+  verification_status: "unverified" | string;
+}
+
+export interface PassportTaxonomyReference {
+  kind: PassportTaxonomyKind;
+  input_text: string;
+  normalized_text: string | null;
+  taxonomy_id: string | null;
+  source: TaxonomySourceType;
+  confidence: TaxonomyConfidenceLevel;
+  accepted_by_user: boolean;
+}
+
+export interface PassportSectionPreference {
+  section: PassportSectionKey;
+  order_index: number;
+  enabled: boolean;
+}
+
+export interface PassportProfileRead {
+  phone: string | null;
+  date_of_birth: string | null;
+  nationality: string | null;
+  linkedin_url: string | null;
+  github_url: string | null;
+  portfolio_url: string | null;
+  twitter_url: string | null;
+  other_social_links: Record<string, unknown>[];
+  address_city: string | null;
+  address_state: string | null;
+  address_country: string | null;
+  photo_url: string | null;
+  professional_headline: string | null;
+  bio_summary: string | null;
+  declaration_text: string | null;
+  references_available_on_request: boolean;
+  interests: string[];
+  record_meta: PassportRecordMetaRead;
+}
+
+export interface PassportExperienceRead {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  job_title: string;
+  company_name: string;
+  company_url: string | null;
+  location: string | null;
+  employment_type: string | null;
+  start_date: string | null;
+  end_date: string | null;
+  is_current: boolean;
+  description_bullets: string[];
+  order_index: number;
+  role_taxonomy: PassportTaxonomyReference | null;
+  record_meta: PassportRecordMetaRead;
+}
+
+export interface PassportEducationRead {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  degree: string;
+  field_of_study: string | null;
+  institution: string;
+  location: string | null;
+  start_date: string | null;
+  end_date: string | null;
+  is_current: boolean;
+  grade: string | null;
+  description_bullets: string[];
+  relevant_coursework: string[];
+  order_index: number;
+  record_meta: PassportRecordMetaRead;
+}
+
+export interface PassportProjectRead {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  title: string;
+  description: string | null;
+  technologies: string[];
+  project_url: string | null;
+  start_date: string | null;
+  end_date: string | null;
+  role: string | null;
+  key_achievements: string[];
+  order_index: number;
+  skill_taxonomy: PassportTaxonomyReference[];
+  record_meta: PassportRecordMetaRead;
+}
+
+export interface PassportSkillRead {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  name: string;
+  skill_type: string;
+  category: string | null;
+  proficiency: string | null;
+  order_index: number;
+  taxonomy: PassportTaxonomyReference | null;
+  record_meta: PassportRecordMetaRead;
+}
+
+export interface PassportCredentialRead {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  credential_type: PassportCredentialType;
+  name: string;
+  issuing_organization: string;
+  issue_date: string | null;
+  expiry_date: string | null;
+  credential_id: string | null;
+  credential_url: string | null;
+  order_index: number;
+  record_meta: PassportRecordMetaRead;
+}
+
+export interface PassportTargetRead {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  target_role_text: string;
+  role_taxonomy: PassportTaxonomyReference | null;
+  pathway_type: TaxonomyPathwayType | null;
+  target_country: string | null;
+  target_region: string | null;
+  target_industry: string | null;
+  target_seniority: PassportSeniorityLevel | null;
+  time_horizon: string | null;
+  priority: number;
+  order_index: number;
+  record_meta: PassportRecordMetaRead;
+}
+
+export interface PassportRead {
+  id: string;
+  subject_id: string | null;
+  display_name: string | null;
+  headline: string | null;
+  summary: string | null;
+  visibility: PassportVisibility | string;
+  version: number;
+  section_preferences: PassportSectionPreference[];
+  profile: PassportProfileRead;
+  experiences: PassportExperienceRead[];
+  education: PassportEducationRead[];
+  projects: PassportProjectRead[];
+  skills: PassportSkillRead[];
+  credentials: PassportCredentialRead[];
+  targets: PassportTargetRead[];
+  created_at: string;
+  updated_at: string;
+}
+
+export interface PassportEnvelope {
+  data: PassportRead;
+}
+
+// ---------------------------------------------------------------------------
 // Shared error envelope
 // ---------------------------------------------------------------------------
 

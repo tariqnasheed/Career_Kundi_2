@@ -5238,6 +5238,65 @@ Platform subjects list may 500 while direct subject link works; Profile FE↔BE 
 
 ---
 
+### 0052-F4 Passport Frontend Shell + Design Fidelity
+
+| Field | Value |
+|---|---|
+| Slice type | `FRONTEND_SHELL_AND_DESIGN_FIDELITY` |
+| Status | Completed — Decision B |
+| Frontend route | `/passport` (authenticated AppShell) |
+| Aggregate client | `passportApi.get()` → `GET /api/v1/passport` only |
+| TypeScript contract | `PassportRead` / `PassportEnvelope` + section reads in `types/api.ts` |
+| Page structure | Heading, status strip, identity, metrics, seven sections by `section_preferences`, targets preview, privacy card |
+| Loading state | Spinner + `aria-busy`; heading remains; no fake data |
+| Empty state | Neutral “Passport is ready” copy; Version 1; Private/Unverified |
+| Error/retry | `role="alert"` + human message + Retry → `refetch()` |
+| Populated state | Counts + section cards + up to three targets; read-only |
+| Private/unverified language | Honest labels; no verified/score language |
+| Raw metadata | Not exposed; formatter labels only |
+| Edits / mutations | None |
+| Platform/CV/Roadmap calls | None from Passport page |
+| Shared-shell correction | `--current-sidebar-width` drives header + main; menuBtn display fix |
+| Desktop (>1024) | Expanded/collapsed sidebar syncs header/main; menu hidden |
+| Tablet (768–1024) | 64px icon rail; labels/headings/collapse hidden; menu hidden |
+| Mobile (<768) | Off-canvas drawer `min(84vw, 280px)`; menu + backdrop + Escape + nav close |
+| Accessibility | h1/h2; aria-expanded/controls; alert; decorative icons hidden |
+| Reduced motion | Shell + Passport CSS respect `prefers-reduced-motion` |
+| Dark / light | Both verified at 1280 |
+| 1280 | Pass — no overflow; sidebar 240px; header left 240px |
+| 768 | Pass — icon rail 64px; no overflow |
+| 390 | Pass — drawer closed/open; no overflow |
+| Overflow measurements | 1280/768/390: `scrollWidth == clientWidth` |
+| Frontend tests | PassportPage 5 + AppShellResponsive 3; full suite 97 passed |
+| Frontend build | `tsc` + `vite build` PASS |
+| Backend contract regression | 63 passed; disposable PG skips = 0; no backend file changes |
+| Browser console | No uncaught exceptions; intentional `ERR_FAILED` only during abort test |
+| Screenshots | `~/Desktop/CareerKundi_0052_F4_Design_Fidelity/` |
+| Exact files | 15 allowed paths (types, api, App, layout×6+test, passport×3, 2 docs) |
+| Verdict | **B PASSPORT_FRONTEND_SHELL_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_0052_F5** |
+
+#### F5 handoff
+
+- Implement Profile, Experience and Education editors only
+- Use existing Passport PATCH/POST/PUT/DELETE APIs
+- Every mutation sends current `expected_version`
+- Handle 409 by refetching and warning
+- Update TanStack Query aggregate cache after success
+- No Projects/Skills/Credentials/Targets editors until F6
+- No Subject picker unless Platform resolver/list is stable
+- No CV/Roadmap integration until F7
+- Preserve private/unverified language; no completion-pressure scoring
+
+#### Remaining watch items
+
+Platform subjects list may 500 while direct subject link works; Profile FE↔BE mismatch; incomplete Profile tests; PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051 API; 004E/Auto Apply frozen; frontend ESLint config missing at baseline (focused lint blocked).
+
+Shell-overflow watch **cleared** (1280/768/390 overflow OK).
+
+**Next slice: 0052-F5 Passport Profile, Experience and Education Editing**
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:

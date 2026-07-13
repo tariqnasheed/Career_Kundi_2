@@ -1,0 +1,273 @@
+/* PassportPage.module.css */
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.5rem 1.25rem 2.5rem;
+  min-width: 0;
+  max-width: min(960px, 100%);
+  overflow-wrap: anywhere;
+}
+
+.pageHeader {
+  margin-bottom: 1.25rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: var(--font-weight-semibold);
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.lead {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  max-width: 42rem;
+}
+
+.stateBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 3rem 1rem;
+  min-height: 12rem;
+}
+
+.stateHint {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.stateCard {
+  margin-top: 1rem;
+}
+
+.errorContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.errorTitle {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.errorMessage {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.statusStrip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 0.5rem 0 0.35rem;
+}
+
+.statusMeta {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.statusExplain {
+  margin: 0 0 1.25rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.sectionHeading {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.identity {
+  margin-bottom: 1.25rem;
+}
+
+.identityBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.displayName {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.headline,
+.summary {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.metricCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 1rem;
+  min-width: 0;
+}
+
+.metricValue {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.metricLabel {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.emptyCard {
+  margin-bottom: 1.25rem;
+}
+
+.emptyLead {
+  margin: 0 0 0.5rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.emptyBody {
+  margin: 0 0 0.5rem;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.emptyBody:last-child {
+  margin-bottom: 0;
+}
+
+.sections {
+  margin-bottom: 1.5rem;
+}
+
+.sectionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 0.85rem;
+}
+
+.sectionCard {
+  min-width: 0;
+}
+
+.sectionCardHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.sectionCardTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.sectionIcon {
+  display: inline-flex;
+  color: var(--accent-violet);
+}
+
+.sectionDescription,
+.sectionCount,
+.readOnlyNote,
+.metaSample,
+.taxonomyHint,
+.targetMeta,
+.targetPriority {
+  margin: 0.35rem 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.readOnlyNote,
+.metaSample {
+  color: var(--text-muted);
+}
+
+.targets {
+  margin-bottom: 1.5rem;
+}
+
+.targetList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 0.85rem;
+}
+
+.targetBody {
+  min-width: 0;
+}
+
+.targetRole {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.privacy {
+  margin-bottom: 1rem;
+}
+
+.privacyTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding: 0.5rem 0.85rem 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

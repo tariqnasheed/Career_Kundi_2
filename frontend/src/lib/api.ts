@@ -49,6 +49,8 @@ import type {
   TaxonomyRoleRead,
   TaxonomyRoleSkillsRead,
   TaxonomyRelatedRolesRead,
+  PassportEnvelope,
+  PassportRead,
 } from "@/types/api";
 import {
   buildSavedJobSearchPageRequest,
@@ -671,6 +673,18 @@ export const taxonomyApi = {
   getRelatedRoles: async (roleId: string): Promise<TaxonomyRelatedRolesRead> => {
     const res = await http.get<TaxonomyRelatedRolesRead>(`/taxonomy/roles/${roleId}/related`);
     return res.data;
+  },
+};
+
+// ---------------------------------------------------------------------------
+// Passport endpoints (0052-F4) — read-only aggregate client
+// ---------------------------------------------------------------------------
+
+export const passportApi = {
+  /** Lazy-create and read the authenticated Passport aggregate. */
+  get: async (): Promise<PassportRead> => {
+    const response = await http.get<PassportEnvelope>("/passport");
+    return response.data.data;
   },
 };
 
