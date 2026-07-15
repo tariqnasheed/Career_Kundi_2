@@ -5496,9 +5496,78 @@ No public sharing, verification, evidence claims, or completion-pressure scoring
 
 #### Next phase recommendation
 
-Owner chooses next product phase. Do not start public Passport sharing or verification/evidence (0053+) without a new approved phase. Carry deferred watches above.
+**0053 Evidence, Claims, Provenance and Verification Foundations** — start with **0053-F0** (planning only). Carry deferred Passport watches above into later hardening as needed.
 
 **0052 closed. No 0052-F9.**
+
+---
+
+## 0053 Evidence, Claims, Provenance and Verification Foundations
+
+**Phase status:** Active — **0053-F0** planning complete (docs only).  
+**Prior phase:** **0052 Career & Education Passport** — completed and accepted (`8af9b813…`).  
+**Plan document:** `docs/product/careerkundi_0053_claims_evidence_plan.md`  
+**Foundation head (unchanged in F0):** `f0008_passport_persistence`
+
+### Purpose
+
+Add evidence and claim-support foundations carefully, without public sharing or verification claims in early slices. Preserve Passport as private and unverified by default.
+
+### 0053-F0 (this slice)
+
+| Field | Value |
+|---|---|
+| Slice type | `PLANNING_AND_BOUNDARY_AUDIT_ONLY` |
+| Implementation | **Forbidden** — docs only |
+| Public sharing | Forbidden |
+| Verification claims / UI | Forbidden |
+| Evidence upload | Forbidden |
+| Wallet / DID / blockchain | Forbidden |
+| Migrations / routes / UI / tests | Forbidden |
+
+### Critical truth rule
+
+> A source, snapshot, uploaded file, user assertion, or claim record is **not** verification.
+
+Supported product wording includes: Self-declared, Profile-backed, Source-linked, Evidence-linked, Under review, Not independently verified, Verified by issuer, Verified by CareerKundi (only after real workflow), Rejected, Expired, Needs review.
+
+### Current repository findings (F0)
+
+| Area | Finding |
+|---|---|
+| Provenance | Owns Source/Snapshot only; Source ≠ Snapshot; no claims/evidence ownership |
+| Claims | `ClaimRecord` / `career_claims` via `f0004_claim_foundation.py`; optional source/snapshot FKs are provenance links only; service create/get/list; **no public claim HTTP routes** |
+| Status axes | Independent `support_status` and `verification_status`; no silent upgrades |
+| Passport | Private; `verification_status` forced unverified; no evidence/claims ownership; no public sharing |
+| Evidence objects | **Not implemented** (no EvidenceRecord table yet) |
+| Verification workflow | **Not implemented** |
+
+### W3C VC 2.0 note (planning guidance only)
+
+Verifiability of a credential does not imply the truth of the claims encoded in it. Do not equate has-source / has-snapshot / has-upload / has-claim-row with verified truth. Do not jump to VC issuance, DID, wallet, or cryptographic presentation in early 0053.
+
+### Planned slice ladder
+
+| Slice | Name |
+|---|---|
+| 0053-F0 | Planning and Boundary Audit *(this slice)* |
+| 0053-F1 | Claim Service Contract Boundary |
+| 0053-F2 | Evidence Record Persistence |
+| 0053-F3 | Private Evidence API MVP |
+| 0053-F4 | Passport Evidence Read UI |
+| 0053-F5 | Claim-to-Passport Linking |
+| 0053-F6 | Evidence Upload / Attachment References |
+| 0053-F7 | Review and Verification State Machine |
+| 0053-F8 | CV/Roadmap Evidence Awareness |
+| 0053-F9 | Hardening, Privacy, Deletion and Final Regression |
+
+### Hard no-go (until specifically approved)
+
+Public Passport sharing; employer/university/license verification portals; credential wallet; DID/blockchain; cryptographic VC issuance; AI-only verification; automatic public trust / Passport strength scores.
+
+### Next gate
+
+**Owner acceptance of the 0053-F0 plan**, then **0053-F1 Claim Service Contract Boundary**.
 
 ---
 
