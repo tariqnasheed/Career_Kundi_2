@@ -5399,6 +5399,59 @@ Platform subjects list may 500 while direct subject link works; Profile FE↔BE 
 
 ---
 
+### 0052-F7 Profile Compatibility + CV/Roadmap Integration
+
+| Field | Value |
+|---|---|
+| Slice type | `COMPATIBILITY_AND_READ_INTEGRATION` |
+| Status | Completed — Decision B |
+| Backend production changes | None |
+| Database / migrations | None |
+| Profile compatibility | Legacy `/profile` no longer claims AI source-of-truth; Passport primary structured editor copy + CTA |
+| Old source-of-truth wording | Removed (`single source of truth for all AI features` absent) |
+| Profile Passport CTA | `Open Career Passport` → `/passport` |
+| Profile Passport read | Non-blocking `passportApi.get()`; failure does not break Profile |
+| CV Passport card | Read-only readiness card; Private and unverified; Edit in Career Passport |
+| CV section selection | `Use Passport sections for this CV` maps enabled usable Passport sections → CV section IDs |
+| CV target role prefill | One-click from Passport targets into CV role text |
+| CV ownership boundary | Still `cvApi.generate` / `update`; no `passport_id`; no Passport mutations |
+| Roadmap target prefill | Generate modal “Use a Career Passport target”; prefills role + context |
+| Roadmap ownership boundary | Roadmap-owned `personalization_inputs.passport_target_prefill` (human fields only); no Passport ID |
+| Passport mutations outside `/passport` | None from Profile / CV / Roadmap |
+| Subject picker | None |
+| Platform Subject calls | None from F7 surfaces |
+| Public sharing | None |
+| Verification / evidence claims | None |
+| Private / unverified copy | Required patterns present |
+| Tests | Integration utils 5; Profile 2; CV 3; Roadmap 2; Passport regression 36; full frontend 140 passed |
+| Browser Profile journey | PASS — compatibility card, CTA, no mutation |
+| Browser CV journey | PASS — sections + target prefill; POST `/cv-builder/generate`; no passport_id |
+| Browser Roadmap journey | PASS — prefill + boundary copy; POST `/roadmap/generate`; no Platform subjects |
+| Design Fidelity viewports | 1280 / 768 / 390 — no horizontal overflow |
+| Screenshots | `~/Desktop/CareerKundi_0052_F7_Profile_CV_Roadmap_Integration/` |
+| Exact files | 12 allowed paths |
+| Verdict | **B PASSPORT_PROFILE_CV_ROADMAP_INTEGRATION_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_0052_F8** |
+
+#### F8 handoff
+
+- Final Passport hardening, observability, and full regression
+- Audit all Passport-related pages for forbidden language
+- Verify no unintended Passport mutations outside `/passport`
+- Verify Profile / CV / Roadmap integration boundaries remain read-only for Passport
+- Fix or formally defer Platform subjects list 500
+- Fix or formally defer frontend ESLint config
+- Address incidental shell Roadmap fetch if still present
+- No public sharing unless a new phase is approved
+- No verification / evidence claims unless 0053 starts
+
+#### Remaining watch items
+
+Platform subjects list may 500 while direct subject link works; Profile FE↔BE mismatch; incomplete Profile tests; PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051 API; 004E/Auto Apply frozen; frontend ESLint config missing at baseline; incidental shell roadmap fetch outside Passport feature; dual local/Docker `:8000` listeners can break auth during browser checks (stop Docker backend when using local uvicorn).
+
+**Next slice: 0052-F8 Passport Hardening, Observability and Final Regression**
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:

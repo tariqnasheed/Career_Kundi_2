@@ -12,16 +12,21 @@ import {
   ChevronDown, ChevronUp, TrendingUp, BookOpen,
   RefreshCw, Play, Lightbulb, Download, Search, Trash2,
 } from "lucide-react";
-import { roadmapApi, taxonomyApi } from "../lib/api";
-import { Button } from "../components/ui/Button";
-import { Input, Textarea } from "../components/ui/Input";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card";
-import { Badge } from "../components/ui/Badge";
-import { Modal, ModalBody, ModalFooter } from "../components/ui/Modal";
-import { Spinner } from "../components/ui/Spinner";
-import { SkillRadar } from "../components/features/SkillRadar";
-import { useUIStore } from "../store/ui";
-import type { RoadmapRead, RoadmapSkillRead, RoadmapTaxonomyMeta } from "../types/api";
+import { passportApi, roadmapApi, taxonomyApi } from "@/lib/api";
+import { Button } from "@/components/ui/Button";
+import { Input, Textarea } from "@/components/ui/Input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Badge } from "@/components/ui/Badge";
+import { Modal, ModalBody, ModalFooter } from "@/components/ui/Modal";
+import { Spinner } from "@/components/ui/Spinner";
+import { SkillRadar } from "@/components/features/SkillRadar";
+import { useUIStore } from "@/store/ui";
+import type { RoadmapRead, RoadmapSkillRead, RoadmapTaxonomyMeta } from "@/types/api";
+import {
+  buildRoadmapContextFromPassportTarget,
+  passportTargetsForPrefill,
+  type PassportTargetPrefill,
+} from "@/features/passport/passportIntegrationUtils";
 
 const STATUS_CONFIG = {
   not_started: { label: "Not started", color: "var(--text-secondary)", icon: <Circle size={13} /> },
@@ -737,6 +742,16 @@ function GenerateModal({
   const [context, setContext] = useState("");
   const [roleIntelPhase, setRoleIntelPhase] = useState<RoleIntelPhase>("empty");
   const [taxonomyMeta, setTaxonomyMeta] = useState<RoadmapTaxonomyMeta | null>(null);
+  const [selectedPassportTarget, setSelectedPassportTarget] =
+    useState<PassportTargetPrefill | null>(null);
+
+  const passportQuery = useQuery({
+    queryKey: ["passport", "aggregate"],
+    queryFn: () => passportApi.get(),
+    enabled: open,
+    retry: false,
+  });
+  const passportTargets = passportTargetsForPrefill(passportQuery.data);
 
   useEffect(() => {
     if (!open) return;
@@ -749,7 +764,21 @@ function GenerateModal({
     setContext("");
     setRoleIntelPhase("empty");
     setTaxonomyMeta(null);
+    setSelectedPassportTarget(null);
   }, [open]);
+
+  const applyPassportTarget = (target: PassportTargetPrefill) => {
+    setSelectedPassportTarget(target);
+    setRole(target.target_role_text);
+    setTaxonomyMeta(null);
+    setRoleIntelPhase(target.target_role_text.trim() ? "ready" : "empty");
+    const prefix = buildRoadmapContextFromPassportTarget(target);
+    setContext((prev) => {
+      if (!prev.trim()) return prefix;
+      if (prev.includes("Passport career target:")) return prev;
+      return `${prefix}\n\n${prev}`;
+    });
+  };
 
   const handleRoleChange = (value: string) => {
     setRole(value);
@@ -853,6 +882,16 @@ function GenerateModal({
         target_timeframe_months: timelineMonths ? Number(timelineMonths) : undefined,
         additional_context: context || undefined,
       };
+      if (selectedPassportTarget) {
+        personalization_inputs.passport_target_prefill = {
+          target_role_text: selectedPassportTarget.target_role_text,
+          target_country: selectedPassportTarget.target_country,
+          target_region: selectedPassportTarget.target_region,
+          target_seniority: selectedPassportTarget.target_seniority,
+          time_horizon: selectedPassportTarget.time_horizon,
+          priority: selectedPassportTarget.priority,
+        };
+      }
       if (taxonomyMeta) {
         personalization_inputs._taxonomy = {
           ...taxonomyMeta,
@@ -888,6 +927,57 @@ function GenerateModal({
           </div>
         )}
         <Input label="Target role *" value={role} onChange={(e) => handleRoleChange(e.target.value)} placeholder="e.g. Senior Data Engineer" fullWidth />
+
+        {(passportQuery.isSuccess && passportTargets.length > 0) && (
+          <div
+            data-testid="roadmap-passport-prefill"
+            style={{
+              marginTop: "0.85rem",
+              padding: "0.75rem",
+              borderRadius: "10px",
+              border: "1px solid var(--border-subtle)",
+              background: "var(--bg-overlay)",
+            }}
+          >
+            <p style={{ margin: "0 0 0.4rem", fontSize: "0.8rem", fontWeight: 600 }}>
+              Use a Career Passport target
+            </p>
+            <p style={{ margin: "0 0 0.55rem", fontSize: "0.75rem", color: "var(--text-secondary)" }}>
+              This creates a new Roadmap. It does not change your Passport target.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem" }}>
+              {passportTargets.slice(0, 5).map((t) => (
+                <button
+                  key={t.id}
+                  type="button"
+                  onClick={() => applyPassportTarget(t)}
+                  style={{
+                    padding: "0.3rem 0.6rem",
+                    borderRadius: "999px",
+                    border:
+                      selectedPassportTarget?.id === t.id
+                        ? "2px solid var(--accent-violet)"
+                        : "1px solid var(--border-subtle)",
+                    background:
+                      selectedPassportTarget?.id === t.id
+                        ? "rgba(139,92,246,0.12)"
+                        : "transparent",
+                    fontSize: "0.72rem",
+                    cursor: "pointer",
+                    color: "var(--text-secondary)",
+                  }}
+                >
+                  {t.target_role_text}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        {passportQuery.isError && (
+          <p role="status" style={{ marginTop: "0.5rem", fontSize: "0.75rem", color: "var(--text-muted)" }}>
+            Passport targets could not be loaded. You can still generate a Roadmap manually.
+          </p>
+        )}
 
         <RoleIntelligenceCard
           phase={roleIntelPhase}
@@ -1062,7 +1152,7 @@ export default function RoadmapPage() {
     if (ok) regenerateMutation.mutate();
   };
 
-  const allSkills = activeRoadmap?.milestones.flatMap((m) => m.skills) ?? [];
+  const allSkills = (activeRoadmap?.milestones ?? []).flatMap((m) => m.skills ?? []);
   const counts = skillStatusCounts(allSkills);
   const done = counts.completed;
   const pct = counts.total ? Math.round((done / counts.total) * 100) : 0;

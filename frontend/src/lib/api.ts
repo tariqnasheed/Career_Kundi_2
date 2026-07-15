@@ -695,7 +695,7 @@ export const taxonomyApi = {
 // ---------------------------------------------------------------------------
 
 export const passportApi = {
-  /** Lazy-create and read the authenticated Passport aggregate. */
+  /** Lazy-create and read the authenticated Passport aggregate (0052-F4/F6). */
   get: async (): Promise<PassportRead> => {
     const response = await http.get<PassportEnvelope>("/passport");
     return response.data.data;

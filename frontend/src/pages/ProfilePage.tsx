@@ -1,20 +1,26 @@
 /**
  * ProfilePage.tsx
  * ================
- * Editable career profile — the single source of truth for all AI features.
- * The CV builder, roadmap planner, and job matcher all draw from this data.
+ * Legacy Profile compatibility surface. Career Passport is the primary
+ * structured editor for career and education data.
  */
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { User, Briefcase, GraduationCap, Code, Award, Globe, Save, Plus, Trash2, ChevronDown, ChevronUp } from "lucide-react";
-import { profileApi } from "../lib/api";
-import { Button } from "../components/ui/Button";
-import { Input, Textarea } from "../components/ui/Input";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card";
-import { Spinner } from "../components/ui/Spinner";
-import { useUIStore } from "../store/ui";
+import { passportApi, profileApi } from "@/lib/api";
+import { Button } from "@/components/ui/Button";
+import { Input, Textarea } from "@/components/ui/Input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Spinner } from "@/components/ui/Spinner";
+import { useUIStore } from "@/store/ui";
+import {
+  passportHasUsableProfile,
+  passportReadinessMessage,
+  passportSectionCounts,
+} from "@/features/passport/passportIntegrationUtils";
 
 // ─── Collapsible section wrapper ──────────────────────────────────────────
 function Section({ icon, title, children }: { icon: React.ReactNode; title: string; children: React.ReactNode }) {
@@ -133,6 +139,11 @@ export default function ProfilePage() {
   const { addToast } = useUIStore();
   const qc = useQueryClient();
   const { data: profile, isLoading } = useQuery({ queryKey: ["profile"], queryFn: () => profileApi.get() });
+  const passportQuery = useQuery({
+    queryKey: ["passport", "aggregate"],
+    queryFn: () => passportApi.get(),
+    retry: false,
+  });
 
   const [form, setForm] = useState<any>(null);
   const initialized = !!form;
@@ -158,19 +169,64 @@ export default function ProfilePage() {
   );
 
   const set = (key: string) => (e: any) => setForm((p: any) => ({ ...p, [key]: e.target.value }));
+  const counts = passportSectionCounts(passportQuery.data);
+  const passportUsable = passportHasUsableProfile(passportQuery.data);
 
   return (
     <div style={{ padding: "2rem", maxWidth: "820px", margin: "0 auto" }}>
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "2rem" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.25rem", gap: "1rem", flexWrap: "wrap" }}>
           <div>
             <h1 style={{ fontFamily: "var(--font-heading)", fontSize: "1.75rem", fontWeight: 700, marginBottom: "0.25rem" }}>Profile</h1>
-            <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem" }}>Your data feeds every AI feature — CV builder, roadmap, and job matching.</p>
+            <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem" }}>
+              Career Passport is now the primary structured editor for your career and education data.
+            </p>
           </div>
           <Button variant="primary" leftIcon={<Save size={15} />} onClick={() => updateMutation.mutate(form)} loading={updateMutation.isPending}>
             Save changes
           </Button>
         </div>
+
+        <Card style={{ marginBottom: "1.5rem" }} data-testid="passport-compatibility-card">
+          <CardHeader>
+            <CardTitle>Career Passport compatibility</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p style={{ margin: "0 0 0.5rem", color: "var(--text-secondary)", fontSize: "0.875rem" }}>
+              Career Passport is now the primary structured editor for your career and education data.
+            </p>
+            <p style={{ margin: "0 0 0.75rem", color: "var(--text-secondary)", fontSize: "0.875rem" }}>
+              This legacy Profile page remains available for compatibility while Passport becomes the structured source used across CareerKundi.
+            </p>
+            <p style={{ margin: "0 0 0.75rem", color: "var(--text-secondary)", fontSize: "0.875rem" }}>
+              Passport data is visible only to you. Passport data has not been independently verified.
+            </p>
+            {passportQuery.isLoading && (
+              <p style={{ margin: "0 0 0.75rem", fontSize: "0.8rem", color: "var(--text-muted)" }}>
+                Checking Career Passport…
+              </p>
+            )}
+            {passportQuery.isError && (
+              <p role="status" style={{ margin: "0 0 0.75rem", fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+                Career Passport could not be loaded right now. You can still use this legacy Profile page.
+              </p>
+            )}
+            {passportQuery.isSuccess && (
+              <p style={{ margin: "0 0 0.75rem", fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+                {passportReadinessMessage(passportQuery.data)}
+                {passportUsable
+                  ? ` Entries — experience ${counts.experience}, education ${counts.education}, skills ${counts.skills}, projects ${counts.projects}, credentials ${counts.credentials}, targets ${counts.targets}.`
+                  : ""}
+              </p>
+            )}
+            <p style={{ margin: "0 0 0.75rem", fontSize: "0.8rem", color: "var(--text-muted)" }}>
+              For structured career history, use Career Passport. Some legacy Profile fields may not map one-to-one with Passport sections.
+            </p>
+            <Link to="/passport">
+              <Button variant="primary" size="sm">Open Career Passport</Button>
+            </Link>
+          </CardContent>
+        </Card>
 
         {/* Personal */}
         <Section icon={<User size={16} />} title="Personal information">

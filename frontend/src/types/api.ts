@@ -659,6 +659,7 @@ export interface TaxonomyErrorRead {
 
 // ---------------------------------------------------------------------------
 // Passport (0052-F3/F4) — mirrors backend/app/schemas/passport.py
+// 0052-F7: Profile / CV Builder / Roadmap may consume PassportRead via passportApi.get only (no mutation clients).
 // ---------------------------------------------------------------------------
 
 export type PassportVisibility = "private";

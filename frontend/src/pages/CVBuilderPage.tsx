@@ -7,23 +7,30 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSearchParams, Link } from "react-router-dom";
 import { Eye, FileDown, Save, Sparkles, Star, FileText } from "lucide-react";
-import { cvApi, jobApi, profileApi, taxonomyApi } from "../lib/api";
-import { Button } from "../components/ui/Button";
-import { Spinner } from "../components/ui/Spinner";
-import { useUIStore } from "../store/ui";
-import type { ApiError, CVTaxonomyMeta, GeneratedCVRead } from "../types/api";
+import { cvApi, jobApi, passportApi, profileApi, taxonomyApi } from "@/lib/api";
+import { Button } from "@/components/ui/Button";
+import { Spinner } from "@/components/ui/Spinner";
+import { useUIStore } from "@/store/ui";
+import type { ApiError, CVTaxonomyMeta, GeneratedCVRead } from "@/types/api";
 import {
   CVTemplateGallery,
   CV_TEMPLATE_CATALOG,
   getCVTemplate,
   type CVTemplateId,
-} from "../components/features/CVTemplateGallery";
-import { CVTemplatePreview } from "../components/features/CVTemplatePreview";
+} from "@/components/features/CVTemplateGallery";
+import { CVTemplatePreview } from "@/components/features/CVTemplatePreview";
 import {
   CVBuilderStudioPanel,
   type RoleIntelligencePhase,
   type RoleIntelligenceView,
-} from "../components/features/CVBuilderStudioPanel";
+} from "@/components/features/CVBuilderStudioPanel";
+import {
+  passportEnabledCvSectionIds,
+  passportHasUsableProfile,
+  passportReadinessMessage,
+  passportSectionCounts,
+  passportTargetsForPrefill,
+} from "@/features/passport/passportIntegrationUtils";
 
 const DEFAULT_TEMPLATE_ID: CVTemplateId = "minimal-corporate";
 const STUDIO_META_SECTION = "_studio";
@@ -137,10 +144,16 @@ export default function CVBuilderPage() {
   const profileQuery = useQuery({ queryKey: ["profile"], queryFn: () => profileApi.get() });
   const jobsQuery = useQuery({ queryKey: ["jobs"], queryFn: () => jobApi.list() });
   const cvsQuery = useQuery({ queryKey: ["cvs"], queryFn: () => cvApi.list() });
+  const passportQuery = useQuery({
+    queryKey: ["passport", "aggregate"],
+    queryFn: () => passportApi.get(),
+    retry: false,
+  });
 
   const profile = profileQuery.data;
   const jobs = jobsQuery.data;
   const cvs = cvsQuery.data;
+  const [passportRoleNote, setPassportRoleNote] = useState<string | null>(null);
 
   const [selectedTemplateId, setSelectedTemplateId] = useState<CVTemplateId>(DEFAULT_TEMPLATE_ID);
   const [selectedCvId, setSelectedCvId] = useState<string | null>(null);
@@ -608,6 +621,110 @@ export default function CVBuilderPage() {
           </div>
         )}
       </div>
+
+      <section
+        className="cv-builder-studio__status"
+        aria-label="Career Passport for CV"
+        data-testid="cv-passport-card"
+        style={{
+          marginBottom: "1rem",
+          padding: "0.9rem 1rem",
+          border: "1px solid var(--border-subtle)",
+          borderRadius: "12px",
+          background: "var(--bg-elevated)",
+        }}
+      >
+        <strong style={{ display: "block", marginBottom: "0.35rem" }}>
+          Career Passport available
+        </strong>
+        <p style={{ margin: "0 0 0.5rem", fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+          Private and unverified. CV drafts use your private Passport/profile data.
+        </p>
+        {passportQuery.isLoading && (
+          <p style={{ margin: 0, fontSize: "0.8rem", color: "var(--text-muted)" }}>
+            Loading Passport…
+          </p>
+        )}
+        {passportQuery.isError && (
+          <p role="status" style={{ margin: 0, fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+            Career Passport could not be loaded. You can still build a CV from your profile.
+          </p>
+        )}
+        {passportQuery.isSuccess && (
+          <>
+            <p style={{ margin: "0 0 0.5rem", fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+              {passportReadinessMessage(passportQuery.data)}
+            </p>
+            {passportHasUsableProfile(passportQuery.data) ? (
+              <>
+                <p style={{ margin: "0 0 0.5rem", fontSize: "0.78rem", color: "var(--text-muted)" }}>
+                  {(() => {
+                    const c = passportSectionCounts(passportQuery.data);
+                    return `Usable sections — summary ${c.profile}, experience ${c.experience}, education ${c.education}, skills ${c.skills}, projects ${c.projects}, certifications ${c.credentials}.`;
+                  })()}
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "0.5rem" }}>
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="secondary"
+                    onClick={() => {
+                      const ids = passportEnabledCvSectionIds(passportQuery.data);
+                      if (ids.length) setEnabledSections(ids);
+                    }}
+                  >
+                    Use Passport sections for this CV
+                  </Button>
+                  <Link to="/passport">
+                    <Button type="button" size="sm" variant="ghost">
+                      Edit in Career Passport
+                    </Button>
+                  </Link>
+                </div>
+                {passportTargetsForPrefill(passportQuery.data).length > 0 && (
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem", alignItems: "center" }}>
+                    <span style={{ fontSize: "0.75rem", color: "var(--text-secondary)" }}>
+                      Prefill role from Passport target:
+                    </span>
+                    {passportTargetsForPrefill(passportQuery.data).slice(0, 4).map((t) => (
+                      <Button
+                        key={t.id}
+                        type="button"
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => {
+                          setRoleText(t.target_role_text);
+                          roleTextAutoFromJobRef.current = false;
+                          setRoleIntelPhase(t.target_role_text.trim() ? "ready" : "empty");
+                          setTaxonomyMeta(null);
+                          setPassportRoleNote(
+                            `Role text prefilled from Passport target “${t.target_role_text}”. Private and unverified.`,
+                          );
+                        }}
+                      >
+                        {t.target_role_text}
+                      </Button>
+                    ))}
+                  </div>
+                )}
+                {passportRoleNote && (
+                  <p style={{ margin: "0.5rem 0 0", fontSize: "0.75rem", color: "var(--text-muted)" }}>
+                    {passportRoleNote}
+                  </p>
+                )}
+              </>
+            ) : (
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", alignItems: "center" }}>
+                <Link to="/passport">
+                  <Button type="button" size="sm" variant="secondary">
+                    Edit in Career Passport
+                  </Button>
+                </Link>
+              </div>
+            )}
+          </>
+        )}
+      </section>
 
       <div className="cv-builder-studio__body">
         <CVTemplateGallery selectedId={selectedTemplateId} onSelect={setSelectedTemplateId} />
