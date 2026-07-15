@@ -78,8 +78,11 @@ Govern, map, measure, manage; require human review for high-impact actions.
 **Source:** Anthropic — Building Effective Agents  
 Start with simple deterministic workflows; use structured LLM calls before autonomous agents; use agents only where flexible reasoning and tool use are truly needed; add human checkpoints for high-impact actions.
 
-### Gemini function calling
-**Source:** Google Gemini API documentation — Function Calling  
+### Gemini function calling (legacy research note)
+
+**Status:** Historical / deprecated for CareerKundi’s active provider path.  
+**Current LLM provider:** Local Ollama 8B — see **LLM-R1**.  
+**Source (historical):** Google Gemini API documentation — Function Calling  
 Prefer structured tool/function calling for model-to-tool workflows instead of loose prose.
 
 ### MCP later
@@ -5499,6 +5502,27 @@ No public sharing, verification, evidence claims, or completion-pressure scoring
 **0053 Evidence, Claims, Provenance and Verification Foundations** — start with **0053-F0** (planning only). Carry deferred Passport watches above into later hardening as needed.
 
 **0052 closed. No 0052-F9.**
+
+---
+
+## LLM-R1 Local Ollama 8B Provider Alignment
+
+**Status:** Completed in this commit (gate before 0053-F1).
+
+| Field | Value |
+|---|---|
+| Active provider | Local Ollama 8B |
+| Default API | `http://127.0.0.1:11434` |
+| Default models | `OLLAMA_MODEL_FLASH` / `OLLAMA_MODEL_PRO` (default `llama3.1:8b`) |
+| Mock / tests | `LLM_PROVIDER=mock` → deterministic mock |
+| Gemini | Deprecated legacy config only — **not** the active provider |
+| Embeddings | Local hash embeddings for now; **LLM-R2** deferred for local embedding migration |
+
+Owner decision: CareerKundi no longer uses Gemini API as the current/default LLM provider.
+
+Local LLM output is not verification and is not guaranteed correct.
+
+**Next product gate after LLM-R1 acceptance:** 0053-F1 Claim Service Contract Boundary.
 
 ---
 

@@ -4,18 +4,18 @@ tools/embeddings.py
 Embedding model abstraction backing semantic search and the RAG vector
 store (app/tools/rag.py).
 
-Live mode uses Gemini's `text-embedding-004` via `langchain-google-genai`.
-Mock/local mode uses `LocalHashEmbeddings`, a zero-dependency, deterministic
-embedding function: it hashes n-grams of the input text into a fixed-size
-float vector. This is NOT a real semantic embedding (it doesn't capture
-meaning the way a trained model does — superficially similar n-grams score
-as similar), but it is genuinely deterministic, fast, requires no model
-download, and is enough to make FAISS similarity search, RAG retrieval, and
-the Reflector's "did we retrieve relevant context" checks all exercise real
-code paths in local development with zero setup. Swap in a real model
-(Gemini embeddings, or `sentence-transformers/all-MiniLM-L6-v2`, already
-declared in pyproject.toml as a dependency for this exact upgrade path) by
-setting GEMINI_API_KEY — no other code changes needed.
+Current behavior
+----------------
+Uses `LocalHashEmbeddings`, a zero-dependency, deterministic embedding
+function suitable for local development and tests. This is NOT a trained
+semantic embedding model.
+
+LLM-R2 (deferred): migrate embeddings to a local Ollama / sentence-transformers
+path aligned with the local Ollama 8B LLM provider. Do not use cloud Gemini
+embeddings as the active CareerKundi path.
+
+Deprecated legacy Gemini embedding settings may still exist on `Settings`
+(`gemini_embedding_model`, `gemini_api_key`) but are not used here.
 """
 
 from __future__ import annotations
@@ -24,8 +24,6 @@ import hashlib
 import math
 
 from langchain_core.embeddings import Embeddings
-
-from app.core.config import settings
 
 EMBEDDING_DIM = 384  # Matches all-MiniLM-L6-v2's output dimensionality for drop-in compatibility
 
@@ -65,22 +63,8 @@ _EMBEDDINGS_CACHE: Embeddings | None = None
 
 
 def get_embeddings() -> Embeddings:
-    """Return the configured embedding model singleton, live Gemini or local fallback."""
+    """Return the local embedding singleton (Gemini path removed; see LLM-R2)."""
     global _EMBEDDINGS_CACHE
     if _EMBEDDINGS_CACHE is None:
-        if settings.llm_mode == "live":
-            try:
-                from langchain_google_genai import GoogleGenerativeAIEmbeddings
-
-                _EMBEDDINGS_CACHE = GoogleGenerativeAIEmbeddings(
-                    model=f"models/{settings.gemini_embedding_model}",
-                    google_api_key=settings.gemini_api_key,
-                )
-            except Exception as exc:  # noqa: BLE001
-                from app.core.logging import get_logger
-
-                get_logger(__name__).warning("gemini_embeddings_unavailable_using_local", error=str(exc))
-                _EMBEDDINGS_CACHE = LocalHashEmbeddings()
-        else:
-            _EMBEDDINGS_CACHE = LocalHashEmbeddings()
+        _EMBEDDINGS_CACHE = LocalHashEmbeddings()
     return _EMBEDDINGS_CACHE

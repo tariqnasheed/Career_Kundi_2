@@ -3,7 +3,8 @@
 **Slice:** 0053-F0 Planning and Boundary Audit  
 **Status:** Planning complete — no implementation in F0  
 **Depends on:** 0052 Career & Education Passport (completed / accepted)  
-**Foundation head (unchanged):** `f0008_passport_persistence`
+**Foundation head (unchanged):** `f0008_passport_persistence`  
+**LLM provider (platform-wide):** Local Ollama 8B (`http://127.0.0.1:11434`); `LLM_PROVIDER=mock` for deterministic tests. Gemini is legacy/deprecated. Local LLM output is **not** verification.
 
 ---
 

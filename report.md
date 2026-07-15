@@ -1,5 +1,7 @@
 # CareerKundi — Repair Report
 
+> **LLM provider (current):** Local Ollama 8B at `http://127.0.0.1:11434`. No Gemini API required. Use `LLM_PROVIDER=mock` for deterministic tests. Historical Gemini mentions in this report are legacy/deprecated.
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

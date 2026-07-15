@@ -10,17 +10,18 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | **0053 Evidence, Claims, Provenance and Verification Foundations** |
-| Current Slice | **0053-F0 Planning and Boundary Audit** |
-| Current Status | Completed (planning only) — awaiting owner acceptance |
+| Current Slice | **LLM-R1 Local Ollama 8B Provider Alignment** (gate before 0053-F1) |
+| Current Status | In progress / completing |
 | Last Completed Slice | **0053-F0** (docs) · prior product: **0052-F8** |
 | 0052 status | **Completed / accepted** |
-| F0 status | **Completed** (if evidence passes) |
-| Last Commit | This commit — `docs(product): plan claims evidence foundation` |
+| F0 status | **Completed** |
+| Last Commit | This commit — `feat(llm): use local ollama provider` |
 | Last Push Status | Push with this slice |
-| Next Slice | **0053-F1 Claim Service Contract Boundary** |
+| Next Slice | **0053-F1 Claim Service Contract Boundary** (after LLM-R1 accepted) |
 | Browser viewports | N/A for F0 (docs only) |
 | Blocked Items | No active blockers; F1 waits on F0 plan acceptance |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
+| LLM provider | **Local Ollama 8B** (`http://127.0.0.1:11434`); `LLM_PROVIDER=mock` for tests |
 
 ---
 

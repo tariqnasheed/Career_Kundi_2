@@ -180,14 +180,30 @@ def generate_model_knowledge(
 
     resolved = resolve_model_knowledge_provider(override=provider)
     if resolved is None:
+        if provider_key == "ollama":
+            return ModelKnowledgeResult(
+                status=ModelKnowledgeStatus.FAILED_FALLBACK.value,
+                used=False,
+                insight=None,
+                provider_name="ollama",
+                reason=(
+                    "Ollama model-knowledge provider is not wired for study modules "
+                    "in this iteration; use deterministic_test for local validation."
+                ),
+                warnings=["Use deterministic_test provider for local validation."],
+            )
         if provider_key == "gemini":
+            # Legacy/deprecated provider name — not the active CareerKundi path.
             return ModelKnowledgeResult(
                 status=ModelKnowledgeStatus.FAILED_FALLBACK.value,
                 used=False,
                 insight=None,
                 provider_name="gemini",
-                reason="Gemini model-knowledge provider is not enabled for study modules in this iteration.",
-                warnings=["Use deterministic_test provider for local validation."],
+                reason=(
+                    "Deprecated: Gemini model-knowledge provider is not active. "
+                    "Use ollama or deterministic_test."
+                ),
+                warnings=["Gemini is deprecated; use deterministic_test or ollama."],
             )
         return ModelKnowledgeResult(
             status=ModelKnowledgeStatus.NOT_CONFIGURED.value,

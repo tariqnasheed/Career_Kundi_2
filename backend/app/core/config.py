@@ -12,14 +12,11 @@ root for the full annotated reference) is declared here as a typed Pydantic
 2. **Single source of truth** — every other module imports `settings` from
    here rather than calling `os.environ.get(...)` ad hoc, so there's exactly
    one place that knows how configuration is sourced.
-3. **Safe-by-default mock mode** — when `GEMINI_API_KEY` / `SERPAPI_KEY` are
-   left blank (the default in `.env.example`), `settings.llm_mode` and
-   `settings.search_mode` resolve to "mock", and every agent in the system
-   transparently swaps in deterministic mock providers (see
-   `app/tools/llm.py` and `app/tools/search.py`). This is what lets the
-   ENTIRE multi-agent platform run end-to-end with zero API cost and zero
-   external dependencies — exactly what was requested for local development
-   without API keys.
+3. **Local Ollama by default** — CareerKundi's active LLM provider is local
+   Ollama 8B (`LLM_PROVIDER=ollama`). Set `LLM_PROVIDER=mock` for
+   deterministic offline/tests with no Ollama process required. Search still
+   uses SerpAPI when `SERPAPI_KEY` is set, otherwise mock search. No cloud
+   Gemini API key is required for current local operation.
 """
 
 from functools import lru_cache
@@ -55,7 +52,17 @@ class Settings(BaseSettings):
     app_port: int = Field(default=8000)
     app_secret_key: str = Field(default="dev-only-insecure-secret-change-me")
 
-    # --- LLM providers ---------------------------------------------------------
+    # --- LLM providers (active: local Ollama) ---------------------------------
+    llm_provider: Literal["ollama", "mock"] = Field(
+        default="ollama",
+        description="Active LLM provider: ollama (local 8B) or mock (deterministic).",
+    )
+    ollama_base_url: str = Field(default="http://127.0.0.1:11434")
+    ollama_model_flash: str = Field(default="llama3.1:8b")
+    ollama_model_pro: str = Field(default="llama3.1:8b")
+    ollama_request_timeout_seconds: float = Field(default=120.0)
+
+    # Deprecated legacy Gemini config; not the active CareerKundi provider.
     gemini_api_key: str = Field(default="")
     gemini_model_flash: str = Field(default="gemini-2.5-flash")
     gemini_model_pro: str = Field(default="gemini-2.5-pro")
@@ -133,9 +140,14 @@ class Settings(BaseSettings):
         default=False,
         description="Enable model-knowledge study synthesis (disabled by default; no API calls unless provider configured).",
     )
-    job_search_model_knowledge_provider: Literal["disabled", "deterministic_test", "gemini"] = Field(
+    job_search_model_knowledge_provider: Literal[
+        "disabled", "deterministic_test", "ollama"
+    ] = Field(
         default="disabled",
-        description="Model-knowledge provider: disabled | deterministic_test (tests/samples) | gemini (future).",
+        description=(
+            "Model-knowledge provider: disabled | deterministic_test (tests/samples) "
+            "| ollama (local LLM; not enabled for study modules unless wired)."
+        ),
     )
 
     # --- Observability ----------------------------------------------------------------------
@@ -173,14 +185,17 @@ class Settings(BaseSettings):
         return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
 
     @property
-    def llm_mode(self) -> Literal["live", "mock"]:
+    def llm_mode(self) -> Literal["local", "mock"]:
         """
-        Decide whether agents should call the real Gemini API or the
-        deterministic mock provider. Resolves to "live" only when a
-        non-empty API key is configured — otherwise the platform runs
-        fully offline/mocked so it stays demoable with zero setup cost.
+        Derived LLM operating mode for agents.
+
+        - ``mock``  when ``LLM_PROVIDER=mock`` (deterministic offline/tests)
+        - ``local`` when ``LLM_PROVIDER=ollama`` (default; local Ollama 8B)
+
+        Gemini API keys do **not** control this mode.
         """
-        return "live" if self.gemini_api_key.strip() else "mock"
+        provider = (self.llm_provider or "ollama").strip().lower()
+        return "mock" if provider == "mock" else "local"
 
     @property
     def search_mode(self) -> Literal["live", "mock"]:

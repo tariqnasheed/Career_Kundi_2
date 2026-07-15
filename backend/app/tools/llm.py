@@ -9,22 +9,22 @@ Why this exists
 Every Executor agent needs to (a) send a system+user prompt, optionally with
 few-shot examples, (b) get back either free text or schema-validated JSON,
 (c) optionally stream tokens to the caller, and (d) record how many tokens
-it cost. Rather than scattering `google.generativeai` calls across a dozen
-agent files, every agent calls `get_llm(tier)` and gets back an object with
-the same `.generate()` / `.stream()` interface regardless of whether we're
-hitting the real Gemini API or running fully offline.
+it cost. Rather than scattering HTTP calls across a dozen agent files, every
+agent calls `get_llm(tier)` and gets back an object with the same
+`.generate()` / `.stream()` interface regardless of whether we're hitting
+local Ollama or running fully offline with the deterministic mock.
 
-Live vs. mock mode
--------------------
-`app.core.config.settings.llm_mode` is "live" only when GEMINI_API_KEY is
-set. In mock mode, `MockGeminiProvider` produces deterministic, clearly
-labeled, structurally realistic output (including simulated token-by-token
-streaming) so the entire platform — every feature, every agent — runs
-end-to-end with zero API cost. This is intentional: it lets a developer
-clone the repo and see the full multi-agent pipeline execute (Guardrail ->
-Planner -> Executor -> Reflector, with real revision cycles) without ever
-touching a billing page. Swapping in a real `GEMINI_API_KEY` later requires
-no code changes anywhere else in the codebase.
+Active provider
+---------------
+Local Ollama is the active CareerKundi LLM provider.
+Gemini references, if any remain elsewhere, are legacy/deprecated.
+
+`settings.llm_provider`:
+  - ``ollama`` → `OllamaProvider` (default; local 8B model)
+  - ``mock``   → `DeterministicMockProvider` (deterministic tests / offline)
+
+`settings.llm_mode` is derived from the provider (``local`` | ``mock``) and
+is **not** controlled by any cloud API key.
 """
 
 from __future__ import annotations
@@ -39,6 +39,7 @@ from collections.abc import AsyncIterator
 from dataclasses import dataclass, field
 from typing import Any, Literal
 
+import httpx
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 from app.core.config import settings
@@ -47,6 +48,11 @@ from app.core.logging import get_logger
 logger = get_logger(__name__)
 
 ModelTier = Literal["flash", "pro"]
+
+_JSON_INSTRUCTION = (
+    "Respond only with valid JSON matching the requested schema. "
+    "Do not include markdown fences."
+)
 
 
 @dataclass
@@ -81,16 +87,33 @@ class PromptSpec:
 
 def _estimate_tokens(text: str) -> int:
     """
-    Cheap token estimator (~4 chars/token, the widely-used rule of thumb for
-    English text) used in mock mode and as a sanity fallback in live mode if
-    the API doesn't report usage metadata. Good enough for cost dashboards
-    and budget enforcement; NOT used for anything billing-critical.
+    Cheap token estimator (~4 chars/token) used in mock mode and as a
+    sanity fallback when Ollama does not report usage metadata.
     """
     return max(1, len(text) // 4)
 
 
+def _extract_json_object(text: str) -> Any | None:
+    """Best-effort extraction of the first JSON object/array from model text."""
+    cleaned = text.strip()
+    if cleaned.startswith("```"):
+        cleaned = re.sub(r"^```(?:json)?\s*", "", cleaned, flags=re.I)
+        cleaned = re.sub(r"\s*```$", "", cleaned)
+    try:
+        return json.loads(cleaned)
+    except json.JSONDecodeError:
+        pass
+    match = re.search(r"(\{[\s\S]*\}|\[[\s\S]*\])", cleaned)
+    if not match:
+        return None
+    try:
+        return json.loads(match.group(1))
+    except json.JSONDecodeError:
+        return None
+
+
 class BaseLLMProvider(ABC):
-    """Common interface implemented by both the live Gemini provider and the mock provider."""
+    """Common interface implemented by Ollama and the deterministic mock."""
 
     model_name: str
 
@@ -103,99 +126,185 @@ class BaseLLMProvider(ABC):
         """Issue a streaming generation call, yielding text chunks as they arrive."""
 
 
-class GeminiProvider(BaseLLMProvider):
+class OllamaProvider(BaseLLMProvider):
     """
-    Real Gemini provider, used when `settings.llm_mode == "live"`.
+    Local Ollama provider (active CareerKundi LLM path).
 
-    Wraps `langchain_google_genai.ChatGoogleGenerativeAI` so we get
-    LangChain's retry/streaming/tool-calling integration for free, plus
-    structured output via `with_structured_output(json_schema)` when a
-    JSON schema is supplied — this is how every agent enforces
-    `response_mime_type="application/json"`-style structured output
-    without hand-rolling JSON parsing + repair logic.
+    Uses ``POST /api/generate`` against ``settings.ollama_base_url``.
+    Local LLM output is not guaranteed correct and is never treated as
+    verified truth.
     """
 
     def __init__(self, tier: ModelTier):
         self.tier = tier
-        self.model_name = settings.gemini_model_pro if tier == "pro" else settings.gemini_model_flash
-
-    def _client(self, spec: PromptSpec):
-        from langchain_google_genai import ChatGoogleGenerativeAI
-
-        return ChatGoogleGenerativeAI(
-            model=self.model_name,
-            google_api_key=settings.gemini_api_key,
-            temperature=spec.temperature,
-            max_output_tokens=spec.max_output_tokens,
+        self.model_name = (
+            settings.ollama_model_pro if tier == "pro" else settings.ollama_model_flash
         )
+        self.base_url = settings.ollama_base_url.rstrip("/")
+        self.timeout = settings.ollama_request_timeout_seconds
 
-    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=8))
-    async def generate(self, spec: PromptSpec) -> LLMResponse:
-        from langchain_core.messages import HumanMessage, SystemMessage
-
-        client = self._client(spec)
-        messages = [SystemMessage(content=spec.system_prompt), HumanMessage(content=spec.user_prompt)]
-
+    def _build_payload(self, spec: PromptSpec, *, stream: bool) -> dict[str, Any]:
+        user_prompt = spec.user_prompt
+        system_prompt = spec.system_prompt
         if spec.json_schema:
-            # Structured output enforcement (§3.3 "Structured Output Enforcement") —
-            # binds the Gemini response schema so the model MUST return valid JSON
-            # matching the agent's Pydantic contract, with one self-correction retry
-            # on a parse failure (handled by the `retry` decorator above).
-            structured_client = client.with_structured_output(spec.json_schema, include_raw=True)
-            result = await structured_client.ainvoke(messages)
-            raw = result["raw"]
-            parsed = result["parsed"]
-            text = raw.content if isinstance(raw.content, str) else json.dumps(parsed)
-            usage = getattr(raw, "usage_metadata", None) or {}
-            return LLMResponse(
-                text=text,
-                parsed_json=parsed,
-                prompt_tokens=usage.get("input_tokens", _estimate_tokens(spec.system_prompt + spec.user_prompt)),
-                completion_tokens=usage.get("output_tokens", _estimate_tokens(text)),
-                model=self.model_name,
-            )
+            user_prompt = f"{user_prompt}\n\n{_JSON_INSTRUCTION}"
+        payload: dict[str, Any] = {
+            "model": self.model_name,
+            "prompt": user_prompt,
+            "system": system_prompt,
+            "stream": stream,
+            "options": {
+                "temperature": spec.temperature,
+                "num_predict": spec.max_output_tokens,
+            },
+        }
+        if spec.json_schema:
+            # Prefer schema when Ollama supports it; otherwise "json" mode.
+            payload["format"] = spec.json_schema
+        return payload
 
-        result = await client.ainvoke(messages)
-        usage = getattr(result, "usage_metadata", None) or {}
+    def _raise_http_error(self, exc: Exception) -> None:
+        base = self.base_url
+        if isinstance(exc, httpx.ConnectError):
+            raise RuntimeError(
+                f"Local Ollama is not reachable at {base}. "
+                f"Start Ollama or set LLM_PROVIDER=mock."
+            ) from exc
+        if isinstance(exc, httpx.TimeoutException):
+            raise RuntimeError(
+                f"Ollama request timed out after {self.timeout}s. "
+                f"Increase OLLAMA_REQUEST_TIMEOUT_SECONDS or use a smaller prompt."
+            ) from exc
+        if isinstance(exc, httpx.HTTPStatusError):
+            body = ""
+            try:
+                body = exc.response.text.lower()
+            except Exception:  # noqa: BLE001
+                body = ""
+            if exc.response.status_code == 404 or "not found" in body:
+                raise RuntimeError(
+                    f"Ollama model {self.model_name!r} is not available. "
+                    f"Run: ollama pull {self.model_name}"
+                ) from exc
+            raise RuntimeError(
+                f"Ollama HTTP {exc.response.status_code} from {base}/api/generate."
+            ) from exc
+        raise RuntimeError(f"Ollama provider error: {exc}") from exc
+
+    def _parse_generate_body(self, data: dict[str, Any], spec: PromptSpec) -> LLMResponse:
+        text = data.get("response") or ""
+        if not isinstance(text, str):
+            text = str(text)
+        model = data.get("model") or self.model_name
+        prompt_tokens = int(data.get("prompt_eval_count") or _estimate_tokens(
+            spec.system_prompt + spec.user_prompt
+        ))
+        completion_tokens = int(data.get("eval_count") or _estimate_tokens(text))
+
+        parsed: Any | None = None
+        if spec.json_schema:
+            parsed = _extract_json_object(text)
+            if parsed is None:
+                # Safe schema-minimal fallback — never pretend invalid JSON parsed.
+                parsed = DeterministicMockProvider._coerce_to_schema(text, spec.json_schema)
+                text = json.dumps(parsed)
+                logger.warning(
+                    "ollama_json_parse_failed_using_schema_fallback",
+                    model=model,
+                )
+            else:
+                text = json.dumps(parsed) if not isinstance(parsed, str) else text
+
         return LLMResponse(
-            text=result.content,
-            prompt_tokens=usage.get("input_tokens", _estimate_tokens(spec.system_prompt + spec.user_prompt)),
-            completion_tokens=usage.get("output_tokens", _estimate_tokens(result.content)),
-            model=self.model_name,
+            text=text,
+            parsed_json=parsed,
+            prompt_tokens=prompt_tokens,
+            completion_tokens=completion_tokens,
+            model=model,
         )
+
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=1, max=8),
+        reraise=True,
+        retry=lambda state: (
+            state.outcome is not None
+            and state.outcome.failed
+            and not isinstance(state.outcome.exception(), RuntimeError)
+        ),
+    )
+    async def generate(self, spec: PromptSpec) -> LLMResponse:
+        payload = self._build_payload(spec, stream=False)
+        # If schema format fails on older Ollama, retry once with format=json.
+        try:
+            async with httpx.AsyncClient(timeout=self.timeout) as client:
+                response = await client.post(f"{self.base_url}/api/generate", json=payload)
+                if (
+                    response.status_code >= 400
+                    and spec.json_schema
+                    and payload.get("format") != "json"
+                ):
+                    payload = dict(payload)
+                    payload["format"] = "json"
+                    response = await client.post(
+                        f"{self.base_url}/api/generate", json=payload
+                    )
+                response.raise_for_status()
+                data = response.json()
+        except Exception as exc:  # noqa: BLE001 — normalized below
+            if isinstance(exc, RuntimeError) and "Ollama" in str(exc):
+                raise
+            self._raise_http_error(exc)
+            raise  # pragma: no cover
+        return self._parse_generate_body(data, spec)
 
     async def stream(self, spec: PromptSpec) -> AsyncIterator[str]:
-        from langchain_core.messages import HumanMessage, SystemMessage
+        payload = self._build_payload(spec, stream=True)
+        # Streaming JSON schema mode is unreliable; stream plain text.
+        payload.pop("format", None)
+        try:
+            async with httpx.AsyncClient(timeout=self.timeout) as client:
+                async with client.stream(
+                    "POST", f"{self.base_url}/api/generate", json=payload
+                ) as response:
+                    try:
+                        response.raise_for_status()
+                    except httpx.HTTPStatusError as exc:
+                        self._raise_http_error(exc)
+                    async for line in response.aiter_lines():
+                        if not line:
+                            continue
+                        try:
+                            chunk = json.loads(line)
+                        except json.JSONDecodeError:
+                            continue
+                        piece = chunk.get("response") or ""
+                        if piece:
+                            yield piece
+                        if chunk.get("done"):
+                            break
+        except Exception as exc:  # noqa: BLE001
+            if isinstance(exc, RuntimeError) and "Ollama" in str(exc):
+                raise
+            self._raise_http_error(exc)
 
-        client = self._client(spec)
-        messages = [SystemMessage(content=spec.system_prompt), HumanMessage(content=spec.user_prompt)]
-        async for chunk in client.astream(messages):
-            if chunk.content:
-                yield chunk.content
 
-
-class MockGeminiProvider(BaseLLMProvider):
+class DeterministicMockProvider(BaseLLMProvider):
     """
-    Deterministic offline stand-in for Gemini.
+    Deterministic offline stand-in for the local LLM.
 
     Rather than returning lorem-ipsum, this mock is *content-aware*: it
     inspects `spec.json_schema` and `spec.user_prompt` to synthesize
-    structurally valid, plausibly-shaped JSON (matching whatever Pydantic
-    schema the calling agent requested) so downstream Reflector/Aggregator
-    logic — which expects real fields like "questions", "citations",
-    "confidence_score" — has something real to validate against. The actual
-    domain-specific synthesis lives in each feature's `mock_data.py` (see
-    app/agents/job_search/mock_data.py etc.); this class just provides the
-    generic plumbing (token accounting, simulated latency, streaming).
+    structurally valid, plausibly-shaped JSON so downstream Reflector /
+    Aggregator logic has something real to validate against. Domain-specific
+    synthesis lives in each feature's `mock_data.py`.
     """
 
     def __init__(self, tier: ModelTier):
         self.tier = tier
-        self.model_name = f"mock-gemini-{tier}"
+        self.model_name = f"mock-llm-{tier}"
 
     async def generate(self, spec: PromptSpec) -> LLMResponse:
-        # Tiny simulated latency so the UI's streaming/progress states are
-        # exercised in demos exactly as they would be against a real API.
         await asyncio.sleep(random.uniform(0.05, 0.15))
 
         text = self._synthesize(spec)
@@ -214,9 +323,6 @@ class MockGeminiProvider(BaseLLMProvider):
 
     async def stream(self, spec: PromptSpec) -> AsyncIterator[str]:
         response = await self.generate(spec)
-        # Simulate token-by-token streaming by chunking on whitespace — this
-        # is what drives the frontend's "real-time token streaming" neural
-        # progress visualization (§2 "Streaming Responses") even offline.
         words = response.text.split(" ")
         for i, word in enumerate(words):
             await asyncio.sleep(0.005)
@@ -224,30 +330,16 @@ class MockGeminiProvider(BaseLLMProvider):
 
     @staticmethod
     def _synthesize(spec: PromptSpec) -> str:
-        """
-        Produce deterministic placeholder prose keyed off a hash of the
-        prompt, so repeated calls with the SAME input return the SAME
-        output (useful for tests and for the prompt cache's "is this a
-        repeat request" semantics) while DIFFERENT inputs return visibly
-        different text.
-        """
         digest = hashlib.sha256((spec.system_prompt + spec.user_prompt).encode()).hexdigest()[:8]
         return (
-            f"[mock-llm:{digest}] This is a deterministic offline response standing in for a real "
-            f"Gemini call. Configure GEMINI_API_KEY in your .env to replace this with live, "
-            f"grounded generation. Prompt context length: {len(spec.user_prompt)} chars."
+            f"[mock-llm:{digest}] This is a deterministic offline response standing in for a "
+            f"local Ollama call. Set LLM_PROVIDER=ollama and start Ollama "
+            f"({settings.ollama_base_url}) to use the real local 8B model. "
+            f"Prompt context length: {len(spec.user_prompt)} chars."
         )
 
     @staticmethod
     def _coerce_to_schema(_text: str, schema: dict) -> dict:
-        """
-        Walk a JSON schema and produce a minimally valid instance. Feature
-        agents that need realistic (not just schema-valid) mock content
-        override this entirely via their own `mock_data.py` builders rather
-        than relying on this generic fallback — see job_search/mock_data.py
-        for the richer example.
-        """
-
         def build(node: dict) -> Any:
             node_type = node.get("type")
             if node_type == "object":
@@ -268,38 +360,58 @@ class MockGeminiProvider(BaseLLMProvider):
         return build(schema)
 
 
+# Backward-compatible alias (deprecated name — prefer DeterministicMockProvider).
+MockLLMProvider = DeterministicMockProvider
+
 _PROVIDER_CACHE: dict[str, BaseLLMProvider] = {}
+
+
+def clear_llm_provider_cache() -> None:
+    """Clear cached providers (tests / settings changes)."""
+    _PROVIDER_CACHE.clear()
 
 
 def get_llm(tier: ModelTier = "flash") -> BaseLLMProvider:
     """
     Return the LLM provider for the given cost tier ("flash" for routine
-    tasks, "pro" for complex generation — see CostMonitorAgent for the
-    escalation policy described in §3.3 "Tiered Model Selection"). Cached
-    per-tier so we don't reconstruct a LangChain client on every call.
+    tasks, "pro" for complex generation). Cached per provider/tier/model/URL.
     """
-    cache_key = f"{settings.llm_mode}:{tier}"
+    provider = (settings.llm_provider or "ollama").strip().lower()
+    if provider == "mock":
+        model = f"mock-llm-{tier}"
+        base = "mock"
+    else:
+        provider = "ollama"
+        model = (
+            settings.ollama_model_pro if tier == "pro" else settings.ollama_model_flash
+        )
+        base = settings.ollama_base_url.rstrip("/")
+
+    cache_key = f"{provider}:{tier}:{model}:{base}"
     if cache_key not in _PROVIDER_CACHE:
-        if settings.llm_mode == "live":
-            _PROVIDER_CACHE[cache_key] = GeminiProvider(tier)
+        if provider == "mock":
+            _PROVIDER_CACHE[cache_key] = DeterministicMockProvider(tier)
         else:
-            _PROVIDER_CACHE[cache_key] = MockGeminiProvider(tier)
-        logger.info("llm_provider_initialized", tier=tier, mode=settings.llm_mode)
+            _PROVIDER_CACHE[cache_key] = OllamaProvider(tier)
+        logger.info(
+            "llm_provider_initialized",
+            tier=tier,
+            provider=provider,
+            mode=settings.llm_mode,
+            model=model,
+        )
     return _PROVIDER_CACHE[cache_key]
 
 
 # --- Prompt-injection detection ------------------------------------------------------
-# Used by the GuardrailAgent (app/agents/common/guardrail.py) to block known
-# jailbreak patterns before a user's input ever reaches an LLM call. This is
-# a living pattern library — extend it as new attack patterns are observed.
 PROMPT_INJECTION_PATTERNS: list[re.Pattern] = [
     re.compile(r"ignore (all|any|the) (previous|prior|above) instructions", re.I),
     re.compile(r"you are now\s+\w+", re.I),
     re.compile(r"disregard (your|the) (system prompt|instructions|guardrails)", re.I),
     re.compile(r"act as (an?|the) (unfiltered|unrestricted|jailbroken)", re.I),
     re.compile(r"reveal your (system prompt|instructions)", re.I),
-    re.compile(r"<\s*script", re.I),  # defensive XSS-in-prompt pattern
-    re.compile(r"\bDAN\b.{0,20}\bmode\b", re.I),  # common "Do Anything Now" jailbreak alias
+    re.compile(r"<\s*script", re.I),
+    re.compile(r"\bDAN\b.{0,20}\bmode\b", re.I),
 ]
 
 
