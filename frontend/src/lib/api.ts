@@ -57,6 +57,14 @@ import type {
   PassportEducationCreateRequest,
   PassportEducationPatchRequest,
   PassportReorderRequest,
+  PassportProjectCreateRequest,
+  PassportProjectPatchRequest,
+  PassportSkillCreateRequest,
+  PassportSkillPatchRequest,
+  PassportCredentialCreateRequest,
+  PassportCredentialPatchRequest,
+  PassportTargetCreateRequest,
+  PassportTargetPatchRequest,
 } from "@/types/api";
 import {
   buildSavedJobSearchPageRequest,
@@ -782,6 +790,174 @@ export const passportApi = {
   ): Promise<PassportRead> => {
     const response = await http.put<PassportEnvelope>(
       "/passport/education/reorder",
+      payload,
+    );
+    return response.data.data;
+  },
+
+  createProject: async (
+    payload: PassportProjectCreateRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.post<PassportEnvelope>(
+      "/passport/projects",
+      payload,
+    );
+    return response.data.data;
+  },
+
+  patchProject: async (
+    entryId: string,
+    payload: PassportProjectPatchRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.patch<PassportEnvelope>(
+      `/passport/projects/${entryId}`,
+      payload,
+    );
+    return response.data.data;
+  },
+
+  deleteProject: async (
+    entryId: string,
+    expectedVersion: number,
+  ): Promise<PassportRead> => {
+    const response = await http.delete<PassportEnvelope>(
+      `/passport/projects/${entryId}`,
+      { params: { expected_version: expectedVersion } },
+    );
+    return response.data.data;
+  },
+
+  reorderProjects: async (
+    payload: PassportReorderRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.put<PassportEnvelope>(
+      "/passport/projects/reorder",
+      payload,
+    );
+    return response.data.data;
+  },
+
+  createSkill: async (
+    payload: PassportSkillCreateRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.post<PassportEnvelope>(
+      "/passport/skills",
+      payload,
+    );
+    return response.data.data;
+  },
+
+  patchSkill: async (
+    entryId: string,
+    payload: PassportSkillPatchRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.patch<PassportEnvelope>(
+      `/passport/skills/${entryId}`,
+      payload,
+    );
+    return response.data.data;
+  },
+
+  deleteSkill: async (
+    entryId: string,
+    expectedVersion: number,
+  ): Promise<PassportRead> => {
+    const response = await http.delete<PassportEnvelope>(
+      `/passport/skills/${entryId}`,
+      { params: { expected_version: expectedVersion } },
+    );
+    return response.data.data;
+  },
+
+  reorderSkills: async (
+    payload: PassportReorderRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.put<PassportEnvelope>(
+      "/passport/skills/reorder",
+      payload,
+    );
+    return response.data.data;
+  },
+
+  createCredential: async (
+    payload: PassportCredentialCreateRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.post<PassportEnvelope>(
+      "/passport/credentials",
+      payload,
+    );
+    return response.data.data;
+  },
+
+  patchCredential: async (
+    entryId: string,
+    payload: PassportCredentialPatchRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.patch<PassportEnvelope>(
+      `/passport/credentials/${entryId}`,
+      payload,
+    );
+    return response.data.data;
+  },
+
+  deleteCredential: async (
+    entryId: string,
+    expectedVersion: number,
+  ): Promise<PassportRead> => {
+    const response = await http.delete<PassportEnvelope>(
+      `/passport/credentials/${entryId}`,
+      { params: { expected_version: expectedVersion } },
+    );
+    return response.data.data;
+  },
+
+  reorderCredentials: async (
+    payload: PassportReorderRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.put<PassportEnvelope>(
+      "/passport/credentials/reorder",
+      payload,
+    );
+    return response.data.data;
+  },
+
+  createTarget: async (
+    payload: PassportTargetCreateRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.post<PassportEnvelope>(
+      "/passport/targets",
+      payload,
+    );
+    return response.data.data;
+  },
+
+  patchTarget: async (
+    entryId: string,
+    payload: PassportTargetPatchRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.patch<PassportEnvelope>(
+      `/passport/targets/${entryId}`,
+      payload,
+    );
+    return response.data.data;
+  },
+
+  deleteTarget: async (
+    entryId: string,
+    expectedVersion: number,
+  ): Promise<PassportRead> => {
+    const response = await http.delete<PassportEnvelope>(
+      `/passport/targets/${entryId}`,
+      { params: { expected_version: expectedVersion } },
+    );
+    return response.data.data;
+  },
+
+  reorderTargets: async (
+    payload: PassportReorderRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.put<PassportEnvelope>(
+      "/passport/targets/reorder",
       payload,
     );
     return response.data.data;

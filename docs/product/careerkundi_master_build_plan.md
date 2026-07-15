@@ -5347,6 +5347,58 @@ Platform subjects list may 500 while direct subject link works; Profile FE↔BE 
 
 ---
 
+### 0052-F6 Passport Projects, Skills, Credentials and Targets Editing
+
+| Field | Value |
+|---|---|
+| Slice type | `FRONTEND_REMAINING_SECTION_EDITORS` |
+| Status | Completed — Decision B |
+| Frontend route | `/passport` (unchanged) |
+| Mutation client surface | Projects / Skills / Credentials / Targets create, patch, delete, reorder |
+| Project editor | add / edit / delete (confirm) / Up-Down reorder; no taxonomy API |
+| Skill editor | add / edit / delete (confirm) / Up-Down reorder; type/proficiency selects; no taxonomy API |
+| Credential editor | thin references only; truth copy “Credential reference · Not independently verified” |
+| Target editor | career intentions only; truth copy “Career target · Not a Roadmap yet”; optional advisory role taxonomy text |
+| expected_version | Sent on every mutation |
+| 409 conflict | Warning + refetch aggregate; no silent overwrite |
+| Cache update | `setQueryData(["passport","aggregate"], next)` from mutation response |
+| Validation | Required fields; date/expiry order; priority clamped 1–5 |
+| Delete confirmation | Required before DELETE |
+| Reorder | Up/Down; full `ordered_ids` + expected_version |
+| Subject picker | None |
+| CV / Roadmap integration | None from Passport feature |
+| Taxonomy lookup | None |
+| Verification / evidence / public sharing | None |
+| Private / unverified copy | Preserved |
+| F5 editors | Profile / Experience / Education preserved |
+| Tests | Form utils 7; Edit forms 18; Passport page 11; full frontend 128 passed |
+| Browser conflict journey | Stale target create → 409 + warning + refetch |
+| Browser validation journey | Blank project/skill/credential/target fields + date/expiry order |
+| Design Fidelity viewports | 1280 / 768 / 390 — no horizontal overflow |
+| Screenshots | `~/Desktop/CareerKundi_0052_F6_Design_Fidelity/` |
+| Exact files | 12 allowed paths |
+| Verdict | **B PASSPORT_REMAINING_SECTION_EDITORS_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_0052_F7** |
+
+#### F7 handoff
+
+- Profile compatibility review
+- CV Builder may read Passport aggregate but must not mutate Passport without explicit versioned actions
+- Roadmap may prefill from Passport targets but remains Roadmap-owned
+- Subject picker remains blocked unless Platform list behavior is stable
+- no public sharing
+- no verification claims
+- no completion-pressure scoring
+- keep 409 conflict strategy for any Passport mutation
+- maintain query cache from returned aggregate
+
+#### Remaining watch items
+
+Platform subjects list may 500 while direct subject link works; Profile FE↔BE mismatch; incomplete Profile tests; PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051 API; 004E/Auto Apply frozen; frontend ESLint config missing at baseline; incidental shell roadmap fetch outside Passport feature; dual local/Docker `:8000` listeners can break auth during browser checks (stop Docker backend when using local uvicorn).
+
+**Next slice: 0052-F7 Profile Compatibility + CV/Roadmap Integration**
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:

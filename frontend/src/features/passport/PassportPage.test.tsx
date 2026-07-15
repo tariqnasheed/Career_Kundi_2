@@ -1,5 +1,5 @@
 /**
- * PassportPage tests (0052-F4/F5) — overview + Profile/Experience/Education editing.
+ * PassportPage tests (0052-F4/F5/F6) — overview + all section editors.
  */
 
 import { describe, it, expect, vi, beforeEach } from "vitest";
@@ -12,6 +12,10 @@ const getMock = vi.fn();
 const patchProfile = vi.fn();
 const createExperience = vi.fn();
 const createEducation = vi.fn();
+const createProject = vi.fn();
+const createSkill = vi.fn();
+const createCredential = vi.fn();
+const createTarget = vi.fn();
 
 vi.mock("@/lib/api", () => ({
   passportApi: {
@@ -25,6 +29,22 @@ vi.mock("@/lib/api", () => ({
     patchEducation: vi.fn(),
     deleteEducation: vi.fn(),
     reorderEducation: vi.fn(),
+    createProject: (...args: unknown[]) => createProject(...args),
+    patchProject: vi.fn(),
+    deleteProject: vi.fn(),
+    reorderProjects: vi.fn(),
+    createSkill: (...args: unknown[]) => createSkill(...args),
+    patchSkill: vi.fn(),
+    deleteSkill: vi.fn(),
+    reorderSkills: vi.fn(),
+    createCredential: (...args: unknown[]) => createCredential(...args),
+    patchCredential: vi.fn(),
+    deleteCredential: vi.fn(),
+    reorderCredentials: vi.fn(),
+    createTarget: (...args: unknown[]) => createTarget(...args),
+    patchTarget: vi.fn(),
+    deleteTarget: vi.fn(),
+    reorderTargets: vi.fn(),
   },
 }));
 
@@ -248,6 +268,10 @@ describe("PassportPage", () => {
     patchProfile.mockReset();
     createExperience.mockReset();
     createEducation.mockReset();
+    createProject.mockReset();
+    createSkill.mockReset();
+    createCredential.mockReset();
+    createTarget.mockReset();
   });
 
   it("shows loading state with aria-busy and no fake user content", async () => {
@@ -267,7 +291,7 @@ describe("PassportPage", () => {
     );
     expect(screen.getAllByText("Private").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Unverified").length).toBeGreaterThan(0);
-    expect(screen.getByText("Staff Engineer")).toBeInTheDocument();
+    expect(screen.getAllByText("Staff Engineer").length).toBeGreaterThan(0);
     expect(screen.getByText("2")).toBeInTheDocument();
     expect(screen.queryByText(/owner_user_id/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/profile_id/i)).not.toBeInTheDocument();
@@ -312,17 +336,22 @@ describe("PassportPage", () => {
     expect(getMock).toHaveBeenCalledTimes(2);
   });
 
-  it("exposes edit controls only for Profile, Experience and Education", async () => {
+  it("exposes edit controls for all Passport sections", async () => {
     getMock.mockResolvedValue(populatedFixture());
     renderPage();
     expect(await screen.findByRole("button", { name: /edit profile/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /add experience/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /add education/i })).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: /add project/i })).not.toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: /add skill/i })).not.toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: /add credential/i })).not.toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: /add target/i })).not.toBeInTheDocument();
-    expect(screen.getAllByText(/Editing arrives in a later Passport step/i).length).toBeGreaterThan(0);
+    expect(screen.getByRole("button", { name: /add project/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /add skill/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /add credential/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /add target/i })).toBeInTheDocument();
+    expect(screen.queryByText(/Editing arrives in a later Passport step/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Subject picker/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/verified credential/i)).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /open cv builder/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /open roadmap/i })).not.toBeInTheDocument();
+    expect(screen.queryByText(/public sharing/i)).not.toBeInTheDocument();
   });
 
   it("updates headline from returned aggregate after profile edit", async () => {
@@ -412,4 +441,152 @@ describe("PassportPage", () => {
     ).toBeInTheDocument();
     await waitFor(() => expect(getMock).toHaveBeenCalledTimes(2));
   });
+
+  it("increases project/skill/credential/target counts from returned aggregate", async () => {
+    getMock.mockResolvedValue(
+      populatedFixture({
+        projects: [],
+        skills: [],
+        credentials: [],
+        targets: [],
+      }),
+    );
+    createProject.mockResolvedValue(
+      populatedFixture({
+        version: 4,
+        projects: [
+          {
+            id: "p1",
+            created_at: "2026-01-01T00:00:00Z",
+            updated_at: "2026-01-01T00:00:00Z",
+            title: "Studio",
+            description: null,
+            technologies: [],
+            project_url: null,
+            start_date: null,
+            end_date: null,
+            role: null,
+            key_achievements: [],
+            order_index: 0,
+            skill_taxonomy: [],
+            record_meta: {
+              source_status: "user_asserted",
+              support_status: "profile_supported",
+              verification_status: "unverified",
+            },
+          },
+        ],
+      }),
+    );
+    createSkill.mockResolvedValue(
+      populatedFixture({
+        version: 5,
+        skills: [
+          {
+            id: "s1",
+            created_at: "2026-01-01T00:00:00Z",
+            updated_at: "2026-01-01T00:00:00Z",
+            name: "Rust",
+            skill_type: "technical",
+            category: null,
+            proficiency: null,
+            order_index: 0,
+            taxonomy: null,
+            record_meta: {
+              source_status: "user_asserted",
+              support_status: "profile_supported",
+              verification_status: "unverified",
+            },
+          },
+        ],
+      }),
+    );
+    createCredential.mockResolvedValue(
+      populatedFixture({
+        version: 6,
+        credentials: [
+          {
+            id: "c1",
+            created_at: "2026-01-01T00:00:00Z",
+            updated_at: "2026-01-01T00:00:00Z",
+            credential_type: "certification",
+            name: "CK Ref",
+            issuing_organization: "CareerKundi",
+            issue_date: null,
+            expiry_date: null,
+            credential_id: null,
+            credential_url: null,
+            order_index: 0,
+            record_meta: {
+              source_status: "user_asserted",
+              support_status: "profile_supported",
+              verification_status: "unverified",
+            },
+          },
+        ],
+      }),
+    );
+    createTarget.mockResolvedValue(
+      populatedFixture({
+        version: 7,
+        targets: [
+          {
+            id: "t1",
+            created_at: "2026-01-01T00:00:00Z",
+            updated_at: "2026-01-01T00:00:00Z",
+            target_role_text: "Staff Engineer",
+            role_taxonomy: null,
+            pathway_type: null,
+            target_country: null,
+            target_region: null,
+            target_industry: null,
+            target_seniority: null,
+            time_horizon: null,
+            priority: 2,
+            order_index: 0,
+            record_meta: {
+              source_status: "user_asserted",
+              support_status: "profile_supported",
+              verification_status: "unverified",
+            },
+          },
+        ],
+      }),
+    );
+
+    renderPage();
+    fireEvent.click(await screen.findByRole("button", { name: /add project/i }));
+    fireEvent.change(screen.getByLabelText(/^title$/i), {
+      target: { value: "Studio" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /save project/i }));
+    expect(await screen.findByText("Studio")).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: /add skill/i }));
+    fireEvent.change(screen.getByLabelText(/^name$/i), {
+      target: { value: "Rust" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /save skill/i }));
+    expect(await screen.findByText("Rust")).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: /add credential/i }));
+    fireEvent.change(screen.getByLabelText(/^name$/i), {
+      target: { value: "CK Ref" },
+    });
+    fireEvent.change(screen.getByLabelText(/issuing organization/i), {
+      target: { value: "CareerKundi" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /save credential/i }));
+    expect(await screen.findByText("CK Ref")).toBeInTheDocument();
+    expect(screen.getAllByText(/Not independently verified/i).length).toBeGreaterThan(0);
+
+    fireEvent.click(screen.getByRole("button", { name: /add target/i }));
+    fireEvent.change(screen.getByLabelText(/target role/i), {
+      target: { value: "Staff Engineer" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /save target/i }));
+    expect(await screen.findAllByText("Staff Engineer")).toBeTruthy();
+    expect(screen.getAllByText(/Not a Roadmap yet/i).length).toBeGreaterThan(0);
+  });
+
 });

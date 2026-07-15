@@ -227,6 +227,13 @@
   color: var(--text-muted);
 }
 
+.targetTruth {
+  margin: 0.35rem 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
+}
+
 .targets {
   margin-bottom: 1.5rem;
 }

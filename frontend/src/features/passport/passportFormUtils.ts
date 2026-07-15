@@ -1,9 +1,9 @@
 /**
- * passportFormUtils.ts — pure helpers for Passport F5 editors.
+ * passportFormUtils.ts — pure helpers for Passport F5/F6 editors.
  * No React imports. Does not mutate Passport aggregates in place.
  */
 
-import type { ApiError } from "@/types/api";
+import type { ApiError, PassportTaxonomyReference } from "@/types/api";
 
 export function emptyToNull(value: string): string | null {
   const trimmed = value.trim();
@@ -84,4 +84,46 @@ export function getApiErrorMessage(error: unknown, fallback: string): string {
 export function looksLikeHttpUrl(value: string | null): boolean {
   if (!value) return true;
   return /^https?:\/\//i.test(value);
+}
+
+export function clampPriority(value: string | number): number {
+  const n = typeof value === "number" ? value : Number.parseInt(String(value), 10);
+  if (!Number.isFinite(n)) return 3;
+  return Math.min(5, Math.max(1, Math.round(n)));
+}
+
+export function normalizeSelectValue(value: string): string | null {
+  return emptyToNull(value);
+}
+
+export function buildUnknownRoleTaxonomy(
+  inputText: string,
+): PassportTaxonomyReference | null {
+  const text = emptyToNull(inputText);
+  if (!text) return null;
+  return {
+    kind: "role",
+    input_text: text,
+    normalized_text: null,
+    taxonomy_id: null,
+    source: "unknown",
+    confidence: "unknown",
+    accepted_by_user: false,
+  };
+}
+
+export function buildUnknownSkillTaxonomy(
+  inputText: string,
+): PassportTaxonomyReference | null {
+  const text = emptyToNull(inputText);
+  if (!text) return null;
+  return {
+    kind: "skill",
+    input_text: text,
+    normalized_text: null,
+    taxonomy_id: null,
+    source: "unknown",
+    confidence: "unknown",
+    accepted_by_user: false,
+  };
 }

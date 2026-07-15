@@ -950,6 +950,110 @@ export interface PassportReorderRequest {
 }
 
 // ---------------------------------------------------------------------------
+// Passport mutation payloads (0052-F6) — Projects / Skills / Credentials / Targets
+// ---------------------------------------------------------------------------
+
+export interface PassportProjectCreateRequest {
+  expected_version: number;
+  title: string;
+  description?: string | null;
+  technologies?: string[];
+  project_url?: string | null;
+  start_date?: string | null;
+  end_date?: string | null;
+  role?: string | null;
+  key_achievements?: string[];
+  order_index?: number;
+  skill_taxonomy?: PassportTaxonomyReference[];
+}
+
+export interface PassportProjectPatchRequest {
+  expected_version: number;
+  title?: string | null;
+  description?: string | null;
+  technologies?: string[] | null;
+  project_url?: string | null;
+  start_date?: string | null;
+  end_date?: string | null;
+  role?: string | null;
+  key_achievements?: string[] | null;
+  order_index?: number | null;
+  skill_taxonomy?: PassportTaxonomyReference[] | null;
+}
+
+export interface PassportSkillCreateRequest {
+  expected_version: number;
+  name: string;
+  skill_type?: string;
+  category?: string | null;
+  proficiency?: string | null;
+  order_index?: number;
+  taxonomy?: PassportTaxonomyReference | null;
+}
+
+export interface PassportSkillPatchRequest {
+  expected_version: number;
+  name?: string | null;
+  skill_type?: string | null;
+  category?: string | null;
+  proficiency?: string | null;
+  order_index?: number | null;
+  taxonomy?: PassportTaxonomyReference | null;
+}
+
+export interface PassportCredentialCreateRequest {
+  expected_version: number;
+  credential_type?: PassportCredentialType;
+  name: string;
+  issuing_organization: string;
+  issue_date?: string | null;
+  expiry_date?: string | null;
+  credential_id?: string | null;
+  credential_url?: string | null;
+  order_index?: number;
+}
+
+export interface PassportCredentialPatchRequest {
+  expected_version: number;
+  credential_type?: PassportCredentialType | null;
+  name?: string | null;
+  issuing_organization?: string | null;
+  issue_date?: string | null;
+  expiry_date?: string | null;
+  credential_id?: string | null;
+  credential_url?: string | null;
+  order_index?: number | null;
+}
+
+export interface PassportTargetCreateRequest {
+  expected_version: number;
+  target_role_text: string;
+  role_taxonomy?: PassportTaxonomyReference | null;
+  pathway_type?: TaxonomyPathwayType | null;
+  target_country?: string | null;
+  target_region?: string | null;
+  target_industry?: string | null;
+  target_seniority?: PassportSeniorityLevel | null;
+  time_horizon?: string | null;
+  priority?: number;
+  order_index?: number;
+}
+
+export interface PassportTargetPatchRequest {
+  expected_version: number;
+  target_role_text?: string | null;
+  role_taxonomy?: PassportTaxonomyReference | null;
+  pathway_type?: TaxonomyPathwayType | null;
+  target_country?: string | null;
+  target_region?: string | null;
+  target_industry?: string | null;
+  target_seniority?: PassportSeniorityLevel | null;
+  time_horizon?: string | null;
+  priority?: number | null;
+  order_index?: number | null;
+}
+
+// ---------------------------------------------------------------------------
 // Shared error envelope
 // ---------------------------------------------------------------------------
 

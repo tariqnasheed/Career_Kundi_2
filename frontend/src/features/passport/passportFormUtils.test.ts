@@ -13,6 +13,10 @@ import {
   validateDateOrder,
   isConflictError,
   getApiErrorMessage,
+  clampPriority,
+  normalizeSelectValue,
+  buildUnknownRoleTaxonomy,
+  buildUnknownSkillTaxonomy,
 } from "./passportFormUtils";
 
 describe("passportFormUtils", () => {
@@ -64,5 +68,32 @@ describe("passportFormUtils", () => {
       getApiErrorMessage({ message: "Backend said no" }, "fallback"),
     ).toBe("Backend said no");
     expect(getApiErrorMessage({}, "fallback")).toBe("fallback");
+  });
+
+  it("clamps priority and builds unknown taxonomy refs", () => {
+    expect(clampPriority(0)).toBe(1);
+    expect(clampPriority(9)).toBe(5);
+    expect(clampPriority("3")).toBe(3);
+    expect(clampPriority("nope")).toBe(3);
+    expect(normalizeSelectValue("  ")).toBeNull();
+    expect(normalizeSelectValue(" mid ")).toBe("mid");
+    expect(buildUnknownRoleTaxonomy("")).toBeNull();
+    expect(buildUnknownRoleTaxonomy("  Platform Engineer ")).toEqual({
+      kind: "role",
+      input_text: "Platform Engineer",
+      normalized_text: null,
+      taxonomy_id: null,
+      source: "unknown",
+      confidence: "unknown",
+      accepted_by_user: false,
+    });
+    expect(buildUnknownSkillTaxonomy("TypeScript")).toEqual(
+      expect.objectContaining({
+        kind: "skill",
+        input_text: "TypeScript",
+        accepted_by_user: false,
+        source: "unknown",
+      }),
+    );
   });
 });

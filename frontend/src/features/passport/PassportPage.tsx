@@ -1,8 +1,7 @@
 /**
  * features/passport/PassportPage.tsx
  * ==================================
- * Career & Education Passport overview + Profile/Experience/Education editing (0052-F5).
- * Projects/Skills/Credentials/Targets remain read-only.
+ * Career & Education Passport overview + full section editing (0052-F5/F6).
  */
 
 import { useMemo, useState } from "react";
@@ -32,9 +31,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Spinner } from "@/components/ui/Spinner";
 import {
   PASSPORT_CONFLICT_MESSAGE,
+  PassportCredentialEditor,
   PassportEducationEditor,
   PassportExperienceEditor,
   PassportProfileEditor,
+  PassportProjectEditor,
+  PassportSkillEditor,
+  PassportTargetEditor,
 } from "./PassportEditForms";
 import styles from "./PassportPage.module.css";
 
@@ -83,6 +86,10 @@ const EDITABLE_SECTIONS = new Set<PassportSectionKey>([
   "profile",
   "experience",
   "education",
+  "projects",
+  "skills",
+  "credentials",
+  "targets",
 ]);
 
 function formatDate(value: string | null | undefined): string {
@@ -309,8 +316,8 @@ export default function PassportPage() {
                   projects, skills, credentials and career targets.
                 </p>
                 <p className={styles.emptyBody}>
-                  You can edit Profile, Experience and Education below. Other
-                  sections will open in later Passport steps.
+                  You can edit every Passport section below. Your Passport stays
+                  private and unverified until a later product step.
                 </p>
               </CardContent>
             </Card>
@@ -369,6 +376,34 @@ export default function PassportPage() {
                           onConflict={handleConflict}
                         />
                       )}
+                      {pref.section === "projects" && (
+                        <PassportProjectEditor
+                          passport={passport}
+                          onSaved={handleSaved}
+                          onConflict={handleConflict}
+                        />
+                      )}
+                      {pref.section === "skills" && (
+                        <PassportSkillEditor
+                          passport={passport}
+                          onSaved={handleSaved}
+                          onConflict={handleConflict}
+                        />
+                      )}
+                      {pref.section === "credentials" && (
+                        <PassportCredentialEditor
+                          passport={passport}
+                          onSaved={handleSaved}
+                          onConflict={handleConflict}
+                        />
+                      )}
+                      {pref.section === "targets" && (
+                        <PassportTargetEditor
+                          passport={passport}
+                          onSaved={handleSaved}
+                          onConflict={handleConflict}
+                        />
+                      )}
 
                       {!editable && (
                         <p className={styles.readOnlyNote}>
@@ -388,8 +423,8 @@ export default function PassportPage() {
             </h2>
             {passport.targets.length === 0 ? (
               <p className={styles.emptyBody}>
-                No career targets yet. Targets will appear here when you add them
-                in a later Passport step.
+                No career targets yet. Add a career target in the Targets section
+                below. This is not a Roadmap yet.
               </p>
             ) : (
               <div className={styles.targetList}>
@@ -412,6 +447,9 @@ export default function PassportPage() {
                         </p>
                         <p className={styles.targetPriority}>
                           Priority {target.priority}
+                        </p>
+                        <p className={styles.targetTruth}>
+                          Career target · Not a Roadmap yet
                         </p>
                         {target.role_taxonomy?.taxonomy_id && (
                           <p className={styles.taxonomyHint}>
