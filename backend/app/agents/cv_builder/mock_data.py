@@ -186,10 +186,17 @@ def profile_text_blob(profile: dict) -> str:
     for we in profile.get("work_experiences", []):
         chunks.extend(we.get("description_bullets") or [])
         chunks.append(we.get("job_title") or "")
+        chunks.append(we.get("company_name") or "")
+    for edu in profile.get("educations", []):
+        chunks.append(edu.get("institution") or "")
+        chunks.append(edu.get("degree") or "")
     for proj in profile.get("projects", []):
         chunks.append(proj.get("description") or "")
+        chunks.append(proj.get("title") or "")
         chunks.extend(proj.get("key_achievements") or [])
         chunks.extend(proj.get("technologies") or [])
+    if profile.get("professional_summary"):
+        chunks.append(profile.get("professional_summary") or "")
     return " ".join(chunks).lower()
 
 
@@ -383,3 +390,219 @@ def mock_improve_bullet(bullet_text: str, context: dict, target_job: dict | None
             "claims were added beyond your original wording."
         )
     return {"original_bullet": bullet_text, "improved_bullet": enhanced, "rationale": rationale}
+
+
+_LEVEL_SUMMARY = {
+    "beginner": (
+        "Early-career candidate building toward a {role} path. This starter CV uses only details you "
+        "provided — add real experience, education, and projects before sending applications."
+    ),
+    "intermediate": (
+        "Practitioner preparing for {role} opportunities. Content below reflects only the information "
+        "you entered; replace placeholders with verified facts before submitting applications."
+    ),
+    "advanced": (
+        "Experienced professional targeting {role} roles. This draft keeps claims limited to your "
+        "inputs — expand with concrete achievements you can substantiate."
+    ),
+    "expert": (
+        "Senior-level candidate focused on {role}. This draft is a structured starting point from "
+        "your minimum inputs; it does not invent employers, degrees, or certifications."
+    ),
+}
+
+
+def build_profile_snapshot_from_manual_input(
+    *,
+    full_name: str,
+    email: str | None,
+    phone: str | None,
+    location: str | None,
+    target_role: str,
+    career_level: str,
+    summary_context: str | None,
+    skills_text: str | None,
+    experience_text: str | None,
+    education_text: str | None,
+    projects_text: str | None,
+) -> dict:
+    """
+    Build a Profile-shaped snapshot for GeneratedCV only.
+    Does not invent employers, schools, dates, or certifications.
+    """
+    role = (target_role or "").strip() or "Target Role"
+    level = (career_level or "beginner").strip().lower()
+    template = _LEVEL_SUMMARY.get(level, _LEVEL_SUMMARY["beginner"])
+    summary_bits = [template.format(role=role)]
+    if (summary_context or "").strip():
+        summary_bits.append(summary_context.strip())
+
+    skills: list[dict] = []
+    if (skills_text or "").strip():
+        for part in skills_text.replace(";", ",").split(","):
+            name = part.strip()
+            if name:
+                skills.append({"name": name, "category": "technical", "proficiency": None})
+
+    work_experiences: list[dict] = []
+    if (experience_text or "").strip():
+        work_experiences.append(
+            {
+                "id": "quick-intake-experience",
+                "company_name": "Add your employer",
+                "job_title": role,
+                "location": location,
+                "start_date": None,
+                "end_date": None,
+                "is_current": False,
+                "description_bullets": [
+                    line.strip("•- ").strip()
+                    for line in experience_text.splitlines()
+                    if line.strip()
+                ]
+                or [experience_text.strip()],
+            }
+        )
+    else:
+        work_experiences.append(
+            {
+                "id": "quick-intake-experience-placeholder",
+                "company_name": "Add your experience",
+                "job_title": f"Aspiring {role}" if level == "beginner" else role,
+                "location": location,
+                "start_date": None,
+                "end_date": None,
+                "is_current": False,
+                "description_bullets": [
+                    "Replace this placeholder with real roles, employers, and measurable outcomes.",
+                    "Do not submit this CV until employer and date facts are accurate.",
+                ],
+            }
+        )
+
+    educations: list[dict] = []
+    if (education_text or "").strip():
+        educations.append(
+            {
+                "id": "quick-intake-education",
+                "institution": "Add your institution",
+                "degree": education_text.strip()[:200],
+                "field_of_study": None,
+                "start_date": None,
+                "end_date": None,
+                "gpa": None,
+                "honors": None,
+            }
+        )
+    else:
+        educations.append(
+            {
+                "id": "quick-intake-education-placeholder",
+                "institution": "Add your education",
+                "degree": "Degree / program details go here",
+                "field_of_study": None,
+                "start_date": None,
+                "end_date": None,
+                "gpa": None,
+                "honors": None,
+            }
+        )
+
+    projects: list[dict] = []
+    if (projects_text or "").strip():
+        projects.append(
+            {
+                "id": "quick-intake-project",
+                "title": "Highlighted project",
+                "name": "Highlighted project",
+                "role": None,
+                "url": None,
+                "start_date": None,
+                "end_date": None,
+                "description": projects_text.strip()[:500],
+                "technologies": [],
+                "key_achievements": [
+                    line.strip("•- ").strip()
+                    for line in projects_text.splitlines()
+                    if line.strip()
+                ][:5]
+                or [projects_text.strip()[:240]],
+            }
+        )
+
+    summary = " ".join(summary_bits)
+    return {
+        "full_name": full_name,
+        "email": email,
+        "phone": phone,
+        "address_city": location,
+        "address_state": None,
+        "address_country": None,
+        "linkedin_url": None,
+        "github_url": None,
+        "portfolio_url": None,
+        "professional_headline": f"{role} · {level.title()} level",
+        "bio_summary": summary,
+        "professional_summary": summary,
+        "work_experiences": work_experiences,
+        "educations": educations,
+        "projects": projects,
+        "skills": skills,
+        "certifications": [],  # never invent certifications
+        "languages": [],
+        "custom_sections": [],
+    }
+
+
+def mock_generate_quick_intake_cv(
+    profile_snapshot: dict,
+    section_ids: list[str],
+    tone: str,
+    target_role: str,
+    career_level: str,
+) -> dict:
+    """Honest starter CV content — no fabricated employers/degrees/certs beyond placeholders."""
+    summary = profile_snapshot.get("professional_summary") or (
+        f"Starter CV for {target_role} ({career_level}). Add verified facts before applying."
+    )
+    work = profile_snapshot.get("work_experiences") or []
+    projects = profile_snapshot.get("projects") or []
+    skills = profile_snapshot.get("skills") or []
+    return {
+        "professional_summary": summary,
+        "summary_rationale": (
+            f"Quick intake draft for {target_role} at {career_level} level. "
+            "Placeholders mark missing facts — no employers, degrees, or certifications were invented."
+        ),
+        "enhanced_work_experiences": [
+            {
+                "entry_id": str(e.get("id")),
+                "enhanced_bullets": [
+                    {"original": b, "enhanced": b, "rationale": "Kept as provided or as an honest placeholder."}
+                    for b in (e.get("description_bullets") or [])
+                ],
+                "rationale": "Kept as provided or as an honest placeholder; no fabricated achievements.",
+            }
+            for e in work
+        ],
+        "enhanced_projects": [
+            {
+                "entry_id": str(p.get("id")),
+                "enhanced_bullets": [
+                    {"original": a, "enhanced": a, "rationale": "Drawn only from your project notes."}
+                    for a in (p.get("key_achievements") or [])
+                ],
+                "rationale": "Drawn only from your project notes.",
+            }
+            for p in projects
+        ],
+        "prioritized_skills": [s["name"] for s in skills if isinstance(s, dict) and s.get("name")],
+        "ats_keywords_matched": [],
+        "sections_included": section_ids,
+        "needs_manual_input": True,
+        "manual_input_reason": (
+            "Quick CV starter — replace 'Add your …' placeholders with real employers, "
+            "education, dates, and achievements before using this CV in applications."
+        ),
+        "generation_mode": "quick_intake",
+    }

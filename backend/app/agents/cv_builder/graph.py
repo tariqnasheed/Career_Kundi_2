@@ -54,6 +54,7 @@ async def run_cv_generation_pipeline(
     generation_mode: str = "profile",
     target_role_title: str | None = None,
     target_role_description: str | None = None,
+    career_level: str | None = None,
     request_id: str | None = None,
 ) -> dict[str, Any]:
     """
@@ -61,6 +62,10 @@ async def run_cv_generation_pipeline(
     output of `ProfileRead.model_validate(profile).model_dump(mode="json")`
     plus the route-injected `full_name`/`email`, see api/routes/cv_builder.py)
     and an optional target-job snapshot to tailor toward.
+
+    `generation_mode=quick_intake` uses a deterministic honest starter draft
+    (no invented employers/degrees/certs); the snapshot is built by the route
+    from manual intake fields without mutating Profile/Passport.
     """
     cost_monitor = CostMonitor(feature="cv_builder")
     graph = build_revision_pipeline(
@@ -84,6 +89,7 @@ async def run_cv_generation_pipeline(
         generation_mode=generation_mode,
         target_role_title=target_role_title,
         target_role_description=target_role_description,
+        career_level=career_level,
     )
     final_state = await graph.ainvoke(state)
     raise_if_guardrail_failed(final_state)

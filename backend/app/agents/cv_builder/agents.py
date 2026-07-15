@@ -179,6 +179,8 @@ class CVBuilderGuardrailAgent(BaseGuardrailAgent):
             return ["No profile data was provided — cannot generate a CV from nothing."]
         if state.get("generation_mode") == "role_targeted" and not (state.get("target_role_title") or "").strip():
             return ["A target role title is required for role-targeted CV generation."]
+        if state.get("generation_mode") == "quick_intake" and not (state.get("target_role_title") or "").strip():
+            return ["A target role is required for quick CV intake."]
         return []
 
 
@@ -197,6 +199,14 @@ class CVPlannerAgent(BaseAgent):
 
         if generation_mode == "role_targeted":
             default_sections = [s for s in _ALL_SECTION_IDS if s != "custom"]
+            section_ids = [s for s in (requested or default_sections) if s in _ALL_SECTION_IDS]
+        elif generation_mode == "quick_intake":
+            default_sections = ["summary", "experience", "education"]
+            available = set(_available_sections(profile))
+            if "skills" in available:
+                default_sections.append("skills")
+            if "projects" in available:
+                default_sections.append("projects")
             section_ids = [s for s in (requested or default_sections) if s in _ALL_SECTION_IDS]
         else:
             available = _available_sections(profile)
@@ -220,7 +230,11 @@ class CVPlannerAgent(BaseAgent):
             "tier": tier,
             "retrieval_k": 6,
             "retrieval_category": "career_advice",
-            "available_section_ids": section_ids if generation_mode == "role_targeted" else _available_sections(profile),
+            "available_section_ids": (
+                section_ids
+                if generation_mode in ("role_targeted", "quick_intake")
+                else _available_sections(profile)
+            ),
             "section_ids": section_ids,
             "jd_keywords": jd_keywords,
             "generation_mode": generation_mode,
@@ -252,8 +266,18 @@ class CVBulletWriterExecutorAgent(BaseAgent):
         citations = citations_from_documents(retrieved)
         tier = plan["tier"]
 
-        if settings.llm_mode == "mock":
-            if generation_mode == "role_targeted":
+        if settings.llm_mode == "mock" or generation_mode == "quick_intake":
+            # quick_intake always uses the honest deterministic starter so local
+            # Ollama cannot invent employers, degrees, or certifications.
+            if generation_mode == "quick_intake":
+                draft = mock_data.mock_generate_quick_intake_cv(
+                    profile,
+                    plan["section_ids"],
+                    tone,
+                    state.get("target_role_title") or "Target Role",
+                    state.get("career_level") or "beginner",
+                )
+            elif generation_mode == "role_targeted":
                 draft = mock_data.mock_generate_role_targeted_cv_content(
                     profile,
                     state.get("target_role_title") or "",
@@ -264,6 +288,7 @@ class CVBulletWriterExecutorAgent(BaseAgent):
                 )
             else:
                 draft = mock_data.mock_generate_cv_content(profile, target_job, plan["section_ids"], tone)
+            draft["generation_mode"] = generation_mode
         else:
             llm = get_llm(tier)
             if generation_mode == "role_targeted":
@@ -357,6 +382,13 @@ class CVReflectorAgent(BaseReflectorAgent):
                     issues.append("Role-targeted summary section is empty.")
                 elif section_id == "skills" and not (generated.get("skills") or {}).get("items"):
                     issues.append("Role-targeted skills section is empty.")
+            return issues
+
+        if generation_mode == "quick_intake":
+            if not draft.get("professional_summary"):
+                issues.append("Quick intake draft is missing a professional summary.")
+            if "experience" in requested_sections and not draft.get("enhanced_work_experiences"):
+                issues.append("Quick intake draft is missing experience placeholders.")
             return issues
 
         profile = state.get("profile_snapshot") or {}

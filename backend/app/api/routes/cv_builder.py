@@ -38,7 +38,7 @@ from app.agents.cv_builder.studio_template import (
 )
 from app.api.deps import get_current_user
 from app.api.routes.profile import _get_or_create_profile
-from app.core.errors import NotFoundError
+from app.core.errors import NotFoundError, ValidationFailedError
 from app.db.models.cv import GeneratedCV
 from app.db.models.job import SavedJob
 from app.db.models.user import User
@@ -129,12 +129,43 @@ async def _generate_and_render(*, db: AsyncSession, user: User, payload: CVGener
     `(rendered_content, section_config, cost_monitor, final_state)` — the
     route handlers decide how to persist it (insert a new row vs. update an
     existing one in place).
-    """
-    profile = await _get_or_create_profile(db, user)
-    target_job = await _get_owned_target_job(db, user, payload.target_job_id)
 
-    profile_snapshot = _profile_snapshot(profile, user)
+    `generation_mode=quick_intake` builds the snapshot from
+    `manual_profile_input` only — it does not read or mutate Profile/Passport.
+    """
+    from app.agents.cv_builder.mock_data import build_profile_snapshot_from_manual_input
+
+    target_job = await _get_owned_target_job(db, user, payload.target_job_id)
     target_job_snapshot = _target_job_snapshot(target_job)
+    target_role_title = payload.target_role_title
+
+    if payload.generation_mode == "quick_intake":
+        manual = payload.manual_profile_input
+        assert manual is not None  # validated by CVGenerateRequest
+        full_name = (manual.full_name or user.full_name or "").strip()
+        if not full_name:
+            raise ValidationFailedError(
+                "full_name is required for quick_intake (provide it or set your account name)."
+            )
+        profile_snapshot = build_profile_snapshot_from_manual_input(
+            full_name=full_name,
+            email=(manual.email or user.email),
+            phone=manual.phone,
+            location=manual.location,
+            target_role=manual.target_role.strip(),
+            career_level=manual.career_level,
+            summary_context=manual.summary_context,
+            skills_text=manual.skills_text,
+            experience_text=manual.experience_text,
+            education_text=manual.education_text,
+            projects_text=manual.projects_text,
+        )
+        target_role_title = manual.target_role.strip()
+        career_level = manual.career_level
+    else:
+        profile = await _get_or_create_profile(db, user)
+        profile_snapshot = _profile_snapshot(profile, user)
+        career_level = None
 
     result = await run_cv_generation_pipeline(
         user_id=str(user.id),
@@ -143,8 +174,9 @@ async def _generate_and_render(*, db: AsyncSession, user: User, payload: CVGener
         requested_section_ids=payload.section_ids,
         tone=payload.tone,
         generation_mode=payload.generation_mode,
-        target_role_title=payload.target_role_title,
+        target_role_title=target_role_title,
         target_role_description=payload.target_role_description,
+        career_level=career_level,
     )
     final_state = result["state"]
     cost_monitor = result["cost_monitor"]
@@ -154,7 +186,7 @@ async def _generate_and_render(*, db: AsyncSession, user: User, payload: CVGener
     rendered_content = render_cv(
         profile=profile_snapshot,
         target_job=target_job_snapshot,
-        draft={**draft, "target_role_title": payload.target_role_title},
+        draft={**draft, "target_role_title": target_role_title},
         section_ids=section_ids,
         template=payload.template,
         tone=payload.tone,
@@ -186,7 +218,13 @@ async def generate_cv(
     cv = GeneratedCV(
         user_id=user.id,
         target_job_id=payload.target_job_id,
-        name=payload.name or "Untitled CV",
+        name=payload.name
+        or (
+            f"{(payload.manual_profile_input.full_name or user.full_name or 'My').strip()} — "
+            f"{payload.manual_profile_input.target_role.strip()}"
+            if payload.generation_mode == "quick_intake" and payload.manual_profile_input
+            else "Untitled CV"
+        ),
         template=payload.template,
         section_config=section_config,
         rendered_content=rendered_content,

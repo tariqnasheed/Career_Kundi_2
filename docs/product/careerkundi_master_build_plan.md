@@ -5522,7 +5522,19 @@ Owner decision: CareerKundi no longer uses Gemini API as the current/default LLM
 
 Local LLM output is not verification and is not guaranteed correct.
 
-**Next product gate after LLM-R1 acceptance:** 0053-F1 Claim Service Contract Boundary.
+**Next product gate after LLM-R1 acceptance:** CORE-VALUE-R1 (CV automation + Roadmap learning content), then 0053-F1 Claim Service Contract Boundary.
+
+## CORE-VALUE-R1 CV Automation and Roadmap Learning Content
+
+**Goal:** Make the local user loop useful — Quick CV from minimum info + PDF export, and non-empty Roadmap study/practice (including skill refresh), with local Ollama 8B.
+
+**Root causes addressed:**
+- Roadmap accepted schema-valid empty Ollama JSON (`overview: ""`) because it was truthy.
+- CV Builder required a saved CV before export and leaned on full Profile for generation.
+
+**Fixes:** content-quality normalize helpers; quick_intake generation mode; FE Quick CV + empty states.
+
+**Does not start 0053-F1 until this slice is accepted.**
 
 ---
 

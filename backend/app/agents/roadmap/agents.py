@@ -46,6 +46,7 @@ from app.tools.rag import retrieve
 from app.tools.search import get_search_provider
 
 from . import mock_data
+from .content_quality import normalize_practice_activities, normalize_study_material
 
 _IMPORTANCE_ORDER = {"critical": 0, "high": 1, "medium": 2, "nice-to-have": 3}
 
@@ -354,11 +355,28 @@ class StudyMaterialAgent(BaseAgent):
 
         updated: list[dict[str, Any]] = []
         for skill in skills:
+            name = skill["skill_name"]
             if skill.get("already_known"):
-                updated.append(skill)
+                # Fill short review content so the skill modal is not a blank card.
+                study_material = normalize_study_material(
+                    {
+                        "overview": (
+                            f"You marked {name} as already known for a {target_role} path. "
+                            f"Use this as optional review — foundational/local-generated, "
+                            f"not independently source-verified."
+                        ),
+                        "key_concepts": [
+                            f"Refresh the day-to-day use of {name} in a {target_role} role",
+                            f"Spot gaps between 'I know {name}' and interview-ready examples",
+                        ],
+                        "estimated_reading_time_minutes": 3,
+                    },
+                    name,
+                    target_role,
+                )
+                updated.append({**skill, "study_material": study_material})
                 continue
 
-            name = skill["skill_name"]
             retrieved = retrieve(name, k=2, category="skill_taxonomy")
 
             if settings.llm_mode == "mock":
@@ -370,8 +388,12 @@ class StudyMaterialAgent(BaseAgent):
                         citations, title=doc.metadata.get("title", "Untitled"), source=doc.metadata.get("source", "")
                     )
                     source_sentence = re.split(r"(?<=[.!?])\s+", doc.page_content.strip())[0]
-                study_material = mock_data.build_study_overview(
-                    name, target_role, source_sentence=source_sentence, citation_marker=marker
+                study_material = normalize_study_material(
+                    None,
+                    name,
+                    target_role,
+                    source_sentence=source_sentence,
+                    citation_marker=marker,
                 )
             else:
                 used_llm = True
@@ -385,14 +407,30 @@ class StudyMaterialAgent(BaseAgent):
                     system_prompt=build_system_prompt(_STUDY_MATERIAL_ROLE),
                     user_prompt=(
                         f"Skill: {name}\nTarget role: {target_role}\n"
-                        f"Numbered context (cite using these EXACT bracket numbers):\n{context}"
+                        f"Numbered context (cite using these EXACT bracket numbers):\n{context}\n\n"
+                        "Return a useful study overview (non-empty), at least 4 key concepts, "
+                        "and a reading-time estimate. Do not return empty strings or empty lists."
                     ),
                     json_schema=RoadmapStudyMaterial.model_json_schema(),
                     temperature=0.4,
                 )
                 response = await llm.generate(spec)
                 self.cost_monitor.record(response, tier=tier)
-                study_material = response.parsed_json or mock_data.build_study_overview(name, target_role)
+                marker = None
+                source_sentence = None
+                if retrieved:
+                    doc = retrieved[0]
+                    marker = _register_citation(
+                        citations, title=doc.metadata.get("title", "Untitled"), source=doc.metadata.get("source", "")
+                    )
+                    source_sentence = re.split(r"(?<=[.!?])\s+", doc.page_content.strip())[0]
+                study_material = normalize_study_material(
+                    response.parsed_json,
+                    name,
+                    target_role,
+                    source_sentence=source_sentence,
+                    citation_marker=marker,
+                )
 
             updated.append({**skill, "study_material": study_material})
 
@@ -422,15 +460,33 @@ class PracticeGeneratorAgent(BaseAgent):
 
         updated: list[dict[str, Any]] = []
         for skill in skills:
-            if skill.get("already_known"):
-                updated.append(skill)
-                continue
-
             name = skill["skill_name"]
             siblings = [s for s in active_names if s != name]
+            if skill.get("already_known"):
+                practice = normalize_practice_activities(
+                    {
+                        "exercises": [
+                            f"Write one concrete example of how you used {name} in a real or portfolio context.",
+                            f"List one limitation of {name} you would discuss in a {target_role} interview.",
+                        ],
+                        "project_idea": (
+                            f"Optional review: package a short demo or write-up that proves {name} "
+                            f"for a {target_role} conversation."
+                        ),
+                        "self_assessment_questions": [
+                            f"Can you teach {name} with a concrete example in under two minutes?",
+                            f"What would you practice next to keep {name} sharp for {target_role} work?",
+                        ],
+                    },
+                    name,
+                    target_role,
+                    siblings,
+                )
+                updated.append({**skill, "practice_activities": practice})
+                continue
 
             if settings.llm_mode == "mock":
-                practice = mock_data.build_practice_activities(name, target_role, siblings)
+                practice = normalize_practice_activities(None, name, target_role, siblings)
             else:
                 used_llm = True
                 llm = get_llm(tier)
@@ -438,14 +494,18 @@ class PracticeGeneratorAgent(BaseAgent):
                     system_prompt=build_system_prompt(_PRACTICE_ROLE),
                     user_prompt=(
                         f"Skill: {name}\nTarget role: {target_role}\n"
-                        f"Other skills in this roadmap: {', '.join(siblings) or 'none'}"
+                        f"Other skills in this roadmap: {', '.join(siblings) or 'none'}\n\n"
+                        "Return at least 4 practical exercises, a non-empty mini-project idea, "
+                        "and at least 5 self-assessment questions. Do not return empty lists."
                     ),
                     json_schema=RoadmapPracticeActivities.model_json_schema(),
                     temperature=0.5,
                 )
                 response = await llm.generate(spec)
                 self.cost_monitor.record(response, tier=tier)
-                practice = response.parsed_json or mock_data.build_practice_activities(name, target_role, siblings)
+                practice = normalize_practice_activities(
+                    response.parsed_json, name, target_role, siblings
+                )
 
             updated.append({**skill, "practice_activities": practice})
 
@@ -636,10 +696,16 @@ class SkillRefreshExecutorAgent(BaseAgent):
                     citations, title=doc.metadata.get("title", "Untitled"), source=doc.metadata.get("source", "")
                 )
                 source_sentence = re.split(r"(?<=[.!?])\s+", doc.page_content.strip())[0]
-            study_material = mock_data.build_study_overview(
-                skill_name, target_role, source_sentence=source_sentence, citation_marker=marker
+            study_material = normalize_study_material(
+                None,
+                skill_name,
+                target_role,
+                source_sentence=source_sentence,
+                citation_marker=marker,
             )
-            practice_activities = mock_data.build_practice_activities(skill_name, target_role, [])
+            practice_activities = normalize_practice_activities(
+                None, skill_name, target_role, []
+            )
         else:
             used_llm = True
             context = (
@@ -654,26 +720,47 @@ class SkillRefreshExecutorAgent(BaseAgent):
                     system_prompt=build_system_prompt(_STUDY_MATERIAL_ROLE),
                     user_prompt=(
                         f"Skill: {skill_name}\nTarget role: {target_role}\n"
-                        f"Numbered context (cite using these EXACT bracket numbers):\n{context}"
+                        f"Numbered context (cite using these EXACT bracket numbers):\n{context}\n\n"
+                        "Return a useful study overview (non-empty), at least 4 key concepts, "
+                        "and a reading-time estimate. Do not return empty strings or empty lists."
                     ),
                     json_schema=RoadmapStudyMaterial.model_json_schema(),
                     temperature=0.4,
                 )
             )
             self.cost_monitor.record(study_response, tier=tier)
-            study_material = study_response.parsed_json or mock_data.build_study_overview(skill_name, target_role)
+            marker = None
+            source_sentence = None
+            if retrieved:
+                doc = retrieved[0]
+                marker = _register_citation(
+                    citations, title=doc.metadata.get("title", "Untitled"), source=doc.metadata.get("source", "")
+                )
+                source_sentence = re.split(r"(?<=[.!?])\s+", doc.page_content.strip())[0]
+            study_material = normalize_study_material(
+                study_response.parsed_json,
+                skill_name,
+                target_role,
+                source_sentence=source_sentence,
+                citation_marker=marker,
+            )
 
             practice_response = await llm.generate(
                 PromptSpec(
                     system_prompt=build_system_prompt(_PRACTICE_ROLE),
-                    user_prompt=f"Skill: {skill_name}\nTarget role: {target_role}\nOther skills in this roadmap: none specified",
+                    user_prompt=(
+                        f"Skill: {skill_name}\nTarget role: {target_role}\n"
+                        "Other skills in this roadmap: none specified\n\n"
+                        "Return at least 4 practical exercises, a non-empty mini-project idea, "
+                        "and at least 5 self-assessment questions. Do not return empty lists."
+                    ),
                     json_schema=RoadmapPracticeActivities.model_json_schema(),
                     temperature=0.5,
                 )
             )
             self.cost_monitor.record(practice_response, tier=tier)
-            practice_activities = practice_response.parsed_json or mock_data.build_practice_activities(
-                skill_name, target_role, []
+            practice_activities = normalize_practice_activities(
+                practice_response.parsed_json, skill_name, target_role, []
             )
 
         provider = get_search_provider()

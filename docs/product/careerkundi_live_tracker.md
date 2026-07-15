@@ -10,14 +10,14 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | **0053 Evidence, Claims, Provenance and Verification Foundations** |
-| Current Slice | **LLM-R1 Local Ollama 8B Provider Alignment** (gate before 0053-F1) |
-| Current Status | In progress / completing |
-| Last Completed Slice | **0053-F0** (docs) · prior product: **0052-F8** |
+| Current Slice | **CORE-VALUE-R1 CV Automation + Roadmap Learning Content** (gate before 0053-F1) |
+| Current Status | Completing |
+| Last Completed Slice | **LLM-R1** · **0053-F0** (docs) · **0052-F8** |
 | 0052 status | **Completed / accepted** |
 | F0 status | **Completed** |
-| Last Commit | This commit — `feat(llm): use local ollama provider` |
+| Last Commit | This commit — `feat(core): improve cv automation and roadmap learning content` |
 | Last Push Status | Push with this slice |
-| Next Slice | **0053-F1 Claim Service Contract Boundary** (after LLM-R1 accepted) |
+| Next Slice | **0053-F1 Claim Service Contract Boundary** (after CORE-VALUE-R1 accepted) |
 | Browser viewports | N/A for F0 (docs only) |
 | Blocked Items | No active blockers; F1 waits on F0 plan acceptance |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
@@ -42,8 +42,10 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
 | 0052-F0…F8 | Passport phase | Done / accepted | Desktop F8 evidence | `8af9b813` | Yes | No 0052-F9 |
-| 0053-F0 | Planning and Boundary Audit | Done (docs) | `~/Desktop/CareerKundi_0053_F0_Claims_Evidence_Planning_Evidence.txt` | This commit | Yes (with this push) | No code |
-| 0053-F1 | Claim Service Contract Boundary | Next | — | — | — | After owner accepts F0 |
+| 0053-F0 | Planning and Boundary Audit | Done (docs) | `~/Desktop/CareerKundi_0053_F0_Claims_Evidence_Planning_Evidence.txt` | Prior | Yes | No code |
+| LLM-R1 | Local Ollama 8B provider | Done | `~/Desktop/CareerKundi_LLM_R1_Ollama_Migration_Evidence.txt` | `13449cb9` | Yes | Gemini deprecated |
+| CORE-VALUE-R1 | CV automation + Roadmap study/practice | Completing | `~/Desktop/CareerKundi_CORE_VALUE_R1_CV_Roadmap_Repair_Evidence.txt` | This commit | With push | Before 0053-F1 |
+| 0053-F1 | Claim Service Contract Boundary | Next | — | — | — | After CORE-VALUE-R1 accepted |
 
 ---
 
@@ -88,12 +90,12 @@ No active product blockers.
 
 | Field | Value |
 |---|---|
-| Next | **0053-F1 Claim Service Contract Boundary** |
-| Reason | F0 planning map complete; lock claim contracts before evidence tables |
+| Next | **0053-F1 Claim Service Contract Boundary** (only after CORE-VALUE-R1 accepted) |
+| Reason | CV quick-intake + Roadmap study/practice repair gates visible product value before claims |
 | Do not start | Evidence upload, verification UI, public sharing, wallet/DID/blockchain |
 | Plan | `docs/product/careerkundi_0053_claims_evidence_plan.md` |
-| Evidence | `~/Desktop/CareerKundi_0053_F0_Claims_Evidence_Planning_Evidence.txt` |
+| Evidence | `~/Desktop/CareerKundi_CORE_VALUE_R1_CV_Roadmap_Repair_Evidence.txt` |
 
 ---
 
-*Tracker updated: 2026-07-16 — 0053-F0 planning*
+*Tracker updated: 2026-07-16 — CORE-VALUE-R1*

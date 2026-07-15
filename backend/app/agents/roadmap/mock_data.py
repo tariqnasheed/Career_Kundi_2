@@ -172,19 +172,22 @@ def build_study_overview(
             overview = f"{overview} [{citation_marker}]"
     else:
         overview = (
-            f"{skill_name} does not yet have curated study material in Careerkundi's knowledge base, "
-            f"so this overview is generated from the skill and role context alone: it is a skill this "
-            f"roadmap flags as relevant for a {target_role}, and the resources below are the best "
-            f"available starting point until curated material is added."
+            f"{skill_name} is a practical capability this roadmap flags as relevant for a "
+            f"{target_role}. This overview is foundational/local-generated study guidance "
+            f"(not independently source-verified): focus on what {skill_name} means day to day, "
+            f"which tools and workflows show up in {target_role} work, and how you demonstrate "
+            f"progress through small exercises and a mini-project."
         )
 
     key_concepts = [
         f"What {skill_name} actually involves day-to-day in a {target_role} role",
-        f"The most common tools and terminology associated with {skill_name}",
-        f"How {skill_name} connects to the other skills in this milestone",
+        f"Core tools, packages, or terminology associated with {skill_name}",
+        f"How {skill_name} connects to neighboring skills on this roadmap",
+        f"Common mistakes beginners make with {skill_name} and how to avoid them",
+        f"How to show {skill_name} readiness in a {target_role} interview or portfolio",
     ]
     word_count = len(overview.split())
-    estimated_reading_time_minutes = max(2, round(word_count / 200 * 60))
+    estimated_reading_time_minutes = max(3, round(word_count / 200 * 60))
 
     return {
         "overview": overview,
@@ -205,25 +208,33 @@ def build_practice_activities(skill_name: str, target_role: str, sibling_skills:
     """
     exercises = [
         f"Spend a focused session applying {skill_name} to a small, self-contained problem you pick yourself "
-        f"rather than a textbook exercise — explaining your reasoning out loud or in writing as you go.",
-        f"Find one real example of {skill_name} being used in a production {target_role} workflow (a blog post, "
-        f"open-source repo, or public engineering write-up) and summarize the specific decisions it made.",
+        f"rather than a textbook exercise — explain your reasoning out loud or in writing as you go.",
+        f"Find one real example of {skill_name} used in a production {target_role} workflow (blog, open-source "
+        f"repo, or public write-up) and summarize the specific decisions it made.",
         f"Teach {skill_name} back to yourself in 5 minutes as if explaining it to a new {target_role} hire — "
-        f"this surfaces gaps a passive read-through won't.",
+        f"this surfaces gaps a passive read-through will miss.",
+        f"Write a short checklist of quality checks you would run before calling {skill_name} work "
+        f"'done enough' for a {target_role} deliverable.",
     ]
 
     other = [s for s in sibling_skills if s != skill_name]
     if other:
         project_idea = (
             f"Build a small project that combines {skill_name} with {', '.join(other[:2])} — pick something "
-            f"a {target_role} would plausibly ship, even at toy scale."
+            f"a {target_role} would plausibly ship, even at toy scale. Document what you learned."
         )
     else:
-        project_idea = f"Build a small, end-to-end project centered on {skill_name} that you could describe in a {target_role} interview."
+        project_idea = (
+            f"Build a small, end-to-end project centered on {skill_name} that you could describe in a "
+            f"{target_role} interview, including a short write-up of tradeoffs."
+        )
 
     self_assessment_questions = [
         f"Could you explain {skill_name} to someone unfamiliar with it, with a concrete example, in under two minutes?",
         f"Could you identify a situation where {skill_name} would be the WRONG tool or approach to use?",
+        f"What is one concrete artifact (snippet, notebook, checklist, demo) that proves you practiced {skill_name}?",
+        f"Which neighboring skill on this roadmap most depends on {skill_name}, and why?",
+        f"What would you practice next week to move {skill_name} from 'familiar' to 'interview-ready'?",
     ]
 
     return {

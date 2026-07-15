@@ -180,6 +180,18 @@ export default function CVBuilderPage() {
   const [matchedRoleTitle, setMatchedRoleTitle] = useState<string | null>(null);
   const roleTextAutoFromJobRef = useRef(true);
 
+  const [cvSourceMode, setCvSourceMode] = useState<"quick_intake" | "profile">("quick_intake");
+  const [quickFullName, setQuickFullName] = useState("");
+  const [quickTargetRole, setQuickTargetRole] = useState("");
+  const [quickCareerLevel, setQuickCareerLevel] = useState<"beginner" | "intermediate" | "advanced" | "expert">("beginner");
+  const [quickSummary, setQuickSummary] = useState("");
+  const [quickSkills, setQuickSkills] = useState("");
+  const [quickExperience, setQuickExperience] = useState("");
+  const [quickEducation, setQuickEducation] = useState("");
+  const [quickProjects, setQuickProjects] = useState("");
+  const [isQuickGenerating, setIsQuickGenerating] = useState(false);
+  const [quickError, setQuickError] = useState<string | null>(null);
+
   const template = getCVTemplate(selectedTemplateId);
   const selectedJob = jobs?.find((j) => j.id === targetJobId);
   const workspaceLoading = profileQuery.isLoading || jobsQuery.isLoading || cvsQuery.isLoading;
@@ -215,6 +227,93 @@ export default function CVBuilderPage() {
   useEffect(() => {
     if (jobIdParam && jobs?.length) setTargetJobId(jobIdParam);
   }, [jobIdParam, jobs]);
+
+  useEffect(() => {
+    if (!quickFullName && profile?.full_name) {
+      setQuickFullName(profile.full_name);
+    }
+  }, [profile?.full_name]);
+
+  const downloadCvPdf = async (cvId: string, candidateName?: string | null) => {
+    const blob = await cvApi.downloadPdf(cvId, "pdf", { templateId: selectedTemplateId });
+    if (!(blob instanceof Blob) || blob.size === 0) {
+      throw new Error("empty-pdf");
+    }
+    if (blob.type && blob.type.includes("application/json")) {
+      throw new Error("export-rejected");
+    }
+    const filename = buildSafeCvPdfFilename(
+      candidateName || profile?.full_name || cvName || "Candidate",
+      template.name,
+    );
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    return filename;
+  };
+
+  const quickIntakeValid = Boolean(
+    (quickFullName.trim() || profile?.full_name?.trim()) &&
+      quickTargetRole.trim() &&
+      quickCareerLevel,
+  );
+
+  const runQuickGenerate = async (alsoExport: boolean) => {
+    setQuickError(null);
+    if (!quickIntakeValid) {
+      const message = "Enter at least name, target role, and career level to generate a CV.";
+      setQuickError(message);
+      addToast({ type: "info", message });
+      return;
+    }
+    setIsQuickGenerating(true);
+    try {
+      const fullName = quickFullName.trim() || profile?.full_name || "";
+      const cv = await cvApi.generate({
+        name: cvName || `${fullName} — ${quickTargetRole.trim()}`,
+        template: template.backendTemplate,
+        studio_template_id: selectedTemplateId,
+        tone,
+        generation_mode: "quick_intake",
+        manual_profile_input: {
+          full_name: fullName,
+          target_role: quickTargetRole.trim(),
+          career_level: quickCareerLevel,
+          summary_context: quickSummary.trim() || undefined,
+          skills_text: quickSkills.trim() || undefined,
+          experience_text: quickExperience.trim() || undefined,
+          education_text: quickEducation.trim() || undefined,
+          projects_text: quickProjects.trim() || undefined,
+        },
+      });
+      setSelectedCvId(cv.id);
+      setCvName(cv.name);
+      await qc.invalidateQueries({ queryKey: ["cvs"] });
+      addToast({
+        type: "success",
+        title: "CV generated",
+        message: "Saved starter CV from your minimum info. Replace placeholders before applying.",
+      });
+      if (alsoExport) {
+        setExportError(null);
+        const filename = await downloadCvPdf(cv.id, fullName);
+        setExportSuccess(`Downloaded ${filename}`);
+        addToast({ type: "success", title: "PDF exported", message: "Download started." });
+      }
+      scrollToPreview();
+    } catch (err) {
+      const message = queryErrorMessage(err) || "Could not generate CV. Please try again.";
+      setQuickError(message);
+      addToast({ type: "error", message });
+    } finally {
+      setIsQuickGenerating(false);
+    }
+  };
 
   useEffect(() => {
     if (selectedJob) {
@@ -404,29 +503,38 @@ export default function CVBuilderPage() {
   const exportMutation = useMutation({
     mutationFn: async () => {
       const cvId = selectedCvId ?? cvs?.[0]?.id;
-      if (!cvId) throw new Error("no-cv");
+      if (!cvId) {
+        if (quickIntakeValid) {
+          setExportError(null);
+          setExportSuccess(null);
+          // Generate then export when no saved CV but quick fields are valid
+          const fullName = quickFullName.trim() || profile?.full_name || "";
+          const cv = await cvApi.generate({
+            name: cvName || `${fullName} — ${quickTargetRole.trim()}`,
+            template: template.backendTemplate,
+            studio_template_id: selectedTemplateId,
+            tone,
+            generation_mode: "quick_intake",
+            manual_profile_input: {
+              full_name: fullName,
+              target_role: quickTargetRole.trim(),
+              career_level: quickCareerLevel,
+              summary_context: quickSummary.trim() || undefined,
+              skills_text: quickSkills.trim() || undefined,
+              experience_text: quickExperience.trim() || undefined,
+              education_text: quickEducation.trim() || undefined,
+              projects_text: quickProjects.trim() || undefined,
+            },
+          });
+          setSelectedCvId(cv.id);
+          await qc.invalidateQueries({ queryKey: ["cvs"] });
+          return downloadCvPdf(cv.id, fullName);
+        }
+        throw new Error("no-cv");
+      }
       setExportError(null);
       setExportSuccess(null);
-      const blob = await cvApi.downloadPdf(cvId, "pdf", { templateId: selectedTemplateId });
-      if (!(blob instanceof Blob) || blob.size === 0) {
-        throw new Error("empty-pdf");
-      }
-      if (blob.type && blob.type.includes("application/json")) {
-        throw new Error("export-rejected");
-      }
-      const filename = buildSafeCvPdfFilename(
-        profile?.full_name || cvName || "Candidate",
-        template.name,
-      );
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-      return filename;
+      return downloadCvPdf(cvId, profile?.full_name || quickFullName || cvName);
     },
     onSuccess: (filename) => {
       setExportSuccess(`Downloaded ${filename}`);
@@ -440,7 +548,7 @@ export default function CVBuilderPage() {
       const code = (e as Error)?.message;
       const message =
         code === "no-cv"
-          ? "Generate or select a CV draft before exporting."
+          ? "Enter at least name, target role, and career level to generate a CV."
           : code === "empty-pdf"
             ? "Export returned an empty file. Please try again."
             : "We couldn't export this PDF. Please try again.";
@@ -499,7 +607,10 @@ export default function CVBuilderPage() {
   };
 
   const canSave = !isSavingDraft && !profileQuery.isLoading && !profileQuery.isError;
-  const canExport = !exportMutation.isPending && Boolean(selectedCvId || cvs?.[0]?.id);
+  const canExport =
+    !exportMutation.isPending &&
+    !isQuickGenerating &&
+    Boolean(selectedCvId || cvs?.[0]?.id || quickIntakeValid);
 
   return (
     <div className="cv-builder-studio">
@@ -536,14 +647,150 @@ export default function CVBuilderPage() {
             onClick={() => exportMutation.mutate()}
             title={
               canExport
-                ? `Export PDF (${template.name} → ${template.backendTemplate} style)`
-                : "Generate or select a CV before exporting"
+                ? selectedCvId || cvs?.[0]?.id
+                  ? `Export PDF (${template.name} → ${template.backendTemplate} style)`
+                  : "Generate from Quick CV fields, then export PDF"
+                : "Enter name, target role, and career level — or select a saved CV"
             }
           >
             {exportMutation.isPending ? "Exporting..." : "Export PDF"}
           </Button>
         </div>
       </header>
+
+      <section className="cv-builder-quick" style={{ marginBottom: "1.25rem" }} aria-labelledby="quick-cv-heading">
+        <h2 id="quick-cv-heading" style={{ fontSize: "1.1rem", marginBottom: "0.35rem" }}>
+          Quick CV from minimum info
+        </h2>
+        <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginBottom: "0.75rem" }}>
+          Generate a starter CV with name, role, and career level. Optional fields fill sections; missing facts stay as honest placeholders — no invented employers, degrees, or certifications.
+        </p>
+        <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginBottom: "0.75rem" }}>
+          <Button
+            variant={cvSourceMode === "quick_intake" ? "primary" : "secondary"}
+            onClick={() => setCvSourceMode("quick_intake")}
+          >
+            Minimum input only
+          </Button>
+          <Button
+            variant={cvSourceMode === "profile" ? "primary" : "secondary"}
+            onClick={() => setCvSourceMode("profile")}
+          >
+            Use Passport/profile data
+          </Button>
+        </div>
+        {cvSourceMode === "quick_intake" && (
+          <div style={{ display: "grid", gap: "0.65rem", maxWidth: "42rem" }}>
+            <label style={{ display: "grid", gap: "0.25rem", fontSize: "0.8rem" }}>
+              Full name
+              <input
+                value={quickFullName}
+                onChange={(e) => setQuickFullName(e.target.value)}
+                placeholder="Your name"
+                style={{ padding: "0.5rem 0.65rem", borderRadius: 8, border: "1px solid var(--border-subtle, #ccc)" }}
+              />
+            </label>
+            <label style={{ display: "grid", gap: "0.25rem", fontSize: "0.8rem" }}>
+              Target job role
+              <input
+                value={quickTargetRole}
+                onChange={(e) => setQuickTargetRole(e.target.value)}
+                placeholder="e.g. AI Engineer"
+                style={{ padding: "0.5rem 0.65rem", borderRadius: 8, border: "1px solid var(--border-subtle, #ccc)" }}
+              />
+            </label>
+            <label style={{ display: "grid", gap: "0.25rem", fontSize: "0.8rem" }}>
+              Career level
+              <select
+                value={quickCareerLevel}
+                onChange={(e) => setQuickCareerLevel(e.target.value as typeof quickCareerLevel)}
+                style={{ padding: "0.5rem 0.65rem", borderRadius: 8, border: "1px solid var(--border-subtle, #ccc)" }}
+              >
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+                <option value="expert">Expert</option>
+              </select>
+            </label>
+            <label style={{ display: "grid", gap: "0.25rem", fontSize: "0.8rem" }}>
+              Short background / goal (optional)
+              <textarea
+                value={quickSummary}
+                onChange={(e) => setQuickSummary(e.target.value)}
+                rows={2}
+                placeholder="What you want the CV to emphasize"
+                style={{ padding: "0.5rem 0.65rem", borderRadius: 8, border: "1px solid var(--border-subtle, #ccc)" }}
+              />
+            </label>
+            <label style={{ display: "grid", gap: "0.25rem", fontSize: "0.8rem" }}>
+              Skills (optional)
+              <input
+                value={quickSkills}
+                onChange={(e) => setQuickSkills(e.target.value)}
+                placeholder="Comma-separated skills"
+                style={{ padding: "0.5rem 0.65rem", borderRadius: 8, border: "1px solid var(--border-subtle, #ccc)" }}
+              />
+            </label>
+            <label style={{ display: "grid", gap: "0.25rem", fontSize: "0.8rem" }}>
+              Experience (optional)
+              <textarea
+                value={quickExperience}
+                onChange={(e) => setQuickExperience(e.target.value)}
+                rows={2}
+                placeholder="Real experience notes only — no invented employers"
+                style={{ padding: "0.5rem 0.65rem", borderRadius: 8, border: "1px solid var(--border-subtle, #ccc)" }}
+              />
+            </label>
+            <label style={{ display: "grid", gap: "0.25rem", fontSize: "0.8rem" }}>
+              Education (optional)
+              <textarea
+                value={quickEducation}
+                onChange={(e) => setQuickEducation(e.target.value)}
+                rows={2}
+                placeholder="Degree / program notes"
+                style={{ padding: "0.5rem 0.65rem", borderRadius: 8, border: "1px solid var(--border-subtle, #ccc)" }}
+              />
+            </label>
+            <label style={{ display: "grid", gap: "0.25rem", fontSize: "0.8rem" }}>
+              Projects (optional)
+              <textarea
+                value={quickProjects}
+                onChange={(e) => setQuickProjects(e.target.value)}
+                rows={2}
+                placeholder="Project notes"
+                style={{ padding: "0.5rem 0.65rem", borderRadius: 8, border: "1px solid var(--border-subtle, #ccc)" }}
+              />
+            </label>
+            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+              <Button
+                variant="primary"
+                loading={isQuickGenerating}
+                disabled={isQuickGenerating || exportMutation.isPending}
+                onClick={() => void runQuickGenerate(false)}
+              >
+                Generate CV
+              </Button>
+              <Button
+                variant="secondary"
+                leftIcon={<FileDown size={15} />}
+                loading={isQuickGenerating || exportMutation.isPending}
+                disabled={isQuickGenerating || exportMutation.isPending}
+                onClick={() => void runQuickGenerate(true)}
+              >
+                Generate & Export PDF
+              </Button>
+            </div>
+            {quickError && (
+              <div className="cv-builder-save-error" role="alert">{quickError}</div>
+            )}
+          </div>
+        )}
+        {cvSourceMode === "profile" && (
+          <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>
+            Use Save Draft below to generate from Passport/profile data. Quick intake is available anytime via “Minimum input only”.
+          </p>
+        )}
+      </section>
 
       <div className="cv-builder-save-load" aria-live="polite">
         {isSavingDraft && (

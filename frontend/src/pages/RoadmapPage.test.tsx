@@ -180,3 +180,58 @@ describe("RoadmapPage F7 Passport target prefill", () => {
     expect(screen.getByRole("button", { name: /Generate roadmap/i })).not.toBeDisabled();
   });
 });
+
+describe("RoadmapPage skill empty states", () => {
+  beforeEach(() => {
+    passportGet.mockReset();
+    roadmapList.mockReset();
+    roadmapGenerate.mockReset();
+    roadmapGet.mockReset();
+    passportGet.mockResolvedValue(passportWithTarget());
+  });
+
+  it("shows refresh empty states when study/practice content is blank", async () => {
+    const roadmap = {
+      id: "rm-empty",
+      target_role: "AI Engineer",
+      pace: "balanced",
+      starting_skill_level: "beginner",
+      personalization_inputs: {},
+      created_at: "2026-01-01T00:00:00Z",
+      updated_at: "2026-01-01T00:00:00Z",
+      milestones: [
+        {
+          id: "m1",
+          title: "Foundation",
+          timeframe_label: "Weeks 1-2",
+          skills: [
+            {
+              id: "sk1",
+              skill_name: "Python",
+              importance: "high",
+              estimated_hours: 10,
+              status: "not_started",
+              resources: [],
+              study_material: { overview: "", key_concepts: [] },
+              practice_activities: {
+                exercises: [],
+                project_idea: "",
+                self_assessment_questions: [],
+              },
+              lateral_connections: [],
+            },
+          ],
+        },
+      ],
+      skills: [],
+    };
+    roadmapList.mockResolvedValue([roadmap]);
+    roadmapGet.mockResolvedValue(roadmap);
+    renderPage();
+    fireEvent.click(await screen.findByRole("button", { name: /Open study view/i }));
+    expect(await screen.findByText(/No study material generated yet/i)).toBeInTheDocument();
+    expect(screen.getAllByRole("button", { name: /Refresh skill content/i }).length).toBeGreaterThan(0);
+    fireEvent.click(screen.getByRole("button", { name: /^Flashcards$/i }));
+    expect(screen.getByText(/No flashcards yet/i)).toBeInTheDocument();
+  });
+});

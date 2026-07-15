@@ -128,6 +128,25 @@ class SectionConfigItem(BaseModel):
     enabled: bool = True
 
 
+class ManualProfileInput(BaseModel):
+    """
+    Minimal intake for Quick CV generation. Never mutates Profile or Passport —
+    it only informs a GeneratedCV snapshot for this request.
+    """
+
+    full_name: str | None = None
+    email: str | None = None
+    phone: str | None = None
+    location: str | None = None
+    target_role: str = Field(..., min_length=1)
+    career_level: Literal["beginner", "intermediate", "advanced", "expert"]
+    summary_context: str | None = None
+    skills_text: str | None = None
+    experience_text: str | None = None
+    education_text: str | None = None
+    projects_text: str | None = None
+
+
 class CVGenerateRequest(BaseModel):
     """
     `section_ids=None` means "include every section the profile actually has
@@ -138,6 +157,10 @@ class CVGenerateRequest(BaseModel):
     `generation_mode="role_targeted"` generates full section content for a
     different target role via the model. Section toggles only control which
     sections appear — the model writes the content for each enabled section.
+
+    `generation_mode="quick_intake"` builds a GeneratedCV from
+    `manual_profile_input` (minimum name/role/level). It does not mutate
+    Profile or Passport and must not invent employers, degrees, or certifications.
 
     `studio_template_id` is the CVB-F2 gallery id (15 templates). Persisted in
     section_config JSON meta — not the same as `template` (PDF style family).
@@ -154,9 +177,13 @@ class CVGenerateRequest(BaseModel):
     )
     section_ids: list[str] | None = Field(default=None, description="None = every populated section")
     tone: Literal["concise", "detailed", "executive"] = "concise"
-    generation_mode: Literal["profile", "role_targeted"] = Field(
+    generation_mode: Literal["profile", "role_targeted", "quick_intake"] = Field(
         default="profile",
-        description="profile = enhance existing profile data; role_targeted = model generates all enabled sections for a different role",
+        description=(
+            "profile = enhance existing profile data; "
+            "role_targeted = model generates sections for a different role; "
+            "quick_intake = generate from manual_profile_input without mutating Profile/Passport"
+        ),
     )
     target_role_title: str | None = Field(
         default=None,
@@ -165,6 +192,10 @@ class CVGenerateRequest(BaseModel):
     target_role_description: str | None = Field(
         default=None,
         description="Optional role/JD context when generation_mode=role_targeted",
+    )
+    manual_profile_input: ManualProfileInput | None = Field(
+        default=None,
+        description="Required when generation_mode=quick_intake",
     )
     taxonomy: CVTaxonomyMeta | None = Field(
         default=None,
@@ -180,6 +211,11 @@ class CVGenerateRequest(BaseModel):
     def _validate_role_targeted(self) -> "CVGenerateRequest":
         if self.generation_mode == "role_targeted" and not (self.target_role_title or "").strip():
             raise ValueError("target_role_title is required when generation_mode is role_targeted.")
+        if self.generation_mode == "quick_intake":
+            if self.manual_profile_input is None:
+                raise ValueError("manual_profile_input is required when generation_mode is quick_intake.")
+            if not (self.manual_profile_input.target_role or "").strip():
+                raise ValueError("manual_profile_input.target_role is required for quick_intake.")
         return self
 
 

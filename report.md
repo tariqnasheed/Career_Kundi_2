@@ -2,6 +2,17 @@
 
 > **LLM provider (current):** Local Ollama 8B at `http://127.0.0.1:11434`. No Gemini API required. Use `LLM_PROVIDER=mock` for deterministic tests. Historical Gemini mentions in this report are legacy/deprecated.
 
+## CORE-VALUE-R1 (2026-07-16)
+
+Visible product loop repair before 0053-F1:
+
+- **Roadmap:** empty Ollama JSON (`overview: ""`) no longer accepted; normalize to useful study/practice; FE empty states + refresh errors.
+- **CV Builder:** `generation_mode=quick_intake` from name/role/level without mutating Profile/Passport; Generate & Export PDF; honest placeholders only.
+
+Evidence: `~/Desktop/CareerKundi_CORE_VALUE_R1_CV_Roadmap_Repair_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

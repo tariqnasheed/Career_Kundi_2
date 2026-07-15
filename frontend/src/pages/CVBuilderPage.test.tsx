@@ -304,4 +304,35 @@ describe("CVBuilderPage F7 Passport awareness", () => {
       await screen.findByText(/Career Passport could not be loaded/i),
     ).toBeInTheDocument();
   });
+
+  it("shows Quick CV section and generates via quick_intake", async () => {
+    passportGet.mockResolvedValue(emptyPassport());
+    cvGenerate.mockResolvedValue({
+      id: "cv-quick-1",
+      name: "Ada — AI Engineer",
+      template: "classic",
+      section_config: [],
+      rendered_content: { personal_info: { full_name: "Ada" }, sections: [] },
+    });
+    renderPage();
+    expect(await screen.findByRole("heading", { name: /Quick CV from minimum info/i })).toBeInTheDocument();
+    fireEvent.change(screen.getByPlaceholderText(/Your name/i), {
+      target: { value: "Ada Lovelace" },
+    });
+    fireEvent.change(screen.getByPlaceholderText(/e\.g\. AI Engineer/i), {
+      target: { value: "AI Engineer" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /^Generate CV$/i }));
+    await waitFor(() => expect(cvGenerate).toHaveBeenCalled());
+    const payload = cvGenerate.mock.calls[cvGenerate.mock.calls.length - 1][0];
+    expect(payload.generation_mode).toBe("quick_intake");
+    expect(payload.manual_profile_input).toEqual(
+      expect.objectContaining({
+        full_name: "Ada Lovelace",
+        target_role: "AI Engineer",
+        career_level: "beginner",
+      }),
+    );
+    expect(payload.passport_id).toBeUndefined();
+  });
 });

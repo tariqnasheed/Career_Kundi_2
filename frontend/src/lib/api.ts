@@ -315,7 +315,7 @@ export const cvApi = {
     return res.data;
   },
 
-  /** Generate a new CV from the user's profile. */
+  /** Generate a new CV from the user's profile or quick intake. */
   generate: async (payload: {
     name?: string;
     target_job_id?: string;
@@ -323,9 +323,22 @@ export const cvApi = {
     studio_template_id?: string;
     section_ids?: string[];
     tone?: "concise" | "detailed" | "executive";
-    generation_mode?: "profile" | "role_targeted";
+    generation_mode?: "profile" | "role_targeted" | "quick_intake";
     target_role_title?: string;
     target_role_description?: string;
+    manual_profile_input?: {
+      full_name?: string;
+      email?: string;
+      phone?: string;
+      location?: string;
+      target_role: string;
+      career_level: "beginner" | "intermediate" | "advanced" | "expert";
+      summary_context?: string;
+      skills_text?: string;
+      experience_text?: string;
+      education_text?: string;
+      projects_text?: string;
+    };
     taxonomy?: CVTaxonomyMeta;
   }): Promise<GeneratedCVRead> => {
     const res = await http.post<GeneratedCVRead>("/cv-builder/generate", payload);

@@ -21,12 +21,17 @@ import { Modal, ModalBody, ModalFooter } from "@/components/ui/Modal";
 import { Spinner } from "@/components/ui/Spinner";
 import { SkillRadar } from "@/components/features/SkillRadar";
 import { useUIStore } from "@/store/ui";
-import type { RoadmapRead, RoadmapSkillRead, RoadmapTaxonomyMeta } from "@/types/api";
+import type { ApiError, RoadmapRead, RoadmapSkillRead, RoadmapTaxonomyMeta } from "@/types/api";
 import {
   buildRoadmapContextFromPassportTarget,
   passportTargetsForPrefill,
   type PassportTargetPrefill,
 } from "@/features/passport/passportIntegrationUtils";
+
+function queryErrorMessage(err: unknown): string {
+  const msg = (err as ApiError | undefined)?.message;
+  return (msg && String(msg).trim()) || "Request failed. Please try again.";
+}
 
 const STATUS_CONFIG = {
   not_started: { label: "Not started", color: "var(--text-secondary)", icon: <Circle size={13} /> },
@@ -273,9 +278,18 @@ function SkillDetailModal({
       addToast({ type: "success", message: "Skill content refreshed." });
       onActionMessage?.("Skill content refreshed.", "success");
     },
-    onError: () => {
-      addToast({ type: "error", message: "Could not refresh skill content. Please try again." });
-      onActionMessage?.("Could not refresh skill content. Please try again.", "error");
+    onError: (err) => {
+      const raw = queryErrorMessage(err).toLowerCase();
+      let message = "Skill content generation failed. Try Refresh skill content again.";
+      if (raw.includes("ollama") && (raw.includes("unreachable") || raw.includes("connect") || raw.includes("refused"))) {
+        message = "Local Ollama is not reachable. Start Ollama or switch LLM_PROVIDER=mock.";
+      } else if (raw.includes("model") && (raw.includes("not found") || raw.includes("pull") || raw.includes("missing"))) {
+        message = "Ollama model missing. Run: ollama pull llama3.1:8b";
+      } else if (raw.includes("500") || raw.includes("server")) {
+        message = "Server error while refreshing skill content. Please try again.";
+      }
+      addToast({ type: "error", message });
+      onActionMessage?.(message, "error");
     },
   });
 
@@ -284,6 +298,27 @@ function SkillDetailModal({
   const status = (skill.status ?? "not_started") as SkillStatus;
   const study = skill.study_material;
   const practice = skill.practice_activities;
+  const overview = (study?.overview || "").trim();
+  const keyConcepts = study?.key_concepts?.filter((c) => (c || "").trim()) ?? [];
+  const flashcards = practice?.self_assessment_questions?.filter((q) => (q || "").trim()) ?? [];
+  const exercises = practice?.exercises?.filter((e) => (e || "").trim()) ?? [];
+  const projectIdea = (practice?.project_idea || "").trim();
+  const reflection = flashcards;
+
+  const emptyHint = (label: string) => (
+    <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+      {label}{" "}
+      <button
+        type="button"
+        style={{ background: "none", border: "none", padding: 0, color: "var(--accent-violet-bright)", cursor: "pointer", textDecoration: "underline" }}
+        onClick={() => refreshMutation.mutate()}
+        disabled={refreshMutation.isPending}
+      >
+        Refresh skill content
+      </button>
+      .
+    </p>
+  );
 
   return (
     <Modal open={open} onClose={onClose} title={skill.skill_name} size="lg">
@@ -307,66 +342,72 @@ function SkillDetailModal({
           </p>
         )}
 
-        {study && (
-          <Card padding="md" style={{ marginBottom: "1rem" }}>
-            <CardHeader><CardTitle style={{ fontSize: "0.9rem" }}><BookOpen size={14} style={{ display: "inline", marginRight: "6px" }} />Study Material</CardTitle></CardHeader>
-            <CardContent>
-              <p style={{ fontSize: "0.85rem", lineHeight: 1.6, marginBottom: "0.75rem" }}>{study.overview}</p>
-              {study.key_concepts?.length > 0 && (
-                <div>
-                  <p style={{ fontSize: "0.75rem", fontWeight: 600, marginBottom: "0.35rem" }}>Key concepts</p>
-                  <ul style={{ margin: 0, paddingLeft: "1.25rem", fontSize: "0.8rem", color: "var(--text-secondary)" }}>
-                    {study.key_concepts.map((c, i) => <li key={i}>{c}</li>)}
-                  </ul>
-                </div>
-              )}
-              {study.estimated_reading_time_minutes != null && (
-                <p style={{ fontSize: "0.7rem", color: "var(--text-secondary)", marginTop: "0.5rem" }}>~{study.estimated_reading_time_minutes} min read</p>
-              )}
-            </CardContent>
-          </Card>
-        )}
-
-        {practice && (
-          <Card padding="md" style={{ marginBottom: "1rem" }}>
-            <CardHeader><CardTitle style={{ fontSize: "0.9rem" }}><Play size={14} style={{ display: "inline", marginRight: "6px" }} />Practice Session</CardTitle></CardHeader>
-            <CardContent>
-              <div className="skill-tabs">
-                {(["flashcards", "quizzes", "projects", "reflection"] as const).map((tab) => (
-                  <button key={tab} type="button" className={`skill-tab${practiceTab === tab ? " skill-tab--active" : ""}`} onClick={() => setPracticeTab(tab)}>
-                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                  </button>
-                ))}
+        <Card padding="md" style={{ marginBottom: "1rem" }}>
+          <CardHeader><CardTitle style={{ fontSize: "0.9rem" }}><BookOpen size={14} style={{ display: "inline", marginRight: "6px" }} />Study Material</CardTitle></CardHeader>
+          <CardContent>
+            {overview ? (
+              <p style={{ fontSize: "0.85rem", lineHeight: 1.6, marginBottom: "0.75rem" }}>{overview}</p>
+            ) : (
+              emptyHint("No study material generated yet.")
+            )}
+            {keyConcepts.length > 0 && (
+              <div>
+                <p style={{ fontSize: "0.75rem", fontWeight: 600, marginBottom: "0.35rem" }}>Key concepts</p>
+                <ul style={{ margin: 0, paddingLeft: "1.25rem", fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+                  {keyConcepts.map((c, i) => <li key={i}>{c}</li>)}
+                </ul>
               </div>
-              {practiceTab === "flashcards" && (
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                  {(practice.self_assessment_questions ?? []).slice(0, 8).map((q, i) => (
-                    <div key={i} className="feature-glass" style={{ padding: "0.6rem", fontSize: "0.8rem" }}>
-                      <strong>Q{i + 1}:</strong> {q}
-                    </div>
-                  ))}
-                  {!(practice.self_assessment_questions?.length) && <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>Flashcards generate on skill refresh.</p>}
-                </div>
-              )}
-              {practiceTab === "quizzes" && (
+            )}
+            {study?.estimated_reading_time_minutes != null && overview && (
+              <p style={{ fontSize: "0.7rem", color: "var(--text-secondary)", marginTop: "0.5rem" }}>~{study.estimated_reading_time_minutes} min read</p>
+            )}
+          </CardContent>
+        </Card>
+
+        <Card padding="md" style={{ marginBottom: "1rem" }}>
+          <CardHeader><CardTitle style={{ fontSize: "0.9rem" }}><Play size={14} style={{ display: "inline", marginRight: "6px" }} />Practice Session</CardTitle></CardHeader>
+          <CardContent>
+            <div className="skill-tabs">
+              {(["flashcards", "quizzes", "projects", "reflection"] as const).map((tab) => (
+                <button key={tab} type="button" className={`skill-tab${practiceTab === tab ? " skill-tab--active" : ""}`} onClick={() => setPracticeTab(tab)}>
+                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </button>
+              ))}
+            </div>
+            {practiceTab === "flashcards" && (
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                {flashcards.slice(0, 8).map((q, i) => (
+                  <div key={i} className="feature-glass" style={{ padding: "0.6rem", fontSize: "0.8rem" }}>
+                    <strong>Q{i + 1}:</strong> {q}
+                  </div>
+                ))}
+                {!flashcards.length && emptyHint("No flashcards yet.")}
+              </div>
+            )}
+            {practiceTab === "quizzes" && (
+              exercises.length > 0 ? (
                 <ol style={{ margin: 0, paddingLeft: "1.25rem", fontSize: "0.8rem" }}>
-                  {(practice.exercises ?? []).map((ex, i) => <li key={i} style={{ marginBottom: "4px" }}>{ex}</li>)}
+                  {exercises.map((ex, i) => <li key={i} style={{ marginBottom: "4px" }}>{ex}</li>)}
                 </ol>
-              )}
-              {practiceTab === "projects" && practice.project_idea && (
+              ) : emptyHint("No quizzes yet.")
+            )}
+            {practiceTab === "projects" && (
+              projectIdea ? (
                 <div style={{ padding: "0.625rem", borderRadius: "8px", background: "rgba(139,92,246,0.06)" }}>
                   <p style={{ fontSize: "0.75rem", fontWeight: 600, marginBottom: "0.25rem" }}><Lightbulb size={12} style={{ display: "inline" }} /> Mini-project</p>
-                  <p style={{ fontSize: "0.8rem" }}>{practice.project_idea}</p>
+                  <p style={{ fontSize: "0.8rem" }}>{projectIdea}</p>
                 </div>
-              )}
-              {practiceTab === "reflection" && (
+              ) : emptyHint("No mini-project yet.")
+            )}
+            {practiceTab === "reflection" && (
+              reflection.length > 0 ? (
                 <ul style={{ margin: 0, paddingLeft: "1.25rem", fontSize: "0.8rem" }}>
-                  {(practice.self_assessment_questions ?? []).map((q, i) => <li key={i}>{q}</li>)}
+                  {reflection.map((q, i) => <li key={i}>{q}</li>)}
                 </ul>
-              )}
-            </CardContent>
-          </Card>
-        )}
+              ) : emptyHint("No reflection questions yet.")
+            )}
+          </CardContent>
+        </Card>
 
         {skill.resources?.length > 0 && (
           <Card padding="md">
