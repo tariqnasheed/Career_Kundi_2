@@ -10,15 +10,15 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | **0052 Career & Education Passport** |
-| Current Slice | 0052-F4 Passport Frontend Shell + Design Fidelity |
+| Current Slice | 0052-F5 Passport Profile, Experience and Education Editing |
 | Current Status | Completed / Accepted (Decision B) |
-| Last Completed Slice | **0052-F4** |
-| F4 status | Completed — route `/passport`; shell repaired; Design Fidelity 1280/768/390 |
-| Last Commit | This commit — `feat(passport): add frontend shell` |
+| Last Completed Slice | **0052-F5** |
+| F5 status | Completed — editors Profile / Experience / Education |
+| Last Commit | This commit — `feat(passport): add profile education editing` |
 | Last Push Status | Push with this slice |
-| Next Slice | **0052-F5 Passport Profile, Experience and Education Editing** |
-| Browser viewports | 1280 / 768 / 390 — pass; overflow cleared |
-| Responsive shell | Repaired (desktop/tablet/mobile drawer) |
+| Next Slice | **0052-F6 Projects / Skills / Credentials / Targets** |
+| Editors | Profile / Experience / Education |
+| Browser viewports | 1280 / 768 / 390 — pass; conflict + validation journeys pass |
 | Blocked Items | No active blockers |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
 
@@ -31,7 +31,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Master Build Plan | `docs/product/careerkundi_master_build_plan.md` |
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 
-**Pointers:** 0052-F0…F3R1 Done · **0052-F4** Done · Next **0052-F5**.
+**Pointers:** 0052-F0…F4 Done · **0052-F5** Done · Next **0052-F6**.
 
 ---
 
@@ -44,8 +44,9 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | 0052-F2 | Passport Persistence and Migration | Done | Desktop F2 evidence | `dfa52dd1` | Yes | Decision B; `f0008` |
 | 0052-F3 | Passport API MVP | Done | Desktop F3 evidence | `d3ee6b6a` | Yes | Decision B; 27 routes |
 | 0052-F3R1 | Migration-Head Regression Alignment | Done | Desktop F3R1 evidence | `7352a139` | Yes | Decision B; F4 unblocked |
-| 0052-F4 | Passport Frontend Shell + Design Fidelity | Done | `~/Desktop/CareerKundi_0052_F4_Passport_Frontend_Shell_Evidence.txt` | This commit | Yes (with this push) | Decision B; shell + `/passport` |
-| 0052-F5 | Passport Profile, Experience and Education Editing | Planned | — | — | — | **Next** |
+| 0052-F4 | Passport Frontend Shell + Design Fidelity | Done | `~/Desktop/CareerKundi_0052_F4_Passport_Frontend_Shell_Evidence.txt` | `5dc31f3a` | Yes | Decision B; shell + `/passport` |
+| 0052-F5 | Passport Profile, Experience and Education Editing | Done | `~/Desktop/CareerKundi_0052_F5_Passport_Profile_Experience_Education_Editing_Evidence.txt` | This commit | Yes (with this push) | Decision B; editors |
+| 0052-F6 | Passport Projects, Skills, Credentials and Targets Editing | Planned | — | — | — | **Next** |
 
 ---
 
@@ -59,6 +60,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | 2026-07-13 | 0052-F3 | Desktop F3 evidence | B …F4… | API MVP |
 | 2026-07-13 | 0052-F3R1 | Desktop F3R1 evidence | B …F4_UNBLOCKED… | Test-only repair |
 | 2026-07-14 | 0052-F4 | `~/Desktop/CareerKundi_0052_F4_Passport_Frontend_Shell_Evidence.txt` | B …F5… | Screenshots in Design_Fidelity dir |
+| 2026-07-15 | 0052-F5 | `~/Desktop/CareerKundi_0052_F5_Passport_Profile_Experience_Education_Editing_Evidence.txt` | B …F6… | Screenshots in F5 Design_Fidelity dir |
 
 ---
 
@@ -68,7 +70,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 |---|---|---|---|---|
 | 2026-07-13 | 0052-F3 | `d3ee6b6a` | Pushed | Authenticated API |
 | 2026-07-13 | 0052-F3R1 | `7352a139` | Pushed | Stale head asserts |
-| 2026-07-14 | 0052-F4 | This commit (`feat(passport): add frontend shell`) | Push with this slice | Read-only FE + shell |
+| 2026-07-14 | 0052-F4 | `5dc31f3a` (`feat(passport): add frontend shell`) | Pushed | Read-only FE + shell |
+| 2026-07-15 | 0052-F5 | This commit (`feat(passport): add profile education editing`) | Push with this slice | Profile/Exp/Edu editors |
 
 ---
 
@@ -79,14 +82,15 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | 2026-07-13 | 0052-F3 Decision B | F4 gated on wider-suite head failures | Accepted |
 | 2026-07-13 | 0052-F3R1 Decision B | F4 unblocked | Accepted |
 | 2026-07-14 | 0052-F4 Decision B | Ready for F5 editors | Accepted |
+| 2026-07-15 | 0052-F5 Decision B | Ready for F6 remaining section editors | Accepted |
 
 ---
 
 ## 7. Active Blockers
 
-No active product blockers. Shell-overflow watch **cleared**.
+No active product blockers. Shell-overflow watch remains cleared.
 
-**Watch:** Platform subjects list may 500 while direct subject link works; Profile FE↔BE mismatch; incomplete Profile tests; PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051 API; 004E/Auto Apply frozen; frontend ESLint config missing at baseline.
+**Watch:** Platform subjects list may 500 while direct subject link works; Profile FE↔BE mismatch; incomplete Profile tests; PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051 API; 004E/Auto Apply frozen; frontend ESLint config missing at baseline; incidental shell roadmap fetch outside Passport feature.
 
 ---
 
@@ -94,15 +98,16 @@ No active product blockers. Shell-overflow watch **cleared**.
 
 | Field | Value |
 |---|---|
-| Next slice | **0052-F5 Passport Profile, Experience and Education Editing** |
-| Reason | F4 read-only overview + responsive shell accepted |
-| Type | Profile / Experience / Education editors; `expected_version`; 409 refetch |
-| Evidence required | Per master § 0052-F4 F5 handoff |
+| Next slice | **0052-F6 Passport Projects, Skills, Credentials and Targets Editing** |
+| Reason | F5 Profile / Experience / Education editing accepted |
+| Type | Remaining section editors; `expected_version`; 409 refetch |
+| Evidence required | Per master § 0052-F5 F6 handoff |
 | Commit rule | Per master plan |
 | Push rule | Push after clean verification |
 
-**Screenshots:** `~/Desktop/CareerKundi_0052_F4_Design_Fidelity/`
+**Evidence:** `~/Desktop/CareerKundi_0052_F5_Passport_Profile_Experience_Education_Editing_Evidence.txt`  
+**Screenshots:** `~/Desktop/CareerKundi_0052_F5_Design_Fidelity/`
 
 ---
 
-*Tracker updated: 2026-07-14 — 0052-F4*
+*Tracker updated: 2026-07-15 — 0052-F5*

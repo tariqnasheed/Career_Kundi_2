@@ -51,6 +51,12 @@ import type {
   TaxonomyRelatedRolesRead,
   PassportEnvelope,
   PassportRead,
+  PassportProfilePatchRequest,
+  PassportExperienceCreateRequest,
+  PassportExperiencePatchRequest,
+  PassportEducationCreateRequest,
+  PassportEducationPatchRequest,
+  PassportReorderRequest,
 } from "@/types/api";
 import {
   buildSavedJobSearchPageRequest,
@@ -677,13 +683,107 @@ export const taxonomyApi = {
 };
 
 // ---------------------------------------------------------------------------
-// Passport endpoints (0052-F4) — read-only aggregate client
+// Passport endpoints (0052-F4/F5) — aggregate GET + Profile/Experience/Education
 // ---------------------------------------------------------------------------
 
 export const passportApi = {
   /** Lazy-create and read the authenticated Passport aggregate. */
   get: async (): Promise<PassportRead> => {
     const response = await http.get<PassportEnvelope>("/passport");
+    return response.data.data;
+  },
+
+  patchProfile: async (
+    payload: PassportProfilePatchRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.patch<PassportEnvelope>(
+      "/passport/profile",
+      payload,
+    );
+    return response.data.data;
+  },
+
+  createExperience: async (
+    payload: PassportExperienceCreateRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.post<PassportEnvelope>(
+      "/passport/experiences",
+      payload,
+    );
+    return response.data.data;
+  },
+
+  patchExperience: async (
+    entryId: string,
+    payload: PassportExperiencePatchRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.patch<PassportEnvelope>(
+      `/passport/experiences/${entryId}`,
+      payload,
+    );
+    return response.data.data;
+  },
+
+  deleteExperience: async (
+    entryId: string,
+    expectedVersion: number,
+  ): Promise<PassportRead> => {
+    const response = await http.delete<PassportEnvelope>(
+      `/passport/experiences/${entryId}`,
+      { params: { expected_version: expectedVersion } },
+    );
+    return response.data.data;
+  },
+
+  reorderExperiences: async (
+    payload: PassportReorderRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.put<PassportEnvelope>(
+      "/passport/experiences/reorder",
+      payload,
+    );
+    return response.data.data;
+  },
+
+  createEducation: async (
+    payload: PassportEducationCreateRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.post<PassportEnvelope>(
+      "/passport/education",
+      payload,
+    );
+    return response.data.data;
+  },
+
+  patchEducation: async (
+    entryId: string,
+    payload: PassportEducationPatchRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.patch<PassportEnvelope>(
+      `/passport/education/${entryId}`,
+      payload,
+    );
+    return response.data.data;
+  },
+
+  deleteEducation: async (
+    entryId: string,
+    expectedVersion: number,
+  ): Promise<PassportRead> => {
+    const response = await http.delete<PassportEnvelope>(
+      `/passport/education/${entryId}`,
+      { params: { expected_version: expectedVersion } },
+    );
+    return response.data.data;
+  },
+
+  reorderEducation: async (
+    payload: PassportReorderRequest,
+  ): Promise<PassportRead> => {
+    const response = await http.put<PassportEnvelope>(
+      "/passport/education/reorder",
+      payload,
+    );
     return response.data.data;
   },
 };

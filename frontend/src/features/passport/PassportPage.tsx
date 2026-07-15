@@ -1,12 +1,12 @@
 /**
  * features/passport/PassportPage.tsx
  * ==================================
- * Read-only Career & Education Passport overview (0052-F4).
- * Aggregate GET only — no mutations, no Platform/CV/Roadmap calls.
+ * Career & Education Passport overview + Profile/Experience/Education editing (0052-F5).
+ * Projects/Skills/Credentials/Targets remain read-only.
  */
 
-import { useMemo } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useMemo, useState } from "react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   Briefcase,
   GraduationCap,
@@ -25,10 +25,17 @@ import type {
   PassportSectionKey,
   PassportSectionPreference,
 } from "@/types/api";
+import { useUIStore } from "@/store/ui";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Spinner } from "@/components/ui/Spinner";
+import {
+  PASSPORT_CONFLICT_MESSAGE,
+  PassportEducationEditor,
+  PassportExperienceEditor,
+  PassportProfileEditor,
+} from "./PassportEditForms";
 import styles from "./PassportPage.module.css";
 
 const SECTION_META: Record<
@@ -71,6 +78,12 @@ const SECTION_META: Record<
     icon: <Target size={18} aria-hidden="true" />,
   },
 };
+
+const EDITABLE_SECTIONS = new Set<PassportSectionKey>([
+  "profile",
+  "experience",
+  "education",
+]);
 
 function formatDate(value: string | null | undefined): string {
   if (!value) return "Not set";
@@ -147,6 +160,13 @@ function isEmptyPassport(passport: PassportRead): boolean {
 }
 
 export default function PassportPage() {
+  const queryClient = useQueryClient();
+  const addToast = useUIStore((s) => s.addToast);
+  const [banner, setBanner] = useState<{
+    type: "success" | "warning";
+    message: string;
+  } | null>(null);
+
   const passportQuery = useQuery({
     queryKey: ["passport", "aggregate"],
     queryFn: () => passportApi.get(),
@@ -158,6 +178,18 @@ export default function PassportPage() {
     () => (passport ? orderedPreferences(passport.section_preferences) : []),
     [passport],
   );
+
+  const handleSaved = (next: PassportRead) => {
+    queryClient.setQueryData(["passport", "aggregate"], next);
+    setBanner({ type: "success", message: "Passport updated." });
+    addToast({ type: "success", message: "Passport updated." });
+  };
+
+  const handleConflict = () => {
+    setBanner({ type: "warning", message: PASSPORT_CONFLICT_MESSAGE });
+    addToast({ type: "warning", message: PASSPORT_CONFLICT_MESSAGE });
+    void passportQuery.refetch();
+  };
 
   return (
     <div className={styles.page}>
@@ -201,7 +233,11 @@ export default function PassportPage() {
             <Badge color="violet" size="sm" title="Private — visible only to you.">
               Private
             </Badge>
-            <Badge color="amber" size="sm" title="Unverified — information has not been independently verified.">
+            <Badge
+              color="amber"
+              size="sm"
+              title="Unverified — information has not been independently verified."
+            >
               Unverified
             </Badge>
             <span className={styles.statusMeta}>Version {passport.version}</span>
@@ -213,6 +249,17 @@ export default function PassportPage() {
             Private — visible only to you. Unverified — information has not been
             independently verified.
           </p>
+
+          {banner && (
+            <p
+              className={
+                banner.type === "success" ? styles.successBanner : styles.warningBanner
+              }
+              role="status"
+            >
+              {banner.message}
+            </p>
+          )}
 
           <section className={styles.identity} aria-labelledby="passport-identity">
             <h2 id="passport-identity" className={styles.sectionHeading}>
@@ -262,7 +309,8 @@ export default function PassportPage() {
                   projects, skills, credentials and career targets.
                 </p>
                 <p className={styles.emptyBody}>
-                  Detailed editing will be added in the next Passport steps.
+                  You can edit Profile, Experience and Education below. Other
+                  sections will open in later Passport steps.
                 </p>
               </CardContent>
             </Card>
@@ -276,6 +324,7 @@ export default function PassportPage() {
               {orderedSections.map((pref) => {
                 const meta = SECTION_META[pref.section];
                 const count = sectionCount(passport, pref.section);
+                const editable = EDITABLE_SECTIONS.has(pref.section);
                 return (
                   <Card key={pref.section} className={styles.sectionCard}>
                     <CardHeader className={styles.sectionCardHeader}>
@@ -289,7 +338,7 @@ export default function PassportPage() {
                         </Badge>
                       )}
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className={styles.sectionBody}>
                       <p className={styles.sectionDescription}>{meta.description}</p>
                       <p className={styles.sectionCount}>
                         {pref.section === "profile"
@@ -298,7 +347,34 @@ export default function PassportPage() {
                             : "No profile details yet"
                           : `${count} ${count === 1 ? "entry" : "entries"}`}
                       </p>
-                      <p className={styles.readOnlyNote}>Read-only in this release</p>
+
+                      {pref.section === "profile" && (
+                        <PassportProfileEditor
+                          passport={passport}
+                          onSaved={handleSaved}
+                          onConflict={handleConflict}
+                        />
+                      )}
+                      {pref.section === "experience" && (
+                        <PassportExperienceEditor
+                          passport={passport}
+                          onSaved={handleSaved}
+                          onConflict={handleConflict}
+                        />
+                      )}
+                      {pref.section === "education" && (
+                        <PassportEducationEditor
+                          passport={passport}
+                          onSaved={handleSaved}
+                          onConflict={handleConflict}
+                        />
+                      )}
+
+                      {!editable && (
+                        <p className={styles.readOnlyNote}>
+                          Editing arrives in a later Passport step
+                        </p>
+                      )}
                     </CardContent>
                   </Card>
                 );

@@ -860,6 +860,96 @@ export interface PassportEnvelope {
 }
 
 // ---------------------------------------------------------------------------
+// Passport mutation payloads (0052-F5) — Profile / Experience / Education only
+// ---------------------------------------------------------------------------
+
+export interface PassportProfilePatchRequest {
+  expected_version: number;
+  phone?: string | null;
+  date_of_birth?: string | null;
+  nationality?: string | null;
+  linkedin_url?: string | null;
+  github_url?: string | null;
+  portfolio_url?: string | null;
+  twitter_url?: string | null;
+  other_social_links?: Record<string, unknown>[] | null;
+  address_city?: string | null;
+  address_state?: string | null;
+  address_country?: string | null;
+  photo_url?: string | null;
+  professional_headline?: string | null;
+  bio_summary?: string | null;
+  declaration_text?: string | null;
+  references_available_on_request?: boolean | null;
+  interests?: string[] | null;
+}
+
+export interface PassportExperienceCreateRequest {
+  expected_version: number;
+  job_title: string;
+  company_name: string;
+  company_url?: string | null;
+  location?: string | null;
+  employment_type?: string | null;
+  start_date?: string | null;
+  end_date?: string | null;
+  is_current?: boolean;
+  description_bullets?: string[];
+  order_index?: number;
+  role_taxonomy?: PassportTaxonomyReference | null;
+}
+
+export interface PassportExperiencePatchRequest {
+  expected_version: number;
+  job_title?: string | null;
+  company_name?: string | null;
+  company_url?: string | null;
+  location?: string | null;
+  employment_type?: string | null;
+  start_date?: string | null;
+  end_date?: string | null;
+  is_current?: boolean | null;
+  description_bullets?: string[] | null;
+  order_index?: number | null;
+  role_taxonomy?: PassportTaxonomyReference | null;
+}
+
+export interface PassportEducationCreateRequest {
+  expected_version: number;
+  degree: string;
+  field_of_study?: string | null;
+  institution: string;
+  location?: string | null;
+  start_date?: string | null;
+  end_date?: string | null;
+  is_current?: boolean;
+  grade?: string | null;
+  description_bullets?: string[];
+  relevant_coursework?: string[];
+  order_index?: number;
+}
+
+export interface PassportEducationPatchRequest {
+  expected_version: number;
+  degree?: string | null;
+  field_of_study?: string | null;
+  institution?: string | null;
+  location?: string | null;
+  start_date?: string | null;
+  end_date?: string | null;
+  is_current?: boolean | null;
+  grade?: string | null;
+  description_bullets?: string[] | null;
+  relevant_coursework?: string[] | null;
+  order_index?: number | null;
+}
+
+export interface PassportReorderRequest {
+  expected_version: number;
+  ordered_ids: string[];
+}
+
+// ---------------------------------------------------------------------------
 // Shared error envelope
 // ---------------------------------------------------------------------------
 

@@ -259,6 +259,36 @@
   font-size: 0.95rem;
 }
 
+.sectionBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.successBanner,
+.warningBanner {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+
+.successBanner {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: var(--text-primary);
+}
+
+.warningBanner {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: var(--text-primary);
+}
+
 @media (max-width: 767px) {
   .page {
     padding: 0.5rem 0.85rem 2rem;

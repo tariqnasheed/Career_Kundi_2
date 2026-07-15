@@ -1,18 +1,37 @@
 /**
- * PassportPage tests (0052-F4) — read-only aggregate overview.
+ * PassportPage tests (0052-F4/F5) — overview + Profile/Experience/Education editing.
  */
 
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router-dom";
 import type { PassportRead } from "@/types/api";
 
 const getMock = vi.fn();
+const patchProfile = vi.fn();
+const createExperience = vi.fn();
+const createEducation = vi.fn();
 
 vi.mock("@/lib/api", () => ({
   passportApi: {
     get: (...args: unknown[]) => getMock(...args),
+    patchProfile: (...args: unknown[]) => patchProfile(...args),
+    createExperience: (...args: unknown[]) => createExperience(...args),
+    patchExperience: vi.fn(),
+    deleteExperience: vi.fn(),
+    reorderExperiences: vi.fn(),
+    createEducation: (...args: unknown[]) => createEducation(...args),
+    patchEducation: vi.fn(),
+    deleteEducation: vi.fn(),
+    reorderEducation: vi.fn(),
+  },
+}));
+
+vi.mock("@/store/ui", () => ({
+  useUIStore: (selector?: (s: { addToast: typeof vi.fn }) => unknown) => {
+    const state = { addToast: vi.fn() };
+    return selector ? selector(state) : state;
   },
 }));
 
@@ -226,6 +245,9 @@ function renderPage() {
 describe("PassportPage", () => {
   beforeEach(() => {
     getMock.mockReset();
+    patchProfile.mockReset();
+    createExperience.mockReset();
+    createEducation.mockReset();
   });
 
   it("shows loading state with aria-busy and no fake user content", async () => {
@@ -236,7 +258,7 @@ describe("PassportPage", () => {
     expect(screen.queryByText("Ada Lovelace")).not.toBeInTheDocument();
   });
 
-  it("renders populated passport without ownership fields or edit controls", async () => {
+  it("renders populated passport without ownership fields", async () => {
     getMock.mockResolvedValue(populatedFixture());
     renderPage();
     expect(await screen.findByText("Ada Lovelace")).toBeInTheDocument();
@@ -246,11 +268,9 @@ describe("PassportPage", () => {
     expect(screen.getAllByText("Private").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Unverified").length).toBeGreaterThan(0);
     expect(screen.getByText("Staff Engineer")).toBeInTheDocument();
-    expect(screen.getByText("2")).toBeInTheDocument(); // skills count
+    expect(screen.getByText("2")).toBeInTheDocument();
     expect(screen.queryByText(/owner_user_id/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/profile_id/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/@/)).not.toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: /edit/i })).not.toBeInTheDocument();
     expect(screen.queryByText(/"source_status"/)).not.toBeInTheDocument();
     expect(getMock).toHaveBeenCalledTimes(1);
   });
@@ -261,7 +281,6 @@ describe("PassportPage", () => {
     expect(
       await screen.findByText(/Your private Career Passport is ready/i),
     ).toBeInTheDocument();
-    expect(screen.getByText(/Detailed editing will be added/i)).toBeInTheDocument();
   });
 
   it("shows Hidden in Passport view for disabled sections", async () => {
@@ -291,5 +310,106 @@ describe("PassportPage", () => {
     fireEvent.click(screen.getByRole("button", { name: /retry/i }));
     expect(await screen.findByText("Ada Lovelace")).toBeInTheDocument();
     expect(getMock).toHaveBeenCalledTimes(2);
+  });
+
+  it("exposes edit controls only for Profile, Experience and Education", async () => {
+    getMock.mockResolvedValue(populatedFixture());
+    renderPage();
+    expect(await screen.findByRole("button", { name: /edit profile/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /add experience/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /add education/i })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /add project/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /add skill/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /add credential/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /add target/i })).not.toBeInTheDocument();
+    expect(screen.getAllByText(/Editing arrives in a later Passport step/i).length).toBeGreaterThan(0);
+  });
+
+  it("updates headline from returned aggregate after profile edit", async () => {
+    getMock.mockResolvedValue(populatedFixture());
+    patchProfile.mockResolvedValue(
+      populatedFixture({
+        version: 4,
+        headline: "Lead Analyst",
+        profile: {
+          ...populatedFixture().profile,
+          professional_headline: "Lead Analyst",
+        },
+      }),
+    );
+    renderPage();
+    expect(await screen.findByText("Analytical Engineer")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /edit profile/i }));
+    fireEvent.change(screen.getByLabelText(/professional headline/i), {
+      target: { value: "Lead Analyst" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /save profile/i }));
+    expect(await screen.findByText("Lead Analyst")).toBeInTheDocument();
+    expect(screen.getByText(/Version 4/i)).toBeInTheDocument();
+  });
+
+  it("increases experience count after create from returned aggregate", async () => {
+    getMock.mockResolvedValue(populatedFixture({ experiences: [] }));
+    createExperience.mockResolvedValue(
+      populatedFixture({
+        version: 4,
+        experiences: populatedFixture().experiences,
+      }),
+    );
+    renderPage();
+    expect(await screen.findByText("0")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /add experience/i }));
+    fireEvent.change(screen.getByLabelText(/job title/i), {
+      target: { value: "Engineer" },
+    });
+    fireEvent.change(screen.getByLabelText(/company name/i), {
+      target: { value: "Analytical Engines" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /save experience/i }));
+    await waitFor(() =>
+      expect(screen.getByText("Engineer")).toBeInTheDocument(),
+    );
+  });
+
+  it("increases education count after create from returned aggregate", async () => {
+    getMock.mockResolvedValue(populatedFixture({ education: [] }));
+    createEducation.mockResolvedValue(
+      populatedFixture({
+        version: 4,
+        education: populatedFixture().education,
+      }),
+    );
+    renderPage();
+    fireEvent.click(await screen.findByRole("button", { name: /add education/i }));
+    fireEvent.change(screen.getByLabelText(/^degree$/i), {
+      target: { value: "Mathematics" },
+    });
+    fireEvent.change(screen.getByLabelText(/^institution$/i), {
+      target: { value: "University" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /save education/i }));
+    expect(await screen.findByText("Mathematics")).toBeInTheDocument();
+  });
+
+  it("shows conflict warning and refetches", async () => {
+    getMock
+      .mockResolvedValueOnce(populatedFixture())
+      .mockResolvedValueOnce(populatedFixture({ version: 5, headline: "Refetched" }));
+    patchProfile.mockRejectedValue({
+      error: true,
+      code: "CONFLICT",
+      message: "stale",
+      details: {},
+    });
+    renderPage();
+    fireEvent.click(await screen.findByRole("button", { name: /edit profile/i }));
+    fireEvent.change(screen.getByLabelText(/professional headline/i), {
+      target: { value: "Conflict attempt" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /save profile/i }));
+    expect(
+      await screen.findByText(/Your Passport changed elsewhere/i),
+    ).toBeInTheDocument();
+    await waitFor(() => expect(getMock).toHaveBeenCalledTimes(2));
   });
 });

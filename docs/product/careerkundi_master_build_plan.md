@@ -5297,6 +5297,56 @@ Shell-overflow watch **cleared** (1280/768/390 overflow OK).
 
 ---
 
+### 0052-F5 Passport Profile, Experience and Education Editing
+
+| Field | Value |
+|---|---|
+| Slice type | `FRONTEND_EDITING_MVP` |
+| Status | Completed — Decision B |
+| Frontend route | `/passport` (unchanged) |
+| Mutation client surface | `passportApi.patchProfile`, experience create/patch/delete/reorder, education create/patch/delete/reorder |
+| Profile editor fields | phone, nationality, linkedin_url, github_url, portfolio_url, address_city, address_country, professional_headline, bio_summary, interests |
+| Experience editor | add / edit / delete (confirm) / up-down reorder; no taxonomy editing |
+| Education editor | add / edit / delete (confirm) / up-down reorder |
+| expected_version | Sent on every mutation; read from aggregate at submit time |
+| 409 conflict | Warning + refetch aggregate; no silent overwrite |
+| Cache update | `queryClient.setQueryData(["passport", "aggregate"], next)` from mutation response |
+| Validation | Required fields; date order; `is_current` clears end_date; client blocks before request |
+| Delete confirmation | Explicit confirm before DELETE |
+| Optional reorder | Up/Down buttons; full `ordered_ids` + expected_version |
+| Forbidden sections | Projects / Skills / Credentials / Targets remain read-only |
+| Subject picker | None |
+| CV / Roadmap integration | None from Passport feature |
+| Verification / evidence / public sharing | None |
+| Private / unverified copy | Preserved |
+| Tests | Form utils 6; Edit forms 9; Passport page 10; full frontend suite PASS |
+| Browser conflict journey | Two-tab stale version → 409 + warning + refetch |
+| Browser validation journey | Blank title/company/degree/institution + date order blocked |
+| Design Fidelity viewports | 1280 / 768 / 390 — no horizontal overflow |
+| Screenshots | `~/Desktop/CareerKundi_0052_F5_Design_Fidelity/` |
+| Exact files | 12 allowed paths (types, api, passport×8, 2 docs) |
+| Verdict | **B PASSPORT_PROFILE_EXPERIENCE_EDUCATION_EDITING_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_0052_F6** |
+
+#### F6 handoff
+
+- Add Projects, Skills, Credentials and Career Targets editors
+- Use existing Passport section mutation APIs
+- Keep `expected_version` on every mutation
+- Keep 409 refetch + conflict warning behavior
+- Continue TanStack Query cache update from returned aggregate
+- No Subject picker unless Platform list behavior is stable
+- No CV/Roadmap integration until F7
+- Keep private/unverified language
+- No completion-pressure scoring
+
+#### Remaining watch items
+
+Platform subjects list may 500 while direct subject link works; Profile FE↔BE mismatch; incomplete Profile tests; PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051 API; 004E/Auto Apply frozen; frontend ESLint config missing at baseline (focused lint blocked). Incidental shell `GET /api/v1/roadmap/` may occur outside Passport feature (not a Passport client).
+
+**Next slice: 0052-F6 Passport Projects, Skills, Credentials and Targets Editing**
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:
