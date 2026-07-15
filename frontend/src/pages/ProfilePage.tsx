@@ -110,19 +110,49 @@ function EducationEditor({ items, onChange }: { items: any[]; onChange: (v: any[
 }
 
 // ─── Skills editor ─────────────────────────────────────────────────────────
+/** Legacy Profile skills may be string[] or Passport-synced skill objects. */
+function normalizeSkillNames(skills: unknown): string[] {
+  if (!Array.isArray(skills)) return [];
+  return skills
+    .map((s) => {
+      if (typeof s === "string") return s.trim();
+      if (s && typeof s === "object" && "name" in s) {
+        const name = (s as { name?: unknown }).name;
+        return typeof name === "string" ? name.trim() : "";
+      }
+      return "";
+    })
+    .filter(Boolean);
+}
+
+function normalizeCertificationLabels(certs: unknown): string[] {
+  if (!Array.isArray(certs)) return [];
+  return certs
+    .map((c) => {
+      if (typeof c === "string") return c;
+      if (c && typeof c === "object" && "name" in c) {
+        const name = (c as { name?: unknown }).name;
+        return typeof name === "string" ? name : "";
+      }
+      return "";
+    })
+    .filter((c) => c !== undefined && c !== null);
+}
+
 function SkillsEditor({ skills, onChange }: { skills: string[]; onChange: (v: string[]) => void }) {
   const [input, setInput] = useState("");
+  const names = normalizeSkillNames(skills);
   const add = () => {
     const s = input.trim();
-    if (s && !skills.includes(s)) { onChange([...skills, s]); setInput(""); }
+    if (s && !names.includes(s)) { onChange([...names, s]); setInput(""); }
   };
   return (
     <div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "0.75rem" }}>
-        {skills.map((s, i) => (
+        {names.map((s, i) => (
           <span key={i} style={{ display: "flex", alignItems: "center", gap: "6px", padding: "4px 10px", borderRadius: "999px", background: "rgba(139,92,246,0.1)", color: "var(--accent-violet)", fontSize: "0.8rem" }}>
             {s}
-            <button onClick={() => onChange(skills.filter((_, idx) => idx !== i))} style={{ background: "none", border: "none", cursor: "pointer", color: "inherit", lineHeight: 1 }}>×</button>
+            <button onClick={() => onChange(names.filter((_, idx) => idx !== i))} style={{ background: "none", border: "none", cursor: "pointer", color: "inherit", lineHeight: 1 }}>×</button>
           </span>
         ))}
       </div>
@@ -150,7 +180,13 @@ export default function ProfilePage() {
 
   // Initialise form from profile on first load
   if (profile && !initialized) {
-    setForm({ ...profile });
+    setForm({
+      ...profile,
+      skills: normalizeSkillNames(profile.skills),
+      certifications: normalizeCertificationLabels(
+        (profile as { certifications?: unknown }).certifications,
+      ),
+    });
   }
 
   const updateMutation = useMutation({
@@ -261,13 +297,13 @@ export default function ProfilePage() {
         {/* Certifications */}
         <Section icon={<Award size={16} />} title="Certifications">
           <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-            {(form.certifications ?? []).map((c: string, i: number) => (
+            {normalizeCertificationLabels(form.certifications).map((c: string, i: number) => (
               <div key={i} style={{ display: "flex", gap: "0.5rem" }}>
-                <Input value={c} onChange={e => { const a = [...(form.certifications ?? [])]; a[i] = e.target.value; setForm((p: any) => ({ ...p, certifications: a })); }} fullWidth />
-                <Button variant="ghost" size="sm" onClick={() => { const a = (form.certifications ?? []).filter((_: any, idx: number) => idx !== i); setForm((p: any) => ({ ...p, certifications: a })); }}><Trash2 size={13} /></Button>
+                <Input value={c} onChange={e => { const a = [...normalizeCertificationLabels(form.certifications)]; a[i] = e.target.value; setForm((p: any) => ({ ...p, certifications: a })); }} fullWidth />
+                <Button variant="ghost" size="sm" onClick={() => { const a = normalizeCertificationLabels(form.certifications).filter((_: any, idx: number) => idx !== i); setForm((p: any) => ({ ...p, certifications: a })); }}><Trash2 size={13} /></Button>
               </div>
             ))}
-            <Button variant="secondary" size="sm" leftIcon={<Plus size={14} />} onClick={() => setForm((p: any) => ({ ...p, certifications: [...(p.certifications ?? []), ""] }))}>
+            <Button variant="secondary" size="sm" leftIcon={<Plus size={14} />} onClick={() => setForm((p: any) => ({ ...p, certifications: [...normalizeCertificationLabels(p.certifications), ""] }))}>
               Add certification
             </Button>
           </div>

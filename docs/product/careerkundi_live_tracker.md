@@ -10,17 +10,15 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | **0052 Career & Education Passport** |
-| Current Slice | 0052-F7 Profile Compatibility + CV/Roadmap Integration |
+| Current Slice | 0052-F8 Passport Hardening, Observability and Final Regression |
 | Current Status | Completed / Accepted (Decision B) |
-| Last Completed Slice | **0052-F7** |
-| F7 status | Completed — Profile compatibility; CV Passport awareness; Roadmap target prefill |
-| Profile compatibility | Done |
-| CV Passport awareness | Done |
-| Roadmap Passport target prefill | Done |
-| Last Commit | This commit — `feat(passport): integrate profile cv roadmap` |
+| Last Completed Slice | **0052-F8** |
+| F8 status | Completed — boundary audit + final regression |
+| 0052 status | **Completed / accepted** |
+| Last Commit | This commit — `test(passport): harden final boundaries` |
 | Last Push Status | Push with this slice |
-| Next Slice | **0052-F8 Passport Hardening, Observability and Final Regression** |
-| Browser viewports | 1280 / 768 / 390 — pass; no Passport mutations from Profile/CV/Roadmap |
+| Next Phase | TBD by owner (no 0052-F9) |
+| Browser viewports | 1280 / 768 / 390 — pass |
 | Blocked Items | No active blockers |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
 
@@ -33,7 +31,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Master Build Plan | `docs/product/careerkundi_master_build_plan.md` |
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 
-**Pointers:** 0052-F0…F6 Done · **0052-F7** Done · Next **0052-F8**.
+**Pointers:** 0052-F0…F7 Done · **0052-F8** Done · **0052 closed**.
 
 ---
 
@@ -41,16 +39,9 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| 0052-F0 | Passport Planning and Repository Audit | Done | Desktop F0 evidence | `0d1b8c34` | Yes | Decision B |
-| 0052-F1 | Passport Contract Boundary | Done | Desktop F1 evidence | `7d96a552` | Yes | Decision B |
-| 0052-F2 | Passport Persistence and Migration | Done | Desktop F2 evidence | `dfa52dd1` | Yes | Decision B; `f0008` |
-| 0052-F3 | Passport API MVP | Done | Desktop F3 evidence | `d3ee6b6a` | Yes | Decision B; 27 routes |
-| 0052-F3R1 | Migration-Head Regression Alignment | Done | Desktop F3R1 evidence | `7352a139` | Yes | Decision B |
-| 0052-F4 | Passport Frontend Shell + Design Fidelity | Done | Desktop F4 evidence | `5dc31f3a` | Yes | Decision B |
-| 0052-F5 | Passport Profile, Experience and Education Editing | Done | Desktop F5 evidence | `3968242e` | Yes | Decision B |
-| 0052-F6 | Passport Projects, Skills, Credentials and Targets Editing | Done | Desktop F6 evidence | `f34c2d53` | Yes | Decision B |
-| 0052-F7 | Profile Compatibility + CV/Roadmap Integration | Done | `~/Desktop/CareerKundi_0052_F7_Profile_CV_Roadmap_Integration_Evidence.txt` | This commit | Yes (with this push) | Decision B |
-| 0052-F8 | Passport Hardening, Observability and Final Regression | Planned | — | — | — | **Next** |
+| 0052-F0…F6 | Passport foundation through editors | Done | Desktop evidence | prior | Yes | Decision B |
+| 0052-F7 | Profile Compatibility + CV/Roadmap Integration | Done | Desktop F7 evidence | `f7b505cc` | Yes | Decision B |
+| 0052-F8 | Passport Hardening, Observability and Final Regression | Done | `~/Desktop/CareerKundi_0052_F8_Passport_Final_Hardening_Evidence.txt` | This commit | Yes (with this push) | Decision B; Track B Profile skills fix |
 
 ---
 
@@ -58,10 +49,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-14 | 0052-F4 | Desktop F4 evidence | B …F5… | Shell + Design Fidelity |
-| 2026-07-15 | 0052-F5 | Desktop F5 evidence | B …F6… | Profile/Exp/Edu editors |
-| 2026-07-15 | 0052-F6 | Desktop F6 evidence | B …F7… | Remaining section editors |
-| 2026-07-15 | 0052-F7 | `~/Desktop/CareerKundi_0052_F7_Profile_CV_Roadmap_Integration_Evidence.txt` | B …F8… | Profile/CV/Roadmap read integration |
+| 2026-07-15 | 0052-F7 | Desktop F7 evidence | B …F8… | Profile/CV/Roadmap read integration |
+| 2026-07-16 | 0052-F8 | `~/Desktop/CareerKundi_0052_F8_Passport_Final_Hardening_Evidence.txt` | B 0052 complete | Audit + Profile skills crash fix |
 
 ---
 
@@ -69,10 +58,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-14 | 0052-F4 | `5dc31f3a` | Pushed | Read-only FE + shell |
-| 2026-07-15 | 0052-F5 | `3968242e` | Pushed | Profile/Exp/Edu editors |
-| 2026-07-15 | 0052-F6 | `f34c2d53` | Pushed | Projects/Skills/Credentials/Targets |
-| 2026-07-15 | 0052-F7 | This commit (`feat(passport): integrate profile cv roadmap`) | Push with this slice | Profile/CV/Roadmap integration |
+| 2026-07-15 | 0052-F7 | `f7b505cc` | Pushed | Profile/CV/Roadmap integration |
+| 2026-07-16 | 0052-F8 | This commit (`test(passport): harden final boundaries`) | Push with this slice | Final hardening |
 
 ---
 
@@ -80,8 +67,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Decision | Impact | Status |
 |---|---|---|---|
-| 2026-07-15 | 0052-F6 Decision B | Ready for F7 Profile/CV/Roadmap integration | Accepted |
-| 2026-07-15 | 0052-F7 Decision B | Ready for F8 hardening / final regression | Accepted |
+| 2026-07-15 | 0052-F7 Decision B | Ready for F8 | Accepted |
+| 2026-07-16 | 0052-F8 Decision B | **0052 completed / accepted** with deferred watches | Accepted |
 
 ---
 
@@ -89,7 +76,9 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 No active product blockers.
 
-**Watch:** Platform subjects list may 500 while direct subject link works; Profile FE↔BE mismatch; incomplete Profile tests; PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051 API; 004E/Auto Apply frozen; frontend ESLint config missing at baseline; incidental shell roadmap fetch outside Passport feature; dual local/Docker `:8000` during browser checks.
+**Cleared in F8:** Platform subjects empty-list 500 watch (API + browser `200` empty envelope).
+
+**Deferred:** Incomplete Profile tests (beyond object-skill fix); PDF 4-family; Platform CORS; RoleTaxonomyAgent ≠ 0051; 004E/Auto Apply frozen; ESLint config missing; incidental Dashboard Roadmap fetch; dual `:8000` runtime hygiene.
 
 ---
 
@@ -97,16 +86,12 @@ No active product blockers.
 
 | Field | Value |
 |---|---|
-| Next slice | **0052-F8 Passport Hardening, Observability and Final Regression** |
-| Reason | F7 Profile/CV/Roadmap Passport read integration accepted |
-| Type | Hardening, observability, boundary audit, final regression |
-| Evidence required | Per master § 0052-F7 F8 handoff |
-| Commit rule | Per master plan |
-| Push rule | Push after clean verification |
-
-**Evidence:** `~/Desktop/CareerKundi_0052_F7_Profile_CV_Roadmap_Integration_Evidence.txt`  
-**Screenshots:** `~/Desktop/CareerKundi_0052_F7_Profile_CV_Roadmap_Integration/`
+| Next | Owner chooses next phase (not 0052-F9) |
+| Reason | 0052 Passport closed |
+| Do not start | Public sharing / verification / evidence without new phase approval |
+| Evidence | `~/Desktop/CareerKundi_0052_F8_Passport_Final_Hardening_Evidence.txt` |
+| Screenshots | `~/Desktop/CareerKundi_0052_F8_Final_Hardening/` |
 
 ---
 
-*Tracker updated: 2026-07-15 — 0052-F7*
+*Tracker updated: 2026-07-16 — 0052-F8 / 0052 closed*

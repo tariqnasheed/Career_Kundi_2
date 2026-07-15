@@ -142,4 +142,36 @@ describe("ProfilePage F7 compatibility", () => {
     expect(screen.getByRole("link", { name: /Open Career Passport/i })).toBeInTheDocument();
     await waitFor(() => expect(passportGet).toHaveBeenCalled());
   });
+
+  it("renders Passport-synced object skills without crashing", async () => {
+    passportGet.mockResolvedValue(passportFixture());
+    profileGet.mockResolvedValue({
+      full_name: "Ada Lovelace",
+      email: "ada@example.com",
+      phone: "",
+      location: "",
+      linkedin_url: "",
+      github_url: "",
+      summary: "Analytical Engineer",
+      experience: [],
+      education: [],
+      skills: [
+        {
+          id: "s1",
+          name: "TypeScript",
+          skill_type: "technical",
+          category: null,
+          proficiency: null,
+          order_index: 0,
+        },
+      ],
+      certifications: [{ name: "AWS SAA", issuing_organization: "Amazon" }],
+      projects: [],
+    });
+    renderPage();
+    expect(await screen.findByDisplayValue("Ada Lovelace")).toBeInTheDocument();
+    expect(screen.getByTestId("passport-compatibility-card")).toBeInTheDocument();
+    expect(screen.getByText("TypeScript")).toBeInTheDocument();
+    expect(screen.getByDisplayValue("AWS SAA")).toBeInTheDocument();
+  });
 });

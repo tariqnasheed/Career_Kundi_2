@@ -5452,6 +5452,56 @@ Platform subjects list may 500 while direct subject link works; Profile FE↔BE 
 
 ---
 
+### 0052-F8 Passport Hardening, Observability and Final Regression
+
+| Field | Value |
+|---|---|
+| Slice type | `FINAL_HARDENING_OBSERVABILITY_REGRESSION` |
+| Status | Completed — Decision B |
+| Track | **B** — bounded Profile FE↔BE skills/certs render repair + Track A audit/tests/docs |
+| Boundary audit | Static `passportBoundaryAudit.test.ts` PASS |
+| Mutation boundary | Profile/CV/Roadmap/Dashboard: `passportApi.get` only (Dashboard uses none) |
+| Forbidden language | Absent on audited user-facing pages |
+| Privacy / unverified | Private + Unverified retained; no public sharing |
+| Profile compatibility | Card + CTA; object-skill crash fixed (normalize skill/cert labels) |
+| CV Builder boundary | Read-only Passport awareness; no `passport_id`; no Passport mutations |
+| Roadmap boundary | Target prefill only; no Platform subjects; no Passport mutations |
+| Dashboard watch | Incidental `roadmapApi.list` remains; soft-fail to “No roadmap yet”; non-blocking (documented + tested) |
+| Platform subjects watch | **Cleared** — authenticated empty list `200 {data:[], meta:{count:0}}` in F8 browser + existing API tests |
+| Observability | No new observability storage/migrations; boundary tests PASS |
+| Frontend tests | Boundary 6; Dashboard 2; Profile 3; targeted 57; full 149 passed |
+| Backend tests | Targeted 92; wider path+keyword 339 passed; disposable PG skips 0 |
+| Browser | Passport/Profile/CV/Roadmap/Dashboard PASS; conflict 409; expected_version on UI skill create |
+| Design Fidelity | 1280 / 768 / 390 — no horizontal overflow |
+| Screenshots | `~/Desktop/CareerKundi_0052_F8_Final_Hardening/` |
+| Exact files | Track B: ProfilePage + tests/docs/audit/Dashboard test |
+| Verdict | **B PASSPORT_FINAL_HARDENING_ACCEPTED_WITH_DEFERRED_WATCHES_0052_COMPLETE** |
+
+#### Final 0052 status
+
+**0052 Career & Education Passport is completed and accepted.**
+
+No public sharing, verification, evidence claims, or completion-pressure scoring are included in 0052.
+
+#### Remaining deferred watches
+
+- Incomplete Profile tests beyond F8 object-skill coverage (broader FE↔BE shapes)
+- PDF 4-family
+- Platform CORS
+- RoleTaxonomyAgent ≠ 0051 API
+- 004E / Auto Apply frozen
+- Frontend ESLint config missing (`FOCUSED_LINT: FORMALLY_DEFERRED_BASELINE_NO_ESLINT_CONFIG`)
+- Incidental Dashboard Roadmap fetch (documented non-blocking; not removed)
+- Dual local/Docker `:8000` runtime hygiene (documented; stop Docker backend for local uvicorn)
+
+#### Next phase recommendation
+
+Owner chooses next product phase. Do not start public Passport sharing or verification/evidence (0053+) without a new approved phase. Carry deferred watches above.
+
+**0052 closed. No 0052-F9.**
+
+---
+
 ## 44. Key Technical Slice Notes
 
 See Section 43 cards for UX0-S2…ROAD-F4 and UX0-S5 checkpoint. Additional emphasis:
