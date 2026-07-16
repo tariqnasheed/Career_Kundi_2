@@ -5618,12 +5618,19 @@ Doc: `docs/product/careerkundi_0053_f12_review_intake_hardening.md`.
 
 ## 0053-F13 Evidence Attachment Safety / Malware Scan Planning
 
-**Status:** Completing in this commit. Pure attachment safety states + derived API/FE warnings; default `scan_not_available`; **no** scan engine, parsing/OCR, LLM review, DB migration, or verification outcome.
+**Status:** Completed / accepted. Pure attachment safety states + derived API/FE warnings; default `scan_not_available`; **no** scan engine, parsing/OCR, LLM review, DB migration, or verification outcome.
 
 Evidence: `~/Desktop/CareerKundi_0053_F13_Attachment_Safety_Planning_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f13_attachment_safety_planning.md`.
 
-**Next after F13 acceptance:** 0053-F14 only (Attachment Deletion/Retention or Scan Queue Skeleton).
+## 0053-F14 Private Attachment Deletion + Retention Policy
+
+**Status:** Completing in this commit. Owner-only private attachment byte deletion + metadata clear; EvidenceRecord / claim links / review requests / claim statuses retained; **no** scanner, parsing/OCR, LLM review, EvidenceRecord deletion, or verification mutation.
+
+Evidence: `~/Desktop/CareerKundi_0053_F14_Attachment_Deletion_Retention_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f14_attachment_deletion_retention.md`.
+
+**Next after F14 acceptance:** 0053-F15 only (Scan Queue Skeleton or Runtime Badge-Seed Fix).
 
 ---
 
@@ -5689,7 +5696,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F11 | Review Request UI |
 | 0053-F12 | Review Intake Hardening |
 | 0053-F13 | Evidence Attachment Safety / Malware Scan Planning |
-| 0053-F14 | Attachment Deletion/Retention or Scan Queue Skeleton |
+| 0053-F14 | Private Attachment Deletion + Retention Policy |
+| 0053-F15 | Scan Queue Skeleton or Runtime Badge-Seed Fix |
 
 ### Hard no-go (until specifically approved)
 
@@ -5697,7 +5705,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F13**, then **0053-F14** only.
+**Owner acceptance of 0053-F14**, then **0053-F15** only.
 
 ---
 

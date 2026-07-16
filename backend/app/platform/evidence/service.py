@@ -1,10 +1,10 @@
 """
-Evidence service helpers (0053-F2 / 0053-F3 / 0053-F5).
+Evidence service helpers (0053-F2 / 0053-F3 / 0053-F5 / 0053-F14).
 
 Private metadata create/get/list, claim-evidence link, and private attachment
-bytes via LocalEvidenceStorage. Upload is not verification.
+bytes via LocalEvidenceStorage. Upload/delete of attachment is not verification.
 Linking or attaching evidence must not change claim support_status or
-verification_status.
+verification_status. F14 clears attachment fields only; EvidenceRecord remains.
 """
 
 from __future__ import annotations
@@ -28,6 +28,7 @@ from app.platform.evidence.storage import (
     EvidenceStorageError,
     EvidenceStoredObject,
     LocalEvidenceStorage,
+    delete_evidence_file,
     store_evidence_file,
 )
 from app.platform.identity.refs import ActorRef, ActorType
@@ -452,5 +453,54 @@ async def attach_evidence_file(
     if after_claims != prior_claims:
         raise EvidenceRefError(
             "attach_evidence_file must not mutate claim support or verification status"
+        )
+    return evidence
+
+
+async def delete_evidence_attachment(
+    db: AsyncSession,
+    *,
+    evidence_id: uuid.UUID,
+    owner_user_id: uuid.UUID,
+    storage: LocalEvidenceStorage | None = None,
+) -> EvidenceRecord:
+    """
+    Remove private attachment bytes and clear attachment metadata (0053-F14).
+
+    Does not delete the EvidenceRecord, ClaimEvidenceLink rows, or claim axes.
+    Missing on-disk file still allows metadata cleanup when storage_uri is set.
+    """
+    evidence = await get_evidence_for_owner(db, evidence_id, owner_user_id)
+    if evidence is None:
+        raise EvidenceRefError(f"evidence does not exist: {evidence_id}")
+
+    if not evidence.storage_uri:
+        raise EvidenceRefError("evidence attachment does not exist")
+
+    prior_claims = await _linked_claim_status_snapshot(db, evidence_id)
+    prior_uri = evidence.storage_uri
+
+    try:
+        delete_evidence_file(
+            prior_uri,
+            owner_user_id=owner_user_id,
+            evidence_id=evidence_id,
+            storage=storage,
+        )
+    except EvidenceStorageError as exc:
+        raise EvidenceRefError(str(exc)) from exc
+
+    evidence.storage_uri = None
+    evidence.content_hash = None
+    evidence.mime_type = None
+    evidence.size_bytes = None
+    await db.commit()
+    await db.refresh(evidence)
+
+    after_claims = await _linked_claim_status_snapshot(db, evidence_id)
+    if after_claims != prior_claims:
+        raise EvidenceRefError(
+            "delete_evidence_attachment must not mutate claim support or "
+            "verification status"
         )
     return evidence

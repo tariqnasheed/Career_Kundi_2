@@ -39,6 +39,7 @@ from app.platform.evidence.refs import EvidenceRefError
 from app.platform.evidence.service import (
     attach_evidence_file,
     create_evidence_record,
+    delete_evidence_attachment,
     get_claim_for_owner,
     get_evidence_for_owner,
     link_evidence_to_claim,
@@ -84,6 +85,8 @@ def _map_evidence_error(exc: EvidenceRefError) -> Exception:
     lowered = message.lower()
     if "duplicate" in lowered:
         return ConflictError(message)
+    if "attachment" in lowered and "does not exist" in lowered:
+        return NotFoundError("No private attachment is attached.")
     if "does not exist" in lowered or "does not match" in lowered:
         # Ownership / existence mismatches → safe not-found (no cross-user leak).
         if "subject" in lowered:
@@ -562,6 +565,33 @@ async def download_evidence_attachment(
         content_disposition_type="attachment",
         headers={"Cache-Control": "no-store"},
     )
+
+
+@router.delete(
+    "/{evidence_id}/attachment",
+    response_model=EvidenceEnvelope,
+)
+async def delete_evidence_attachment_api(
+    evidence_id: uuid.UUID,
+    user: User = Depends(get_current_user),  # noqa: B008
+    db: AsyncSession = Depends(get_db),  # noqa: B008
+) -> EvidenceEnvelope:
+    """
+    Remove private attachment bytes and clear attachment metadata (0053-F14).
+
+    Evidence metadata and claim links remain. Not verification.
+    """
+    storage = _storage()
+    try:
+        row = await delete_evidence_attachment(
+            db,
+            evidence_id=evidence_id,
+            owner_user_id=user.id,
+            storage=storage,
+        )
+    except EvidenceRefError as exc:
+        raise _map_evidence_error(exc) from exc
+    return EvidenceEnvelope(data=_evidence_read(row))
 
 
 @router.get("/{evidence_id}", response_model=EvidenceEnvelope)

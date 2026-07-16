@@ -121,5 +121,65 @@ def test_open_requires_matching_owner_and_existing_file(tmp_path: Path) -> None:
         )
 
 
+def test_delete_evidence_file_removes_bytes_and_is_idempotent(tmp_path: Path) -> None:
+    storage = LocalEvidenceStorage(tmp_path)
+    owner = uuid.uuid4()
+    evidence_id = uuid.uuid4()
+    stored = storage.store_evidence_file(
+        owner_user_id=owner,
+        evidence_id=evidence_id,
+        data=b"to-delete",
+        mime_type="text/plain",
+    )
+    path = storage.open_evidence_file(
+        stored.storage_uri,
+        owner_user_id=owner,
+        evidence_id=evidence_id,
+    )
+    assert path.is_file()
+    assert (
+        storage.delete_evidence_file(
+            stored.storage_uri,
+            owner_user_id=owner,
+            evidence_id=evidence_id,
+        )
+        is True
+    )
+    assert not path.exists()
+    assert (
+        storage.delete_evidence_file(
+            stored.storage_uri,
+            owner_user_id=owner,
+            evidence_id=evidence_id,
+        )
+        is False
+    )
+
+
+def test_delete_rejects_path_traversal_and_foreign_owner(tmp_path: Path) -> None:
+    storage = LocalEvidenceStorage(tmp_path)
+    owner = uuid.uuid4()
+    other = uuid.uuid4()
+    evidence_id = uuid.uuid4()
+    stored = storage.store_evidence_file(
+        owner_user_id=owner,
+        evidence_id=evidence_id,
+        data=b"owned",
+        mime_type="text/plain",
+    )
+    with pytest.raises(EvidenceStorageError, match="ownership"):
+        storage.delete_evidence_file(
+            stored.storage_uri,
+            owner_user_id=other,
+            evidence_id=evidence_id,
+        )
+    with pytest.raises(EvidenceStorageError):
+        storage.delete_evidence_file(
+            f"local-evidence://{owner}/{evidence_id}/../../etc/passwd",
+            owner_user_id=owner,
+            evidence_id=evidence_id,
+        )
+
+
 def test_default_max_bytes_is_five_mib() -> None:
     assert DEFAULT_MAX_UPLOAD_BYTES == 5 * 1024 * 1024

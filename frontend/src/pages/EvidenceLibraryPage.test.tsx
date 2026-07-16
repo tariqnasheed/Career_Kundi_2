@@ -12,6 +12,7 @@ const createEvidenceMetadata = vi.fn();
 const getEvidenceMetadata = vi.fn();
 const uploadEvidenceAttachment = vi.fn();
 const downloadEvidenceAttachment = vi.fn();
+const deleteEvidenceAttachment = vi.fn();
 const listLinkableEvidenceClaims = vi.fn();
 const listEvidenceClaimLinks = vi.fn();
 const linkEvidenceToClaim = vi.fn();
@@ -27,6 +28,8 @@ vi.mock("@/lib/api", () => ({
       uploadEvidenceAttachment(...args),
     downloadEvidenceAttachment: (...args: unknown[]) =>
       downloadEvidenceAttachment(...args),
+    deleteEvidenceAttachment: (...args: unknown[]) =>
+      deleteEvidenceAttachment(...args),
     listLinkableEvidenceClaims: (...args: unknown[]) =>
       listLinkableEvidenceClaims(...args),
     listEvidenceClaimLinks: (...args: unknown[]) =>
@@ -138,6 +141,7 @@ describe("EvidenceLibraryPage F6/F7 boundary", () => {
     getEvidenceMetadata.mockReset();
     uploadEvidenceAttachment.mockReset();
     downloadEvidenceAttachment.mockReset();
+    deleteEvidenceAttachment.mockReset();
     listLinkableEvidenceClaims.mockReset();
     listEvidenceClaimLinks.mockReset();
     linkEvidenceToClaim.mockReset();
@@ -267,6 +271,59 @@ describe("EvidenceLibraryPage F6/F7 boundary", () => {
     );
     clickSpy.mockRestore();
     vi.unstubAllGlobals();
+  });
+
+  it("shows remove private attachment only when attached", async () => {
+    listEvidence.mockResolvedValue([sampleRecord]);
+    renderPage();
+    await screen.findByText("Degree scan metadata");
+    selectEvidence();
+    expect(
+      screen.queryByRole("button", { name: /^Remove private attachment$/i }),
+    ).toBeNull();
+  });
+
+  it("removes private attachment after confirmation", async () => {
+    const cleared = {
+      ...sampleRecord,
+      has_attachment: false,
+      storage_uri: null,
+      content_hash: null,
+      mime_type: null,
+      size_bytes: null,
+    };
+    listEvidence
+      .mockResolvedValueOnce([attachedRecord])
+      .mockResolvedValueOnce([cleared]);
+    deleteEvidenceAttachment.mockResolvedValue(cleared);
+    const confirmSpy = vi.spyOn(window, "confirm").mockReturnValue(true);
+    renderPage();
+    await screen.findByText("Degree scan metadata");
+    selectEvidence();
+    expect(
+      screen.getByText(
+        /Remove this private attachment\? The evidence metadata and any claim links will remain/i,
+      ),
+    ).toBeInTheDocument();
+    const removeBtn = screen.getByRole("button", {
+      name: /^Remove private attachment$/i,
+    });
+    expect(removeBtn.textContent?.toLowerCase()).not.toMatch(
+      /delete evidence|proof|unverify|verify/,
+    );
+    fireEvent.click(removeBtn);
+    await waitFor(() =>
+      expect(deleteEvidenceAttachment).toHaveBeenCalledWith(attachedRecord.id),
+    );
+    await waitFor(() =>
+      expect(addToast).toHaveBeenCalledWith(
+        expect.objectContaining({
+          message:
+            "Private attachment removed. Evidence metadata and claim links remain.",
+        }),
+      ),
+    );
+    confirmSpy.mockRestore();
   });
 
   it("selected evidence shows claim linking section and safe copy", async () => {

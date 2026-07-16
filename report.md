@@ -159,6 +159,19 @@ Evidence: `~/Desktop/CareerKundi_0053_F13_Attachment_Safety_Planning_Evidence.tx
 
 ---
 
+## 0053-F14 Private Attachment Deletion + Retention Policy (2026-07-17)
+
+Lets users remove private attachment bytes without deleting evidence or changing claim trust:
+
+- `DELETE /api/v1/evidence/{id}/attachment` (owner-only)
+- Clears attachment metadata; EvidenceRecord, claim links, review requests, claim statuses remain
+- Evidence Library “Remove private attachment” UI; Passport stays read-only
+- Retention policy documented; no scanner / parsing / OCR / LLM review / DB migration
+
+Evidence: `~/Desktop/CareerKundi_0053_F14_Attachment_Deletion_Retention_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

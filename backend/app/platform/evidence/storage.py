@@ -263,19 +263,35 @@ class LocalEvidenceStorage:
         *,
         owner_user_id: uuid.UUID,
         evidence_id: uuid.UUID,
-    ) -> None:
-        """Delete a stored object if present (not exposed via API in F5)."""
-        path = self.open_evidence_file(
-            storage_uri,
+    ) -> bool:
+        """
+        Delete a stored object if present (0053-F14).
+
+        Returns True when a file was removed, False when already missing.
+        Does not delete directories. Never logs raw file bytes.
+        """
+        uri_owner, uri_evidence, filename = parse_local_evidence_uri(storage_uri)
+        if uri_owner != owner_user_id or uri_evidence != evidence_id:
+            raise EvidenceStorageError("storage_uri ownership mismatch.")
+        path = self._object_path(
             owner_user_id=owner_user_id,
             evidence_id=evidence_id,
+            filename=filename,
         )
-        path.unlink(missing_ok=True)
+        if not path.is_file():
+            logger.info(
+                "evidence_file_delete_missing owner=%s evidence=%s",
+                owner_user_id,
+                evidence_id,
+            )
+            return False
+        path.unlink()
         logger.info(
             "evidence_file_deleted owner=%s evidence=%s",
             owner_user_id,
             evidence_id,
         )
+        return True
 
 
 def get_default_storage() -> LocalEvidenceStorage:
@@ -330,9 +346,9 @@ def delete_evidence_file(
     owner_user_id: uuid.UUID,
     evidence_id: uuid.UUID,
     storage: LocalEvidenceStorage | None = None,
-) -> None:
+) -> bool:
     backend = storage or get_default_storage()
-    backend.delete_evidence_file(
+    return backend.delete_evidence_file(
         storage_uri,
         owner_user_id=owner_user_id,
         evidence_id=evidence_id,

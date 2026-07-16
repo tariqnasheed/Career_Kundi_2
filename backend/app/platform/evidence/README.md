@@ -15,6 +15,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F8 | Passport read-only evidence awareness summary |
 | F9 | Review/verification contracts live in `app.platform.verification` (not applied here) |
 | F13 | Attachment safety states/warnings only (`attachment_safety.py`); default `scan_not_available` |
+| F14 | Owner-only private attachment deletion; metadata record retained |
 
 Hard rules across all slices:
 
@@ -38,6 +39,7 @@ Hard rules across all slices:
 - `GET /api/v1/evidence/{evidence_id}/links` — list links for owned evidence (F7)
 - `POST /api/v1/evidence/{evidence_id}/attachment` — upload one private file (F5)
 - `GET /api/v1/evidence/{evidence_id}/attachment` — download own private file (F5)
+- `DELETE /api/v1/evidence/{evidence_id}/attachment` — remove private file bytes; clear attachment metadata (F14)
 
 ## Frontend note
 
@@ -52,9 +54,16 @@ Derived response fields only (no DB column, no scanner):
 - `attachment_safety_label` = `Scan not available`
 - Warning: private attachments are stored but not malware-scanned, parsed, reviewed, or verified
 
-Future scanner requirements (not implemented): private scan queue; no public file exposure; keep size/MIME checks; no raw bytes in logs; failure/quarantine policy; deletion/retention; timeout/failure messaging.
+## Attachment deletion (F14)
+
+- Deletes private local file bytes when present
+- Clears `storage_uri` / `content_hash` / `mime_type` / `size_bytes`
+- Keeps EvidenceRecord, ClaimEvidenceLink, ReviewRequest, claim statuses
+- Deletion is not verification
+
+Future retention requirements (not fully implemented): audit-safe event logging later (no raw file contents); retention windows later; orphaned-file cleanup later; backup deletion policy later; scanner quarantine/deletion later.
 
 ## Foundation revision
 
 `f0009_evidence_foundation` → tables `evidence_records`, `claim_evidence_links`.  
-No new migration for F5–F13.
+No new migration for F5–F14.

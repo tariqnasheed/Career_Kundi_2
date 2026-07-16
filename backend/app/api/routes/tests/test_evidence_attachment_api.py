@@ -90,6 +90,13 @@ def _assert_safe_wording(payload: object) -> None:
 def test_no_public_url_or_share_routes() -> None:
     paths = set(app.openapi().get("paths", {}))
     assert "/api/v1/evidence/{evidence_id}/attachment" in paths
+    methods = {
+        m.lower()
+        for m in app.openapi()["paths"][
+            "/api/v1/evidence/{evidence_id}/attachment"
+        ].keys()
+    }
+    assert "delete" in methods
     for path in paths:
         lower = path.lower()
         if "/api/v1/evidence" not in lower:

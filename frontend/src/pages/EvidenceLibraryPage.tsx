@@ -140,6 +140,7 @@ export default function EvidenceLibraryPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [attachError, setAttachError] = useState<string | null>(null);
+  const [removeError, setRemoveError] = useState<string | null>(null);
   const [linkClaimId, setLinkClaimId] = useState("");
   const [linkRole, setLinkRole] = useState<EvidenceLinkRole>("supports");
   const [linkError, setLinkError] = useState<string | null>(null);
@@ -208,6 +209,31 @@ export default function EvidenceLibraryPage() {
         ? "This evidence already has an attachment. Replacement is not enabled yet."
         : err.message || "Could not attach private file.";
       setAttachError(friendly);
+      addToast({ type: "error", message: friendly });
+    },
+  });
+
+  const removeAttachmentMutation = useMutation({
+    mutationFn: (evidenceId: string) =>
+      evidenceApi.deleteEvidenceAttachment(evidenceId),
+    onSuccess: (row) => {
+      setRemoveError(null);
+      addToast({
+        type: "success",
+        message:
+          "Private attachment removed. Evidence metadata and claim links remain.",
+      });
+      setSelectedId(row.id);
+      qc.invalidateQueries({ queryKey: ["evidence", "list"] });
+      qc.invalidateQueries({ queryKey: ["evidence", "passport-summary"] });
+    },
+    onError: (err: ApiError) => {
+      const message = (err.message || "").toLowerCase();
+      const friendly =
+        message.includes("no private attachment") || err.code === "NOT_FOUND"
+          ? "No private attachment is attached."
+          : err.message || "Could not remove private attachment.";
+      setRemoveError(friendly);
       addToast({ type: "error", message: friendly });
     },
   });
@@ -312,6 +338,16 @@ export default function EvidenceLibraryPage() {
     }
     setAttachError(null);
     uploadMutation.mutate({ evidenceId: selected.id, file: selectedFile! });
+  }
+
+  function onRemoveAttachment() {
+    if (!selected) return;
+    const confirmed = window.confirm(
+      "Remove this private attachment? The evidence metadata and any claim links will remain. This does not verify or change any claim.",
+    );
+    if (!confirmed) return;
+    setRemoveError(null);
+    removeAttachmentMutation.mutate(selected.id);
   }
 
   return (
@@ -820,6 +856,39 @@ export default function EvidenceLibraryPage() {
                         {downloadMutation.isPending
                           ? "Downloading…"
                           : "Download private attachment"}
+                      </Button>
+                      <p
+                        style={{
+                          margin: 0,
+                          fontSize: "0.8rem",
+                          color: "var(--text-secondary)",
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        Remove this private attachment? The evidence metadata
+                        and any claim links will remain. This does not verify
+                        or change any claim.
+                      </p>
+                      {removeError ? (
+                        <div
+                          role="alert"
+                          style={{
+                            color: "var(--danger, #b91c1c)",
+                            fontSize: "0.85rem",
+                          }}
+                        >
+                          {removeError}
+                        </div>
+                      ) : null}
+                      <Button
+                        type="button"
+                        variant="secondary"
+                        disabled={removeAttachmentMutation.isPending}
+                        onClick={onRemoveAttachment}
+                      >
+                        {removeAttachmentMutation.isPending
+                          ? "Removing…"
+                          : "Remove private attachment"}
                       </Button>
                     </>
                   )}

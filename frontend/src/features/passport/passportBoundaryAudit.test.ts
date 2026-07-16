@@ -212,7 +212,15 @@ describe("0052-F8 Passport boundary audit", () => {
     ).toBe(true);
     expect(src.includes("scan not available")).toBe(true);
     expect(src.toLowerCase().includes("malware-scanned")).toBe(true);
-    for (const phrase of ["Scan file", "Parse file", "OCR", "AI review"]) {
+    for (const phrase of [
+      "Scan file",
+      "Parse file",
+      "OCR",
+      "AI review",
+      "Remove private attachment",
+      "Download private attachment",
+      "Attach private file",
+    ]) {
       expect(src.includes(phrase), `panel must not contain ${phrase}`).toBe(
         false,
       );

@@ -468,9 +468,21 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F14 attachment deletion/retention or scan queue skeleton  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F13_Attachment_Safety_Planning_Evidence.txt`
 
-### 0053-F14 Attachment Deletion/Retention or Scan Queue Skeleton
-- **Purpose:** Deletion/retention controls and/or private scan queue skeleton after F13  
-- **Allowed:** only after F13 acceptance; bounded scope  
+### 0053-F14 Private Attachment Deletion + Retention Policy
+- **Status:** Implemented (`DELETE .../attachment` + Evidence Library remove UI + retention doc)  
+- **Purpose:** Let owners remove private attachment bytes and clear attachment metadata safely  
+- **Allowed:** owner-only delete endpoint; storage delete helper; clear `storage_uri`/`content_hash`/`mime_type`/`size_bytes`; Evidence Library remove UI; retention policy docs; tests  
+- **Forbidden:** EvidenceRecord deletion; ClaimEvidenceLink/ReviewRequest deletion; claim status mutation; scan engine; parsing/OCR/LLM review; public sharing; DB migration  
+- **Hard rule:** deleting an attachment is not verification and does not change claim trust state  
+- **Tests:** attachment delete API + storage + evidence/passport/review regressions + FE vitest  
+- **Browser:** `/evidence` remove attachment; Passport remains read-only (uvicorn badge-seed watch remains)  
+- **Gate:** file bytes removed; metadata/links/reviews/claim statuses retained; no scanner  
+- **Deferred:** F15 scan queue skeleton or runtime badge-seed fix  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F14_Attachment_Deletion_Retention_Evidence.txt`
+
+### 0053-F15 Scan Queue Skeleton or Runtime Badge-Seed Fix
+- **Purpose:** Private scan queue skeleton and/or local badge-seed runtime fix after F14  
+- **Allowed:** only after F14 acceptance; bounded scope  
 - **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles unless separately approved  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 

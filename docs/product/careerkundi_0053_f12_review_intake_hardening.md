@@ -30,4 +30,4 @@ F13 adds attachment safety states/warnings only (default `scan_not_available`). 
 
 ## Next
 
-**0053-F14** Attachment Deletion/Retention or Scan Queue Skeleton — only after F13 acceptance.
+**0053-F13** and **0053-F14** completed after this slice. Next after F14 acceptance: **0053-F15** Scan Queue Skeleton or Runtime Badge-Seed Fix only.

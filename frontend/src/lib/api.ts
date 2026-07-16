@@ -1050,6 +1050,17 @@ export const evidenceApi = {
     return res.data as Blob;
   },
 
+  /**
+   * Remove private attachment bytes and clear attachment metadata (F14).
+   * Does not delete the evidence record or claim links.
+   */
+  deleteEvidenceAttachment: async (evidenceId: string): Promise<EvidenceRead> => {
+    const res = await http.delete<EvidenceEnvelope>(
+      `/evidence/${evidenceId}/attachment`,
+    );
+    return res.data.data;
+  },
+
   /** List current-user claims available for Evidence Library linking (F7). */
   listLinkableEvidenceClaims: async (): Promise<LinkableClaimRead[]> => {
     const res = await http.get<LinkableClaimListEnvelope>(

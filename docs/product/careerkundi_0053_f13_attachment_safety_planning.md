@@ -32,10 +32,10 @@ Review request remains not verification. Linked evidence is still required for i
 - Keep max size and MIME checks
 - No raw bytes in logs
 - Failure / quarantine policy
-- Deletion / retention policy
+- Deletion / retention policy → **F14 implements user-initiated attachment deletion + retention notes**
 - Scanner timeout / failure behavior
 - User-safe messaging only
 
 ## Next
 
-**0053-F14** Attachment Deletion/Retention or Scan Queue Skeleton — only after F13 acceptance.
+**0053-F14** Private Attachment Deletion + Retention Policy — accepted after this ladder; then **0053-F15** Scan Queue Skeleton or Runtime Badge-Seed Fix only.
