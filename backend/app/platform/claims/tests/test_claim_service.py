@@ -255,7 +255,7 @@ def test_claim_service_semantics() -> None:
                     claim_value="MSc Electrical Power",
                     claim_origin=ClaimOrigin.EXTERNAL_IMPORTED,
                     support_status=SupportStatus.SOURCE_LINKED,
-                    verification_status=VerificationStatus.UNKNOWN,
+                    verification_status=VerificationStatus.UNVERIFIED,
                     source_id=source_a.id,
                     snapshot_id=snap_a.id,
                 )

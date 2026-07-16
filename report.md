@@ -21,6 +21,17 @@ Pushed after CORE-VALUE-R1 and verified in POST-CLAUDE-R2:
 
 Evidence: `~/Desktop/CareerKundi_POST_CLAUDE_R2_Integration_Audit_Evidence.txt`
 
+## 0053-F1 Claim Service Contract Boundary (2026-07-16)
+
+Locks claim create-time contracts before evidence/verification:
+
+- Create verification: `unverified` only
+- Create support: `not_provided` / `profile_supported` / `source_linked` only
+- Source/snapshot = provenance, not verification; no silent upgrades
+- Safe display labels (`display.py`); no public claim routes; no EvidenceRecord yet
+
+Evidence: `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the

@@ -310,13 +310,18 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** all implementation  
 
 ### 0053-F1 Claim Service Contract Boundary
+- **Status:** Implemented (`contracts.py`, `display.py`, create-time allowlists in `create_claim`)  
 - **Purpose:** Lock claim contracts, status axes, forbidden silent upgrades, UI wording map; clarify subject linkage  
-- **Allowed:** claims contracts/tests/docs; no public routes unless thin and private  
-- **Forbidden:** evidence tables, uploads, Passport verification UI, public sharing  
-- **Tests:** unit + boundary  
-- **Browser:** optional  
+- **Create allowlist:** `verification_status=unverified` only; `support_status` ∈ {`not_provided`, `profile_supported`, `source_linked`}  
+- **Create denylist:** verified/rejected/conflicting/unknown verification; evidence_backed/assessment_demonstrated/unknown support  
+- **Source/snapshot:** provenance only; `source_linked` requires `source_id`; snapshot requires source; never implies verified  
+- **Allowed:** claims contracts/tests/docs; **no** public `/api/v1/claims` routes  
+- **Forbidden:** evidence tables, uploads, Passport verification UI, public sharing, migrations  
+- **Tests:** unit + boundary + display language  
+- **Browser:** smoke only (no UI change)  
 - **Gate:** contracts accepted; no trust creep  
-- **Deferred:** evidence persistence  
+- **Deferred:** evidence persistence (F2)  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidence.txt`
 
 ### 0053-F2 Evidence Record Persistence
 - **Purpose:** Evidence tables/models/migrations  

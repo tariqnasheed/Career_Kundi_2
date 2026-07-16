@@ -5538,9 +5538,15 @@ Local LLM output is not verification and is not guaranteed correct.
 
 ## POST-CLAUDE-R2 Integration Audit
 
-**Status:** Completing (docs). Verifies the above on main before **0053-F1**. Evidence: `~/Desktop/CareerKundi_POST_CLAUDE_R2_Integration_Audit_Evidence.txt`.
+**Status:** Done (`3d7cc7d1`). Evidence: `~/Desktop/CareerKundi_POST_CLAUDE_R2_Integration_Audit_Evidence.txt`.
 
-**Does not start 0053-F1 until POST-CLAUDE-R2 is accepted.**
+## 0053-F1 Claim Service Contract Boundary
+
+**Status:** Completing in this commit. Create-time allowlists, source/snapshot rules, safe display labels; **no** evidence records, verification reviews, or public claim routes.
+
+Evidence: `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidence.txt`.
+
+**Next after F1 acceptance:** 0053-F2 Evidence Domain Skeleton only.
 
 ---
 

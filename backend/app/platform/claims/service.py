@@ -1,7 +1,9 @@
 """
-Claim service helpers (0050-PF5-S1).
+Claim service helpers (0050-PF5-S1 / 0053-F1).
 
-Create / get / list only. No silent status upgrades. No evidence/verification.
+Create / get / list only. F1 create-time contract forbids verified /
+evidence-backed statuses. No silent status upgrades. No evidence/verification
+ownership. No public HTTP routes.
 """
 
 from __future__ import annotations
@@ -14,13 +16,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.db.models.career_subject import CareerSubject
 from app.db.models.claim import ClaimRecord
 from app.db.models.provenance import SourceRecord, SourceSnapshot
+from app.platform.claims.contracts import validate_claim_create_contract
 from app.platform.claims.refs import ClaimRefError
-from app.platform.claims.status import (
-    parse_claim_kind,
-    parse_claim_origin,
-    parse_support_status,
-    parse_verification_status,
-)
 from app.platform.identity.refs import ActorRef, ActorType
 
 
@@ -47,10 +44,14 @@ async def create_claim(
     snapshot_id: uuid.UUID | None = None,
     created_by_actor: ActorRef | None = None,
 ) -> ClaimRecord:
-    kind = parse_claim_kind(claim_kind)
-    origin = parse_claim_origin(claim_origin)
-    support = parse_support_status(support_status)
-    verification = parse_verification_status(verification_status)
+    validated = validate_claim_create_contract(
+        claim_kind=claim_kind,
+        claim_origin=claim_origin,
+        support_status=support_status,
+        verification_status=verification_status,
+        source_id=source_id,
+        snapshot_id=snapshot_id,
+    )
     key = _trim_required(claim_key, "claim_key")
     value = _trim_required(claim_value, "claim_value")
 
@@ -60,26 +61,27 @@ async def create_claim(
     if subject is None:
         raise ClaimRefError(f"subject does not exist: {subject_id}")
 
-    if snapshot_id is not None and source_id is None:
-        raise ClaimRefError("snapshot_id requires source_id")
-
-    if source_id is not None:
+    if validated.source_id is not None:
         source = (
-            await db.execute(select(SourceRecord).where(SourceRecord.id == source_id))
+            await db.execute(
+                select(SourceRecord).where(SourceRecord.id == validated.source_id)
+            )
         ).scalar_one_or_none()
         if source is None:
-            raise ClaimRefError(f"source does not exist: {source_id}")
+            raise ClaimRefError(f"source does not exist: {validated.source_id}")
 
-    if snapshot_id is not None:
+    if validated.snapshot_id is not None:
         snapshot = (
             await db.execute(
-                select(SourceSnapshot).where(SourceSnapshot.id == snapshot_id)
+                select(SourceSnapshot).where(
+                    SourceSnapshot.id == validated.snapshot_id
+                )
             )
         ).scalar_one_or_none()
         if snapshot is None:
-            raise ClaimRefError(f"snapshot does not exist: {snapshot_id}")
-        assert source_id is not None  # enforced above
-        if snapshot.source_id != source_id:
+            raise ClaimRefError(f"snapshot does not exist: {validated.snapshot_id}")
+        assert validated.source_id is not None  # enforced by contract
+        if snapshot.source_id != validated.source_id:
             raise ClaimRefError(
                 "snapshot.source_id does not match supplied source_id"
             )
@@ -98,14 +100,14 @@ async def create_claim(
 
     row = ClaimRecord(
         subject_id=subject_id,
-        claim_kind=kind.value,
+        claim_kind=validated.claim_kind.value,
         claim_key=key,
         claim_value=value,
-        claim_origin=origin.value,
-        support_status=support.value,
-        verification_status=verification.value,
-        source_id=source_id,
-        snapshot_id=snapshot_id,
+        claim_origin=validated.claim_origin.value,
+        support_status=validated.support_status.value,
+        verification_status=validated.verification_status.value,
+        source_id=validated.source_id,
+        snapshot_id=validated.snapshot_id,
         created_by_actor_type=actor_type,
         created_by_actor_id=actor_id,
     )
