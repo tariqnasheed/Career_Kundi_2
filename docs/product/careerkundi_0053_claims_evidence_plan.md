@@ -3,7 +3,7 @@
 **Slice:** 0053-F0 Planning and Boundary Audit  
 **Status:** Planning complete — no implementation in F0  
 **Depends on:** 0052 Career & Education Passport (completed / accepted)  
-**Foundation head (unchanged):** `f0008_passport_persistence`  
+**Foundation head (after F2):** `f0009_evidence_foundation` (was `f0008_passport_persistence` through F1)  
 **LLM provider (platform-wide):** Local Ollama 8B (`http://127.0.0.1:11434`); `LLM_PROVIDER=mock` for deterministic tests. Gemini is legacy/deprecated. Local LLM output is **not** verification.
 
 ---
@@ -323,19 +323,23 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** evidence persistence (F2)  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidence.txt`
 
-### 0053-F2 Evidence Record Persistence
-- **Purpose:** Evidence tables/models/migrations  
-- **Allowed:** evidence models + migrations + tests  
-- **Forbidden:** public URLs, verification outcomes, frontend upload UI (unless stub)  
-- **Tests:** persistence + migration policy  
-- **Browser:** no  
-- **Gate:** foundation head advances safely  
-- **Deferred:** upload bytes pipeline  
+### 0053-F2 Evidence Domain Skeleton
+- **Status:** Implemented (`platform/evidence/`, `EvidenceRecord`, `ClaimEvidenceLink`, `f0009_evidence_foundation`)  
+- **Purpose:** Private evidence metadata + claim-evidence link foundation  
+- **Allowed:** evidence models/migrations/service/contracts/tests/docs  
+- **Forbidden:** upload/download endpoints, file bytes, OCR, verification workflow, public sharing, HTTP routes, frontend, Passport/CV/Roadmap/Job Search changes  
+- **Hard rule:** linking evidence does **not** mutate claim `support_status` / `verification_status`  
+- **Privacy:** `private` (default) / `sensitive` / `restricted` only — no public  
+- **Tests:** contracts + service + migration + no-routes guards  
+- **Browser:** smoke only (no UI change)  
+- **Gate:** foundation head `f0009_evidence_foundation`; no trust overclaim  
+- **Deferred:** private HTTP API (F3); upload bytes pipeline  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F2_Evidence_Domain_Skeleton_Evidence.txt`
 
-### 0053-F3 Private Evidence API MVP
-- **Purpose:** Authenticated private evidence CRUD  
-- **Allowed:** evidence routes + client types  
-- **Forbidden:** public sharing, verification stamps  
+### 0053-F3 Private Evidence Service/API Boundary
+- **Purpose:** Authenticated private evidence service/API boundary (no public sharing)  
+- **Allowed:** private evidence routes + ownership checks after F2 acceptance  
+- **Forbidden:** public sharing, verification stamps, upload UI unless explicitly scoped  
 - **Tests:** API ownership + empty/list  
 - **Browser:** API smoke optional  
 - **Gate:** owner-only access  

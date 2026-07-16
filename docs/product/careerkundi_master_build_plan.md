@@ -5542,11 +5542,17 @@ Local LLM output is not verification and is not guaranteed correct.
 
 ## 0053-F1 Claim Service Contract Boundary
 
-**Status:** Completing in this commit. Create-time allowlists, source/snapshot rules, safe display labels; **no** evidence records, verification reviews, or public claim routes.
+**Status:** Done (`9e221bac`). Create-time allowlists, source/snapshot rules, safe display labels; **no** evidence records, verification reviews, or public claim routes.
 
 Evidence: `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidence.txt`.
 
-**Next after F1 acceptance:** 0053-F2 Evidence Domain Skeleton only.
+## 0053-F2 Evidence Domain Skeleton
+
+**Status:** Completing in this commit. Private `EvidenceRecord` + `ClaimEvidenceLink` + `f0009_evidence_foundation`; service helpers; **no** upload/download, verification workflow, public routes, or frontend.
+
+Evidence: `~/Desktop/CareerKundi_0053_F2_Evidence_Domain_Skeleton_Evidence.txt`.
+
+**Next after F2 acceptance:** 0053-F3 Private Evidence Service/API Boundary only.
 
 ---
 
@@ -5555,7 +5561,7 @@ Evidence: `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidenc
 **Phase status:** Active — **0053-F0** planning complete (docs only).  
 **Prior phase:** **0052 Career & Education Passport** — completed and accepted (`8af9b813…`).  
 **Plan document:** `docs/product/careerkundi_0053_claims_evidence_plan.md`  
-**Foundation head (unchanged in F0):** `f0008_passport_persistence`
+**Foundation head (after F2):** `f0009_evidence_foundation`
 
 ### Purpose
 
@@ -5587,7 +5593,7 @@ Supported product wording includes: Self-declared, Profile-backed, Source-linked
 | Claims | `ClaimRecord` / `career_claims` via `f0004_claim_foundation.py`; optional source/snapshot FKs are provenance links only; service create/get/list; **no public claim HTTP routes** |
 | Status axes | Independent `support_status` and `verification_status`; no silent upgrades |
 | Passport | Private; `verification_status` forced unverified; no evidence/claims ownership; no public sharing |
-| Evidence objects | **Not implemented** (no EvidenceRecord table yet) |
+| Evidence objects | **F2 skeleton:** `evidence_records` + `claim_evidence_links` (metadata/link only; no upload) |
 | Verification workflow | **Not implemented** |
 
 ### W3C VC 2.0 note (planning guidance only)
@@ -5600,8 +5606,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 |---|---|
 | 0053-F0 | Planning and Boundary Audit *(this slice)* |
 | 0053-F1 | Claim Service Contract Boundary |
-| 0053-F2 | Evidence Record Persistence |
-| 0053-F3 | Private Evidence API MVP |
+| 0053-F2 | Evidence Domain Skeleton |
+| 0053-F3 | Private Evidence Service/API Boundary |
 | 0053-F4 | Passport Evidence Read UI |
 | 0053-F5 | Claim-to-Passport Linking |
 | 0053-F6 | Evidence Upload / Attachment References |
@@ -5615,7 +5621,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of the 0053-F0 plan**, then **0053-F1 Claim Service Contract Boundary**.
+**Owner acceptance of 0053-F2**, then **0053-F3 Private Evidence Service/API Boundary** only.
 
 ---
 

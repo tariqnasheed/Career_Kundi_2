@@ -21,13 +21,14 @@ LEGACY_0001 = (
     Path(__file__).resolve().parents[1] / "migrations" / "versions" / "0001_initial.py"
 )
 FOUNDATION_BASELINE = "f0001_foundation_baseline"
-FOUNDATION_CURRENT_HEAD = "f0008_passport_persistence"
+FOUNDATION_CURRENT_HEAD = "f0009_evidence_foundation"
 FOUNDATION_F0002 = "f0002_identity_subject_stub"
 FOUNDATION_F0003 = "f0003_provenance_source_snapshot"
 FOUNDATION_F0004 = "f0004_claim_foundation"
 FOUNDATION_F0005 = "f0005_geo_jurisdiction_locale"
 FOUNDATION_F0006 = "f0006_lifecycle_loop_foundation"
 FOUNDATION_F0007 = "f0007_privacy_foundation"
+FOUNDATION_F0008 = "f0008_passport_persistence"
 
 
 def _foundation_revision_files() -> list[Path]:
@@ -47,7 +48,10 @@ def test_script_directory_single_lineage() -> None:
     assert len(script.get_bases()) == 1
     head = script.get_revision(FOUNDATION_CURRENT_HEAD)
     assert head is not None
-    assert head.down_revision == FOUNDATION_F0007
+    assert head.down_revision == FOUNDATION_F0008
+    f0008 = script.get_revision(FOUNDATION_F0008)
+    assert f0008 is not None
+    assert f0008.down_revision == FOUNDATION_F0007
     f0007 = script.get_revision(FOUNDATION_F0007)
     assert f0007 is not None
     assert f0007.down_revision == FOUNDATION_F0006

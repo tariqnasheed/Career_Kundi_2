@@ -53,7 +53,7 @@ from app.platform.privacy.service import (
 PF9_PREFIX = "ck_pf9s1_"
 F0006 = "f0006_lifecycle_loop_foundation"
 F0007 = "f0007_privacy_foundation"
-CURRENT_HEAD = "f0008_passport_persistence"
+CURRENT_HEAD = "f0009_evidence_foundation"
 MIGRATION_FILE = (
     Path(__file__).resolve().parents[3]
     / "db"
@@ -142,7 +142,7 @@ def test_f0007_migration_empty_to_f0007() -> None:
 
 @require_disposable_postgres
 def test_f0007_downgrade_historical_upgrade_then_current_head() -> None:
-    """Downgrade privacy, restore F7 historically, then advance to current F8 head."""
+    """Downgrade privacy, restore F7 historically, then advance to current head."""
     with temporary_database(prefix=PF9_PREFIX) as (_name, url):
         prepare_database(url)
         assert foundation_heads() == [CURRENT_HEAD]

@@ -30,6 +30,8 @@ APPROVED_DISPOSABLE_PREFIXES = (
     "ck_pf7s1_",
     "ck_pf8s1_",
     "ck_pf9s1_",
+    "ck_f2ev_",
+    "ck_f2svc_",
     "ck_0052f3_",
 )
 _DISPOSABLE_NAME_RE = re.compile(

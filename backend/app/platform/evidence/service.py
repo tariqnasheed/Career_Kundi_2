@@ -1,0 +1,263 @@
+"""
+Evidence service helpers (0053-F2).
+
+Private metadata create/get/list and claim-evidence link only.
+No file upload/download, no verification mutation, no HTTP routes.
+Linking evidence must not change claim support_status or verification_status.
+"""
+
+from __future__ import annotations
+
+import uuid
+
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.db.models.career_subject import CareerSubject
+from app.db.models.claim import ClaimRecord
+from app.db.models.evidence import ClaimEvidenceLink, EvidenceRecord
+from app.db.models.provenance import SourceRecord, SourceSnapshot
+from app.db.models.user import User
+from app.platform.evidence.contracts import (
+    validate_claim_evidence_link_contract,
+    validate_evidence_create_contract,
+)
+from app.platform.evidence.refs import EvidenceRefError
+from app.platform.identity.refs import ActorRef, ActorType
+
+
+def _actor_fields(
+    created_by_actor: ActorRef | None,
+) -> tuple[str | None, uuid.UUID | None]:
+    if created_by_actor is None:
+        return None, None
+    if not isinstance(created_by_actor, ActorRef):
+        raise EvidenceRefError("created_by_actor must be ActorRef")
+    actor_type = (
+        created_by_actor.actor_type.value
+        if isinstance(created_by_actor.actor_type, ActorType)
+        else str(created_by_actor.actor_type)
+    )
+    return actor_type, uuid.UUID(str(created_by_actor.actor_id))
+
+
+async def create_evidence_record(
+    db: AsyncSession,
+    *,
+    owner_user_id: uuid.UUID,
+    title: object,
+    evidence_kind: object,
+    subject_id: uuid.UUID | None = None,
+    privacy_class: object | None = None,
+    source_id: uuid.UUID | None = None,
+    snapshot_id: uuid.UUID | None = None,
+    storage_uri: object | None = None,
+    content_hash: object | None = None,
+    mime_type: object | None = None,
+    size_bytes: object | None = None,
+    created_by_actor: ActorRef | None = None,
+) -> EvidenceRecord:
+    validated = validate_evidence_create_contract(
+        title=title,
+        evidence_kind=evidence_kind,
+        privacy_class=privacy_class,
+        source_id=source_id,
+        snapshot_id=snapshot_id,
+        storage_uri=storage_uri,
+        content_hash=content_hash,
+        mime_type=mime_type,
+        size_bytes=size_bytes,
+    )
+
+    user = (
+        await db.execute(select(User).where(User.id == owner_user_id))
+    ).scalar_one_or_none()
+    if user is None:
+        raise EvidenceRefError(f"owner user does not exist: {owner_user_id}")
+
+    if subject_id is not None:
+        subject = (
+            await db.execute(
+                select(CareerSubject).where(CareerSubject.id == subject_id)
+            )
+        ).scalar_one_or_none()
+        if subject is None:
+            raise EvidenceRefError(f"subject does not exist: {subject_id}")
+        if subject.owner_user_id != owner_user_id:
+            raise EvidenceRefError(
+                "subject.owner_user_id does not match evidence owner_user_id"
+            )
+
+    if validated.source_id is not None:
+        source = (
+            await db.execute(
+                select(SourceRecord).where(SourceRecord.id == validated.source_id)
+            )
+        ).scalar_one_or_none()
+        if source is None:
+            raise EvidenceRefError(f"source does not exist: {validated.source_id}")
+
+    if validated.snapshot_id is not None:
+        snapshot = (
+            await db.execute(
+                select(SourceSnapshot).where(
+                    SourceSnapshot.id == validated.snapshot_id
+                )
+            )
+        ).scalar_one_or_none()
+        if snapshot is None:
+            raise EvidenceRefError(f"snapshot does not exist: {validated.snapshot_id}")
+        assert validated.source_id is not None
+        if snapshot.source_id != validated.source_id:
+            raise EvidenceRefError(
+                "snapshot.source_id does not match supplied source_id"
+            )
+
+    actor_type, actor_id = _actor_fields(created_by_actor)
+    row = EvidenceRecord(
+        owner_user_id=owner_user_id,
+        subject_id=subject_id,
+        title=validated.title,
+        evidence_kind=validated.evidence_kind.value,
+        storage_uri=validated.storage_uri,
+        content_hash=validated.content_hash,
+        mime_type=validated.mime_type,
+        size_bytes=validated.size_bytes,
+        source_id=validated.source_id,
+        snapshot_id=validated.snapshot_id,
+        privacy_class=validated.privacy_class.value,
+        created_by_actor_type=actor_type,
+        created_by_actor_id=actor_id,
+    )
+    db.add(row)
+    await db.commit()
+    await db.refresh(row)
+    return row
+
+
+async def get_evidence_record(
+    db: AsyncSession, evidence_id: uuid.UUID
+) -> EvidenceRecord | None:
+    result = await db.execute(
+        select(EvidenceRecord).where(EvidenceRecord.id == evidence_id)
+    )
+    return result.scalar_one_or_none()
+
+
+async def list_owner_evidence(
+    db: AsyncSession, owner_user_id: uuid.UUID
+) -> list[EvidenceRecord]:
+    result = await db.execute(
+        select(EvidenceRecord)
+        .where(EvidenceRecord.owner_user_id == owner_user_id)
+        .order_by(EvidenceRecord.created_at.asc())
+    )
+    return list(result.scalars().all())
+
+
+async def list_subject_evidence(
+    db: AsyncSession, subject_id: uuid.UUID
+) -> list[EvidenceRecord]:
+    result = await db.execute(
+        select(EvidenceRecord)
+        .where(EvidenceRecord.subject_id == subject_id)
+        .order_by(EvidenceRecord.created_at.asc())
+    )
+    return list(result.scalars().all())
+
+
+async def link_evidence_to_claim(
+    db: AsyncSession,
+    *,
+    claim_id: uuid.UUID,
+    evidence_id: uuid.UUID,
+    link_role: object,
+    created_by_actor: ActorRef | None = None,
+) -> ClaimEvidenceLink:
+    validated = validate_claim_evidence_link_contract(
+        claim_id=claim_id,
+        evidence_id=evidence_id,
+        link_role=link_role,
+    )
+
+    claim = (
+        await db.execute(select(ClaimRecord).where(ClaimRecord.id == claim_id))
+    ).scalar_one_or_none()
+    if claim is None:
+        raise EvidenceRefError(f"claim does not exist: {claim_id}")
+
+    evidence = (
+        await db.execute(
+            select(EvidenceRecord).where(EvidenceRecord.id == evidence_id)
+        )
+    ).scalar_one_or_none()
+    if evidence is None:
+        raise EvidenceRefError(f"evidence does not exist: {evidence_id}")
+
+    subject = (
+        await db.execute(
+            select(CareerSubject).where(CareerSubject.id == claim.subject_id)
+        )
+    ).scalar_one_or_none()
+    if subject is None:
+        raise EvidenceRefError(f"claim subject does not exist: {claim.subject_id}")
+
+    if evidence.owner_user_id != subject.owner_user_id:
+        raise EvidenceRefError(
+            "evidence owner_user_id does not match claim subject owner_user_id"
+        )
+    if evidence.subject_id is not None and evidence.subject_id != claim.subject_id:
+        raise EvidenceRefError(
+            "evidence.subject_id does not match claim.subject_id"
+        )
+
+    prior_support = claim.support_status
+    prior_verification = claim.verification_status
+
+    existing = (
+        await db.execute(
+            select(ClaimEvidenceLink).where(
+                ClaimEvidenceLink.claim_id == validated.claim_id,
+                ClaimEvidenceLink.evidence_id == validated.evidence_id,
+            )
+        )
+    ).scalar_one_or_none()
+    if existing is not None:
+        raise EvidenceRefError("duplicate claim/evidence link is not allowed")
+
+    actor_type, actor_id = _actor_fields(created_by_actor)
+    link = ClaimEvidenceLink(
+        claim_id=validated.claim_id,
+        evidence_id=validated.evidence_id,
+        link_role=validated.link_role.value,
+        created_by_actor_type=actor_type,
+        created_by_actor_id=actor_id,
+    )
+    db.add(link)
+    await db.commit()
+    await db.refresh(link)
+
+    # Re-read claim to prove no silent truth upgrade.
+    refreshed = (
+        await db.execute(select(ClaimRecord).where(ClaimRecord.id == claim_id))
+    ).scalar_one()
+    if refreshed.support_status != prior_support:
+        raise EvidenceRefError(
+            "link_evidence_to_claim must not mutate claim.support_status"
+        )
+    if refreshed.verification_status != prior_verification:
+        raise EvidenceRefError(
+            "link_evidence_to_claim must not mutate claim.verification_status"
+        )
+    return link
+
+
+async def list_claim_evidence_links(
+    db: AsyncSession, claim_id: uuid.UUID
+) -> list[ClaimEvidenceLink]:
+    result = await db.execute(
+        select(ClaimEvidenceLink)
+        .where(ClaimEvidenceLink.claim_id == claim_id)
+        .order_by(ClaimEvidenceLink.created_at.asc())
+    )
+    return list(result.scalars().all())

@@ -32,6 +32,16 @@ Locks claim create-time contracts before evidence/verification:
 
 Evidence: `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidence.txt`
 
+## 0053-F2 Evidence Domain Skeleton (2026-07-16)
+
+Private evidence metadata + claim-evidence links only:
+
+- Tables: `evidence_records`, `claim_evidence_links` via `f0009_evidence_foundation`
+- Link does **not** mutate claim support/verification axes
+- No upload/download, no HTTP routes, no frontend, no verification workflow
+
+Evidence: `~/Desktop/CareerKundi_0053_F2_Evidence_Domain_Skeleton_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the

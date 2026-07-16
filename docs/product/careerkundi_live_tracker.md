@@ -10,18 +10,20 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | **0053 Evidence, Claims, Provenance and Verification Foundations** |
-| Current Slice | **0053-F1 Claim Service Contract Boundary** |
+| Current Slice | **0053-F2 Evidence Domain Skeleton** |
 | Current Status | Completing / accepted with this commit |
-| Last Completed Slice | **POST-CLAUDE-R2** · ROADMAP-RICH · JOB-INT-R1 · CORE-VALUE-R1 · LLM-R1 · 0053-F0 · 0052 |
+| Last Completed Slice | **0053-F1** · POST-CLAUDE-R2 · ROADMAP-RICH · JOB-INT-R1 · CORE-VALUE-R1 · LLM-R1 · 0053-F0 · 0052 |
 | 0052 status | **Completed / accepted** |
 | F0 status | **Completed** |
-| Last Commit | This commit — `feat(claims): lock claim service contract boundary` |
+| F1 status | **Completed / accepted** |
+| Last Commit | This commit — `feat(evidence): add private evidence domain skeleton` |
 | Last Push Status | Push with this slice |
-| Next Slice | **0053-F2 Evidence Domain Skeleton** (only after F1 acceptance) |
-| Browser viewports | No UI change in F1; smoke only |
-| Blocked Items | None for F1; do not start F2 until accepted |
+| Next Slice | **0053-F3 Private Evidence Service/API Boundary** (only after F2 acceptance) |
+| Browser viewports | No UI change in F2; smoke only |
+| Blocked Items | None for F2; do not start F3 until accepted |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
-| LLM provider | **Local Ollama 8B** (`http://127.0.0.1:11434`); F1 does not call LLM |
+| LLM provider | **Local Ollama 8B** (`http://127.0.0.1:11434`); F2 does not call LLM |
+| Foundation head | `f0009_evidence_foundation` |
 
 ---
 
@@ -33,7 +35,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 | 0053 Plan | `docs/product/careerkundi_0053_claims_evidence_plan.md` |
 
-**Pointers:** **0052 closed** · **0053-F0** Done · **POST-CLAUDE-R2** Done · **0053-F1** Completing · Next **0053-F2**.
+**Pointers:** **0053-F1** Done · **0053-F2** Completing · Next **0053-F3**.
 
 ---
 
@@ -41,9 +43,9 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| POST-CLAUDE-R2 | Integration audit | Done | `~/Desktop/CareerKundi_POST_CLAUDE_R2_Integration_Audit_Evidence.txt` | `3d7cc7d1` | Yes | Before F1 |
-| 0053-F1 | Claim Service Contract Boundary | Completing | `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidence.txt` | This commit | With push | No routes/evidence |
-| 0053-F2 | Evidence Domain Skeleton | Next | — | — | — | After F1 accepted |
+| 0053-F1 | Claim Service Contract Boundary | Done | `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidence.txt` | `9e221bac` | Yes | Create contracts |
+| 0053-F2 | Evidence Domain Skeleton | Completing | `~/Desktop/CareerKundi_0053_F2_Evidence_Domain_Skeleton_Evidence.txt` | This commit | With push | Metadata + links only |
+| 0053-F3 | Private Evidence Service/API Boundary | Next | — | — | — | After F2 accepted |
 
 ---
 
@@ -51,8 +53,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-16 | POST-CLAUDE-R2 | `~/Desktop/CareerKundi_POST_CLAUDE_R2_Integration_Audit_Evidence.txt` | B ready for F1 | Product gates |
-| 2026-07-16 | 0053-F1 | `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidence.txt` | This slice | Contracts only |
+| 2026-07-16 | 0053-F1 | `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidence.txt` | A ready for F2 | Contracts only |
+| 2026-07-16 | 0053-F2 | `~/Desktop/CareerKundi_0053_F2_Evidence_Domain_Skeleton_Evidence.txt` | This slice | No upload/routes |
 
 ---
 
@@ -60,8 +62,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-16 | POST-CLAUDE-R2 | `3d7cc7d1` | Pushed | Tracker sync |
-| 2026-07-16 | 0053-F1 | This commit | Push with this slice | Claim create contracts |
+| 2026-07-16 | 0053-F1 | `9e221bac` | Pushed | Claim create contracts |
+| 2026-07-16 | 0053-F2 | This commit | Push with this slice | Evidence skeleton |
 
 ---
 
@@ -69,17 +71,17 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Decision | Impact | Status |
 |---|---|---|---|
-| 2026-07-16 | 0053-F1 create = unverified only | Blocks pre-workflow verified claims | Implemented |
-| 2026-07-16 | F1 bans evidence_backed create | Blocks evidence-like support before EvidenceRecord | Implemented |
-| 2026-07-16 | Source/snapshot ≠ verification | Display + contract rules | Implemented |
+| 2026-07-16 | Evidence = private metadata only in F2 | No bytes/upload/download | Implemented |
+| 2026-07-16 | ClaimEvidenceLink does not mutate claim axes | No silent evidence_backed/verified | Implemented |
+| 2026-07-16 | No public privacy_class | private/sensitive/restricted only | Implemented |
 
 ---
 
 ## 7. Active Blockers
 
-None for accepting F1.
+None for accepting F2.
 
-**Do not start in F2 prematurely:** public sharing, verification UI, Passport evidence panels, wallet/DID/blockchain.
+**Do not start in F3 prematurely:** public sharing, verification UI, Passport evidence panels, wallet/DID/blockchain.
 
 **Watch:** pre-existing local `documents/` dirt — never stage.
 
@@ -89,12 +91,12 @@ None for accepting F1.
 
 | Field | Value |
 |---|---|
-| Next | **0053-F2 Evidence Domain Skeleton** (only after F1 accepted) |
-| Reason | Claim create contracts locked; safe to sketch evidence domain |
-| Do not start | Evidence upload UI, verification reviews, public routes, Passport mutation |
+| Next | **0053-F3 Private Evidence Service/API Boundary** (only after F2 accepted) |
+| Reason | Evidence metadata + claim links exist; still no HTTP/upload |
+| Do not start | Upload UI, verification reviews, public routes, Passport mutation |
 | Plan | `docs/product/careerkundi_0053_claims_evidence_plan.md` |
-| Evidence | `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidence.txt` |
+| Evidence | `~/Desktop/CareerKundi_0053_F2_Evidence_Domain_Skeleton_Evidence.txt` |
 
 ---
 
-*Tracker updated: 2026-07-16 — 0053-F1*
+*Tracker updated: 2026-07-16 — 0053-F2*

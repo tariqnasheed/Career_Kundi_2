@@ -14,6 +14,7 @@ from app.db.models.career_subject import CareerSubject
 from app.db.models.chat import ChatMessage, ChatSession
 from app.db.models.claim import ClaimRecord
 from app.db.models.cv import GeneratedCV
+from app.db.models.evidence import ClaimEvidenceLink, EvidenceRecord
 from app.db.models.geo import (
     GeoArea,
     JurisdictionArea,
@@ -84,6 +85,8 @@ __all__ = [
     "JobApplication",
     "CareerSubject",
     "ClaimRecord",
+    "EvidenceRecord",
+    "ClaimEvidenceLink",
     "SourceRecord",
     "SourceSnapshot",
     "GeoArea",
