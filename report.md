@@ -147,6 +147,16 @@ Hardens private review-request create path before any reviewer workflow:
 
 Evidence: `~/Desktop/CareerKundi_0053_F12_Review_Intake_Hardening_Evidence.txt`
 
+## 0053-F13 Evidence Attachment Safety / Malware Scan Planning (2026-07-17)
+
+Makes the malware-scan gap explicit without implementing a scanner:
+
+- `AttachmentSafetyStatus` + derived API fields (`scan_not_available`)
+- Evidence Library + Passport warnings: not malware-scanned, parsed, reviewed, or verified
+- No scan engine, parsing/OCR, LLM review, or DB migration
+
+Evidence: `~/Desktop/CareerKundi_0053_F13_Attachment_Safety_Planning_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the

@@ -77,6 +77,15 @@ def test_no_frontend_verify_or_approve_surfaces() -> None:
         assert "Reject" not in text
 
 
+def test_review_request_does_not_claim_attachment_scanned() -> None:
+    routes = (ROUTES / "review_requests.py").read_text(encoding="utf-8").lower()
+    service = (VERIFICATION_PKG / "service.py").read_text(encoding="utf-8").lower()
+    for blob in (routes, service):
+        assert "scan_passed" not in blob
+        assert "malware scan complete" not in blob
+        assert "attachment scanned" not in blob
+
+
 def test_no_llm_or_ocr_in_f10_service_and_routes() -> None:
     targets = [
         VERIFICATION_PKG / "service.py",

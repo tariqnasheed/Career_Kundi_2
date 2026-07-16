@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F7)
+# Evidence domain (0053-F2 … F13)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -14,6 +14,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F7 | Evidence Library private claim selector + linking UI |
 | F8 | Passport read-only evidence awareness summary |
 | F9 | Review/verification contracts live in `app.platform.verification` (not applied here) |
+| F13 | Attachment safety states/warnings only (`attachment_safety.py`); default `scan_not_available` |
 
 Hard rules across all slices:
 
@@ -21,6 +22,7 @@ Hard rules across all slices:
 - Upload / link is **not** verification. Wording remains “Not independently verified”.
 - No public sharing, permanent public URLs, signed public URLs, wallet/DID/blockchain/VC.
 - No OCR / document parsing / LLM verification of file bytes.
+- **F13:** no malware scan engine; attachments are private but not scanned.
 - No Passport / CV / Roadmap / Job Search ownership of evidence in these slices.
 - No broad ` /api/v1/claims` route; F7 uses evidence-scoped `linkable-claims` only.
 
@@ -42,7 +44,17 @@ Hard rules across all slices:
 `/evidence` supports private attach/download (F6) and private claim linking (F7).  
 Linking does **not** verify claims. No Passport evidence panel in F7.
 
+## Attachment safety (F13)
+
+Derived response fields only (no DB column, no scanner):
+
+- `attachment_safety_status` = `scan_not_available`
+- `attachment_safety_label` = `Scan not available`
+- Warning: private attachments are stored but not malware-scanned, parsed, reviewed, or verified
+
+Future scanner requirements (not implemented): private scan queue; no public file exposure; keep size/MIME checks; no raw bytes in logs; failure/quarantine policy; deletion/retention; timeout/failure messaging.
+
 ## Foundation revision
 
 `f0009_evidence_foundation` → tables `evidence_records`, `claim_evidence_links`.  
-No new migration for F5–F7.
+No new migration for F5–F13.

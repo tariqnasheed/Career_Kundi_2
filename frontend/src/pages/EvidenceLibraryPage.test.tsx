@@ -88,6 +88,10 @@ const attachedRecord = {
   content_hash: "a".repeat(64),
   mime_type: "text/plain",
   size_bytes: 12,
+  attachment_safety_status: "scan_not_available",
+  attachment_safety_label: "Scan not available",
+  attachment_safety_warning:
+    "Private attachments are stored but not malware-scanned, parsed, reviewed, or verified in this version.",
 };
 
 const sampleClaim = {
@@ -215,6 +219,30 @@ describe("EvidenceLibraryPage F6/F7 boundary", () => {
     fireEvent.change(input, { target: { files: [file] } });
     fireEvent.click(screen.getByRole("button", { name: /Attach private file/i }));
     await waitFor(() => expect(uploadEvidenceAttachment).toHaveBeenCalledTimes(1));
+  });
+
+  it("shows attachment safety warning for attached records", async () => {
+    listEvidence.mockResolvedValue([attachedRecord]);
+    renderPage();
+    await screen.findByText("Degree scan metadata");
+    const text = document.body.textContent || "";
+    expect(text).toMatch(/Private attachment stored/i);
+    expect(text).toMatch(/Not malware-scanned/i);
+    expect(text).toMatch(/parsed, reviewed, or verified/i);
+    expect(text).toMatch(/Scan not available/i);
+    expect(
+      screen.queryByRole("button", { name: /^Scan$/i }),
+    ).toBeNull();
+    expect(
+      screen.queryByRole("button", { name: /^Parse$/i }),
+    ).toBeNull();
+    expect(screen.queryByRole("button", { name: /^OCR$/i })).toBeNull();
+    expect(
+      screen.queryByRole("button", { name: /^AI review$/i }),
+    ).toBeNull();
+    expect(
+      screen.queryByRole("button", { name: /^Verify$/i }),
+    ).toBeNull();
   });
 
   it("download control uses blob API without public URL", async () => {
@@ -379,12 +407,20 @@ describe("EvidenceLibraryPage F6/F7 boundary", () => {
       "public credential",
       "wallet",
       "blockchain",
+      "safe file",
+      "trusted file",
     ]) {
       expect(text).not.toContain(forbidden);
     }
     expect(text).not.toMatch(/\bdid\b/);
     expect(text).toContain("not independently verified");
-    const withoutSafe = text.split("not independently verified").join("");
+    const withoutSafe = text
+      .split("not independently verified")
+      .join("")
+      .split("or verified in this version")
+      .join("")
+      .split("reviewed, or verified")
+      .join("");
     expect(withoutSafe).not.toContain("verified");
   });
 });

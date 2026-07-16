@@ -47,6 +47,13 @@ class EvidenceRead(BaseModel):
     evidence_kind_label: str
     privacy_label: str
     truth_warning: str
+    # 0053-F13: derived only; no scanner / no DB column.
+    attachment_safety_status: str = "scan_not_available"
+    attachment_safety_label: str = "Scan not available"
+    attachment_safety_warning: str = (
+        "Private attachments are stored but not malware-scanned, parsed, "
+        "reviewed, or verified in this version."
+    )
     created_at: datetime
     updated_at: datetime
 
@@ -165,6 +172,13 @@ class PassportEvidenceSummaryItem(BaseModel):
     evidence_kind_label: str
     has_attachment: bool
     truth_warning: str
+    # 0053-F13: derived only; no scanner / no DB column.
+    attachment_safety_status: str = "scan_not_available"
+    attachment_safety_label: str = "Scan not available"
+    attachment_safety_warning: str = (
+        "Private attachments are stored but not malware-scanned, parsed, "
+        "reviewed, or verified in this version."
+    )
     created_at: datetime
 
 

@@ -24,6 +24,10 @@
 
 Malware scan remains deferred to a later slice.
 
+## F13 status
+
+F13 adds attachment safety states/warnings only (default `scan_not_available`). No scan engine. Intake still requires linked evidence but does not require scan pass.
+
 ## Next
 
-**0053-F13** Evidence Attachment Hardening / Malware Scan Planning — only after F12 acceptance.
+**0053-F14** Attachment Deletion/Retention or Scan Queue Skeleton — only after F13 acceptance.

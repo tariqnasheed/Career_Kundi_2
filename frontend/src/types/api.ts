@@ -1141,6 +1141,10 @@ export interface EvidenceRead {
   evidence_kind_label: string;
   privacy_label: string;
   truth_warning: string;
+  /** 0053-F13 derived; no scanner engine. */
+  attachment_safety_status?: string;
+  attachment_safety_label?: string;
+  attachment_safety_warning?: string;
   created_at: string;
   updated_at: string;
 }
@@ -1238,6 +1242,10 @@ export interface PassportEvidenceSummaryItem {
   evidence_kind_label: string;
   has_attachment: boolean;
   truth_warning: string;
+  /** 0053-F13 derived; no scanner engine. */
+  attachment_safety_status?: string;
+  attachment_safety_label?: string;
+  attachment_safety_warning?: string;
   created_at: string;
 }
 

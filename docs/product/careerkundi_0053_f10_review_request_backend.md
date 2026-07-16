@@ -26,4 +26,4 @@ F11 adds Passport private review request/cancel UI. F12 hardens create intake: l
 
 ## Next
 
-**0053-F13** Evidence Attachment Hardening / Malware Scan Planning — only after F12 acceptance.
+**0053-F14** Attachment Deletion/Retention or Scan Queue Skeleton — only after F13 acceptance.

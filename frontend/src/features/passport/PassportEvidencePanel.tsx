@@ -127,6 +127,10 @@ function ClaimReviewControls({
         Request intake requires linked private evidence. A request is not
         verification.
       </p>
+      <p className={styles.targetMeta}>
+        Linked evidence is required for intake, but file attachment safety
+        review is not enabled yet.
+      </p>
 
       {active && (
         <>
@@ -295,9 +299,15 @@ export default function PassportEvidencePanel() {
                     <p className={styles.targetMeta}>
                       Attachment:{" "}
                       {item.has_attachment
-                        ? "Private file attached"
+                        ? "Private file attached — scan not available"
                         : "No file attached"}
                     </p>
+                    {item.has_attachment && (
+                      <p className={styles.targetTruth}>
+                        {item.attachment_safety_warning ||
+                          "Attached files are not malware-scanned or reviewed in this version."}
+                      </p>
+                    )}
                     <div className={styles.evidenceBadges}>
                       <Badge color="default" size="sm">
                         {item.claim_support_label}

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import asyncio
 import uuid
+from pathlib import Path
 
 import pytest
 from sqlalchemy import create_engine, select, text
@@ -269,3 +270,13 @@ def test_normalize_helpers_unit() -> None:
     assert normalize_cancellation_reason(None) is None
     assert normalize_review_request_note("a" * 1000) == "a" * 1000
     assert normalize_cancellation_reason("b" * 500) == "b" * 500
+
+
+def test_intake_does_not_require_scan_pass() -> None:
+    """F13: linked evidence is enough; no scan_passed gate."""
+    from app.platform.verification import service as svc
+
+    source = Path(svc.__file__).read_text(encoding="utf-8")
+    assert "scan_passed" not in source
+    assert "AttachmentSafetyStatus" not in source
+    assert "linked private evidence" in source.lower()

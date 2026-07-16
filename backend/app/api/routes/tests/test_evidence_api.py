@@ -76,11 +76,18 @@ def _assert_safe_wording(payload: object) -> None:
         "public credential",
         "wallet",
         "blockchain",
+        "verified document",
+        "verified credential",
     ):
         assert forbidden not in text_blob
-    # Bare "verified" only allowed inside the safe phrase.
-    if "verified" in text_blob:
-        assert "not independently verified" in text_blob
+    # Bare "verified" only allowed inside safe negation phrases (F13 attachment warning included).
+    scrubbed = (
+        text_blob.replace("not independently verified", "")
+        .replace("or verified in this version", "")
+        .replace("reviewed, or verified", "")
+        .replace("unverified", "")
+    )
+    assert "verified" not in scrubbed
 
 
 def test_no_upload_download_or_public_routes() -> None:

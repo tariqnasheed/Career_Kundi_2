@@ -612,6 +612,18 @@ export default function EvidenceLibraryPage() {
                           : ""}
                         {hasAttachment(row) ? " · Private attachment" : ""}
                       </div>
+                      {hasAttachment(row) && (
+                        <div
+                          style={{
+                            fontSize: "0.75rem",
+                            color: "var(--text-muted)",
+                            marginTop: 6,
+                          }}
+                        >
+                          Private attachment stored. Not malware-scanned,
+                          parsed, reviewed, or verified.
+                        </div>
+                      )}
                       <div
                         style={{
                           fontSize: "0.75rem",
@@ -788,6 +800,16 @@ export default function EvidenceLibraryPage() {
                       >
                         Attached file stored privately. Replacement is not
                         enabled yet.
+                      </p>
+                      <p
+                        style={{
+                          margin: 0,
+                          fontSize: "0.8rem",
+                          color: "var(--text-muted)",
+                        }}
+                      >
+                        Private attachment stored. Not malware-scanned, parsed,
+                        reviewed, or verified.
                       </p>
                       <Button
                         type="button"
@@ -1011,8 +1033,10 @@ export default function EvidenceLibraryPage() {
         <CardContent>
           <p style={{ color: "var(--text-secondary)", lineHeight: 1.55 }}>
             Private attachment storage is enabled for owner-only upload and
-            download. Malware scanning, OCR, document parsing, public sharing,
-            and verification workflows are not enabled yet.
+            download. Private attachments are stored but not malware-scanned,
+            parsed, reviewed, or verified in this version. OCR, public sharing,
+            and verification workflows are not enabled yet. Scan status: Scan
+            not available.
           </p>
         </CardContent>
       </Card>

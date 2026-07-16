@@ -456,9 +456,21 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F13 evidence attachment hardening / malware scan planning  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F12_Review_Intake_Hardening_Evidence.txt`
 
-### 0053-F13 Evidence Attachment Hardening / Malware Scan Planning
-- **Purpose:** Plan/harden attachment safety (incl. malware scan planning) after F12  
-- **Allowed:** only after F12 acceptance; bounded attachment hardening / planning  
+### 0053-F13 Evidence Attachment Safety / Malware Scan Planning
+- **Status:** Implemented (`attachment_safety.py` + derived API fields + Evidence/Passport warnings)  
+- **Purpose:** Make malware-scan gap explicit and safe before any reviewer workflow  
+- **Allowed:** domain safety states/labels/warning; derived response fields; FE warnings; tests/docs  
+- **Forbidden:** scan engine; ClamAV/VirusTotal; quarantine storage; parsing/OCR/LLM review; DB migration; approve/reject; claim mutation; public sharing  
+- **Hard rule:** uploaded attachment is not scanned, not reviewed, and not verified in F13  
+- **Tests:** attachment safety contracts + evidence/passport/review regressions + FE vitest  
+- **Browser:** `/evidence` + `/passport` warnings + page smoke (uvicorn badge-seed watch remains)  
+- **Gate:** no scanner; default `scan_not_available`; review intake still does not require scan pass  
+- **Deferred:** F14 attachment deletion/retention or scan queue skeleton  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F13_Attachment_Safety_Planning_Evidence.txt`
+
+### 0053-F14 Attachment Deletion/Retention or Scan Queue Skeleton
+- **Purpose:** Deletion/retention controls and/or private scan queue skeleton after F13  
+- **Allowed:** only after F13 acceptance; bounded scope  
 - **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles unless separately approved  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 

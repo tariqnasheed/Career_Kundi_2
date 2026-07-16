@@ -75,10 +75,16 @@ def _assert_safe_wording(payload: object) -> None:
         "wallet",
         "blockchain",
         "public credential",
+        "verified document",
+        "verified credential",
     ):
         assert forbidden not in text_blob
-    if "verified" in text_blob:
-        assert "not independently verified" in text_blob
+    scrubbed = (
+        text_blob.replace("not independently verified", "")
+        .replace("or verified in this version", "")
+        .replace("reviewed, or verified", "")
+    )
+    assert "verified" not in scrubbed
 
 
 def test_no_public_url_or_share_routes() -> None:
@@ -91,6 +97,10 @@ def test_no_public_url_or_share_routes() -> None:
         assert "/share" not in lower
         assert "/public" not in lower
         assert "signed" not in lower
+        assert "/scan" not in lower
+        assert "/parse" not in lower
+        assert "/ocr" not in lower
+        assert "/ai-review" not in lower
 
 
 def test_no_frontend_upload_ui_or_feature_domain_changes() -> None:
@@ -291,6 +301,10 @@ def test_evidence_attachment_upload_download_guards(tmp_path: Path) -> None:
                 assert "private metadata" in warning
                 assert "not independent review" in warning
                 assert body["has_attachment"] is True
+                assert body["attachment_safety_status"] == "scan_not_available"
+                assert body["attachment_safety_label"] == "Scan not available"
+                assert "not malware-scanned" in body["attachment_safety_warning"].lower()
+                assert "parsed" in body["attachment_safety_warning"].lower()
                 assert body["mime_type"] == "text/plain"
                 assert body["size_bytes"] == len(payload)
                 assert body["content_hash"] == hashlib.sha256(payload).hexdigest()

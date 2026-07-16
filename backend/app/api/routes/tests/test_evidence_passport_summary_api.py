@@ -75,8 +75,19 @@ def _assert_safe_wording(payload: object) -> None:
         "verified passport",
     ):
         assert forbidden not in text_blob
-    if "verified" in text_blob:
-        assert "not independently verified" in text_blob
+    scrubbed = (
+        text_blob.replace("not independently verified", "")
+        .replace("or verified in this version", "")
+        .replace("reviewed, or verified", "")
+        .replace("does not verify", "")
+        .replace("is not verification", "")
+        .replace("not verification", "")
+        .replace("'unverified'", "")
+        .replace('"unverified"', "")
+        .replace("unverified", "")
+    )
+    assert "verified" not in scrubbed
+    assert "verify" not in scrubbed
 
 
 def test_no_claims_or_passport_mutation_routes_for_f8() -> None:
@@ -243,6 +254,12 @@ def test_evidence_passport_summary_api_guards() -> None:
                 assert (
                     "not independently verified"
                     in item["claim_verification_label"].lower()
+                )
+                assert item["attachment_safety_status"] == "scan_not_available"
+                assert item["attachment_safety_label"] == "Scan not available"
+                assert (
+                    "not malware-scanned"
+                    in item["attachment_safety_warning"].lower()
                 )
                 assert "not independently verified" in data["truth_warning"].lower()
                 assert str(claim_b_id) not in str(body)

@@ -28,6 +28,7 @@ from app.platform.claims.display import (
     support_status_label,
     verification_status_label,
 )
+from app.platform.evidence.attachment_safety import attachment_safety_fields
 from app.platform.evidence.display import (
     claim_evidence_link_role_label,
     evidence_kind_label,
@@ -96,6 +97,7 @@ def _map_evidence_error(exc: EvidenceRefError) -> Exception:
 
 
 def _evidence_read(row: EvidenceRecord) -> EvidenceRead:
+    safety = attachment_safety_fields()
     return EvidenceRead(
         id=row.id,
         subject_id=row.subject_id,
@@ -112,6 +114,9 @@ def _evidence_read(row: EvidenceRecord) -> EvidenceRead:
         evidence_kind_label=evidence_kind_label(row.evidence_kind),
         privacy_label=evidence_privacy_label(row.privacy_class),
         truth_warning=evidence_truth_warning(),
+        attachment_safety_status=safety["attachment_safety_status"],
+        attachment_safety_label=safety["attachment_safety_label"],
+        attachment_safety_warning=safety["attachment_safety_warning"],
         created_at=row.created_at,
         updated_at=row.updated_at,
     )
@@ -203,6 +208,7 @@ def _passport_summary_item(
     claim: ClaimRecord,
     evidence: EvidenceRecord,
 ) -> PassportEvidenceSummaryItem:
+    safety = attachment_safety_fields()
     return PassportEvidenceSummaryItem(
         claim_id=claim.id,
         subject_id=claim.subject_id,
@@ -220,6 +226,9 @@ def _passport_summary_item(
         evidence_kind_label=evidence_kind_label(evidence.evidence_kind),
         has_attachment=bool(evidence.storage_uri),
         truth_warning=claim_truth_warning(),
+        attachment_safety_status=safety["attachment_safety_status"],
+        attachment_safety_label=safety["attachment_safety_label"],
+        attachment_safety_warning=safety["attachment_safety_warning"],
         created_at=link.created_at,
     )
 

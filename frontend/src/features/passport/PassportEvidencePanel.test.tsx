@@ -60,6 +60,10 @@ const linkedSummary: PassportEvidenceSummaryRead = {
       has_attachment: true,
       truth_warning:
         "A source or snapshot link is not verification. This claim is private and not independently verified.",
+      attachment_safety_status: "scan_not_available",
+      attachment_safety_label: "Scan not available",
+      attachment_safety_warning:
+        "Private attachments are stored but not malware-scanned, parsed, reviewed, or verified in this version.",
       created_at: "2026-07-16T00:00:00Z",
     },
   ],
@@ -126,7 +130,12 @@ function assertSafeTrustWording(text: string) {
     .replace(/is not verification/g, "")
     .replace(/a review request is not verification/g, "")
     .replace(/a request is not verification/g, "")
-    .replace(/request intake requires linked private evidence/g, "");
+    .replace(/request intake requires linked private evidence/g, "")
+    .replace(/not malware-scanned/g, "")
+    .replace(/not malware-scanned or reviewed/g, "")
+    .replace(/or verified in this version/g, "")
+    .replace(/file attachment safety review is not enabled yet/g, "")
+    .replace(/scan not available/g, "");
   for (const forbidden of [
     "official",
     "trusted",
@@ -176,6 +185,11 @@ describe("PassportEvidencePanel", () => {
       /Request intake requires linked private evidence/i,
     );
     expect(pageText()).toMatch(/A request is not verification/i);
+    expect(pageText()).toMatch(
+      /file attachment safety review is not enabled yet/i,
+    );
+    expect(pageText()).toMatch(/Private file attached — scan not available/i);
+    expect(pageText()).toMatch(/not malware-scanned/i);
   });
 
   it("maps backend linked-evidence error to safe alert", async () => {
@@ -296,7 +310,7 @@ describe("PassportEvidencePanel", () => {
     assertSafeTrustWording(pageText());
   });
 
-  it("forbids verify/approve/reject/share/upload/download controls", async () => {
+  it("forbids verify/approve/reject/share/upload/download/scan controls", async () => {
     getEvidencePassportSummary.mockResolvedValue(linkedSummary);
     listReviewRequests.mockResolvedValue([requestedReview]);
     renderPanel();
@@ -310,6 +324,10 @@ describe("PassportEvidencePanel", () => {
       /share/i,
       /download/i,
       /upload/i,
+      /^scan$/i,
+      /parse/i,
+      /ocr/i,
+      /ai review/i,
     ]) {
       expect(screen.queryByRole("button", { name })).toBeNull();
     }

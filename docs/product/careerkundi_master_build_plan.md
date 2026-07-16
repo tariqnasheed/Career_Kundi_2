@@ -5611,12 +5611,19 @@ Doc: `docs/product/careerkundi_0053_f11_review_request_ui.md`.
 
 ## 0053-F12 Review Intake Hardening
 
-**Status:** Completing in this commit. Create requires owned claim + linked private evidence; note/reason trim and length bounds; Passport intake copy/errors; **no** approve/reject, claim mutation, malware scan, OCR, or verification outcome. Review request ≠ verification.
+**Status:** Done (`e1b86413`). Create requires owned claim + linked private evidence; note/reason trim and length bounds; Passport intake copy/errors; **no** approve/reject, claim mutation, malware scan, OCR, or verification outcome. Review request ≠ verification.
 
 Evidence: `~/Desktop/CareerKundi_0053_F12_Review_Intake_Hardening_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f12_review_intake_hardening.md`.
 
-**Next after F12 acceptance:** 0053-F13 only (Evidence Attachment Hardening / Malware Scan Planning).
+## 0053-F13 Evidence Attachment Safety / Malware Scan Planning
+
+**Status:** Completing in this commit. Pure attachment safety states + derived API/FE warnings; default `scan_not_available`; **no** scan engine, parsing/OCR, LLM review, DB migration, or verification outcome.
+
+Evidence: `~/Desktop/CareerKundi_0053_F13_Attachment_Safety_Planning_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f13_attachment_safety_planning.md`.
+
+**Next after F13 acceptance:** 0053-F14 only (Attachment Deletion/Retention or Scan Queue Skeleton).
 
 ---
 
@@ -5681,7 +5688,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F10 | Review Request Backend Skeleton |
 | 0053-F11 | Review Request UI |
 | 0053-F12 | Review Intake Hardening |
-| 0053-F13 | Evidence Attachment Hardening / Malware Scan Planning |
+| 0053-F13 | Evidence Attachment Safety / Malware Scan Planning |
+| 0053-F14 | Attachment Deletion/Retention or Scan Queue Skeleton |
 
 ### Hard no-go (until specifically approved)
 
@@ -5689,7 +5697,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F12**, then **0053-F13** only.
+**Owner acceptance of 0053-F13**, then **0053-F14** only.
 
 ---
 

@@ -210,6 +210,13 @@ describe("0052-F8 Passport boundary audit", () => {
     expect(
       src.includes("Link private evidence before requesting review."),
     ).toBe(true);
+    expect(src.includes("scan not available")).toBe(true);
+    expect(src.toLowerCase().includes("malware-scanned")).toBe(true);
+    for (const phrase of ["Scan file", "Parse file", "OCR", "AI review"]) {
+      expect(src.includes(phrase), `panel must not contain ${phrase}`).toBe(
+        false,
+      );
+    }
   });
 
   it("documents that api.ts may define Passport mutation clients for /passport only", () => {
