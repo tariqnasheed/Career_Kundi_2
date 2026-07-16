@@ -23,4 +23,4 @@
 
 ## Next
 
-**0053-F16** Scan Queue Skeleton or Evidence Scanner Planning — only after F15 acceptance.
+**0053-F16** Attachment Scan Queue Skeleton — accepted after this ladder; then **0053-F17** Scan Worker Planning / Quarantine Policy only.

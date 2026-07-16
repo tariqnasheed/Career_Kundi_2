@@ -5632,12 +5632,19 @@ Doc: `docs/product/careerkundi_0053_f14_attachment_deletion_retention.md`.
 
 ## 0053-F15 Runtime Badge-Seed Startup Reliability Fix
 
-**Status:** Completing in this commit. Skip-safe badge catalogue seed + lifespan timeout bound so local uvicorn/OpenAPI readiness is not blocked; **no** product feature, evidence/review/Passport, claim, scan, or LLM provider changes.
+**Status:** Completed / accepted. Skip-safe badge catalogue seed + lifespan timeout bound so local uvicorn/OpenAPI readiness is not blocked; **no** product feature, evidence/review/Passport, claim, scan, or LLM provider changes.
 
 Evidence: `~/Desktop/CareerKundi_0053_F15_Runtime_Badge_Seed_Fix_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f15_runtime_badge_seed_fix.md`.
 
-**Next after F15 acceptance:** 0053-F16 only (Scan Queue Skeleton or Evidence Scanner Planning).
+## 0053-F16 Attachment Scan Queue Skeleton
+
+**Status:** Completing in this commit. Internal `attachment_scan_jobs` queue + service helpers; **no** scanner engine, scan route/UI, OCR/parsing, LLM review, claim mutation, or public sharing. Public attachment safety remains `scan_not_available`.
+
+Evidence: `~/Desktop/CareerKundi_0053_F16_Attachment_Scan_Queue_Skeleton_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f16_scan_queue_skeleton.md`.
+
+**Next after F16 acceptance:** 0053-F17 only (Scan Worker Planning / Quarantine Policy).
 
 ---
 
@@ -5705,7 +5712,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F13 | Evidence Attachment Safety / Malware Scan Planning |
 | 0053-F14 | Private Attachment Deletion + Retention Policy |
 | 0053-F15 | Runtime Badge-Seed Startup Reliability Fix |
-| 0053-F16 | Scan Queue Skeleton or Evidence Scanner Planning |
+| 0053-F16 | Attachment Scan Queue Skeleton |
+| 0053-F17 | Scan Worker Planning / Quarantine Policy |
 
 ### Hard no-go (until specifically approved)
 
@@ -5713,7 +5721,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F15**, then **0053-F16** only.
+**Owner acceptance of 0053-F16**, then **0053-F17** only.
 
 ---
 

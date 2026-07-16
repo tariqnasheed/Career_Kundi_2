@@ -118,11 +118,20 @@ def test_no_scanner_ocr_llm_imports_or_migrations() -> None:
         for hint in ("clamav", "virustotal", "pytesseract"):
             assert hint not in text, f"{path}: {hint}"
 
-    for name in ("f0011", "f0012", "f0013"):
+    # F16 adds scan-queue skeleton migration only; no later scanner migrations yet.
+    f0011 = list(MIGRATIONS.glob("f0011*"))
+    assert f0011 == [
+        MIGRATIONS / "f0011_attachment_scan_queue.py"
+    ], f0011
+    for name in ("f0012", "f0013", "f0014"):
         matches = list(MIGRATIONS.glob(f"{name}*"))
         assert matches == [], matches
 
-    # No quarantine storage module
+    # No quarantine storage module / worker
     assert not (EVIDENCE_PKG / "quarantine.py").exists()
+    assert not (EVIDENCE_PKG / "scan_worker.py").exists()
     storage = (EVIDENCE_PKG / "storage.py").read_text(encoding="utf-8").lower()
     assert "quarantine" not in storage
+    queue_src = (EVIDENCE_PKG / "attachment_scan_queue.py").read_text(encoding="utf-8")
+    assert "clamav" not in queue_src.lower()
+    assert "virustotal" not in queue_src.lower()

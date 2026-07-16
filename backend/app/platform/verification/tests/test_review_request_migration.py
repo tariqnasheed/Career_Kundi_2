@@ -19,6 +19,7 @@ from app.db.tests.pf1_test_db import require_disposable_postgres, temporary_data
 F10_PREFIX = "ck_f2svc_"
 F0009 = "f0009_evidence_foundation"
 F0010 = "f0010_review_request_foundation"
+F0011 = "f0011_attachment_scan_queue"
 MIGRATION_FILE = (
     Path(__file__).resolve().parents[3]
     / "db"
@@ -32,8 +33,9 @@ MIGRATION_FILE = (
 def test_f0010_review_requests_table_exists() -> None:
     with temporary_database(prefix=F10_PREFIX) as (_name, url):
         result = prepare_database(url)
-        assert foundation_heads() == [F0010]
-        assert result.foundation_revisions == (F0010,)
+        # Foundation head is F16+; F10 table remains after upgrade through head.
+        assert foundation_heads() == [F0011]
+        assert result.foundation_revisions == (F0011,)
         engine = create_engine(url)
         try:
             tables = set(inspect(engine).get_table_names())
@@ -70,7 +72,7 @@ def test_f0010_downgrade_upgrade() -> None:
                 command.upgrade(cfg, "head")
             assert "review_requests" in set(inspect(engine).get_table_names())
             with engine.connect() as conn:
-                assert read_foundation_revisions(conn) == (F0010,)
+                assert read_foundation_revisions(conn) == (F0011,)
         finally:
             engine.dispose()
 

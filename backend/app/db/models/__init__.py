@@ -14,6 +14,7 @@ from app.db.models.career_subject import CareerSubject
 from app.db.models.chat import ChatMessage, ChatSession
 from app.db.models.claim import ClaimRecord
 from app.db.models.cv import GeneratedCV
+from app.db.models.attachment_scan import AttachmentScanJob
 from app.db.models.evidence import ClaimEvidenceLink, EvidenceRecord
 from app.db.models.review_request import ReviewRequest
 from app.db.models.geo import (
@@ -88,6 +89,7 @@ __all__ = [
     "ClaimRecord",
     "EvidenceRecord",
     "ClaimEvidenceLink",
+    "AttachmentScanJob",
     "ReviewRequest",
     "SourceRecord",
     "SourceSnapshot",

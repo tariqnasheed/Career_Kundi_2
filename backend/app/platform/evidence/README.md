@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F13)
+# Evidence domain (0053-F2 … F16)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -16,6 +16,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F9 | Review/verification contracts live in `app.platform.verification` (not applied here) |
 | F13 | Attachment safety states/warnings only (`attachment_safety.py`); default `scan_not_available` |
 | F14 | Owner-only private attachment deletion; metadata record retained |
+| F16 | Internal attachment scan queue skeleton (`attachment_scan_jobs`); no scanner/UI |
 
 Hard rules across all slices:
 
@@ -63,7 +64,16 @@ Derived response fields only (no DB column, no scanner):
 
 Future retention requirements (not fully implemented): audit-safe event logging later (no raw file contents); retention windows later; orphaned-file cleanup later; backup deletion policy later; scanner quarantine/deletion later.
 
+## Scan queue skeleton (F16)
+
+- Internal service only: `attachment_scan_queue.py`
+- Table: `attachment_scan_jobs` via `f0011_attachment_scan_queue`
+- No `/scan` API route, no scanner engine, no UI controls
+- Queue job `scan_pending` is not a completed scan and not verification
+- Public response fields remain `scan_not_available` (F13)
+
 ## Foundation revision
 
 `f0009_evidence_foundation` → tables `evidence_records`, `claim_evidence_links`.  
-No new migration for F5–F14.
+`f0010_review_request_foundation` → `review_requests`.  
+`f0011_attachment_scan_queue` → `attachment_scan_jobs` (queue skeleton only).

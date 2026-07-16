@@ -25,7 +25,7 @@ from app.services.badges import seed_badge_definitions
 
 # Reuse an already-approved disposable prefix (pf1 allow-list); no new DB policy.
 F15_PREFIX = "ck_f2svc_"
-F0010 = "f0010_review_request_foundation"
+F0011 = "f0011_attachment_scan_queue"
 SERVICES_BADGES = (
     Path(__file__).resolve().parents[3] / "services" / "badges.py"
 )
@@ -42,8 +42,8 @@ def _async_url(sync_url: str) -> str:
     return sync_url
 
 
-def test_migration_head_remains_f0010() -> None:
-    assert foundation_heads() == [F0010]
+def test_migration_head_is_f0011() -> None:
+    assert foundation_heads() == [F0011]
 
 
 def test_app_openapi_builds_without_hang() -> None:
@@ -125,7 +125,7 @@ def test_lifespan_continues_when_badge_seed_times_out() -> None:
 def test_badge_seed_idempotent_and_bounded() -> None:
     with temporary_database(prefix=F15_PREFIX) as (_name, url):
         prepare_database(url)
-        assert foundation_heads() == [F0010]
+        assert foundation_heads() == [F0011]
 
         async def _run() -> None:
             engine = create_async_engine(_async_url(url), pool_pre_ping=True)

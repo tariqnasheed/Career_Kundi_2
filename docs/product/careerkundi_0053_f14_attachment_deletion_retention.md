@@ -35,4 +35,4 @@ Evidence metadata and claim links remain after attachment removal.
 
 ## Next
 
-**0053-F15** Scan Queue Skeleton or Runtime Badge-Seed Fix — only after F14 acceptance.
+**0053-F15** and **0053-F16** completed after this slice. Next after F16 acceptance: **0053-F17** Scan Worker Planning / Quarantine Policy only.

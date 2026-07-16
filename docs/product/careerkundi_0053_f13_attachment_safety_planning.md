@@ -36,6 +36,9 @@ Review request remains not verification. Linked evidence is still required for i
 - Scanner timeout / failure behavior
 - User-safe messaging only
 
-## Next
+## Later slices
 
-**0053-F14** Private Attachment Deletion + Retention Policy — accepted after this ladder; then **0053-F15** Scan Queue Skeleton or Runtime Badge-Seed Fix only.
+- **F14** Private attachment deletion + retention — accepted
+- **F15** Runtime badge-seed startup reliability — accepted
+- **F16** Attachment scan queue skeleton — accepted (queue only; still no scanner)
+- **Next after F16:** **0053-F17** Scan Worker Planning / Quarantine Policy only

@@ -492,9 +492,21 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F16 scan queue skeleton / evidence scanner planning  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F15_Runtime_Badge_Seed_Fix_Evidence.txt`
 
-### 0053-F16 Scan Queue Skeleton or Evidence Scanner Planning
-- **Purpose:** Private scan queue skeleton and/or evidence scanner planning after F15  
-- **Allowed:** only after F15 acceptance; bounded scope  
+### 0053-F16 Attachment Scan Queue Skeleton
+- **Status:** Implemented (`attachment_scan_jobs` + internal `attachment_scan_queue.py`)  
+- **Purpose:** DB-backed private scan queue foundation before any scanner engine  
+- **Allowed:** model/migration `f0011_attachment_scan_queue`; enqueue/list/get/cancel helpers; tests/docs  
+- **Forbidden:** scan worker/engine; ClamAV/VirusTotal; quarantine; parsing/OCR/LLM review; scan API route; scan UI; claim/evidence/review mutation; public sharing  
+- **Hard rule:** a queued scan job is not a completed scan and is not verification; public safety remains `scan_not_available`  
+- **Tests:** scan queue + migration + attachment safety + evidence/review/claims/badge regressions  
+- **Browser:** no scan controls; OpenAPI has no `/scan` route  
+- **Gate:** foundation head `f0011_attachment_scan_queue`; no scanner imports  
+- **Deferred:** F17 scan worker planning / quarantine policy  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F16_Attachment_Scan_Queue_Skeleton_Evidence.txt`
+
+### 0053-F17 Scan Worker Planning / Quarantine Policy
+- **Purpose:** Worker/timeout/quarantine/failure policy planning or bounded implementation after F16  
+- **Allowed:** only after F16 acceptance; bounded scope  
 - **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles unless separately approved  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 

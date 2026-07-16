@@ -184,6 +184,19 @@ Evidence: `~/Desktop/CareerKundi_0053_F15_Runtime_Badge_Seed_Fix_Evidence.txt`
 
 ---
 
+## 0053-F16 Attachment Scan Queue Skeleton (2026-07-17)
+
+Adds a private attachment scan queue foundation without a scanner:
+
+- `attachment_scan_jobs` via `f0011_attachment_scan_queue`
+- Internal enqueue/list/get/cancel helpers only
+- No scan route/UI, no engine, no OCR/LLM review, no claim mutation
+- Public safety fields remain `scan_not_available`
+
+Evidence: `~/Desktop/CareerKundi_0053_F16_Attachment_Scan_Queue_Skeleton_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.
