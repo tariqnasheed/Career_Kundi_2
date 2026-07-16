@@ -384,25 +384,28 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F7 linking / Passport evidence read; malware scan  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F6_Evidence_Upload_UI_Evidence.txt`
 
-### 0053-F4b Passport Evidence Read UI (later ladder step / F7 candidate)
-- **Purpose:** Read-only Passport panel for evidence-linked states  
-- **Allowed:** passport frontend read panel  
-- **Forbidden:** mutation of verification; “Verified Passport”  
-- **Tests:** FE + boundary audit  
+### 0053-F7 Evidence-to-Claim Linking UI
+- **Status:** Implemented (`GET /evidence/linkable-claims`, `GET /evidence/{id}/links`, Evidence Library claim selector)  
+- **Purpose:** Link private evidence to current-user claims without verification overclaim  
+- **Allowed:** evidence-scoped claim selector; supports/contests/context; existing links display; safe wording  
+- **Forbidden:** `/api/v1/claims`, claim creation UI, claim axis auto-upgrade, Passport evidence panel, public sharing, OCR, LLM verification  
+- **Hard rule:** linking ≠ verified; support_status / verification_status unchanged  
+- **Tests:** linking API + EvidenceLibraryPage vitest + evidence/claims regression  
+- **Browser:** `/evidence` + page smoke (uvicorn badge-seed timeout remains a watch item)  
+- **Gate:** current-user ownership; cross-user 404  
+- **Deferred:** F8 Passport read-only evidence panel; review workflow  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F7_Evidence_To_Claim_Linking_UI_Evidence.txt`
+
+### 0053-F8 Passport Read-Only Evidence Panel (or Review/Verification State Machine)
+- **Purpose:** Read-only Passport panel for evidence-linked states and/or explicit review outcomes  
+- **Allowed:** passport frontend read panel; later verification module if chosen  
+- **Forbidden:** mutation of verification without policy; “Verified Passport”; public profiles  
+- **Tests:** FE + boundary audit / state machine  
 - **Browser:** required  
 - **Gate:** Private/Not independently verified preserved  
-- **Deferred:** uploads in Passport  
+- **Deferred:** uploads in Passport; employer portals  
 
-### 0053-F7 Evidence-to-Claim Linking UI or Passport Read-Only Evidence Panel
-- **Purpose:** Safe claim linking UI and/or Passport read-only evidence awareness  
-- **Allowed:** link affordances with owned claim selection; read-only Passport evidence panel  
-- **Forbidden:** auto-verify; public sharing; Subject picker expansion without approval  
-- **Tests:** ownership + wording  
-- **Browser:** required  
-- **Gate:** Passport remains private/unverified by default  
-- **Deferred:** review workflow  
-
-### 0053-F8 Review and Verification State Machine
+### 0053-F8b Review and Verification State Machine (if not combined into F8)
 - **Purpose:** Explicit review outcomes (`under_review` → issuer/CK verified/rejected)  
 - **Allowed:** verification module + restricted UI  
 - **Forbidden:** self-serve “Verified by CareerKundi” without policy; public profiles  

@@ -5572,11 +5572,17 @@ Evidence: `~/Desktop/CareerKundi_0053_F5_Attachment_Storage_Backend_Evidence.txt
 
 ## 0053-F6 Evidence Upload UI
 
-**Status:** Completing in this commit. Evidence Library private attach/download UI against F5 APIs; client size/MIME guards; authenticated blob download; **no** public URL, verification, OCR, Passport/CV/Roadmap/Jobs integrations, or backend storage changes.
+**Status:** Done (`671b6878`). Evidence Library private attach/download UI against F5 APIs; client size/MIME guards; authenticated blob download; **no** public URL, verification, OCR, Passport/CV/Roadmap/Jobs integrations, or backend storage changes.
 
 Evidence: `~/Desktop/CareerKundi_0053_F6_Evidence_Upload_UI_Evidence.txt`.
 
-**Next after F6 acceptance:** 0053-F7 only (linking UI or Passport read-only evidence panel).
+## 0053-F7 Evidence-to-Claim Linking UI
+
+**Status:** Completing in this commit. Evidence-scoped `GET /linkable-claims` + Evidence Library claim selector/link UI; link does **not** mutate claim axes or verify claims; **no** Passport evidence panel, claim creation UI, public sharing, or `/api/v1/claims`.
+
+Evidence: `~/Desktop/CareerKundi_0053_F7_Evidence_To_Claim_Linking_UI_Evidence.txt`.
+
+**Next after F7 acceptance:** 0053-F8 only (Passport read-only evidence panel or review/verification state machine).
 
 ---
 
@@ -5635,7 +5641,7 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F4 | Private Evidence Library UI + Storage Decision |
 | 0053-F5 | Attachment Storage Backend |
 | 0053-F6 | Evidence Upload UI |
-| 0053-F7 | Review and Verification State Machine |
+| 0053-F7 | Evidence-to-Claim Linking UI |
 | 0053-F8 | CV/Roadmap Evidence Awareness |
 | 0053-F9 | Hardening, Privacy, Deletion and Final Regression |
 
@@ -5645,7 +5651,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F6**, then **0053-F7** only.
+**Owner acceptance of 0053-F7**, then **0053-F8** only.
 
 ---
 

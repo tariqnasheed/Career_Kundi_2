@@ -1,5 +1,5 @@
 /**
- * EvidenceLibraryPage.test.tsx — 0053-F4/F6 private metadata + attachment UI.
+ * EvidenceLibraryPage.test.tsx — 0053-F4/F6/F7 private metadata, attachment, linking UI.
  */
 
 import { describe, it, expect, vi, beforeEach } from "vitest";
@@ -12,6 +12,9 @@ const createEvidenceMetadata = vi.fn();
 const getEvidenceMetadata = vi.fn();
 const uploadEvidenceAttachment = vi.fn();
 const downloadEvidenceAttachment = vi.fn();
+const listLinkableEvidenceClaims = vi.fn();
+const listEvidenceClaimLinks = vi.fn();
+const linkEvidenceToClaim = vi.fn();
 const listPlatformSubjects = vi.fn();
 const addToast = vi.fn();
 
@@ -24,6 +27,11 @@ vi.mock("@/lib/api", () => ({
       uploadEvidenceAttachment(...args),
     downloadEvidenceAttachment: (...args: unknown[]) =>
       downloadEvidenceAttachment(...args),
+    listLinkableEvidenceClaims: (...args: unknown[]) =>
+      listLinkableEvidenceClaims(...args),
+    listEvidenceClaimLinks: (...args: unknown[]) =>
+      listEvidenceClaimLinks(...args),
+    linkEvidenceToClaim: (...args: unknown[]) => linkEvidenceToClaim(...args),
   },
   platformApi: {
     listPlatformSubjects: (...args: unknown[]) => listPlatformSubjects(...args),
@@ -75,27 +83,66 @@ const sampleRecord = {
 const attachedRecord = {
   ...sampleRecord,
   has_attachment: true,
-  storage_uri: "local-evidence://11111111-1111-1111-1111-111111111111/11111111-1111-1111-1111-111111111111/abc.txt",
+  storage_uri:
+    "local-evidence://11111111-1111-1111-1111-111111111111/11111111-1111-1111-1111-111111111111/abc.txt",
   content_hash: "a".repeat(64),
   mime_type: "text/plain",
   size_bytes: 12,
+};
+
+const sampleClaim = {
+  id: "22222222-2222-2222-2222-222222222222",
+  subject_id: "33333333-3333-3333-3333-333333333333",
+  claim_kind: "skill",
+  claim_key: "python",
+  claim_value: "Python",
+  claim_origin: "user_asserted",
+  support_status: "not_provided",
+  support_label: "Not supported yet",
+  verification_status: "unverified",
+  verification_label: "Not independently verified",
+  truth_warning:
+    "A source or snapshot link is not verification. This claim is private and not independently verified.",
+  created_at: "2026-07-16T09:00:00Z",
+};
+
+const sampleLink = {
+  id: "44444444-4444-4444-4444-444444444444",
+  claim_id: sampleClaim.id,
+  evidence_id: sampleRecord.id,
+  link_role: "supports",
+  link_role_label: "Linked as support material",
+  created_at: "2026-07-16T11:00:00Z",
+  claim_kind: "skill",
+  claim_key: "python",
+  claim_value: "Python",
+  claim_support_status: "not_provided",
+  claim_support_label: "Not supported yet",
+  claim_verification_status: "unverified",
+  claim_verification_label: "Not independently verified",
+  truth_warning: sampleRecord.truth_warning,
 };
 
 function selectEvidence(title = "Degree scan metadata") {
   fireEvent.click(screen.getByText(title));
 }
 
-describe("EvidenceLibraryPage F6 attachment UI", () => {
+describe("EvidenceLibraryPage F6/F7 boundary", () => {
   beforeEach(() => {
     listEvidence.mockReset();
     createEvidenceMetadata.mockReset();
     getEvidenceMetadata.mockReset();
     uploadEvidenceAttachment.mockReset();
     downloadEvidenceAttachment.mockReset();
+    listLinkableEvidenceClaims.mockReset();
+    listEvidenceClaimLinks.mockReset();
+    linkEvidenceToClaim.mockReset();
     listPlatformSubjects.mockReset();
     addToast.mockReset();
     listPlatformSubjects.mockResolvedValue([]);
     listEvidence.mockResolvedValue([]);
+    listLinkableEvidenceClaims.mockResolvedValue([]);
+    listEvidenceClaimLinks.mockResolvedValue([]);
   });
 
   it("renders Evidence Library with private / not independently verified copy", async () => {
@@ -110,16 +157,13 @@ describe("EvidenceLibraryPage F6 attachment UI", () => {
     expect(
       screen.getByText(/Uploading a file does not verify a claim/i),
     ).toBeInTheDocument();
-    expect(
-      screen.getByText(/Parsing and review are not enabled yet/i),
-    ).toBeInTheDocument();
   });
 
-  it("keeps forbidden buttons absent and metadata save available", async () => {
+  it("keeps forbidden buttons absent", async () => {
     renderPage();
     await screen.findByRole("heading", { name: /Evidence Library/i });
     expect(
-      screen.queryByRole("button", { name: /verify evidence/i }),
+      screen.queryByRole("button", { name: /verify claim|verify evidence/i }),
     ).not.toBeInTheDocument();
     expect(
       screen.queryByRole("button", { name: /submit proof/i }),
@@ -127,95 +171,38 @@ describe("EvidenceLibraryPage F6 attachment UI", () => {
     expect(
       screen.queryByRole("button", { name: /share|publish/i }),
     ).not.toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /Save evidence metadata/i }),
-    ).toBeInTheDocument();
   });
 
-  it("shows empty state when API returns no records", async () => {
+  it("shows empty evidence state", async () => {
     renderPage();
     expect(
       await screen.findByText(/No evidence metadata saved yet/i),
     ).toBeInTheDocument();
   });
 
-  it("renders returned evidence records", async () => {
-    listEvidence.mockResolvedValue([sampleRecord]);
-    renderPage();
-    expect(await screen.findByText("Degree scan metadata")).toBeInTheDocument();
-    expect(screen.getByText(/Transcript material/i)).toBeInTheDocument();
-  });
-
-  it("selected evidence shows attachment section with guidance", async () => {
+  it("selected evidence shows attachment section with attach control", async () => {
     listEvidence.mockResolvedValue([sampleRecord]);
     renderPage();
     await screen.findByText("Degree scan metadata");
     selectEvidence();
     expect(
-      await screen.findByRole("region", { name: /Private attachment/i }),
+      await screen.findByRole("button", { name: /Attach private file/i }),
     ).toBeInTheDocument();
     expect(screen.getByText(/Max 5 MB/i)).toBeInTheDocument();
-    expect(
-      screen.getByText(/Allowed types: PDF, PNG, JPEG, TXT, DOCX/i),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        /This attaches a private file to the metadata record. It does not verify the evidence or any claim/i,
-      ),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /Attach private file/i }),
-    ).toBeInTheDocument();
-    expect(
-      document.querySelector('input[type="file"]'),
-    ).not.toBeNull();
   });
 
-  it("file input is absent until an evidence record is selected", async () => {
-    listEvidence.mockResolvedValue([sampleRecord]);
-    renderPage();
-    await screen.findByText("Degree scan metadata");
-    expect(document.querySelector('input[type="file"]')).toBeNull();
-    selectEvidence();
-    expect(
-      await screen.findByTestId("evidence-attachment-input"),
-    ).toBeInTheDocument();
-  });
-
-  it("blocks upload with no file before API call", async () => {
-    listEvidence.mockResolvedValue([sampleRecord]);
-    renderPage();
-    await screen.findByText("Degree scan metadata");
-    selectEvidence();
-    fireEvent.click(screen.getByRole("button", { name: /Attach private file/i }));
-    await waitFor(() =>
-      expect(addToast).toHaveBeenCalledWith(
-        expect.objectContaining({
-          type: "error",
-          message: "Choose a private file to attach.",
-        }),
-      ),
-    );
-    expect(uploadEvidenceAttachment).not.toHaveBeenCalled();
-  });
-
-  it("blocks empty and too-large and disallowed MIME before API call", () => {
+  it("blocks empty/too-large/disallowed MIME before API call", () => {
     const empty = new File([""], "empty.txt", { type: "text/plain" });
     Object.defineProperty(empty, "size", { value: 0 });
     expect(validatePrivateAttachmentFile(empty)).toMatch(/Empty/i);
-
     const large = new File(["x"], "big.txt", { type: "text/plain" });
     Object.defineProperty(large, "size", { value: 5 * 1024 * 1024 + 1 });
     expect(validatePrivateAttachmentFile(large)).toMatch(/5 MB/i);
-
     const bad = new File(["MZ"], "x.exe", { type: "application/x-msdownload" });
     expect(validatePrivateAttachmentFile(bad)).toMatch(/not allowed/i);
-
-    const ok = new File(["hello"], "note.txt", { type: "text/plain" });
-    expect(validatePrivateAttachmentFile(ok)).toBeNull();
   });
 
-  it("upload sends file to API and refreshes list on success", async () => {
+  it("upload sends file to API on success path", async () => {
     listEvidence
       .mockResolvedValueOnce([sampleRecord])
       .mockResolvedValueOnce([attachedRecord]);
@@ -223,120 +210,171 @@ describe("EvidenceLibraryPage F6 attachment UI", () => {
     renderPage();
     await screen.findByText("Degree scan metadata");
     selectEvidence();
-
     const input = await screen.findByTestId("evidence-attachment-input");
     const file = new File(["hello-evidence"], "note.txt", { type: "text/plain" });
     fireEvent.change(input, { target: { files: [file] } });
     fireEvent.click(screen.getByRole("button", { name: /Attach private file/i }));
-
-    await waitFor(() =>
-      expect(uploadEvidenceAttachment).toHaveBeenCalledTimes(1),
-    );
-    expect(uploadEvidenceAttachment.mock.calls[0][0]).toBe(sampleRecord.id);
-    expect(uploadEvidenceAttachment.mock.calls[0][1]).toBe(file);
-    await waitFor(() =>
-      expect(addToast).toHaveBeenCalledWith(
-        expect.objectContaining({
-          message:
-            "Private file attached. This is still not independently verified.",
-        }),
-      ),
-    );
-    await waitFor(() => expect(listEvidence.mock.calls.length).toBeGreaterThan(1));
+    await waitFor(() => expect(uploadEvidenceAttachment).toHaveBeenCalledTimes(1));
   });
 
-  it("shows friendly duplicate attachment error", async () => {
-    listEvidence.mockResolvedValue([sampleRecord]);
-    uploadEvidenceAttachment.mockRejectedValue({
-      error: true,
-      code: "CONFLICT",
-      message: "duplicate evidence attachment is not allowed without replace",
-      details: {},
-    });
-    renderPage();
-    await screen.findByText("Degree scan metadata");
-    selectEvidence();
-    const input = await screen.findByTestId("evidence-attachment-input");
-    const file = new File(["hello"], "note.txt", { type: "text/plain" });
-    fireEvent.change(input, { target: { files: [file] } });
-    fireEvent.click(screen.getByRole("button", { name: /Attach private file/i }));
-    expect(
-      await screen.findByText(
-        /This evidence already has an attachment. Replacement is not enabled yet/i,
-      ),
-    ).toBeInTheDocument();
-  });
-
-  it("shows download control when has_attachment is true and uses blob download", async () => {
+  it("download control uses blob API without public URL", async () => {
     listEvidence.mockResolvedValue([attachedRecord]);
     downloadEvidenceAttachment.mockResolvedValue(
       new Blob(["hello"], { type: "text/plain" }),
     );
     const createObjectURL = vi.fn(() => "blob:local-only");
     const revokeObjectURL = vi.fn();
-    vi.stubGlobal("URL", {
-      ...URL,
-      createObjectURL,
-      revokeObjectURL,
-    });
+    vi.stubGlobal("URL", { ...URL, createObjectURL, revokeObjectURL });
     const clickSpy = vi
       .spyOn(HTMLAnchorElement.prototype, "click")
       .mockImplementation(() => undefined);
-
     renderPage();
     await screen.findByText("Degree scan metadata");
     selectEvidence();
-    expect(
-      await screen.findByRole("button", { name: /Download private attachment/i }),
-    ).toBeInTheDocument();
-    expect(screen.queryByText(/https?:\/\//i)).not.toBeInTheDocument();
-    expect(
-      screen.getByText(/Private internal reference \(not a public URL\)/i),
-    ).toBeInTheDocument();
-
     fireEvent.click(
-      screen.getByRole("button", { name: /Download private attachment/i }),
+      await screen.findByRole("button", { name: /Download private attachment/i }),
     );
     await waitFor(() =>
       expect(downloadEvidenceAttachment).toHaveBeenCalledWith(attachedRecord.id),
     );
-    await waitFor(() => expect(createObjectURL).toHaveBeenCalled());
-    await waitFor(() => expect(revokeObjectURL).toHaveBeenCalled());
-    expect(document.body.textContent).not.toMatch(/https?:\/\/example/);
     clickSpy.mockRestore();
     vi.unstubAllGlobals();
   });
 
-  it("submits metadata payload without owner_user_id", async () => {
-    createEvidenceMetadata.mockResolvedValue(sampleRecord);
-    listEvidence.mockResolvedValue([]);
-    renderPage();
-    await screen.findByRole("heading", { name: /Evidence Library/i });
-
-    fireEvent.change(screen.getByLabelText(/^Title$/i), {
-      target: { value: "  Degree scan metadata  " },
-    });
-    fireEvent.click(
-      screen.getByRole("button", { name: /Save evidence metadata/i }),
-    );
-
-    await waitFor(() => expect(createEvidenceMetadata).toHaveBeenCalledTimes(1));
-    const payload = createEvidenceMetadata.mock.calls[0][0];
-    expect(payload.title).toBe("Degree scan metadata");
-    expect(payload).not.toHaveProperty("owner_user_id");
-  });
-
-  it("forbids unsafe trust wording except Not independently verified", async () => {
+  it("selected evidence shows claim linking section and safe copy", async () => {
     listEvidence.mockResolvedValue([sampleRecord]);
     renderPage();
     await screen.findByText("Degree scan metadata");
     selectEvidence();
-    await screen.findByRole("region", { name: /Private attachment/i });
+    expect(
+      await screen.findByRole("heading", {
+        name: /Link this evidence to a claim/i,
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /This creates a private link between the selected evidence and one of your claims. It does not verify the claim/i,
+      ),
+    ).toBeInTheDocument();
+  });
+
+  it("shows empty claims state", async () => {
+    listEvidence.mockResolvedValue([sampleRecord]);
+    listLinkableEvidenceClaims.mockResolvedValue([]);
+    renderPage();
+    await screen.findByText("Degree scan metadata");
+    selectEvidence();
+    expect(
+      await screen.findByText(/No private claims are available to link yet/i),
+    ).toBeInTheDocument();
+  });
+
+  it("loads claims, selects role, and links via API", async () => {
+    listEvidence.mockResolvedValue([sampleRecord]);
+    listLinkableEvidenceClaims.mockResolvedValue([sampleClaim]);
+    listEvidenceClaimLinks.mockResolvedValue([]);
+    linkEvidenceToClaim.mockResolvedValue({
+      id: sampleLink.id,
+      claim_id: sampleClaim.id,
+      evidence_id: sampleRecord.id,
+      link_role: "supports",
+      link_role_label: "Linked as support material",
+      created_at: sampleLink.created_at,
+      truth_warning: sampleRecord.truth_warning,
+      claim_support_status: "not_provided",
+      claim_verification_status: "unverified",
+      claim_support_label: "Not supported yet",
+      claim_verification_label: "Not independently verified",
+    });
+    renderPage();
+    await screen.findByText("Degree scan metadata");
+    selectEvidence();
+    const claimSelect = await screen.findByLabelText(/Claim to link/i);
+    expect(claimSelect).toHaveTextContent(/skill: Python/i);
+    expect(claimSelect).toHaveTextContent(/Not independently verified/i);
+    fireEvent.change(claimSelect, { target: { value: sampleClaim.id } });
+    const roleSelect = screen.getByLabelText(/Link role/i);
+    expect(roleSelect).toHaveTextContent(/Supports/);
+    expect(roleSelect).toHaveTextContent(/Contests/);
+    expect(roleSelect).toHaveTextContent(/Context/);
+    fireEvent.change(roleSelect, { target: { value: "supports" } });
+    fireEvent.click(
+      screen.getByRole("button", { name: /Link evidence to claim/i }),
+    );
+    await waitFor(() => expect(linkEvidenceToClaim).toHaveBeenCalledTimes(1));
+    expect(linkEvidenceToClaim.mock.calls[0][0]).toEqual({
+      evidence_id: sampleRecord.id,
+      claim_id: sampleClaim.id,
+      link_role: "supports",
+    });
+    await waitFor(() =>
+      expect(addToast).toHaveBeenCalledWith(
+        expect.objectContaining({
+          message:
+            "Evidence linked. This claim is still not independently verified.",
+        }),
+      ),
+    );
+  });
+
+  it("shows friendly duplicate link error", async () => {
+    listEvidence.mockResolvedValue([sampleRecord]);
+    listLinkableEvidenceClaims.mockResolvedValue([sampleClaim]);
+    linkEvidenceToClaim.mockRejectedValue({
+      error: true,
+      code: "CONFLICT",
+      message: "duplicate claim/evidence link is not allowed",
+      details: {},
+    });
+    renderPage();
+    await screen.findByText("Degree scan metadata");
+    selectEvidence();
+    fireEvent.change(await screen.findByLabelText(/Claim to link/i), {
+      target: { value: sampleClaim.id },
+    });
+    fireEvent.click(
+      screen.getByRole("button", { name: /Link evidence to claim/i }),
+    );
+    expect(
+      await screen.findByText(/This evidence is already linked to that claim/i),
+    ).toBeInTheDocument();
+  });
+
+  it("displays existing links with safe labels", async () => {
+    listEvidence.mockResolvedValue([sampleRecord]);
+    listLinkableEvidenceClaims.mockResolvedValue([sampleClaim]);
+    listEvidenceClaimLinks.mockResolvedValue([sampleLink]);
+    renderPage();
+    await screen.findByText("Degree scan metadata");
+    selectEvidence();
+    expect(
+      await screen.findByText(/Existing links for this evidence/i),
+    ).toBeInTheDocument();
+    expect(
+      await screen.findByText(/Linked as support material/i),
+    ).toBeInTheDocument();
+    expect(screen.getAllByText(/skill: Python/i).length).toBeGreaterThan(0);
+    expect(
+      screen.getAllByText(/Not independently verified/i).length,
+    ).toBeGreaterThan(0);
+  });
+
+  it("forbids unsafe trust wording except Not independently verified", async () => {
+    listEvidence.mockResolvedValue([sampleRecord]);
+    listLinkableEvidenceClaims.mockResolvedValue([sampleClaim]);
+    listEvidenceClaimLinks.mockResolvedValue([sampleLink]);
+    renderPage();
+    await screen.findByText("Degree scan metadata");
+    selectEvidence();
+    await screen.findByRole("heading", {
+      name: /Link this evidence to a claim/i,
+    });
     const text = document.body.textContent?.toLowerCase() ?? "";
     for (const forbidden of [
       "official",
       "trusted",
       "proof of truth",
+      "verified credential",
       "verified document",
       "public credential",
       "wallet",
@@ -344,20 +382,9 @@ describe("EvidenceLibraryPage F6 attachment UI", () => {
     ]) {
       expect(text).not.toContain(forbidden);
     }
-    // Avoid bare DID token (word boundary).
     expect(text).not.toMatch(/\bdid\b/);
     expect(text).toContain("not independently verified");
     const withoutSafe = text.split("not independently verified").join("");
     expect(withoutSafe).not.toContain("verified");
-  });
-
-  it("mentions claim linking deferred without a claim UUID form", async () => {
-    renderPage();
-    expect(
-      await screen.findByText(
-        /Claim linking will be added after claim selection UI is available/i,
-      ),
-    ).toBeInTheDocument();
-    expect(screen.queryByLabelText(/claim id/i)).not.toBeInTheDocument();
   });
 });

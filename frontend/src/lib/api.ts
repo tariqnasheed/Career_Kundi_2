@@ -69,6 +69,12 @@ import type {
   EvidenceRead,
   EvidenceEnvelope,
   EvidenceListEnvelope,
+  LinkableClaimRead,
+  LinkableClaimListEnvelope,
+  EvidenceClaimLinkCreateRequest,
+  EvidenceClaimLinkRead,
+  EvidenceClaimLinkListEnvelope,
+  ClaimEvidenceLinkEnvelope,
 } from "@/types/api";
 import {
   buildSavedJobSearchPageRequest,
@@ -982,7 +988,7 @@ export const passportApi = {
 };
 
 // ---------------------------------------------------------------------------
-// Evidence library (0053-F3–F6) — private metadata + private attachment bytes
+// Evidence library (0053-F3–F7) — metadata, attachments, private claim links
 // ---------------------------------------------------------------------------
 
 export const evidenceApi = {
@@ -1035,6 +1041,35 @@ export const evidenceApi = {
       timeout: 60_000,
     });
     return res.data as Blob;
+  },
+
+  /** List current-user claims available for Evidence Library linking (F7). */
+  listLinkableEvidenceClaims: async (): Promise<LinkableClaimRead[]> => {
+    const res = await http.get<LinkableClaimListEnvelope>(
+      "/evidence/linkable-claims",
+    );
+    return res.data.data;
+  },
+
+  /** List claim links for one owned evidence record (F7). */
+  listEvidenceClaimLinks: async (
+    evidenceId: string,
+  ): Promise<EvidenceClaimLinkRead[]> => {
+    const res = await http.get<EvidenceClaimLinkListEnvelope>(
+      `/evidence/${evidenceId}/links`,
+    );
+    return res.data.data;
+  },
+
+  /** Link owned evidence to an owned claim without verifying the claim (F7). */
+  linkEvidenceToClaim: async (
+    payload: EvidenceClaimLinkCreateRequest,
+  ): Promise<ClaimEvidenceLinkEnvelope["data"]> => {
+    const res = await http.post<ClaimEvidenceLinkEnvelope>(
+      "/evidence/links",
+      payload,
+    );
+    return res.data.data;
   },
 };
 

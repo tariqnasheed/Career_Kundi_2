@@ -1154,6 +1154,72 @@ export interface EvidenceListEnvelope {
   meta: { count: number };
 }
 
+export type EvidenceLinkRole = "supports" | "contests" | "context";
+
+export interface LinkableClaimRead {
+  id: string;
+  subject_id: string;
+  claim_kind: string;
+  claim_key: string;
+  claim_value: string;
+  claim_origin: string;
+  support_status: string;
+  support_label: string;
+  verification_status: string;
+  verification_label: string;
+  truth_warning: string;
+  created_at: string;
+}
+
+export interface LinkableClaimListEnvelope {
+  data: LinkableClaimRead[];
+  meta: { count: number };
+}
+
+export interface EvidenceClaimLinkCreateRequest {
+  claim_id: string;
+  evidence_id: string;
+  link_role: EvidenceLinkRole | string;
+}
+
+export interface EvidenceClaimLinkRead {
+  id: string;
+  claim_id: string;
+  evidence_id: string;
+  link_role: string;
+  link_role_label: string;
+  created_at: string;
+  claim_kind: string;
+  claim_key: string;
+  claim_value: string;
+  claim_support_status: string;
+  claim_support_label: string;
+  claim_verification_status: string;
+  claim_verification_label: string;
+  truth_warning: string;
+}
+
+export interface EvidenceClaimLinkListEnvelope {
+  data: EvidenceClaimLinkRead[];
+  meta: { count: number };
+}
+
+export interface ClaimEvidenceLinkEnvelope {
+  data: {
+    id: string;
+    claim_id: string;
+    evidence_id: string;
+    link_role: string;
+    link_role_label: string;
+    created_at: string;
+    truth_warning: string;
+    claim_support_status: string;
+    claim_verification_status: string;
+    claim_support_label: string;
+    claim_verification_label: string;
+  };
+}
+
 // ---------------------------------------------------------------------------
 // Shared error envelope
 // ---------------------------------------------------------------------------

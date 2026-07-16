@@ -81,6 +81,17 @@ Private attach/download controls on `/evidence`:
 
 Evidence: `~/Desktop/CareerKundi_0053_F6_Evidence_Upload_UI_Evidence.txt`
 
+## 0053-F7 Evidence-to-Claim Linking UI (2026-07-16)
+
+Private claim linking on `/evidence`:
+
+- `GET /api/v1/evidence/linkable-claims` (current-user only; no `/api/v1/claims`)
+- “Link evidence to claim” with supports/contests/context
+- Linking does not verify claims or mutate support/verification axes
+- No Passport evidence panel yet
+
+Evidence: `~/Desktop/CareerKundi_0053_F7_Evidence_To_Claim_Linking_UI_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the

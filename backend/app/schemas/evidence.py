@@ -98,3 +98,49 @@ class ClaimEvidenceLinkEnvelope(BaseModel):
 class ClaimEvidenceLinkListEnvelope(BaseModel):
     data: list[ClaimEvidenceLinkRead]
     meta: ApiListMeta
+
+
+class LinkableClaimRead(BaseModel):
+    """Private claim row for Evidence Library selector (0053-F7). Not verification."""
+
+    id: uuid.UUID
+    subject_id: uuid.UUID
+    claim_kind: str
+    claim_key: str
+    claim_value: str
+    claim_origin: str
+    support_status: str
+    support_label: str
+    verification_status: str
+    verification_label: str
+    truth_warning: str
+    created_at: datetime
+
+
+class LinkableClaimListEnvelope(BaseModel):
+    data: list[LinkableClaimRead]
+    meta: ApiListMeta
+
+
+class EvidenceClaimLinkRead(BaseModel):
+    """Evidence-centric private claim link row (0053-F7)."""
+
+    id: uuid.UUID
+    claim_id: uuid.UUID
+    evidence_id: uuid.UUID
+    link_role: str
+    link_role_label: str
+    created_at: datetime
+    claim_kind: str
+    claim_key: str
+    claim_value: str
+    claim_support_status: str
+    claim_support_label: str
+    claim_verification_status: str
+    claim_verification_label: str
+    truth_warning: str
+
+
+class EvidenceClaimLinkListEnvelope(BaseModel):
+    data: list[EvidenceClaimLinkRead]
+    meta: ApiListMeta

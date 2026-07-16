@@ -1,6 +1,6 @@
 # 0053-F4 / F5 — Attachment Storage Decision
 
-**Status:** F4 decided · F5 storage implemented · F6 Evidence Library upload UI implemented  
+**Status:** F4 decided · F5 storage · F6 upload UI · F7 claim linking UI implemented  
 **Date:** 2026-07-16  
 **Depends on:** 0053-F3 private evidence metadata API
 
@@ -81,6 +81,10 @@ Candidate backends deferred beyond local:
 
 ---
 
+## F7 linking note
+
+Evidence Library can privately link evidence to current-user claims via `GET /api/v1/evidence/linkable-claims` + `POST /api/v1/evidence/links`. Linking does **not** verify claims or auto-upgrade claim status axes. Passport evidence panel remains deferred.
+
 ## Next
 
-After F6 acceptance only: **0053-F7** (linking UI or Passport read-only evidence panel).
+After F7 acceptance only: **0053-F8** (Passport read-only evidence panel or review/verification state machine).

@@ -334,6 +334,53 @@ async def list_claim_evidence_links_for_owner(
     return await list_claim_evidence_links(db, claim_id)
 
 
+async def list_linkable_claims_for_owner(
+    db: AsyncSession,
+    owner_user_id: uuid.UUID,
+) -> list[ClaimRecord]:
+    """
+    Read-only list of claims owned by owner_user_id (via subject ownership).
+
+    For Evidence Library claim selector only. Does not create or mutate claims.
+    """
+    result = await db.execute(
+        select(ClaimRecord)
+        .join(CareerSubject, ClaimRecord.subject_id == CareerSubject.id)
+        .where(CareerSubject.owner_user_id == owner_user_id)
+        .order_by(ClaimRecord.created_at.asc())
+    )
+    return list(result.scalars().all())
+
+
+async def list_evidence_claim_links_for_owner(
+    db: AsyncSession,
+    evidence_id: uuid.UUID,
+    owner_user_id: uuid.UUID,
+) -> list[tuple[ClaimEvidenceLink, ClaimRecord]] | None:
+    """
+    List claim links for owned evidence.
+
+    Returns None when evidence is missing/not owned (safe 404).
+    Only includes links whose claim is also owned by owner_user_id.
+    """
+    evidence = await get_evidence_for_owner(db, evidence_id, owner_user_id)
+    if evidence is None:
+        return None
+    result = await db.execute(
+        select(ClaimEvidenceLink)
+        .where(ClaimEvidenceLink.evidence_id == evidence_id)
+        .order_by(ClaimEvidenceLink.created_at.asc())
+    )
+    links = list(result.scalars().all())
+    owned: list[tuple[ClaimEvidenceLink, ClaimRecord]] = []
+    for link in links:
+        claim = await get_claim_for_owner(db, link.claim_id, owner_user_id)
+        if claim is None:
+            continue
+        owned.append((link, claim))
+    return owned
+
+
 async def _linked_claim_status_snapshot(
     db: AsyncSession, evidence_id: uuid.UUID
 ) -> list[tuple[uuid.UUID, str, str]]:

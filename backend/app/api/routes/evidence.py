@@ -1,8 +1,9 @@
 """
-Private evidence API (0053-F3 / 0053-F5).
+Private evidence API (0053-F3 / F5 / F7).
 
-Authenticated, current-user scoped metadata + private attachment bytes.
-Upload/download is not verification. No public sharing, OCR, or claim axis mutation.
+Authenticated, current-user scoped metadata, private attachment bytes, and
+evidence-to-claim linking. Linking is not verification. No public sharing,
+OCR, or claim axis mutation.
 """
 
 from __future__ import annotations
@@ -21,6 +22,7 @@ from app.db.models.evidence import ClaimEvidenceLink, EvidenceRecord
 from app.db.models.user import User
 from app.db.session import get_db
 from app.platform.claims.display import (
+    claim_truth_warning,
     support_status_label,
     verification_status_label,
 )
@@ -38,6 +40,8 @@ from app.platform.evidence.service import (
     get_evidence_for_owner,
     link_evidence_to_claim,
     list_claim_evidence_links_for_owner,
+    list_evidence_claim_links_for_owner,
+    list_linkable_claims_for_owner,
     list_owner_evidence,
     list_subject_evidence_for_owner,
 )
@@ -55,11 +59,15 @@ from app.schemas.evidence import (
     ClaimEvidenceLinkEnvelope,
     ClaimEvidenceLinkListEnvelope,
     ClaimEvidenceLinkRead,
+    EvidenceClaimLinkListEnvelope,
+    EvidenceClaimLinkRead,
     EvidenceCreate,
     EvidenceEnvelope,
     EvidenceListEnvelope,
     EvidenceRead,
     EvidenceSummary,
+    LinkableClaimListEnvelope,
+    LinkableClaimRead,
 )
 
 router = APIRouter(prefix="/evidence", tags=["evidence"])
@@ -131,6 +139,56 @@ def _link_read(
         claim_verification_label=verification_status_label(
             claim.verification_status
         ),
+    )
+
+
+def _safe_verification_label_for_linking(claim: ClaimRecord) -> str:
+    """
+    F7 linking UI must not overclaim verification.
+
+    Always surface the safe phrase; raw verification_status remains available.
+    """
+    _ = claim
+    return "Not independently verified"
+
+
+def _linkable_claim_read(claim: ClaimRecord) -> LinkableClaimRead:
+    return LinkableClaimRead(
+        id=claim.id,
+        subject_id=claim.subject_id,
+        claim_kind=claim.claim_kind,
+        claim_key=claim.claim_key,
+        claim_value=claim.claim_value,
+        claim_origin=claim.claim_origin,
+        support_status=claim.support_status,
+        support_label=support_status_label(claim.support_status),
+        verification_status=claim.verification_status,
+        verification_label=_safe_verification_label_for_linking(claim),
+        truth_warning=claim_truth_warning(),
+        created_at=claim.created_at,
+    )
+
+
+def _evidence_claim_link_read(
+    link: ClaimEvidenceLink,
+    *,
+    claim: ClaimRecord,
+) -> EvidenceClaimLinkRead:
+    return EvidenceClaimLinkRead(
+        id=link.id,
+        claim_id=link.claim_id,
+        evidence_id=link.evidence_id,
+        link_role=link.link_role,
+        link_role_label=claim_evidence_link_role_label(link.link_role),
+        created_at=link.created_at,
+        claim_kind=claim.claim_kind,
+        claim_key=claim.claim_key,
+        claim_value=claim.claim_value,
+        claim_support_status=claim.support_status,
+        claim_support_label=support_status_label(claim.support_status),
+        claim_verification_status=claim.verification_status,
+        claim_verification_label=_safe_verification_label_for_linking(claim),
+        truth_warning=evidence_truth_warning(),
     )
 
 
@@ -221,6 +279,24 @@ async def list_subject_evidence_api(
     return EvidenceListEnvelope(data=data, meta=ApiListMeta(count=len(data)))
 
 
+@router.get(
+    "/linkable-claims",
+    response_model=LinkableClaimListEnvelope,
+)
+async def list_linkable_claims_api(
+    user: User = Depends(get_current_user),  # noqa: B008
+    db: AsyncSession = Depends(get_db),  # noqa: B008
+) -> LinkableClaimListEnvelope:
+    """
+    List private claims owned by the current user for Evidence Library linking.
+
+    Read-only. Does not create claims or mutate claim status axes.
+    """
+    rows = await list_linkable_claims_for_owner(db, user.id)
+    data = [_linkable_claim_read(r) for r in rows]
+    return LinkableClaimListEnvelope(data=data, meta=ApiListMeta(count=len(data)))
+
+
 @router.post("/links", response_model=ClaimEvidenceLinkEnvelope, status_code=201)
 async def create_claim_evidence_link(
     body: ClaimEvidenceLinkCreate,
@@ -296,6 +372,27 @@ async def list_claim_links_api(
             continue
         data.append(_link_read(link, evidence=evidence, claim=claim))
     return ClaimEvidenceLinkListEnvelope(
+        data=data, meta=ApiListMeta(count=len(data))
+    )
+
+
+@router.get(
+    "/{evidence_id}/links",
+    response_model=EvidenceClaimLinkListEnvelope,
+)
+async def list_evidence_links_api(
+    evidence_id: uuid.UUID,
+    user: User = Depends(get_current_user),  # noqa: B008
+    db: AsyncSession = Depends(get_db),  # noqa: B008
+) -> EvidenceClaimLinkListEnvelope:
+    """List claim links for owned evidence (current-user scoped)."""
+    rows = await list_evidence_claim_links_for_owner(db, evidence_id, user.id)
+    if rows is None:
+        raise NotFoundError("Evidence not found.")
+    data = [
+        _evidence_claim_link_read(link, claim=claim) for link, claim in rows
+    ]
+    return EvidenceClaimLinkListEnvelope(
         data=data, meta=ApiListMeta(count=len(data))
     )
 

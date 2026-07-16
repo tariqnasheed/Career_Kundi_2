@@ -14,6 +14,7 @@ import type {
   ApiError,
   EvidenceCreateRequest,
   EvidenceKind,
+  EvidenceLinkRole,
   EvidencePrivacyClass,
   EvidenceRead,
 } from "../types/api";
@@ -40,8 +41,11 @@ const PRIVACY_CLASSES: EvidencePrivacyClass[] = [
   "restricted",
 ];
 
-const SAFE_CLAIM_NOTE =
-  "Claim linking will be added after claim selection UI is available.";
+const LINK_ROLES: { value: EvidenceLinkRole; label: string }[] = [
+  { value: "supports", label: "Supports" },
+  { value: "contests", label: "Contests" },
+  { value: "context", label: "Context" },
+];
 
 const MAX_ATTACHMENT_BYTES = 5 * 1024 * 1024;
 
@@ -136,6 +140,9 @@ export default function EvidenceLibraryPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [attachError, setAttachError] = useState<string | null>(null);
+  const [linkClaimId, setLinkClaimId] = useState("");
+  const [linkRole, setLinkRole] = useState<EvidenceLinkRole>("supports");
+  const [linkError, setLinkError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const listQuery = useQuery({
@@ -146,6 +153,17 @@ export default function EvidenceLibraryPage() {
   const subjectsQuery = useQuery({
     queryKey: ["platform", "subjects"],
     queryFn: () => platformApi.listPlatformSubjects(),
+  });
+
+  const linkableClaimsQuery = useQuery({
+    queryKey: ["evidence", "linkable-claims"],
+    queryFn: () => evidenceApi.listLinkableEvidenceClaims(),
+  });
+
+  const evidenceLinksQuery = useQuery({
+    queryKey: ["evidence", "links", selectedId],
+    queryFn: () => evidenceApi.listEvidenceClaimLinks(selectedId!),
+    enabled: Boolean(selectedId),
   });
 
   const createMutation = useMutation({
@@ -220,6 +238,34 @@ export default function EvidenceLibraryPage() {
         type: "error",
         message: err.message || "Could not download private attachment.",
       });
+    },
+  });
+
+  const linkMutation = useMutation({
+    mutationFn: () =>
+      evidenceApi.linkEvidenceToClaim({
+        evidence_id: selectedId!,
+        claim_id: linkClaimId,
+        link_role: linkRole,
+      }),
+    onSuccess: () => {
+      addToast({
+        type: "success",
+        message:
+          "Evidence linked. This claim is still not independently verified.",
+      });
+      setLinkError(null);
+      qc.invalidateQueries({ queryKey: ["evidence", "links", selectedId] });
+    },
+    onError: (err: ApiError) => {
+      const message = (err.message || "").toLowerCase();
+      const duplicate =
+        err.code === "CONFLICT" || message.includes("duplicate");
+      const friendly = duplicate
+        ? "This evidence is already linked to that claim."
+        : err.message || "Could not link evidence to claim.";
+      setLinkError(friendly);
+      addToast({ type: "error", message: friendly });
     },
   });
 
@@ -533,6 +579,9 @@ export default function EvidenceLibraryPage() {
                         setSelectedId(row.id);
                         setAttachError(null);
                         setSelectedFile(null);
+                        setLinkError(null);
+                        setLinkClaimId("");
+                        setLinkRole("supports");
                         if (fileInputRef.current) fileInputRef.current.value = "";
                       }}
                       style={{
@@ -761,10 +810,192 @@ export default function EvidenceLibraryPage() {
 
       <Card padding="lg" style={{ marginBottom: "1.25rem" }}>
         <CardHeader>
-          <CardTitle>Claim linking</CardTitle>
+          <CardTitle>Link this evidence to a claim</CardTitle>
         </CardHeader>
         <CardContent>
-          <p style={{ color: "var(--text-secondary)" }}>{SAFE_CLAIM_NOTE}</p>
+          {!selected ? (
+            <p style={{ color: "var(--text-secondary)" }}>
+              Select an evidence record above to link it to one of your private
+              claims.
+            </p>
+          ) : (
+            <div style={{ display: "grid", gap: "0.85rem" }}>
+              <p
+                style={{
+                  color: "var(--text-secondary)",
+                  lineHeight: 1.55,
+                  margin: 0,
+                }}
+              >
+                This creates a private link between the selected evidence and one
+                of your claims. It does not verify the claim.
+              </p>
+
+              {linkableClaimsQuery.isLoading ? (
+                <Spinner />
+              ) : linkableClaimsQuery.isError ? (
+                <p style={{ color: "var(--text-secondary)", margin: 0 }}>
+                  Could not load private claims.
+                </p>
+              ) : !linkableClaimsQuery.data?.length ? (
+                <p style={{ color: "var(--text-secondary)", margin: 0 }}>
+                  No private claims are available to link yet.
+                </p>
+              ) : (
+                <>
+                  <label
+                    style={{ display: "flex", flexDirection: "column", gap: 6 }}
+                  >
+                    <span style={{ fontSize: "0.85rem", fontWeight: 600 }}>
+                      Claim
+                    </span>
+                    <select
+                      aria-label="Claim to link"
+                      value={linkClaimId}
+                      onChange={(e) => setLinkClaimId(e.target.value)}
+                      style={{
+                        padding: "0.65rem 0.75rem",
+                        borderRadius: 10,
+                        border: "1px solid var(--border-subtle)",
+                        background: "var(--bg-overlay)",
+                        color: "var(--text-primary)",
+                      }}
+                    >
+                      <option value="">Select a private claim</option>
+                      {linkableClaimsQuery.data.map((claim) => (
+                        <option key={claim.id} value={claim.id}>
+                          {claim.claim_kind}: {claim.claim_value} ·{" "}
+                          {claim.support_label} · {claim.verification_label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+
+                  <label
+                    style={{ display: "flex", flexDirection: "column", gap: 6 }}
+                  >
+                    <span style={{ fontSize: "0.85rem", fontWeight: 600 }}>
+                      Link role
+                    </span>
+                    <select
+                      aria-label="Link role"
+                      value={linkRole}
+                      onChange={(e) =>
+                        setLinkRole(e.target.value as EvidenceLinkRole)
+                      }
+                      style={{
+                        padding: "0.65rem 0.75rem",
+                        borderRadius: 10,
+                        border: "1px solid var(--border-subtle)",
+                        background: "var(--bg-overlay)",
+                        color: "var(--text-primary)",
+                      }}
+                    >
+                      {LINK_ROLES.map((role) => (
+                        <option key={role.value} value={role.value}>
+                          {role.label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+
+                  {linkError ? (
+                    <div
+                      role="alert"
+                      style={{
+                        color: "var(--danger, #b91c1c)",
+                        fontSize: "0.85rem",
+                      }}
+                    >
+                      {linkError}
+                    </div>
+                  ) : null}
+
+                  <Button
+                    type="button"
+                    variant="primary"
+                    disabled={linkMutation.isPending || !linkClaimId}
+                    onClick={() => {
+                      if (!selectedId || !linkClaimId) {
+                        setLinkError("Choose a private claim to link.");
+                        return;
+                      }
+                      linkMutation.mutate();
+                    }}
+                  >
+                    {linkMutation.isPending
+                      ? "Linking…"
+                      : "Link evidence to claim"}
+                  </Button>
+                </>
+              )}
+
+              <div
+                style={{
+                  marginTop: "0.5rem",
+                  paddingTop: "0.85rem",
+                  borderTop: "1px solid var(--border-subtle)",
+                }}
+              >
+                <div style={{ fontWeight: 600, marginBottom: "0.5rem" }}>
+                  Existing links for this evidence
+                </div>
+                {evidenceLinksQuery.isLoading ? (
+                  <Spinner />
+                ) : !evidenceLinksQuery.data?.length ? (
+                  <p
+                    style={{
+                      color: "var(--text-secondary)",
+                      margin: 0,
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    No claim links yet for this evidence.
+                  </p>
+                ) : (
+                  <ul
+                    style={{
+                      listStyle: "none",
+                      padding: 0,
+                      margin: 0,
+                      display: "grid",
+                      gap: "0.55rem",
+                    }}
+                  >
+                    {evidenceLinksQuery.data.map((link) => (
+                      <li
+                        key={link.id}
+                        style={{
+                          padding: "0.7rem 0.85rem",
+                          borderRadius: 10,
+                          border: "1px solid var(--border-subtle)",
+                          background: "var(--bg-overlay)",
+                          fontSize: "0.85rem",
+                        }}
+                      >
+                        <div style={{ fontWeight: 600 }}>
+                          {link.claim_kind}: {link.claim_value}
+                        </div>
+                        <div style={{ color: "var(--text-secondary)" }}>
+                          {link.link_role_label} · {link.claim_support_label} ·{" "}
+                          {link.claim_verification_label}
+                        </div>
+                        <div
+                          style={{
+                            color: "var(--text-muted)",
+                            marginTop: 4,
+                            fontSize: "0.75rem",
+                          }}
+                        >
+                          {link.truth_warning}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          )}
         </CardContent>
       </Card>
 
