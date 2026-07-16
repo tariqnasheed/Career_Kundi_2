@@ -23,6 +23,8 @@ from app.db.tests.pf1_test_db import require_disposable_postgres, temporary_data
 from app.main import app
 from app.platform.claims import ClaimKind, ClaimOrigin, SupportStatus, VerificationStatus
 from app.platform.claims.service import create_claim
+from app.platform.evidence.service import create_evidence_record, link_evidence_to_claim
+from app.platform.evidence.status import ClaimEvidenceLinkRole, EvidenceKind
 from app.tools import cache as cache_mod
 from app.tools.cache import InMemoryCache
 
@@ -139,9 +141,33 @@ def test_review_request_api_guards() -> None:
                     support_status=SupportStatus.NOT_PROVIDED,
                     verification_status=VerificationStatus.UNVERIFIED,
                 )
+                claim_no_evidence = await create_claim(
+                    db,
+                    subject_id=subject_a.id,
+                    claim_kind=ClaimKind.SKILL,
+                    claim_key="rust",
+                    claim_value="Rust",
+                    claim_origin=ClaimOrigin.USER_ASSERTED,
+                    support_status=SupportStatus.NOT_PROVIDED,
+                    verification_status=VerificationStatus.UNVERIFIED,
+                )
+                evidence_a = await create_evidence_record(
+                    db,
+                    owner_user_id=user_a,
+                    subject_id=subject_a.id,
+                    title="API owned evidence",
+                    evidence_kind=EvidenceKind.CERTIFICATE,
+                )
+                await link_evidence_to_claim(
+                    db,
+                    claim_id=claim_a.id,
+                    evidence_id=evidence_a.id,
+                    link_role=ClaimEvidenceLinkRole.SUPPORTS,
+                )
                 return (
                     claim_a.id,
                     claim_b.id,
+                    claim_no_evidence.id,
                     claim_a.support_status,
                     claim_a.verification_status,
                 )
@@ -161,6 +187,7 @@ def test_review_request_api_guards() -> None:
         (
             claim_a_id,
             claim_b_id,
+            claim_no_evidence_id,
             prior_support,
             prior_verification,
         ) = asyncio.run(_seed_and_dispose())
@@ -188,6 +215,14 @@ def test_review_request_api_guards() -> None:
                     "/api/v1/review-requests",
                     json={"claim_id": str(claim_a_id)},
                 ).status_code in (401, 403)
+
+                r = client.post(
+                    "/api/v1/review-requests",
+                    headers=headers_a,
+                    json={"claim_id": str(claim_no_evidence_id)},
+                )
+                assert r.status_code == 422, r.text
+                assert "linked private evidence" in r.text.lower()
 
                 r = client.post(
                     "/api/v1/review-requests",

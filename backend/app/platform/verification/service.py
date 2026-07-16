@@ -1,7 +1,8 @@
 """
-Review request service (0053-F10).
+Review request service (0053-F10 / F12).
 
 Private user request/cancel only. A review request is not verification.
+F12 hardens intake: owned claim + linked private evidence, note/reason bounds.
 Does not mutate claim support_status or verification_status.
 Does not approve/reject/conflict or move to under_review.
 """
@@ -10,12 +11,14 @@ from __future__ import annotations
 
 import uuid
 from datetime import datetime, timezone
+from typing import NamedTuple
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.db.models.career_subject import CareerSubject
 from app.db.models.claim import ClaimRecord
+from app.db.models.evidence import ClaimEvidenceLink, EvidenceRecord
 from app.db.models.review_request import ReviewRequest
 from app.platform.identity.refs import ActorRef
 from app.platform.verification.contracts import validate_review_transition
@@ -23,6 +26,46 @@ from app.platform.verification.refs import VerificationRefError
 from app.platform.verification.status import ReviewActorType, ReviewState
 
 ACTIVE_REVIEW_STATES: frozenset[str] = frozenset({ReviewState.REQUESTED.value})
+
+MAX_REQUEST_NOTE_LENGTH = 1000
+MAX_CANCELLATION_REASON_LENGTH = 500
+
+MSG_LINKED_EVIDENCE_REQUIRED = (
+    "A linked private evidence record is required before requesting review."
+)
+MSG_NOTE_TOO_LONG = "Review request note is too long."
+MSG_REASON_TOO_LONG = "Cancellation reason is too long."
+
+
+class ReviewIntakeEligibility(NamedTuple):
+    eligible: bool
+    reason: str | None
+    claim: ClaimRecord | None
+    owned_linked_evidence_count: int
+
+
+def normalize_review_request_note(value: str | None) -> str | None:
+    """Trim optional request note; blank → None; reject over max length."""
+    if value is None:
+        return None
+    trimmed = value.strip()
+    if not trimmed:
+        return None
+    if len(trimmed) > MAX_REQUEST_NOTE_LENGTH:
+        raise VerificationRefError(MSG_NOTE_TOO_LONG)
+    return trimmed
+
+
+def normalize_cancellation_reason(value: str | None) -> str | None:
+    """Trim optional cancellation reason; blank → None; reject over max length."""
+    if value is None:
+        return None
+    trimmed = value.strip()
+    if not trimmed:
+        return None
+    if len(trimmed) > MAX_CANCELLATION_REASON_LENGTH:
+        raise VerificationRefError(MSG_REASON_TOO_LONG)
+    return trimmed
 
 
 def _actor_fields(
@@ -54,33 +97,56 @@ async def _get_owned_claim(
     return claim
 
 
-async def create_review_request(
+async def _count_owned_linked_evidence(
+    db: AsyncSession,
+    *,
+    claim_id: uuid.UUID,
+    owner_user_id: uuid.UUID,
+) -> int:
+    """Count ClaimEvidenceLink rows whose evidence is owned by owner_user_id."""
+    result = await db.execute(
+        select(ClaimEvidenceLink.id)
+        .join(EvidenceRecord, EvidenceRecord.id == ClaimEvidenceLink.evidence_id)
+        .where(
+            ClaimEvidenceLink.claim_id == claim_id,
+            EvidenceRecord.owner_user_id == owner_user_id,
+        )
+    )
+    return len(result.scalars().all())
+
+
+async def get_review_intake_eligibility(
     db: AsyncSession,
     *,
     owner_user_id: uuid.UUID,
     claim_id: uuid.UUID,
-    request_note: str | None = None,
-    created_by_actor: ActorRef | None = None,
-) -> ReviewRequest:
+) -> ReviewIntakeEligibility:
     """
-    Create a private review request for an owned claim.
+    Read-only eligibility for creating a review request.
 
-    Starts at ReviewState.REQUESTED. Does not mutate claim status axes.
+    Does not mutate claim, evidence, or review state.
     """
-    validate_review_transition(
-        ReviewState.NOT_REQUESTED,
-        ReviewState.REQUESTED,
-        ReviewActorType.USER,
-    )
-
     claim = await _get_owned_claim(
         db, claim_id=claim_id, owner_user_id=owner_user_id
     )
     if claim is None:
-        raise VerificationRefError("claim does not exist or is not owned")
+        return ReviewIntakeEligibility(
+            eligible=False,
+            reason="claim does not exist or is not owned",
+            claim=None,
+            owned_linked_evidence_count=0,
+        )
 
-    prior_support = claim.support_status
-    prior_verification = claim.verification_status
+    linked_count = await _count_owned_linked_evidence(
+        db, claim_id=claim_id, owner_user_id=owner_user_id
+    )
+    if linked_count < 1:
+        return ReviewIntakeEligibility(
+            eligible=False,
+            reason=MSG_LINKED_EVIDENCE_REQUIRED,
+            claim=claim,
+            owned_linked_evidence_count=0,
+        )
 
     existing = (
         await db.execute(
@@ -91,9 +157,65 @@ async def create_review_request(
         )
     ).scalar_one_or_none()
     if existing is not None:
-        raise VerificationRefError(
-            "duplicate active review request for claim is not allowed"
+        return ReviewIntakeEligibility(
+            eligible=False,
+            reason="duplicate active review request for claim is not allowed",
+            claim=claim,
+            owned_linked_evidence_count=linked_count,
         )
+
+    return ReviewIntakeEligibility(
+        eligible=True,
+        reason=None,
+        claim=claim,
+        owned_linked_evidence_count=linked_count,
+    )
+
+
+async def assert_review_intake_eligible(
+    db: AsyncSession,
+    *,
+    owner_user_id: uuid.UUID,
+    claim_id: uuid.UUID,
+) -> ClaimRecord:
+    """Raise VerificationRefError when intake is not eligible; else return claim."""
+    eligibility = await get_review_intake_eligibility(
+        db, owner_user_id=owner_user_id, claim_id=claim_id
+    )
+    if not eligibility.eligible or eligibility.claim is None:
+        raise VerificationRefError(
+            eligibility.reason or MSG_LINKED_EVIDENCE_REQUIRED
+        )
+    return eligibility.claim
+
+
+async def create_review_request(
+    db: AsyncSession,
+    *,
+    owner_user_id: uuid.UUID,
+    claim_id: uuid.UUID,
+    request_note: str | None = None,
+    created_by_actor: ActorRef | None = None,
+) -> ReviewRequest:
+    """
+    Create a private review request for an eligible owned claim.
+
+    Starts at ReviewState.REQUESTED. Requires linked private evidence (F12).
+    Does not mutate claim status axes.
+    """
+    validate_review_transition(
+        ReviewState.NOT_REQUESTED,
+        ReviewState.REQUESTED,
+        ReviewActorType.USER,
+    )
+
+    note = normalize_review_request_note(request_note)
+    claim = await assert_review_intake_eligible(
+        db, owner_user_id=owner_user_id, claim_id=claim_id
+    )
+
+    prior_support = claim.support_status
+    prior_verification = claim.verification_status
 
     actor_type, actor_id = _actor_fields(created_by_actor)
     row = ReviewRequest(
@@ -102,7 +224,7 @@ async def create_review_request(
         claim_id=claim.id,
         review_state=ReviewState.REQUESTED.value,
         reviewer_type=None,
-        request_note=request_note,
+        request_note=note,
         cancellation_reason=None,
         created_by_actor_type=actor_type,
         created_by_actor_id=actor_id,
@@ -161,9 +283,10 @@ async def cancel_review_request(
     """
     Cancel an owned review request from requested → cancelled.
 
-    F10 does not cancel under_review (that state is not created by F10 APIs).
     Does not mutate claim status axes.
     """
+    reason = normalize_cancellation_reason(cancellation_reason)
+
     row = await get_review_request_for_owner(db, request_id, owner_user_id)
     if row is None:
         raise VerificationRefError("review request does not exist or is not owned")
@@ -177,7 +300,7 @@ async def cancel_review_request(
         ReviewState.REQUESTED,
         ReviewState.CANCELLED,
         ReviewActorType.USER,
-        reason=cancellation_reason,
+        reason=reason,
     )
 
     claim = (
@@ -187,7 +310,7 @@ async def cancel_review_request(
     prior_verification = claim.verification_status
 
     row.review_state = ReviewState.CANCELLED.value
-    row.cancellation_reason = cancellation_reason
+    row.cancellation_reason = reason
     row.cancelled_at = datetime.now(timezone.utc)
     await db.commit()
     await db.refresh(row)

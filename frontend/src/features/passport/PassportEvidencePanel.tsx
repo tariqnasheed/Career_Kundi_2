@@ -76,10 +76,15 @@ function ClaimReviewControls({
     },
     onError: (err: unknown) => {
       setStatusMessage(null);
-      setErrorMessage(
-        (err as ApiError)?.message ||
-          "Could not request private review. Please try again.",
-      );
+      const apiMessage = ((err as ApiError)?.message || "").toLowerCase();
+      if (apiMessage.includes("linked private evidence")) {
+        setErrorMessage("Link private evidence before requesting review.");
+      } else {
+        setErrorMessage(
+          (err as ApiError)?.message ||
+            "Could not request private review. Please try again.",
+        );
+      }
     },
   });
 
@@ -117,6 +122,10 @@ function ClaimReviewControls({
     <div className={styles.reviewControls}>
       <p className={styles.targetMeta}>
         Claim status: Not independently verified
+      </p>
+      <p className={styles.targetTruth}>
+        Request intake requires linked private evidence. A request is not
+        verification.
       </p>
 
       {active && (

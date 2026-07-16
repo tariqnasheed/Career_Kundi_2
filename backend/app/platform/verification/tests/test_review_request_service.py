@@ -1,4 +1,4 @@
-"""Review request service tests (0053-F10)."""
+"""Review request service tests (0053-F10 / F12)."""
 
 from __future__ import annotations
 
@@ -18,6 +18,8 @@ from app.db.models.user import SubscriptionPlan, User, UserRole
 from app.db.tests.pf1_test_db import require_disposable_postgres, temporary_database
 from app.platform.claims import ClaimKind, ClaimOrigin, SupportStatus, VerificationStatus
 from app.platform.claims.service import create_claim
+from app.platform.evidence.service import create_evidence_record, link_evidence_to_claim
+from app.platform.evidence.status import ClaimEvidenceLinkRole, EvidenceKind
 from app.platform.verification.refs import VerificationRefError
 from app.platform.verification.service import (
     cancel_review_request,
@@ -101,6 +103,21 @@ def test_review_request_service_ownership_and_no_claim_mutation() -> None:
                     )
                     prior_support = claim_a.support_status
                     prior_verification = claim_a.verification_status
+
+                    # F12: must link owned evidence before request
+                    evidence_a = await create_evidence_record(
+                        db,
+                        owner_user_id=user_a,
+                        subject_id=subject_a.id,
+                        title="Owned evidence",
+                        evidence_kind=EvidenceKind.CERTIFICATE,
+                    )
+                    await link_evidence_to_claim(
+                        db,
+                        claim_id=claim_a.id,
+                        evidence_id=evidence_a.id,
+                        link_role=ClaimEvidenceLinkRole.SUPPORTS,
+                    )
 
                     row = await create_review_request(
                         db,

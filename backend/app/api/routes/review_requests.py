@@ -1,7 +1,8 @@
 """
-Private review-request API (0053-F10).
+Private review-request API (0053-F10 / F12).
 
 Authenticated current-user request/list/get/cancel only.
+F12: intake requires linked private evidence; note/reason bounds.
 A review request is not verification. No approve/reject/conflict.
 Does not mutate claim support_status or verification_status.
 """
@@ -55,6 +56,10 @@ def _map_error(exc: VerificationRefError) -> Exception:
     lowered = message.lower()
     if "duplicate" in lowered:
         return ConflictError(message)
+    if "linked private evidence" in lowered:
+        return ValidationFailedError(message)
+    if "too long" in lowered:
+        return ValidationFailedError(message)
     if "does not exist" in lowered or "not owned" in lowered:
         if "claim" in lowered:
             return NotFoundError("Claim not found.")

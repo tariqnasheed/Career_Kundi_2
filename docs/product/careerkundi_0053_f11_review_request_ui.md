@@ -28,6 +28,10 @@ Allowed “verified” wording only inside “Not independently verified”.
 
 `/passport` → Private evidence awareness panel (per linked claim card).
 
+## F12 status
+
+F12 hardens intake (linked private evidence required; note/reason bounds). Passport UI remains request/cancel only. Still not verification.
+
 ## Next
 
-**0053-F12** Review Intake Hardening or Evidence Hardening — only after F11 acceptance. Do not start F12 in F11.
+**0053-F13** Evidence Attachment Hardening / Malware Scan Planning — only after F12 acceptance.

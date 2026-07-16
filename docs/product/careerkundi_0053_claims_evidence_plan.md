@@ -444,9 +444,21 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F12 review intake hardening or evidence hardening  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F11_Review_Request_UI_Evidence.txt`
 
-### 0053-F12 Review Intake Hardening or Evidence Hardening
-- **Purpose:** Harden review intake and/or evidence retention after F11  
-- **Allowed:** only after F11 acceptance; bounded hardening scope  
+### 0053-F12 Review Intake Hardening
+- **Status:** Implemented (service eligibility + note/reason bounds + Passport intake copy)  
+- **Purpose:** Harden review-request create path before any reviewer workflow  
+- **Allowed:** owned claim + linked private evidence required; note/reason trim and length limits; safe errors; Passport copy/error handling; tests/docs  
+- **Forbidden:** approve/reject/conflict; claim status mutation; verification result; public sharing; OCR; malware scan implementation; LLM verification  
+- **Hard rule:** intake hardening ≠ verification; malware scan remains deferred  
+- **Tests:** review intake hardening + review-request API/service + F9/evidence/claims + Passport vitest  
+- **Browser:** `/passport` intake copy + page smoke (uvicorn badge-seed timeout remains a watch item)  
+- **Gate:** no claim axis mutation; no new verification routes  
+- **Deferred:** F13 evidence attachment hardening / malware scan planning  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F12_Review_Intake_Hardening_Evidence.txt`
+
+### 0053-F13 Evidence Attachment Hardening / Malware Scan Planning
+- **Purpose:** Plan/harden attachment safety (incl. malware scan planning) after F12  
+- **Allowed:** only after F12 acceptance; bounded attachment hardening / planning  
 - **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles unless separately approved  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 

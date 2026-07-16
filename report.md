@@ -136,6 +136,17 @@ Private Passport UI to request/cancel review for evidence-linked claims:
 
 Evidence: `~/Desktop/CareerKundi_0053_F11_Review_Request_UI_Evidence.txt`
 
+## 0053-F12 Review Intake Hardening (2026-07-17)
+
+Hardens private review-request create path before any reviewer workflow:
+
+- Owned claim + linked private evidence required
+- Request note max 1000 / cancellation reason max 500; trim + blank → null
+- Passport intake copy + safe “link evidence first” error
+- No approve/reject; no claim status mutation; malware scan deferred
+
+Evidence: `~/Desktop/CareerKundi_0053_F12_Review_Intake_Hardening_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the

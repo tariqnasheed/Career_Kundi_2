@@ -1,4 +1,4 @@
-"""Private review-request API schemas (0053-F10). Request/cancel only — not verification."""
+"""Private review-request API schemas (0053-F10 / F12). Request/cancel only — not verification."""
 
 from __future__ import annotations
 
@@ -6,6 +6,8 @@ import uuid
 from datetime import datetime
 
 from pydantic import BaseModel, ConfigDict, Field
+
+# Length/trim rules enforced in verification.service (product-safe messages).
 
 
 class ApiListMeta(BaseModel):

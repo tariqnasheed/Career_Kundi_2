@@ -5604,12 +5604,19 @@ Doc: `docs/product/careerkundi_0053_f10_review_request_backend.md`.
 
 ## 0053-F11 Review Request UI
 
-**Status:** Completing in this commit. Passport evidence panel private request/cancel UI via F10 APIs; **no** approve/reject, claim mutation, verification badge, public sharing, Passport upload/download, or CV/Roadmap/Jobs review UI. Review request ≠ verification.
+**Status:** Done (`40e96873`). Passport evidence panel private request/cancel UI via F10 APIs; **no** approve/reject, claim mutation, verification badge, public sharing, Passport upload/download, or CV/Roadmap/Jobs review UI. Review request ≠ verification.
 
 Evidence: `~/Desktop/CareerKundi_0053_F11_Review_Request_UI_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f11_review_request_ui.md`.
 
-**Next after F11 acceptance:** 0053-F12 only (Review Intake Hardening or Evidence Hardening).
+## 0053-F12 Review Intake Hardening
+
+**Status:** Completing in this commit. Create requires owned claim + linked private evidence; note/reason trim and length bounds; Passport intake copy/errors; **no** approve/reject, claim mutation, malware scan, OCR, or verification outcome. Review request ≠ verification.
+
+Evidence: `~/Desktop/CareerKundi_0053_F12_Review_Intake_Hardening_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f12_review_intake_hardening.md`.
+
+**Next after F12 acceptance:** 0053-F13 only (Evidence Attachment Hardening / Malware Scan Planning).
 
 ---
 
@@ -5673,7 +5680,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F9 | Review/Verification State Machine Planning |
 | 0053-F10 | Review Request Backend Skeleton |
 | 0053-F11 | Review Request UI |
-| 0053-F12 | Review Intake Hardening or Evidence Hardening |
+| 0053-F12 | Review Intake Hardening |
+| 0053-F13 | Evidence Attachment Hardening / Malware Scan Planning |
 
 ### Hard no-go (until specifically approved)
 
@@ -5681,7 +5689,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F11**, then **0053-F12** only.
+**Owner acceptance of 0053-F12**, then **0053-F13** only.
 
 ---
 

@@ -124,7 +124,9 @@ function assertSafeTrustWording(text: string) {
     .replace(/does not verify a claim/g, "")
     .replace(/this is not verification/g, "")
     .replace(/is not verification/g, "")
-    .replace(/a review request is not verification/g, "");
+    .replace(/a review request is not verification/g, "")
+    .replace(/a request is not verification/g, "")
+    .replace(/request intake requires linked private evidence/g, "");
   for (const forbidden of [
     "official",
     "trusted",
@@ -163,6 +165,34 @@ describe("PassportEvidencePanel", () => {
     expect(pageText()).toMatch(
       /Requesting a review does not verify a claim/i,
     );
+  });
+
+  it("shows intake requires linked private evidence copy on linked cards", async () => {
+    getEvidencePassportSummary.mockResolvedValue(linkedSummary);
+    listReviewRequests.mockResolvedValue([]);
+    renderPanel();
+    expect(await screen.findByText("Python")).toBeInTheDocument();
+    expect(pageText()).toMatch(
+      /Request intake requires linked private evidence/i,
+    );
+    expect(pageText()).toMatch(/A request is not verification/i);
+  });
+
+  it("maps backend linked-evidence error to safe alert", async () => {
+    getEvidencePassportSummary.mockResolvedValue(linkedSummary);
+    listReviewRequests.mockResolvedValue([]);
+    createReviewRequest.mockRejectedValue({
+      message:
+        "A linked private evidence record is required before requesting review.",
+    });
+    renderPanel();
+    await screen.findByRole("button", { name: "Request private review" });
+    fireEvent.click(
+      screen.getByRole("button", { name: "Request private review" }),
+    );
+    expect(
+      await screen.findByText("Link private evidence before requesting review."),
+    ).toBeInTheDocument();
   });
 
   it("shows empty state and Open Evidence Library link to /evidence", async () => {

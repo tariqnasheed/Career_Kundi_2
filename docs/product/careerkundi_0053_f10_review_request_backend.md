@@ -20,10 +20,10 @@
 
 **A review request is not verification.**
 
-## F11 status
+## F11 / F12 status
 
-F11 adds Passport private review request/cancel UI on top of this API. No approve/reject. No claim mutation. Review request remains not verification.
+F11 adds Passport private review request/cancel UI. F12 hardens create intake: linked private evidence required; note/reason bounds. No approve/reject. No claim mutation. Review request remains not verification.
 
 ## Next
 
-**0053-F12** Review Intake Hardening or Evidence Hardening — only after F11 acceptance.
+**0053-F13** Evidence Attachment Hardening / Malware Scan Planning — only after F12 acceptance.

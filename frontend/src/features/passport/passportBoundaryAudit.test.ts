@@ -204,6 +204,12 @@ describe("0052-F8 Passport boundary audit", () => {
     expect(src.includes("Request private review")).toBe(true);
     expect(src.includes("Cancel review request")).toBe(true);
     expect(src.includes("reviewRequestApi")).toBe(true);
+    expect(
+      src.includes("Request intake requires linked private evidence"),
+    ).toBe(true);
+    expect(
+      src.includes("Link private evidence before requesting review."),
+    ).toBe(true);
   });
 
   it("documents that api.ts may define Passport mutation clients for /passport only", () => {

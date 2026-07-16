@@ -52,21 +52,29 @@ def test_routes_do_not_call_outcome_mapping() -> None:
     assert map_review_outcome_to_claim_verification_status("approved") is not None
 
 
-def test_no_frontend_review_or_verify_ui_changed() -> None:
+def test_no_frontend_verify_or_approve_surfaces() -> None:
     if not FRONTEND_SRC.exists():
         return
-    # F10 must not add frontend review/verify controls.
+    # F11/F12 may have Passport request/cancel UI; still no verify/approve surfaces.
     unexpected = []
     for path in FRONTEND_SRC.rglob("*"):
         if not path.is_file():
             continue
         rel = path.relative_to(REPO_ROOT).as_posix()
         name = path.name.lower()
-        if "reviewrequest" in name.replace("_", "").replace("-", ""):
-            unexpected.append(rel)
         if "verify" in name and "test" not in name:
             unexpected.append(rel)
+        if "approve" in name or "rejectreview" in name.replace("_", "").replace(
+            "-", ""
+        ):
+            unexpected.append(rel)
     assert unexpected == []
+    panel = FRONTEND_SRC / "features" / "passport" / "PassportEvidencePanel.tsx"
+    if panel.exists():
+        text = panel.read_text(encoding="utf-8")
+        assert "Verify claim" not in text
+        assert "Approve" not in text
+        assert "Reject" not in text
 
 
 def test_no_llm_or_ocr_in_f10_service_and_routes() -> None:
