@@ -261,6 +261,19 @@ Evidence: `~/Desktop/CareerKundi_0053_F21_Local_Scanner_Runtime_Safety_Contract_
 
 ---
 
+## 0053-F22 Scanner Result Persistence Guard (2026-07-17)
+
+Adds a guarded internal apply path for scan-job rows only:
+
+- `attachment_scan_result_persistence.py` updates `AttachmentScanJob` only
+- Explicit `apply_to_database=True` plans; transition validation; F21 normalization
+- No-op/disabled adapter plans are never persisted
+- No scanner, routes/UI, Evidence/Claim/Review mutation; not verification
+
+Evidence: `~/Desktop/CareerKundi_0053_F22_Scanner_Result_Persistence_Guard_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

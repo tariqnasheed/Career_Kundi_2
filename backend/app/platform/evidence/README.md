@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F21)
+# Evidence domain (0053-F2 … F22)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -22,6 +22,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F19 | Local scanner integration planning + policy constants (still no-op) |
 | F20 | Disabled local process scanner adapter skeleton (not selected) |
 | F21 | Local scanner runtime safety contract (disabled; no execution) |
+| F22 | AttachmentScanJob result persistence guard (job rows only) |
 
 Hard rules across all slices:
 
@@ -116,6 +117,15 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Safe error code/message normalization + path/URI redaction helpers
 - No command runner, file read, packages, routes/UI, or DB apply
 - A runtime contract is not scanner execution and not verification
+
+## Scanner result persistence guard (F22)
+
+- Module: `attachment_scan_result_persistence.py`
+- Applies explicit persistable plans (`apply_to_database=True`) to `AttachmentScanJob` only
+- Transition guards; F21 safe error normalization; quarantined status rejected
+- No-op / disabled adapter plans are not persisted
+- Does not mutate EvidenceRecord / ClaimRecord / ReviewRequest
+- Persisting a scan-job result is not verification
 
 ## Foundation revision
 

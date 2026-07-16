@@ -132,11 +132,12 @@ def test_no_scanner_ocr_llm_imports_or_migrations() -> None:
     assert not (EVIDENCE_PKG / "scan_worker.py").exists()
     assert (EVIDENCE_PKG / "attachment_quarantine_policy.py").exists()
     assert (EVIDENCE_PKG / "attachment_scan_worker.py").exists()
-    # F18–F21: no-op + policy + disabled local + runtime contract; no real scanners.
+    # F18–F22: no-op + policy + disabled local + runtime + persistence guard.
     assert (EVIDENCE_PKG / "attachment_scanner_adapter.py").exists()
     assert (EVIDENCE_PKG / "attachment_scanner_policy.py").exists()
     assert (EVIDENCE_PKG / "attachment_local_scanner_adapter.py").exists()
     assert (EVIDENCE_PKG / "attachment_scanner_runtime_policy.py").exists()
+    assert (EVIDENCE_PKG / "attachment_scan_result_persistence.py").exists()
     assert not (EVIDENCE_PKG / "clamav_adapter.py").exists()
     assert not (EVIDENCE_PKG / "virustotal_adapter.py").exists()
     local_src = (EVIDENCE_PKG / "attachment_local_scanner_adapter.py").read_text(

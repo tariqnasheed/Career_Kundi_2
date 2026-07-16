@@ -42,4 +42,4 @@
 
 ## Next
 
-**0053-F22** Scanner Result Persistence Guard — only after F21 acceptance. Do not start F22 in this slice.
+**0053-F22** Scanner Result Persistence Guard — accepted after F21; then **0053-F23** Quarantine Storage Planning only after F22 acceptance.

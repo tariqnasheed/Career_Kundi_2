@@ -565,8 +565,20 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Evidence:** `~/Desktop/CareerKundi_0053_F21_Local_Scanner_Runtime_Safety_Contract_Evidence.txt`
 
 ### 0053-F22 Scanner Result Persistence Guard
-- **Purpose:** Guard how future scan results may persist after F21  
-- **Allowed:** only after F21 acceptance; bounded scope  
+- **Status:** Implemented (`attachment_scan_result_persistence.py` — AttachmentScanJob only)  
+- **Purpose:** Guarded internal apply of explicit persistable scan-job update plans  
+- **Allowed:** transition validation; F21 safe error normalization; apply to AttachmentScanJob fields only; tests/docs  
+- **Forbidden:** scanner execution; subprocess; packages; file I/O; OCR/parsing/LLM; quarantine storage; scan route/UI; Evidence/Claim/Review mutation; f0012  
+- **Hard rule:** persisting a scan-job result is not verification; no-op/disabled plans are never persisted  
+- **Tests:** persistence guard + F21–F16/safety + evidence/review/claims/badge regressions  
+- **Browser:** no scan controls; OpenAPI unchanged for scan routes  
+- **Gate:** `apply_to_database=True` required; quarantined status rejected; public safety stays `scan_not_available`  
+- **Deferred:** F23 quarantine storage planning  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F22_Scanner_Result_Persistence_Guard_Evidence.txt`
+
+### 0053-F23 Quarantine Storage Planning
+- **Purpose:** Plan quarantine storage after F22  
+- **Allowed:** only after F22 acceptance; bounded scope  
 - **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles unless separately approved  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 
