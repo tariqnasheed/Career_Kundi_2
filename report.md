@@ -11,6 +11,16 @@ Visible product loop repair before 0053-F1:
 
 Evidence: `~/Desktop/CareerKundi_CORE_VALUE_R1_CV_Roadmap_Repair_Evidence.txt`
 
+## JOB-INT-R1 + ROADMAP-RICH-CONTENT + POST-CLAUDE-R2 (2026-07-16)
+
+Pushed after CORE-VALUE-R1 and verified in POST-CLAUDE-R2:
+
+- **JOB-INT-R1 (`8ac8793a`):** first-person interview answers; prompt contract; no unsupported candidate claims.
+- **ROADMAP-RICH-CONTENT (`893a4812`):** Bloom-aligned study + flashcards/quizzes/projects/reflection.
+- **POST-CLAUDE-R2:** integration audit / readiness gate before 0053-F1.
+
+Evidence: `~/Desktop/CareerKundi_POST_CLAUDE_R2_Integration_Audit_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the

@@ -5522,19 +5522,25 @@ Owner decision: CareerKundi no longer uses Gemini API as the current/default LLM
 
 Local LLM output is not verification and is not guaranteed correct.
 
-**Next product gate after LLM-R1 acceptance:** CORE-VALUE-R1 (CV automation + Roadmap learning content), then 0053-F1 Claim Service Contract Boundary.
+**Next product gate after LLM-R1 acceptance:** CORE-VALUE-R1 → JOB-INT-R1 → ROADMAP-RICH-CONTENT → POST-CLAUDE-R2 audit → then **0053-F1 Claim Service Contract Boundary**.
 
 ## CORE-VALUE-R1 CV Automation and Roadmap Learning Content
 
-**Goal:** Make the local user loop useful — Quick CV from minimum info + PDF export, and non-empty Roadmap study/practice (including skill refresh), with local Ollama 8B.
+**Status:** Done (`cc7610b3`). Quick CV + study/practice normalize.
 
-**Root causes addressed:**
-- Roadmap accepted schema-valid empty Ollama JSON (`overview: ""`) because it was truthy.
-- CV Builder required a saved CV before export and leaned on full Profile for generation.
+## JOB-INT-R1 Interview Answer Realism
 
-**Fixes:** content-quality normalize helpers; quick_intake generation mode; FE Quick CV + empty states.
+**Status:** Done (`8ac8793a`). Central interview-pack prompt via `build_interview_pack_system_prompt()` in `InterviewPackExecutorAgent`; candidate-answer contract + claim integrity tests; still `get_llm()` / local Ollama only.
 
-**Does not start 0053-F1 until this slice is accepted.**
+## ROADMAP-RICH-CONTENT Bloom-Aligned Learning Path
+
+**Status:** Done (`893a4812`). `learning_content.py` enrichment; schema flashcards/quizzes/projects/reflection; RoadmapPage renders enriched practice tabs.
+
+## POST-CLAUDE-R2 Integration Audit
+
+**Status:** Completing (docs). Verifies the above on main before **0053-F1**. Evidence: `~/Desktop/CareerKundi_POST_CLAUDE_R2_Integration_Audit_Evidence.txt`.
+
+**Does not start 0053-F1 until POST-CLAUDE-R2 is accepted.**
 
 ---
 
