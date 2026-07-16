@@ -5646,12 +5646,19 @@ Doc: `docs/product/careerkundi_0053_f16_scan_queue_skeleton.md`.
 
 ## 0053-F17 Scan Worker Contract + Quarantine Policy
 
-**Status:** Completing in this commit. Pure worker contract + quarantine policy helpers; scanner availability unavailable; update plans not applied; quarantine not active; **no** engine, route/UI, file I/O, OCR/LLM, claim mutation, or DB migration.
+**Status:** Completed / accepted. Pure worker contract + quarantine policy helpers; scanner availability unavailable; update plans not applied; quarantine not active; **no** engine, route/UI, file I/O, OCR/LLM, claim mutation, or DB migration.
 
 Evidence: `~/Desktop/CareerKundi_0053_F17_Scan_Worker_Quarantine_Policy_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f17_scan_worker_quarantine_policy.md`.
 
-**Next after F17 acceptance:** 0053-F18 only (Scanner Adapter Selection / Local Scanner Integration Planning).
+## 0053-F18 Scanner Adapter Interface + No-Op Adapter
+
+**Status:** Completing in this commit. Protocol + `NoopUnavailableScannerAdapter` + factory returning no-op only; verdict `not_run`; **no** real engine, ClamAV/VirusTotal, file I/O, OCR/LLM, scan route/UI, claim mutation, or DB apply.
+
+Evidence: `~/Desktop/CareerKundi_0053_F18_Scanner_Adapter_Noop_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f18_scanner_adapter_noop.md`.
+
+**Next after F18 acceptance:** 0053-F19 only (Local Scanner Integration Planning).
 
 ---
 
@@ -5721,7 +5728,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F15 | Runtime Badge-Seed Startup Reliability Fix |
 | 0053-F16 | Attachment Scan Queue Skeleton |
 | 0053-F17 | Scan Worker Contract + Quarantine Policy |
-| 0053-F18 | Scanner Adapter Selection / Local Scanner Integration Planning |
+| 0053-F18 | Scanner Adapter Interface + No-Op Adapter |
+| 0053-F19 | Local Scanner Integration Planning |
 
 ### Hard no-go (until specifically approved)
 
@@ -5729,7 +5737,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F17**, then **0053-F18** only.
+**Owner acceptance of 0053-F18**, then **0053-F19** only.
 
 ---
 

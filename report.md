@@ -209,6 +209,19 @@ Evidence: `~/Desktop/CareerKundi_0053_F17_Scan_Worker_Quarantine_Policy_Evidence
 
 ---
 
+## 0053-F18 Scanner Adapter Interface + No-Op Adapter (2026-07-17)
+
+Adds the scanner adapter seam without a real scanner:
+
+- Protocol + `NoopUnavailableScannerAdapter` in `attachment_scanner_adapter.py`
+- Factory always returns the no-op; availability unavailable; verdict `not_run`
+- Does not read files, call network/processes, or apply results to DB
+- No scan route/UI; a no-op adapter is not verification
+
+Evidence: `~/Desktop/CareerKundi_0053_F18_Scanner_Adapter_Noop_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

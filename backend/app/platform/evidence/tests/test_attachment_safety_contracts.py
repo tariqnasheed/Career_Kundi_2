@@ -132,6 +132,10 @@ def test_no_scanner_ocr_llm_imports_or_migrations() -> None:
     assert not (EVIDENCE_PKG / "scan_worker.py").exists()
     assert (EVIDENCE_PKG / "attachment_quarantine_policy.py").exists()
     assert (EVIDENCE_PKG / "attachment_scan_worker.py").exists()
+    # F18: no-op adapter seam only; no real scanner adapters.
+    assert (EVIDENCE_PKG / "attachment_scanner_adapter.py").exists()
+    assert not (EVIDENCE_PKG / "clamav_adapter.py").exists()
+    assert not (EVIDENCE_PKG / "virustotal_adapter.py").exists()
     storage = (EVIDENCE_PKG / "storage.py").read_text(encoding="utf-8").lower()
     assert "quarantine" not in storage
     queue_src = (EVIDENCE_PKG / "attachment_scan_queue.py").read_text(encoding="utf-8")
@@ -140,3 +144,9 @@ def test_no_scanner_ocr_llm_imports_or_migrations() -> None:
     worker_src = (EVIDENCE_PKG / "attachment_scan_worker.py").read_text(encoding="utf-8")
     assert "apply_to_database=False" in worker_src or "apply_to_database: bool = False" in worker_src
     assert "clamav" not in worker_src.lower()
+    adapter_src = (EVIDENCE_PKG / "attachment_scanner_adapter.py").read_text(
+        encoding="utf-8"
+    )
+    assert "NoopUnavailableScannerAdapter" in adapter_src
+    assert "ClamAVScannerAdapter" not in adapter_src
+    assert "VirusTotalScannerAdapter" not in adapter_src

@@ -513,12 +513,24 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Tests:** worker contract + quarantine policy + F16 queue/safety + evidence/review/claims/badge regressions  
 - **Browser:** no scan/quarantine controls; OpenAPI unchanged for scan routes  
 - **Gate:** scanner availability unavailable; no f0012 migration  
-- **Deferred:** F18 scanner adapter selection / local scanner integration planning  
+- **Deferred:** F18 scanner adapter interface + no-op adapter  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F17_Scan_Worker_Quarantine_Policy_Evidence.txt`
 
-### 0053-F18 Scanner Adapter Selection / Local Scanner Integration Planning
-- **Purpose:** Choose and plan a local/private scanner adapter after F17  
-- **Allowed:** only after F17 acceptance; bounded scope  
+### 0053-F18 Scanner Adapter Interface + No-Op Adapter
+- **Status:** Implemented (`attachment_scanner_adapter.py` — protocol + no-op only)  
+- **Purpose:** Define the scanner adapter seam and ship a no-op unavailable adapter that never scans  
+- **Allowed:** adapter protocol; `NoopUnavailableScannerAdapter`; factory returning no-op; capability metadata; F17 `ScanResultContract` mapping tests; docs  
+- **Forbidden:** real scanner engine; ClamAV/VirusTotal; worker loop; file I/O; OCR/parsing/LLM review; scan route/UI; claim mutation; DB apply; f0012 migration  
+- **Hard rule:** a no-op adapter is not a scanner and is not verification; verdict is always `not_run`  
+- **Tests:** adapter + F17 worker/quarantine + F16 queue/safety + evidence/review/claims/badge regressions  
+- **Browser:** no scan controls; OpenAPI has no `/scan` route  
+- **Gate:** factory returns no-op only; no file-byte access; no external scanner imports  
+- **Deferred:** F19 local scanner integration planning  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F18_Scanner_Adapter_Noop_Evidence.txt`
+
+### 0053-F19 Local Scanner Integration Planning
+- **Purpose:** Plan a local/private scanner adapter after F18  
+- **Allowed:** only after F18 acceptance; bounded scope  
 - **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles unless separately approved  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 

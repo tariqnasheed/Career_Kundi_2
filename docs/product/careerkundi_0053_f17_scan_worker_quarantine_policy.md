@@ -35,4 +35,4 @@
 
 ## Next
 
-**0053-F18** Scanner Adapter Selection / Local Scanner Integration Planning — only after F17 acceptance.
+**0053-F18** Scanner Adapter Interface + No-Op Adapter — accepted after F17; then **0053-F19** Local Scanner Integration Planning only after F18 acceptance.
