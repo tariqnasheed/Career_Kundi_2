@@ -75,6 +75,8 @@ import type {
   EvidenceClaimLinkRead,
   EvidenceClaimLinkListEnvelope,
   ClaimEvidenceLinkEnvelope,
+  PassportEvidenceSummaryRead,
+  PassportEvidenceSummaryEnvelope,
 } from "@/types/api";
 import {
   buildSavedJobSearchPageRequest,
@@ -1068,6 +1070,17 @@ export const evidenceApi = {
     const res = await http.post<ClaimEvidenceLinkEnvelope>(
       "/evidence/links",
       payload,
+    );
+    return res.data.data;
+  },
+
+  /**
+   * Read-only current-user evidence↔claim summary for Passport awareness (F8).
+   * Does not verify Passport, profile, or claims.
+   */
+  getEvidencePassportSummary: async (): Promise<PassportEvidenceSummaryRead> => {
+    const res = await http.get<PassportEvidenceSummaryEnvelope>(
+      "/evidence/private-awareness-summary",
     );
     return res.data.data;
   },

@@ -1220,6 +1220,38 @@ export interface ClaimEvidenceLinkEnvelope {
   };
 }
 
+/** Passport read-only evidence awareness item (0053-F8). No download URLs. */
+export interface PassportEvidenceSummaryItem {
+  claim_id: string;
+  subject_id: string;
+  claim_kind: string;
+  claim_value: string;
+  claim_support_status: string;
+  claim_support_label: string;
+  claim_verification_status: string;
+  claim_verification_label: string;
+  link_role: string;
+  link_role_label: string;
+  evidence_id: string;
+  evidence_title: string;
+  evidence_kind: string;
+  evidence_kind_label: string;
+  has_attachment: boolean;
+  truth_warning: string;
+  created_at: string;
+}
+
+export interface PassportEvidenceSummaryRead {
+  linked_claims_count: number;
+  evidence_records_count: number;
+  items: PassportEvidenceSummaryItem[];
+  truth_warning: string;
+}
+
+export interface PassportEvidenceSummaryEnvelope {
+  data: PassportEvidenceSummaryRead;
+}
+
 // ---------------------------------------------------------------------------
 // Shared error envelope
 // ---------------------------------------------------------------------------

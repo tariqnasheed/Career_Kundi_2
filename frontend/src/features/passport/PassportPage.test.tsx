@@ -46,6 +46,15 @@ vi.mock("@/lib/api", () => ({
     deleteTarget: vi.fn(),
     reorderTargets: vi.fn(),
   },
+  evidenceApi: {
+    getEvidencePassportSummary: vi.fn().mockResolvedValue({
+      linked_claims_count: 0,
+      evidence_records_count: 0,
+      items: [],
+      truth_warning:
+        "Evidence linked here is private and not independently verified. Linking evidence does not verify your Passport, your profile, or a claim.",
+    }),
+  },
 }));
 
 vi.mock("@/store/ui", () => ({

@@ -396,39 +396,26 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F8 Passport read-only evidence panel; review workflow  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F7_Evidence_To_Claim_Linking_UI_Evidence.txt`
 
-### 0053-F8 Passport Read-Only Evidence Panel (or Review/Verification State Machine)
-- **Purpose:** Read-only Passport panel for evidence-linked states and/or explicit review outcomes  
-- **Allowed:** passport frontend read panel; later verification module if chosen  
-- **Forbidden:** mutation of verification without policy; “Verified Passport”; public profiles  
-- **Tests:** FE + boundary audit / state machine  
-- **Browser:** required  
-- **Gate:** Private/Not independently verified preserved  
-- **Deferred:** uploads in Passport; employer portals  
+### 0053-F8 Passport Read-Only Evidence Panel
+- **Status:** Implemented (`GET /evidence/private-awareness-summary` + PassportEvidencePanel on `/passport`)  
+- **Purpose:** Private read-only evidence-linked claim awareness inside Career Passport  
+- **Allowed:** evidence-scoped summary API; Passport FE panel; Open Evidence Library link; safe labels  
+- **Forbidden:** Passport upload/download/link/verify; claim creation; claim axis mutation; public sharing; OCR; LLM verification  
+- **Hard rule:** Passport does not own evidence; linking ≠ verified; no “Verified Passport”  
+- **Tests:** passport-summary API + PassportEvidencePanel vitest + evidence/claims/Passport regression  
+- **Browser:** `/passport` + page smoke (uvicorn badge-seed timeout remains a watch item)  
+- **Gate:** current-user ownership; no storage path / public URL exposure  
+- **Deferred:** F9 review/verification state machine or evidence hardening  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F8_Passport_Read_Only_Evidence_Panel_Evidence.txt`
 
-### 0053-F8b Review and Verification State Machine (if not combined into F8)
-- **Purpose:** Explicit review outcomes (`under_review` → issuer/CK verified/rejected)  
-- **Allowed:** verification module + restricted UI  
-- **Forbidden:** self-serve “Verified by CareerKundi” without policy; public profiles  
-- **Tests:** state machine + authz  
+### 0053-F9 Review/Verification State Machine Planning or Evidence Hardening
+- **Purpose:** Explicit review outcomes and/or hardening (retention, deletion, abuse) after F8  
+- **Allowed:** verification module planning/implementation if chosen; hardening tests/docs  
+- **Forbidden:** self-serve “Verified by CareerKundi” without policy; public profiles; Passport upload  
+- **Tests:** state machine + authz and/or full FE/BE regression  
 - **Browser:** required  
-- **Gate:** independent axes preserved  
-- **Deferred:** employer/university portals  
-
-### 0053-F8 CV/Roadmap Evidence Awareness
-- **Purpose:** Optional read-only summaries  
-- **Allowed:** CV/Roadmap FE copy + reads  
-- **Forbidden:** verified CV/roadmap claims; Passport mutation  
-- **Tests:** payload boundaries  
-- **Browser:** required  
-- **Gate:** no passport_id ownership leakage  
-
-### 0053-F9 Hardening, Privacy, Deletion and Final Regression
-- **Purpose:** Retention, deletion, abuse, regression, close phase  
-- **Allowed:** tests/docs/bounded repairs  
-- **Forbidden:** new product features without approval  
-- **Tests:** full FE/BE + browser  
-- **Browser:** required  
-- **Gate:** 0053 accepted with deferred watches  
+- **Gate:** independent axes preserved; Private/Not independently verified default  
+- **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 
 ---
 

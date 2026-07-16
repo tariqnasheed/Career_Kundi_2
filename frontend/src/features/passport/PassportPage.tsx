@@ -39,6 +39,7 @@ import {
   PassportSkillEditor,
   PassportTargetEditor,
 } from "./PassportEditForms";
+import PassportEvidencePanel from "./PassportEvidencePanel";
 import styles from "./PassportPage.module.css";
 
 const SECTION_META: Record<
@@ -304,6 +305,8 @@ export default function PassportPage() {
               </div>
             ))}
           </section>
+
+          <PassportEvidencePanel />
 
           {isEmptyPassport(passport) && (
             <Card className={styles.emptyCard}>

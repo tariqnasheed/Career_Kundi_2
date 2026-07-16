@@ -92,6 +92,17 @@ Private claim linking on `/evidence`:
 
 Evidence: `~/Desktop/CareerKundi_0053_F7_Evidence_To_Claim_Linking_UI_Evidence.txt`
 
+## 0053-F8 Passport Read-Only Evidence Panel (2026-07-16)
+
+Private read-only evidence awareness on `/passport`:
+
+- `GET /api/v1/evidence/private-awareness-summary` (current-user only; evidence-scoped, not Passport-owned)
+- PassportEvidencePanel: linked claim/evidence summaries; “Not independently verified”
+- No Passport upload/download/link/verify; no claim axis mutation; no public sharing
+- Open Evidence Library → `/evidence`
+
+Evidence: `~/Desktop/CareerKundi_0053_F8_Passport_Read_Only_Evidence_Panel_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the

@@ -83,8 +83,12 @@ Candidate backends deferred beyond local:
 
 ## F7 linking note
 
-Evidence Library can privately link evidence to current-user claims via `GET /api/v1/evidence/linkable-claims` + `POST /api/v1/evidence/links`. Linking does **not** verify claims or auto-upgrade claim status axes. Passport evidence panel remains deferred.
+Evidence Library can privately link evidence to current-user claims via `GET /api/v1/evidence/linkable-claims` + `POST /api/v1/evidence/links`. Linking does **not** verify claims or auto-upgrade claim status axes.
+
+## F8 Passport awareness note
+
+Passport shows read-only private evidence awareness via `GET /api/v1/evidence/private-awareness-summary`. Passport does **not** own evidence, does not upload/download/link/verify, and does not mutate claim axes. Attachment storage backend unchanged.
 
 ## Next
 
-After F7 acceptance only: **0053-F8** (Passport read-only evidence panel or review/verification state machine).
+After F8 acceptance only: **0053-F9** (Review/Verification State Machine Planning or Evidence Hardening).

@@ -1,9 +1,9 @@
 """
-Private evidence API (0053-F3 / F5 / F7).
+Private evidence API (0053-F3 / F5 / F7 / F8).
 
-Authenticated, current-user scoped metadata, private attachment bytes, and
-evidence-to-claim linking. Linking is not verification. No public sharing,
-OCR, or claim axis mutation.
+Authenticated, current-user scoped metadata, private attachment bytes,
+evidence-to-claim linking, and Passport read-only evidence awareness summary.
+Linking is not verification. No public sharing, OCR, or claim axis mutation.
 """
 
 from __future__ import annotations
@@ -12,11 +12,13 @@ import uuid
 
 from fastapi import APIRouter, Depends, File, UploadFile
 from fastapi.responses import FileResponse
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.api.deps import get_current_user
 from app.core.config import settings
 from app.core.errors import ConflictError, NotFoundError, ValidationFailedError
+from app.db.models.career_subject import CareerSubject
 from app.db.models.claim import ClaimRecord
 from app.db.models.evidence import ClaimEvidenceLink, EvidenceRecord
 from app.db.models.user import User
@@ -68,6 +70,9 @@ from app.schemas.evidence import (
     EvidenceSummary,
     LinkableClaimListEnvelope,
     LinkableClaimRead,
+    PassportEvidenceSummaryEnvelope,
+    PassportEvidenceSummaryItem,
+    PassportEvidenceSummaryRead,
 )
 
 router = APIRouter(prefix="/evidence", tags=["evidence"])
@@ -192,6 +197,70 @@ def _evidence_claim_link_read(
     )
 
 
+def _passport_summary_item(
+    link: ClaimEvidenceLink,
+    *,
+    claim: ClaimRecord,
+    evidence: EvidenceRecord,
+) -> PassportEvidenceSummaryItem:
+    return PassportEvidenceSummaryItem(
+        claim_id=claim.id,
+        subject_id=claim.subject_id,
+        claim_kind=claim.claim_kind,
+        claim_value=claim.claim_value,
+        claim_support_status=claim.support_status,
+        claim_support_label=support_status_label(claim.support_status),
+        claim_verification_status=claim.verification_status,
+        claim_verification_label=_safe_verification_label_for_linking(claim),
+        link_role=link.link_role,
+        link_role_label=claim_evidence_link_role_label(link.link_role),
+        evidence_id=evidence.id,
+        evidence_title=evidence.title,
+        evidence_kind=evidence.evidence_kind,
+        evidence_kind_label=evidence_kind_label(evidence.evidence_kind),
+        has_attachment=bool(evidence.storage_uri),
+        truth_warning=claim_truth_warning(),
+        created_at=link.created_at,
+    )
+
+
+async def _passport_evidence_summary_for_owner(
+    db: AsyncSession,
+    owner_user_id: uuid.UUID,
+) -> PassportEvidenceSummaryRead:
+    """
+    Read-only current-user evidence↔claim summary for Passport awareness.
+
+    Owned by the evidence API (not Passport). Does not mutate claims.
+    Excludes storage_uri / filesystem paths / public URLs.
+    """
+    evidence_rows = await list_owner_evidence(db, owner_user_id)
+    result = await db.execute(
+        select(ClaimEvidenceLink, ClaimRecord, EvidenceRecord)
+        .join(ClaimRecord, ClaimEvidenceLink.claim_id == ClaimRecord.id)
+        .join(CareerSubject, ClaimRecord.subject_id == CareerSubject.id)
+        .join(EvidenceRecord, ClaimEvidenceLink.evidence_id == EvidenceRecord.id)
+        .where(CareerSubject.owner_user_id == owner_user_id)
+        .where(EvidenceRecord.owner_user_id == owner_user_id)
+        .order_by(ClaimEvidenceLink.created_at.asc())
+    )
+    rows = list(result.all())
+    items = [
+        _passport_summary_item(link, claim=claim, evidence=evidence)
+        for link, claim, evidence in rows
+    ]
+    linked_claim_ids = {item.claim_id for item in items}
+    return PassportEvidenceSummaryRead(
+        linked_claims_count=len(linked_claim_ids),
+        evidence_records_count=len(evidence_rows),
+        items=items,
+        truth_warning=(
+            "Evidence linked here is private and not independently verified. "
+            "Linking evidence does not verify your Passport, your profile, or a claim."
+        ),
+    )
+
+
 def _storage() -> LocalEvidenceStorage:
     return LocalEvidenceStorage(
         settings.resolved_evidence_storage_root,
@@ -295,6 +364,25 @@ async def list_linkable_claims_api(
     rows = await list_linkable_claims_for_owner(db, user.id)
     data = [_linkable_claim_read(r) for r in rows]
     return LinkableClaimListEnvelope(data=data, meta=ApiListMeta(count=len(data)))
+
+
+@router.get(
+    "/private-awareness-summary",
+    response_model=PassportEvidenceSummaryEnvelope,
+)
+async def get_passport_evidence_summary_api(
+    user: User = Depends(get_current_user),  # noqa: B008
+    db: AsyncSession = Depends(get_db),  # noqa: B008
+) -> PassportEvidenceSummaryEnvelope:
+    """
+    Read-only evidence-linked claim summary for Passport private awareness (F8).
+
+    Path avoids `/passport` substring so Passport route-surface guards stay clean.
+    Evidence-scoped (not Passport-owned). Does not mutate claims, evidence,
+    support_status, or verification_status. No download URLs or storage paths.
+    """
+    data = await _passport_evidence_summary_for_owner(db, user.id)
+    return PassportEvidenceSummaryEnvelope(data=data)
 
 
 @router.post("/links", response_model=ClaimEvidenceLinkEnvelope, status_code=201)

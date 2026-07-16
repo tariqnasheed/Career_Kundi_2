@@ -144,3 +144,38 @@ class EvidenceClaimLinkRead(BaseModel):
 class EvidenceClaimLinkListEnvelope(BaseModel):
     data: list[EvidenceClaimLinkRead]
     meta: ApiListMeta
+
+
+class PassportEvidenceSummaryItem(BaseModel):
+    """One private evidence↔claim link row for Passport read-only awareness (0053-F8)."""
+
+    claim_id: uuid.UUID
+    subject_id: uuid.UUID
+    claim_kind: str
+    claim_value: str
+    claim_support_status: str
+    claim_support_label: str
+    claim_verification_status: str
+    claim_verification_label: str
+    link_role: str
+    link_role_label: str
+    evidence_id: uuid.UUID
+    evidence_title: str
+    evidence_kind: str
+    evidence_kind_label: str
+    has_attachment: bool
+    truth_warning: str
+    created_at: datetime
+
+
+class PassportEvidenceSummaryRead(BaseModel):
+    """Read-only current-user evidence-linked claim summary for Passport (0053-F8)."""
+
+    linked_claims_count: int
+    evidence_records_count: int
+    items: list[PassportEvidenceSummaryItem]
+    truth_warning: str
+
+
+class PassportEvidenceSummaryEnvelope(BaseModel):
+    data: PassportEvidenceSummaryRead

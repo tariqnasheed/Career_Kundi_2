@@ -16,6 +16,7 @@ function readSrc(rel: string): string {
 
 const AUDIT_FILES = [
   "features/passport/PassportPage.tsx",
+  "features/passport/PassportEvidencePanel.tsx",
   "features/passport/PassportEditForms.tsx",
   "features/passport/passportIntegrationUtils.ts",
   "pages/ProfilePage.tsx",
@@ -27,6 +28,7 @@ const AUDIT_FILES = [
 
 const USER_FACING_PAGES = [
   "features/passport/PassportPage.tsx",
+  "features/passport/PassportEvidencePanel.tsx",
   "features/passport/PassportEditForms.tsx",
   "features/passport/passportIntegrationUtils.ts",
   "pages/ProfilePage.tsx",

@@ -5578,11 +5578,17 @@ Evidence: `~/Desktop/CareerKundi_0053_F6_Evidence_Upload_UI_Evidence.txt`.
 
 ## 0053-F7 Evidence-to-Claim Linking UI
 
-**Status:** Completing in this commit. Evidence-scoped `GET /linkable-claims` + Evidence Library claim selector/link UI; link does **not** mutate claim axes or verify claims; **no** Passport evidence panel, claim creation UI, public sharing, or `/api/v1/claims`.
+**Status:** Done (`ff084051`). Evidence-scoped `GET /linkable-claims` + Evidence Library claim selector/link UI; link does **not** mutate claim axes or verify claims; **no** Passport evidence panel, claim creation UI, public sharing, or `/api/v1/claims`.
 
 Evidence: `~/Desktop/CareerKundi_0053_F7_Evidence_To_Claim_Linking_UI_Evidence.txt`.
 
-**Next after F7 acceptance:** 0053-F8 only (Passport read-only evidence panel or review/verification state machine).
+## 0053-F8 Passport Read-Only Evidence Panel
+
+**Status:** Completing in this commit. Evidence-scoped `GET /private-awareness-summary` + Passport `Private evidence awareness` panel; Passport does **not** own evidence, upload/download/link/verify, or mutate claim axes; **no** public sharing, OCR, or verification workflow.
+
+Evidence: `~/Desktop/CareerKundi_0053_F8_Passport_Read_Only_Evidence_Panel_Evidence.txt`.
+
+**Next after F8 acceptance:** 0053-F9 only (Review/Verification State Machine Planning or Evidence Hardening).
 
 ---
 
@@ -5642,8 +5648,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F5 | Attachment Storage Backend |
 | 0053-F6 | Evidence Upload UI |
 | 0053-F7 | Evidence-to-Claim Linking UI |
-| 0053-F8 | CV/Roadmap Evidence Awareness |
-| 0053-F9 | Hardening, Privacy, Deletion and Final Regression |
+| 0053-F8 | Passport Read-Only Evidence Panel |
+| 0053-F9 | Review/Verification Planning or Evidence Hardening |
 
 ### Hard no-go (until specifically approved)
 
@@ -5651,7 +5657,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F7**, then **0053-F8** only.
+**Owner acceptance of 0053-F8**, then **0053-F9** only.
 
 ---
 
