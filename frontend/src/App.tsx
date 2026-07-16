@@ -17,6 +17,7 @@
  *     /settings
  *     /platform
  *     /passport
+ *     /evidence
  *     /chatbot
  *
  * Auth guard: <PrivateRoute /> checks useAuthStore().isAuthenticated.
@@ -45,6 +46,7 @@ const ProfilePage      = lazy(() => import("./pages/ProfilePage"));
 const SettingsPage     = lazy(() => import("./pages/SettingsPage"));
 const PlatformPage     = lazy(() => import("./pages/PlatformPage"));
 const PassportPage     = lazy(() => import("./features/passport/PassportPage"));
+const EvidenceLibraryPage = lazy(() => import("./pages/EvidenceLibraryPage"));
 const ChatbotPage      = lazy(() => import("./pages/ChatbotPage"));
 const NotFoundPage     = lazy(() => import("./pages/NotFoundPage"));
 
@@ -128,6 +130,7 @@ export default function App() {
             <Route path="/settings"        element={<SettingsPage />} />
             <Route path="/platform"        element={<PlatformPage />} />
             <Route path="/passport"        element={<PassportPage />} />
+            <Route path="/evidence"        element={<EvidenceLibraryPage />} />
             <Route path="/chatbot"         element={<ChatbotPage />} />
           </Route>
         </Route>

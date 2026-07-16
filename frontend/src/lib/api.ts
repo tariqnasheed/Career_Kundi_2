@@ -65,6 +65,10 @@ import type {
   PassportCredentialPatchRequest,
   PassportTargetCreateRequest,
   PassportTargetPatchRequest,
+  EvidenceCreateRequest,
+  EvidenceRead,
+  EvidenceEnvelope,
+  EvidenceListEnvelope,
 } from "@/types/api";
 import {
   buildSavedJobSearchPageRequest,
@@ -974,6 +978,32 @@ export const passportApi = {
       payload,
     );
     return response.data.data;
+  },
+};
+
+// ---------------------------------------------------------------------------
+// Evidence library (0053-F3/F4) — private metadata only; no upload/download
+// ---------------------------------------------------------------------------
+
+export const evidenceApi = {
+  /** List evidence metadata owned by the authenticated user. */
+  listEvidence: async (): Promise<EvidenceRead[]> => {
+    const res = await http.get<EvidenceListEnvelope>("/evidence");
+    return res.data.data;
+  },
+
+  /** Create private evidence metadata (no file bytes). */
+  createEvidenceMetadata: async (
+    payload: EvidenceCreateRequest,
+  ): Promise<EvidenceRead> => {
+    const res = await http.post<EvidenceEnvelope>("/evidence", payload);
+    return res.data.data;
+  },
+
+  /** Get one owned evidence metadata record. */
+  getEvidenceMetadata: async (evidenceId: string): Promise<EvidenceRead> => {
+    const res = await http.get<EvidenceEnvelope>(`/evidence/${evidenceId}`);
+    return res.data.data;
   },
 };
 

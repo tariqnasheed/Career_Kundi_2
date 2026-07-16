@@ -52,6 +52,15 @@ Private authenticated metadata API:
 
 Evidence: `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.txt`
 
+## 0053-F4 Private Evidence Library UI (2026-07-16)
+
+Private `/evidence` page for metadata create/list:
+
+- Safe wording; no file upload/download; no verification/share controls
+- Attachment storage deferred to F5 (`careerkundi_0053_f4_attachment_storage_decision.md`)
+
+Evidence: `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the

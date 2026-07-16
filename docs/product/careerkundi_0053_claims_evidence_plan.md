@@ -349,11 +349,16 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Evidence:** `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.txt`
 
 ### 0053-F4 Private Evidence Library UI / Attachment Storage Decision
-- **Purpose:** Private evidence library UI and/or attachment storage decision (next after F3)  
-- **Allowed:** private FE library and/or storage decision after F3 acceptance  
-- **Forbidden:** public sharing, verification workflow unless separately approved; Passport trust overclaim  
-- **Note:** Original ladder also listed “Passport Evidence Read UI” later; keep Passport panel after library/storage decision unless owner reorders  
-- **Deferred until F3 accepted**  
+- **Status:** Implemented (`/evidence` metadata UI; `evidenceApi`; storage decision doc; no upload)  
+- **Purpose:** Private Evidence Library using F3 metadata APIs; document F5 storage requirements  
+- **Allowed:** FE route/page, API client/types, create/list metadata, safe wording, nav entry, storage decision doc  
+- **Forbidden:** file upload/download/preview, storage backend, Passport evidence panel, claim UUID linker, verification, public sharing  
+- **Storage decision:** see `docs/product/careerkundi_0053_f4_attachment_storage_decision.md`  
+- **Tests:** EvidenceLibraryPage vitest + backend evidence API regression  
+- **Browser:** `/evidence` + existing page smoke  
+- **Gate:** metadata-only UI; no trust overclaim  
+- **Deferred:** F5 attachment storage backend  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.txt`
 
 ### 0053-F4b Passport Evidence Read UI (later ladder step)
 - **Purpose:** Read-only Passport panel for evidence-linked states  

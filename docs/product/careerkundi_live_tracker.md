@@ -10,18 +10,17 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | **0053 Evidence, Claims, Provenance and Verification Foundations** |
-| Current Slice | **0053-F3 Private Evidence Service/API Boundary** |
-| Current Status | Completing / accepted with this commit |
-| Last Completed Slice | **0053-F2** · 0053-F1 · POST-CLAUDE-R2 · ROADMAP-RICH · JOB-INT-R1 · CORE-VALUE-R1 · LLM-R1 · 0053-F0 · 0052 |
-| 0052 status | **Completed / accepted** |
-| F0–F2 status | **Completed / accepted** |
-| Last Commit | This commit — `feat(evidence): add private evidence api boundary` |
+| Current Slice | **0053-F4 Private Evidence Library UI + Attachment Storage Decision** |
+| Current Status | Accepted with watch items (ready for F5) |
+| Last Completed Slice | **0053-F3** · F2 · F1 · POST-CLAUDE-R2 · ROADMAP-RICH · JOB-INT-R1 · CORE-VALUE-R1 · LLM-R1 · F0 · 0052 |
+| F0–F3 status | **Completed / accepted** |
+| Last Commit | This commit — `feat(evidence): add private evidence library ui` |
 | Last Push Status | Push with this slice |
-| Next Slice | **0053-F4 Private Evidence Library UI** (or attachment storage decision) — only after F3 acceptance |
-| Browser viewports | No UI change in F3; API + page smoke only |
-| Blocked Items | None for F3; do not start F4 until accepted |
+| Next Slice | **0053-F5 Attachment Storage Backend** (only after F4 acceptance) |
+| Browser viewports | `/evidence` + existing page smoke |
+| Blocked Items | None for F4; do not start F5 until accepted |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
-| LLM provider | **Local Ollama 8B** (`http://127.0.0.1:11434`); F3 does not call LLM |
+| LLM provider | **Local Ollama 8B**; F4 does not call LLM |
 | Foundation head | `f0009_evidence_foundation` |
 
 ---
@@ -33,8 +32,9 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Master Build Plan | `docs/product/careerkundi_master_build_plan.md` |
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 | 0053 Plan | `docs/product/careerkundi_0053_claims_evidence_plan.md` |
+| F4 storage decision | `docs/product/careerkundi_0053_f4_attachment_storage_decision.md` |
 
-**Pointers:** **0053-F2** Done · **0053-F3** Completing · Next **0053-F4**.
+**Pointers:** **0053-F3** Done · **0053-F4** Accepted (watch items) · Next **0053-F5**.
 
 ---
 
@@ -42,9 +42,9 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| 0053-F2 | Evidence Domain Skeleton | Done | `~/Desktop/CareerKundi_0053_F2_Evidence_Domain_Skeleton_Evidence.txt` | `112fc8e8` | Yes | Metadata + links |
-| 0053-F3 | Private Evidence Service/API Boundary | Completing | `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.txt` | This commit | With push | Auth API only |
-| 0053-F4 | Private Evidence Library UI / storage decision | Next | — | — | — | After F3 accepted |
+| 0053-F3 | Private Evidence Service/API Boundary | Done | `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.txt` | `dd3c4bdb` | Yes | Auth API |
+| 0053-F4 | Private Evidence Library UI + Storage Decision | Accepted (watch) | `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.txt` | This commit | With push | Metadata UI only |
+| 0053-F5 | Attachment Storage Backend | Next | — | — | — | After F4 accepted |
 
 ---
 
@@ -52,8 +52,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-16 | 0053-F2 | `~/Desktop/CareerKundi_0053_F2_Evidence_Domain_Skeleton_Evidence.txt` | B ready for F3 | No routes |
-| 2026-07-16 | 0053-F3 | `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.txt` | This slice | Private API |
+| 2026-07-16 | 0053-F3 | `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.txt` | A ready for F4 | Private API |
+| 2026-07-16 | 0053-F4 | `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.txt` | This slice | No upload |
 
 ---
 
@@ -61,8 +61,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-16 | 0053-F2 | `112fc8e8` | Pushed | Evidence skeleton |
-| 2026-07-16 | 0053-F3 | This commit | Push with this slice | Private evidence API |
+| 2026-07-16 | 0053-F3 | `dd3c4bdb` | Pushed | Private evidence API |
+| 2026-07-16 | 0053-F4 | This commit | Push with this slice | Evidence Library UI |
 
 ---
 
@@ -70,19 +70,19 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Decision | Impact | Status |
 |---|---|---|---|
-| 2026-07-16 | Private `/api/v1/evidence` metadata only | No upload/download | Implemented |
-| 2026-07-16 | Current-user ownership on all reads/writes | Cross-user 404 | Implemented |
-| 2026-07-16 | Link API does not mutate claim axes | No silent truth upgrade | Implemented |
+| 2026-07-16 | F4 = metadata UI only | No file upload/storage | Implemented |
+| 2026-07-16 | No claim linker UUID form | Wait for claim selection UI | Implemented |
+| 2026-07-16 | F5 owns storage backend + safeguards | Documented | Documented |
 
 ---
 
 ## 7. Active Blockers
 
-None for accepting F3.
+None for accepting F4.
 
-**Do not start in F4 prematurely:** public sharing, verification UI, Passport evidence panels, wallet/DID/blockchain.
+**Do not start in F5 prematurely:** public sharing, verification UI, Passport evidence panel, wallet/DID/blockchain.
 
-**Watch:** pre-existing local `documents/` dirt — never stage.
+**Watch:** pre-existing local `documents/` dirt — never stage. `JobSearchPage.test.tsx` still missing.
 
 ---
 
@@ -90,12 +90,12 @@ None for accepting F3.
 
 | Field | Value |
 |---|---|
-| Next | **0053-F4** Private Evidence Library UI or attachment storage decision (only after F3 accepted) |
-| Reason | Private metadata API exists; still no upload/UI |
-| Do not start | Upload UI, verification reviews, public routes, Passport mutation |
+| Next | **0053-F5 Attachment Storage Backend** (only after F4 accepted) |
+| Reason | Library UI exists; uploads still blocked until storage decision implemented |
+| Do not start | Upload endpoints, OCR, public URLs, Passport evidence panel |
 | Plan | `docs/product/careerkundi_0053_claims_evidence_plan.md` |
-| Evidence | `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.txt` |
+| Evidence | `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.txt` |
 
 ---
 
-*Tracker updated: 2026-07-16 — 0053-F3*
+*Tracker updated: 2026-07-16 — 0053-F4*

@@ -1096,6 +1096,63 @@ export interface PassportTargetPatchRequest {
 }
 
 // ---------------------------------------------------------------------------
+// Evidence library (0053-F3/F4) — private metadata only; not verification
+// ---------------------------------------------------------------------------
+
+export type EvidenceKind =
+  | "document"
+  | "certificate"
+  | "transcript"
+  | "portfolio"
+  | "assessment"
+  | "reference"
+  | "source_snapshot"
+  | "other";
+
+export type EvidencePrivacyClass = "private" | "sensitive" | "restricted";
+
+export interface EvidenceCreateRequest {
+  title: string;
+  evidence_kind: EvidenceKind | string;
+  subject_id?: string | null;
+  privacy_class?: EvidencePrivacyClass | string | null;
+  storage_uri?: string | null;
+  content_hash?: string | null;
+  mime_type?: string | null;
+  size_bytes?: number | null;
+  source_id?: string | null;
+  snapshot_id?: string | null;
+}
+
+export interface EvidenceRead {
+  id: string;
+  subject_id: string | null;
+  title: string;
+  evidence_kind: string;
+  privacy_class: string;
+  storage_uri: string | null;
+  content_hash: string | null;
+  mime_type: string | null;
+  size_bytes: number | null;
+  source_id: string | null;
+  snapshot_id: string | null;
+  evidence_kind_label: string;
+  privacy_label: string;
+  truth_warning: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface EvidenceEnvelope {
+  data: EvidenceRead;
+}
+
+export interface EvidenceListEnvelope {
+  data: EvidenceRead[];
+  meta: { count: number };
+}
+
+// ---------------------------------------------------------------------------
 // Shared error envelope
 // ---------------------------------------------------------------------------
 
