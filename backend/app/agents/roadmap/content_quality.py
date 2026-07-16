@@ -102,11 +102,19 @@ def normalize_study_material(
     if not isinstance(reading, (int, float)) or reading <= 0:
         reading = fallback.get("estimated_reading_time_minutes")
 
-    return {
-        "overview": str(overview).strip(),
-        "key_concepts": concepts,
-        "estimated_reading_time_minutes": reading,
-    }
+    from app.agents.roadmap.learning_content import deep_fix_articles, enrich_study_material
+
+    # Start from the (already useful) LLM values, then backfill every enriched
+    # Bloom-aligned field that the model left blank/missing.
+    merged: dict[str, Any] = dict(value)
+    merged.update(
+        {
+            "overview": str(overview).strip(),
+            "key_concepts": concepts,
+            "estimated_reading_time_minutes": reading,
+        }
+    )
+    return deep_fix_articles(enrich_study_material(merged, skill_name, target_role))
 
 
 def normalize_practice_activities(
@@ -145,8 +153,25 @@ def normalize_practice_activities(
             if extra not in questions:
                 questions.append(extra)
 
-    return {
-        "exercises": exercises,
-        "project_idea": str(project_idea).strip(),
-        "self_assessment_questions": questions,
-    }
+    # Enriched practice modalities: keep any well-formed LLM-provided items,
+    # otherwise backfill from the deterministic builder so flashcards / quizzes /
+    # projects / reflection are never empty.
+    def _list_or_fallback(key: str, min_items: int) -> list:
+        provided = value.get(key)
+        if isinstance(provided, list) and len([x for x in provided if x]) >= min_items:
+            return [x for x in provided if x]
+        return fallback.get(key, [])
+
+    from app.agents.roadmap.learning_content import deep_fix_articles
+
+    return deep_fix_articles(
+        {
+            "exercises": exercises,
+            "project_idea": str(project_idea).strip(),
+            "self_assessment_questions": questions,
+            "flashcards": _list_or_fallback("flashcards", 3),
+            "quizzes": _list_or_fallback("quizzes", 2),
+            "projects": _list_or_fallback("projects", 1),
+            "reflection_questions": _list_or_fallback("reflection_questions", 2),
+        }
+    )

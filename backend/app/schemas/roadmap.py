@@ -99,18 +99,70 @@ class RoadmapResourceItem(BaseModel):
     resource_type: Literal["course", "documentation", "article", "book", "video", "search_result"] = "article"
     source: str | None = None
     verified: bool = False
+    curated: bool = False
+
+
+class RoadmapKeyConcept(BaseModel):
+    """A single teachable concept: the term plus a plain-language definition."""
+
+    term: str = ""
+    definition: str = ""
 
 
 class RoadmapStudyMaterial(BaseModel):
+    # --- Core (backward compatible) ---
     overview: str = ""
     key_concepts: list[str] = Field(default_factory=list)
     estimated_reading_time_minutes: int | None = None
+    # --- Enriched, Bloom-aligned learning content ---
+    why_it_matters: str = ""
+    prerequisites: list[str] = Field(default_factory=list)
+    learning_objectives: list[str] = Field(default_factory=list)
+    beginner_explanation: str = ""
+    intermediate_explanation: str = ""
+    advanced_explanation: str = ""
+    concepts: list[RoadmapKeyConcept] = Field(default_factory=list)
+    worked_example: str = ""
+    common_mistakes: list[str] = Field(default_factory=list)
+    revision_notes: list[str] = Field(default_factory=list)
+
+
+class RoadmapFlashcard(BaseModel):
+    """Active-recall flashcard (spaced-repetition ready): prompt -> answer."""
+
+    front: str = ""
+    back: str = ""
+
+
+class RoadmapQuizQuestion(BaseModel):
+    """A multiple-choice 'assessment gateway' checkpoint question."""
+
+    question: str = ""
+    options: list[str] = Field(default_factory=list)
+    answer_index: int = 0
+    explanation: str = ""
+
+
+class RoadmapProject(BaseModel):
+    """A hands-on, project-based-learning brief at a stated difficulty."""
+
+    title: str = ""
+    brief: str = ""
+    steps: list[str] = Field(default_factory=list)
+    deliverable: str = ""
+    difficulty: Literal["beginner", "intermediate", "advanced"] = "beginner"
 
 
 class RoadmapPracticeActivities(BaseModel):
+    # --- Core (backward compatible) ---
     exercises: list[str] = Field(default_factory=list)
     project_idea: str | None = None
     self_assessment_questions: list[str] = Field(default_factory=list)
+    # --- Enriched practice modalities ---
+    flashcards: list[RoadmapFlashcard] = Field(default_factory=list)
+    quizzes: list[RoadmapQuizQuestion] = Field(default_factory=list)
+    projects: list[RoadmapProject] = Field(default_factory=list)
+    reflection_questions: list[str] = Field(default_factory=list)
 
 
 # --- Response --------------------------------------------------------------------------

@@ -189,11 +189,14 @@ def build_study_overview(
     word_count = len(overview.split())
     estimated_reading_time_minutes = max(3, round(word_count / 200 * 60))
 
-    return {
+    from app.agents.roadmap.learning_content import deep_fix_articles, enrich_study_material
+
+    base = {
         "overview": overview,
         "key_concepts": key_concepts,
         "estimated_reading_time_minutes": estimated_reading_time_minutes,
     }
+    return deep_fix_articles(enrich_study_material(base, skill_name, target_role))
 
 
 def build_practice_activities(skill_name: str, target_role: str, sibling_skills: list[str]) -> dict:
@@ -237,11 +240,25 @@ def build_practice_activities(skill_name: str, target_role: str, sibling_skills:
         f"What would you practice next week to move {skill_name} from 'familiar' to 'interview-ready'?",
     ]
 
-    return {
-        "exercises": exercises,
-        "project_idea": project_idea,
-        "self_assessment_questions": self_assessment_questions,
-    }
+    from app.agents.roadmap.learning_content import (
+        build_flashcards,
+        build_projects,
+        build_quizzes,
+        build_reflection_questions,
+        deep_fix_articles,
+    )
+
+    return deep_fix_articles(
+        {
+            "exercises": exercises,
+            "project_idea": project_idea,
+            "self_assessment_questions": self_assessment_questions,
+            "flashcards": build_flashcards(skill_name, target_role),
+            "quizzes": build_quizzes(skill_name, target_role),
+            "projects": build_projects(skill_name, target_role, sibling_skills),
+            "reflection_questions": build_reflection_questions(skill_name, target_role),
+        }
+    )
 
 
 _PHASE_LABELS = ["Foundations", "Core Skills", "Advanced Skills", "Specialization & Mastery"]
@@ -268,3 +285,45 @@ def resource_type_for_url(url: str | None) -> str:
     if "internal://" in lowered:
         return "article"
     return "article"
+
+
+# Reputable, general-purpose learning destinations that exist for essentially
+# every educational field. Used as an HONEST fallback when live web search is
+# unavailable or rate-limited (SerpAPI 429): rather than leaving the Resources
+# section blank, we point the learner at real, stable platforms with a
+# skill-scoped search so they always have somewhere to go. These are marked
+# ``verified=False`` (we did not fetch them live) and ``curated=True``.
+_CURATED_PLATFORMS: tuple[tuple[str, str, str], ...] = (
+    ("YouTube — full course", "https://www.youtube.com/results?search_query=", "video"),
+    ("freeCodeCamp", "https://www.freecodecamp.org/news/search/?query=", "course"),
+    ("Coursera", "https://www.coursera.org/search?query=", "course"),
+    ("Khan Academy", "https://www.khanacademy.org/search?page_search_query=", "course"),
+    ("Wikipedia — overview", "https://en.wikipedia.org/w/index.php?search=", "article"),
+)
+
+
+def curated_resources(skill_name: str, target_role: str = "") -> list[dict]:
+    """Deterministic, field-agnostic learning resources used when live search
+    fails or returns nothing, so the Resources section is never empty.
+
+    Every entry links to a real, stable platform with a skill-scoped query, and
+    is honestly flagged ``verified=False`` / ``curated=True``.
+    """
+    from urllib.parse import quote_plus
+
+    skill = (skill_name or "this skill").strip()
+    query = quote_plus(f"{skill} tutorial for beginners" if not target_role else f"{skill} for {target_role}")
+    resources: list[dict] = []
+    for label, base, rtype in _CURATED_PLATFORMS:
+        url = f"{base}{query}"
+        resources.append(
+            {
+                "title": f"{skill} — {label}",
+                "url": url,
+                "resource_type": rtype,
+                "source": url,
+                "verified": False,
+                "curated": True,
+            }
+        )
+    return resources

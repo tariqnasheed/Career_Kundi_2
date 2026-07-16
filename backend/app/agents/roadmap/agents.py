@@ -45,10 +45,58 @@ from app.tools.llm import PromptSpec, get_llm
 from app.tools.rag import retrieve
 from app.tools.search import get_search_provider
 
+from app.core.logging import get_logger
+
 from . import mock_data
 from .content_quality import normalize_practice_activities, normalize_study_material
 
+logger = get_logger(__name__)
+
 _IMPORTANCE_ORDER = {"critical": 0, "high": 1, "medium": 2, "nice-to-have": 3}
+
+
+async def _fetch_skill_resources(
+    skill_name: str, target_role: str = "", *, num_results: int = 3
+) -> list[dict[str, Any]]:
+    """Fetch learning resources for a skill without ever crashing the pipeline.
+
+    Live web search (SerpAPI) can fail — rate limits (429), no key, network
+    errors — and previously any such failure raised straight out of the
+    resource step and aborted ALL content generation for the skill, leaving the
+    user with an empty study card. This helper isolates that: on any failure, or
+    when search returns nothing, it falls back to deterministic curated
+    resources so the Resources section is always populated and, crucially, study
+    material / flashcards / quizzes / projects are never lost to a search error.
+    """
+    try:
+        provider = get_search_provider()
+        results = await provider.search(
+            f"{skill_name} tutorial learning resource", num_results=num_results
+        )
+    except Exception as exc:  # noqa: BLE001 — degrade gracefully, never abort content
+        logger.warning("roadmap_resource_search_failed", skill=skill_name, error=str(exc))
+        results = []
+
+    resources: list[dict[str, Any]] = []
+    for r in results:
+        resources.append(
+            {
+                "title": r.title,
+                "url": r.url,
+                "resource_type": mock_data.resource_type_for_url(r.url),
+                "source": r.url,
+                "verified": r.verified,
+            }
+        )
+        if r.verified and r.url and r.url.startswith("http"):
+            try:
+                add_skill_resource_edge(r.title, r.url, skill_name)
+            except Exception as exc:  # noqa: BLE001
+                logger.warning("roadmap_resource_edge_failed", skill=skill_name, error=str(exc))
+
+    if not resources:
+        resources = mock_data.curated_resources(skill_name, target_role)
+    return resources
 
 
 def _register_citation(citations: list[dict], *, title: str, source: str) -> int:
@@ -80,23 +128,50 @@ def _grounded_context_block(documents: list[Document], citations: list[dict]) ->
 
 
 _STUDY_MATERIAL_ROLE = """
-You are the Study Material agent for Careerkundi's Career Roadmap feature.
-Given one skill name, the target role it supports, and numbered
-skill-taxonomy context retrieved from the knowledge base, write a concise,
-specific study overview for that skill and 3-6 key concepts a learner
-should walk away understanding. Ground every factual claim in the provided
-context using the EXACT [n] citation markers shown; if the context doesn't
-meaningfully cover this skill, say so explicitly rather than inventing
-material.
+You are Careerkundi's Career Roadmap Study Material author. Act as a patient
+PhD-level scholar and master teacher who can make ANY skill in ANY educational
+field understandable to a complete beginner and useful all the way to advanced
+practice.
+
+Given one skill name, the target role it supports, and numbered skill-taxonomy
+context, teach that exact skill. Produce:
+- a clear, specific overview (never empty, never a refusal);
+- why_it_matters for the target role;
+- prerequisites (what to know first, kept beginner-friendly);
+- learning_objectives laddered by Bloom's taxonomy (remember -> understand ->
+  apply -> analyse -> evaluate -> create);
+- three tiered explanations: beginner_explanation, intermediate_explanation,
+  advanced_explanation;
+- key_concepts and concepts (term + plain-language definition);
+- a concrete worked_example;
+- common_mistakes and short revision_notes.
+
+Adapt the content to the skill's real field (engineering, healthcare, data,
+business, creative, trades, science, education, finance, ...). Be concrete and
+specific to the actual skill and role — no generic filler. Ground factual claims
+in the provided context using the EXACT [n] citation markers shown. If the
+context doesn't cover this skill, still teach it from established fundamentals,
+but do not invent statistics, sources, or citations.
 """.strip()
 
 _PRACTICE_ROLE = """
-You are the Practice Generator agent for Careerkundi's Career Roadmap
-feature. Given a skill name, the target role it supports, and the other
-skills also part of this roadmap, generate hands-on practice exercises, ONE
-project idea (combining this skill with a genuinely complementary sibling
-skill when one exists), and self-assessment questions a learner can use to
-judge their own readiness to move on.
+You are Careerkundi's Career Roadmap Practice author. Act as a patient master
+teacher building active, effective practice for one skill, grounded in learning
+science (active recall, spaced repetition, assessment gateways, project-based
+learning).
+
+Given a skill name, the target role, and sibling skills, produce:
+- exercises: several concrete, do-able practice tasks;
+- flashcards: active-recall cards (front prompt -> back answer);
+- quizzes: multiple-choice check questions, each with options, the correct
+  answer_index, and a short explanation;
+- projects: a few hands-on project briefs at increasing difficulty
+  (beginner -> intermediate -> advanced) with steps and a deliverable;
+- self_assessment_questions and reflection_questions (synthesis / self-evaluation).
+
+Everything must be specific to the real skill and role, and useful for a learner
+who is starting from scratch but wants to reach interview-ready. Never return
+empty lists, generic filler, or invented facts/metrics.
 """.strip()
 
 _ROLE_TAXONOMY_ROLE = """
@@ -308,7 +383,7 @@ class ResourceFinderAgent(BaseAgent):
 
     async def run(self, state: dict[str, Any]) -> dict[str, Any]:
         skills = state.get("roadmap_skills") or []
-        provider = get_search_provider()
+        target_role = state.get("target_role", "")
 
         updated: list[dict[str, Any]] = []
         for skill in skills:
@@ -316,21 +391,7 @@ class ResourceFinderAgent(BaseAgent):
                 updated.append(skill)
                 continue
 
-            results = await provider.search(f"{skill['skill_name']} tutorial learning resource", num_results=3)
-            resources = []
-            for r in results:
-                resources.append(
-                    {
-                        "title": r.title,
-                        "url": r.url,
-                        "resource_type": mock_data.resource_type_for_url(r.url),
-                        "source": r.url,
-                        "verified": r.verified,
-                    }
-                )
-                if r.verified and r.url and r.url.startswith("http"):
-                    add_skill_resource_edge(r.title, r.url, skill["skill_name"])
-
+            resources = await _fetch_skill_resources(skill["skill_name"], target_role)
             updated.append({**skill, "resources": resources})
 
         return {"roadmap_skills": updated}
@@ -763,21 +824,7 @@ class SkillRefreshExecutorAgent(BaseAgent):
                 practice_response.parsed_json, skill_name, target_role, []
             )
 
-        provider = get_search_provider()
-        results = await provider.search(f"{skill_name} tutorial learning resource", num_results=3)
-        resources = []
-        for r in results:
-            resources.append(
-                {
-                    "title": r.title,
-                    "url": r.url,
-                    "resource_type": mock_data.resource_type_for_url(r.url),
-                    "source": r.url,
-                    "verified": r.verified,
-                }
-            )
-            if r.verified and r.url and r.url.startswith("http"):
-                add_skill_resource_edge(r.title, r.url, skill_name)
+        resources = await _fetch_skill_resources(skill_name, target_role)
 
         draft_output = {
             "resources": resources,

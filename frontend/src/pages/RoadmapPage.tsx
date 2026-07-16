@@ -257,6 +257,17 @@ function SkillDetailModal({
 }) {
   const { addToast } = useUIStore();
   const [practiceTab, setPracticeTab] = useState<"flashcards" | "quizzes" | "projects" | "reflection">("flashcards");
+  const [flippedCards, setFlippedCards] = useState<Record<number, boolean>>({});
+  const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
+  const [studyLevel, setStudyLevel] = useState<"beginner" | "intermediate" | "advanced">("beginner");
+
+  // Reset per-skill interaction state when the modal switches to another skill.
+  useEffect(() => {
+    setFlippedCards({});
+    setQuizAnswers({});
+    setStudyLevel("beginner");
+    setPracticeTab("flashcards");
+  }, [skill?.id]);
 
   const statusMutation = useMutation({
     mutationFn: (s: SkillStatus) => roadmapApi.updateSkillStatus(roadmapId, skill!.id, s),
@@ -300,10 +311,30 @@ function SkillDetailModal({
   const practice = skill.practice_activities;
   const overview = (study?.overview || "").trim();
   const keyConcepts = study?.key_concepts?.filter((c) => (c || "").trim()) ?? [];
-  const flashcards = practice?.self_assessment_questions?.filter((q) => (q || "").trim()) ?? [];
+
+  // Enriched, Bloom-aligned study content (falls back gracefully for old data).
+  const whyItMatters = (study?.why_it_matters || "").trim();
+  const prerequisites = study?.prerequisites?.filter((p) => (p || "").trim()) ?? [];
+  const objectives = study?.learning_objectives?.filter((o) => (o || "").trim()) ?? [];
+  const layered: Record<string, string> = {
+    beginner: (study?.beginner_explanation || "").trim(),
+    intermediate: (study?.intermediate_explanation || "").trim(),
+    advanced: (study?.advanced_explanation || "").trim(),
+  };
+  const hasLayered = !!(layered.beginner || layered.intermediate || layered.advanced);
+  const concepts = (study?.concepts ?? []).filter((c) => c && ((c.term || "").trim() || (c.definition || "").trim()));
+  const workedExample = (study?.worked_example || "").trim();
+  const commonMistakes = study?.common_mistakes?.filter((m) => (m || "").trim()) ?? [];
+  const revisionNotes = study?.revision_notes?.filter((r) => (r || "").trim()) ?? [];
+
+  // Enriched practice modalities (fall back to legacy fields for old data).
+  const legacyQA = practice?.self_assessment_questions?.filter((q) => (q || "").trim()) ?? [];
+  const flashcards = (practice?.flashcards ?? []).filter((f) => f && ((f.front || "").trim() || (f.back || "").trim()));
+  const quizzes = (practice?.quizzes ?? []).filter((q) => q && (q.question || "").trim() && (q.options?.length ?? 0) > 0);
+  const projects = (practice?.projects ?? []).filter((p) => p && ((p.title || "").trim() || (p.brief || "").trim()));
+  const reflection = practice?.reflection_questions?.filter((q) => (q || "").trim()) ?? legacyQA;
   const exercises = practice?.exercises?.filter((e) => (e || "").trim()) ?? [];
   const projectIdea = (practice?.project_idea || "").trim();
-  const reflection = flashcards;
 
   const emptyHint = (label: string) => (
     <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>
@@ -350,16 +381,91 @@ function SkillDetailModal({
             ) : (
               emptyHint("No study material generated yet.")
             )}
-            {keyConcepts.length > 0 && (
-              <div>
+
+            {whyItMatters && (
+              <div style={{ marginBottom: "0.75rem" }}>
+                <p style={{ fontSize: "0.75rem", fontWeight: 600, marginBottom: "0.2rem" }}><Zap size={12} style={{ display: "inline" }} /> Why it matters</p>
+                <p style={{ fontSize: "0.8rem", lineHeight: 1.55, color: "var(--text-secondary)" }}>{whyItMatters}</p>
+              </div>
+            )}
+
+            {objectives.length > 0 && (
+              <div style={{ marginBottom: "0.75rem" }}>
+                <p style={{ fontSize: "0.75rem", fontWeight: 600, marginBottom: "0.2rem" }}><TrendingUp size={12} style={{ display: "inline" }} /> What you'll be able to do</p>
+                <ul style={{ margin: 0, paddingLeft: "1.25rem", fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+                  {objectives.map((o, i) => <li key={i} style={{ marginBottom: "2px" }}>{o}</li>)}
+                </ul>
+              </div>
+            )}
+
+            {prerequisites.length > 0 && (
+              <p style={{ fontSize: "0.78rem", color: "var(--text-secondary)", marginBottom: "0.75rem" }}>
+                <strong>Before you start:</strong> {prerequisites.join(" · ")}
+              </p>
+            )}
+
+            {hasLayered && (
+              <div style={{ marginBottom: "0.75rem" }}>
+                <div className="skill-tabs" style={{ marginBottom: "0.5rem" }}>
+                  {(["beginner", "intermediate", "advanced"] as const).map((lvl) => (
+                    layered[lvl] ? (
+                      <button key={lvl} type="button" className={`skill-tab${studyLevel === lvl ? " skill-tab--active" : ""}`} onClick={() => setStudyLevel(lvl)}>
+                        {lvl.charAt(0).toUpperCase() + lvl.slice(1)}
+                      </button>
+                    ) : null
+                  ))}
+                </div>
+                <p style={{ fontSize: "0.82rem", lineHeight: 1.6 }}>{layered[studyLevel] || layered.beginner || layered.intermediate || layered.advanced}</p>
+              </div>
+            )}
+
+            {concepts.length > 0 ? (
+              <div style={{ marginBottom: "0.5rem" }}>
+                <p style={{ fontSize: "0.75rem", fontWeight: 600, marginBottom: "0.35rem" }}>Key concepts</p>
+                <ul style={{ margin: 0, paddingLeft: "1.1rem", fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+                  {concepts.map((c, i) => (
+                    <li key={i} style={{ marginBottom: "3px" }}>
+                      <strong style={{ color: "var(--text-primary)" }}>{c.term}</strong>{c.definition ? ` — ${c.definition}` : ""}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : keyConcepts.length > 0 && (
+              <div style={{ marginBottom: "0.5rem" }}>
                 <p style={{ fontSize: "0.75rem", fontWeight: 600, marginBottom: "0.35rem" }}>Key concepts</p>
                 <ul style={{ margin: 0, paddingLeft: "1.25rem", fontSize: "0.8rem", color: "var(--text-secondary)" }}>
                   {keyConcepts.map((c, i) => <li key={i}>{c}</li>)}
                 </ul>
               </div>
             )}
+
+            {workedExample && (
+              <div style={{ marginBottom: "0.75rem" }}>
+                <p style={{ fontSize: "0.75rem", fontWeight: 600, marginBottom: "0.2rem" }}><Lightbulb size={12} style={{ display: "inline" }} /> Worked example</p>
+                <p style={{ fontSize: "0.8rem", lineHeight: 1.55, color: "var(--text-secondary)" }}>{workedExample}</p>
+              </div>
+            )}
+
+            {commonMistakes.length > 0 && (
+              <div style={{ marginBottom: "0.75rem" }}>
+                <p style={{ fontSize: "0.75rem", fontWeight: 600, marginBottom: "0.2rem" }}>Common mistakes to avoid</p>
+                <ul style={{ margin: 0, paddingLeft: "1.25rem", fontSize: "0.8rem", color: "var(--text-secondary)" }}>
+                  {commonMistakes.map((m, i) => <li key={i} style={{ marginBottom: "2px" }}>{m}</li>)}
+                </ul>
+              </div>
+            )}
+
+            {revisionNotes.length > 0 && (
+              <div style={{ padding: "0.5rem 0.625rem", borderRadius: "8px", background: "rgba(139,92,246,0.06)", marginBottom: "0.5rem" }}>
+                <p style={{ fontSize: "0.72rem", fontWeight: 600, marginBottom: "0.2rem" }}>Quick revision</p>
+                <ul style={{ margin: 0, paddingLeft: "1.1rem", fontSize: "0.76rem", color: "var(--text-secondary)" }}>
+                  {revisionNotes.map((r, i) => <li key={i}>{r}</li>)}
+                </ul>
+              </div>
+            )}
+
             {study?.estimated_reading_time_minutes != null && overview && (
-              <p style={{ fontSize: "0.7rem", color: "var(--text-secondary)", marginTop: "0.5rem" }}>~{study.estimated_reading_time_minutes} min read</p>
+              <p style={{ fontSize: "0.7rem", color: "var(--text-secondary)", marginTop: "0.5rem" }}><Clock size={11} style={{ display: "inline" }} /> ~{study.estimated_reading_time_minutes} min read</p>
             )}
           </CardContent>
         </Card>
@@ -375,24 +481,90 @@ function SkillDetailModal({
               ))}
             </div>
             {practiceTab === "flashcards" && (
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                {flashcards.slice(0, 8).map((q, i) => (
-                  <div key={i} className="feature-glass" style={{ padding: "0.6rem", fontSize: "0.8rem" }}>
-                    <strong>Q{i + 1}:</strong> {q}
-                  </div>
-                ))}
-                {!flashcards.length && emptyHint("No flashcards yet.")}
-              </div>
+              flashcards.length > 0 ? (
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  <p style={{ fontSize: "0.72rem", color: "var(--text-secondary)", marginBottom: "0.1rem" }}>Tap a card to reveal the answer (active recall).</p>
+                  {flashcards.map((f, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      className="feature-glass"
+                      style={{ padding: "0.6rem 0.7rem", fontSize: "0.8rem", textAlign: "left", cursor: "pointer", border: "none", width: "100%", background: flippedCards[i] ? "rgba(139,92,246,0.08)" : undefined, lineHeight: 1.5 }}
+                      onClick={() => setFlippedCards((prev) => ({ ...prev, [i]: !prev[i] }))}
+                    >
+                      <span style={{ fontWeight: 600 }}>{f.front}</span>
+                      {flippedCards[i] && <span style={{ display: "block", marginTop: "0.35rem", color: "var(--text-secondary)" }}>{f.back}</span>}
+                    </button>
+                  ))}
+                </div>
+              ) : legacyQA.length > 0 ? (
+                <ul style={{ margin: 0, paddingLeft: "1.25rem", fontSize: "0.8rem" }}>
+                  {legacyQA.map((q, i) => <li key={i}>{q}</li>)}
+                </ul>
+              ) : emptyHint("No flashcards yet.")
             )}
             {practiceTab === "quizzes" && (
-              exercises.length > 0 ? (
+              quizzes.length > 0 ? (
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                  {quizzes.map((quiz, qi) => {
+                    const chosen = quizAnswers[qi];
+                    const answered = chosen != null;
+                    return (
+                      <div key={qi} className="feature-glass" style={{ padding: "0.6rem 0.7rem" }}>
+                        <p style={{ fontSize: "0.8rem", fontWeight: 600, marginBottom: "0.4rem" }}>{qi + 1}. {quiz.question}</p>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
+                          {quiz.options.map((opt, oi) => {
+                            const isCorrect = oi === quiz.answer_index;
+                            const isChosen = chosen === oi;
+                            let bg: string | undefined;
+                            if (answered && isCorrect) bg = "rgba(34,197,94,0.15)";
+                            else if (answered && isChosen && !isCorrect) bg = "rgba(239,68,68,0.15)";
+                            return (
+                              <button
+                                key={oi}
+                                type="button"
+                                disabled={answered}
+                                onClick={() => setQuizAnswers((prev) => ({ ...prev, [qi]: oi }))}
+                                style={{ textAlign: "left", fontSize: "0.78rem", padding: "0.35rem 0.5rem", borderRadius: "6px", border: "1px solid var(--border-subtle, rgba(255,255,255,0.08))", background: bg, cursor: answered ? "default" : "pointer", color: "inherit" }}
+                              >
+                                {String.fromCharCode(65 + oi)}. {opt}{answered && isCorrect ? "  ✓" : ""}
+                              </button>
+                            );
+                          })}
+                        </div>
+                        {answered && quiz.explanation && (
+                          <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginTop: "0.4rem" }}>{chosen === quiz.answer_index ? "Correct — " : "Not quite. "}{quiz.explanation}</p>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : exercises.length > 0 ? (
                 <ol style={{ margin: 0, paddingLeft: "1.25rem", fontSize: "0.8rem" }}>
                   {exercises.map((ex, i) => <li key={i} style={{ marginBottom: "4px" }}>{ex}</li>)}
                 </ol>
               ) : emptyHint("No quizzes yet.")
             )}
             {practiceTab === "projects" && (
-              projectIdea ? (
+              projects.length > 0 ? (
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                  {projects.map((p, i) => (
+                    <div key={i} style={{ padding: "0.625rem 0.7rem", borderRadius: "8px", background: "rgba(139,92,246,0.06)" }}>
+                      <div style={{ display: "flex", gap: "0.4rem", alignItems: "center", marginBottom: "0.3rem", flexWrap: "wrap" }}>
+                        <p style={{ fontSize: "0.82rem", fontWeight: 600, margin: 0 }}><Lightbulb size={12} style={{ display: "inline" }} /> {p.title}</p>
+                        {p.difficulty && <Badge color={p.difficulty === "advanced" ? "violet" : "default"}>{p.difficulty}</Badge>}
+                      </div>
+                      {p.brief && <p style={{ fontSize: "0.79rem", lineHeight: 1.5, marginBottom: p.steps?.length ? "0.35rem" : 0 }}>{p.brief}</p>}
+                      {p.steps && p.steps.length > 0 && (
+                        <ol style={{ margin: "0 0 0.35rem", paddingLeft: "1.25rem", fontSize: "0.76rem", color: "var(--text-secondary)" }}>
+                          {p.steps.map((s, si) => <li key={si} style={{ marginBottom: "2px" }}>{s}</li>)}
+                        </ol>
+                      )}
+                      {p.deliverable && <p style={{ fontSize: "0.74rem", color: "var(--text-secondary)" }}><strong>Deliverable:</strong> {p.deliverable}</p>}
+                    </div>
+                  ))}
+                </div>
+              ) : projectIdea ? (
                 <div style={{ padding: "0.625rem", borderRadius: "8px", background: "rgba(139,92,246,0.06)" }}>
                   <p style={{ fontSize: "0.75rem", fontWeight: 600, marginBottom: "0.25rem" }}><Lightbulb size={12} style={{ display: "inline" }} /> Mini-project</p>
                   <p style={{ fontSize: "0.8rem" }}>{projectIdea}</p>
@@ -401,8 +573,8 @@ function SkillDetailModal({
             )}
             {practiceTab === "reflection" && (
               reflection.length > 0 ? (
-                <ul style={{ margin: 0, paddingLeft: "1.25rem", fontSize: "0.8rem" }}>
-                  {reflection.map((q, i) => <li key={i}>{q}</li>)}
+                <ul style={{ margin: 0, paddingLeft: "1.25rem", fontSize: "0.8rem", lineHeight: 1.5 }}>
+                  {reflection.map((q, i) => <li key={i} style={{ marginBottom: "4px" }}>{q}</li>)}
                 </ul>
               ) : emptyHint("No reflection questions yet.")
             )}

@@ -350,16 +350,57 @@ export interface ResourceLink {
   verified?: boolean;
 }
 
+export interface RoadmapKeyConcept {
+  term: string;
+  definition: string;
+}
+
 export interface StudyMaterial {
   overview: string;
   key_concepts: string[];
   estimated_reading_time_minutes?: number | null;
+  // Enriched, Bloom-aligned learning content
+  why_it_matters?: string;
+  prerequisites?: string[];
+  learning_objectives?: string[];
+  beginner_explanation?: string;
+  intermediate_explanation?: string;
+  advanced_explanation?: string;
+  concepts?: RoadmapKeyConcept[];
+  worked_example?: string;
+  common_mistakes?: string[];
+  revision_notes?: string[];
+}
+
+export interface RoadmapFlashcard {
+  front: string;
+  back: string;
+}
+
+export interface RoadmapQuizQuestion {
+  question: string;
+  options: string[];
+  answer_index: number;
+  explanation?: string;
+}
+
+export interface RoadmapProject {
+  title: string;
+  brief: string;
+  steps?: string[];
+  deliverable?: string;
+  difficulty?: "beginner" | "intermediate" | "advanced";
 }
 
 export interface PracticeActivities {
   exercises: string[];
   project_idea?: string | null;
   self_assessment_questions: string[];
+  // Enriched practice modalities
+  flashcards?: RoadmapFlashcard[];
+  quizzes?: RoadmapQuizQuestion[];
+  projects?: RoadmapProject[];
+  reflection_questions?: string[];
 }
 
 // ---------------------------------------------------------------------------
