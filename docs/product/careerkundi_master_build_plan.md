@@ -5639,12 +5639,19 @@ Doc: `docs/product/careerkundi_0053_f15_runtime_badge_seed_fix.md`.
 
 ## 0053-F16 Attachment Scan Queue Skeleton
 
-**Status:** Completing in this commit. Internal `attachment_scan_jobs` queue + service helpers; **no** scanner engine, scan route/UI, OCR/parsing, LLM review, claim mutation, or public sharing. Public attachment safety remains `scan_not_available`.
+**Status:** Completed / accepted. Internal `attachment_scan_jobs` queue + service helpers; **no** scanner engine, scan route/UI, OCR/parsing, LLM review, claim mutation, or public sharing. Public attachment safety remains `scan_not_available`.
 
 Evidence: `~/Desktop/CareerKundi_0053_F16_Attachment_Scan_Queue_Skeleton_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f16_scan_queue_skeleton.md`.
 
-**Next after F16 acceptance:** 0053-F17 only (Scan Worker Planning / Quarantine Policy).
+## 0053-F17 Scan Worker Contract + Quarantine Policy
+
+**Status:** Completing in this commit. Pure worker contract + quarantine policy helpers; scanner availability unavailable; update plans not applied; quarantine not active; **no** engine, route/UI, file I/O, OCR/LLM, claim mutation, or DB migration.
+
+Evidence: `~/Desktop/CareerKundi_0053_F17_Scan_Worker_Quarantine_Policy_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f17_scan_worker_quarantine_policy.md`.
+
+**Next after F17 acceptance:** 0053-F18 only (Scanner Adapter Selection / Local Scanner Integration Planning).
 
 ---
 
@@ -5713,7 +5720,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F14 | Private Attachment Deletion + Retention Policy |
 | 0053-F15 | Runtime Badge-Seed Startup Reliability Fix |
 | 0053-F16 | Attachment Scan Queue Skeleton |
-| 0053-F17 | Scan Worker Planning / Quarantine Policy |
+| 0053-F17 | Scan Worker Contract + Quarantine Policy |
+| 0053-F18 | Scanner Adapter Selection / Local Scanner Integration Planning |
 
 ### Hard no-go (until specifically approved)
 
@@ -5721,7 +5729,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F16**, then **0053-F17** only.
+**Owner acceptance of 0053-F17**, then **0053-F18** only.
 
 ---
 

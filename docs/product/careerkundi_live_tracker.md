@@ -10,18 +10,18 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | **0053 Evidence, Claims, Provenance and Verification Foundations** |
-| Current Slice | **0053-F16 Attachment Scan Queue Skeleton** |
-| Current Status | Completing / accepted (ready for F17) |
-| Last Completed Slice | **0053-F15** · F14 · F13 · F12 · F11 · F10 · F9 · F8 · F7 · F6 · F5 · F4 · F3 · F2 · F1 · POST-CLAUDE-R2 · ROADMAP-RICH · JOB-INT-R1 · CORE-VALUE-R1 · LLM-R1 · F0 · 0052 |
-| F0–F15 status | **Completed / accepted** |
-| Last Commit | This commit — `feat(evidence): add attachment scan queue skeleton` |
+| Current Slice | **0053-F17 Scan Worker Contract + Quarantine Policy** |
+| Current Status | Completing / accepted with watch items (ready for F18) |
+| Last Completed Slice | **0053-F16** · F15 · F14 · F13 · F12 · F11 · F10 · F9 · F8 · F7 · F6 · F5 · F4 · F3 · F2 · F1 · POST-CLAUDE-R2 · ROADMAP-RICH · JOB-INT-R1 · CORE-VALUE-R1 · LLM-R1 · F0 · 0052 |
+| F0–F16 status | **Completed / accepted** |
+| Last Commit | This commit — `feat(evidence): add scan worker policy contracts` |
 | Last Push Status | Push with this slice |
-| Next Slice | **0053-F17** Scan Worker Planning / Quarantine Policy (only after F16 acceptance) |
-| Browser viewports | No scan UI; safety warnings unchanged |
-| Blocked Items | None for F16; do not start F17 until accepted |
+| Next Slice | **0053-F18** Scanner Adapter Selection / Local Scanner Integration Planning (only after F17 acceptance) |
+| Browser viewports | No scan/quarantine UI |
+| Blocked Items | None for F17; do not start F18 until accepted |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
-| LLM provider | **Local Ollama 8B**; F16 does not call LLM |
-| Foundation head | `f0011_attachment_scan_queue` |
+| LLM provider | **Local Ollama 8B**; F17 does not call LLM |
+| Foundation head | `f0011_attachment_scan_queue` (unchanged; no F17 migration) |
 
 ---
 
@@ -32,10 +32,10 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Master Build Plan | `docs/product/careerkundi_master_build_plan.md` |
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 | 0053 Plan | `docs/product/careerkundi_0053_claims_evidence_plan.md` |
-| F15 runtime badge-seed fix | `docs/product/careerkundi_0053_f15_runtime_badge_seed_fix.md` |
 | F16 scan queue skeleton | `docs/product/careerkundi_0053_f16_scan_queue_skeleton.md` |
+| F17 worker/quarantine policy | `docs/product/careerkundi_0053_f17_scan_worker_quarantine_policy.md` |
 
-**Pointers:** **0053-F15** Done · **0053-F16** Accepted · Next **0053-F17**.
+**Pointers:** **0053-F16** Done · **0053-F17** Accepted (watch items) · Next **0053-F18**.
 
 ---
 
@@ -43,10 +43,10 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| 0053-F14 | Private Attachment Deletion + Retention | Done | `~/Desktop/CareerKundi_0053_F14_Attachment_Deletion_Retention_Evidence.txt` | `6372ebb0` | Yes | Bytes only |
 | 0053-F15 | Runtime Badge-Seed Startup Reliability | Done | `~/Desktop/CareerKundi_0053_F15_Runtime_Badge_Seed_Fix_Evidence.txt` | `d80ce1a3` | Yes | Skip-safe + timeout |
-| 0053-F16 | Attachment Scan Queue Skeleton | Accepted | `~/Desktop/CareerKundi_0053_F16_Attachment_Scan_Queue_Skeleton_Evidence.txt` | This commit | With push | Queue only; no scanner |
-| 0053-F17 | Scan worker planning / quarantine policy | Next | — | — | — | After F16 accepted |
+| 0053-F16 | Attachment Scan Queue Skeleton | Done | `~/Desktop/CareerKundi_0053_F16_Attachment_Scan_Queue_Skeleton_Evidence.txt` | `8ecff0e3` | Yes | Queue only |
+| 0053-F17 | Scan Worker Contract + Quarantine Policy | Accepted (watch) | `~/Desktop/CareerKundi_0053_F17_Scan_Worker_Quarantine_Policy_Evidence.txt` | This commit | With push | Pure contracts |
+| 0053-F18 | Scanner adapter / local scanner planning | Next | — | — | — | After F17 accepted |
 
 ---
 
@@ -54,8 +54,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-17 | 0053-F15 | `~/Desktop/CareerKundi_0053_F15_Runtime_Badge_Seed_Fix_Evidence.txt` | A ready for F16 | Badge seed startup |
-| 2026-07-17 | 0053-F16 | `~/Desktop/CareerKundi_0053_F16_Attachment_Scan_Queue_Skeleton_Evidence.txt` | This slice | Scan queue skeleton |
+| 2026-07-17 | 0053-F16 | `~/Desktop/CareerKundi_0053_F16_Attachment_Scan_Queue_Skeleton_Evidence.txt` | B ready for F17 | Scan queue skeleton |
+| 2026-07-17 | 0053-F17 | `~/Desktop/CareerKundi_0053_F17_Scan_Worker_Quarantine_Policy_Evidence.txt` | This slice | Worker/quarantine policy |
 
 ---
 
@@ -63,24 +63,24 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-17 | 0053-F15 | `d80ce1a3` | Pushed | Badge seed startup bound |
-| 2026-07-17 | 0053-F16 | This commit | Push with this slice | Scan queue skeleton |
+| 2026-07-17 | 0053-F16 | `8ecff0e3` | Pushed | Scan queue skeleton |
+| 2026-07-17 | 0053-F17 | This commit | Push with this slice | Worker/quarantine contracts |
 
 ---
 
 ## 6. Decision Updates
 
-- F16: internal `attachment_scan_jobs` queue only; no scanner/route/UI; public safety remains `scan_not_available`; queued job ≠ verification.
+- F17: scanner availability unavailable; update plans never auto-applied; quarantine planned but not active; no engine/route/UI.
 
 ---
 
 ## 7. Known Watch Items
 
-- Malware scan engine / worker still not implemented (F17+)
+- Malware scan engine / worker still not implemented (F18+)
+- Quarantine storage not implemented
 - `JobSearchPage.test.tsx` still missing
 - `documents/` local dirt (do not stage)
-- Stale `FOUNDATION_CURRENT_HEAD` constants in some older db/privacy tests outside F16 scope
 
 ---
 
-*Tracker updated: 2026-07-17 — 0053-F16*
+*Tracker updated: 2026-07-17 — 0053-F17*

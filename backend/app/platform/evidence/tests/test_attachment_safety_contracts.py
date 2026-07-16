@@ -127,11 +127,16 @@ def test_no_scanner_ocr_llm_imports_or_migrations() -> None:
         matches = list(MIGRATIONS.glob(f"{name}*"))
         assert matches == [], matches
 
-    # No quarantine storage module / worker
+    # No quarantine storage module / runtime worker loop (F17 is policy/contract only)
     assert not (EVIDENCE_PKG / "quarantine.py").exists()
     assert not (EVIDENCE_PKG / "scan_worker.py").exists()
+    assert (EVIDENCE_PKG / "attachment_quarantine_policy.py").exists()
+    assert (EVIDENCE_PKG / "attachment_scan_worker.py").exists()
     storage = (EVIDENCE_PKG / "storage.py").read_text(encoding="utf-8").lower()
     assert "quarantine" not in storage
     queue_src = (EVIDENCE_PKG / "attachment_scan_queue.py").read_text(encoding="utf-8")
     assert "clamav" not in queue_src.lower()
     assert "virustotal" not in queue_src.lower()
+    worker_src = (EVIDENCE_PKG / "attachment_scan_worker.py").read_text(encoding="utf-8")
+    assert "apply_to_database=False" in worker_src or "apply_to_database: bool = False" in worker_src
+    assert "clamav" not in worker_src.lower()

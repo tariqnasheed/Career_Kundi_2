@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F16)
+# Evidence domain (0053-F2 … F17)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -17,6 +17,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F13 | Attachment safety states/warnings only (`attachment_safety.py`); default `scan_not_available` |
 | F14 | Owner-only private attachment deletion; metadata record retained |
 | F16 | Internal attachment scan queue skeleton (`attachment_scan_jobs`); no scanner/UI |
+| F17 | Scan worker contract + quarantine policy (pure; not active; no engine) |
 
 Hard rules across all slices:
 
@@ -71,6 +72,14 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - No `/scan` API route, no scanner engine, no UI controls
 - Queue job `scan_pending` is not a completed scan and not verification
 - Public response fields remain `scan_not_available` (F13)
+
+## Scan worker contract + quarantine policy (F17)
+
+- Pure modules: `attachment_scan_worker.py`, `attachment_quarantine_policy.py`
+- Default scanner availability: unavailable
+- `build_scan_job_update_from_result` returns plans only (`apply_to_database=False`)
+- Quarantine handling is planned but not active; no file move/delete
+- No worker loop, no startup registration, no scan route/UI
 
 ## Foundation revision
 

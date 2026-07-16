@@ -197,6 +197,18 @@ Evidence: `~/Desktop/CareerKundi_0053_F16_Attachment_Scan_Queue_Skeleton_Evidenc
 
 ---
 
+## 0053-F17 Scan Worker Contract + Quarantine Policy (2026-07-17)
+
+Defines future scan worker mapping and quarantine policy without running a scanner:
+
+- Pure contracts in `attachment_scan_worker.py` + `attachment_quarantine_policy.py`
+- Scanner availability defaults to unavailable; update plans are not applied to DB
+- Quarantine is planned but not active; no file move/delete, route/UI, or migration
+
+Evidence: `~/Desktop/CareerKundi_0053_F17_Scan_Worker_Quarantine_Policy_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

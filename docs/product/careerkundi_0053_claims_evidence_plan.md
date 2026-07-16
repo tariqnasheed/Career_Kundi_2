@@ -504,9 +504,21 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F17 scan worker planning / quarantine policy  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F16_Attachment_Scan_Queue_Skeleton_Evidence.txt`
 
-### 0053-F17 Scan Worker Planning / Quarantine Policy
-- **Purpose:** Worker/timeout/quarantine/failure policy planning or bounded implementation after F16  
-- **Allowed:** only after F16 acceptance; bounded scope  
+### 0053-F17 Scan Worker Contract + Quarantine Policy
+- **Status:** Implemented (pure `attachment_scan_worker.py` + `attachment_quarantine_policy.py`)  
+- **Purpose:** Define future scan worker result mapping and quarantine policy without running a scanner  
+- **Allowed:** contract enums/dataclasses; update plans (`apply_to_database=False`); quarantine policy helpers; tests/docs  
+- **Forbidden:** worker loop; startup registration; ClamAV/VirusTotal; file I/O; OCR/parsing/LLM review; quarantine move/delete; scan route/UI; claim mutation; DB migration  
+- **Hard rule:** a scan plan is not verification; quarantine is planned but not active  
+- **Tests:** worker contract + quarantine policy + F16 queue/safety + evidence/review/claims/badge regressions  
+- **Browser:** no scan/quarantine controls; OpenAPI unchanged for scan routes  
+- **Gate:** scanner availability unavailable; no f0012 migration  
+- **Deferred:** F18 scanner adapter selection / local scanner integration planning  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F17_Scan_Worker_Quarantine_Policy_Evidence.txt`
+
+### 0053-F18 Scanner Adapter Selection / Local Scanner Integration Planning
+- **Purpose:** Choose and plan a local/private scanner adapter after F17  
+- **Allowed:** only after F17 acceptance; bounded scope  
 - **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles unless separately approved  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 

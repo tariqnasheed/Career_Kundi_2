@@ -41,4 +41,5 @@ Review request remains not verification. Linked evidence is still required for i
 - **F14** Private attachment deletion + retention — accepted
 - **F15** Runtime badge-seed startup reliability — accepted
 - **F16** Attachment scan queue skeleton — accepted (queue only; still no scanner)
-- **Next after F16:** **0053-F17** Scan Worker Planning / Quarantine Policy only
+- **F17** Scan worker contract + quarantine policy — accepted (policy only; quarantine not active)
+- **Next after F17:** **0053-F18** Scanner Adapter Selection / Local Scanner Integration Planning only
