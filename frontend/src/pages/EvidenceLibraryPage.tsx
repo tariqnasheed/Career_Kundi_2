@@ -1,11 +1,12 @@
 /**
  * EvidenceLibraryPage.tsx
  * =======================
- * Private Evidence Library (0053-F4): metadata create/list only.
- * No file upload/download, verification, public sharing, or claim linker.
+ * Private Evidence Library (0053-F4/F6): metadata create/list + private
+ * attachment upload/download via F5 APIs. No verification, public sharing,
+ * OCR/parsing, or claim linker.
  */
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Archive, Info, Library } from "lucide-react";
 import { evidenceApi, platformApi } from "../lib/api";
@@ -42,6 +43,28 @@ const PRIVACY_CLASSES: EvidencePrivacyClass[] = [
 const SAFE_CLAIM_NOTE =
   "Claim linking will be added after claim selection UI is available.";
 
+const MAX_ATTACHMENT_BYTES = 5 * 1024 * 1024;
+
+const ALLOWED_MIME_TYPES = new Set([
+  "application/pdf",
+  "image/png",
+  "image/jpeg",
+  "text/plain",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+]);
+
+const ALLOWED_EXTENSIONS = new Set([
+  ".pdf",
+  ".png",
+  ".jpg",
+  ".jpeg",
+  ".txt",
+  ".docx",
+]);
+
+const FILE_ACCEPT =
+  ".pdf,.png,.jpg,.jpeg,.txt,.docx,application/pdf,image/png,image/jpeg,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+
 function formatDate(iso: string): string {
   try {
     return new Date(iso).toLocaleString();
@@ -52,6 +75,47 @@ function formatDate(iso: string): string {
 
 function shortId(id: string): string {
   return id.length > 12 ? `${id.slice(0, 8)}…` : id;
+}
+
+function shortHash(hash: string | null | undefined): string {
+  if (!hash) return "—";
+  return hash.length > 16 ? `${hash.slice(0, 12)}…` : hash;
+}
+
+function formatBytes(size: number | null | undefined): string {
+  if (size == null) return "—";
+  if (size < 1024) return `${size} B`;
+  if (size < 1024 * 1024) return `${(size / 1024).toFixed(1)} KB`;
+  return `${(size / (1024 * 1024)).toFixed(2)} MB`;
+}
+
+function fileExtension(name: string): string {
+  const idx = name.lastIndexOf(".");
+  return idx >= 0 ? name.slice(idx).toLowerCase() : "";
+}
+
+/** Client-side guards before calling the F5 upload API. */
+export function validatePrivateAttachmentFile(file: File | null): string | null {
+  if (!file) return "Choose a private file to attach.";
+  if (file.size === 0) return "Empty files cannot be attached.";
+  if (file.size > MAX_ATTACHMENT_BYTES) {
+    return "File exceeds the 5 MB limit.";
+  }
+  const mime = (file.type || "").split(";", 1)[0].trim().toLowerCase();
+  const ext = fileExtension(file.name);
+  const mimeOk = mime ? ALLOWED_MIME_TYPES.has(mime) : false;
+  const extOk = ALLOWED_EXTENSIONS.has(ext);
+  if (!mimeOk && !extOk) {
+    return "File type is not allowed. Use PDF, PNG, JPEG, TXT, or DOCX.";
+  }
+  if (mime && !ALLOWED_MIME_TYPES.has(mime)) {
+    return "File type is not allowed. Use PDF, PNG, JPEG, TXT, or DOCX.";
+  }
+  return null;
+}
+
+function hasAttachment(row: EvidenceRead): boolean {
+  return Boolean(row.has_attachment || row.storage_uri);
 }
 
 const emptyForm = {
@@ -70,6 +134,9 @@ export default function EvidenceLibraryPage() {
   const qc = useQueryClient();
   const [form, setForm] = useState(emptyForm);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [attachError, setAttachError] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const listQuery = useQuery({
     queryKey: ["evidence", "list"],
@@ -94,6 +161,64 @@ export default function EvidenceLibraryPage() {
       addToast({
         type: "error",
         message: err.message || "Could not save evidence metadata.",
+      });
+    },
+  });
+
+  const uploadMutation = useMutation({
+    mutationFn: ({ evidenceId, file }: { evidenceId: string; file: File }) =>
+      evidenceApi.uploadEvidenceAttachment(evidenceId, file),
+    onSuccess: (row) => {
+      addToast({
+        type: "success",
+        message:
+          "Private file attached. This is still not independently verified.",
+      });
+      setSelectedFile(null);
+      setAttachError(null);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+      setSelectedId(row.id);
+      qc.invalidateQueries({ queryKey: ["evidence", "list"] });
+    },
+    onError: (err: ApiError) => {
+      const message = (err.message || "").toLowerCase();
+      const duplicate =
+        err.code === "CONFLICT" ||
+        message.includes("duplicate") ||
+        message.includes("already has");
+      const friendly = duplicate
+        ? "This evidence already has an attachment. Replacement is not enabled yet."
+        : err.message || "Could not attach private file.";
+      setAttachError(friendly);
+      addToast({ type: "error", message: friendly });
+    },
+  });
+
+  const downloadMutation = useMutation({
+    mutationFn: async (row: EvidenceRead) => {
+      const blob = await evidenceApi.downloadEvidenceAttachment(row.id);
+      return { blob, row };
+    },
+    onSuccess: ({ blob, row }) => {
+      if (!(blob instanceof Blob) || blob.size === 0) {
+        addToast({ type: "error", message: "Attachment download was empty." });
+        return;
+      }
+      // Local object URL for immediate download only — never stored as public URL.
+      const objectUrl = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = objectUrl;
+      a.download = `evidence-${row.id.slice(0, 8)}-private`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(objectUrl);
+      addToast({ type: "success", message: "Private attachment downloaded." });
+    },
+    onError: (err: ApiError) => {
+      addToast({
+        type: "error",
+        message: err.message || "Could not download private attachment.",
       });
     },
   });
@@ -131,6 +256,18 @@ export default function EvidenceLibraryPage() {
     createMutation.mutate(payload);
   }
 
+  function onAttach() {
+    if (!selected) return;
+    const validationError = validatePrivateAttachmentFile(selectedFile);
+    if (validationError) {
+      setAttachError(validationError);
+      addToast({ type: "error", message: validationError });
+      return;
+    }
+    setAttachError(null);
+    uploadMutation.mutate({ evidenceId: selected.id, file: selectedFile! });
+  }
+
   return (
     <div style={{ maxWidth: 960, margin: "0 auto", padding: "0.5rem 0 2rem" }}>
       <header style={{ marginBottom: "1.75rem" }}>
@@ -161,9 +298,9 @@ export default function EvidenceLibraryPage() {
           Evidence Library
         </h1>
         <p style={{ color: "var(--text-secondary)", maxWidth: 720 }}>
-          Metadata only in this version. No file upload yet. Evidence is not
-          independently verified. Linking evidence does not independently
-          confirm a claim.
+          Private metadata and private file attachments. Evidence is not
+          independently verified. Uploading a file does not verify a claim.
+          Parsing and review are not enabled yet.
         </p>
       </header>
 
@@ -173,9 +310,10 @@ export default function EvidenceLibraryPage() {
         </CardHeader>
         <CardContent>
           <p style={{ color: "var(--text-secondary)", lineHeight: 1.55 }}>
-            This library stores private evidence metadata that may later support
-            career claims. In this version, CareerKundi does not upload files,
-            confirm document authenticity, or make evidence public.
+            This library stores private evidence metadata and optional private
+            file attachments that may later support career claims. CareerKundi
+            does not make evidence public, run OCR/parsing, or treat an upload as
+            verification.
           </p>
           <p
             style={{
@@ -311,7 +449,7 @@ export default function EvidenceLibraryPage() {
                   setForm((prev) => ({ ...prev, storage_uri: e.target.value }))
                 }
                 fullWidth
-                hint="Optional reference string. This is not a file upload."
+                hint="Optional reference string. Prefer attaching a private file below after saving."
                 placeholder="e.g. future://attachment-ref"
               />
               <Input
@@ -378,12 +516,25 @@ export default function EvidenceLibraryPage() {
                 No evidence metadata saved yet.
               </p>
             ) : (
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "0.75rem" }}>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "grid",
+                  gap: "0.75rem",
+                }}
+              >
                 {listQuery.data.map((row) => (
                   <li key={row.id}>
                     <button
                       type="button"
-                      onClick={() => setSelectedId(row.id)}
+                      onClick={() => {
+                        setSelectedId(row.id);
+                        setAttachError(null);
+                        setSelectedFile(null);
+                        if (fileInputRef.current) fileInputRef.current.value = "";
+                      }}
                       style={{
                         width: "100%",
                         textAlign: "left",
@@ -407,7 +558,10 @@ export default function EvidenceLibraryPage() {
                         }}
                       >
                         {row.evidence_kind_label} · {row.privacy_label}
-                        {row.subject_id ? ` · subject ${shortId(row.subject_id)}` : ""}
+                        {row.subject_id
+                          ? ` · subject ${shortId(row.subject_id)}`
+                          : ""}
+                        {hasAttachment(row) ? " · Private attachment" : ""}
                       </div>
                       <div
                         style={{
@@ -442,7 +596,7 @@ export default function EvidenceLibraryPage() {
           <CardContent>
             {!selected ? (
               <p style={{ color: "var(--text-secondary)" }}>
-                Select a record to view private metadata details.
+                Select a record to view private metadata and attachment controls.
               </p>
             ) : (
               <div style={{ display: "grid", gap: "0.55rem", fontSize: "0.9rem" }}>
@@ -471,17 +625,134 @@ export default function EvidenceLibraryPage() {
                     : "None"}
                 </div>
                 <div>
-                  Storage URI: {selected.storage_uri || "None (metadata only)"}
+                  Has attachment: {hasAttachment(selected) ? "yes" : "no"}
                 </div>
-                <div>MIME: {selected.mime_type || "—"}</div>
-                <div>Size bytes: {selected.size_bytes ?? "—"}</div>
-                <div>Hash: {selected.content_hash || "—"}</div>
+                <div>MIME type: {selected.mime_type || "—"}</div>
+                <div>Size: {formatBytes(selected.size_bytes)}</div>
+                <div title={selected.content_hash || undefined}>
+                  Content hash: {shortHash(selected.content_hash)}
+                </div>
+                <div>
+                  Storage URI:{" "}
+                  {selected.storage_uri
+                    ? "Private internal reference (not a public URL)"
+                    : "None"}
+                </div>
                 <div style={{ color: "var(--text-secondary)", marginTop: 4 }}>
                   {selected.truth_warning}
+                </div>
+                <div style={{ color: "var(--text-secondary)", fontSize: "0.85rem" }}>
+                  Not independently verified
                 </div>
                 <div style={{ color: "var(--text-muted)", fontSize: "0.8rem" }}>
                   Created {formatDate(selected.created_at)}
                 </div>
+
+                <section
+                  aria-label="Private attachment"
+                  style={{
+                    marginTop: "0.85rem",
+                    paddingTop: "0.85rem",
+                    borderTop: "1px solid var(--border-subtle)",
+                    display: "grid",
+                    gap: "0.65rem",
+                  }}
+                >
+                  <div style={{ fontWeight: 600 }}>Private attachment</div>
+                  <p
+                    style={{
+                      color: "var(--text-secondary)",
+                      fontSize: "0.85rem",
+                      lineHeight: 1.5,
+                      margin: 0,
+                    }}
+                  >
+                    This attaches a private file to the metadata record. It does
+                    not verify the evidence or any claim. Allowed types: PDF,
+                    PNG, JPEG, TXT, DOCX. Max 5 MB. Parsing and review are not
+                    enabled yet.
+                  </p>
+
+                  {!hasAttachment(selected) ? (
+                    <>
+                      <label
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: 6,
+                          fontSize: "0.85rem",
+                        }}
+                      >
+                        <span style={{ fontWeight: 600 }}>Choose private file</span>
+                        <input
+                          ref={fileInputRef}
+                          type="file"
+                          accept={FILE_ACCEPT}
+                          data-testid="evidence-attachment-input"
+                          onChange={(e) => {
+                            const file = e.target.files?.[0] ?? null;
+                            setSelectedFile(file);
+                            setAttachError(
+                              file ? validatePrivateAttachmentFile(file) : null,
+                            );
+                          }}
+                        />
+                      </label>
+                      {selectedFile ? (
+                        <div
+                          style={{
+                            fontSize: "0.8rem",
+                            color: "var(--text-secondary)",
+                          }}
+                        >
+                          Selected: {selectedFile.name} (
+                          {formatBytes(selectedFile.size)})
+                        </div>
+                      ) : null}
+                      {attachError ? (
+                        <div
+                          role="alert"
+                          style={{ color: "var(--danger, #b91c1c)", fontSize: "0.85rem" }}
+                        >
+                          {attachError}
+                        </div>
+                      ) : null}
+                      <Button
+                        type="button"
+                        variant="primary"
+                        disabled={uploadMutation.isPending}
+                        onClick={onAttach}
+                      >
+                        {uploadMutation.isPending
+                          ? "Attaching…"
+                          : "Attach private file"}
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <p
+                        style={{
+                          margin: 0,
+                          fontSize: "0.85rem",
+                          color: "var(--text-secondary)",
+                        }}
+                      >
+                        Attached file stored privately. Replacement is not
+                        enabled yet.
+                      </p>
+                      <Button
+                        type="button"
+                        variant="secondary"
+                        disabled={downloadMutation.isPending}
+                        onClick={() => downloadMutation.mutate(selected)}
+                      >
+                        {downloadMutation.isPending
+                          ? "Downloading…"
+                          : "Download private attachment"}
+                      </Button>
+                    </>
+                  )}
+                </section>
               </div>
             )}
           </CardContent>
@@ -502,15 +773,15 @@ export default function EvidenceLibraryPage() {
           <CardTitle>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
               <Archive size={18} aria-hidden />
-              Future attachment storage
+              Attachment safety notes
             </span>
           </CardTitle>
         </CardHeader>
         <CardContent>
           <p style={{ color: "var(--text-secondary)", lineHeight: 1.55 }}>
-            File attachment storage is not enabled yet. F5 will decide the
-            storage backend, retention, deletion, and safety checks before
-            uploads are allowed.
+            Private attachment storage is enabled for owner-only upload and
+            download. Malware scanning, OCR, document parsing, public sharing,
+            and verification workflows are not enabled yet.
           </p>
         </CardContent>
       </Card>

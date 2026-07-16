@@ -43,7 +43,8 @@ Hard rules across all slices:
 
 ## Frontend note
 
-`/evidence` UI still says “No file upload yet” until **0053-F6**. F5 is backend-only.
+`/evidence` (F6) supports private attach/download against these APIs.  
+Upload is **not** verification. No Passport/CV/Roadmap/Jobs attachment UI in F6.
 
 ## Foundation revision
 

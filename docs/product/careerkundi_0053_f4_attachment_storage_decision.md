@@ -1,6 +1,6 @@
 # 0053-F4 / F5 — Attachment Storage Decision
 
-**Status:** F4 decided · F5 implemented (local private backend)  
+**Status:** F4 decided · F5 storage implemented · F6 Evidence Library upload UI implemented  
 **Date:** 2026-07-16  
 **Depends on:** 0053-F3 private evidence metadata API
 
@@ -29,7 +29,7 @@ The Evidence Library UI creates and lists **private metadata only**. `storage_ur
 | MIME allowlist | pdf, png, jpeg, text/plain, docx |
 | Checksum | SHA-256 → `EvidenceRecord.content_hash` |
 | Replace | Rejected by default (conflict) |
-| Frontend upload UI | **Still disabled** (F6) |
+| Frontend upload UI | **Enabled on `/evidence` only (F6)** |
 
 Candidate backends deferred beyond local:
 
@@ -38,7 +38,17 @@ Candidate backends deferred beyond local:
 
 ---
 
-## Safeguards in F5
+## F6 UI (implemented)
+
+- Evidence Library selected-record controls: `Attach private file` / `Download private attachment`
+- Client validation: empty / over 5 MB / MIME allowlist
+- Authenticated blob download; no public URL shown
+- Safe copy: upload does not verify evidence or claims; Not independently verified
+- No Passport / CV / Roadmap / Job Search attachment UI
+
+---
+
+## Safeguards in F5/F6
 
 - Private by default; per-user ownership enforced server-side
 - File size limits and MIME allowlist
@@ -52,11 +62,11 @@ Candidate backends deferred beyond local:
 
 ## Still deferred
 
-- Malware / virus scan engine (watch item; plan before treating bytes as “usable” in product flows)
+- Malware / virus scan engine (watch item)
 - Deletion / retention product UX (privacy module alignment)
-- Frontend upload UI (0053-F6)
 - OCR / document parsing
 - Public sharing
+- Passport / CV / Roadmap / Job Search evidence panels
 
 ---
 
@@ -73,4 +83,4 @@ Candidate backends deferred beyond local:
 
 ## Next
 
-After F5 acceptance only: **0053-F6 Evidence Upload UI**.
+After F6 acceptance only: **0053-F7** (linking UI or Passport read-only evidence panel).

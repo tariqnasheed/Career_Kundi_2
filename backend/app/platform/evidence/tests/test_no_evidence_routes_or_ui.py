@@ -80,8 +80,8 @@ def test_claims_module_does_not_own_evidence_implementation() -> None:
                     assert not alias.name.startswith("app.db.models.evidence"), path
 
 
-def test_frontend_evidence_library_has_no_upload_controls() -> None:
-    """F4 Evidence Library is allowed; must stay metadata-only (no F6 upload UI)."""
+def test_frontend_evidence_library_private_attachment_boundary() -> None:
+    """F6 Evidence Library may attach privately; no Passport evidence panel files."""
     if not FRONTEND_SRC.exists():
         return
     allowed = {
@@ -101,5 +101,7 @@ def test_frontend_evidence_library_has_no_upload_controls() -> None:
     assert unexpected == [], unexpected
     page = FRONTEND_SRC / "pages" / "EvidenceLibraryPage.tsx"
     text = page.read_text(encoding="utf-8")
-    assert 'type="file"' not in text
+    assert 'type="file"' in text
+    assert "Attach private file" in text
     assert "Upload evidence" not in text
+    assert "Verify evidence" not in text

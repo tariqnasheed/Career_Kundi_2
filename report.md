@@ -71,6 +71,16 @@ Private local evidence file storage + owner-only attachment APIs:
 
 Evidence: `~/Desktop/CareerKundi_0053_F5_Attachment_Storage_Backend_Evidence.txt`
 
+## 0053-F6 Evidence Upload UI (2026-07-16)
+
+Private attach/download controls on `/evidence`:
+
+- “Attach private file” / “Download private attachment”
+- Client 5 MB + MIME guards; authenticated blob download; no public URL
+- Upload does not verify evidence or claims; no OCR/Passport/CV/Roadmap/Jobs integrations
+
+Evidence: `~/Desktop/CareerKundi_0053_F6_Evidence_Upload_UI_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the

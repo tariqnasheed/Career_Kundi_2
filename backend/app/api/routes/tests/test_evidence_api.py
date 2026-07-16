@@ -100,16 +100,19 @@ def test_no_upload_download_or_public_routes() -> None:
     assert (ROUTES / "evidence.py").exists()
 
 
-def test_frontend_evidence_library_remains_metadata_only_ui() -> None:
-    """F4 library page may exist; F5 must not add file upload controls there."""
+def test_frontend_evidence_library_private_attachment_ui_boundary() -> None:
+    """F6 library may attach privately; forbid verify/share and public URL UI."""
     if not FRONTEND_SRC.exists():
         return
     page = FRONTEND_SRC / "pages" / "EvidenceLibraryPage.tsx"
     assert page.exists()
     text = page.read_text(encoding="utf-8")
-    assert 'type="file"' not in text
+    assert 'type="file"' in text
+    assert "Attach private file" in text
     assert "Upload evidence" not in text
-    assert "uploadEvidence" not in text
+    assert "Verify evidence" not in text
+    assert "getPublicEvidenceUrl" not in text
+    assert "Not independently verified" in text
 
 
 @require_disposable_postgres

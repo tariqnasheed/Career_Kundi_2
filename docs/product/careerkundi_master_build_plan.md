@@ -5566,11 +5566,17 @@ Evidence: `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.tx
 
 ## 0053-F5 Attachment Storage Backend
 
-**Status:** Completing in this commit. Local private `LocalEvidenceStorage` + owner-only `POST/GET /api/v1/evidence/{id}/attachment`; updates `storage_uri` / hash / mime / size; **no** frontend upload UI, public URLs, OCR, verification, or Passport/CV/Roadmap/Jobs integrations.
+**Status:** Done (`c298d33c`). Local private `LocalEvidenceStorage` + owner-only `POST/GET /api/v1/evidence/{id}/attachment`; updates `storage_uri` / hash / mime / size; **no** frontend upload UI in F5, public URLs, OCR, verification, or Passport/CV/Roadmap/Jobs integrations.
 
 Evidence: `~/Desktop/CareerKundi_0053_F5_Attachment_Storage_Backend_Evidence.txt`.
 
-**Next after F5 acceptance:** 0053-F6 Evidence Upload UI only.
+## 0053-F6 Evidence Upload UI
+
+**Status:** Completing in this commit. Evidence Library private attach/download UI against F5 APIs; client size/MIME guards; authenticated blob download; **no** public URL, verification, OCR, Passport/CV/Roadmap/Jobs integrations, or backend storage changes.
+
+Evidence: `~/Desktop/CareerKundi_0053_F6_Evidence_Upload_UI_Evidence.txt`.
+
+**Next after F6 acceptance:** 0053-F7 only (linking UI or Passport read-only evidence panel).
 
 ---
 
@@ -5639,7 +5645,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F5**, then **0053-F6 Evidence Upload UI** only.
+**Owner acceptance of 0053-F6**, then **0053-F7** only.
 
 ---
 

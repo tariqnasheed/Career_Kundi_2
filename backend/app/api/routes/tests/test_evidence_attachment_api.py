@@ -94,15 +94,19 @@ def test_no_public_url_or_share_routes() -> None:
 
 
 def test_no_frontend_upload_ui_or_feature_domain_changes() -> None:
-    """F5 must not add frontend upload UI; Evidence Library remains metadata-only copy."""
+    """F6 may attach privately on Evidence Library; still no verify/share/public UI."""
     page = FRONTEND_SRC / "pages" / "EvidenceLibraryPage.tsx"
     assert page.exists()
     text = page.read_text(encoding="utf-8")
-    assert 'type="file"' not in text
+    assert 'type="file"' in text
+    assert "Attach private file" in text
+    assert "Download private attachment" in text
     assert "Upload evidence" not in text
-    assert "uploadEvidence" not in text
-    assert "downloadEvidence" not in text
+    assert "Verify evidence" not in text
+    assert "uploadEvidenceAttachment" in text or "evidenceApi" in text
     assert "Save evidence metadata" in text
+    assert "Not independently verified" in text
+    assert "does not verify" in text.lower()
 
     forbidden_imports = (
         "app.career_passport",

@@ -982,7 +982,7 @@ export const passportApi = {
 };
 
 // ---------------------------------------------------------------------------
-// Evidence library (0053-F3/F4) — private metadata only; no upload/download
+// Evidence library (0053-F3–F6) — private metadata + private attachment bytes
 // ---------------------------------------------------------------------------
 
 export const evidenceApi = {
@@ -1004,6 +1004,37 @@ export const evidenceApi = {
   getEvidenceMetadata: async (evidenceId: string): Promise<EvidenceRead> => {
     const res = await http.get<EvidenceEnvelope>(`/evidence/${evidenceId}`);
     return res.data.data;
+  },
+
+  /** Upload one private attachment for owned evidence (F5/F6). Not verification. */
+  uploadEvidenceAttachment: async (
+    evidenceId: string,
+    file: File,
+  ): Promise<EvidenceRead> => {
+    const form = new FormData();
+    form.append("file", file);
+    const res = await http.post<EvidenceEnvelope>(
+      `/evidence/${evidenceId}/attachment`,
+      form,
+      {
+        // Let the browser set multipart boundary (do not keep JSON content-type).
+        headers: { "Content-Type": "multipart/form-data" },
+        timeout: 60_000,
+      },
+    );
+    return res.data.data;
+  },
+
+  /**
+   * Download private attachment bytes for owned evidence.
+   * Returns a Blob only — never a public URL.
+   */
+  downloadEvidenceAttachment: async (evidenceId: string): Promise<Blob> => {
+    const res = await http.get(`/evidence/${evidenceId}/attachment`, {
+      responseType: "blob",
+      timeout: 60_000,
+    });
+    return res.data as Blob;
   },
 };
 

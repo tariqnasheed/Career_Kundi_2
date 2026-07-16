@@ -364,15 +364,27 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Status:** Implemented (local private storage + owner-only upload/download APIs)  
 - **Purpose:** Persist one private file per EvidenceRecord; update storage_uri/hash/mime/size  
 - **Allowed:** `LocalEvidenceStorage`, `POST/GET …/attachment`, size/MIME/SHA-256 guards, path containment  
-- **Forbidden:** frontend upload UI, public/signed URLs, OCR/parsing, virus-scan engine, verification, Passport/CV/Roadmap/Jobs integrations, LLM file review  
+- **Forbidden:** frontend upload UI (until F6), public/signed URLs, OCR/parsing, virus-scan engine, verification, Passport/CV/Roadmap/Jobs integrations, LLM file review  
 - **Hard rule:** upload does **not** mutate claim `support_status` / `verification_status`  
 - **Tests:** storage unit + attachment API + evidence/claims regression  
-- **Browser:** `/evidence` still shows “No file upload yet” (F6)  
+- **Browser:** page smoke only in F5  
 - **Gate:** auth + owner scoping; cross-user 404; no public URL  
-- **Deferred:** F6 Evidence Upload UI; virus scan; cloud object store  
+- **Deferred:** virus scan; cloud object store  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F5_Attachment_Storage_Backend_Evidence.txt`
 
-### 0053-F4b Passport Evidence Read UI (later ladder step)
+### 0053-F6 Evidence Upload UI
+- **Status:** Implemented (`/evidence` attach + download UI; `uploadEvidenceAttachment` / `downloadEvidenceAttachment`)  
+- **Purpose:** Private file attachment UI against F5 APIs on Evidence Library only  
+- **Allowed:** file input, Attach private file, Download private attachment, client size/MIME guards, safe wording  
+- **Forbidden:** public URLs, OCR/parsing, verification, Passport/CV/Roadmap/Jobs integrations, LLM file review, backend storage changes  
+- **Hard rule:** upload ≠ verified; Not independently verified preserved  
+- **Tests:** EvidenceLibraryPage vitest + backend attachment regression  
+- **Browser:** `/evidence` + existing page smoke (uvicorn badge-seed timeout remains a watch item)  
+- **Gate:** private-only; no trust overclaim  
+- **Deferred:** F7 linking / Passport evidence read; malware scan  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F6_Evidence_Upload_UI_Evidence.txt`
+
+### 0053-F4b Passport Evidence Read UI (later ladder step / F7 candidate)
 - **Purpose:** Read-only Passport panel for evidence-linked states  
 - **Allowed:** passport frontend read panel  
 - **Forbidden:** mutation of verification; “Verified Passport”  
@@ -381,25 +393,16 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Gate:** Private/Not independently verified preserved  
 - **Deferred:** uploads in Passport  
 
-### 0053-F6 Evidence Upload UI
-- **Purpose:** Frontend upload controls against F5 attachment APIs  
-- **Allowed:** private upload/download UI on Evidence Library only  
-- **Forbidden:** public CDN URLs; AI auto-verify; Passport upload panel in this step unless separately approved  
-- **Tests:** FE upload boundary + API smoke  
-- **Browser:** required  
-- **Gate:** private-only; upload ≠ verified  
-- **Deferred:** issuer verification  
-
-### 0053-F6b Claim-to-Passport Linking (later)
-- **Purpose:** Safe links between Passport sections and claims  
-- **Allowed:** link APIs + UI affordances  
-- **Forbidden:** auto-verify; Subject picker expansion without approval  
+### 0053-F7 Evidence-to-Claim Linking UI or Passport Read-Only Evidence Panel
+- **Purpose:** Safe claim linking UI and/or Passport read-only evidence awareness  
+- **Allowed:** link affordances with owned claim selection; read-only Passport evidence panel  
+- **Forbidden:** auto-verify; public sharing; Subject picker expansion without approval  
 - **Tests:** ownership + wording  
 - **Browser:** required  
 - **Gate:** Passport remains private/unverified by default  
 - **Deferred:** review workflow  
 
-### 0053-F7 Review and Verification State Machine
+### 0053-F8 Review and Verification State Machine
 - **Purpose:** Explicit review outcomes (`under_review` → issuer/CK verified/rejected)  
 - **Allowed:** verification module + restricted UI  
 - **Forbidden:** self-serve “Verified by CareerKundi” without policy; public profiles  

@@ -1136,6 +1136,8 @@ export interface EvidenceRead {
   size_bytes: number | null;
   source_id: string | null;
   snapshot_id: string | null;
+  /** True when a private attachment blob is stored (0053-F5/F6). */
+  has_attachment?: boolean;
   evidence_kind_label: string;
   privacy_label: string;
   truth_warning: string;
