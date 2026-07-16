@@ -235,6 +235,19 @@ Evidence: `~/Desktop/CareerKundi_0053_F19_Local_Scanner_Integration_Planning_Evi
 
 ---
 
+## 0053-F20 Disabled Local Scanner Adapter Skeleton (2026-07-17)
+
+Adds a disabled local-process adapter scaffold without enabling scanning:
+
+- `DisabledLocalProcessScannerAdapter` in `attachment_local_scanner_adapter.py`
+- Availability unavailable; verdict `not_run` / `local_scanner_disabled`
+- Active factory still returns no-op; no subprocess/file read/network
+- No scan route/UI; a disabled skeleton is not verification
+
+Evidence: `~/Desktop/CareerKundi_0053_F20_Disabled_Local_Scanner_Adapter_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

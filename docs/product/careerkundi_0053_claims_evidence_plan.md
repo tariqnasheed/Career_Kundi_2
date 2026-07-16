@@ -537,12 +537,24 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Tests:** policy + adapter + F17/F16/safety + evidence/review/claims/badge regressions  
 - **Browser:** no scan controls; OpenAPI unchanged for scan routes  
 - **Gate:** factory still no-op; future family `local_process_scanner`; no dependency changes  
-- **Deferred:** F20 local scanner adapter skeleton behind disabled flag  
+- **Deferred:** F20 disabled local scanner adapter skeleton  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F19_Local_Scanner_Integration_Planning_Evidence.txt`
 
-### 0053-F20 Local Scanner Adapter Skeleton Behind Disabled Flag
-- **Purpose:** Add a disabled-flag local adapter skeleton after F19  
-- **Allowed:** only after F19 acceptance; bounded scope  
+### 0053-F20 Disabled Local Scanner Adapter Skeleton
+- **Status:** Implemented (`attachment_local_scanner_adapter.py` — disabled scaffold only)  
+- **Purpose:** Add a disabled local-process adapter skeleton that cannot scan  
+- **Allowed:** `DisabledLocalProcessScannerAdapter`; unavailable/not_run results; factory remains no-op; tests/docs  
+- **Forbidden:** subprocess execution; ClamAV/VirusTotal; scanner packages; file I/O; OCR/parsing/LLM; worker loop; scan route/UI; claim mutation; enable toggles; f0012  
+- **Hard rule:** disabled skeleton is not an active scanner and is not verification; factory stays no-op  
+- **Tests:** local adapter + policy/adapter + F17/F16/safety + evidence/review/claims/badge regressions  
+- **Browser:** no scan controls; OpenAPI unchanged for scan routes  
+- **Gate:** `REAL_SCANNER_ENABLED=False`; no-op remains active; no dependency changes  
+- **Deferred:** F21 local scanner runtime contract tests  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F20_Disabled_Local_Scanner_Adapter_Evidence.txt`
+
+### 0053-F21 Local Scanner Runtime Contract Tests
+- **Purpose:** Add runtime contract tests for a future local scanner after F20  
+- **Allowed:** only after F20 acceptance; bounded scope  
 - **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles unless separately approved  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 

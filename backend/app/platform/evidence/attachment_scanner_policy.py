@@ -19,6 +19,8 @@ from typing import Final
 
 REAL_SCANNER_ENABLED: Final[bool] = False
 CURRENT_SCANNER_ADAPTER_NAME: Final[str] = "noop_unavailable"
+# F20 scaffold name only — never selected while REAL_SCANNER_ENABLED is False.
+DISABLED_LOCAL_SCANNER_ADAPTER_NAME: Final[str] = "local_process_disabled"
 FUTURE_SCANNER_ADAPTER_FAMILY: Final[str] = "local_process_scanner"
 EXTERNAL_SCANNER_APIS_ALLOWED: Final[bool] = False
 FILE_PARSING_ALLOWED_FOR_MALWARE_SCAN: Final[bool] = False

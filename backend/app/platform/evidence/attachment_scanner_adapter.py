@@ -1,12 +1,12 @@
 """
-Scanner adapter interface + no-op unavailable adapter (0053-F18 / F19).
+Scanner adapter interface + no-op unavailable adapter (0053-F18 … F20).
 
-Defines the seam a future scanner must implement. Ships only a no-op
-adapter that reports unavailable / not_run. Does not read file bytes, call
-network/processes, import scanner packages, or mutate DB rows.
+Defines the seam a future scanner must implement. Active factory returns
+no-op only. A disabled local-process skeleton lives in
+attachment_local_scanner_adapter.py and is not selected.
 
-F19 selection policy still returns no-op only (real scanner disabled).
-A no-op adapter is not a scanner and is not verification.
+Does not read file bytes, call network/processes, import scanner packages,
+or mutate DB rows. A no-op adapter is not a scanner and is not verification.
 """
 
 from __future__ import annotations
@@ -34,6 +34,7 @@ NOOP_SAFE_ERROR_MESSAGE = "Scanner is not configured in this version."
 
 class ScannerAdapterName(StrEnum):
     NOOP_UNAVAILABLE = "noop_unavailable"
+    LOCAL_PROCESS_DISABLED = "local_process_disabled"
 
 
 class ScannerAdapterCapability(StrEnum):
@@ -107,13 +108,13 @@ def get_configured_attachment_scanner_adapter() -> AttachmentScannerAdapter:
     """
     Factory for the active attachment scanner adapter.
 
-    F18/F19: always returns the no-op unavailable adapter. Selection policy
-    may only name noop_unavailable while REAL_SCANNER_ENABLED is False.
-    No env-based real scanner selection and no config changes in F19.
+    F18–F20: always returns the no-op unavailable adapter. The disabled
+    local-process skeleton is never selected. No env/config toggle may enable
+    real scanning or the disabled local adapter in F20.
     """
     selected = select_configured_scanner_adapter_name()
     if selected != NOOP_ADAPTER_NAME:
-        # Defensive: never construct a real adapter from this factory in F19.
+        # Defensive: never construct a real/local adapter from this factory.
         return NoopUnavailableScannerAdapter()
     return NoopUnavailableScannerAdapter()
 
@@ -128,6 +129,7 @@ def configured_scanner_adapter_summary() -> dict[str, object]:
         "capabilities": [c.value for c in info.capabilities],
         "warning": info.warning,
         "selected_by_policy": select_configured_scanner_adapter_name(),
+        "disabled_local_adapter_selected": False,
         "reads_file_bytes": False,
         "calls_network_or_subprocess": False,
         "applies_results_to_database": False,

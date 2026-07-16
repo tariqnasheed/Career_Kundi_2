@@ -60,6 +60,12 @@ def test_real_scanner_disabled_and_noop_selected() -> None:
     assert select_configured_scanner_adapter_name() == "noop_unavailable"
     adapter = get_configured_attachment_scanner_adapter()
     assert isinstance(adapter, NoopUnavailableScannerAdapter)
+    # F20 disabled local scaffold must not become the active adapter.
+    from app.platform.evidence.attachment_local_scanner_adapter import (
+        DisabledLocalProcessScannerAdapter,
+    )
+
+    assert not isinstance(adapter, DisabledLocalProcessScannerAdapter)
 
 
 def test_external_parsing_llm_flags_false_and_family_local() -> None:

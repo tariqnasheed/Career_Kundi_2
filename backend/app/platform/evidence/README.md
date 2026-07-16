@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F19)
+# Evidence domain (0053-F2 … F20)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -20,6 +20,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F17 | Scan worker contract + quarantine policy (pure; not active; no engine) |
 | F18 | Scanner adapter interface + no-op unavailable adapter (no real scan) |
 | F19 | Local scanner integration planning + policy constants (still no-op) |
+| F20 | Disabled local process scanner adapter skeleton (not selected) |
 
 Hard rules across all slices:
 
@@ -98,6 +99,14 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - External APIs / parsing / OCR / LLM review disallowed for malware scan
 - No scanner dependency, route, UI, worker loop, or DB apply
 - A scanner plan is not scanning and not verification
+
+## Disabled local scanner adapter skeleton (F20)
+
+- Module: `attachment_local_scanner_adapter.py` (`DisabledLocalProcessScannerAdapter`)
+- Availability unavailable; verdict `not_run` / `local_scanner_disabled`
+- Active factory still returns `NoopUnavailableScannerAdapter` only
+- No subprocess, file read, network, packages, routes/UI, or DB apply
+- A disabled adapter skeleton is not scanning and not verification
 
 ## Foundation revision
 

@@ -5660,12 +5660,19 @@ Doc: `docs/product/careerkundi_0053_f18_scanner_adapter_noop.md`.
 
 ## 0053-F19 Local Scanner Integration Planning
 
-**Status:** Completing in this commit. Planning/policy only (`attachment_scanner_policy.py`); `REAL_SCANNER_ENABLED=False`; future family `local_process_scanner`; **no** engine, packages, route/UI, OCR/LLM, claim mutation, or DB apply.
+**Status:** Completed / accepted. Planning/policy only (`attachment_scanner_policy.py`); `REAL_SCANNER_ENABLED=False`; future family `local_process_scanner`; **no** engine, packages, route/UI, OCR/LLM, claim mutation, or DB apply.
 
 Evidence: `~/Desktop/CareerKundi_0053_F19_Local_Scanner_Integration_Planning_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f19_local_scanner_integration_planning.md`.
 
-**Next after F19 acceptance:** 0053-F20 only (Local Scanner Adapter Skeleton Behind Disabled Flag).
+## 0053-F20 Disabled Local Scanner Adapter Skeleton
+
+**Status:** Completing in this commit. `DisabledLocalProcessScannerAdapter` scaffold only; factory still returns no-op; **no** subprocess, packages, file I/O, OCR/LLM, scan route/UI, claim mutation, or DB apply.
+
+Evidence: `~/Desktop/CareerKundi_0053_F20_Disabled_Local_Scanner_Adapter_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f20_disabled_local_scanner_adapter.md`.
+
+**Next after F20 acceptance:** 0053-F21 only (Local Scanner Runtime Contract Tests).
 
 ---
 
@@ -5737,7 +5744,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F17 | Scan Worker Contract + Quarantine Policy |
 | 0053-F18 | Scanner Adapter Interface + No-Op Adapter |
 | 0053-F19 | Local Scanner Integration Planning |
-| 0053-F20 | Local Scanner Adapter Skeleton Behind Disabled Flag |
+| 0053-F20 | Disabled Local Scanner Adapter Skeleton |
+| 0053-F21 | Local Scanner Runtime Contract Tests |
 
 ### Hard no-go (until specifically approved)
 
@@ -5745,7 +5753,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F19**, then **0053-F20** only.
+**Owner acceptance of 0053-F20**, then **0053-F21** only.
 
 ---
 

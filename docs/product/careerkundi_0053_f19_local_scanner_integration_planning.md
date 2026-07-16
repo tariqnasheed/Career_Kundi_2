@@ -59,4 +59,4 @@ Must not update: EvidenceRecord trust fields, ClaimRecord statuses, ReviewReques
 
 ## Next
 
-**0053-F20** Local Scanner Adapter Skeleton Behind Disabled Flag — only after F19 acceptance. Do not start F20 in this slice.
+**0053-F20** Disabled Local Scanner Adapter Skeleton — accepted after F19; then **0053-F21** Local Scanner Runtime Contract Tests only after F20 acceptance.
