@@ -480,9 +480,21 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F15 scan queue skeleton or runtime badge-seed fix  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F14_Attachment_Deletion_Retention_Evidence.txt`
 
-### 0053-F15 Scan Queue Skeleton or Runtime Badge-Seed Fix
-- **Purpose:** Private scan queue skeleton and/or local badge-seed runtime fix after F14  
-- **Allowed:** only after F14 acceptance; bounded scope  
+### 0053-F15 Runtime Badge-Seed Startup Reliability Fix
+- **Status:** Implemented (skip-safe seed + lifespan timeout bound)  
+- **Purpose:** Fix local uvicorn/OpenAPI readiness blocked by badge catalogue seed  
+- **Allowed:** idempotent/fast badge seed; startup timeout guard; tests/docs  
+- **Forbidden:** new badge product features; evidence/review/Passport changes; claim mutation; scan queue; malware scan; LLM provider changes; DB migration  
+- **Hard rule:** no product trust-state change; OpenAPI must become ready even if badge seed stalls  
+- **Tests:** `platform/badges/tests/test_badge_seed_startup.py` + evidence/review/claims regressions  
+- **Browser:** uvicorn OpenAPI `/api/openapi.json` readiness + page smoke  
+- **Gate:** foundation head remains `f0010_review_request_foundation`  
+- **Deferred:** F16 scan queue skeleton / evidence scanner planning  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F15_Runtime_Badge_Seed_Fix_Evidence.txt`
+
+### 0053-F16 Scan Queue Skeleton or Evidence Scanner Planning
+- **Purpose:** Private scan queue skeleton and/or evidence scanner planning after F15  
+- **Allowed:** only after F15 acceptance; bounded scope  
 - **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles unless separately approved  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 

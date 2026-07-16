@@ -43,25 +43,70 @@ log = structlog.get_logger(__name__)
 # Seeding
 # ---------------------------------------------------------------------------
 
-async def seed_badge_definitions(db: AsyncSession) -> None:
+_BADGE_MUTABLE_FIELDS = (
+    "name",
+    "description",
+    "icon",
+    "color_swatch",
+    "rarity",
+    "condition_type",
+    "condition_metric",
+    "condition_target",
+    "condition_score_min",
+    "display_order",
+)
+
+
+async def seed_badge_definitions(db: AsyncSession) -> dict[str, int]:
     """
     Idempotent upsert of the static badge catalogue.
+
     Called once at application startup from main.py lifespan.
+
+    Performance (0053-F15): one SELECT of existing rows, then insert/update
+    only when needed. When the catalogue is already current, this is a
+    skip-safe no-op (no commit, no per-badge round trips).
     """
+    result = await db.execute(select(BadgeDefinition))
+    existing_by_id = {row.id: row for row in result.scalars().all()}
+
+    inserted = 0
+    updated = 0
+    unchanged = 0
+
     for defn in BADGE_DEFINITIONS:
-        existing = await db.get(BadgeDefinition, defn["id"])
+        badge_id = defn["id"]
+        existing = existing_by_id.get(badge_id)
         if existing is None:
             row = BadgeDefinition(**{k: v for k, v in defn.items() if v is not None})
             db.add(row)
+            inserted += 1
+            continue
+
+        changed = False
+        for field in _BADGE_MUTABLE_FIELDS:
+            if field not in defn:
+                continue
+            new_value = defn[field]
+            if getattr(existing, field) != new_value:
+                setattr(existing, field, new_value)
+                changed = True
+        if changed:
+            updated += 1
         else:
-            # Update mutable fields in case the seed data changed
-            for field in ("name", "description", "icon", "color_swatch", "rarity",
-                          "condition_type", "condition_metric", "condition_target",
-                          "condition_score_min", "display_order"):
-                if field in defn:
-                    setattr(existing, field, defn[field])
-    await db.commit()
-    log.info("badge_definitions_seeded", count=len(BADGE_DEFINITIONS))
+            unchanged += 1
+
+    if inserted or updated:
+        await db.commit()
+
+    summary = {
+        "inserted": inserted,
+        "updated": updated,
+        "unchanged": unchanged,
+        "count": len(BADGE_DEFINITIONS),
+    }
+    log.info("badge_definitions_seeded", **summary)
+    return summary
 
 
 # ---------------------------------------------------------------------------

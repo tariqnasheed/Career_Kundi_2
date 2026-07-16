@@ -78,6 +78,20 @@ def _asyncio_exception_handler(loop: asyncio.AbstractEventLoop, context: dict) -
     loop.default_exception_handler(context)
 
 
+# Badge catalogue seed is non-critical for OpenAPI / most API routes.
+# Bound it so a slow or stalled DB cannot block local uvicorn readiness forever.
+BADGE_SEED_STARTUP_TIMEOUT_SECONDS = 15.0
+
+
+async def _run_badge_seed_startup() -> dict[str, int]:
+    """Bounded startup helper: idempotent badge catalogue seed (0053-F15)."""
+    from app.db.session import AsyncSessionLocal
+    from app.services.badges import seed_badge_definitions
+
+    async with AsyncSessionLocal() as db:
+        return await seed_badge_definitions(db)
+
+
 @asynccontextmanager
 async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
     """
@@ -107,11 +121,31 @@ async def lifespan(_app: FastAPI) -> AsyncGenerator[None, None]:
         logger.info("role_pack_library_empty_seeding_catalog")
         role_pack_library.seed_catalog_role_packs(only_missing=True)
 
-    # Badges are achievements users can earn. We ensure they exist in the DB on boot.
-    from app.db.session import AsyncSessionLocal
-    from app.services.badges import seed_badge_definitions
-    async with AsyncSessionLocal() as db:
-        await seed_badge_definitions(db)
+    # Badges are achievements users can earn. Ensure catalogue rows exist on boot.
+    # Skip-safe when already seeded; timeout must not block OpenAPI readiness.
+    try:
+        summary = await asyncio.wait_for(
+            _run_badge_seed_startup(),
+            timeout=BADGE_SEED_STARTUP_TIMEOUT_SECONDS,
+        )
+        logger.info("badge_seed_startup_ok", **summary)
+    except asyncio.TimeoutError:
+        logger.warning(
+            "badge_seed_startup_timeout",
+            timeout_seconds=BADGE_SEED_STARTUP_TIMEOUT_SECONDS,
+            detail=(
+                "Badge catalogue seed exceeded startup budget; "
+                "continuing so OpenAPI and APIs remain available."
+            ),
+        )
+    except Exception:
+        logger.exception(
+            "badge_seed_startup_failed",
+            detail=(
+                "Badge catalogue seed failed; continuing startup. "
+                "Badge gallery may be incomplete until the next successful seed."
+            ),
+        )
 
     logger.info("startup_complete")
     yield  # The server is now running and accepting requests!

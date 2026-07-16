@@ -5625,12 +5625,19 @@ Doc: `docs/product/careerkundi_0053_f13_attachment_safety_planning.md`.
 
 ## 0053-F14 Private Attachment Deletion + Retention Policy
 
-**Status:** Completing in this commit. Owner-only private attachment byte deletion + metadata clear; EvidenceRecord / claim links / review requests / claim statuses retained; **no** scanner, parsing/OCR, LLM review, EvidenceRecord deletion, or verification mutation.
+**Status:** Completed / accepted. Owner-only private attachment byte deletion + metadata clear; EvidenceRecord / claim links / review requests / claim statuses retained; **no** scanner, parsing/OCR, LLM review, EvidenceRecord deletion, or verification mutation.
 
 Evidence: `~/Desktop/CareerKundi_0053_F14_Attachment_Deletion_Retention_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f14_attachment_deletion_retention.md`.
 
-**Next after F14 acceptance:** 0053-F15 only (Scan Queue Skeleton or Runtime Badge-Seed Fix).
+## 0053-F15 Runtime Badge-Seed Startup Reliability Fix
+
+**Status:** Completing in this commit. Skip-safe badge catalogue seed + lifespan timeout bound so local uvicorn/OpenAPI readiness is not blocked; **no** product feature, evidence/review/Passport, claim, scan, or LLM provider changes.
+
+Evidence: `~/Desktop/CareerKundi_0053_F15_Runtime_Badge_Seed_Fix_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f15_runtime_badge_seed_fix.md`.
+
+**Next after F15 acceptance:** 0053-F16 only (Scan Queue Skeleton or Evidence Scanner Planning).
 
 ---
 
@@ -5697,7 +5704,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F12 | Review Intake Hardening |
 | 0053-F13 | Evidence Attachment Safety / Malware Scan Planning |
 | 0053-F14 | Private Attachment Deletion + Retention Policy |
-| 0053-F15 | Scan Queue Skeleton or Runtime Badge-Seed Fix |
+| 0053-F15 | Runtime Badge-Seed Startup Reliability Fix |
+| 0053-F16 | Scan Queue Skeleton or Evidence Scanner Planning |
 
 ### Hard no-go (until specifically approved)
 
@@ -5705,7 +5713,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F14**, then **0053-F15** only.
+**Owner acceptance of 0053-F15**, then **0053-F16** only.
 
 ---
 

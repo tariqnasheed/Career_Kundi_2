@@ -172,6 +172,18 @@ Evidence: `~/Desktop/CareerKundi_0053_F14_Attachment_Deletion_Retention_Evidence
 
 ---
 
+## 0053-F15 Runtime Badge-Seed Startup Reliability Fix (2026-07-17)
+
+Makes local uvicorn/OpenAPI readiness reliable without product changes:
+
+- Badge seed uses one SELECT and skips when catalogue already current
+- Lifespan timeout (15s) so stalled seed cannot block OpenAPI forever
+- No evidence/review/Passport/claim/LLM/scan changes; no DB migration
+
+Evidence: `~/Desktop/CareerKundi_0053_F15_Runtime_Badge_Seed_Fix_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.
