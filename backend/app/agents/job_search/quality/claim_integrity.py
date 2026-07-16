@@ -599,37 +599,35 @@ def detect_unsupported_numeric_claims(text: str, job: dict[str, Any]) -> list[st
 # Safe coaching rewrite / sanitizer
 # ---------------------------------------------------------------------------
 
-# Ordered, grammar-safe first-person -> second-person coaching normalisations.
-# Order matters: modal combinations are resolved before the bare-subject rule so
-# we never produce "you could would" / "you could fixed".
+# JOB-INT-R1 §9: an interview answer must stay in the FIRST PERSON even when the
+# candidate has no provable experience — the honest framing is a developing /
+# hypothetical *approach* ("I would first make the situation safe..."), NOT a
+# second-person coaching lecture ("you could..."). Genuinely fabricated past
+# events and unsupported metrics are DROPPED upstream in
+# ``rewrite_or_flag_unsupported_claims``; what survives here are conditional
+# method statements, which are legitimate first-person speech. So we only
+# personalise collective "we" (which can imply an unverifiable shared history)
+# down to first-person singular, and leave "I ..." untouched.
 _PRONOUN_RULES: tuple[tuple[re.Pattern[str], str], ...] = (
-    (re.compile(r"\bI\s+would\b", re.I), "you could"),
-    (re.compile(r"\bI\s+will\b", re.I), "you would"),
-    (re.compile(r"\bI\s+can\b", re.I), "you can"),
-    (re.compile(r"\bI\s+could\b", re.I), "you could"),
-    (re.compile(r"\bI\s+might\b", re.I), "you might"),
-    (re.compile(r"\bI\s+may\b", re.I), "you may"),
-    (re.compile(r"\bI\s+should\b", re.I), "you should"),
-    (re.compile(r"\bI\s+must\b", re.I), "you must"),
-    (re.compile(r"\bI\s+have\b", re.I), "you have"),
-    (re.compile(r"\bI\s+had\b", re.I), "you had"),
-    (re.compile(r"\bI\s+am\b", re.I), "you are"),
-    (re.compile(r"\bI'm\b", re.I), "you are"),
-    (re.compile(r"\bI've\b", re.I), "you have"),
-    (re.compile(r"\bI'd\b", re.I), "you would"),
-    (re.compile(r"\bWe\s+would\b", re.I), "the team could"),
-    (re.compile(r"\bWe\s+will\b", re.I), "the team would"),
-    (re.compile(r"\bWe\s+can\b", re.I), "the team can"),
-    # Bare subjects (present-tense method statements) become second person.
-    (re.compile(r"\bI\s+", re.I), "you "),
-    (re.compile(r"\bwe\s+", re.I), "the team "),
-    (re.compile(r"\bmy\b", re.I), "your"),
-    (re.compile(r"\bmine\b", re.I), "yours"),
-    (re.compile(r"\bmyself\b", re.I), "yourself"),
+    (re.compile(r"\bWe\s+would\b", re.I), "I would"),
+    (re.compile(r"\bWe\s+will\b", re.I), "I will"),
+    (re.compile(r"\bWe\s+can\b", re.I), "I can"),
+    (re.compile(r"\bWe\s+could\b", re.I), "I could"),
+    (re.compile(r"\bwe\s+", re.I), "I "),
+    (re.compile(r"\bour\b", re.I), "my"),
+    (re.compile(r"\bours\b", re.I), "mine"),
+    (re.compile(r"\bourselves\b", re.I), "myself"),
 )
 
 
-def _normalise_to_coaching_voice(sentence: str) -> str:
+def _normalise_to_first_person_hypothetical(sentence: str) -> str:
+    """Keep a surviving method statement in honest first-person voice.
+
+    Collective "we/our" is personalised to "I/my" so the answer never implies a
+    shared work history the candidate cannot support; first-person "I ..."
+    conditional statements are preserved as-is (they are how the candidate would
+    approach the task, which is exactly what §9 asks for).
+    """
     out = sentence
     for pattern, repl in _PRONOUN_RULES:
         out = pattern.sub(repl, out)
@@ -685,8 +683,9 @@ def _hypothetical_example_line(job: dict[str, Any]) -> str:
     role = str(job.get("title") or "professional").strip()
     article = _indefinite_article(role)
     return (
-        f"Hypothetical example: {article} {role} could describe a realistic situation, the method used, "
-        f"the checks applied, and the outcome — using your own genuine experience where you have it."
+        f"To be upfront, that's a realistic approach rather than a specific past project — as {article} {role} "
+        f"I'd talk through the situation, the method I'd use, the checks I'd apply, and the outcome I'd aim for, "
+        f"and I'd ground it in my own genuine experience wherever I have it."
     )
 
 
@@ -721,9 +720,10 @@ def rewrite_or_flag_unsupported_claims(
         ):
             dropped_any = True
             continue
-        # Remaining first-person method statements -> coaching voice.
-        if _FIRST_PERSON_EVENT_RE.search(sentence) or re.search(r"\bI\b|\bwe\b|\bmy\b", sentence, re.I):
-            kept.append(_normalise_to_coaching_voice(sentence))
+        # Remaining first-person method statements stay first person (honest
+        # developing/hypothetical approach); only collective "we" is personalised.
+        if re.search(r"\bwe\b|\bour\b|\bours\b|\bourselves\b", sentence, re.I):
+            kept.append(_normalise_to_first_person_hypothetical(sentence))
         else:
             kept.append(sentence.strip())
 

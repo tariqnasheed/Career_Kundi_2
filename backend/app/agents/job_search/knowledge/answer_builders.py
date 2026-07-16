@@ -476,7 +476,7 @@ def build_production_issue_metrics_answer(contract: dict[str, Any], slots: dict[
     mistake = str(slots.get("common_mistakes", ["Joining tables without understanding cardinality."])[0]).rstrip(".")
     if role_family == "data" and not slots.get("family_workflow_is_foreign"):
         example = (
-            "Illustrative example: on a revenue dashboard, a data analyst could identify many-to-many joins "
+            "As a realistic example, on a revenue dashboard I'd look for many-to-many joins "
             "inflating aggregation totals, validate data quality on source freshness, inspect the execution plan "
             "for query performance, and compare runtime before and after the change."
         )
@@ -484,7 +484,7 @@ def build_production_issue_metrics_answer(contract: dict[str, Any], slots: dict[
         example = _format_example(slots.get("role_specific_example", ""))
     issue_block = (
         "A production issue of this kind is a failure with measurable customer or service impact. "
-        "A strong answer would diagnose root cause using logs, execution evidence, and controlled comparisons "
+        "I'd diagnose the root cause using logs, execution evidence, and controlled comparisons "
         "rather than assumptions, then remove the bottleneck or defect and add monitoring or validation so any "
         "recurrence would be visible early."
     )

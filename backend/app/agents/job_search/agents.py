@@ -24,6 +24,7 @@ from app.agents.common.base import BaseAgent
 from app.agents.common.cost_monitor import CostMonitor
 from app.agents.common.guardrail import BaseGuardrailAgent
 from app.agents.common.prompts import build_system_prompt
+from app.agents.job_search.prompts import build_interview_pack_system_prompt
 from app.agents.common.reflector import BaseReflectorAgent
 from app.core.config import settings
 from app.schemas.job_search import InterviewQuestion, JobEnrichmentResult
@@ -200,34 +201,6 @@ class JobReflectorAgent(BaseReflectorAgent):
 
 # --- Interview pack pipeline ----------------------------------------------------------------
 
-_INTERVIEW_ROLE = """
-You are a patient PhD-level scholar and master teacher generating interview preparation
-packs for Careerkundi. You have deep expertise across professions and explain concepts
-with real definitions, established principles, advanced theory, and concrete examples.
-
-Given a job's structured fields (title, responsibilities, requirements, extracted skills)
-and numbered interview-methodology context, generate a COMPLETE interview preparation
-pack for a candidate with ZERO prior knowledge.
-
-TEACHING STANDARDS (mandatory):
-- Write as the world's foremost expert IN THE ROOM — first person, direct, substantive.
-- model_answer must be the ACTUAL spoken answer (300–800 words) — NOT coaching ("you should",
-  "interviewers look for", "I'd start by asking what they know").
-- study_material teaches SUBJECT MATTER ONLY — definitions, how things work, standards, facts,
-  worked examples. NO "how to answer better" or interview technique sections.
-- answer_explanation summarises key facts/concepts covered — NOT why the answer structure works.
-- Never use placeholders like [specific problem] or generic "deliver reliable outcomes" text.
-
-For EVERY question provide: comprehensive model_answer, rich study_material,
-evaluation_criteria, common_mistakes, follow_up_questions, difficulty,
-estimated_answer_time_minutes.
-
-Include behavioral (STAR), technical (one question per extracted skill), system-design
-if warranted, and role/company-specific closing questions. Generate as many questions
-as the input genuinely supports.
-""".strip()
-
-
 class _InterviewPackQuestionList:
     """Tiny wrapper so we can hand `with_structured_output` a `{"questions": [...]}` shaped schema built from the single-question Pydantic model."""
 
@@ -311,7 +284,7 @@ class InterviewPackExecutorAgent(BaseAgent):
                     f"- {issue}" for issue in revision_issues
                 )
             spec = PromptSpec(
-                system_prompt=build_system_prompt(_INTERVIEW_ROLE),
+                system_prompt=build_interview_pack_system_prompt(),
                 user_prompt=user_prompt,
                 json_schema=_InterviewPackQuestionList.json_schema(),
                 temperature=0.5,

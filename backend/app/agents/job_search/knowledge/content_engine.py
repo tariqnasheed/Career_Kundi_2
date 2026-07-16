@@ -1459,36 +1459,143 @@ def _procedure_answer(q: dict) -> str:
     return "\n".join(parts)
 
 
-def _behavioral_coaching_answer(q: dict, job: dict, role_ctx: dict) -> str:
+def _behavioral_developing_candidate_answer(q: dict, job: dict, role_ctx: dict) -> str:
+    """First-person behavioral answer for a candidate WITHOUT provable prior
+    experience.
+
+    JOB-INT-R1 §9: when no genuine history is provided we do not invent a past
+    employer, date, or metric — we speak as the candidate, clearly frame the
+    example as one we would draw from training/projects, and still walk a
+    natural (unlabelled) situation → action → result → lesson so the answer is
+    speakable in an interview. Openers rotate on a stable hash of the question
+    so five behavioral questions do not all start the same way.
+    """
     role_title = job.get("title") or "this role"
     resp_raw = (job.get("responsibilities") or role_ctx.get("responsibilities") or ["the work"])[0]
     if isinstance(resp_raw, dict):
         resp_raw = resp_raw.get("text")
-    resp = str(resp_raw or "core duties")
-    q_text = (q.get("question") or "this behavioral question").strip()
-    return (
-        f"A strong answer for this {role_title} behavioral question could be structured with STAR. "
-        f"Use the question — \"{q_text}\" — as your anchor and avoid inventing employers, dates, or metrics "
-        f"you cannot support from your own experience.\n\n"
-        f"**Situation:** Briefly set context related to {resp.lower()} without claiming a prior assignment "
-        f"unless you can cite real experience. If you lack a direct example, frame a realistic scenario "
-        f"with clear hypothetical language.\n\n"
-        f"**Task:** State the responsibility you owned or would own in this type of work, what success looked "
-        f"like, and which constraints mattered (quality, safety, timing, communication).\n\n"
-        f"**Action:** Describe specific steps, checks, communication paths, and tools you would use. Name decisions "
-        f"you would make at each stage and how you would involve stakeholders or escalate when assumptions change.\n\n"
-        f"**Result:** Explain the outcome you would aim for, what evidence you would cite, and what you would "
-        f"change next time. Do not invent percentages or headcount unless they come from your real record.\n\n"
-        f"**Practice guidance:** Rehearse aloud, keep each STAR section concise, and end with one transferable "
-        f"lesson for {role_title} work. If this reflects your real experience, replace the coaching structure "
-        f"with your own real example from your experience."
+    resp = str(resp_raw or "core duties").lower()
+    q_lower = (q.get("question") or "").lower()
+    family = _role_family(role_title)
+
+    # Concrete, stream-specific detail so the answer is role-adapted, not a
+    # generic structure with the title swapped in.
+    artifact, check, escalate = {
+        "healthcare": ("the patient chart and handover notes", "double-checking against protocol", "escalating to the senior clinician"),
+        "engineering": ("the job pack, drawings and permit", "verifying readings against the standard", "raising it with the responsible engineer"),
+        "technology": ("the tickets, logs and tests", "running the tests and checking monitoring", "flagging it to the team lead in the channel"),
+        "creative_media": ("the brief and the working files", "reviewing against the brief and style guide", "checking in with the art director or editor"),
+        "finance_legal": ("the records and the control checklist", "reconciling against source data", "escalating to the reviewer or compliance"),
+        "education": ("the lesson plan and progress records", "checking each learner's understanding", "involving the lead teacher"),
+        "public_admin": ("the case file and service records", "checking policy and eligibility", "referring it to my line manager"),
+    }.get(family, ("my notes and the task checklist", "checking my work against the requirement", "asking a colleague or supervisor"))
+
+    # Vary the scenario spine by what the question actually probes.
+    if any(t in q_lower for t in ("safety", "compliance", "stopped work", "risk")):
+        situation = (
+            f"a time in a project or placement where something about the {resp} work didn't look right — "
+            f"a step that would have cut a corner on safety or a rule"
+        )
+        action = (
+            f"I'd stop and not push on, get clear on the actual requirement by {check}, and raise it early by {escalate} "
+            f"rather than quietly working around it"
+        )
+        result = "the issue got dealt with properly before it became a real problem, and nobody had to unpick it later"
+        lesson = "stopping to check is never the thing that gets you into trouble — carrying on when you're unsure is"
+    elif any(t in q_lower for t in ("defect", "hazard", "discovered late", "spotted", "caught")):
+        situation = f"a time I noticed something wrong with the {resp} work later than I'd have liked"
+        action = (
+            f"I'd flag it straight away rather than hope it wasn't serious, trace how far it had spread using {artifact}, "
+            f"contain it, and put it right while {escalate} so the right people knew"
+        )
+        result = "the problem got contained before it reached anyone downstream, and I fed back what let it slip through"
+        lesson = "raising a late-found issue honestly is always better than quietly letting it ride"
+    elif any(t in q_lower for t in ("fault", "diagnos", "debug", "troubleshoot", "under time pressure", "broke")):
+        situation = f"a time the {resp} work wasn't behaving as expected and I needed to find the cause with the clock running"
+        action = (
+            f"I'd resist guessing, start from {artifact} to see what actually changed, reproduce the problem, "
+            f"narrow it down one step at a time, and confirm the fix by {check} before calling it done"
+        )
+        result = "I found the real cause rather than a symptom, and the fix held because I'd verified it instead of assuming"
+        lesson = "working the problem methodically beats a fast guess, especially when I'm under pressure"
+    elif any(t in q_lower for t in ("standard", "check", "calculation", "test result", "prevented", "verif", "quality")):
+        situation = f"a time a check I ran on the {resp} work caught something before it went further"
+        action = (
+            f"I'd not skip the check under time pressure, compare what I had against {artifact} and the expected result, "
+            f"and only sign it off once {check} lined up"
+        )
+        result = "the check caught the issue early, which saved reworking it later or passing a fault on"
+        lesson = "the checks are worth the few minutes they cost — they're what stops small errors becoming expensive ones"
+    elif any(t in q_lower for t in ("constrained", "problem", "design", "complex", "trade-off", "tradeoff")):
+        situation = f"a constrained problem in the {resp} work where I couldn't have everything I wanted at once"
+        action = (
+            f"I'd get the real constraints and the goal clear first, weigh the options against {artifact}, "
+            f"pick the one with the best trade-off, and check it by {check} rather than assume it worked"
+        )
+        result = "I reached a workable solution I could explain and defend, rather than the first idea that came to mind"
+        lesson = "naming the trade-offs out loud makes for a better decision than pretending there isn't one"
+    elif any(t in q_lower for t in ("mistake", "learned", "wrong", "failed")):
+        situation = f"a point where I got something wrong on {resp} work"
+        action = (
+            f"I'd own it straight away rather than hide it, correct it by going back to {artifact} and {check}, "
+            f"and tell whoever needed to know by {escalate}"
+        )
+        result = "the mistake got put right quickly, and I added a small check to my own routine so it wouldn't happen the same way again"
+        lesson = "owning a mistake early and building a check from it matters more than never slipping up"
+    elif any(t in q_lower for t in ("disagree", "conflict", "pushed back")):
+        situation = f"a time I saw the {resp} work differently from someone else on the team"
+        action = (
+            f"I'd make sure I understood their reasoning first, then set out my view calmly using {artifact} as evidence "
+            f"rather than opinion, and agree a way to check who was right"
+        )
+        result = "we reached a decision we could both stand behind because it was grounded in the facts, not who spoke loudest"
+        lesson = "disagreeing well means staying on the evidence and keeping it about the work"
+    else:
+        # Vary the default situation by the question so two general behavioral
+        # prompts on the same role never collapse to identical text.
+        default_situations = (
+            f"a time on {resp} work when quality, timing and what people were expecting were all pulling against each other",
+            f"a busy stretch of {resp} work where more than one thing needed doing well at the same time",
+            f"a piece of {resp} work I was handed with only part of the picture to start from",
+        )
+        sidx = abs(hash(f"default::{q_lower}")) % len(default_situations)
+        situation = default_situations[sidx]
+        action = (
+            f"I'd get clear on what actually mattered most, work through it in order, keep {check}, "
+            f"and speak up early by {escalate} if something was going to slip"
+        )
+        result = "the work got delivered to standard without a last-minute scramble, because the risks were flagged early"
+        lesson = "communicating early and keeping the checks in place is what keeps pressure from turning into a problem"
+
+    openers = (
+        f"I'll be honest that I'm still building direct experience as a {role_title}, so I'll give a realistic example I'd draw from my training and projects. ",
+        f"I haven't got a long track record to point to yet, so I'll answer this with a realistic example rather than overstate it. ",
+        f"A realistic example I can speak to — and I'll be upfront that it's from training and project work rather than a past job — is ",
+        f"Rather than invent a story, I'll walk through how I'd genuinely handle this, drawing on my projects and study. ",
     )
+    idx = abs(hash(f"{normalize_key(role_title)}::{q_lower}")) % len(openers)
+    opener = openers[idx]
+
+    # Two of the four openers read naturally straight into "a time…"; the other
+    # two are complete sentences, so join with a lead-in that keeps first person.
+    if opener.rstrip().endswith("is") or opener.rstrip().endswith("through how I'd genuinely handle this, drawing on my projects and study."):
+        body_lead = "" if opener.rstrip().endswith("is") else "Picture "
+    else:
+        body_lead = "Picture "
+
+    return (
+        f"{opener}{body_lead}{situation}. "
+        f"In that situation my responsibility would be to keep the {resp} work to standard without dropping safety, accuracy or communication. "
+        f"What I'd actually do is this: {action}. "
+        f"Realistically, {result}. "
+        f"The lesson I'd take from it is that {lesson}."
+    ).replace("  ", " ").strip()
 
 
 def _behavioral_answer(q: dict, job: dict, role_ctx: dict) -> str:
     ctx = collect_user_claim_context(job)
     if ctx["job_thin"] or not ctx["has_explicit_experience"]:
-        return _behavioral_coaching_answer(q, job, role_ctx)
+        return _behavioral_developing_candidate_answer(q, job, role_ctx)
 
     role_title = job.get("title") or "Professional"
     resp_raw = (job.get("responsibilities") or role_ctx.get("responsibilities") or ["the work"])[0]
@@ -1775,10 +1882,11 @@ def _hr_answer(q: dict, job: dict, role_ctx: dict) -> str:
     if "feedback" in q_lower or "development" in q_lower:
         if ctx["job_thin"] or not ctx["has_explicit_experience"]:
             return (
-                f"A strong answer could explain how you treat feedback as operational data, not personal criticism. "
-                f"Structure it around one development goal for {role_title} work on {resp.lower()}, "
-                f"the actions you would take, and how you would track progress with evidence such as completed training, "
-                f"audited outputs, or stakeholder comments."
+                f"I try to treat feedback as useful information about the work rather than personal criticism. "
+                f"For {role_title} work on {resp.lower()}, I'd take one clear development goal from it, "
+                f"decide the specific actions I'd take, and track my progress with real evidence — completed training, "
+                f"audited outputs, or comments from the people I work with — so I can see I'm actually improving. "
+                f"I'd rather ask for feedback early and often than wait for a formal review to find out where I stand."
             )
         return (
             f"In my {role_title} career I treat feedback as operational data, not personal criticism. "

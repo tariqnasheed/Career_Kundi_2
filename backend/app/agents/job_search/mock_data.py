@@ -232,6 +232,10 @@ from app.agents.job_search.quality.expert_naturalness_audit import (
 from app.agents.job_search.quality.generic_phrase_audit import generic_phrase_count
 from app.agents.job_search.quality.legacy_template_audit import legacy_template_count
 from app.agents.job_search.knowledge.study_material_budget import enforce_study_hard_max_after_export_touchup
+from app.agents.job_search.quality.candidate_answer_contract import (
+    candidate_voice_violations,
+    enforce_candidate_voice,
+)
 from app.agents.job_search.quality.claim_integrity import rewrite_or_flag_unsupported_claims
 from app.agents.job_search.quality.surface_quality_guard import fix_surface_quality_defects
 from app.agents.job_search.quality.study_depth_audit import study_depth_score
@@ -808,6 +812,37 @@ def _sanitize_study_material_recursive(
     return node
 
 
+def _synthesize_study_overview(q: dict, job: dict, study: dict) -> str:
+    """Guarantee a non-empty, question-specific study overview.
+
+    Some builders (notably HR / motivation / role-fit) populate
+    ``what_this_question_tests`` richly but leave ``overview`` blank, which the
+    frontend renders as an empty study panel. JOB-INT-R1 §10 requires each
+    question's study material to be tied to that exact question and never blank,
+    so we synthesize an overview from the question itself and what it tests —
+    avoiding the generic filler phrases the quality gates already ban.
+    """
+    role = (job.get("title") or "this role").strip()
+    q_text = (q.get("question") or "").strip().rstrip("?.")
+    q_short = q_text if len(q_text) <= 140 else q_text[:137].rstrip() + "..."
+    tests = (study.get("what_this_question_tests") or "").strip()
+    concepts = study.get("key_concepts") or study.get("key_principles") or []
+    concept_hint = ""
+    if isinstance(concepts, list) and concepts:
+        picks = [str(c).strip().rstrip(".") for c in concepts[:3] if str(c).strip()]
+        if len(picks) == 1:
+            concept_hint = f" It focuses on {picks[0]}."
+        elif len(picks) >= 2:
+            concept_hint = " It focuses on " + ", ".join(picks[:-1]) + f" and {picks[-1]}."
+    lead = f"This study module gets you ready to answer “{q_short}” in a {role} interview."
+    if tests:
+        return f"{lead} {tests}{concept_hint}".strip()
+    return (
+        f"{lead} It walks through what the question is really checking, the ideas you need to "
+        f"answer it well, and how to put those into a clear spoken answer.{concept_hint}"
+    ).strip()
+
+
 def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> dict:
     """Enrich a draft question with model answer, study material, and evaluation metadata."""
     enriched = dict(q)
@@ -954,6 +989,16 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
             enriched["model_answer"], job
         )
         enriched.setdefault("quality_audit", {}).update(claim_meta)
+        # Unified candidate-voice safety net (§12F): repair any coaching preamble
+        # / robotic STAR labels / second-person leaks that survived earlier
+        # stages (mainly relevant to raw LLM output). No-op on clean answers.
+        enriched["model_answer"] = enforce_candidate_voice(enriched["model_answer"])
+        cv_problems = candidate_voice_violations(
+            enriched["model_answer"],
+            role=job.get("title") or "",
+            category=enriched.get("category") or "",
+        )
+        enriched.setdefault("quality_audit", {})["candidate_voice_violation_count"] = len(cv_problems)
         enriched["expert_reference_answer"] = enriched["model_answer"]
     role_title = job.get("title") or ""
     scrub_rules = _skill_scrub_rules(enriched.get("skill_tag") or enriched.get("mapped_skill") or "")
@@ -970,7 +1015,12 @@ def _finalize_question(q: dict, job: dict, difficulty: str, index: int = 0) -> d
     apply_finalized_study_module(enriched, job)
     study = enriched.get("study_material") or {}
     study = _sanitize_study_material_recursive(study, job, role_title, scrub_rules)
-    enriched["study_material"] = enforce_study_hard_max_after_export_touchup(study, enriched, job)
+    study = enforce_study_hard_max_after_export_touchup(study, enriched, job)
+    # Guarantee a non-empty, question-specific overview on every path (§10): some
+    # builders leave `overview` blank even when the rest of the module is rich.
+    if isinstance(study, dict) and not (study.get("overview") or "").strip():
+        study["overview"] = _synthesize_study_overview(enriched, job, study)
+    enriched["study_material"] = study
     # Final safety net: sanitise ALL remaining user-facing prose on the question
     # (evidence slots, expert reference, common mistakes, follow-ups, etc.) so the
     # audited content matches what a user could ever see. study_material and the
