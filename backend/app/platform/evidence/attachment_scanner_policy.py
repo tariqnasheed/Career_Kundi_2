@@ -1,8 +1,12 @@
 """
-Local scanner integration policy (0053-F19).
+Local scanner integration policy (0053-F19 / F21).
 
 Planning/specification helpers only. Does not enable a real scanner, install
 dependencies, call subprocess/network, read file bytes, or mutate DB rows.
+
+F21 adds a separate runtime safety contract module
+(`attachment_scanner_runtime_policy.py`) for future local-process invocation
+rules (no shell, bounded timeout, safe output). That runtime remains disabled.
 
 A scanner integration plan is not scanning and is not verification.
 """

@@ -5667,12 +5667,19 @@ Doc: `docs/product/careerkundi_0053_f19_local_scanner_integration_planning.md`.
 
 ## 0053-F20 Disabled Local Scanner Adapter Skeleton
 
-**Status:** Completing in this commit. `DisabledLocalProcessScannerAdapter` scaffold only; factory still returns no-op; **no** subprocess, packages, file I/O, OCR/LLM, scan route/UI, claim mutation, or DB apply.
+**Status:** Completed / accepted. `DisabledLocalProcessScannerAdapter` scaffold only; factory still returns no-op; **no** subprocess, packages, file I/O, OCR/LLM, scan route/UI, claim mutation, or DB apply.
 
 Evidence: `~/Desktop/CareerKundi_0053_F20_Disabled_Local_Scanner_Adapter_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f20_disabled_local_scanner_adapter.md`.
 
-**Next after F20 acceptance:** 0053-F21 only (Local Scanner Runtime Contract Tests).
+## 0053-F21 Local Scanner Runtime Safety Contract
+
+**Status:** Completing in this commit. Runtime safety policy only (`attachment_scanner_runtime_policy.py`); `LOCAL_SCANNER_RUNTIME_ENABLED=False`; no shell/network; empty binaries; safe output normalization; **no** command execution, packages, file I/O, OCR/LLM, scan route/UI, claim mutation, or DB apply.
+
+Evidence: `~/Desktop/CareerKundi_0053_F21_Local_Scanner_Runtime_Safety_Contract_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f21_local_scanner_runtime_safety_contract.md`.
+
+**Next after F21 acceptance:** 0053-F22 only (Scanner Result Persistence Guard).
 
 ---
 
@@ -5745,7 +5752,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F18 | Scanner Adapter Interface + No-Op Adapter |
 | 0053-F19 | Local Scanner Integration Planning |
 | 0053-F20 | Disabled Local Scanner Adapter Skeleton |
-| 0053-F21 | Local Scanner Runtime Contract Tests |
+| 0053-F21 | Local Scanner Runtime Safety Contract |
+| 0053-F22 | Scanner Result Persistence Guard |
 
 ### Hard no-go (until specifically approved)
 
@@ -5753,7 +5761,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F20**, then **0053-F21** only.
+**Owner acceptance of 0053-F21**, then **0053-F22** only.
 
 ---
 

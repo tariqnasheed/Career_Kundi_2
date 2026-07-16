@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F20)
+# Evidence domain (0053-F2 … F21)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -21,6 +21,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F18 | Scanner adapter interface + no-op unavailable adapter (no real scan) |
 | F19 | Local scanner integration planning + policy constants (still no-op) |
 | F20 | Disabled local process scanner adapter skeleton (not selected) |
+| F21 | Local scanner runtime safety contract (disabled; no execution) |
 
 Hard rules across all slices:
 
@@ -107,6 +108,14 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Active factory still returns `NoopUnavailableScannerAdapter` only
 - No subprocess, file read, network, packages, routes/UI, or DB apply
 - A disabled adapter skeleton is not scanning and not verification
+
+## Local scanner runtime safety contract (F21)
+
+- Module: `attachment_scanner_runtime_policy.py`
+- `LOCAL_SCANNER_RUNTIME_ENABLED=False`; shell/network disallowed; binaries empty
+- Safe error code/message normalization + path/URI redaction helpers
+- No command runner, file read, packages, routes/UI, or DB apply
+- A runtime contract is not scanner execution and not verification
 
 ## Foundation revision
 

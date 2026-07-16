@@ -122,6 +122,7 @@ def test_local_adapter_source_has_no_subprocess_network_scanner_ocr_llm() -> Non
         "__future__",
         "app.platform.evidence.attachment_scan_worker",
         "app.platform.evidence.attachment_scanner_adapter",
+        "app.platform.evidence.attachment_scanner_runtime_policy",
     }
     for mod in imports:
         assert mod in allowed, mod

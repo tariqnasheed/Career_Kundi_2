@@ -59,4 +59,4 @@ Must not update: EvidenceRecord trust fields, ClaimRecord statuses, ReviewReques
 
 ## Next
 
-**0053-F20** Disabled Local Scanner Adapter Skeleton — accepted after F19; then **0053-F21** Local Scanner Runtime Contract Tests only after F20 acceptance.
+**0053-F20**–**F21** accepted after this ladder; then **0053-F22** Scanner Result Persistence Guard only after F21 acceptance.

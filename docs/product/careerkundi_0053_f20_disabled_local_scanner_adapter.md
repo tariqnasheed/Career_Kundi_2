@@ -39,4 +39,4 @@
 
 ## Next
 
-**0053-F21** Local Scanner Runtime Contract Tests — only after F20 acceptance. Do not start F21 in this slice.
+**0053-F21** Local Scanner Runtime Safety Contract — accepted after F20; then **0053-F22** Scanner Result Persistence Guard only after F21 acceptance.

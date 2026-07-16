@@ -132,10 +132,11 @@ def test_no_scanner_ocr_llm_imports_or_migrations() -> None:
     assert not (EVIDENCE_PKG / "scan_worker.py").exists()
     assert (EVIDENCE_PKG / "attachment_quarantine_policy.py").exists()
     assert (EVIDENCE_PKG / "attachment_scan_worker.py").exists()
-    # F18–F20: no-op + policy + disabled local skeleton; no real scanners.
+    # F18–F21: no-op + policy + disabled local + runtime contract; no real scanners.
     assert (EVIDENCE_PKG / "attachment_scanner_adapter.py").exists()
     assert (EVIDENCE_PKG / "attachment_scanner_policy.py").exists()
     assert (EVIDENCE_PKG / "attachment_local_scanner_adapter.py").exists()
+    assert (EVIDENCE_PKG / "attachment_scanner_runtime_policy.py").exists()
     assert not (EVIDENCE_PKG / "clamav_adapter.py").exists()
     assert not (EVIDENCE_PKG / "virustotal_adapter.py").exists()
     local_src = (EVIDENCE_PKG / "attachment_local_scanner_adapter.py").read_text(
@@ -145,6 +146,12 @@ def test_no_scanner_ocr_llm_imports_or_migrations() -> None:
     assert "local_scanner_disabled" in local_src
     assert "import subprocess" not in local_src
     assert "ClamAVScannerAdapter" not in local_src
+    runtime_src = (EVIDENCE_PKG / "attachment_scanner_runtime_policy.py").read_text(
+        encoding="utf-8"
+    )
+    assert "LOCAL_SCANNER_RUNTIME_ENABLED" in runtime_src
+    assert "ALLOW_SHELL_EXECUTION" in runtime_src
+    assert "import subprocess" not in runtime_src
     storage = (EVIDENCE_PKG / "storage.py").read_text(encoding="utf-8").lower()
     assert "quarantine" not in storage
     queue_src = (EVIDENCE_PKG / "attachment_scan_queue.py").read_text(encoding="utf-8")

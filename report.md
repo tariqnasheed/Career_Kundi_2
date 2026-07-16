@@ -248,6 +248,19 @@ Evidence: `~/Desktop/CareerKundi_0053_F20_Disabled_Local_Scanner_Adapter_Evidenc
 
 ---
 
+## 0053-F21 Local Scanner Runtime Safety Contract (2026-07-17)
+
+Adds runtime safety rails without enabling scanning:
+
+- `attachment_scanner_runtime_policy.py` with `LOCAL_SCANNER_RUNTIME_ENABLED=False`
+- No shell/network; empty allowed binaries; bounded timeout constants
+- Safe error normalization and path/URI redaction helpers
+- No command runner, packages, routes/UI; a runtime contract is not verification
+
+Evidence: `~/Desktop/CareerKundi_0053_F21_Local_Scanner_Runtime_Safety_Contract_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

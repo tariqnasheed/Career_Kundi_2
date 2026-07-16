@@ -1,10 +1,11 @@
 """
-Disabled local process scanner adapter skeleton (0053-F20).
+Disabled local process scanner adapter skeleton (0053-F20 / F21).
 
 Documents how a future local-process scanner would fit AttachmentScannerAdapter.
 Does not scan, open files, spawn processes, call the network, import scanner
 packages, or mutate DB rows.
 
+F21 uses runtime safety normalizers for safe error codes/messages.
 This scaffold is not an active scanner and is not verification.
 The configured factory must continue to return NoopUnavailableScannerAdapter.
 """
@@ -19,6 +20,10 @@ from app.platform.evidence.attachment_scan_worker import (
 from app.platform.evidence.attachment_scanner_adapter import (
     ScannerAdapterCapability,
     ScannerAdapterInfo,
+)
+from app.platform.evidence.attachment_scanner_runtime_policy import (
+    normalize_scanner_error_code,
+    normalize_scanner_error_message,
 )
 
 DISABLED_LOCAL_ADAPTER_NAME = "local_process_disabled"
@@ -35,7 +40,7 @@ class DisabledLocalProcessScannerAdapter:
     Disabled skeleton for FUTURE_SCANNER_ADAPTER_FAMILY=local_process_scanner.
 
     Must remain unavailable / not_run. Must not open paths, read bytes, or
-    execute external processes. Not selected by the active factory in F20.
+    execute external processes. Not selected by the active factory in F20/F21.
     """
 
     def adapter_info(self) -> ScannerAdapterInfo:
@@ -65,8 +70,12 @@ class DisabledLocalProcessScannerAdapter:
             scanner_name=DISABLED_LOCAL_ADAPTER_NAME,
             scanner_version=DISABLED_LOCAL_ADAPTER_VERSION,
             verdict=ScannerVerdict.NOT_RUN,
-            safe_error_code=DISABLED_LOCAL_SAFE_ERROR_CODE,
-            safe_error_message=DISABLED_LOCAL_SAFE_ERROR_MESSAGE,
+            safe_error_code=normalize_scanner_error_code(
+                DISABLED_LOCAL_SAFE_ERROR_CODE
+            ),
+            safe_error_message=normalize_scanner_error_message(
+                DISABLED_LOCAL_SAFE_ERROR_MESSAGE
+            ),
             duration_ms=0,
             completed_at=None,
         )
