@@ -89,6 +89,10 @@ Evidence Library can privately link evidence to current-user claims via `GET /ap
 
 Passport shows read-only private evidence awareness via `GET /api/v1/evidence/private-awareness-summary`. Passport does **not** own evidence, does not upload/download/link/verify, and does not mutate claim axes. Attachment storage backend unchanged.
 
+## F9 verification note
+
+F9 adds a pure domain review/verification state-machine contract only. Attachment storage is unchanged. Upload/link still do **not** verify claims. No verification workflow/UI/API in F9.
+
 ## Next
 
-After F8 acceptance only: **0053-F9** (Review/Verification State Machine Planning or Evidence Hardening).
+After F9 acceptance only: **0053-F10** (Review Request Backend Skeleton or Evidence Hardening).

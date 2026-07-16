@@ -5584,11 +5584,18 @@ Evidence: `~/Desktop/CareerKundi_0053_F7_Evidence_To_Claim_Linking_UI_Evidence.t
 
 ## 0053-F8 Passport Read-Only Evidence Panel
 
-**Status:** Completing in this commit. Evidence-scoped `GET /private-awareness-summary` + Passport `Private evidence awareness` panel; Passport does **not** own evidence, upload/download/link/verify, or mutate claim axes; **no** public sharing, OCR, or verification workflow.
+**Status:** Done (`6ab2044b`). Evidence-scoped `GET /private-awareness-summary` + Passport `Private evidence awareness` panel; Passport does **not** own evidence, upload/download/link/verify, or mutate claim axes; **no** public sharing, OCR, or verification workflow.
 
 Evidence: `~/Desktop/CareerKundi_0053_F8_Passport_Read_Only_Evidence_Panel_Evidence.txt`.
 
-**Next after F8 acceptance:** 0053-F9 only (Review/Verification State Machine Planning or Evidence Hardening).
+## 0053-F9 Review/Verification State Machine Planning
+
+**Status:** Completing in this commit. Pure domain `ReviewState` contracts under `backend/app/platform/verification/`; transition validator + safe labels; **no** DB/migration, verification API/UI, claim mutation, or public sharing. Upload/link/source ≠ verification.
+
+Evidence: `~/Desktop/CareerKundi_0053_F9_Verification_State_Machine_Planning_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f9_verification_state_machine.md`.
+
+**Next after F9 acceptance:** 0053-F10 only (Review Request Backend Skeleton or Evidence Hardening).
 
 ---
 
@@ -5649,7 +5656,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F6 | Evidence Upload UI |
 | 0053-F7 | Evidence-to-Claim Linking UI |
 | 0053-F8 | Passport Read-Only Evidence Panel |
-| 0053-F9 | Review/Verification Planning or Evidence Hardening |
+| 0053-F9 | Review/Verification State Machine Planning |
+| 0053-F10 | Review Request Backend Skeleton or Evidence Hardening |
 
 ### Hard no-go (until specifically approved)
 
@@ -5657,7 +5665,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F8**, then **0053-F9** only.
+**Owner acceptance of 0053-F9**, then **0053-F10** only.
 
 ---
 

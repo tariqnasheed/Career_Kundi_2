@@ -405,15 +405,27 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Tests:** passport-summary API + PassportEvidencePanel vitest + evidence/claims/Passport regression  
 - **Browser:** `/passport` + page smoke (uvicorn badge-seed timeout remains a watch item)  
 - **Gate:** current-user ownership; no storage path / public URL exposure  
-- **Deferred:** F9 review/verification state machine or evidence hardening  
+- **Deferred:** F10 review-request skeleton / hardening (F9 contracts done)  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F8_Passport_Read_Only_Evidence_Panel_Evidence.txt`
 
-### 0053-F9 Review/Verification State Machine Planning or Evidence Hardening
-- **Purpose:** Explicit review outcomes and/or hardening (retention, deletion, abuse) after F8  
-- **Allowed:** verification module planning/implementation if chosen; hardening tests/docs  
-- **Forbidden:** self-serve “Verified by CareerKundi” without policy; public profiles; Passport upload  
-- **Tests:** state machine + authz and/or full FE/BE regression  
-- **Browser:** required  
+### 0053-F9 Review/Verification State Machine Planning + Contract Skeleton
+- **Status:** Implemented (`backend/app/platform/verification/` + `careerkundi_0053_f9_verification_state_machine.md`)  
+- **Purpose:** Define review states, actors, transitions, and mapping rules before any review workflow  
+- **Allowed:** pure domain contracts, safe labels, transition tests, policy doc  
+- **Forbidden:** VerificationReview DB/migration; verification API/UI; claim status mutation; Passport/Evidence verify buttons; public sharing; OCR; LLM verification  
+- **Hard rule:** upload/link/source ≠ verification; claim verification changes require future explicit review service  
+- **Tests:** state machine + display language + no routes/UI boundary  
+- **Browser:** no UI change; page smoke only  
+- **Gate:** no user can mark anything verified after F9  
+- **Deferred:** F10 review-request backend skeleton or evidence hardening  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F9_Verification_State_Machine_Planning_Evidence.txt`
+
+### 0053-F10 Review Request Backend Skeleton or Evidence Hardening
+- **Purpose:** Bounded review-request persistence/API skeleton and/or hardening after F9  
+- **Allowed:** review request records if approved; retention/deletion/hardening tests  
+- **Forbidden:** self-serve “Verified by CareerKundi” without policy; public profiles; Passport upload; trust overclaim UI  
+- **Tests:** authz + regression  
+- **Browser:** required when UI appears  
 - **Gate:** independent axes preserved; Private/Not independently verified default  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 

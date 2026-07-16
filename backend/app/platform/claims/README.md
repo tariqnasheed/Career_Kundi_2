@@ -11,7 +11,7 @@
 ## Does not own
 
 - Evidence items / `EvidenceRecord` / `ClaimEvidenceLink`
-- Verification review workflows / `VerificationReview`
+- Verification review workflows / `VerificationReview` (see `app.platform.verification` for 0053-F9 contracts only)
 - Claim scoring / Passport UI
 - Taxonomy mappings / skill graph
 - Public FastAPI claim routes (`/api/v1/claims` — not in F1)

@@ -12,6 +12,8 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F5 | Local private attachment storage + owner-only upload/download |
 | F6 | Evidence Library private attach/download UI |
 | F7 | Evidence Library private claim selector + linking UI |
+| F8 | Passport read-only evidence awareness summary |
+| F9 | Review/verification contracts live in `app.platform.verification` (not applied here) |
 
 Hard rules across all slices:
 

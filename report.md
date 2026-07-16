@@ -103,6 +103,16 @@ Private read-only evidence awareness on `/passport`:
 
 Evidence: `~/Desktop/CareerKundi_0053_F8_Passport_Read_Only_Evidence_Panel_Evidence.txt`
 
+## 0053-F9 Review/Verification State Machine Planning (2026-07-16)
+
+Contract-only foundation before any review workflow:
+
+- `backend/app/platform/verification/` — ReviewState, actors, transitions, safe labels
+- Upload/link/source do not verify; no claim mutation; no verification API/UI/DB
+- Doc: `docs/product/careerkundi_0053_f9_verification_state_machine.md`
+
+Evidence: `~/Desktop/CareerKundi_0053_F9_Verification_State_Machine_Planning_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the
