@@ -1,9 +1,11 @@
-"""Boundary guards: no routes, no feature-domain imports, no frontend (0053-F2)."""
+"""Boundary guards for evidence domain (0053-F2/F3)."""
 
 from __future__ import annotations
 
 import ast
 from pathlib import Path
+
+from app.main import app
 
 REPO_ROOT = Path(__file__).resolve().parents[5]
 BACKEND = REPO_ROOT / "backend"
@@ -25,9 +27,20 @@ def _py_files(root: Path) -> list[Path]:
     return sorted(p for p in root.rglob("*.py") if p.is_file())
 
 
-def test_no_evidence_or_claims_api_route_files() -> None:
-    assert not (ROUTES / "evidence.py").exists()
+def test_private_evidence_route_exists_without_claims_or_upload() -> None:
+    """F3 adds private evidence routes; still no claims/upload/download/share."""
+    assert (ROUTES / "evidence.py").exists()
     assert not (ROUTES / "claims.py").exists()
+    paths = set(app.openapi().get("paths", {}))
+    assert any(p.startswith("/api/v1/evidence") for p in paths)
+    for path in paths:
+        lower = path.lower()
+        if "/api/v1/evidence" not in lower:
+            continue
+        assert "/upload" not in lower
+        assert "/download" not in lower
+        assert "/share" not in lower
+        assert "/public" not in lower
 
 
 def test_evidence_module_avoids_feature_domain_imports() -> None:
@@ -66,8 +79,8 @@ def test_claims_module_does_not_own_evidence_implementation() -> None:
                     assert not alias.name.startswith("app.db.models.evidence"), path
 
 
-def test_no_frontend_evidence_ui_paths_in_this_slice() -> None:
-    """F2 must not add frontend evidence/claim UI files."""
+def test_no_frontend_evidence_ui_paths() -> None:
+    """F3 must not add frontend evidence/claim UI files."""
     if not FRONTEND_SRC.exists():
         return
     unexpected = []
@@ -77,7 +90,6 @@ def test_no_frontend_evidence_ui_paths_in_this_slice() -> None:
         rel = path.relative_to(REPO_ROOT).as_posix()
         lower = rel.lower()
         if "evidence" in lower and "passport" not in lower:
-            # Only fail if newly named evidence UI appears under features/pages.
             if "/features/" in lower or "/pages/" in lower:
                 unexpected.append(rel)
     assert unexpected == [], unexpected

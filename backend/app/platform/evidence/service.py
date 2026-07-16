@@ -1,8 +1,9 @@
 """
-Evidence service helpers (0053-F2).
+Evidence service helpers (0053-F2 / 0053-F3).
 
 Private metadata create/get/list and claim-evidence link only.
-No file upload/download, no verification mutation, no HTTP routes.
+No file upload/download, no verification mutation.
+F3 adds owner-scoped getters for private API routes.
 Linking evidence must not change claim support_status or verification_status.
 """
 
@@ -261,3 +262,67 @@ async def list_claim_evidence_links(
         .order_by(ClaimEvidenceLink.created_at.asc())
     )
     return list(result.scalars().all())
+
+
+async def get_evidence_for_owner(
+    db: AsyncSession,
+    evidence_id: uuid.UUID,
+    owner_user_id: uuid.UUID,
+) -> EvidenceRecord | None:
+    """Return evidence only when owned by owner_user_id; else None (safe 404)."""
+    evidence = await get_evidence_record(db, evidence_id)
+    if evidence is None or evidence.owner_user_id != owner_user_id:
+        return None
+    return evidence
+
+
+async def get_claim_for_owner(
+    db: AsyncSession,
+    claim_id: uuid.UUID,
+    owner_user_id: uuid.UUID,
+) -> ClaimRecord | None:
+    """Return claim only when claim.subject.owner_user_id matches; else None."""
+    claim = (
+        await db.execute(select(ClaimRecord).where(ClaimRecord.id == claim_id))
+    ).scalar_one_or_none()
+    if claim is None:
+        return None
+    subject = (
+        await db.execute(
+            select(CareerSubject).where(CareerSubject.id == claim.subject_id)
+        )
+    ).scalar_one_or_none()
+    if subject is None or subject.owner_user_id != owner_user_id:
+        return None
+    return claim
+
+
+async def list_subject_evidence_for_owner(
+    db: AsyncSession,
+    subject_id: uuid.UUID,
+    owner_user_id: uuid.UUID,
+) -> list[EvidenceRecord] | None:
+    """
+    List subject evidence when the subject belongs to owner_user_id.
+    Returns None when the subject is missing or not owned (safe 404).
+    """
+    subject = (
+        await db.execute(
+            select(CareerSubject).where(CareerSubject.id == subject_id)
+        )
+    ).scalar_one_or_none()
+    if subject is None or subject.owner_user_id != owner_user_id:
+        return None
+    return await list_subject_evidence(db, subject_id)
+
+
+async def list_claim_evidence_links_for_owner(
+    db: AsyncSession,
+    claim_id: uuid.UUID,
+    owner_user_id: uuid.UUID,
+) -> list[ClaimEvidenceLink] | None:
+    """List links for an owned claim; None when claim missing/not owned."""
+    claim = await get_claim_for_owner(db, claim_id, owner_user_id)
+    if claim is None:
+        return None
+    return await list_claim_evidence_links(db, claim_id)

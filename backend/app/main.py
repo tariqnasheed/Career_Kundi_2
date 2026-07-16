@@ -25,6 +25,7 @@ from app.api.routes import (
     auth,
     chatbot,
     cv_builder,
+    evidence,
     health,
     job_search,
     passport,
@@ -177,6 +178,7 @@ def create_app() -> FastAPI:
     app.include_router(badges_router.router, prefix=api_v1_prefix)
     app.include_router(queue_router.router, prefix=api_v1_prefix)
     app.include_router(platform.router, prefix=api_v1_prefix)
+    app.include_router(evidence.router, prefix=api_v1_prefix)
     app.include_router(taxonomy.router, prefix=api_v1_prefix)
 
     return app

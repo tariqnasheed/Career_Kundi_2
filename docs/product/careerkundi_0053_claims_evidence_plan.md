@@ -337,15 +337,25 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Evidence:** `~/Desktop/CareerKundi_0053_F2_Evidence_Domain_Skeleton_Evidence.txt`
 
 ### 0053-F3 Private Evidence Service/API Boundary
-- **Purpose:** Authenticated private evidence service/API boundary (no public sharing)  
-- **Allowed:** private evidence routes + ownership checks after F2 acceptance  
-- **Forbidden:** public sharing, verification stamps, upload UI unless explicitly scoped  
-- **Tests:** API ownership + empty/list  
-- **Browser:** API smoke optional  
-- **Gate:** owner-only access  
-- **Deferred:** Passport UI  
+- **Status:** Implemented (`/api/v1/evidence` create/list/get/subject/link; schemas; ownership helpers)  
+- **Purpose:** Authenticated private evidence metadata + claim-link API (no public sharing)  
+- **Allowed:** private evidence routes + ownership checks; safe labels/warnings  
+- **Forbidden:** upload/download, public sharing, verification stamps, frontend UI, Passport panel  
+- **Hard rule:** link endpoint does **not** mutate claim `support_status` / `verification_status`  
+- **Tests:** API ownership + contracts + platform regression  
+- **Browser:** page smoke only (no UI change)  
+- **Gate:** owner-only access; cross-user 404  
+- **Deferred:** F4 library UI / attachment storage decision  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.txt`
 
-### 0053-F4 Passport Evidence Read UI
+### 0053-F4 Private Evidence Library UI / Attachment Storage Decision
+- **Purpose:** Private evidence library UI and/or attachment storage decision (next after F3)  
+- **Allowed:** private FE library and/or storage decision after F3 acceptance  
+- **Forbidden:** public sharing, verification workflow unless separately approved; Passport trust overclaim  
+- **Note:** Original ladder also listed “Passport Evidence Read UI” later; keep Passport panel after library/storage decision unless owner reorders  
+- **Deferred until F3 accepted**  
+
+### 0053-F4b Passport Evidence Read UI (later ladder step)
 - **Purpose:** Read-only Passport panel for evidence-linked states  
 - **Allowed:** passport frontend read panel  
 - **Forbidden:** mutation of verification; “Verified Passport”  
@@ -353,6 +363,7 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Browser:** required  
 - **Gate:** Private/Not independently verified preserved  
 - **Deferred:** uploads in Passport  
+
 
 ### 0053-F5 Claim-to-Passport Linking
 - **Purpose:** Safe links between Passport sections and claims  

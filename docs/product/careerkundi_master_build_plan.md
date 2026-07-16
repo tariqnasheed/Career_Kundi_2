@@ -5548,11 +5548,17 @@ Evidence: `~/Desktop/CareerKundi_0053_F1_Claim_Service_Contract_Boundary_Evidenc
 
 ## 0053-F2 Evidence Domain Skeleton
 
-**Status:** Completing in this commit. Private `EvidenceRecord` + `ClaimEvidenceLink` + `f0009_evidence_foundation`; service helpers; **no** upload/download, verification workflow, public routes, or frontend.
+**Status:** Done (`112fc8e8`). Private `EvidenceRecord` + `ClaimEvidenceLink` + `f0009_evidence_foundation`; service helpers; **no** upload/download, verification workflow, public routes, or frontend.
 
 Evidence: `~/Desktop/CareerKundi_0053_F2_Evidence_Domain_Skeleton_Evidence.txt`.
 
-**Next after F2 acceptance:** 0053-F3 Private Evidence Service/API Boundary only.
+## 0053-F3 Private Evidence Service/API Boundary
+
+**Status:** Completing in this commit. Authenticated `/api/v1/evidence` metadata + claim-link APIs; current-user scoping; **no** upload/download, frontend, Passport panel, or verification workflow.
+
+Evidence: `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.txt`.
+
+**Next after F3 acceptance:** 0053-F4 Private Evidence Library UI / attachment storage decision only.
 
 ---
 
@@ -5621,7 +5627,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F2**, then **0053-F3 Private Evidence Service/API Boundary** only.
+**Owner acceptance of 0053-F3**, then **0053-F4** only.
 
 ---
 

@@ -42,6 +42,16 @@ Private evidence metadata + claim-evidence links only:
 
 Evidence: `~/Desktop/CareerKundi_0053_F2_Evidence_Domain_Skeleton_Evidence.txt`
 
+## 0053-F3 Private Evidence Service/API Boundary (2026-07-16)
+
+Private authenticated metadata API:
+
+- `/api/v1/evidence` create/list/get/subject list
+- `/api/v1/evidence/links` + claim link list
+- Current-user ownership; cross-user 404; no upload/download; no claim axis mutation
+
+Evidence: `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the
