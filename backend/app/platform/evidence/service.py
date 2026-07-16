@@ -1,10 +1,10 @@
 """
-Evidence service helpers (0053-F2 / 0053-F3).
+Evidence service helpers (0053-F2 / 0053-F3 / 0053-F5).
 
-Private metadata create/get/list and claim-evidence link only.
-No file upload/download, no verification mutation.
-F3 adds owner-scoped getters for private API routes.
-Linking evidence must not change claim support_status or verification_status.
+Private metadata create/get/list, claim-evidence link, and private attachment
+bytes via LocalEvidenceStorage. Upload is not verification.
+Linking or attaching evidence must not change claim support_status or
+verification_status.
 """
 
 from __future__ import annotations
@@ -24,6 +24,12 @@ from app.platform.evidence.contracts import (
     validate_evidence_create_contract,
 )
 from app.platform.evidence.refs import EvidenceRefError
+from app.platform.evidence.storage import (
+    EvidenceStorageError,
+    EvidenceStoredObject,
+    LocalEvidenceStorage,
+    store_evidence_file,
+)
 from app.platform.identity.refs import ActorRef, ActorType
 
 
@@ -326,3 +332,78 @@ async def list_claim_evidence_links_for_owner(
     if claim is None:
         return None
     return await list_claim_evidence_links(db, claim_id)
+
+
+async def _linked_claim_status_snapshot(
+    db: AsyncSession, evidence_id: uuid.UUID
+) -> list[tuple[uuid.UUID, str, str]]:
+    """Capture (claim_id, support_status, verification_status) for linked claims."""
+    result = await db.execute(
+        select(ClaimEvidenceLink).where(ClaimEvidenceLink.evidence_id == evidence_id)
+    )
+    links = list(result.scalars().all())
+    snapshot: list[tuple[uuid.UUID, str, str]] = []
+    for link in links:
+        claim = (
+            await db.execute(select(ClaimRecord).where(ClaimRecord.id == link.claim_id))
+        ).scalar_one_or_none()
+        if claim is None:
+            continue
+        snapshot.append(
+            (claim.id, claim.support_status, claim.verification_status)
+        )
+    return snapshot
+
+
+async def attach_evidence_file(
+    db: AsyncSession,
+    *,
+    evidence_id: uuid.UUID,
+    owner_user_id: uuid.UUID,
+    data: bytes,
+    mime_type: str | None,
+    original_filename: str | None = None,
+    storage: LocalEvidenceStorage | None = None,
+) -> EvidenceRecord:
+    """
+    Store one private attachment for an owned EvidenceRecord.
+
+    Rejects when storage_uri is already set (no replace in F5).
+    Does not mutate linked claim support/verification axes.
+    """
+    evidence = await get_evidence_for_owner(db, evidence_id, owner_user_id)
+    if evidence is None:
+        raise EvidenceRefError(f"evidence does not exist: {evidence_id}")
+
+    if evidence.storage_uri:
+        raise EvidenceRefError(
+            "duplicate evidence attachment is not allowed without replace"
+        )
+
+    prior_claims = await _linked_claim_status_snapshot(db, evidence_id)
+
+    try:
+        stored: EvidenceStoredObject = store_evidence_file(
+            owner_user_id=owner_user_id,
+            evidence_id=evidence_id,
+            data=data,
+            mime_type=mime_type,
+            original_filename=original_filename,
+            storage=storage,
+        )
+    except EvidenceStorageError as exc:
+        raise EvidenceRefError(str(exc)) from exc
+
+    evidence.storage_uri = stored.storage_uri
+    evidence.content_hash = stored.content_hash
+    evidence.mime_type = stored.mime_type
+    evidence.size_bytes = stored.size_bytes
+    await db.commit()
+    await db.refresh(evidence)
+
+    after_claims = await _linked_claim_status_snapshot(db, evidence_id)
+    if after_claims != prior_claims:
+        raise EvidenceRefError(
+            "attach_evidence_file must not mutate claim support or verification status"
+        )
+    return evidence

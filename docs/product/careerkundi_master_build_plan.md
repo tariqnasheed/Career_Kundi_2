@@ -5560,11 +5560,17 @@ Evidence: `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.
 
 ## 0053-F4 Private Evidence Library UI + Attachment Storage Decision
 
-**Status:** Completing in this commit. Private `/evidence` metadata UI + client; storage decision documented for F5; **no** upload/download/storage backend, Passport evidence panel, or claim linker.
+**Status:** Done (`cd0194fe`). Private `/evidence` metadata UI + client; storage decision documented for F5; **no** upload/download/storage backend, Passport evidence panel, or claim linker.
 
 Evidence: `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.txt`.
 
-**Next after F4 acceptance:** 0053-F5 Attachment Storage Backend only.
+## 0053-F5 Attachment Storage Backend
+
+**Status:** Completing in this commit. Local private `LocalEvidenceStorage` + owner-only `POST/GET /api/v1/evidence/{id}/attachment`; updates `storage_uri` / hash / mime / size; **no** frontend upload UI, public URLs, OCR, verification, or Passport/CV/Roadmap/Jobs integrations.
+
+Evidence: `~/Desktop/CareerKundi_0053_F5_Attachment_Storage_Backend_Evidence.txt`.
+
+**Next after F5 acceptance:** 0053-F6 Evidence Upload UI only.
 
 ---
 
@@ -5620,9 +5626,9 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F1 | Claim Service Contract Boundary |
 | 0053-F2 | Evidence Domain Skeleton |
 | 0053-F3 | Private Evidence Service/API Boundary |
-| 0053-F4 | Passport Evidence Read UI |
-| 0053-F5 | Claim-to-Passport Linking |
-| 0053-F6 | Evidence Upload / Attachment References |
+| 0053-F4 | Private Evidence Library UI + Storage Decision |
+| 0053-F5 | Attachment Storage Backend |
+| 0053-F6 | Evidence Upload UI |
 | 0053-F7 | Review and Verification State Machine |
 | 0053-F8 | CV/Roadmap Evidence Awareness |
 | 0053-F9 | Hardening, Privacy, Deletion and Final Regression |
@@ -5633,7 +5639,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F4**, then **0053-F5 Attachment Storage Backend** only.
+**Owner acceptance of 0053-F5**, then **0053-F6 Evidence Upload UI** only.
 
 ---
 

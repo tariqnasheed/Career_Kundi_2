@@ -10,18 +10,18 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | **0053 Evidence, Claims, Provenance and Verification Foundations** |
-| Current Slice | **0053-F4 Private Evidence Library UI + Attachment Storage Decision** |
-| Current Status | Accepted with watch items (ready for F5) |
-| Last Completed Slice | **0053-F3** · F2 · F1 · POST-CLAUDE-R2 · ROADMAP-RICH · JOB-INT-R1 · CORE-VALUE-R1 · LLM-R1 · F0 · 0052 |
-| F0–F3 status | **Completed / accepted** |
-| Last Commit | This commit — `feat(evidence): add private evidence library ui` |
+| Current Slice | **0053-F5 Attachment Storage Backend** |
+| Current Status | Accepted with watch items (ready for F6) |
+| Last Completed Slice | **0053-F4** · F3 · F2 · F1 · POST-CLAUDE-R2 · ROADMAP-RICH · JOB-INT-R1 · CORE-VALUE-R1 · LLM-R1 · F0 · 0052 |
+| F0–F4 status | **Completed / accepted** |
+| Last Commit | This commit — `feat(evidence): add private attachment storage backend` |
 | Last Push Status | Push with this slice |
-| Next Slice | **0053-F5 Attachment Storage Backend** (only after F4 acceptance) |
-| Browser viewports | `/evidence` + existing page smoke |
-| Blocked Items | None for F4; do not start F5 until accepted |
+| Next Slice | **0053-F6 Evidence Upload UI** (only after F5 acceptance) |
+| Browser viewports | `/evidence` (still no upload UI) + page smoke |
+| Blocked Items | None for F5; do not start F6 until accepted |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
-| LLM provider | **Local Ollama 8B**; F4 does not call LLM |
-| Foundation head | `f0009_evidence_foundation` |
+| LLM provider | **Local Ollama 8B**; F5 does not call LLM |
+| Foundation head | `f0009_evidence_foundation` (no new migration) |
 
 ---
 
@@ -34,7 +34,7 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | 0053 Plan | `docs/product/careerkundi_0053_claims_evidence_plan.md` |
 | F4 storage decision | `docs/product/careerkundi_0053_f4_attachment_storage_decision.md` |
 
-**Pointers:** **0053-F3** Done · **0053-F4** Accepted (watch items) · Next **0053-F5**.
+**Pointers:** **0053-F4** Done · **0053-F5** Accepted (watch items) · Next **0053-F6**.
 
 ---
 
@@ -43,8 +43,9 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
 | 0053-F3 | Private Evidence Service/API Boundary | Done | `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.txt` | `dd3c4bdb` | Yes | Auth API |
-| 0053-F4 | Private Evidence Library UI + Storage Decision | Accepted (watch) | `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.txt` | This commit | With push | Metadata UI only |
-| 0053-F5 | Attachment Storage Backend | Next | — | — | — | After F4 accepted |
+| 0053-F4 | Private Evidence Library UI + Storage Decision | Done | `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.txt` | `cd0194fe` | Yes | Metadata UI |
+| 0053-F5 | Attachment Storage Backend | Accepted (watch) | `~/Desktop/CareerKundi_0053_F5_Attachment_Storage_Backend_Evidence.txt` | This commit | With push | Local private bytes |
+| 0053-F6 | Evidence Upload UI | Next | — | — | — | After F5 accepted |
 
 ---
 
@@ -52,8 +53,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-16 | 0053-F3 | `~/Desktop/CareerKundi_0053_F3_Private_Evidence_API_Boundary_Evidence.txt` | A ready for F4 | Private API |
-| 2026-07-16 | 0053-F4 | `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.txt` | This slice | No upload |
+| 2026-07-16 | 0053-F4 | `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.txt` | B ready for F5 | No FE upload |
+| 2026-07-16 | 0053-F5 | `~/Desktop/CareerKundi_0053_F5_Attachment_Storage_Backend_Evidence.txt` | This slice | Backend only |
 
 ---
 
@@ -61,8 +62,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-16 | 0053-F3 | `dd3c4bdb` | Pushed | Private evidence API |
-| 2026-07-16 | 0053-F4 | This commit | Push with this slice | Evidence Library UI |
+| 2026-07-16 | 0053-F4 | `cd0194fe` | Pushed | Evidence Library UI |
+| 2026-07-16 | 0053-F5 | This commit | Push with this slice | Attachment storage |
 
 ---
 

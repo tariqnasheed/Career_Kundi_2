@@ -109,6 +109,23 @@ class Settings(BaseSettings):
             return str(Path(self.graph_store_path).resolve())
         return str(_BACKEND_ROOT / "data" / "knowledge_graph.gpickle")
 
+    @property
+    def resolved_evidence_storage_root(self) -> str:
+        """Absolute private root for evidence attachment bytes (never public)."""
+        if self.evidence_storage_root:
+            return str(Path(self.evidence_storage_root).resolve())
+        return str(_BACKEND_ROOT / "data" / "evidence_files")
+
+    @property
+    def evidence_allowed_mime_types_set(self) -> frozenset[str]:
+        """Parsed MIME allowlist for evidence uploads."""
+        parts = [
+            p.strip().lower()
+            for p in (self.evidence_allowed_mime_types or "").split(",")
+            if p.strip()
+        ]
+        return frozenset(parts)
+
     # --- Auth ------------------------------------------------------------------------
     jwt_secret: str = Field(default="dev-only-insecure-jwt-secret-change-me")
     jwt_algorithm: str = Field(default="HS256")
@@ -148,6 +165,23 @@ class Settings(BaseSettings):
             "Model-knowledge provider: disabled | deterministic_test (tests/samples) "
             "| ollama (local LLM; not enabled for study modules unless wired)."
         ),
+    )
+
+    # --- Evidence attachment storage (0053-F5; local private bytes only) --------------------
+    evidence_storage_root: str = Field(
+        default="",
+        description="Private local root for evidence file bytes (default: backend/data/evidence_files).",
+    )
+    evidence_max_upload_bytes: int = Field(
+        default=5 * 1024 * 1024,
+        description="Maximum evidence attachment size in bytes (F5 default 5 MiB).",
+    )
+    evidence_allowed_mime_types: str = Field(
+        default=(
+            "application/pdf,image/png,image/jpeg,text/plain,"
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        ),
+        description="Comma-separated MIME allowlist for evidence attachments.",
     )
 
     # --- Observability ----------------------------------------------------------------------

@@ -84,6 +84,7 @@ def _assert_safe_wording(payload: object) -> None:
 
 
 def test_no_upload_download_or_public_routes() -> None:
+    """Public share routes forbidden; private /attachment is allowed since F5."""
     paths = set(app.openapi().get("paths", {}))
     assert any(p.startswith("/api/v1/evidence") for p in paths)
     for path in paths:
@@ -99,16 +100,16 @@ def test_no_upload_download_or_public_routes() -> None:
     assert (ROUTES / "evidence.py").exists()
 
 
-def test_no_frontend_evidence_ui_changed_in_f3() -> None:
+def test_frontend_evidence_library_remains_metadata_only_ui() -> None:
+    """F4 library page may exist; F5 must not add file upload controls there."""
     if not FRONTEND_SRC.exists():
         return
-    unexpected = []
-    for path in FRONTEND_SRC.rglob("*evidence*"):
-        if path.is_file() and (
-            "/features/" in path.as_posix() or "/pages/" in path.as_posix()
-        ):
-            unexpected.append(path.as_posix())
-    assert unexpected == []
+    page = FRONTEND_SRC / "pages" / "EvidenceLibraryPage.tsx"
+    assert page.exists()
+    text = page.read_text(encoding="utf-8")
+    assert 'type="file"' not in text
+    assert "Upload evidence" not in text
+    assert "uploadEvidence" not in text
 
 
 @require_disposable_postgres

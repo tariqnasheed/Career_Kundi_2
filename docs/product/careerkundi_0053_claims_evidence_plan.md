@@ -360,6 +360,18 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F5 attachment storage backend  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.txt`
 
+### 0053-F5 Attachment Storage Backend
+- **Status:** Implemented (local private storage + owner-only upload/download APIs)  
+- **Purpose:** Persist one private file per EvidenceRecord; update storage_uri/hash/mime/size  
+- **Allowed:** `LocalEvidenceStorage`, `POST/GET …/attachment`, size/MIME/SHA-256 guards, path containment  
+- **Forbidden:** frontend upload UI, public/signed URLs, OCR/parsing, virus-scan engine, verification, Passport/CV/Roadmap/Jobs integrations, LLM file review  
+- **Hard rule:** upload does **not** mutate claim `support_status` / `verification_status`  
+- **Tests:** storage unit + attachment API + evidence/claims regression  
+- **Browser:** `/evidence` still shows “No file upload yet” (F6)  
+- **Gate:** auth + owner scoping; cross-user 404; no public URL  
+- **Deferred:** F6 Evidence Upload UI; virus scan; cloud object store  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F5_Attachment_Storage_Backend_Evidence.txt`
+
 ### 0053-F4b Passport Evidence Read UI (later ladder step)
 - **Purpose:** Read-only Passport panel for evidence-linked states  
 - **Allowed:** passport frontend read panel  
@@ -369,8 +381,16 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Gate:** Private/Not independently verified preserved  
 - **Deferred:** uploads in Passport  
 
+### 0053-F6 Evidence Upload UI
+- **Purpose:** Frontend upload controls against F5 attachment APIs  
+- **Allowed:** private upload/download UI on Evidence Library only  
+- **Forbidden:** public CDN URLs; AI auto-verify; Passport upload panel in this step unless separately approved  
+- **Tests:** FE upload boundary + API smoke  
+- **Browser:** required  
+- **Gate:** private-only; upload ≠ verified  
+- **Deferred:** issuer verification  
 
-### 0053-F5 Claim-to-Passport Linking
+### 0053-F6b Claim-to-Passport Linking (later)
 - **Purpose:** Safe links between Passport sections and claims  
 - **Allowed:** link APIs + UI affordances  
 - **Forbidden:** auto-verify; Subject picker expansion without approval  
@@ -378,15 +398,6 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Browser:** required  
 - **Gate:** Passport remains private/unverified by default  
 - **Deferred:** review workflow  
-
-### 0053-F6 Evidence Upload / Attachment References
-- **Purpose:** Attachment refs + upload constraints  
-- **Allowed:** storage refs, limits, virus-scan hooks if present  
-- **Forbidden:** public CDN URLs without auth; AI auto-verify  
-- **Tests:** upload/retention unit  
-- **Browser:** required  
-- **Gate:** private-only  
-- **Deferred:** issuer verification  
 
 ### 0053-F7 Review and Verification State Machine
 - **Purpose:** Explicit review outcomes (`under_review` → issuer/CK verified/rejected)  

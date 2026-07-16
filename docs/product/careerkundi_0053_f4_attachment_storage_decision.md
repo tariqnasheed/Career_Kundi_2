@@ -1,6 +1,6 @@
-# 0053-F4 — Attachment Storage Decision
+# 0053-F4 / F5 — Attachment Storage Decision
 
-**Status:** Decided for F4 / deferred implementation to F5  
+**Status:** F4 decided · F5 implemented (local private backend)  
 **Date:** 2026-07-16  
 **Depends on:** 0053-F3 private evidence metadata API
 
@@ -10,33 +10,53 @@
 
 **No file upload or attachment storage in F4.**
 
-The Evidence Library UI creates and lists **private metadata only** via existing F3 APIs. `storage_uri` remains an optional metadata/reference string, not an upload or download action.
+The Evidence Library UI creates and lists **private metadata only**. `storage_uri` remained an optional metadata/reference string until F5.
 
 ---
 
-## F5 must decide before uploads
+## F5 decision (implemented)
 
-F5 (Attachment Storage Backend) must choose and implement a storage backend **before** any upload endpoint ships.
+**Local private development storage** for evidence file bytes.
 
-Candidate backends:
+| Item | Value |
+|---|---|
+| Backend | `LocalEvidenceStorage` (`backend/app/platform/evidence/storage.py`) |
+| Root | `backend/data/evidence_files` (override: `EVIDENCE_STORAGE_ROOT`) |
+| URI | `local-evidence://<owner_user_id>/<evidence_id>/<hash-filename>` |
+| Upload | `POST /api/v1/evidence/{evidence_id}/attachment` (auth + owner) |
+| Download | `GET /api/v1/evidence/{evidence_id}/attachment` (auth + owner) |
+| Size limit | 5 MiB |
+| MIME allowlist | pdf, png, jpeg, text/plain, docx |
+| Checksum | SHA-256 → `EvidenceRecord.content_hash` |
+| Replace | Rejected by default (conflict) |
+| Frontend upload UI | **Still disabled** (F6) |
 
-1. Local development storage (dev-only; never public)
-2. S3-compatible object storage (private buckets)
-3. Encrypted external object store
+Candidate backends deferred beyond local:
+
+1. S3-compatible private object storage
+2. Encrypted external object store
 
 ---
 
-## Required F5 safeguards
+## Safeguards in F5
 
 - Private by default; per-user ownership enforced server-side
 - File size limits and MIME allowlist
-- Checksum / content hash recorded on EvidenceRecord
-- Malware / virus scan plan before bytes are considered usable
-- Deletion and retention policy aligned with privacy module
-- No public buckets; no permanent public URLs
-- No raw file content in logs or observability payloads
+- Checksum / content hash on EvidenceRecord
+- Path traversal protection; storage root containment
+- No public buckets; no permanent/signed public URLs
+- No raw file content in logs
 - No LLM-based verification from uploaded files
-- Download only for the owning authenticated user (if download is ever added)
+- Download only for owning authenticated user
+- Upload does **not** mutate claim support/verification axes
+
+## Still deferred
+
+- Malware / virus scan engine (watch item; plan before treating bytes as “usable” in product flows)
+- Deletion / retention product UX (privacy module alignment)
+- Frontend upload UI (0053-F6)
+- OCR / document parsing
+- Public sharing
 
 ---
 
@@ -53,4 +73,4 @@ Candidate backends:
 
 ## Next
 
-After F4 acceptance only: **0053-F5 Attachment Storage Backend**.
+After F5 acceptance only: **0053-F6 Evidence Upload UI**.

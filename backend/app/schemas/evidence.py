@@ -43,6 +43,7 @@ class EvidenceRead(BaseModel):
     size_bytes: int | None
     source_id: uuid.UUID | None
     snapshot_id: uuid.UUID | None
+    has_attachment: bool = False
     evidence_kind_label: str
     privacy_label: str
     truth_warning: str

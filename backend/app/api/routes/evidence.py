@@ -1,18 +1,20 @@
 """
-Private evidence metadata API (0053-F3).
+Private evidence API (0053-F3 / 0053-F5).
 
-Authenticated, current-user scoped. No upload/download, verification workflow,
-public sharing, or claim axis mutation.
+Authenticated, current-user scoped metadata + private attachment bytes.
+Upload/download is not verification. No public sharing, OCR, or claim axis mutation.
 """
 
 from __future__ import annotations
 
 import uuid
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, File, UploadFile
+from fastapi.responses import FileResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.api.deps import get_current_user
+from app.core.config import settings
 from app.core.errors import ConflictError, NotFoundError, ValidationFailedError
 from app.db.models.claim import ClaimRecord
 from app.db.models.evidence import ClaimEvidenceLink, EvidenceRecord
@@ -30,6 +32,7 @@ from app.platform.evidence.display import (
 )
 from app.platform.evidence.refs import EvidenceRefError
 from app.platform.evidence.service import (
+    attach_evidence_file,
     create_evidence_record,
     get_claim_for_owner,
     get_evidence_for_owner,
@@ -37,6 +40,12 @@ from app.platform.evidence.service import (
     list_claim_evidence_links_for_owner,
     list_owner_evidence,
     list_subject_evidence_for_owner,
+)
+from app.platform.evidence.storage import (
+    EvidenceStorageError,
+    LocalEvidenceStorage,
+    open_evidence_file,
+    sanitize_download_filename,
 )
 from app.platform.identity.refs import ActorRef, ActorType
 from app.platform.kernel import parse_entity_id
@@ -86,6 +95,7 @@ def _evidence_read(row: EvidenceRecord) -> EvidenceRead:
         size_bytes=row.size_bytes,
         source_id=row.source_id,
         snapshot_id=row.snapshot_id,
+        has_attachment=bool(row.storage_uri),
         evidence_kind_label=evidence_kind_label(row.evidence_kind),
         privacy_label=evidence_privacy_label(row.privacy_class),
         truth_warning=evidence_truth_warning(),
@@ -122,6 +132,33 @@ def _link_read(
             claim.verification_status
         ),
     )
+
+
+def _storage() -> LocalEvidenceStorage:
+    return LocalEvidenceStorage(
+        settings.resolved_evidence_storage_root,
+        max_upload_bytes=settings.evidence_max_upload_bytes,
+        allowed_mime_types=settings.evidence_allowed_mime_types_set,
+    )
+
+
+async def _read_upload_bytes(file: UploadFile, *, max_bytes: int) -> bytes:
+    chunks: list[bytes] = []
+    total = 0
+    while True:
+        chunk = await file.read(64 * 1024)
+        if not chunk:
+            break
+        total += len(chunk)
+        if total > max_bytes:
+            raise ValidationFailedError(
+                f"File exceeds maximum size of {max_bytes} bytes."
+            )
+        chunks.append(chunk)
+    data = b"".join(chunks)
+    if not data:
+        raise ValidationFailedError("Empty file rejected.")
+    return data
 
 
 @router.post("", response_model=EvidenceEnvelope, status_code=201)
@@ -260,6 +297,76 @@ async def list_claim_links_api(
         data.append(_link_read(link, evidence=evidence, claim=claim))
     return ClaimEvidenceLinkListEnvelope(
         data=data, meta=ApiListMeta(count=len(data))
+    )
+
+
+@router.post(
+    "/{evidence_id}/attachment",
+    response_model=EvidenceEnvelope,
+    status_code=200,
+)
+async def upload_evidence_attachment(
+    evidence_id: uuid.UUID,
+    file: UploadFile = File(...),  # noqa: B008
+    user: User = Depends(get_current_user),  # noqa: B008
+    db: AsyncSession = Depends(get_db),  # noqa: B008
+) -> EvidenceEnvelope:
+    """
+    Upload one private attachment for owned evidence metadata.
+
+    Not verification. Duplicate attachment without replace is rejected.
+    """
+    storage = _storage()
+    data = await _read_upload_bytes(file, max_bytes=storage.max_upload_bytes)
+    try:
+        row = await attach_evidence_file(
+            db,
+            evidence_id=evidence_id,
+            owner_user_id=user.id,
+            data=data,
+            mime_type=file.content_type,
+            original_filename=file.filename,
+            storage=storage,
+        )
+    except EvidenceRefError as exc:
+        raise _map_evidence_error(exc) from exc
+    return EvidenceEnvelope(data=_evidence_read(row))
+
+
+@router.get("/{evidence_id}/attachment")
+async def download_evidence_attachment(
+    evidence_id: uuid.UUID,
+    user: User = Depends(get_current_user),  # noqa: B008
+    db: AsyncSession = Depends(get_db),  # noqa: B008
+) -> FileResponse:
+    """Stream private attachment bytes for owned evidence (auth + ownership)."""
+    row = await get_evidence_for_owner(db, evidence_id, user.id)
+    if row is None or not row.storage_uri:
+        raise NotFoundError("Evidence attachment not found.")
+
+    storage = _storage()
+    try:
+        path = open_evidence_file(
+            row.storage_uri,
+            owner_user_id=user.id,
+            evidence_id=evidence_id,
+            storage=storage,
+        )
+    except EvidenceStorageError:
+        raise NotFoundError("Evidence attachment not found.") from None
+
+    mime = row.mime_type or "application/octet-stream"
+    filename = sanitize_download_filename(
+        evidence_id=evidence_id,
+        mime_type=mime if row.mime_type else "application/octet-stream",
+        original_filename=None,
+    )
+    return FileResponse(
+        path,
+        media_type=mime,
+        filename=filename,
+        content_disposition_type="attachment",
+        headers={"Cache-Control": "no-store"},
     )
 
 

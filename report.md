@@ -61,6 +61,16 @@ Private `/evidence` page for metadata create/list:
 
 Evidence: `~/Desktop/CareerKundi_0053_F4_Private_Evidence_Library_UI_Evidence.txt`
 
+## 0053-F5 Attachment Storage Backend (2026-07-16)
+
+Private local evidence file storage + owner-only attachment APIs:
+
+- `POST/GET /api/v1/evidence/{evidence_id}/attachment`
+- Size/MIME/SHA-256 guards; no public URL; upload ≠ verified
+- Frontend upload UI still disabled until F6
+
+Evidence: `~/Desktop/CareerKundi_0053_F5_Attachment_Storage_Backend_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the

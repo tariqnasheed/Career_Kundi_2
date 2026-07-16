@@ -27,12 +27,13 @@ def _py_files(root: Path) -> list[Path]:
     return sorted(p for p in root.rglob("*.py") if p.is_file())
 
 
-def test_private_evidence_route_exists_without_claims_or_upload() -> None:
-    """F3 adds private evidence routes; still no claims/upload/download/share."""
+def test_private_evidence_route_exists_without_claims_or_public_share() -> None:
+    """Private evidence + attachment routes; no claims route or public share."""
     assert (ROUTES / "evidence.py").exists()
     assert not (ROUTES / "claims.py").exists()
     paths = set(app.openapi().get("paths", {}))
     assert any(p.startswith("/api/v1/evidence") for p in paths)
+    assert "/api/v1/evidence/{evidence_id}/attachment" in paths
     for path in paths:
         lower = path.lower()
         if "/api/v1/evidence" not in lower:
@@ -79,10 +80,14 @@ def test_claims_module_does_not_own_evidence_implementation() -> None:
                     assert not alias.name.startswith("app.db.models.evidence"), path
 
 
-def test_no_frontend_evidence_ui_paths() -> None:
-    """F3 must not add frontend evidence/claim UI files."""
+def test_frontend_evidence_library_has_no_upload_controls() -> None:
+    """F4 Evidence Library is allowed; must stay metadata-only (no F6 upload UI)."""
     if not FRONTEND_SRC.exists():
         return
+    allowed = {
+        "frontend/src/pages/EvidenceLibraryPage.tsx",
+        "frontend/src/pages/EvidenceLibraryPage.test.tsx",
+    }
     unexpected = []
     for path in FRONTEND_SRC.rglob("*"):
         if not path.is_file():
@@ -91,5 +96,10 @@ def test_no_frontend_evidence_ui_paths() -> None:
         lower = rel.lower()
         if "evidence" in lower and "passport" not in lower:
             if "/features/" in lower or "/pages/" in lower:
-                unexpected.append(rel)
+                if rel not in allowed:
+                    unexpected.append(rel)
     assert unexpected == [], unexpected
+    page = FRONTEND_SRC / "pages" / "EvidenceLibraryPage.tsx"
+    text = page.read_text(encoding="utf-8")
+    assert 'type="file"' not in text
+    assert "Upload evidence" not in text

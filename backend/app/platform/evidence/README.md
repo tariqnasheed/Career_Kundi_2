@@ -1,49 +1,51 @@
-# Evidence domain (0053-F2 / 0053-F3)
+# Evidence domain (0053-F2 / F3 / F4 / F5)
 
-Private evidence **metadata** and claim-evidence **links**.
+Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
-## F2 boundary (domain)
+## Boundaries
 
-- EvidenceRecord = private metadata (title, kind, privacy, optional storage_uri/hash/mime/size, optional provenance source/snapshot).
-- ClaimEvidenceLink = join row (`supports` / `contests` / `context`).
-- Linking evidence **does not** mutate claim `support_status` or `verification_status`.
-- Source/snapshot on evidence = provenance only, not verification.
-- No file upload/download endpoints, no OCR/parsers, no virus scan, no file bytes in DB.
-- No verification workflow, issuer review, or VerificationReview table.
-- No public sharing, public URLs, share tokens, wallet/DID/blockchain/VC.
-- No Passport / CV / Roadmap / Job Search ownership or UI.
+| Slice | What shipped |
+|---|---|
+| F2 | Domain models + service (metadata/link only) |
+| F3 | Authenticated `/api/v1/evidence` metadata + link APIs |
+| F4 | Frontend Evidence Library (metadata UI only; no upload) |
+| F5 | Local private attachment storage + owner-only upload/download |
 
-## F3 boundary (private API)
+Hard rules across all slices:
 
-Routes under `/api/v1/evidence` (auth required, current-user scoped):
+- Linking or uploading evidence **does not** mutate claim `support_status` or `verification_status`.
+- Upload is **not** verification. Wording remains “Not independently verified”.
+- No public sharing, permanent public URLs, signed public URLs, wallet/DID/blockchain/VC.
+- No OCR / document parsing / LLM verification of file bytes.
+- No Passport / CV / Roadmap / Job Search ownership of evidence in these slices.
 
-- `POST /api/v1/evidence` — create metadata (`owner_user_id` always current user)
+## API routes
+
+- `POST /api/v1/evidence` — create metadata
 - `GET /api/v1/evidence` — list own evidence
-- `GET /api/v1/evidence/{evidence_id}` — get own evidence (404 if not owned)
+- `GET /api/v1/evidence/{evidence_id}` — get own evidence
 - `GET /api/v1/evidence/subjects/{subject_id}` — subject evidence if owned
 - `POST /api/v1/evidence/links` — link owned evidence to owned claim
 - `GET /api/v1/evidence/claims/{claim_id}/links` — list links for owned claim
+- `POST /api/v1/evidence/{evidence_id}/attachment` — upload one private file (F5)
+- `GET /api/v1/evidence/{evidence_id}/attachment` — download own private file (F5)
 
-Still forbidden in F3:
+## F5 storage
 
-- upload / download / preview / OCR
-- public sharing tokens
-- verification review routes
-- frontend evidence UI / Passport evidence panel
+- Backend: `LocalEvidenceStorage` (`storage.py`)
+- Default root: `backend/data/evidence_files` (configurable via `EVIDENCE_STORAGE_ROOT`)
+- URI format: `local-evidence://<owner_user_id>/<evidence_id>/<hash-based-filename>`
+- Limits: 5 MiB; MIME allowlist (pdf/png/jpeg/plain/docx)
+- SHA-256 recorded on `EvidenceRecord.content_hash`
+- Duplicate attachment without replace → conflict
+- Path traversal blocked; no raw bytes logged
+- Virus scan: **not implemented** in F5 (documented watch item for later)
 
-## Privacy
+## Frontend note
 
-Default `privacy_class=private`. Allowed: `private`, `sensitive`, `restricted`.  
-Rejected: `public`, `shared`, and similar visibility tokens.
-
-## Service helpers
-
-- `create_evidence_record` / `get_evidence_record`
-- `list_owner_evidence` / `list_subject_evidence`
-- `link_evidence_to_claim` / `list_claim_evidence_links`
-- Owner-scoped: `get_evidence_for_owner`, `get_claim_for_owner`,
-  `list_subject_evidence_for_owner`, `list_claim_evidence_links_for_owner`
+`/evidence` UI still says “No file upload yet” until **0053-F6**. F5 is backend-only.
 
 ## Foundation revision
 
-`f0009_evidence_foundation` → tables `evidence_records`, `claim_evidence_links`.
+`f0009_evidence_foundation` → tables `evidence_records`, `claim_evidence_links`.  
+F5 uses existing `storage_uri` / `content_hash` / `mime_type` / `size_bytes` — no new migration.
