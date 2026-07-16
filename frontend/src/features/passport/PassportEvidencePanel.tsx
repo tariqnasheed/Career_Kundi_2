@@ -1,20 +1,188 @@
 /**
- * PassportEvidencePanel — 0053-F8 read-only private evidence awareness.
+ * PassportEvidencePanel — 0053-F8 / F11 private evidence awareness + review request.
  *
- * Shows evidence-linked claim summaries. Does not upload, download, link,
- * verify, or share. Linking evidence does not verify Passport/profile/claims.
+ * Shows evidence-linked claim summaries and private review request/cancel.
+ * Does not upload, download, link, verify, approve, reject, or share.
+ * A review request is not verification.
  */
 
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { FileText } from "lucide-react";
-import { evidenceApi } from "@/lib/api";
-import type { ApiError } from "@/types/api";
+import { evidenceApi, reviewRequestApi } from "@/lib/api";
+import type {
+  ApiError,
+  PassportEvidenceSummaryItem,
+  ReviewRequestRead,
+} from "@/types/api";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Textarea } from "@/components/ui/Input";
 import { Spinner } from "@/components/ui/Spinner";
 import styles from "./PassportPage.module.css";
+
+function activeRequestForClaim(
+  requests: ReviewRequestRead[] | undefined,
+  claimId: string,
+): ReviewRequestRead | undefined {
+  return requests?.find(
+    (row) => row.claim_id === claimId && row.review_state === "requested",
+  );
+}
+
+function latestCancelledForClaim(
+  requests: ReviewRequestRead[] | undefined,
+  claimId: string,
+): ReviewRequestRead | undefined {
+  const cancelled =
+    requests?.filter(
+      (row) => row.claim_id === claimId && row.review_state === "cancelled",
+    ) ?? [];
+  if (cancelled.length === 0) return undefined;
+  return [...cancelled].sort((a, b) =>
+    (b.updated_at || "").localeCompare(a.updated_at || ""),
+  )[0];
+}
+
+function ClaimReviewControls({
+  item,
+  requests,
+}: {
+  item: PassportEvidenceSummaryItem;
+  requests: ReviewRequestRead[] | undefined;
+}) {
+  const queryClient = useQueryClient();
+  const [requestNote, setRequestNote] = useState("");
+  const [cancelReason, setCancelReason] = useState("");
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const active = activeRequestForClaim(requests, item.claim_id);
+  const cancelled = latestCancelledForClaim(requests, item.claim_id);
+
+  const createMutation = useMutation({
+    mutationFn: () =>
+      reviewRequestApi.createReviewRequest({
+        claim_id: item.claim_id,
+        request_note: requestNote.trim() || null,
+      }),
+    onSuccess: async () => {
+      setErrorMessage(null);
+      setStatusMessage("Review requested. This is not verification.");
+      setRequestNote("");
+      await queryClient.invalidateQueries({ queryKey: ["review-requests"] });
+    },
+    onError: (err: unknown) => {
+      setStatusMessage(null);
+      setErrorMessage(
+        (err as ApiError)?.message ||
+          "Could not request private review. Please try again.",
+      );
+    },
+  });
+
+  const cancelMutation = useMutation({
+    mutationFn: () =>
+      reviewRequestApi.cancelReviewRequest(active!.id, {
+        cancellation_reason: cancelReason.trim() || null,
+      }),
+    onSuccess: async () => {
+      setErrorMessage(null);
+      setStatusMessage(
+        "Review request cancelled. Claim remains not independently verified.",
+      );
+      setCancelReason("");
+      await queryClient.invalidateQueries({ queryKey: ["review-requests"] });
+    },
+    onError: (err: unknown) => {
+      setStatusMessage(null);
+      setErrorMessage(
+        (err as ApiError)?.message ||
+          "Could not cancel review request. Please try again.",
+      );
+    },
+  });
+
+  if (!item.claim_id) {
+    return (
+      <p className={styles.targetMeta}>
+        Private review is unavailable for this item.
+      </p>
+    );
+  }
+
+  return (
+    <div className={styles.reviewControls}>
+      <p className={styles.targetMeta}>
+        Claim status: Not independently verified
+      </p>
+
+      {active && (
+        <>
+          <p className={styles.targetRole}>
+            {active.review_state_label || "Review requested"}
+          </p>
+          <p className={styles.targetMeta}>{active.review_state_help_text}</p>
+          <p className={styles.targetTruth}>{active.warning}</p>
+          <Textarea
+            label="Optional cancellation reason"
+            rows={2}
+            value={cancelReason}
+            onChange={(e) => setCancelReason(e.target.value)}
+            fullWidth
+          />
+          <Button
+            size="sm"
+            variant="secondary"
+            loading={cancelMutation.isPending}
+            onClick={() => cancelMutation.mutate()}
+          >
+            Cancel review request
+          </Button>
+        </>
+      )}
+
+      {!active && (
+        <>
+          {cancelled && (
+            <p className={styles.targetMeta}>
+              Previous review request: {cancelled.review_state_label}. Claim
+              remains not independently verified.
+            </p>
+          )}
+          <Textarea
+            label="Optional note for future review"
+            rows={2}
+            value={requestNote}
+            onChange={(e) => setRequestNote(e.target.value)}
+            fullWidth
+          />
+          <Button
+            size="sm"
+            variant="secondary"
+            loading={createMutation.isPending}
+            onClick={() => createMutation.mutate()}
+          >
+            Request private review
+          </Button>
+        </>
+      )}
+
+      {statusMessage && (
+        <p className={styles.successBanner} role="status">
+          {statusMessage}
+        </p>
+      )}
+      {errorMessage && (
+        <p className={styles.errorMessage} role="alert">
+          {errorMessage}
+        </p>
+      )}
+    </div>
+  );
+}
 
 export default function PassportEvidencePanel() {
   const summaryQuery = useQuery({
@@ -23,7 +191,14 @@ export default function PassportEvidencePanel() {
     retry: false,
   });
 
+  const reviewQuery = useQuery({
+    queryKey: ["review-requests"],
+    queryFn: () => reviewRequestApi.listReviewRequests(),
+    retry: false,
+  });
+
   const summary = summaryQuery.data;
+  const requests = reviewQuery.data;
 
   return (
     <section
@@ -44,6 +219,10 @@ export default function PassportEvidencePanel() {
             Evidence linked here is private and not independently verified.
             Linking evidence does not verify your Passport, your profile, or a
             claim.
+          </p>
+          <p className={styles.emptyBody}>
+            Requesting a review does not verify a claim. Review outcomes require
+            a future explicit review workflow.
           </p>
 
           {summaryQuery.isLoading && (
@@ -86,6 +265,9 @@ export default function PassportEvidencePanel() {
                   ? "evidence record"
                   : "evidence records"}
               </p>
+              {reviewQuery.isLoading && (
+                <p className={styles.stateHint}>Loading review requests…</p>
+              )}
               <ul className={styles.evidenceList}>
                 {summary.items.map((item) => (
                   <li
@@ -116,6 +298,7 @@ export default function PassportEvidencePanel() {
                       </Badge>
                     </div>
                     <p className={styles.targetTruth}>{item.truth_warning}</p>
+                    <ClaimReviewControls item={item} requests={requests} />
                   </li>
                 ))}
               </ul>

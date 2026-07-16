@@ -77,6 +77,11 @@ import type {
   ClaimEvidenceLinkEnvelope,
   PassportEvidenceSummaryRead,
   PassportEvidenceSummaryEnvelope,
+  ReviewRequestRead,
+  ReviewRequestCreateRequest,
+  ReviewRequestCancelRequest,
+  ReviewRequestEnvelope,
+  ReviewRequestListEnvelope,
 } from "@/types/api";
 import {
   buildSavedJobSearchPageRequest,
@@ -1081,6 +1086,38 @@ export const evidenceApi = {
   getEvidencePassportSummary: async (): Promise<PassportEvidenceSummaryRead> => {
     const res = await http.get<PassportEvidenceSummaryEnvelope>(
       "/evidence/private-awareness-summary",
+    );
+    return res.data.data;
+  },
+};
+
+/**
+ * Private review-request client (0053-F10/F11).
+ * Request/cancel only — not verification, approve, or reject.
+ */
+export const reviewRequestApi = {
+  listReviewRequests: async (): Promise<ReviewRequestRead[]> => {
+    const res = await http.get<ReviewRequestListEnvelope>("/review-requests");
+    return res.data.data;
+  },
+
+  createReviewRequest: async (
+    payload: ReviewRequestCreateRequest,
+  ): Promise<ReviewRequestRead> => {
+    const res = await http.post<ReviewRequestEnvelope>(
+      "/review-requests",
+      payload,
+    );
+    return res.data.data;
+  },
+
+  cancelReviewRequest: async (
+    requestId: string,
+    payload: ReviewRequestCancelRequest = {},
+  ): Promise<ReviewRequestRead> => {
+    const res = await http.post<ReviewRequestEnvelope>(
+      `/review-requests/${requestId}/cancel`,
+      payload,
     );
     return res.data.data;
   },

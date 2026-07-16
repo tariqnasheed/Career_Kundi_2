@@ -432,13 +432,22 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F11 review-request UI or evidence hardening  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F10_Review_Request_Backend_Skeleton_Evidence.txt`
 
-### 0053-F11 Review Request UI or Evidence Hardening
-- **Purpose:** User-facing review-request affordances and/or hardening after F10  
-- **Allowed:** private FE request/cancel UI if approved; retention/deletion/hardening  
-- **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles  
-- **Tests:** FE + authz + regression  
-- **Browser:** required when UI appears  
-- **Gate:** independent axes preserved; Private/Not independently verified default  
+### 0053-F11 Review Request UI
+- **Status:** Implemented (PassportEvidencePanel request/cancel + `reviewRequestApi`)  
+- **Purpose:** Private user request/cancel UI for evidence-linked claims on Passport  
+- **Allowed:** FE types/client; Passport panel state merge by `claim_id`; request/cancel; safe wording; tests/docs  
+- **Forbidden:** approve/reject/conflict UI; reviewer/admin/issuer UI; claim status mutation; “Verified Passport”; public sharing; Passport upload/download; CV/Roadmap/Jobs review UI; OCR; LLM verification  
+- **Hard rule:** review request ≠ verification; only “Not independently verified” for verified wording  
+- **Tests:** PassportEvidencePanel vitest + boundary audit + Evidence Library + F10/F9/evidence/claims regression  
+- **Browser:** `/passport` request/cancel + page smoke (uvicorn badge-seed timeout remains a watch item)  
+- **Gate:** no claim axis mutation; no verify/approve/reject/share controls  
+- **Deferred:** F12 review intake hardening or evidence hardening  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F11_Review_Request_UI_Evidence.txt`
+
+### 0053-F12 Review Intake Hardening or Evidence Hardening
+- **Purpose:** Harden review intake and/or evidence retention after F11  
+- **Allowed:** only after F11 acceptance; bounded hardening scope  
+- **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles unless separately approved  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 
 ---

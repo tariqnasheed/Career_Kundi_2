@@ -55,6 +55,11 @@ vi.mock("@/lib/api", () => ({
         "Evidence linked here is private and not independently verified. Linking evidence does not verify your Passport, your profile, or a claim.",
     }),
   },
+  reviewRequestApi: {
+    listReviewRequests: vi.fn().mockResolvedValue([]),
+    createReviewRequest: vi.fn(),
+    cancelReviewRequest: vi.fn(),
+  },
 }));
 
 vi.mock("@/store/ui", () => ({

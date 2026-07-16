@@ -124,6 +124,18 @@ Private review requests only:
 
 Evidence: `~/Desktop/CareerKundi_0053_F10_Review_Request_Backend_Skeleton_Evidence.txt`
 
+## 0053-F11 Review Request UI (2026-07-17)
+
+Private Passport UI to request/cancel review for evidence-linked claims:
+
+- `reviewRequestApi` + PassportEvidencePanel controls on `/passport`
+- “Request private review” / “Cancel review request”; optional note/reason
+- Safe copy: requesting a review does not verify a claim
+- No approve/reject/conflict UI; no claim status mutation; no public sharing
+- No Passport upload/download; no CV/Roadmap/Job Search changes; no backend changes
+
+Evidence: `~/Desktop/CareerKundi_0053_F11_Review_Request_UI_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the

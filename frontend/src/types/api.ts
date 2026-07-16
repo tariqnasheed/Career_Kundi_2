@@ -1253,6 +1253,46 @@ export interface PassportEvidenceSummaryEnvelope {
 }
 
 // ---------------------------------------------------------------------------
+// Private review requests (0053-F10 / F11) — request/cancel only; not verification
+// ---------------------------------------------------------------------------
+
+export interface ReviewRequestCreateRequest {
+  claim_id: string;
+  request_note?: string | null;
+}
+
+export interface ReviewRequestCancelRequest {
+  cancellation_reason?: string | null;
+}
+
+export interface ReviewRequestRead {
+  id: string;
+  subject_id: string;
+  claim_id: string;
+  review_state: string;
+  review_state_label: string;
+  review_state_help_text: string;
+  reviewer_type: string | null;
+  request_note: string | null;
+  cancellation_reason: string | null;
+  created_at: string;
+  updated_at: string;
+  cancelled_at: string | null;
+  claim_verification_status: string;
+  claim_verification_label: string;
+  warning: string;
+}
+
+export interface ReviewRequestEnvelope {
+  data: ReviewRequestRead;
+}
+
+export interface ReviewRequestListEnvelope {
+  data: ReviewRequestRead[];
+  meta: { count: number };
+}
+
+// ---------------------------------------------------------------------------
 // Shared error envelope
 // ---------------------------------------------------------------------------
 

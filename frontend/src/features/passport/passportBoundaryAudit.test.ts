@@ -183,6 +183,29 @@ describe("0052-F8 Passport boundary audit", () => {
     }
   });
 
+  it("forbids verify/approve/reject/share/upload/download controls in Passport evidence panel", () => {
+    const src = readSrc("features/passport/PassportEvidencePanel.tsx");
+    for (const phrase of [
+      "Verify claim",
+      "Verify Passport",
+      "Verified Passport",
+      "Approve",
+      "Reject",
+      "Publish",
+      "Share",
+      'type="file"',
+      "downloadEvidence",
+      "uploadEvidence",
+    ]) {
+      expect(src.includes(phrase), `panel must not contain ${phrase}`).toBe(
+        false,
+      );
+    }
+    expect(src.includes("Request private review")).toBe(true);
+    expect(src.includes("Cancel review request")).toBe(true);
+    expect(src.includes("reviewRequestApi")).toBe(true);
+  });
+
   it("documents that api.ts may define Passport mutation clients for /passport only", () => {
     const api = readSrc("lib/api.ts");
     expect(api.includes("passportApi")).toBe(true);

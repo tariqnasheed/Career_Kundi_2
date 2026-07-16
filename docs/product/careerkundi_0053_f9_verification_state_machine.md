@@ -48,6 +48,10 @@ Claim `verification_status` may change only through an explicit future review se
 
 **Implemented separately:** private review-request backend (`review_requests`, `/api/v1/review-requests` request/cancel only). Still no approve/reject, no claim mutation, no verification UI.
 
-## Future F11
+## F11 status
 
-Review-request UI or evidence hardening — only after F10 acceptance. Still no public trust UI.
+Passport private review request/cancel UI uses F10 APIs. Still no approve/reject, no claim verification mutation, no public trust UI.
+
+## Future F12
+
+Review intake hardening or evidence hardening — only after F11 acceptance. Still no public trust UI.
