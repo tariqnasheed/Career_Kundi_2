@@ -1,10 +1,11 @@
 """
-Scanner adapter interface + no-op unavailable adapter (0053-F18).
+Scanner adapter interface + no-op unavailable adapter (0053-F18 / F19).
 
-Defines the seam a future scanner must implement. F18 ships only a no-op
+Defines the seam a future scanner must implement. Ships only a no-op
 adapter that reports unavailable / not_run. Does not read file bytes, call
 network/processes, import scanner packages, or mutate DB rows.
 
+F19 selection policy still returns no-op only (real scanner disabled).
 A no-op adapter is not a scanner and is not verification.
 """
 
@@ -19,8 +20,12 @@ from app.platform.evidence.attachment_scan_worker import (
     ScannerAvailability,
     ScannerVerdict,
 )
+from app.platform.evidence.attachment_scanner_policy import (
+    CURRENT_SCANNER_ADAPTER_NAME,
+    select_configured_scanner_adapter_name,
+)
 
-NOOP_ADAPTER_NAME = "noop_unavailable"
+NOOP_ADAPTER_NAME = CURRENT_SCANNER_ADAPTER_NAME
 NOOP_ADAPTER_VERSION = "0"
 NOOP_ADAPTER_WARNING = "Scanner is not configured in this version."
 NOOP_SAFE_ERROR_CODE = "scanner_unavailable"
@@ -102,9 +107,14 @@ def get_configured_attachment_scanner_adapter() -> AttachmentScannerAdapter:
     """
     Factory for the active attachment scanner adapter.
 
-    F18: always returns the no-op unavailable adapter. No env-based real
-    scanner selection and no config changes.
+    F18/F19: always returns the no-op unavailable adapter. Selection policy
+    may only name noop_unavailable while REAL_SCANNER_ENABLED is False.
+    No env-based real scanner selection and no config changes in F19.
     """
+    selected = select_configured_scanner_adapter_name()
+    if selected != NOOP_ADAPTER_NAME:
+        # Defensive: never construct a real adapter from this factory in F19.
+        return NoopUnavailableScannerAdapter()
     return NoopUnavailableScannerAdapter()
 
 
@@ -117,7 +127,9 @@ def configured_scanner_adapter_summary() -> dict[str, object]:
         "availability": info.availability.value,
         "capabilities": [c.value for c in info.capabilities],
         "warning": info.warning,
+        "selected_by_policy": select_configured_scanner_adapter_name(),
         "reads_file_bytes": False,
         "calls_network_or_subprocess": False,
         "applies_results_to_database": False,
+        "real_scanner_enabled": False,
     }

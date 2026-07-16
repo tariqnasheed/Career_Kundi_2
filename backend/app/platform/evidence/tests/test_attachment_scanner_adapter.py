@@ -102,13 +102,14 @@ def test_adapter_source_has_no_scanner_ocr_llm_file_io_or_network() -> None:
         if isinstance(node, ast.Import):
             for alias in node.names:
                 imports.add(alias.name)
-    # Only stdlib/typing + F17 ScanResultContract seam.
+    # Only stdlib/typing + F17 ScanResultContract + F19 policy seam.
     allowed_modules = {
         "__future__",
         "dataclasses",
         "enum",
         "typing",
         "app.platform.evidence.attachment_scan_worker",
+        "app.platform.evidence.attachment_scanner_policy",
     }
     for mod in imports:
         assert mod in allowed_modules, mod

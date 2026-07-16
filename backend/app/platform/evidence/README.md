@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F18)
+# Evidence domain (0053-F2 … F19)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -19,6 +19,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F16 | Internal attachment scan queue skeleton (`attachment_scan_jobs`); no scanner/UI |
 | F17 | Scan worker contract + quarantine policy (pure; not active; no engine) |
 | F18 | Scanner adapter interface + no-op unavailable adapter (no real scan) |
+| F19 | Local scanner integration planning + policy constants (still no-op) |
 
 Hard rules across all slices:
 
@@ -89,6 +90,14 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Verdict always `not_run` / `scanner_unavailable`; maps to F17 `NO_OP`
 - Does not read file bytes, call network/processes, or apply DB updates
 - A no-op adapter is not a scanner and not verification
+
+## Local scanner integration planning (F19)
+
+- Policy module: `attachment_scanner_policy.py`
+- `REAL_SCANNER_ENABLED = False`; future family `local_process_scanner`
+- External APIs / parsing / OCR / LLM review disallowed for malware scan
+- No scanner dependency, route, UI, worker loop, or DB apply
+- A scanner plan is not scanning and not verification
 
 ## Foundation revision
 

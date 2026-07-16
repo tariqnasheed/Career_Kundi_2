@@ -132,8 +132,9 @@ def test_no_scanner_ocr_llm_imports_or_migrations() -> None:
     assert not (EVIDENCE_PKG / "scan_worker.py").exists()
     assert (EVIDENCE_PKG / "attachment_quarantine_policy.py").exists()
     assert (EVIDENCE_PKG / "attachment_scan_worker.py").exists()
-    # F18: no-op adapter seam only; no real scanner adapters.
+    # F18/F19: no-op adapter + planning policy only; no real scanner adapters.
     assert (EVIDENCE_PKG / "attachment_scanner_adapter.py").exists()
+    assert (EVIDENCE_PKG / "attachment_scanner_policy.py").exists()
     assert not (EVIDENCE_PKG / "clamav_adapter.py").exists()
     assert not (EVIDENCE_PKG / "virustotal_adapter.py").exists()
     storage = (EVIDENCE_PKG / "storage.py").read_text(encoding="utf-8").lower()

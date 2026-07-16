@@ -34,4 +34,4 @@ Public EvidenceRead / Passport safety fields remain F13 defaults (`scan_not_avai
 
 ## Next
 
-**0053-F17** Scan Worker Contract + Quarantine Policy — accepted; **0053-F18** Scanner Adapter Interface + No-Op Adapter — next seam; then **0053-F19** only after F18 acceptance.
+**0053-F17**–**F18** accepted; **0053-F19** Local Scanner Integration Planning — planning only; then **0053-F20** only after F19 acceptance.

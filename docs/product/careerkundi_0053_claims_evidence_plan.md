@@ -529,8 +529,20 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Evidence:** `~/Desktop/CareerKundi_0053_F18_Scanner_Adapter_Noop_Evidence.txt`
 
 ### 0053-F19 Local Scanner Integration Planning
-- **Purpose:** Plan a local/private scanner adapter after F18  
-- **Allowed:** only after F18 acceptance; bounded scope  
+- **Status:** Implemented (planning/policy only — `attachment_scanner_policy.py`)  
+- **Purpose:** Decide and document the safest future local scanner path without enabling scanning  
+- **Allowed:** policy constants/helpers; future requirements list; job-update boundaries; tests proving no-op remains; docs  
+- **Forbidden:** real scanner adapter/engine; scanner packages; ClamAV/VirusTotal; worker loop; file I/O; OCR/parsing/LLM; scan route/UI; claim mutation; config enable toggles; f0012  
+- **Hard rule:** a scanner integration plan is not scanning and is not verification; `REAL_SCANNER_ENABLED=False`  
+- **Tests:** policy + adapter + F17/F16/safety + evidence/review/claims/badge regressions  
+- **Browser:** no scan controls; OpenAPI unchanged for scan routes  
+- **Gate:** factory still no-op; future family `local_process_scanner`; no dependency changes  
+- **Deferred:** F20 local scanner adapter skeleton behind disabled flag  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F19_Local_Scanner_Integration_Planning_Evidence.txt`
+
+### 0053-F20 Local Scanner Adapter Skeleton Behind Disabled Flag
+- **Purpose:** Add a disabled-flag local adapter skeleton after F19  
+- **Allowed:** only after F19 acceptance; bounded scope  
 - **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles unless separately approved  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
 

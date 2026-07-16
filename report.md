@@ -222,6 +222,19 @@ Evidence: `~/Desktop/CareerKundi_0053_F18_Scanner_Adapter_Noop_Evidence.txt`
 
 ---
 
+## 0053-F19 Local Scanner Integration Planning (2026-07-17)
+
+Documents the safest future local scanner path without enabling scanning:
+
+- Policy module `attachment_scanner_policy.py` with `REAL_SCANNER_ENABLED=False`
+- Future adapter family: local process scanner only; external APIs disallowed
+- No scanner packages, routes/UI, OCR/LLM review, or DB apply
+- A scanner plan is not verification
+
+Evidence: `~/Desktop/CareerKundi_0053_F19_Local_Scanner_Integration_Planning_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

@@ -39,4 +39,4 @@
 
 ## Next
 
-**0053-F19** Local Scanner Integration Planning — only after F18 acceptance. Do not start F19 in this slice.
+**0053-F19** Local Scanner Integration Planning — accepted after F18; then **0053-F20** Local Scanner Adapter Skeleton Behind Disabled Flag only after F19 acceptance.

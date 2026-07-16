@@ -5653,12 +5653,19 @@ Doc: `docs/product/careerkundi_0053_f17_scan_worker_quarantine_policy.md`.
 
 ## 0053-F18 Scanner Adapter Interface + No-Op Adapter
 
-**Status:** Completing in this commit. Protocol + `NoopUnavailableScannerAdapter` + factory returning no-op only; verdict `not_run`; **no** real engine, ClamAV/VirusTotal, file I/O, OCR/LLM, scan route/UI, claim mutation, or DB apply.
+**Status:** Completed / accepted. Protocol + `NoopUnavailableScannerAdapter` + factory returning no-op only; verdict `not_run`; **no** real engine, ClamAV/VirusTotal, file I/O, OCR/LLM, scan route/UI, claim mutation, or DB apply.
 
 Evidence: `~/Desktop/CareerKundi_0053_F18_Scanner_Adapter_Noop_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f18_scanner_adapter_noop.md`.
 
-**Next after F18 acceptance:** 0053-F19 only (Local Scanner Integration Planning).
+## 0053-F19 Local Scanner Integration Planning
+
+**Status:** Completing in this commit. Planning/policy only (`attachment_scanner_policy.py`); `REAL_SCANNER_ENABLED=False`; future family `local_process_scanner`; **no** engine, packages, route/UI, OCR/LLM, claim mutation, or DB apply.
+
+Evidence: `~/Desktop/CareerKundi_0053_F19_Local_Scanner_Integration_Planning_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f19_local_scanner_integration_planning.md`.
+
+**Next after F19 acceptance:** 0053-F20 only (Local Scanner Adapter Skeleton Behind Disabled Flag).
 
 ---
 
@@ -5730,6 +5737,7 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F17 | Scan Worker Contract + Quarantine Policy |
 | 0053-F18 | Scanner Adapter Interface + No-Op Adapter |
 | 0053-F19 | Local Scanner Integration Planning |
+| 0053-F20 | Local Scanner Adapter Skeleton Behind Disabled Flag |
 
 ### Hard no-go (until specifically approved)
 
@@ -5737,7 +5745,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F18**, then **0053-F19** only.
+**Owner acceptance of 0053-F19**, then **0053-F20** only.
 
 ---
 
