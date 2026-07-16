@@ -44,6 +44,10 @@ No `self_verified` / `user_verified` / `ai_verified` / `blockchain_verified` / `
 
 Claim `verification_status` may change only through an explicit future review service.
 
-## Future F10
+## F10 status
 
-Review-request backend skeleton or evidence hardening — only after F9 acceptance. Still no public trust UI.
+**Implemented separately:** private review-request backend (`review_requests`, `/api/v1/review-requests` request/cancel only). Still no approve/reject, no claim mutation, no verification UI.
+
+## Future F11
+
+Review-request UI or evidence hardening — only after F10 acceptance. Still no public trust UI.

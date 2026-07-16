@@ -24,6 +24,7 @@ from app.db.tests.pf1_test_db import require_disposable_postgres, temporary_data
 F2_PREFIX = "ck_f2ev_"
 F0008 = "f0008_passport_persistence"
 F0009 = "f0009_evidence_foundation"
+# Foundation head advances after F0009 (e.g. F10 review_requests).
 MIGRATION_FILE = (
     Path(__file__).resolve().parents[3]
     / "db"
@@ -47,8 +48,8 @@ FORBIDDEN_TABLES = {
 def test_f0009_tables_exist_after_migration() -> None:
     with temporary_database(prefix=F2_PREFIX) as (_name, url):
         result = prepare_database(url)
+        assert len(foundation_heads()) == 1
         assert result.foundation_revisions == (foundation_heads()[0],)
-        assert foundation_heads() == [F0009]
         engine = create_engine(url)
         try:
             tables = set(inspect(engine).get_table_names())
@@ -97,7 +98,7 @@ def test_f0009_downgrade_upgrade() -> None:
                 command.upgrade(cfg, "head")
             assert EVIDENCE_TABLES.issubset(set(inspect(engine).get_table_names()))
             with engine.connect() as conn:
-                assert read_foundation_revisions(conn) == (F0009,)
+                assert read_foundation_revisions(conn) == (foundation_heads()[0],)
         finally:
             engine.dispose()
 

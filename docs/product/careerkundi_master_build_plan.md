@@ -5590,12 +5590,19 @@ Evidence: `~/Desktop/CareerKundi_0053_F8_Passport_Read_Only_Evidence_Panel_Evide
 
 ## 0053-F9 Review/Verification State Machine Planning
 
-**Status:** Completing in this commit. Pure domain `ReviewState` contracts under `backend/app/platform/verification/`; transition validator + safe labels; **no** DB/migration, verification API/UI, claim mutation, or public sharing. Upload/link/source ≠ verification.
+**Status:** Done (`1b4fd102`). Pure domain `ReviewState` contracts under `backend/app/platform/verification/`; transition validator + safe labels; **no** verification UI or claim mutation. Upload/link/source ≠ verification.
 
 Evidence: `~/Desktop/CareerKundi_0053_F9_Verification_State_Machine_Planning_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f9_verification_state_machine.md`.
 
-**Next after F9 acceptance:** 0053-F10 only (Review Request Backend Skeleton or Evidence Hardening).
+## 0053-F10 Review Request Backend Skeleton
+
+**Status:** Completing in this commit. `review_requests` + `f0010_review_request_foundation` + `/api/v1/review-requests` request/list/get/cancel; **no** approve/reject, claim mutation, verification UI, or public sharing. Review request ≠ verification.
+
+Evidence: `~/Desktop/CareerKundi_0053_F10_Review_Request_Backend_Skeleton_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f10_review_request_backend.md`.
+
+**Next after F10 acceptance:** 0053-F11 only (Review Request UI or Evidence Hardening).
 
 ---
 
@@ -5657,7 +5664,8 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F7 | Evidence-to-Claim Linking UI |
 | 0053-F8 | Passport Read-Only Evidence Panel |
 | 0053-F9 | Review/Verification State Machine Planning |
-| 0053-F10 | Review Request Backend Skeleton or Evidence Hardening |
+| 0053-F10 | Review Request Backend Skeleton |
+| 0053-F11 | Review Request UI or Evidence Hardening |
 
 ### Hard no-go (until specifically approved)
 
@@ -5665,7 +5673,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F9**, then **0053-F10** only.
+**Owner acceptance of 0053-F10**, then **0053-F11** only.
 
 ---
 

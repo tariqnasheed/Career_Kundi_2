@@ -113,6 +113,17 @@ Contract-only foundation before any review workflow:
 
 Evidence: `~/Desktop/CareerKundi_0053_F9_Verification_State_Machine_Planning_Evidence.txt`
 
+## 0053-F10 Review Request Backend Skeleton (2026-07-16)
+
+Private review requests only:
+
+- `review_requests` + `f0010_review_request_foundation`
+- `/api/v1/review-requests` create/list/get/cancel
+- No approve/reject; no claim status mutation; no verification UI
+- Review request is not verification
+
+Evidence: `~/Desktop/CareerKundi_0053_F10_Review_Request_Backend_Skeleton_Evidence.txt`
+
 ---
 
 This document explains, in plain language, everything that was broken in the

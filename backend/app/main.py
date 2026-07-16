@@ -31,6 +31,7 @@ from app.api.routes import (
     passport,
     platform,
     profile,
+    review_requests,
     roadmap,
     role_packs,
     taxonomy,
@@ -179,6 +180,7 @@ def create_app() -> FastAPI:
     app.include_router(queue_router.router, prefix=api_v1_prefix)
     app.include_router(platform.router, prefix=api_v1_prefix)
     app.include_router(evidence.router, prefix=api_v1_prefix)
+    app.include_router(review_requests.router, prefix=api_v1_prefix)
     app.include_router(taxonomy.router, prefix=api_v1_prefix)
 
     return app

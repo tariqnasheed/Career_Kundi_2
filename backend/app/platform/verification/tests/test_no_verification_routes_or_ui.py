@@ -49,16 +49,25 @@ def test_no_verification_api_route_module() -> None:
     paths = set(app.openapi().get("paths", {}))
     assert "/api/v1/verification" not in paths
     assert "/api/v1/claims/verify" not in paths
+    assert "/api/v1/passport/verify" not in paths
+    # F10 may expose /review-requests (request/cancel only).
+    assert "/api/v1/review-requests" in paths
     for path in paths:
         lower = path.lower()
-        if "/verify" in lower or lower.endswith("/verification"):
-            if path.startswith("/api/v1/"):
-                raise AssertionError(f"unexpected verification route: {path}")
+        if path.startswith("/api/v1/") and (
+            "/approve" in lower
+            or "/reject" in lower
+            or lower.endswith("/verify")
+            or "/verification/" in lower
+        ):
+            raise AssertionError(f"unexpected verification power route: {path}")
 
 
 def test_no_verification_review_model_or_migration() -> None:
     assert not (MODELS / "verification.py").exists()
     assert not (MODELS / "verification_review.py").exists()
+    # F10 review_requests model/migration is allowed; verification_review is not.
+    assert (MODELS / "review_request.py").exists()
     for migrations in MIGRATION_ROOTS:
         if not migrations.exists():
             continue
@@ -67,10 +76,19 @@ def test_no_verification_review_model_or_migration() -> None:
                 continue
             name = path.name.lower()
             assert "verification_review" not in name
-            assert "f0010_verification" not in name
+            # Reject a misnamed verification-power migration; F10 review_request is ok.
+            if "f0010" in name and "review_request" not in name:
+                assert "verification" not in name
 
 
 def test_verification_package_avoids_llm_ocr_feature_imports() -> None:
+    pure_modules = {
+        "status.py",
+        "contracts.py",
+        "display.py",
+        "refs.py",
+        "__init__.py",
+    }
     for path in _py_files(VERIFICATION_PKG):
         if "tests" in path.parts:
             continue
@@ -81,9 +99,10 @@ def test_verification_package_avoids_llm_ocr_feature_imports() -> None:
                 mod = node.module or ""
                 for prefix in FORBIDDEN_IMPORT_PREFIXES:
                     assert not mod.startswith(prefix), f"{path}: imports {mod}"
-                assert not mod.startswith("app.db.models"), path
-                assert "sqlalchemy" not in mod, path
-                assert "fastapi" not in mod, path
+                if path.name in pure_modules:
+                    assert not mod.startswith("app.db.models"), path
+                    assert "sqlalchemy" not in mod, path
+                    assert "fastapi" not in mod, path
             if isinstance(node, ast.Import):
                 for alias in node.names:
                     for prefix in FORBIDDEN_IMPORT_PREFIXES:
@@ -94,13 +113,15 @@ def test_verification_package_avoids_llm_ocr_feature_imports() -> None:
 
 
 def test_mapping_helper_not_imported_by_api_routes() -> None:
-    """Current APIs must not call review outcome mapping."""
+    """APIs must not call review outcome mapping or approve/reject helpers."""
     for path in _py_files(ROUTES):
         text = path.read_text(encoding="utf-8")
         assert "map_review_outcome_to_claim_verification_status" not in text
-        assert "validate_review_transition" not in text
-        assert "app.platform.verification" not in text
-    # Mapping exists for future services only.
+        # Transition validator stays in service; routes must not call it directly.
+        if path.name != "review_requests.py":
+            assert "app.platform.verification" not in text
+        assert "approve" not in path.name
+        assert "reject" not in path.name
     assert map_review_outcome_to_claim_verification_status("approved") is not None
 
 

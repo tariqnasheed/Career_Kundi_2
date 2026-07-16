@@ -417,14 +417,26 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Tests:** state machine + display language + no routes/UI boundary  
 - **Browser:** no UI change; page smoke only  
 - **Gate:** no user can mark anything verified after F9  
-- **Deferred:** F10 review-request backend skeleton or evidence hardening  
+- **Deferred:** F11 review-request UI / hardening (F10 backend done)  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F9_Verification_State_Machine_Planning_Evidence.txt`
 
-### 0053-F10 Review Request Backend Skeleton or Evidence Hardening
-- **Purpose:** Bounded review-request persistence/API skeleton and/or hardening after F9  
-- **Allowed:** review request records if approved; retention/deletion/hardening tests  
-- **Forbidden:** self-serve “Verified by CareerKundi” without policy; public profiles; Passport upload; trust overclaim UI  
-- **Tests:** authz + regression  
+### 0053-F10 Review Request Backend Skeleton
+- **Status:** Implemented (`review_requests`, `f0010_review_request_foundation`, `/api/v1/review-requests`)  
+- **Purpose:** Private user request/cancel for owned claims without verification power  
+- **Allowed:** model/migration/service/API for request/list/get/cancel; safe wording  
+- **Forbidden:** approve/reject/conflict; claim status mutation; verification UI; public sharing; OCR; LLM verification  
+- **Hard rule:** review request ≠ verification  
+- **Tests:** service + API + migration + no-verification-power + F9/evidence/claims regression  
+- **Browser:** no FE change; page smoke only  
+- **Gate:** current-user ownership; duplicate active request rejected  
+- **Deferred:** F11 review-request UI or evidence hardening  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F10_Review_Request_Backend_Skeleton_Evidence.txt`
+
+### 0053-F11 Review Request UI or Evidence Hardening
+- **Purpose:** User-facing review-request affordances and/or hardening after F10  
+- **Allowed:** private FE request/cancel UI if approved; retention/deletion/hardening  
+- **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles  
+- **Tests:** FE + authz + regression  
 - **Browser:** required when UI appears  
 - **Gate:** independent axes preserved; Private/Not independently verified default  
 - **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  

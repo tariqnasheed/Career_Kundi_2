@@ -10,18 +10,18 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Field | Value |
 |---|---|
 | Current Phase | **0053 Evidence, Claims, Provenance and Verification Foundations** |
-| Current Slice | **0053-F9 Review/Verification State Machine Planning** |
-| Current Status | Completing / accepted with watch items (ready for F10) |
-| Last Completed Slice | **0053-F8** · F7 · F6 · F5 · F4 · F3 · F2 · F1 · POST-CLAUDE-R2 · ROADMAP-RICH · JOB-INT-R1 · CORE-VALUE-R1 · LLM-R1 · F0 · 0052 |
-| F0–F8 status | **Completed / accepted** |
-| Last Commit | This commit — `feat(verification): add review state machine contract` |
+| Current Slice | **0053-F10 Review Request Backend Skeleton** |
+| Current Status | Completing / accepted with watch items (ready for F11) |
+| Last Completed Slice | **0053-F9** · F8 · F7 · F6 · F5 · F4 · F3 · F2 · F1 · POST-CLAUDE-R2 · ROADMAP-RICH · JOB-INT-R1 · CORE-VALUE-R1 · LLM-R1 · F0 · 0052 |
+| F0–F9 status | **Completed / accepted** |
+| Last Commit | This commit — `feat(verification): add review request backend skeleton` |
 | Last Push Status | Push with this slice |
-| Next Slice | **0053-F10** Review Request Backend Skeleton or Evidence Hardening (only after F9 acceptance) |
-| Browser viewports | No UI change; page smoke only |
-| Blocked Items | None for F9; do not start F10 until accepted |
+| Next Slice | **0053-F11** Review Request UI or Evidence Hardening (only after F10 acceptance) |
+| Browser viewports | No FE change; page smoke only |
+| Blocked Items | None for F10; do not start F11 until accepted |
 | Frozen Items | Old 004E Interview Pack repair; old Auto Apply |
-| LLM provider | **Local Ollama 8B**; F9 does not call LLM |
-| Foundation head | `f0009_evidence_foundation` (no new migration) |
+| LLM provider | **Local Ollama 8B**; F10 does not call LLM |
+| Foundation head | `f0010_review_request_foundation` |
 
 ---
 
@@ -33,9 +33,9 @@ Readable in under 2 minutes. Update every slice. No secrets.
 | Live Tracker | `docs/product/careerkundi_live_tracker.md` |
 | 0053 Plan | `docs/product/careerkundi_0053_claims_evidence_plan.md` |
 | F9 state machine | `docs/product/careerkundi_0053_f9_verification_state_machine.md` |
-| Storage / attachment notes | `docs/product/careerkundi_0053_f4_attachment_storage_decision.md` |
+| F10 review request | `docs/product/careerkundi_0053_f10_review_request_backend.md` |
 
-**Pointers:** **0053-F8** Done · **0053-F9** Accepted (watch items) · Next **0053-F10**.
+**Pointers:** **0053-F9** Done · **0053-F10** Accepted (watch items) · Next **0053-F11**.
 
 ---
 
@@ -43,10 +43,10 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Slice | Name | Status | Evidence | Commit | Pushed | Notes |
 |---|---|---|---|---|---|---|
-| 0053-F7 | Evidence-to-Claim Linking UI | Done | `~/Desktop/CareerKundi_0053_F7_Evidence_To_Claim_Linking_UI_Evidence.txt` | `ff084051` | Yes | Private claim selector |
 | 0053-F8 | Passport Read-Only Evidence Panel | Done | `~/Desktop/CareerKundi_0053_F8_Passport_Read_Only_Evidence_Panel_Evidence.txt` | `6ab2044b` | Yes | Read-only awareness |
-| 0053-F9 | Review/Verification State Machine Planning | Accepted (watch) | `~/Desktop/CareerKundi_0053_F9_Verification_State_Machine_Planning_Evidence.txt` | This commit | With push | Contract only |
-| 0053-F10 | Review request skeleton / hardening | Next | — | — | — | After F9 accepted |
+| 0053-F9 | Review/Verification State Machine Planning | Done | `~/Desktop/CareerKundi_0053_F9_Verification_State_Machine_Planning_Evidence.txt` | `1b4fd102` | Yes | Contracts only |
+| 0053-F10 | Review Request Backend Skeleton | Accepted (watch) | `~/Desktop/CareerKundi_0053_F10_Review_Request_Backend_Skeleton_Evidence.txt` | This commit | With push | Request/cancel API |
+| 0053-F11 | Review request UI / hardening | Next | — | — | — | After F10 accepted |
 
 ---
 
@@ -54,8 +54,8 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Evidence Path | Verdict | Notes |
 |---|---|---|---|---|
-| 2026-07-16 | 0053-F8 | `~/Desktop/CareerKundi_0053_F8_Passport_Read_Only_Evidence_Panel_Evidence.txt` | B ready for F9 | Passport panel |
-| 2026-07-16 | 0053-F9 | `~/Desktop/CareerKundi_0053_F9_Verification_State_Machine_Planning_Evidence.txt` | This slice | State machine |
+| 2026-07-16 | 0053-F9 | `~/Desktop/CareerKundi_0053_F9_Verification_State_Machine_Planning_Evidence.txt` | B ready for F10 | Contracts |
+| 2026-07-16 | 0053-F10 | `~/Desktop/CareerKundi_0053_F10_Review_Request_Backend_Skeleton_Evidence.txt` | This slice | Review requests |
 
 ---
 
@@ -63,14 +63,14 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 | Date | Slice | Commit | Push Status | Notes |
 |---|---|---|---|---|
-| 2026-07-16 | 0053-F8 | `6ab2044b` | Pushed | Passport evidence panel |
-| 2026-07-16 | 0053-F9 | This commit | Push with this slice | Review contracts |
+| 2026-07-16 | 0053-F9 | `1b4fd102` | Pushed | State machine contracts |
+| 2026-07-16 | 0053-F10 | This commit | Push with this slice | Review request backend |
 
 ---
 
 ## 6. Decision Updates
 
-- F9: pure domain `ReviewState` machine; no verification workflow/UI/API; upload/link/source ≠ verification; no claim mutation; no DB/migration.
+- F10: private `review_requests` + request/cancel API only; request ≠ verification; no claim mutation; no approve/reject; no FE UI.
 
 ---
 
@@ -83,4 +83,4 @@ Readable in under 2 minutes. Update every slice. No secrets.
 
 ---
 
-*Tracker updated: 2026-07-16 — 0053-F9*
+*Tracker updated: 2026-07-16 — 0053-F10*

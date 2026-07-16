@@ -1,39 +1,39 @@
-# CareerKundi verification / review contracts (0053-F9)
+# CareerKundi verification / review (0053-F9 / F10)
 
 ## Owns
 
-- `ReviewState` — future review workflow states (separate from claim `verification_status`)
-- `ReviewerType` / `ReviewActorType` — reviewer org kinds and transition actors
-- Transition validator (`validate_review_transition`)
-- Explicit outcome → claim status mapping helpers (not applied to DB)
-- Safe review display labels
+- `ReviewState` / `ReviewActorType` / `ReviewerType` (F9 contracts)
+- Transition validator + safe review labels (F9)
+- **F10:** private `ReviewRequest` persistence + request/list/get/cancel service
+- **F10:** authenticated `/api/v1/review-requests` routes (request/cancel only)
 
 ## Does not own
 
-- `VerificationReview` table / migrations
-- Verification HTTP routes or admin/issuer UI
-- ClaimRecord mutation
-- Passport / Evidence Library verify buttons
+- Approval / rejection / conflict workflow
+- Reviewer / admin / issuer portals
+- ClaimRecord `support_status` / `verification_status` mutation
+- Passport / Evidence Library verify UI
 - OCR, malware scan, LLM verification
 - Wallet / DID / blockchain / VC
+- Public sharing
 
 ## Hard rule
 
-> Evidence upload, evidence link, or source/snapshot provenance is **not** verification.
+> A review request is **not** verification.
 
-Claim `verification_status` may change only through an explicit future review service that is not implemented in F9.
+Evidence upload, evidence link, or source/snapshot provenance is also not verification.
 
-## Actors
+## F10 API
 
-| Actor | May |
-|-------|-----|
-| `user` | request, cancel |
-| `reviewer` | start review; needs-more-evidence; reject; conflict |
-| `approver` | approve (and may reject/conflict) |
-| `system_policy` | expire approved |
+| Method | Path | Purpose |
+|--------|------|---------|
+| POST | `/api/v1/review-requests` | Request review for owned claim |
+| GET | `/api/v1/review-requests` | List own requests |
+| GET | `/api/v1/review-requests/{id}` | Get own request |
+| POST | `/api/v1/review-requests/{id}/cancel` | Cancel requested → cancelled |
 
-Forbidden actor labels: `self_verified`, `user_verified`, `ai_verified`, `blockchain_verified`, `auto_verified`.
+Starts at `requested`. Cancel only from `requested` in F10.
 
 ## Next
 
-**0053-F10** may add a review-request backend skeleton only after F9 acceptance — still without public sharing or trust overclaim.
+**0053-F11** may add review-request UI or evidence hardening — only after F10 acceptance. Still no approve/reject trust UI.

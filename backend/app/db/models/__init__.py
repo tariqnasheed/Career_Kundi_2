@@ -15,6 +15,7 @@ from app.db.models.chat import ChatMessage, ChatSession
 from app.db.models.claim import ClaimRecord
 from app.db.models.cv import GeneratedCV
 from app.db.models.evidence import ClaimEvidenceLink, EvidenceRecord
+from app.db.models.review_request import ReviewRequest
 from app.db.models.geo import (
     GeoArea,
     JurisdictionArea,
@@ -87,6 +88,7 @@ __all__ = [
     "ClaimRecord",
     "EvidenceRecord",
     "ClaimEvidenceLink",
+    "ReviewRequest",
     "SourceRecord",
     "SourceSnapshot",
     "GeoArea",
