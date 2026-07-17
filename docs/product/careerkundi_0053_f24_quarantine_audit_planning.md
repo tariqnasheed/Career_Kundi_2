@@ -45,6 +45,6 @@ Forbidden: file paths, storage URIs, public URLs, raw scanner output, file bytes
 - Public EvidenceRead remains `scan_not_available`.
 - Future real audit persistence requires a separately approved slice.
 
-## Next
+## Follow-on
 
-**0053-F25** Scan/Quarantine Admin Boundary Planning — only after F24 acceptance. Do not start F25 in this slice.
+**0053-F25** Scan/Quarantine Admin Boundary Planning — accepted after F24; admin surface remains disabled. Then **0053-F26** only after F25 acceptance.

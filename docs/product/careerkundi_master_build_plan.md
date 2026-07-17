@@ -5695,12 +5695,19 @@ Doc: `docs/product/careerkundi_0053_f23_quarantine_storage_planning.md`.
 
 ## 0053-F24 Quarantine Event/Audit Planning + Disabled Audit Sink Contract
 
-**Status:** Completing in this commit. Disabled quarantine audit sink only (`attachment_quarantine_audit.py`); metadata-only event types; F21 redaction; **no** DB/file persistence, routes/UI, scanner/quarantine enforcement, or auto-emission from persistence.
+**Status:** Completed / accepted. Disabled quarantine audit sink only (`attachment_quarantine_audit.py`); metadata-only event types; F21 redaction; **no** DB/file persistence, routes/UI, scanner/quarantine enforcement, or auto-emission from persistence.
 
 Evidence: `~/Desktop/CareerKundi_0053_F24_Quarantine_Audit_Planning_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f24_quarantine_audit_planning.md`.
 
-**Next after F24 acceptance:** 0053-F25 only (Scan/Quarantine Admin Boundary Planning).
+## 0053-F25 Scan/Quarantine Admin Boundary Planning
+
+**Status:** Completing in this commit. Disabled admin surface contract only (`attachment_scan_admin_boundary.py`); surface/API/UI and trust/leak powers all `False`; planned visibility-only actions; **no** admin routes/UI/workflows, scanner/quarantine/audit activation, or trust-state mutation.
+
+Evidence: `~/Desktop/CareerKundi_0053_F25_Scan_Quarantine_Admin_Boundary_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f25_scan_quarantine_admin_boundary.md`.
+
+**Next after F25 acceptance:** 0053-F26 only (Scanner Worker Dry-Run Planning).
 
 ---
 
@@ -5778,6 +5785,7 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F23 | Quarantine Storage Planning |
 | 0053-F24 | Quarantine Event/Audit Planning |
 | 0053-F25 | Scan/Quarantine Admin Boundary Planning |
+| 0053-F26 | Scanner Worker Dry-Run Planning |
 
 ### Hard no-go (until specifically approved)
 
@@ -5785,7 +5793,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F24**, then **0053-F25** only.
+**Owner acceptance of 0053-F25**, then **0053-F26** only.
 
 ---
 

@@ -127,14 +127,15 @@ def test_no_scanner_ocr_llm_imports_or_migrations() -> None:
         matches = list(MIGRATIONS.glob(f"{name}*"))
         assert matches == [], matches
 
-    # No active quarantine runtime module / worker loop (F17/F23/F24 are policy/contract only)
+    # No active quarantine runtime module / worker loop (F17/F23–F25 are policy/contract only)
     assert not (EVIDENCE_PKG / "quarantine.py").exists()
     assert not (EVIDENCE_PKG / "scan_worker.py").exists()
     assert (EVIDENCE_PKG / "attachment_quarantine_policy.py").exists()
     assert (EVIDENCE_PKG / "attachment_quarantine_storage.py").exists()
     assert (EVIDENCE_PKG / "attachment_quarantine_audit.py").exists()
+    assert (EVIDENCE_PKG / "attachment_scan_admin_boundary.py").exists()
     assert (EVIDENCE_PKG / "attachment_scan_worker.py").exists()
-    # F18–F24: no-op + policy + disabled local + runtime + persistence + storage + audit.
+    # F18–F25: no-op + policy + disabled local + runtime + persistence + storage + audit + admin.
     assert (EVIDENCE_PKG / "attachment_scanner_adapter.py").exists()
     assert (EVIDENCE_PKG / "attachment_scanner_policy.py").exists()
     assert (EVIDENCE_PKG / "attachment_local_scanner_adapter.py").exists()

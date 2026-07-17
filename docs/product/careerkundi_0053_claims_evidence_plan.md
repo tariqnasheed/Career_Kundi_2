@@ -600,6 +600,18 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F25 scan/quarantine admin boundary planning  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F24_Quarantine_Audit_Planning_Evidence.txt`
 
+### 0053-F25 Scan/Quarantine Admin Boundary Planning
+- **Status:** Implemented (`attachment_scan_admin_boundary.py` — disabled surface only)  
+- **Purpose:** Define future scan/quarantine admin-operations boundary and forbidden powers  
+- **Allowed:** disabled flags/plan/role/action enums; safe warning; summary; tests/docs  
+- **Forbidden:** admin routes/UI/workflows; scanner/quarantine/audit activation; subprocess; packages; file I/O; OCR/parsing/LLM; Evidence/Claim/Review mutation; f0012; trust/verify powers  
+- **Hard rule:** an admin boundary contract is not an admin feature and is not verification  
+- **Tests:** admin boundary + F24–F16/safety + evidence/review/claims/badge regressions  
+- **Browser:** no scan/quarantine/audit/admin controls; OpenAPI unchanged for those routes  
+- **Gate:** all admin flags `False`; forbidden list includes verify/mark-safe/publish/expose  
+- **Deferred:** F26 scanner worker dry-run planning  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F25_Scan_Quarantine_Admin_Boundary_Evidence.txt`
+
 ---
 
 ## K. Hard no-go list (until specifically approved)

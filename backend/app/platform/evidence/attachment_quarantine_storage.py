@@ -131,4 +131,5 @@ def quarantine_storage_summary() -> dict[str, object]:
         "is_enforcement": False,
         "is_verification": False,
         "audit_sink_enabled": False,
+        "admin_controls_enabled": False,
     }

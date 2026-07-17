@@ -300,6 +300,18 @@ Evidence: `~/Desktop/CareerKundi_0053_F24_Quarantine_Audit_Planning_Evidence.txt
 
 ---
 
+## 0053-F25 Scan/Quarantine Admin Boundary Planning (2026-07-18)
+
+Adds a disabled admin surface contract only:
+
+- `attachment_scan_admin_boundary.py` with surface/API/UI and trust/leak powers `False`
+- Planned visibility-only actions; explicit forbidden verify/mark-safe/publish/expose list
+- No admin routes/UI/workflows; not an admin feature and not verification
+
+Evidence: `~/Desktop/CareerKundi_0053_F25_Scan_Quarantine_Admin_Boundary_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

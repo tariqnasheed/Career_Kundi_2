@@ -91,6 +91,7 @@ def test_current_storage_plan_is_disabled_planned_only() -> None:
     assert summary["deletes_files"] is False
     assert summary["copies_files"] is False
     assert summary["audit_sink_enabled"] is False
+    assert summary["admin_controls_enabled"] is False
 
 
 def test_warning_says_planned_but_not_active() -> None:

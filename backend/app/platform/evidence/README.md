@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F24)
+# Evidence domain (0053-F2 … F25)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -25,6 +25,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F22 | AttachmentScanJob result persistence guard (job rows only) |
 | F23 | Quarantine storage planning + disabled store contract (inactive) |
 | F24 | Quarantine event/audit planning + disabled audit sink (inactive) |
+| F25 | Scan/quarantine admin boundary planning + disabled surface (inactive) |
 
 Hard rules across all slices:
 
@@ -145,6 +146,14 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Disabled sink returns `persisted=False` / `audit_sink_disabled` (no writes)
 - Persistence guard does not auto-emit audit events
 - An audit contract is not audit persistence and is not verification
+
+## Scan/quarantine admin boundary (F25)
+
+- Module: `attachment_scan_admin_boundary.py`
+- Admin surface / API / UI all `False`; all trust/leak powers `False`
+- Planned future actions are visibility-only; forbidden list includes verify/mark-safe/publish
+- No admin routes, UI, workflows, or mutation powers
+- An admin boundary contract is not an admin feature and is not verification
 
 ## Foundation revision
 

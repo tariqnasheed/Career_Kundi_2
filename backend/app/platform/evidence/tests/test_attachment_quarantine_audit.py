@@ -84,6 +84,7 @@ def test_warning_and_plan_are_disabled() -> None:
     assert summary["persists_events"] is False
     assert summary["writes_files"] is False
     assert summary["writes_db"] is False
+    assert summary["admin_surface_enabled"] is False
     assert summary["planned_mode"] == (
         QuarantineAuditMode.PLANNED_PRIVATE_AUDIT_SINK.value
     )
