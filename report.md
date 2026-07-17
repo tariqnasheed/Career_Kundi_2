@@ -324,6 +324,19 @@ Evidence: `~/Desktop/CareerKundi_0053_F26_Scanner_Worker_Dry_Run_Planning_Eviden
 
 ---
 
+## 0053-F27 Scanner Worker Reservation Guard (2026-07-18)
+
+Adds an internal scan-job reservation guard only:
+
+- `attachment_scan_worker_reservation.py` — owner-scoped `queued` → `reserved`
+- Content-hash snapshot must match; attempt_count +1; set `started_at` if empty
+- Does not scan, read files, call adapters, apply F22 persistence, emit audit, or expose routes/UI
+- Mutates `AttachmentScanJob` only; reservation is not scanning and not verification
+
+Evidence: `~/Desktop/CareerKundi_0053_F27_Scanner_Worker_Reservation_Guard_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

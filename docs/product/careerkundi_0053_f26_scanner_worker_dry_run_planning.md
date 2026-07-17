@@ -39,6 +39,6 @@
 - Public EvidenceRead remains `scan_not_available`.
 - Future scanner worker implementation requires a separately approved slice.
 
-## Next
+## Follow-up
 
-**0053-F27** Scanner Worker Reservation Guard — only after F26 acceptance. Do not start F27 in this slice.
+**0053-F27** Scanner Worker Reservation Guard — accepted after F26; adds owner-scoped `queued` → `reserved` only. F26 dry-run runner remains disabled and does not call reservation. Then **0053-F28** only after F27 acceptance.

@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F26)
+# Evidence domain (0053-F2 … F27)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -27,6 +27,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F24 | Quarantine event/audit planning + disabled audit sink (inactive) |
 | F25 | Scan/quarantine admin boundary planning + disabled surface (inactive) |
 | F26 | Scanner worker dry-run planning + disabled runner (inactive) |
+| F27 | Scanner worker reservation guard (`queued` → `reserved` only) |
 
 Hard rules across all slices:
 
@@ -163,6 +164,17 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Decision objects only (would reserve / skip / reject); does not call F22 persistence or adapters
 - No worker loop, startup registration, routes, or UI
 - A dry-run contract is not a worker feature and is not verification
+- Notes that F27 reservation guard exists; dry-run still does not call it
+
+## Scanner worker reservation guard (F27)
+
+- Module: `attachment_scan_worker_reservation.py`
+- Owner-scoped `queued` → `reserved` only; content-hash snapshot must match
+- Increments `attempt_count` by 1; sets `started_at` if empty
+- Does **not** scan, read files, call adapters, apply F22 persistence, or emit audit
+- Mutates `AttachmentScanJob` only; no EvidenceRecord / ClaimRecord / ReviewRequest changes
+- No worker loop, startup registration, routes, or UI
+- Reservation is not scanning and is not verification
 
 ## Foundation revision
 

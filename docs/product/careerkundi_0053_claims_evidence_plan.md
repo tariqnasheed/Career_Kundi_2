@@ -624,6 +624,18 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F27 scanner worker reservation guard  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F26_Scanner_Worker_Dry_Run_Planning_Evidence.txt`
 
+### 0053-F27 Scanner Worker Reservation Guard
+- **Status:** Implemented (`attachment_scan_worker_reservation.py` — reservation guard only)  
+- **Purpose:** Guarded internal reserve of `AttachmentScanJob` for a future worker  
+- **Allowed:** owner-scoped `queued` → `reserved`; hash snapshot match; attempt_count +1; set `started_at` if empty  
+- **Forbidden:** worker loop; startup registration; scanner execution; file read; F22 auto-apply; audit emit; routes/UI; Evidence/Claim/Review mutation; f0012  
+- **Hard rule:** reservation is not scanning and is not verification  
+- **Tests:** reservation guard + F26–F16/safety + evidence/review/claims/badge regressions  
+- **Browser:** no worker/scan/quarantine/audit/admin controls; OpenAPI unchanged for those routes  
+- **Gate:** mutates `AttachmentScanJob` only; no adapter/persistence/audit/file access from reservation  
+- **Deferred:** F28 scanner worker result application planning  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F27_Scanner_Worker_Reservation_Guard_Evidence.txt`
+
 ---
 
 ## K. Hard no-go list (until specifically approved)

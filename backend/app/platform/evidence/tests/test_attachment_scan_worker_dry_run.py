@@ -201,6 +201,9 @@ def test_no_worker_loop_or_startup_registration() -> None:
     assert summary["calls_apply_scan_job_update_plan"] is False
     assert summary["calls_scanner_adapter"] is False
     assert summary["mutates_attachment_scan_job"] is False
+    # F27 reservation guard exists; dry-run still does not call it.
+    assert summary["reservation_guard_exists"] is True
+    assert summary["calls_reserve_attachment_scan_job_for_worker"] is False
 
 
 def test_no_worker_admin_scan_quarantine_audit_routes() -> None:

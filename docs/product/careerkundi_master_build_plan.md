@@ -5709,12 +5709,19 @@ Doc: `docs/product/careerkundi_0053_f25_scan_quarantine_admin_boundary.md`.
 
 ## 0053-F26 Scanner Worker Dry-Run Planning + Disabled Runner Contract
 
-**Status:** Completing in this commit. Disabled scanner worker dry-run contract only (`attachment_scan_worker_dry_run.py`); all runner flags `False`; decision objects only; **no** worker loop, startup registration, DB mutation, file access, scanner execution, or persistence/adapter calls.
+**Status:** Completed / accepted. Disabled scanner worker dry-run contract only (`attachment_scan_worker_dry_run.py`); all runner flags `False`; decision objects only; **no** worker loop, startup registration, DB mutation, file access, scanner execution, or persistence/adapter calls.
 
 Evidence: `~/Desktop/CareerKundi_0053_F26_Scanner_Worker_Dry_Run_Planning_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f26_scanner_worker_dry_run_planning.md`.
 
-**Next after F26 acceptance:** 0053-F27 only (Scanner Worker Reservation Guard).
+## 0053-F27 Scanner Worker Reservation Guard
+
+**Status:** Completing in this commit. Internal reservation guard only (`attachment_scan_worker_reservation.py`); owner-scoped `queued` → `reserved`; content-hash snapshot match; attempt_count +1; set `started_at` if empty; **no** scanner execution, file read, worker loop, startup registration, F22 apply, audit, routes/UI, or Evidence/Claim/Review mutation.
+
+Evidence: `~/Desktop/CareerKundi_0053_F27_Scanner_Worker_Reservation_Guard_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f27_scanner_worker_reservation_guard.md`.
+
+**Next after F27 acceptance:** 0053-F28 only (Scanner Worker Result Application Planning).
 
 ---
 
@@ -5794,6 +5801,7 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F25 | Scan/Quarantine Admin Boundary Planning |
 | 0053-F26 | Scanner Worker Dry-Run Planning |
 | 0053-F27 | Scanner Worker Reservation Guard |
+| 0053-F28 | Scanner Worker Result Application Planning |
 
 ### Hard no-go (until specifically approved)
 
@@ -5801,7 +5809,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F26**, then **0053-F27** only.
+**Owner acceptance of 0053-F27**, then **0053-F28** only.
 
 ---
 

@@ -179,6 +179,10 @@ def scan_worker_dry_run_summary() -> dict[str, object]:
         "planned_mode": ScanWorkerRunnerMode.PLANNED_DRY_RUN.value,
         "decision": plan.decision.value,
         "warning": plan.warning,
+        # F27 reservation guard exists separately; dry-run runner still disabled
+        # and does not call reservation or mutate scan jobs itself.
+        "reservation_guard_exists": True,
+        "calls_reserve_attachment_scan_job_for_worker": False,
         "calls_apply_scan_job_update_plan": False,
         "calls_scanner_adapter": False,
         "reads_file_bytes": False,
