@@ -274,6 +274,19 @@ Evidence: `~/Desktop/CareerKundi_0053_F22_Scanner_Result_Persistence_Guard_Evide
 
 ---
 
+## 0053-F23 Quarantine Storage Planning + Disabled Store Contract (2026-07-17)
+
+Adds a disabled quarantine storage contract only:
+
+- `attachment_quarantine_storage.py` with all storage flags `False`
+- Decision/plan helpers only; no directory, move, copy, or delete
+- F22 still rejects `quarantined`; no scanner, routes/UI, or trust mutation
+- A quarantine contract is not enforcement and not verification
+
+Evidence: `~/Desktop/CareerKundi_0053_F23_Quarantine_Storage_Planning_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

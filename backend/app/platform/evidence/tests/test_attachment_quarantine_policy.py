@@ -32,11 +32,15 @@ def test_quarantine_is_not_available() -> None:
     summary = quarantine_policy_summary()
     assert summary["quarantine_available"] is False
     assert summary["moves_or_deletes_files"] is False
+    assert summary["storage_enabled"] is False
+    assert summary["storage_mode"] == "disabled"
     warning = quarantine_policy_warning().lower()
     assert "planned but not active" in warning
     storage = quarantine_storage_not_implemented_warning().lower()
     assert "not implemented" in storage
     assert "moved or deleted" in storage
+    contract = str(summary["storage_contract_warning"]).lower()
+    assert "planned but not active" in contract
 
 
 def test_quarantine_required_only_for_malicious_suspicious() -> None:

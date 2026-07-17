@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F22)
+# Evidence domain (0053-F2 … F23)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -23,6 +23,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F20 | Disabled local process scanner adapter skeleton (not selected) |
 | F21 | Local scanner runtime safety contract (disabled; no execution) |
 | F22 | AttachmentScanJob result persistence guard (job rows only) |
+| F23 | Quarantine storage planning + disabled store contract (inactive) |
 
 Hard rules across all slices:
 
@@ -126,6 +127,14 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - No-op / disabled adapter plans are not persisted
 - Does not mutate EvidenceRecord / ClaimRecord / ReviewRequest
 - Persisting a scan-job result is not verification
+
+## Quarantine storage planning (F23)
+
+- Module: `attachment_quarantine_storage.py`
+- `QUARANTINE_STORAGE_ENABLED=False`; movement/deletion/public access all false
+- Decision helpers return objects only; no directory creation, move, copy, or delete
+- F17 policy references the disabled storage contract; F22 still rejects `quarantined`
+- A quarantine contract is not quarantine enforcement and is not verification
 
 ## Foundation revision
 

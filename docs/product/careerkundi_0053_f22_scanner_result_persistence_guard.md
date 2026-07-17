@@ -42,6 +42,6 @@ No-op / disabled adapter plans are never persisted.
 - Public EvidenceRead remains `scan_not_available`.
 - Future real scanner implementation requires a separately approved slice.
 
-## Next
+## Follow-on
 
-**0053-F23** Quarantine Storage Planning — only after F22 acceptance. Do not start F23 in this slice.
+**0053-F23** Quarantine Storage Planning + Disabled Store Contract — accepted after F22; quarantine storage remains inactive; F22 still rejects `quarantined`. Then **0053-F24** only after F23 acceptance.

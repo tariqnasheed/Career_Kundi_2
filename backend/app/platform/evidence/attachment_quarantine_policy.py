@@ -1,13 +1,22 @@
 """
-Attachment quarantine policy (0053-F17).
+Attachment quarantine policy (0053-F17 / F23).
 
 Pure policy helpers only. Quarantine handling is planned but not active.
 Does not move, delete, or rewrite attachment files or DB rows.
+
+F23: quarantine storage contract lives in attachment_quarantine_storage.py
+and remains disabled.
 """
 
 from __future__ import annotations
 
 from enum import StrEnum
+
+from app.platform.evidence.attachment_quarantine_storage import (
+    quarantine_storage_is_enabled,
+    quarantine_storage_summary,
+    quarantine_storage_warning,
+)
 
 QUARANTINE_POLICY_WARNING = (
     "Quarantine handling is planned but not active in this version."
@@ -50,8 +59,8 @@ class QuarantinePolicyVerdict(StrEnum):
 
 
 def quarantine_is_available() -> bool:
-    """F17: quarantine storage / handling is not active."""
-    return False
+    """Quarantine storage / handling is not active (F17/F23)."""
+    return quarantine_storage_is_enabled()
 
 
 def quarantine_policy_warning() -> str:
@@ -66,7 +75,7 @@ def should_quarantine_scan_verdict(verdict: object) -> bool:
     """
     Return True when a future scanner verdict would require quarantine.
 
-    Does not move or delete files. Quarantine is not active in F17.
+    Does not move or delete files. Quarantine is not active in F17/F23.
     """
     value = getattr(verdict, "value", verdict)
     return str(value) in {
@@ -89,11 +98,15 @@ def safe_scan_error_message(code: str | None) -> str:
 
 
 def quarantine_policy_summary() -> dict[str, object]:
+    storage = quarantine_storage_summary()
     return {
         "quarantine_available": quarantine_is_available(),
         "moves_or_deletes_files": False,
         "warning": quarantine_policy_warning(),
         "storage_warning": quarantine_storage_not_implemented_warning(),
+        "storage_contract_warning": quarantine_storage_warning(),
+        "storage_enabled": storage["storage_enabled"],
+        "storage_mode": storage["mode"],
         "quarantine_required_verdicts": sorted(
             v.value for v in QuarantinePolicyVerdict
         ),

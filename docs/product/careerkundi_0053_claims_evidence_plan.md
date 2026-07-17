@@ -577,10 +577,16 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Evidence:** `~/Desktop/CareerKundi_0053_F22_Scanner_Result_Persistence_Guard_Evidence.txt`
 
 ### 0053-F23 Quarantine Storage Planning
-- **Purpose:** Plan quarantine storage after F22  
-- **Allowed:** only after F22 acceptance; bounded scope  
-- **Forbidden:** approve/reject trust UI; “Verified Passport”; public profiles unless separately approved  
-- **Deferred:** employer/university portals; CV/Roadmap evidence awareness unless separately approved  
+- **Status:** Implemented (`attachment_quarantine_storage.py` — disabled contract only)  
+- **Purpose:** Define future quarantine storage contract while keeping storage inactive  
+- **Allowed:** disabled flags/plan/decision helpers; safe warning; F17 policy reference; tests/docs  
+- **Forbidden:** quarantine directory; file move/copy/delete; scanner execution; subprocess; packages; file I/O; OCR/parsing/LLM; scan/quarantine route/UI; Evidence/Claim/Review mutation; f0012; allowing `quarantined` persistence  
+- **Hard rule:** a quarantine contract is not quarantine enforcement and is not verification  
+- **Tests:** quarantine storage + F22–F16/safety + evidence/review/claims/badge regressions  
+- **Browser:** no scan/quarantine controls; OpenAPI unchanged for scan/quarantine routes  
+- **Gate:** all storage flags `False`; no `evidence_quarantine/` directory; F22 still rejects `quarantined`  
+- **Deferred:** F24 quarantine event/audit planning  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F23_Quarantine_Storage_Planning_Evidence.txt`
 
 ---
 

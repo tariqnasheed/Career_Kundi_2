@@ -5681,12 +5681,19 @@ Doc: `docs/product/careerkundi_0053_f21_local_scanner_runtime_safety_contract.md
 
 ## 0053-F22 Scanner Result Persistence Guard
 
-**Status:** Completing in this commit. Internal `AttachmentScanJob` persistence guard only; explicit `apply_to_database=True` plans; transition validation; F21 normalization; **no** scanner execution, packages, file I/O, OCR/LLM, scan route/UI, Evidence/Claim/Review mutation, or quarantine storage.
+**Status:** Completed / accepted. Internal `AttachmentScanJob` persistence guard only; explicit `apply_to_database=True` plans; transition validation; F21 normalization; **no** scanner execution, packages, file I/O, OCR/LLM, scan route/UI, Evidence/Claim/Review mutation, or quarantine storage.
 
 Evidence: `~/Desktop/CareerKundi_0053_F22_Scanner_Result_Persistence_Guard_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f22_scanner_result_persistence_guard.md`.
 
-**Next after F22 acceptance:** 0053-F23 only (Quarantine Storage Planning).
+## 0053-F23 Quarantine Storage Planning + Disabled Store Contract
+
+**Status:** Completing in this commit. Disabled quarantine storage contract only (`attachment_quarantine_storage.py`); all storage flags `False`; decision objects only; **no** directory, file move/copy/delete, scanner execution, packages, routes/UI, Evidence/Claim/Review mutation, or allowing `quarantined` persistence.
+
+Evidence: `~/Desktop/CareerKundi_0053_F23_Quarantine_Storage_Planning_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f23_quarantine_storage_planning.md`.
+
+**Next after F23 acceptance:** 0053-F24 only (Quarantine Event/Audit Planning).
 
 ---
 
@@ -5762,6 +5769,7 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F21 | Local Scanner Runtime Safety Contract |
 | 0053-F22 | Scanner Result Persistence Guard |
 | 0053-F23 | Quarantine Storage Planning |
+| 0053-F24 | Quarantine Event/Audit Planning |
 
 ### Hard no-go (until specifically approved)
 
@@ -5769,7 +5777,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F22**, then **0053-F23** only.
+**Owner acceptance of 0053-F23**, then **0053-F24** only.
 
 ---
 

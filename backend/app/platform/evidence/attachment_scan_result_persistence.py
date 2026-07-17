@@ -181,7 +181,8 @@ def assert_scan_job_update_allowed(
     safety = plan.attachment_safety_status
     if safety == AttachmentSafetyStatus.QUARANTINED.value:
         raise ScanJobPersistenceError(
-            "quarantined attachment_safety_status is not allowed in F22"
+            "quarantined attachment_safety_status is not allowed "
+            "(quarantine storage inactive in F22/F23)"
         )
 
     if safety == AttachmentSafetyStatus.SCAN_PASSED.value and target != (
