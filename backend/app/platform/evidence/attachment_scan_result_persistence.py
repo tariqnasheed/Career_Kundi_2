@@ -291,4 +291,5 @@ def persistence_guard_summary() -> dict[str, object]:
         "quarantine_storage_active": False,
         "quarantine_audit_active": False,
         "scan_admin_override_active": False,
+        "scan_worker_active": False,
     }

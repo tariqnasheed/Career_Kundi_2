@@ -133,6 +133,7 @@ def test_summary_says_no_mutation_powers() -> None:
     assert summary["can_view_raw_file_path"] is False
     assert summary["can_view_storage_uri"] is False
     assert summary["can_view_raw_scanner_output"] is False
+    assert summary["worker_controls_enabled"] is False
 
 
 def test_assert_disabled_does_not_create_artifacts() -> None:

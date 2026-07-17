@@ -164,6 +164,7 @@ def scan_admin_boundary_summary() -> dict[str, object]:
         "mutates_claim_record": False,
         "mutates_review_request": False,
         "has_mutation_powers": False,
+        "worker_controls_enabled": False,
         "is_admin_feature": False,
         "is_verification": False,
     }

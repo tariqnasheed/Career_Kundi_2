@@ -40,6 +40,6 @@ They must never mark files safe/clean/trusted, verify documents/claims/Passports
 - Public EvidenceRead remains `scan_not_available`.
 - Future admin implementation requires a separately approved slice.
 
-## Next
+## Follow-on
 
-**0053-F26** Scanner Worker Dry-Run Planning — only after F25 acceptance. Do not start F26 in this slice.
+**0053-F26** Scanner Worker Dry-Run Planning — accepted after F25; worker runner remains disabled. Then **0053-F27** only after F26 acceptance.

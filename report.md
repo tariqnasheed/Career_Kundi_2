@@ -312,6 +312,18 @@ Evidence: `~/Desktop/CareerKundi_0053_F25_Scan_Quarantine_Admin_Boundary_Evidenc
 
 ---
 
+## 0053-F26 Scanner Worker Dry-Run Planning (2026-07-18)
+
+Adds a disabled scanner worker dry-run contract only:
+
+- `attachment_scan_worker_dry_run.py` with all runner flags `False`
+- Decision objects only; no loop, startup registration, DB mutation, or scanner call
+- Does not call F22 persistence or adapters; not a worker feature and not verification
+
+Evidence: `~/Desktop/CareerKundi_0053_F26_Scanner_Worker_Dry_Run_Planning_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

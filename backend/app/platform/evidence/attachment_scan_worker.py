@@ -237,4 +237,6 @@ def worker_contract_summary() -> dict[str, Any]:
         "applies_results_to_database": False,
         "reads_file_bytes": False,
         "registers_startup_worker": False,
+        "dry_run_runner_enabled": False,
+        "background_loop_enabled": False,
     }

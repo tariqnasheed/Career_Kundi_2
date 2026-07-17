@@ -134,8 +134,9 @@ def test_no_scanner_ocr_llm_imports_or_migrations() -> None:
     assert (EVIDENCE_PKG / "attachment_quarantine_storage.py").exists()
     assert (EVIDENCE_PKG / "attachment_quarantine_audit.py").exists()
     assert (EVIDENCE_PKG / "attachment_scan_admin_boundary.py").exists()
+    assert (EVIDENCE_PKG / "attachment_scan_worker_dry_run.py").exists()
     assert (EVIDENCE_PKG / "attachment_scan_worker.py").exists()
-    # F18–F25: no-op + policy + disabled local + runtime + persistence + storage + audit + admin.
+    # F18–F26: no-op + policy + disabled local + runtime + persistence + storage + audit + admin + dry-run.
     assert (EVIDENCE_PKG / "attachment_scanner_adapter.py").exists()
     assert (EVIDENCE_PKG / "attachment_scanner_policy.py").exists()
     assert (EVIDENCE_PKG / "attachment_local_scanner_adapter.py").exists()

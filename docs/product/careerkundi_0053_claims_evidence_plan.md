@@ -612,6 +612,18 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F26 scanner worker dry-run planning  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F25_Scan_Quarantine_Admin_Boundary_Evidence.txt`
 
+### 0053-F26 Scanner Worker Dry-Run Planning
+- **Status:** Implemented (`attachment_scan_worker_dry_run.py` — disabled runner only)  
+- **Purpose:** Define future scanner-worker dry-run decisions while keeping the runner inactive  
+- **Allowed:** disabled flags/plan/decision helpers; safe warning; summary; tests/docs  
+- **Forbidden:** worker loop; startup registration; scheduler; DB mutation; file access; scanner execution; audit emit; routes/UI; F22 auto-apply; Evidence/Claim/Review mutation; f0012  
+- **Hard rule:** a dry-run contract is not a worker feature and is not verification  
+- **Tests:** dry-run + F25–F16/safety + evidence/review/claims/badge regressions  
+- **Browser:** no worker/scan/quarantine/audit/admin controls; OpenAPI unchanged for those routes  
+- **Gate:** all worker flags `False`; no `apply_scan_job_update_plan` / adapter calls from dry-run  
+- **Deferred:** F27 scanner worker reservation guard  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F26_Scanner_Worker_Dry_Run_Planning_Evidence.txt`
+
 ---
 
 ## K. Hard no-go list (until specifically approved)

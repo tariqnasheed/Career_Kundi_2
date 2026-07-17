@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F25)
+# Evidence domain (0053-F2 … F26)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -26,6 +26,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F23 | Quarantine storage planning + disabled store contract (inactive) |
 | F24 | Quarantine event/audit planning + disabled audit sink (inactive) |
 | F25 | Scan/quarantine admin boundary planning + disabled surface (inactive) |
+| F26 | Scanner worker dry-run planning + disabled runner (inactive) |
 
 Hard rules across all slices:
 
@@ -154,6 +155,14 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Planned future actions are visibility-only; forbidden list includes verify/mark-safe/publish
 - No admin routes, UI, workflows, or mutation powers
 - An admin boundary contract is not an admin feature and is not verification
+
+## Scanner worker dry-run planning (F26)
+
+- Module: `attachment_scan_worker_dry_run.py`
+- Worker / dry-run / loop / startup / DB mutation / file access / scanner exec / audit emit all `False`
+- Decision objects only (would reserve / skip / reject); does not call F22 persistence or adapters
+- No worker loop, startup registration, routes, or UI
+- A dry-run contract is not a worker feature and is not verification
 
 ## Foundation revision
 

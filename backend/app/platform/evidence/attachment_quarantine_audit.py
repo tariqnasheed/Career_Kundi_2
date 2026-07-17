@@ -321,5 +321,6 @@ def quarantine_audit_summary() -> dict[str, object]:
         "writes_files": False,
         "writes_db": False,
         "admin_surface_enabled": False,
+        "worker_audit_emit_enabled": False,
         "is_verification": False,
     }
