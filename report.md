@@ -287,6 +287,19 @@ Evidence: `~/Desktop/CareerKundi_0053_F23_Quarantine_Storage_Planning_Evidence.t
 
 ---
 
+## 0053-F24 Quarantine Event/Audit Planning + Disabled Audit Sink (2026-07-17)
+
+Adds a disabled quarantine audit sink contract only:
+
+- `attachment_quarantine_audit.py` with sink/DB/file/public flags `False`
+- Metadata-only event types; path/URI/raw-output redaction
+- Disabled sink returns `persisted=False`; no auto-emit from F22
+- An audit contract is not persistence and not verification
+
+Evidence: `~/Desktop/CareerKundi_0053_F24_Quarantine_Audit_Planning_Evidence.txt`
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

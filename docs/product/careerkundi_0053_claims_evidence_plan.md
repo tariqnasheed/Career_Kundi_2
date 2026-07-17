@@ -588,6 +588,18 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Deferred:** F24 quarantine event/audit planning  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F23_Quarantine_Storage_Planning_Evidence.txt`
 
+### 0053-F24 Quarantine Event/Audit Planning
+- **Status:** Implemented (`attachment_quarantine_audit.py` — disabled sink only)  
+- **Purpose:** Define future scan/quarantine audit event types and a disabled audit sink  
+- **Allowed:** safe event types; metadata-only payloads; F21 redaction; disabled sink result; tests/docs  
+- **Forbidden:** audit DB/table; file log; routes/UI; scanner/quarantine enforcement; subprocess; packages; file I/O; OCR/parsing/LLM; Evidence/Claim/Review mutation; f0012; auto-emit from persistence  
+- **Hard rule:** an audit contract is not audit persistence and is not verification  
+- **Tests:** quarantine audit + F23–F16/safety + evidence/review/claims/badge regressions  
+- **Browser:** no scan/quarantine/audit controls; OpenAPI unchanged for those routes  
+- **Gate:** all audit flags `False`; sink returns `persisted=False`; no audit files/dirs  
+- **Deferred:** F25 scan/quarantine admin boundary planning  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F24_Quarantine_Audit_Planning_Evidence.txt`
+
 ---
 
 ## K. Hard no-go list (until specifically approved)

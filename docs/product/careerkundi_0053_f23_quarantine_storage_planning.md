@@ -41,6 +41,6 @@ Mode: `disabled` (planned future: `planned_local_private_store`).
 - Public EvidenceRead remains `scan_not_available`.
 - Future real quarantine implementation requires a separately approved slice.
 
-## Next
+## Follow-on
 
-**0053-F24** Quarantine Event/Audit Planning — only after F23 acceptance. Do not start F24 in this slice.
+**0053-F24** Quarantine Event/Audit Planning — accepted after F23; audit sink remains disabled. Then **0053-F25** only after F24 acceptance.

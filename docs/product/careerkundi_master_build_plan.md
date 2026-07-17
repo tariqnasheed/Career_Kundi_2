@@ -5688,12 +5688,19 @@ Doc: `docs/product/careerkundi_0053_f22_scanner_result_persistence_guard.md`.
 
 ## 0053-F23 Quarantine Storage Planning + Disabled Store Contract
 
-**Status:** Completing in this commit. Disabled quarantine storage contract only (`attachment_quarantine_storage.py`); all storage flags `False`; decision objects only; **no** directory, file move/copy/delete, scanner execution, packages, routes/UI, Evidence/Claim/Review mutation, or allowing `quarantined` persistence.
+**Status:** Completed / accepted. Disabled quarantine storage contract only (`attachment_quarantine_storage.py`); all storage flags `False`; decision objects only; **no** directory, file move/copy/delete, scanner execution, packages, routes/UI, Evidence/Claim/Review mutation, or allowing `quarantined` persistence.
 
 Evidence: `~/Desktop/CareerKundi_0053_F23_Quarantine_Storage_Planning_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f23_quarantine_storage_planning.md`.
 
-**Next after F23 acceptance:** 0053-F24 only (Quarantine Event/Audit Planning).
+## 0053-F24 Quarantine Event/Audit Planning + Disabled Audit Sink Contract
+
+**Status:** Completing in this commit. Disabled quarantine audit sink only (`attachment_quarantine_audit.py`); metadata-only event types; F21 redaction; **no** DB/file persistence, routes/UI, scanner/quarantine enforcement, or auto-emission from persistence.
+
+Evidence: `~/Desktop/CareerKundi_0053_F24_Quarantine_Audit_Planning_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f24_quarantine_audit_planning.md`.
+
+**Next after F24 acceptance:** 0053-F25 only (Scan/Quarantine Admin Boundary Planning).
 
 ---
 
@@ -5770,6 +5777,7 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F22 | Scanner Result Persistence Guard |
 | 0053-F23 | Quarantine Storage Planning |
 | 0053-F24 | Quarantine Event/Audit Planning |
+| 0053-F25 | Scan/Quarantine Admin Boundary Planning |
 
 ### Hard no-go (until specifically approved)
 
@@ -5777,7 +5785,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F23**, then **0053-F24** only.
+**Owner acceptance of 0053-F24**, then **0053-F25** only.
 
 ---
 

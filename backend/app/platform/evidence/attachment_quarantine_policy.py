@@ -17,6 +17,10 @@ from app.platform.evidence.attachment_quarantine_storage import (
     quarantine_storage_summary,
     quarantine_storage_warning,
 )
+from app.platform.evidence.attachment_quarantine_audit import (
+    quarantine_audit_summary,
+    quarantine_audit_warning,
+)
 
 QUARANTINE_POLICY_WARNING = (
     "Quarantine handling is planned but not active in this version."
@@ -99,14 +103,17 @@ def safe_scan_error_message(code: str | None) -> str:
 
 def quarantine_policy_summary() -> dict[str, object]:
     storage = quarantine_storage_summary()
+    audit = quarantine_audit_summary()
     return {
         "quarantine_available": quarantine_is_available(),
         "moves_or_deletes_files": False,
         "warning": quarantine_policy_warning(),
         "storage_warning": quarantine_storage_not_implemented_warning(),
         "storage_contract_warning": quarantine_storage_warning(),
+        "audit_warning": quarantine_audit_warning(),
         "storage_enabled": storage["storage_enabled"],
         "storage_mode": storage["mode"],
+        "audit_sink_enabled": audit["sink_enabled"],
         "quarantine_required_verdicts": sorted(
             v.value for v in QuarantinePolicyVerdict
         ),

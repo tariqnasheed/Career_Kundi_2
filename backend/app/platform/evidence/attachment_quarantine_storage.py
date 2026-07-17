@@ -130,4 +130,5 @@ def quarantine_storage_summary() -> dict[str, object]:
         "reads_file_bytes": False,
         "is_enforcement": False,
         "is_verification": False,
+        "audit_sink_enabled": False,
     }

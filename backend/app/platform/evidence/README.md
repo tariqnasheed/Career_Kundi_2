@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F23)
+# Evidence domain (0053-F2 … F24)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -24,6 +24,7 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F21 | Local scanner runtime safety contract (disabled; no execution) |
 | F22 | AttachmentScanJob result persistence guard (job rows only) |
 | F23 | Quarantine storage planning + disabled store contract (inactive) |
+| F24 | Quarantine event/audit planning + disabled audit sink (inactive) |
 
 Hard rules across all slices:
 
@@ -135,6 +136,15 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Decision helpers return objects only; no directory creation, move, copy, or delete
 - F17 policy references the disabled storage contract; F22 still rejects `quarantined`
 - A quarantine contract is not quarantine enforcement and is not verification
+
+## Quarantine event/audit planning (F24)
+
+- Module: `attachment_quarantine_audit.py`
+- Audit sink / DB / file log / public access all `False`
+- Safe metadata-only event types; F21 redaction for paths/URIs/messages
+- Disabled sink returns `persisted=False` / `audit_sink_disabled` (no writes)
+- Persistence guard does not auto-emit audit events
+- An audit contract is not audit persistence and is not verification
 
 ## Foundation revision
 

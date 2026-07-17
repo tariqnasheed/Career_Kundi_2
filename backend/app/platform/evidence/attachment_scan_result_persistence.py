@@ -289,4 +289,5 @@ def persistence_guard_summary() -> dict[str, object]:
         "reads_file_bytes": False,
         "is_verification": False,
         "quarantine_storage_active": False,
+        "quarantine_audit_active": False,
     }
