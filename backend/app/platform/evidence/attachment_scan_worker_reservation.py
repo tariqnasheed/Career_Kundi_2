@@ -45,6 +45,25 @@ class ScanWorkerReservationDecision(StrEnum):
 
 
 @dataclass(frozen=True, slots=True)
+class ReservedJobSnapshot:
+    """
+    Immutable authoritative snapshot of a successfully reserved scan job (F31).
+
+    Carries only the reserved-row values a future worker needs to hand to an
+    adapter. Populated from the reserved-and-refreshed AttachmentScanJob row.
+    Never sourced from caller input and never from a file or storage object.
+    A reserved-job snapshot is not a scan and is not verification.
+    """
+
+    job_id: uuid.UUID
+    owner_user_id: uuid.UUID
+    evidence_id: uuid.UUID
+    content_hash_snapshot: str
+    mime_type_snapshot: str | None
+    size_bytes_snapshot: int | None
+
+
+@dataclass(frozen=True, slots=True)
 class ScanWorkerReservationResult:
     reserved: bool
     decision: ScanWorkerReservationDecision
@@ -54,6 +73,9 @@ class ScanWorkerReservationResult:
     new_status: str | None
     attempt_count: int | None
     safe_message: str
+    # Additive (F31): present only on a successful reservation; None otherwise.
+    # Immutable authoritative values for the adapter; carries no other-owner data.
+    snapshot: ReservedJobSnapshot | None = None
 
 
 class ScanWorkerReservationError(EvidenceRefError):
@@ -166,6 +188,20 @@ async def reserve_attachment_scan_job_for_worker(
     await db.commit()
     await db.refresh(job)
 
+    # Authoritative immutable snapshot (F31): reserved-row values only.
+    snapshot = ReservedJobSnapshot(
+        job_id=job.id,
+        owner_user_id=job.owner_user_id,
+        evidence_id=job.evidence_id,
+        content_hash_snapshot=str(job.content_hash_snapshot),
+        mime_type_snapshot=job.mime_type_snapshot,
+        size_bytes_snapshot=(
+            int(job.size_bytes_snapshot)
+            if job.size_bytes_snapshot is not None
+            else None
+        ),
+    )
+
     return ScanWorkerReservationResult(
         reserved=True,
         decision=ScanWorkerReservationDecision.RESERVED,
@@ -175,6 +211,7 @@ async def reserve_attachment_scan_job_for_worker(
         new_status=str(job.job_status),
         attempt_count=int(job.attempt_count or 0),
         safe_message="Scan job reserved for a future worker. Reservation is not a scan.",
+        snapshot=snapshot,
     )
 
 

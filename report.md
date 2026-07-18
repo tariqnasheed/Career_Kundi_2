@@ -406,6 +406,39 @@ Next gate: **0053-F31 Scanner Worker Single-Job Orchestration Guard** (not start
 
 ---
 
+## 0053-F31 Scanner Worker Single-Job Orchestration Guard (2026-07-19)
+
+Implements one internal supplied-job orchestration callable
+(`orchestrate_attachment_scan_job`) that ties preflight, reservation, adapter
+execution and result application together with strict boundaries:
+
+- `attachment_scan_worker_orchestration.py` — public input is `owner_user_id`,
+  `scan_job_id`, `expected_content_hash_snapshot` only; no caller-supplied
+  attachment metadata or production adapter identity
+- Adapter preflight reads `adapter_info()` only (`AVAILABLE` + `MALWARE_SCAN`,
+  no `UNAVAILABLE`); configured `noop_unavailable` → generic
+  `scanner_unavailable`, job left queued and untouched, no DB/F27/scan/F29
+- F27 result gains an additive immutable `ReservedJobSnapshot`; the adapter is
+  fed authoritative reserved-row values only; no file/storage read
+- Three separate short-lived sessions: reservation → adapter execution with
+  **no** active session/txn/lock → F29 application
+- Post-reservation NOT_RUN/unavailable/timeout/error/unsupported/malformed/
+  exception → persistable `MARK_ERROR` via F22 helpers (F21-safe codes, no fake
+  CLEAN, no fabricated engine); MALICIOUS/SUSPICIOUS → scan_failed (never
+  quarantined)
+- Applies only through F29; guard rejection → `result_application_rejected`
+  (state unchanged, reserved-row watch item); process interrupts propagate
+- 41 tests (19 static + 22 disposable-PostgreSQL incl. real concurrency);
+  no worker loop / polling / SKIP LOCKED / startup / scheduler / scanner /
+  file read / quarantine / audit / routes / UI / mutation / migration
+
+Evidence: `~/Desktop/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`  
+Doc: `docs/product/careerkundi_0053_f31_scanner_worker_single_job_orchestration_guard.md`  
+Decision: `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_COMPLETE_READY_FOR_REVIEW`  
+Next gate: **Owner review of F31**
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

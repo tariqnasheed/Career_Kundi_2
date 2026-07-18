@@ -24,9 +24,11 @@ Current accepted gate:
   `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_F30_PLANNING`.
 - 0053-F30 Scanner Worker Single-Job Orchestration Planning accepted:
   `0053_F30_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_PLAN_ACCEPTED_READY_FOR_F31_PREPARATION`.
-- Next gate is **0053-F31 Scanner Worker Single-Job Orchestration Guard** (not started).
-  Configured adapter remains noop/unavailable; scanner engine / worker loop / file read /
-  quarantine / audit / routes / UI remain deferred. Stuck-reserved recovery is a watch item.
+- 0053-F31 Scanner Worker Single-Job Orchestration Guard complete / ready for review:
+  `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_COMPLETE_READY_FOR_REVIEW`.
+- Next gate is **owner review of 0053-F31**. Configured adapter remains noop/unavailable;
+  scanner engine / worker loop / queue polling / file read / quarantine / audit / routes / UI
+  remain deferred. Stuck-reserved recovery (after interruption or F29 rejection) is a watch item.
 
 Always:
 

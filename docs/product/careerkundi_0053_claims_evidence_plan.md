@@ -681,6 +681,27 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 
 ---
 
+### 0053-F31 Scanner Worker Single-Job Orchestration Guard
+- **Status:** Complete / ready for owner review  
+- **Purpose:** One internal supplied-job callable orchestrating preflight → F27 reservation → adapter execution → F29 application across three separate session boundaries  
+- **Entrypoint:** `orchestrate_attachment_scan_job(owner_user_id, scan_job_id, expected_content_hash_snapshot, ...)` — no caller-supplied attachment metadata or adapter identity  
+- **Preflight:** `adapter_info()` only (`AVAILABLE` + `MALWARE_SCAN`, no `UNAVAILABLE`); noop/unavailable (normal production) leaves job queued, no DB touch, no F27/scan/F29, no attempt/started_at, no scan_error, no fake CLEAN  
+- **Snapshot:** additive immutable `ReservedJobSnapshot` on the F27 result (job_id, owner, evidence_id, hash, MIME, size); adapter fed authoritative reserved-row values only; no file/storage read  
+- **Boundaries:** reservation txn / adapter execution with **no** active session or lock / new F29 txn — separate short-lived `AsyncSession`s  
+- **Failure materialisation:** post-reservation NOT_RUN/unavailable/timeout/error/unsupported/malformed/exception → persistable `MARK_ERROR` (F21-safe codes, no fabricated engine); MALICIOUS/SUSPICIOUS → scan_failed (never quarantined)  
+- **F29-only:** applies solely through F29; rejection → `result_application_rejected` (state unchanged, reserved-row watch item); interrupts propagate  
+- **Module:** `backend/app/platform/evidence/attachment_scan_worker_orchestration.py`  
+- **Tests:** `backend/app/platform/evidence/tests/test_attachment_scan_worker_orchestration.py` (41 tests; 19 static + 22 disposable-PostgreSQL incl. real concurrency)  
+- **Doc:** `docs/product/careerkundi_0053_f31_scanner_worker_single_job_orchestration_guard.md`  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`  
+- **Decision:** `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_COMPLETE_READY_FOR_REVIEW`  
+- **Hard rule:** orchestrating one guarded scan attempt is not scanning and is not verification  
+- **Forbidden (preserved):** worker loop; queue polling; SKIP LOCKED; job selection; startup/scheduler; real scanner; file/storage read; quarantine; audit; routes/UI; claim/ReviewRequest/EvidenceRecord mutation; migration; lease/TTL/reclaim  
+- **Deferred:** scanner engine; worker loop; quarantine move; audit; admin/UI; stuck-reserved reclaim  
+- **Prototype refs:** P39, P40, P41, P46 as future UX context only  
+
+---
+
 ## K. Hard no-go list (until specifically approved)
 
 - Public Passport sharing / public URL / public profile

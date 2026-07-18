@@ -213,8 +213,23 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - F29 rejection → `result_application_rejected`; no bypass/force/auto-cancel; DB unchanged; reserved row = watch item
 - Never swallow `asyncio.CancelledError` / `KeyboardInterrupt` / `SystemExit`
 - No job selection / SKIP LOCKED / polling / loop / startup / scheduler / real scanner / quarantine / audit / routes / UI / mutation / migration / lease
-- Proposed F31 module: `attachment_scan_worker_orchestration.py` (does not exist yet)
+- Proposed F31 module: `attachment_scan_worker_orchestration.py`
 - Doc: `docs/product/careerkundi_0053_f30_scanner_worker_single_job_orchestration_planning.md`
+
+## Scanner worker single-job orchestration guard (F31)
+
+- Module: `attachment_scan_worker_orchestration.py`
+- Entrypoint: `orchestrate_attachment_scan_job` (public input: `owner_user_id`, `scan_job_id`, `expected_content_hash_snapshot` only; `adapter_factory` is a test-only seam)
+- Preflight reads `adapter_info()` only (`AVAILABLE` + `MALWARE_SCAN`, no `UNAVAILABLE`); no `scan_attachment`, file read, or DB during preflight
+- Configured adapter is `noop_unavailable`: normal result is `scanner_unavailable`/`skipped_unavailable`, job stays queued and untouched (no F27/scan/F29, no `attempt_count`/`started_at`, no `scan_error`, no fake `CLEAN`)
+- Three separate short-lived sessions: F27 reservation → adapter execution with **no** active session/txn/lock → F29 application
+- Adapter metadata comes from the additive immutable `ReservedJobSnapshot` on the F27 result (or an owner-scoped reload); no caller metadata trusted; no file/storage read
+- Post-reservation `NOT_RUN`/unavailable/timeout/error/unsupported/malformed/operational-exception → persistable `MARK_ERROR` via F22 helpers (F21-safe codes, no fabricated engine); MALICIOUS/SUSPICIOUS → `scan_failed` (never `quarantined`)
+- Applies results **only** through F29; rejection → `result_application_rejected` (state unchanged, reserved row is a watch item)
+- Never swallows `asyncio.CancelledError` / `KeyboardInterrupt` / `SystemExit`
+- No worker loop, queue polling, SKIP LOCKED, job selection, startup, scheduler, real scanner, quarantine, audit, routes, UI, mutation, migration, or lease/TTL/reclaim
+- Orchestrating one guarded scan attempt is not scanning and is not verification
+- Doc: `docs/product/careerkundi_0053_f31_scanner_worker_single_job_orchestration_guard.md`
 
 ## Foundation revision
 

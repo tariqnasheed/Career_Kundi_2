@@ -5757,6 +5757,19 @@ Prototype refs (future UX context only): P39, P40, P41, P46.
 
 ---
 
+## 0053-F31 Scanner Worker Single-Job Orchestration Guard
+
+**Status:** Complete / ready for owner review. Implements one internal supplied-job callable `orchestrate_attachment_scan_job(owner_user_id, scan_job_id, expected_content_hash_snapshot, …)` that preflights the configured adapter via `adapter_info()` only (`AVAILABLE` + `MALWARE_SCAN`, no `UNAVAILABLE`), reserves via F27, executes the adapter with **no** active DB session/transaction/lock, materialises a safe persistable plan, and applies it **only** through F29. Configured `noop_unavailable` adapter → generic `scanner_unavailable`, job left queued and untouched (no F27/scan/F29, no `attempt_count`/`started_at`, no `scan_error`, no fake CLEAN). F27 result carries an additive immutable `ReservedJobSnapshot`; the adapter receives authoritative reserved-row values only (no caller metadata, no file/storage read). Three separate short-lived sessions. Post-reservation NOT_RUN/unavailable/timeout/error/unsupported/malformed/operational-exception → persistable `MARK_ERROR` (F21-safe codes, no fabricated engine); MALICIOUS/SUSPICIOUS → `scan_failed` (never `quarantined`). F29 guard rejection → `result_application_rejected` (state unchanged; reserved-row watch item). `asyncio.CancelledError`/`KeyboardInterrupt`/`SystemExit` propagate. **No** worker loop, queue polling, SKIP LOCKED, job selection, startup registration, scheduler, real scanner dependency, file/storage read, quarantine, audit, routes/UI, claim/`ReviewRequest`/`EvidenceRecord` mutation, migration, or lease/TTL/reclaim.
+
+Evidence: `~/Desktop/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f31_scanner_worker_single_job_orchestration_guard.md`.  
+Decision token: `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_COMPLETE_READY_FOR_REVIEW`.  
+Prototype refs (future UX context only): P39, P40, P41, P46.
+
+**Next after F31:** owner review, then consolidation into `/Users/tariqnasheed/Desktop/Career_Kundi_2`.
+
+---
+
 ## 0053 Evidence, Claims, Provenance and Verification Foundations
 
 **Phase status:** Active — **0053-F0** planning complete (docs only).  
@@ -5836,6 +5849,7 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F28 | Scanner Worker Result Application Planning |
 | 0053-F29 | Scanner Worker Result Application Guard |
 | 0053-F30 | Scanner Worker Single-Job Orchestration Planning |
+| 0053-F31 | Scanner Worker Single-Job Orchestration Guard |
 
 ### Hard no-go (until specifically approved)
 
@@ -5843,7 +5857,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**0053-F31 Scanner Worker Single-Job Orchestration Guard** (F30 planning accepted; F31 not started). Configured adapter remains noop/unavailable. Later scanner engine / worker loop / quarantine / audit / admin / UI remain deferred; stuck-reserved recovery is a watch item.
+Owner review of **0053-F31** (guard implemented; ready for review), then consolidation into `/Users/tariqnasheed/Desktop/Career_Kundi_2`. Configured adapter remains noop/unavailable. Later scanner engine / worker loop / queue polling / quarantine / audit / admin / UI remain deferred; stuck-reserved recovery is a watch item.
 
 ---
 
