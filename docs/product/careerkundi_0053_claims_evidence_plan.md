@@ -648,16 +648,35 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Accepted decision:** `0053_F28_SCANNER_WORKER_RESULT_APPLICATION_PLAN_ACCEPTED_READY_FOR_F29`
 
 ### 0053-F29 Scanner Worker Result Application Guard
-- **Status:** Complete / ready for owner review  
+- **Status:** Accepted / completed  
 - **Purpose:** Apply terminal scan-job results under locked F22 policy + triple-hash  
 - **Allowed:** `AttachmentScanJob` only; `reserved→completed|failed`; exact-match soft replay; conflicting replay reject; PostgreSQL `FOR UPDATE` job→evidence  
 - **Forbidden (preserved):** CANCEL_JOB/RESERVE_JOB/NO_OP in F29 surface; EvidenceRecord mutation; file read; worker loop; scanner engine; quarantine/audit/admin/UI; f0012  
 - **Module:** `backend/app/platform/evidence/attachment_scan_worker_result_application.py`  
 - **Doc:** `docs/product/careerkundi_0053_f29_scanner_worker_result_application_guard.md`  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`  
-- **Decision:** `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_COMPLETE_READY_FOR_REVIEW`  
+- **Decision:** `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_F30_PLANNING`  
 - **Hard rule:** result application is not scanning and is not verification  
 - **Deferred:** scanner engine; worker loop; quarantine move; audit emission; admin/UI  
+- **Prototype refs:** P39, P40, P41, P46 as future UX context only  
+
+---
+
+### 0053-F30 Scanner Worker Single-Job Orchestration Planning
+- **Status:** Accepted / completed (planning + contract only; F31 not started)  
+- **Purpose:** Lock the F31 contract for a single supplied-job orchestration callable: preflight → F27 reservation → adapter execution → F29 apply  
+- **Preflight:** `adapter_info()` only — `availability=AVAILABLE`, `MALWARE_SCAN` present, `UNAVAILABLE` absent; no scan call / file read / DB  
+- **Noop/unavailable (normal production):** return `scanner_unavailable|skipped_unavailable`; leave job queued; no F27/scan/F29; no attempt_count/started_at; no scan_error; no fake CLEAN/scan_passed  
+- **Post-reservation failures:** `NOT_RUN`/unavailable/timeout/unsupported/error/malformed/operational Exception → persistable `MARK_ERROR` (F21-safe codes) applied only through F29  
+- **Boundaries:** three separate — reservation txn / adapter execution with no active txn or lock / new F29 txn (separate short-lived `AsyncSession`s)  
+- **Authoritative metadata:** input is owner_user_id + scan_job_id + expected hash only; evidence_id/hash/MIME/size from the reserved `AttachmentScanJob` (or owner-scoped reload); no caller metadata trusted; no file/storage read  
+- **F29 rejection:** return `result_application_rejected`; no bypass/force/auto-cancel; DB unchanged; reserved row is a watch item  
+- **Cancellation:** never swallow `asyncio.CancelledError`/`KeyboardInterrupt`/`SystemExit` (reserved-row crash-recovery watch item)  
+- **Forbidden (F31):** job selection; SKIP LOCKED; polling; loop; startup; scheduler; real scanner; file/storage read; quarantine move; audit; routes; UI; claim/ReviewRequest/EvidenceRecord mutation; migration; lease/TTL/reclaim  
+- **Doc:** `docs/product/careerkundi_0053_f30_scanner_worker_single_job_orchestration_planning.md`  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F30_Scanner_Worker_Single_Job_Orchestration_Plan_Acceptance_Evidence.txt`  
+- **Decision:** `0053_F30_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_PLAN_ACCEPTED_READY_FOR_F31_PREPARATION`  
+- **Next gate:** 0053-F31 Scanner Worker Single-Job Orchestration Guard (not started)  
 - **Prototype refs:** P39, P40, P41, P46 as future UX context only  
 
 ---

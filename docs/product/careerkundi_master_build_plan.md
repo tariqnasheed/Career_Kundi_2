@@ -5735,12 +5735,25 @@ Prototype refs (future UX context only): P39, P40, P41, P46.
 
 ## 0053-F29 Scanner Worker Result Application Guard
 
-**Status:** Complete / ready for owner review. Implements guarded application of a persistable `ScanJobUpdatePlan` to `AttachmentScanJob` only: `reserved → completed|failed`; rejects CANCEL_JOB / RESERVE_JOB / NO_OP; six-field exact-match idempotency; mandatory owner-scoped DB-only triple-hash; PostgreSQL one-transaction `FOR UPDATE` with lock order job→evidence; shared F22 mutate-without-commit helper; **no** scanner engine, worker loop, file read, EvidenceRecord mutation, quarantine/audit/admin/UI, or migration.
+**Status:** Accepted and completed. Implements guarded application of a persistable `ScanJobUpdatePlan` to `AttachmentScanJob` only: `reserved → completed|failed`; rejects CANCEL_JOB / RESERVE_JOB / NO_OP; six-field exact-match idempotency; mandatory owner-scoped DB-only triple-hash; PostgreSQL one-transaction `FOR UPDATE` with lock order job→evidence; shared F22 mutate-without-commit helper; **no** scanner engine, worker loop, file read, EvidenceRecord mutation, quarantine/audit/admin/UI, or migration.
 
 Evidence: `~/Desktop/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`.  
 Doc: `docs/product/careerkundi_0053_f29_scanner_worker_result_application_guard.md`.  
-Decision token: `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_COMPLETE_READY_FOR_REVIEW`.  
+Decision token: `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_F30_PLANNING`.  
 Prototype refs (future UX context only): P39, P40, P41, P46.
+
+---
+
+## 0053-F30 Scanner Worker Single-Job Orchestration Planning
+
+**Status:** Accepted and completed (planning/contract only; no application code, model or migration). Locks the **F31** single supplied-job orchestration guard: adapter preflight via `adapter_info()` only (`availability=AVAILABLE`, `MALWARE_SCAN` present, `UNAVAILABLE` absent); on noop/unavailable return `scanner_unavailable`/`skipped_unavailable`, leave the job queued, and do not call F27/`scan_attachment`/F29, increment `attempt_count`, set `started_at`, record `scan_error`, or fabricate `CLEAN`/`scan_passed`. After successful F27 reservation the adapter runs with **no** active DB session/txn/lock; `NOT_RUN`/unavailable/timeout/unsupported/error/malformed/operational Exception → persistable `MARK_ERROR` (F21-safe codes) applied only through F29. Three separate boundaries (reservation txn / adapter execution / F29 txn) via short-lived `AsyncSession`s; authoritative `evidence_id`/hash/MIME/size from the reserved `AttachmentScanJob` (or owner-scoped reload), caller metadata untrusted, no file/storage read. F29 rejection → `result_application_rejected` (DB unchanged, no bypass/force/auto-cancel). `asyncio.CancelledError`/`KeyboardInterrupt`/`SystemExit` never swallowed (reserved-row watch item). **No** job selection, SKIP LOCKED, polling, loop, startup, scheduler, real scanner, quarantine, audit, routes, UI, claim/ReviewRequest/EvidenceRecord mutation, migration, or lease/TTL/reclaim.
+
+Evidence: `~/Desktop/CareerKundi_0053_F30_Scanner_Worker_Single_Job_Orchestration_Plan_Acceptance_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f30_scanner_worker_single_job_orchestration_planning.md`.  
+Accepted decision: `0053_F30_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_PLAN_ACCEPTED_READY_FOR_F31_PREPARATION`.  
+Prototype refs (future UX context only): P39, P40, P41, P46.
+
+**Next after F30 acceptance:** 0053-F31 Scanner Worker Single-Job Orchestration Guard (not started).
 
 ---
 
@@ -5822,6 +5835,7 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F27 | Scanner Worker Reservation Guard |
 | 0053-F28 | Scanner Worker Result Application Planning |
 | 0053-F29 | Scanner Worker Result Application Guard |
+| 0053-F30 | Scanner Worker Single-Job Orchestration Planning |
 
 ### Hard no-go (until specifically approved)
 
@@ -5829,7 +5843,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-Owner review of **0053-F29**. Later scanner engine / worker loop / quarantine / audit / admin / UI remain deferred.
+**0053-F31 Scanner Worker Single-Job Orchestration Guard** (F30 planning accepted; F31 not started). Configured adapter remains noop/unavailable. Later scanner engine / worker loop / quarantine / audit / admin / UI remain deferred; stuck-reserved recovery is a watch item.
 
 ---
 

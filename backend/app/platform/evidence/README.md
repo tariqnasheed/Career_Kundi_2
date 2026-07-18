@@ -201,6 +201,21 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Doc: `docs/product/careerkundi_0053_f29_scanner_worker_result_application_guard.md`
 - Prototype refs P39/P40/P41/P46 are future UX context only
 
+## Scanner worker single-job orchestration planning (F30)
+
+- Planning/contract only — accepted before F31 implementation; **F31 not started**
+- Accepted decision: `0053_F30_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_PLAN_ACCEPTED_READY_FOR_F31_PREPARATION`
+- Contract: preflight (`adapter_info()` only — `AVAILABLE` + `MALWARE_SCAN`, no `UNAVAILABLE`) → F27 reservation → adapter execution → F29 apply
+- Configured adapter remains `noop_unavailable`: normal result is `scanner_unavailable`/`skipped_unavailable`, job stays queued, no F27/scan/F29, no `attempt_count`/`started_at`, no `scan_error`, no fake `CLEAN`/`scan_passed`
+- Post-reservation `NOT_RUN`/unavailable/timeout/unsupported/error/malformed/operational Exception → persistable `MARK_ERROR` (F21-safe codes) applied only through F29
+- Three separate boundaries: reservation txn / adapter execution with **no** active DB txn or lock / new F29 txn (separate short-lived `AsyncSession`s)
+- Authoritative snapshot (`evidence_id`, `content_hash_snapshot`, MIME, size) from the reserved `AttachmentScanJob` (or owner-scoped reload); caller metadata untrusted; no file/storage read
+- F29 rejection → `result_application_rejected`; no bypass/force/auto-cancel; DB unchanged; reserved row = watch item
+- Never swallow `asyncio.CancelledError` / `KeyboardInterrupt` / `SystemExit`
+- No job selection / SKIP LOCKED / polling / loop / startup / scheduler / real scanner / quarantine / audit / routes / UI / mutation / migration / lease
+- Proposed F31 module: `attachment_scan_worker_orchestration.py` (does not exist yet)
+- Doc: `docs/product/careerkundi_0053_f30_scanner_worker_single_job_orchestration_planning.md`
+
 ## Foundation revision
 
 `f0009_evidence_foundation` → tables `evidence_records`, `claim_evidence_links`.  

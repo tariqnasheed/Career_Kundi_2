@@ -371,8 +371,38 @@ Implements the smallest safe worker-result application guard:
 
 Evidence: `~/Desktop/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`  
 Doc: `docs/product/careerkundi_0053_f29_scanner_worker_result_application_guard.md`  
-Decision: `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_COMPLETE_READY_FOR_REVIEW`  
-Next gate: **Owner review of F29**
+Decision: `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_F30_PLANNING`  
+Next gate: **0053-F30 Scanner Worker Single-Job Orchestration Planning**
+
+---
+
+## 0053-F30 Scanner Worker Single-Job Orchestration Planning (2026-07-19)
+
+Accepts the binding contract for a single supplied-job orchestration callable
+(**F31**). Planning and governance only — no application code, model or
+migration changed; F31 has not started.
+
+- Adapter preflight uses `adapter_info()` only: `availability=AVAILABLE`,
+  `MALWARE_SCAN` present, `UNAVAILABLE` absent — no scan call, file read or DB
+- Configured adapter remains `noop_unavailable`; normal result is
+  `scanner_unavailable`/`skipped_unavailable`: job stays queued, no F27/scan/F29,
+  no `attempt_count`/`started_at`, no `scan_error`, no fake `CLEAN`/`scan_passed`
+- After successful F27 reservation, adapter runs with no active DB session, txn
+  or lock; `NOT_RUN`/unavailable/timeout/unsupported/error/malformed/operational
+  Exception → persistable `MARK_ERROR` (F21-safe codes) applied only through F29
+- `asyncio.CancelledError`/`KeyboardInterrupt`/`SystemExit` never swallowed;
+  reserved-row recovery stays a watch item (no lease/TTL/reclaim in F31)
+- Authoritative `evidence_id`/hash/MIME/size come from the reserved
+  `AttachmentScanJob` (or owner-scoped reload); caller metadata untrusted
+- Three separate transaction boundaries via short-lived `AsyncSession`s
+- F29 rejection → `result_application_rejected`; DB unchanged; no auto-cancel
+- No selection / SKIP LOCKED / polling / loop / startup / scheduler / real
+  scanner / file read / quarantine / audit / routes / UI / mutation / migration
+
+Evidence: `~/Desktop/CareerKundi_0053_F30_Scanner_Worker_Single_Job_Orchestration_Plan_Acceptance_Evidence.txt`  
+Doc: `docs/product/careerkundi_0053_f30_scanner_worker_single_job_orchestration_planning.md`  
+Decision: `0053_F30_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_PLAN_ACCEPTED_READY_FOR_F31_PREPARATION`  
+Next gate: **0053-F31 Scanner Worker Single-Job Orchestration Guard** (not started)
 
 ---
 
