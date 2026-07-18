@@ -1,0 +1,27 @@
+---
+description: CareerKundi phase completion, documentation and evidence rules
+globs:
+alwaysApply: true
+---
+
+# Phase gate and evidence
+
+Every completed slice must report:
+
+- decision
+- worktree, branch and HEAD
+- scope and exclusions
+- relevant prototype references
+- exact files read and changed
+- current vs target distinction
+- tests and build results
+- runtime/browser evidence where relevant
+- migration status
+- privacy/security boundary
+- known limitations and watch items
+- exact staged files
+- commit/push status only if authorised
+- evidence file path
+- next gate
+
+Update the live tracker, master build plan, phase plan and `report.md` only after the change and evidence are accepted.

@@ -1,0 +1,19 @@
+---
+description: CareerKundi project-wide governance, evidence and phase-gate rules
+globs:
+alwaysApply: true
+---
+
+# CareerKundi project governance
+
+- Read `AGENTS.md` and the approved prototype governance documents before substantive work.
+- Treat repository code and accepted evidence as current truth.
+- Treat `docs/prototype/approved/careerkundi_complete_interface_v1/` as approved target UX.
+- Never infer an implemented backend, route, worker, integration or persistence operation from an image.
+- Use the state vocabulary: `EVIDENCE_BACKED_CURRENT`, `UNVERIFIED_CURRENT`, `APPROVED_DESIGN_TARGET`, `PROPOSED_TARGET`, `CREATE_REQUIRED`.
+- Before editing, identify the current phase, named gate, relevant Pxx/Pxx-A4-xx references and exact intended delta.
+- Implement one approved slice at a time.
+- Preserve unrelated work and known local dirt.
+- Stage exact files only.
+- Do not commit or push unless explicitly authorised.
+- Stop at the named gate and produce evidence.

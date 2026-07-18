@@ -1,0 +1,34 @@
+# CareerKundi Agent Instructions
+
+Read these files before any substantive CareerKundi task:
+
+1. `docs/product/careerkundi_approved_prototype_governance.md`
+2. `docs/product/careerkundi_approved_prototype_page_registry.md`
+3. `docs/product/careerkundi_prototype_traceability_contract.md`
+4. The current phase plan, live tracker, master build plan and `report.md`
+5. The relevant prototype index and only the relevant Pxx image folder
+6. The latest accepted phase evidence
+
+Core rule:
+
+- Repository evidence defines current reality.
+- The approved prototype defines target UX.
+- Never confuse target UX with implemented capability.
+
+Current accepted gate:
+
+- 0053-F27 accepted at commit `8fec0617265e5cd03c41c4622bfc3c4dcbf76c5b`.
+- 0053-F28 Scanner Worker Result Application Planning accepted:
+  `0053_F28_SCANNER_WORKER_RESULT_APPLICATION_PLAN_ACCEPTED_READY_FOR_F29`.
+- Next phase is 0053-F29 Scanner Worker Result Application Guard.
+- F29 implementation has not started and must not begin until explicitly approved.
+
+Always:
+
+- state model/mode and task scope
+- inspect before editing
+- create a Prototype Impact Matrix
+- preserve owner/privacy/verification boundaries
+- use exact file staging
+- protect known local dirt
+- stop at the named gate

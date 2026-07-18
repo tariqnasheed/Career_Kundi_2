@@ -1,0 +1,26 @@
+{
+  "page_reference_count": 46,
+  "interface_sheet_count": 135,
+  "interface_pdf_page_count": 135,
+  "complete_book_page_count": 140,
+  "exact_page_order_verified": true,
+  "all_filenames_begin_with_sheet_ref": true,
+  "landscape_dimensions": [
+    3508,
+    2480
+  ],
+  "portrait_dimensions": [
+    2480,
+    3508
+  ],
+  "dpi": 300,
+  "approved_pages_preserved": [
+    "P01-A4-01",
+    "P01-A4-02",
+    "P06-A4-01",
+    "P06-A4-02",
+    "P06-A4-03"
+  ],
+  "contact_sheet_count": 9,
+  "scope": "Complete clean interface prototype images. Human explanations, status indexes, technical indexes, responsive variants and interaction flows remain separate phases."
+}

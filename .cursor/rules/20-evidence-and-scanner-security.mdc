@@ -1,0 +1,24 @@
+---
+description: Evidence, claims, attachment safety, reviews and scanner security boundaries
+globs:
+  - "backend/app/platform/evidence/**"
+  - "backend/app/**/claim*"
+  - "backend/app/**/review*"
+  - "frontend/src/**/*Evidence*"
+  - "frontend/src/**/*Passport*"
+  - "frontend/src/**/*Review*"
+alwaysApply: false
+---
+
+# Evidence and scanner safety
+
+- Evidence upload, attachment, linking and review do not equal verification.
+- Malware scanning concerns attachment safety only.
+- Scanner work must not silently alter claim support or verification status.
+- Review requests remain private and are not certification.
+- Require owner scoping for user-owned rows.
+- Preserve hash snapshot and stale-work guards.
+- Do not introduce file reads, subprocesses, network calls, OCR, parsing or LLM review unless the named phase explicitly approves them.
+- Do not introduce worker loops, startup registration, quarantine, audit, admin routes or frontend scan UI outside the approved phase.
+- Record exact allowed model fields and state transitions.
+- Require idempotency and atomicity analysis before result persistence.

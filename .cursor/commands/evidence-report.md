@@ -1,0 +1,1 @@
+Create the phase evidence report from actual repository state and test output. Include decision, worktree, branch, HEAD, divergence, dirty files, exact files changed/staged, prototype references, boundaries, tests, runtime/browser evidence, migration state, known limitations, commit/push state and next gate. Never claim a check that was not run.

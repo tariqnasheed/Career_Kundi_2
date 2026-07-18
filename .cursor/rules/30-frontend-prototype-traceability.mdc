@@ -1,0 +1,17 @@
+---
+description: Frontend implementation must remain traceable to the approved interface prototype
+globs:
+  - "frontend/src/**"
+alwaysApply: false
+---
+
+# Frontend prototype traceability
+
+- Identify affected Pxx and Pxx-A4-xx references before editing.
+- Reuse the existing design system and shared components.
+- Match approved hierarchy, actions, content states, privacy wording and responsive intent.
+- Do not add decorative controls without functional destinations.
+- Do not display scanner, quarantine, verification, audit or integration status without an evidence-backed backend contract.
+- Cover relevant P46 empty/loading/error/success states.
+- Preserve accessibility: semantic structure, keyboard access, visible focus, validation and useful errors.
+- Add or update frontend tests and browser smoke evidence.

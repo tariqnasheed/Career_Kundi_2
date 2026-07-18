@@ -625,7 +625,7 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Evidence:** `~/Desktop/CareerKundi_0053_F26_Scanner_Worker_Dry_Run_Planning_Evidence.txt`
 
 ### 0053-F27 Scanner Worker Reservation Guard
-- **Status:** Implemented (`attachment_scan_worker_reservation.py` — reservation guard only)  
+- **Status:** Accepted and completed (`attachment_scan_worker_reservation.py` — reservation guard only)  
 - **Purpose:** Guarded internal reserve of `AttachmentScanJob` for a future worker  
 - **Allowed:** owner-scoped `queued` → `reserved`; hash snapshot match; attempt_count +1; set `started_at` if empty  
 - **Forbidden:** worker loop; startup registration; scanner execution; file read; F22 auto-apply; audit emit; routes/UI; Evidence/Claim/Review mutation; f0012  
@@ -633,8 +633,25 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Tests:** reservation guard + F26–F16/safety + evidence/review/claims/badge regressions  
 - **Browser:** no worker/scan/quarantine/audit/admin controls; OpenAPI unchanged for those routes  
 - **Gate:** mutates `AttachmentScanJob` only; no adapter/persistence/audit/file access from reservation  
-- **Deferred:** F28 scanner worker result application planning  
-- **Evidence:** `~/Desktop/CareerKundi_0053_F27_Scanner_Worker_Reservation_Guard_Evidence.txt`
+- **Evidence:** `~/Desktop/CareerKundi_0053_F27_Scanner_Worker_Reservation_Guard_Evidence.txt`  
+- **Accepted decision:** `0053_F27_SCANNER_WORKER_RESERVATION_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_F28`
+
+### 0053-F28 Scanner Worker Result Application Planning
+- **Status:** Accepted and completed (planning/contract only; no application code)  
+- **Purpose:** Lock the F29 worker result-application guard contract  
+- **Allowed:** docs/governance; binding F29 transitions `reserved→completed|failed`; six-field idempotency; triple-hash; PostgreSQL one-txn lock/CAS  
+- **Forbidden:** F29 implementation in this slice; scanner engine; worker loop; file read; Evidence/Claim/Review mutation; CANCEL/RESERVE/NO_OP in F29 surface; f0012; scan/quarantine/audit/admin UI  
+- **Hard rule:** planning is not result application and is not verification  
+- **Prototype refs:** P39, P40, P41, P46 as future UX context only  
+- **Deferred:** F29 Scanner Worker Result Application Guard (implementation not started)  
+- **Plan doc:** `docs/product/careerkundi_0053_f28_scanner_worker_result_application_planning.md`  
+- **Accepted decision:** `0053_F28_SCANNER_WORKER_RESULT_APPLICATION_PLAN_ACCEPTED_READY_FOR_F29`
+
+### 0053-F29 Scanner Worker Result Application Guard
+- **Status:** Next gate — implementation has not started  
+- **Purpose:** Apply terminal scan-job results under locked F22 policy + triple-hash  
+- **Allowed (when implemented):** `AttachmentScanJob` only; `reserved→completed|failed`; exact-match soft replay; conflicting replay reject  
+- **Forbidden until approved:** CANCEL_JOB/RESERVE_JOB/NO_OP in F29; EvidenceRecord mutation; file read; worker loop; scanner engine; quarantine/audit/admin/UI; f0012  
 
 ---
 

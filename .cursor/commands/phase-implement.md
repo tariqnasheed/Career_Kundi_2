@@ -1,0 +1,1 @@
+Implement only the already-approved CareerKundi phase plan. Re-read the accepted plan and relevant prototype sheets. Preserve all exclusions and known local dirt. Reuse repository patterns. Add focused tests, run required regressions, update approved docs, stage exact files only, and stop before commit/push unless explicitly authorised.

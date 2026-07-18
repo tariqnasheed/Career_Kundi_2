@@ -5716,12 +5716,22 @@ Doc: `docs/product/careerkundi_0053_f26_scanner_worker_dry_run_planning.md`.
 
 ## 0053-F27 Scanner Worker Reservation Guard
 
-**Status:** Completing in this commit. Internal reservation guard only (`attachment_scan_worker_reservation.py`); owner-scoped `queued` → `reserved`; content-hash snapshot match; attempt_count +1; set `started_at` if empty; **no** scanner execution, file read, worker loop, startup registration, F22 apply, audit, routes/UI, or Evidence/Claim/Review mutation.
+**Status:** Accepted and completed. Internal reservation guard only (`attachment_scan_worker_reservation.py`); owner-scoped `queued` → `reserved`; content-hash snapshot match; attempt_count +1; set `started_at` if empty; **no** scanner execution, file read, worker loop, startup registration, F22 apply, audit, routes/UI, or Evidence/Claim/Review mutation.
 
 Evidence: `~/Desktop/CareerKundi_0053_F27_Scanner_Worker_Reservation_Guard_Evidence.txt`.  
-Doc: `docs/product/careerkundi_0053_f27_scanner_worker_reservation_guard.md`.
+Doc: `docs/product/careerkundi_0053_f27_scanner_worker_reservation_guard.md`.  
+Accepted decision: `0053_F27_SCANNER_WORKER_RESERVATION_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_F28`.
 
-**Next after F27 acceptance:** 0053-F28 only (Scanner Worker Result Application Planning).
+## 0053-F28 Scanner Worker Result Application Planning
+
+**Status:** Accepted and completed (planning/contract only; no application code). Locks the F29 worker result-application guard: `reserved → completed|failed` only; rejects CANCEL_JOB / RESERVE_JOB / NO_OP; six-field exact-match idempotency; mandatory owner-scoped DB-only triple-hash; PostgreSQL one-transaction lock-or-CAS; consistent lock order job→evidence; no migration; **no** scanner engine, worker loop, file read, EvidenceRecord mutation, quarantine/audit/admin/UI.
+
+Evidence: `~/Desktop/CareerKundi_0053_F28_Prototype_Governance_And_Plan_Acceptance_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f28_scanner_worker_result_application_planning.md`.  
+Accepted decision: `0053_F28_SCANNER_WORKER_RESULT_APPLICATION_PLAN_ACCEPTED_READY_FOR_F29`.  
+Prototype refs (future UX context only): P39, P40, P41, P46.
+
+**Next after F28 acceptance:** 0053-F29 only (Scanner Worker Result Application Guard). F29 implementation has not started.
 
 ---
 
@@ -5802,6 +5812,7 @@ Verifiability of a credential does not imply the truth of the claims encoded in 
 | 0053-F26 | Scanner Worker Dry-Run Planning |
 | 0053-F27 | Scanner Worker Reservation Guard |
 | 0053-F28 | Scanner Worker Result Application Planning |
+| 0053-F29 | Scanner Worker Result Application Guard |
 
 ### Hard no-go (until specifically approved)
 
@@ -5809,7 +5820,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**Owner acceptance of 0053-F27**, then **0053-F28** only.
+**0053-F29 Scanner Worker Result Application Guard** only (implementation not started).
 
 ---
 

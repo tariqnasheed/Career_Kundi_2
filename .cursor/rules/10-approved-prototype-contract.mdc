@@ -1,0 +1,23 @@
+---
+description: Approved P01-P46 prototype reading and implementation traceability
+globs:
+alwaysApply: true
+---
+
+# Approved prototype contract
+
+Prototype root:
+
+`docs/prototype/approved/careerkundi_complete_interface_v1/`
+
+For each feature task:
+
+1. Read the image index and manifest.
+2. Identify relevant page and sheet references.
+3. Open only the relevant image folder and applicable P46 state sheets.
+4. Compare the approved target against current repository evidence.
+5. Create a Prototype Impact Matrix.
+6. Map implementation paths and tests to stable references.
+7. Do not rename references or routes without explicit approval.
+
+The prototype is not permission to implement future phases early.

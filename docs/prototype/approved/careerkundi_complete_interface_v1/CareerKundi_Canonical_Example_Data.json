@@ -1,0 +1,34 @@
+{
+  "name": "Syed Abrar",
+  "location": "Hyderabad, India",
+  "target_role": "AI Engineer",
+  "career_stage": "Early-to-mid career",
+  "education": "AI and Data Science - IIT Madras",
+  "weekly_hours": "7 hours/week",
+  "destinations": [
+    "United Kingdom",
+    "Germany",
+    "Canada",
+    "Australia"
+  ],
+  "skills": [
+    "Python",
+    "SQL",
+    "Machine Learning",
+    "Deep Learning",
+    "NLP",
+    "PyTorch",
+    "TensorFlow",
+    "FastAPI",
+    "Docker",
+    "MLOps",
+    "RAG",
+    "Prompt Engineering"
+  ],
+  "projects": [
+    "AI-powered resume screening system",
+    "RAG-based study assistant",
+    "Career recommendation engine",
+    "Interview-answer quality evaluator"
+  ]
+}

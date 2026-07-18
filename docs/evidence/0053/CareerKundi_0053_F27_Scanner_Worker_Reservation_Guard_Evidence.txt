@@ -1,0 +1,123 @@
+CareerKundi 0053-F27 Scanner Worker Reservation Guard — Evidence
+==============================================================================
+
+1. timestamp: 2026-07-18T02:43:00+05:30 start → 2026-07-18T02:52:00+05:30 complete
+2. worktree: /Users/tariqnasheed/Desktop/Career_Kundi_2_F3
+3. branch: main
+4. HEAD before: ef2682f746beb2fc8da5d2e2837f4712844b6691
+5. origin/main before: ef2682f746beb2fc8da5d2e2837f4712844b6691
+6. local dirty files before:
+   - .env, backend/.env, backend/data/knowledge_graph.gpickle
+   - documents/ dirt (not staged)
+7. files read:
+   - attachment_scan.py, attachment_scan_queue.py, attachment_scan_worker_dry_run.py
+   - test_attachment_scan_result_persistence.py (DB pattern)
+   - F26 docs/tracker/README/main.py boundaries
+8. F26 findings:
+   - dry-run runner disabled; decision objects only; no DB mutation from dry-run
+9. reservation guard decision:
+   - attachment_scan_worker_reservation.py; queued→reserved; owner-scoped; hash snapshot
+10. reservation module behavior:
+   - reserve_attachment_scan_job_for_worker + assert_scan_worker_reservation_allowed
+   - returns ScanWorkerReservationResult; summary via reservation_guard_summary()
+11. owner scoping proof:
+   - get_attachment_scan_job_for_owner; other owner → NOT_FOUND
+12. queued-only proof:
+   - reserved/completed/failed/cancelled → NOT_QUEUED
+13. hash snapshot guard proof:
+   - mismatch → HASH_MISMATCH; match allows reserve (no file read)
+14. attempt count increment proof:
+   - 0 → 1 exactly once on success
+15. started_at proof:
+   - set when empty on successful reserve
+16. completed_at untouched proof:
+   - remains None after reserve
+17. safety status untouched proof:
+   - remains scan_pending (not passed/failed/error)
+18. engine fields untouched proof:
+   - engine_name / engine_version remain None
+19. safe error fields untouched proof:
+   - safe_error_code / safe_error_message remain None
+20. no persistence call proof:
+   - module does not import/call apply_scan_job_update_plan; mock not called
+21. no scanner adapter call proof:
+   - no adapter import; get_configured_attachment_scanner_adapter mock not called
+22. no scanner execution proof:
+   - SCAN_WORKER_RESERVATION_EXECUTES_SCANNER=False
+23. no file/path/storage access proof:
+   - READS_FILES=False; no storage import; open_evidence_file mock not called
+24. no audit emission proof:
+   - no quarantine audit import; build_quarantine_audit_event mock not called
+25. no worker loop proof:
+   - no while True / run_worker / start_worker in reservation module
+26. no startup registration proof:
+   - main.py has no reservation/worker registration imports
+27. no route/API proof:
+   - OpenAPI: no worker/admin/audit/scan/quarantine/reserve/verification routes
+28. no frontend worker/admin/scan/quarantine/audit UI proof:
+   - EvidenceLibraryPage / PassportEvidencePanel boundary smoke OK
+29. no DB migration proof:
+   - no f0012+; foundation head remains f0011_attachment_scan_queue
+30. AttachmentScanJob-only mutation proof:
+   - only job_status, attempt_count, started_at (+ updated_at mixin)
+31. no EvidenceRecord mutation proof:
+   - content_hash / storage_uri unchanged in DB test
+32. no claim status mutation proof:
+   - support_status / verification_status unchanged
+33. no ReviewRequest mutation proof:
+   - review_state unchanged
+34. no scanner dependency proof:
+   - pyproject.toml has no clamav/virustotal/pytesseract/pdfminer/openai
+35. no subprocess proof:
+   - AST import/source checks pass
+36. no network/external process proof:
+   - no httpx/requests/aiohttp imports
+37. no OCR/parsing proof:
+   - no pytesseract/pdfminer imports
+38. no LLM review proof:
+   - no app.tools.llm / openai / anthropic imports
+39. backend tests run:
+   - F27 suite: 120 passed
+   - evidence regression: 21 passed
+   - review/claims/badge regression: 89 passed
+40. frontend tests run:
+   - 6 files / 52 tests passed
+41. frontend build result: npm run build OK
+42. compile result: COMPILE_OK
+43. local API/browser result:
+   - migration_runner: FOUNDATION_VERSIONED → f0011 head OK
+   - uvicorn on :8000 already running (bind conflict on restart); OpenAPI 200 OK
+   - NO_FORBIDDEN_ROUTES
+44. page smoke result:
+   - /evidence /passport /profile /cv-builder /roadmap /jobs /platform /dashboard → 200
+45. docs/tracker updates:
+   - F27 doc, F26 pointer, claims plan, live tracker, master plan, report, README
+46. scope guard result: 0053_F27_SCOPE_OK
+47. exact files changed (committed):
+   - backend/app/platform/evidence/attachment_scan_worker_reservation.py
+   - backend/app/platform/evidence/attachment_scan_worker_dry_run.py
+   - backend/app/platform/evidence/README.md
+   - backend/app/platform/evidence/tests/test_attachment_scan_worker_reservation.py
+   - backend/app/platform/evidence/tests/test_attachment_scan_worker_dry_run.py
+   - docs/product/careerkundi_0053_claims_evidence_plan.md
+   - docs/product/careerkundi_0053_f26_scanner_worker_dry_run_planning.md
+   - docs/product/careerkundi_0053_f27_scanner_worker_reservation_guard.md
+   - docs/product/careerkundi_live_tracker.md
+   - docs/product/careerkundi_master_build_plan.md
+   - report.md
+48. staged files: same 11 as commit (exact add only)
+49. commit hash: 8fec0617265e5cd03c41c4622bfc3c4dcbf76c5b
+50. push verification:
+   - HEAD == origin/main == 8fec0617265e5cd03c41c4622bfc3c4dcbf76c5b
+   - divergence 0 0
+51. final git status:
+   - known local dirty only (.env, backend/.env, knowledge_graph.gpickle, documents/)
+52. remaining watch items:
+   - Real malware scan engine / worker loop / quarantine / audit / admin still absent (F28+)
+   - JobSearchPage.test.tsx still missing
+   - documents/ local dirt (do not stage)
+53. next recommendation:
+   - Proceed to 0053-F28 Scanner Worker Result Application Planning only after F27 acceptance.
+   - Do not start F28 in this task.
+
+Decision: 0053_F27_SCANNER_WORKER_RESERVATION_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_F28

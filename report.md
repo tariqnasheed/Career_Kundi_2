@@ -335,6 +335,26 @@ Adds an internal scan-job reservation guard only:
 
 Evidence: `~/Desktop/CareerKundi_0053_F27_Scanner_Worker_Reservation_Guard_Evidence.txt`
 
+Accepted: `0053_F27_SCANNER_WORKER_RESERVATION_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_F28`
+
+---
+
+## 0053-F28 Scanner Worker Result Application Planning + Prototype Governance (2026-07-19)
+
+Documentation/governance only — no application code:
+
+- Accepted F28 plan locks F29: `reserved → completed|failed` only
+- Rejects CANCEL_JOB / RESERVE_JOB / NO_OP on the F29 surface
+- Six-field exact-match idempotency; mandatory DB-only triple-hash; PostgreSQL one-txn lock/CAS
+- Adopts approved P01–P46 prototype governance text/reference files (binary assets stay local-only)
+- Relevant prototype refs P39/P40/P41/P46 are future UX context only
+- F29 implementation has not started; scanner engine / worker loop / quarantine / audit / admin / UI remain deferred
+
+Plan: `docs/product/careerkundi_0053_f28_scanner_worker_result_application_planning.md`  
+Evidence: `~/Desktop/CareerKundi_0053_F28_Prototype_Governance_And_Plan_Acceptance_Evidence.txt`  
+Decision: `0053_F28_SCANNER_WORKER_RESULT_APPLICATION_PLAN_ACCEPTED_READY_FOR_F29`  
+Next gate: **0053-F29 Scanner Worker Result Application Guard**
+
 ---
 
 This document explains, in plain language, everything that was broken in the

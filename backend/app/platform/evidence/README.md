@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F27)
+# Evidence domain (0053-F2 … F28 planning)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -27,7 +27,9 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F24 | Quarantine event/audit planning + disabled audit sink (inactive) |
 | F25 | Scan/quarantine admin boundary planning + disabled surface (inactive) |
 | F26 | Scanner worker dry-run planning + disabled runner (inactive) |
-| F27 | Scanner worker reservation guard (`queued` → `reserved` only) |
+| F27 | Scanner worker reservation guard (`queued` → `reserved` only) — accepted/completed |
+| F28 | Scanner worker result application planning (contract only; no F29 code) — accepted |
+| F29 | Scanner worker result application guard — **next; not started** |
 
 Hard rules across all slices:
 
@@ -175,6 +177,19 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Mutates `AttachmentScanJob` only; no EvidenceRecord / ClaimRecord / ReviewRequest changes
 - No worker loop, startup registration, routes, or UI
 - Reservation is not scanning and is not verification
+- Accepted; next planning gate was F28
+
+## Scanner worker result application planning (F28)
+
+- Planning/contract only — **no F29 implementation module yet**
+- Accepted decision: `0053_F28_SCANNER_WORKER_RESULT_APPLICATION_PLAN_ACCEPTED_READY_FOR_F29`
+- Doc: `docs/product/careerkundi_0053_f28_scanner_worker_result_application_planning.md`
+- F29 will allow only `reserved → completed|failed`; reject CANCEL_JOB / RESERVE_JOB / NO_OP
+- Six-field exact-match idempotency; mandatory owner-scoped DB-only triple-hash
+- PostgreSQL one-transaction lock-or-CAS; lock order job → evidence; no migration
+- Prototype refs P39/P40/P41/P46 are future UX context only
+- Scanner engine, worker loop, quarantine, audit, admin and UI remain absent/deferred
+- A result-application plan is not result application and is not verification
 
 ## Foundation revision
 
