@@ -1,4 +1,4 @@
-# Evidence domain (0053-F2 … F28 planning)
+# Evidence domain (0053-F2 … F29)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
 
@@ -28,8 +28,8 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F25 | Scan/quarantine admin boundary planning + disabled surface (inactive) |
 | F26 | Scanner worker dry-run planning + disabled runner (inactive) |
 | F27 | Scanner worker reservation guard (`queued` → `reserved` only) — accepted/completed |
-| F28 | Scanner worker result application planning (contract only; no F29 code) — accepted |
-| F29 | Scanner worker result application guard — **next; not started** |
+| F28 | Scanner worker result application planning (contract only) — accepted |
+| F29 | Scanner worker result application guard (`reserved` → `completed`/`failed`) — ready for review |
 
 Hard rules across all slices:
 
@@ -181,15 +181,25 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 
 ## Scanner worker result application planning (F28)
 
-- Planning/contract only — **no F29 implementation module yet**
+- Planning/contract only — accepted before F29 implementation
 - Accepted decision: `0053_F28_SCANNER_WORKER_RESULT_APPLICATION_PLAN_ACCEPTED_READY_FOR_F29`
 - Doc: `docs/product/careerkundi_0053_f28_scanner_worker_result_application_planning.md`
-- F29 will allow only `reserved → completed|failed`; reject CANCEL_JOB / RESERVE_JOB / NO_OP
-- Six-field exact-match idempotency; mandatory owner-scoped DB-only triple-hash
-- PostgreSQL one-transaction lock-or-CAS; lock order job → evidence; no migration
+
+## Scanner worker result application guard (F29)
+
+- Module: `attachment_scan_worker_result_application.py`
+- Entrypoint: `apply_attachment_scan_worker_result` (owner-scoped; persistable `ScanJobUpdatePlan` only)
+- Transitions: `reserved → completed|failed` only; rejects CANCEL_JOB / RESERVE_JOB / NO_OP
+- Triple-hash: live evidence hash == job snapshot == expected snapshot (DB-only; no file read)
+- Lock order: `AttachmentScanJob` `FOR UPDATE` then `EvidenceRecord` `FOR UPDATE`; one commit
+- Reuses F22 normalize/assert + shared `apply_normalized_scan_job_update_to_loaded_job`
+- Six-field exact-match soft replay; conflicting replay hard-rejects; attempt_count unchanged
+- `QUARANTINE_REQUIRED` keeps `scan_failed` (never persists `quarantined`; no file move)
+- Mutates `AttachmentScanJob` only; EvidenceRecord / Claim / ReviewRequest unchanged
+- No worker loop, routes, UI, scanner adapter, audit, or f0012 migration
+- Result application is not scanning and is not verification
+- Doc: `docs/product/careerkundi_0053_f29_scanner_worker_result_application_guard.md`
 - Prototype refs P39/P40/P41/P46 are future UX context only
-- Scanner engine, worker loop, quarantine, audit, admin and UI remain absent/deferred
-- A result-application plan is not result application and is not verification
 
 ## Foundation revision
 

@@ -20,8 +20,9 @@ Current accepted gate:
 - 0053-F27 accepted at commit `8fec0617265e5cd03c41c4622bfc3c4dcbf76c5b`.
 - 0053-F28 Scanner Worker Result Application Planning accepted:
   `0053_F28_SCANNER_WORKER_RESULT_APPLICATION_PLAN_ACCEPTED_READY_FOR_F29`.
-- Next phase is 0053-F29 Scanner Worker Result Application Guard.
-- F29 implementation has not started and must not begin until explicitly approved.
+- 0053-F29 Scanner Worker Result Application Guard complete / ready for review:
+  `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_COMPLETE_READY_FOR_REVIEW`.
+- Next gate is owner review of F29. Later scanner engine / worker loop work remains deferred.
 
 Always:
 

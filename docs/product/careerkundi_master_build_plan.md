@@ -5731,7 +5731,16 @@ Doc: `docs/product/careerkundi_0053_f28_scanner_worker_result_application_planni
 Accepted decision: `0053_F28_SCANNER_WORKER_RESULT_APPLICATION_PLAN_ACCEPTED_READY_FOR_F29`.  
 Prototype refs (future UX context only): P39, P40, P41, P46.
 
-**Next after F28 acceptance:** 0053-F29 only (Scanner Worker Result Application Guard). F29 implementation has not started.
+**Next after F28 acceptance:** 0053-F29 only (Scanner Worker Result Application Guard).
+
+## 0053-F29 Scanner Worker Result Application Guard
+
+**Status:** Complete / ready for owner review. Implements guarded application of a persistable `ScanJobUpdatePlan` to `AttachmentScanJob` only: `reserved → completed|failed`; rejects CANCEL_JOB / RESERVE_JOB / NO_OP; six-field exact-match idempotency; mandatory owner-scoped DB-only triple-hash; PostgreSQL one-transaction `FOR UPDATE` with lock order job→evidence; shared F22 mutate-without-commit helper; **no** scanner engine, worker loop, file read, EvidenceRecord mutation, quarantine/audit/admin/UI, or migration.
+
+Evidence: `~/Desktop/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`.  
+Doc: `docs/product/careerkundi_0053_f29_scanner_worker_result_application_guard.md`.  
+Decision token: `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_COMPLETE_READY_FOR_REVIEW`.  
+Prototype refs (future UX context only): P39, P40, P41, P46.
 
 ---
 
@@ -5820,7 +5829,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-**0053-F29 Scanner Worker Result Application Guard** only (implementation not started).
+Owner review of **0053-F29**. Later scanner engine / worker loop / quarantine / audit / admin / UI remain deferred.
 
 ---
 

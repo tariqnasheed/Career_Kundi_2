@@ -223,6 +223,45 @@ def assert_scan_job_update_allowed(
         raise ScanJobPersistenceError("mark_error requires job_status=failed")
 
 
+def apply_normalized_scan_job_update_to_loaded_job(
+    job: AttachmentScanJob,
+    normalized_plan: ScanJobUpdatePlan,
+    now: datetime,
+) -> None:
+    """
+    Mutate an already-loaded AttachmentScanJob in memory.
+
+    Performs no database fetch and no commit. Callers must hold any required
+    locks and commit (or roll back) themselves. Field-write semantics match the
+    public F22 apply path (non-None plan fields only; reserve increments
+    attempt_count; terminal completed/failed/cancelled set timestamps once).
+    """
+    target = str(normalized_plan.job_status)
+
+    job.job_status = target
+    if normalized_plan.attachment_safety_status is not None:
+        job.attachment_safety_status = normalized_plan.attachment_safety_status
+    if normalized_plan.engine_name is not None:
+        job.engine_name = normalized_plan.engine_name
+    if normalized_plan.engine_version is not None:
+        job.engine_version = normalized_plan.engine_version
+    if normalized_plan.safe_error_code is not None:
+        job.safe_error_code = normalized_plan.safe_error_code
+    if normalized_plan.safe_error_message is not None:
+        job.safe_error_message = normalized_plan.safe_error_message
+
+    if target == AttachmentScanJobStatus.RESERVED.value:
+        job.attempt_count = int(job.attempt_count or 0) + 1
+        if job.started_at is None:
+            job.started_at = now
+    elif target == AttachmentScanJobStatus.COMPLETED.value:
+        job.completed_at = now
+    elif target == AttachmentScanJobStatus.FAILED.value:
+        job.completed_at = now
+    elif target == AttachmentScanJobStatus.CANCELLED.value:
+        job.cancelled_at = now
+
+
 async def apply_scan_job_update_plan(
     db: AsyncSession,
     *,
@@ -243,32 +282,9 @@ async def apply_scan_job_update_plan(
         raise ScanJobPersistenceError(f"scan job does not exist: {job_id}")
 
     assert_scan_job_update_allowed(job, normalized)
-
-    now = datetime.now(timezone.utc)
-    target = str(normalized.job_status)
-
-    job.job_status = target
-    if normalized.attachment_safety_status is not None:
-        job.attachment_safety_status = normalized.attachment_safety_status
-    if normalized.engine_name is not None:
-        job.engine_name = normalized.engine_name
-    if normalized.engine_version is not None:
-        job.engine_version = normalized.engine_version
-    if normalized.safe_error_code is not None:
-        job.safe_error_code = normalized.safe_error_code
-    if normalized.safe_error_message is not None:
-        job.safe_error_message = normalized.safe_error_message
-
-    if target == AttachmentScanJobStatus.RESERVED.value:
-        job.attempt_count = int(job.attempt_count or 0) + 1
-        if job.started_at is None:
-            job.started_at = now
-    elif target == AttachmentScanJobStatus.COMPLETED.value:
-        job.completed_at = now
-    elif target == AttachmentScanJobStatus.FAILED.value:
-        job.completed_at = now
-    elif target == AttachmentScanJobStatus.CANCELLED.value:
-        job.cancelled_at = now
+    apply_normalized_scan_job_update_to_loaded_job(
+        job, normalized, datetime.now(timezone.utc)
+    )
 
     await db.commit()
     await db.refresh(job)

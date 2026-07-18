@@ -353,7 +353,26 @@ Documentation/governance only — no application code:
 Plan: `docs/product/careerkundi_0053_f28_scanner_worker_result_application_planning.md`  
 Evidence: `~/Desktop/CareerKundi_0053_F28_Prototype_Governance_And_Plan_Acceptance_Evidence.txt`  
 Decision: `0053_F28_SCANNER_WORKER_RESULT_APPLICATION_PLAN_ACCEPTED_READY_FOR_F29`  
-Next gate: **0053-F29 Scanner Worker Result Application Guard**
+
+---
+
+## 0053-F29 Scanner Worker Result Application Guard (2026-07-19)
+
+Implements the smallest safe worker-result application guard:
+
+- `attachment_scan_worker_result_application.py` — owner-scoped apply of persistable plans
+- `reserved → completed|failed` only; rejects CANCEL_JOB / RESERVE_JOB / NO_OP
+- PostgreSQL `FOR UPDATE` lock order job → evidence; one transaction; one commit
+- Mandatory DB-only triple-hash; EvidenceRecord read-only
+- Reuses F22 normalize/assert + shared mutate-without-commit helper
+- Six-field exact-match soft replay; conflicting replay rejected
+- Does not scan, read files, call adapters, emit audit, or expose routes/UI
+- Mutates `AttachmentScanJob` only; result application is not verification
+
+Evidence: `~/Desktop/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`  
+Doc: `docs/product/careerkundi_0053_f29_scanner_worker_result_application_guard.md`  
+Decision: `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_COMPLETE_READY_FOR_REVIEW`  
+Next gate: **Owner review of F29**
 
 ---
 

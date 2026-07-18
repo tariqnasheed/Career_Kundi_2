@@ -643,15 +643,22 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Forbidden:** F29 implementation in this slice; scanner engine; worker loop; file read; Evidence/Claim/Review mutation; CANCEL/RESERVE/NO_OP in F29 surface; f0012; scan/quarantine/audit/admin UI  
 - **Hard rule:** planning is not result application and is not verification  
 - **Prototype refs:** P39, P40, P41, P46 as future UX context only  
-- **Deferred:** F29 Scanner Worker Result Application Guard (implementation not started)  
+- **Deferred (then implemented in F29):** F29 Scanner Worker Result Application Guard  
 - **Plan doc:** `docs/product/careerkundi_0053_f28_scanner_worker_result_application_planning.md`  
 - **Accepted decision:** `0053_F28_SCANNER_WORKER_RESULT_APPLICATION_PLAN_ACCEPTED_READY_FOR_F29`
 
 ### 0053-F29 Scanner Worker Result Application Guard
-- **Status:** Next gate — implementation has not started  
+- **Status:** Complete / ready for owner review  
 - **Purpose:** Apply terminal scan-job results under locked F22 policy + triple-hash  
-- **Allowed (when implemented):** `AttachmentScanJob` only; `reserved→completed|failed`; exact-match soft replay; conflicting replay reject  
-- **Forbidden until approved:** CANCEL_JOB/RESERVE_JOB/NO_OP in F29; EvidenceRecord mutation; file read; worker loop; scanner engine; quarantine/audit/admin/UI; f0012  
+- **Allowed:** `AttachmentScanJob` only; `reserved→completed|failed`; exact-match soft replay; conflicting replay reject; PostgreSQL `FOR UPDATE` job→evidence  
+- **Forbidden (preserved):** CANCEL_JOB/RESERVE_JOB/NO_OP in F29 surface; EvidenceRecord mutation; file read; worker loop; scanner engine; quarantine/audit/admin/UI; f0012  
+- **Module:** `backend/app/platform/evidence/attachment_scan_worker_result_application.py`  
+- **Doc:** `docs/product/careerkundi_0053_f29_scanner_worker_result_application_guard.md`  
+- **Evidence:** `~/Desktop/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`  
+- **Decision:** `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_COMPLETE_READY_FOR_REVIEW`  
+- **Hard rule:** result application is not scanning and is not verification  
+- **Deferred:** scanner engine; worker loop; quarantine move; audit emission; admin/UI  
+- **Prototype refs:** P39, P40, P41, P46 as future UX context only  
 
 ---
 
