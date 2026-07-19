@@ -663,7 +663,7 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 ---
 
 ### 0053-F30 Scanner Worker Single-Job Orchestration Planning
-- **Status:** Accepted / completed (planning + contract only; F31 not started)  
+- **Status:** Accepted / completed (planning + contract only; at acceptance time F31 was not started — historical)
 - **Purpose:** Lock the F31 contract for a single supplied-job orchestration callable: preflight → F27 reservation → adapter execution → F29 apply  
 - **Preflight:** `adapter_info()` only — `availability=AVAILABLE`, `MALWARE_SCAN` present, `UNAVAILABLE` absent; no scan call / file read / DB  
 - **Noop/unavailable (normal production):** return `scanner_unavailable|skipped_unavailable`; leave job queued; no F27/scan/F29; no attempt_count/started_at; no scan_error; no fake CLEAN/scan_passed  
@@ -676,13 +676,15 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Doc:** `docs/product/careerkundi_0053_f30_scanner_worker_single_job_orchestration_planning.md`  
 - **Evidence:** `~/Desktop/CareerKundi_0053_F30_Scanner_Worker_Single_Job_Orchestration_Plan_Acceptance_Evidence.txt`  
 - **Decision:** `0053_F30_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_PLAN_ACCEPTED_READY_FOR_F31_PREPARATION`  
-- **Next gate:** 0053-F31 Scanner Worker Single-Job Orchestration Guard (not started)  
+- **Next gate (historical at F30 acceptance):** 0053-F31 Scanner Worker Single-Job Orchestration Guard (not started then; F31 later accepted — see CURRENT STATUS)
 - **Prototype refs:** P39, P40, P41, P46 as future UX context only  
 
 ---
 
 ### 0053-F31 Scanner Worker Single-Job Orchestration Guard
-- **Status:** Complete / ready for owner review  
+- **Status:** Accepted — current scanner checkpoint
+- **Acceptance token:** `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS`
+- **Historical readiness token (preserved in evidence body):** `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_COMPLETE_READY_FOR_REVIEW`
 - **Purpose:** One internal supplied-job callable orchestrating preflight → F27 reservation → adapter execution → F29 application across three separate session boundaries  
 - **Entrypoint:** `orchestrate_attachment_scan_job(owner_user_id, scan_job_id, expected_content_hash_snapshot, ...)` — no caller-supplied attachment metadata or adapter identity  
 - **Preflight:** `adapter_info()` only (`AVAILABLE` + `MALWARE_SCAN`, no `UNAVAILABLE`); noop/unavailable (normal production) leaves job queued, no DB touch, no F27/scan/F29, no attempt/started_at, no scan_error, no fake CLEAN  
@@ -693,12 +695,21 @@ Mitigations belong in F3/F6/F7/F9 — not F0.
 - **Module:** `backend/app/platform/evidence/attachment_scan_worker_orchestration.py`  
 - **Tests:** `backend/app/platform/evidence/tests/test_attachment_scan_worker_orchestration.py` (41 tests; 19 static + 22 disposable-PostgreSQL incl. real concurrency)  
 - **Doc:** `docs/product/careerkundi_0053_f31_scanner_worker_single_job_orchestration_guard.md`  
-- **Evidence:** `~/Desktop/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`  
-- **Decision:** `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_COMPLETE_READY_FOR_REVIEW`  
+- **Evidence (canonical):** `docs/evidence/0053/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`
 - **Hard rule:** orchestrating one guarded scan attempt is not scanning and is not verification  
 - **Forbidden (preserved):** worker loop; queue polling; SKIP LOCKED; job selection; startup/scheduler; real scanner; file/storage read; quarantine; audit; routes/UI; claim/ReviewRequest/EvidenceRecord mutation; migration; lease/TTL/reclaim  
-- **Deferred:** scanner engine; worker loop; quarantine move; audit; admin/UI; stuck-reserved reclaim  
+- **Deferred / not started:** F32; scanner engine; worker loop; quarantine move; audit; admin/UI; stuck-reserved reclaim
 - **Prototype refs:** P39, P40, P41, P46 as future UX context only  
+
+### CURRENT STATUS (Programme 0.4 — 2026-07-19)
+
+- F29 was accepted historically before F30/F31; F29 remains the sole guarded result-application route used by accepted F31.
+- F31 is accepted now as the current scanner checkpoint; limitations above remain binding.
+- Canonical F29 evidence: `docs/evidence/0053/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`.
+- **F32 has not started.** **Programme 1 has not started.**
+- **Programme 0.4** implementation is complete and accepted (governance reconciliation + F29/F31 evidence canonicalization). No scanner capability expansion occurred.
+- Next authorized planning gate: **Programme 1** (not started). **F32 has not started.**
+- Feature branch `feat/interview-pack-llm-authoring` remains preserved for Programme 8. F27 top-level duplicate remains deferred to Programme 1.
 
 ---
 

@@ -1,6 +1,16 @@
-# Evidence domain (0053-F2 … F29)
+# Evidence domain (0053-F2 … F31)
 
 Private evidence **metadata**, claim-evidence **links**, and private **attachment bytes**.
+
+**Live scanner checkpoint (Programme 0.4):** **0053-F31 accepted** —
+`0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS`.
+F32 has not started. No real malware engine, attachment byte read for scanning, queue polling, continuous worker loop, lease/TTL/reclaim, quarantine movement, or scanner admin/frontend routes.
+
+Canonical evidence:
+
+- F27 reservation: `docs/evidence/0053/CareerKundi_0053_F27_Scanner_Worker_Reservation_Guard_Evidence.txt`
+- F29 result application: `docs/evidence/0053/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`
+- F31 orchestration: `docs/evidence/0053/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`
 
 ## Boundaries
 
@@ -29,7 +39,9 @@ Private evidence **metadata**, claim-evidence **links**, and private **attachmen
 | F26 | Scanner worker dry-run planning + disabled runner (inactive) |
 | F27 | Scanner worker reservation guard (`queued` → `reserved` only) — accepted/completed |
 | F28 | Scanner worker result application planning (contract only) — accepted |
-| F29 | Scanner worker result application guard (`reserved` → `completed`/`failed`) — ready for review |
+| F29 | Scanner worker result application guard (`reserved` → `completed`/`failed`) — accepted; sole apply route used by F31 |
+| F30 | Scanner worker single-job orchestration planning (contract only) — accepted |
+| F31 | Scanner worker single-job orchestration guard — **accepted current checkpoint** |
 
 Hard rules across all slices:
 
@@ -177,7 +189,7 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Mutates `AttachmentScanJob` only; no EvidenceRecord / ClaimRecord / ReviewRequest changes
 - No worker loop, startup registration, routes, or UI
 - Reservation is not scanning and is not verification
-- Accepted; next planning gate was F28
+- Accepted; evidence: `docs/evidence/0053/CareerKundi_0053_F27_Scanner_Worker_Reservation_Guard_Evidence.txt`
 
 ## Scanner worker result application planning (F28)
 
@@ -198,12 +210,14 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Mutates `AttachmentScanJob` only; EvidenceRecord / Claim / ReviewRequest unchanged
 - No worker loop, routes, UI, scanner adapter, audit, or f0012 migration
 - Result application is not scanning and is not verification
+- **Accepted**; sole guarded apply route used by accepted F31
 - Doc: `docs/product/careerkundi_0053_f29_scanner_worker_result_application_guard.md`
+- Evidence: `docs/evidence/0053/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`
 - Prototype refs P39/P40/P41/P46 are future UX context only
 
 ## Scanner worker single-job orchestration planning (F30)
 
-- Planning/contract only — accepted before F31 implementation; **F31 not started**
+- Planning/contract only — accepted before F31 implementation (historical note at F30 acceptance: F31 not started then)
 - Accepted decision: `0053_F30_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_PLAN_ACCEPTED_READY_FOR_F31_PREPARATION`
 - Contract: preflight (`adapter_info()` only — `AVAILABLE` + `MALWARE_SCAN`, no `UNAVAILABLE`) → F27 reservation → adapter execution → F29 apply
 - Configured adapter remains `noop_unavailable`: normal result is `scanner_unavailable`/`skipped_unavailable`, job stays queued, no F27/scan/F29, no `attempt_count`/`started_at`, no `scan_error`, no fake `CLEAN`/`scan_passed`
@@ -216,10 +230,12 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Proposed F31 module: `attachment_scan_worker_orchestration.py`
 - Doc: `docs/product/careerkundi_0053_f30_scanner_worker_single_job_orchestration_planning.md`
 
-## Scanner worker single-job orchestration guard (F31)
+## Scanner worker single-job orchestration guard (F31) — accepted current checkpoint
 
 - Module: `attachment_scan_worker_orchestration.py`
 - Entrypoint: `orchestrate_attachment_scan_job` (public input: `owner_user_id`, `scan_job_id`, `expected_content_hash_snapshot` only; `adapter_factory` is a test-only seam)
+- Acceptance token: `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS`
+- Distinguishes: **F27** reservation · **F29** result application · **F31** single-job orchestration
 - Preflight reads `adapter_info()` only (`AVAILABLE` + `MALWARE_SCAN`, no `UNAVAILABLE`); no `scan_attachment`, file read, or DB during preflight
 - Configured adapter is `noop_unavailable`: normal result is `scanner_unavailable`/`skipped_unavailable`, job stays queued and untouched (no F27/scan/F29, no `attempt_count`/`started_at`, no `scan_error`, no fake `CLEAN`)
 - Three separate short-lived sessions: F27 reservation → adapter execution with **no** active session/txn/lock → F29 application
@@ -227,9 +243,10 @@ Future retention requirements (not fully implemented): audit-safe event logging 
 - Post-reservation `NOT_RUN`/unavailable/timeout/error/unsupported/malformed/operational-exception → persistable `MARK_ERROR` via F22 helpers (F21-safe codes, no fabricated engine); MALICIOUS/SUSPICIOUS → `scan_failed` (never `quarantined`)
 - Applies results **only** through F29; rejection → `result_application_rejected` (state unchanged, reserved row is a watch item)
 - Never swallows `asyncio.CancelledError` / `KeyboardInterrupt` / `SystemExit`
-- No worker loop, queue polling, SKIP LOCKED, job selection, startup, scheduler, real scanner, quarantine, audit, routes, UI, mutation, migration, or lease/TTL/reclaim
+- **Still absent (F32 not started):** real adapter/engine, attachment file read / private-storage retrieval for scan, queue polling, continuous worker loop, lease/TTL/heartbeat/reclaim, quarantine movement, scanner admin routes, scanner frontend
 - Orchestrating one guarded scan attempt is not scanning and is not verification
 - Doc: `docs/product/careerkundi_0053_f31_scanner_worker_single_job_orchestration_guard.md`
+- Evidence: `docs/evidence/0053/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`
 
 ## Foundation revision
 

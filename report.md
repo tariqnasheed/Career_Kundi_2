@@ -439,6 +439,29 @@ Next gate: **Owner review of F31**
 
 ---
 
+## Programme 0.4 — F31 Governance Reconciliation and F29/F31 Evidence Canonicalization (2026-07-19)
+
+Documentation-and-evidence-only reconciliation after owner acceptance of F31:
+
+- F31 accepted as current scanner checkpoint with token
+  `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS`
+- Canonical F29 evidence (byte-unchanged):
+  `docs/evidence/0053/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`
+- Canonical F31 evidence (byte-preserving copy of approved readable source):
+  `docs/evidence/0053/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`
+- F3 worktree and hold branch retirement completed earlier; official repository remains
+  `/Users/tariqnasheed/Desktop/Career_Kundi_2`
+- Feature branch `feat/interview-pack-llm-authoring` preserved untouched
+- **F32 has not started** — no scanner capability expansion in this task
+- Programme 0.4 scope is documentation/evidence reconciliation only
+- **Programme 1** is the next gate only after Programme 0.4 acceptance; Programme 1 has not started
+
+Evidence: `~/Desktop/CareerKundi_Programme_0_4_F31_Governance_and_F29_F31_Evidence_Implementation_Evidence.txt`
+Authorization: `CAREERKUNDI_PROGRAMME_0_4_IMPLEMENTATION_AUTHORIZED_F29_F31_EVIDENCE_AND_F31_GOVERNANCE_RECONCILIATION`
+Next gate: **Owner review of Programme 0.4 implementation evidence and exact diff**
+
+---
+
 This document explains, in plain language, everything that was broken in the
 project and exactly how it was fixed. It is written so that a non-coder can
 follow along. Technical terms are explained the first time they appear.

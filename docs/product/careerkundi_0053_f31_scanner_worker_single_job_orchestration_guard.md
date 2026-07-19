@@ -1,12 +1,23 @@
 # CareerKundi 0053-F31 Scanner Worker Single-Job Orchestration Guard
 
-## Status
+## Status (historical contemporaneous readiness)
 
 `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_COMPLETE_READY_FOR_REVIEW`
 
 Implements the single supplied-job orchestration callable accepted by the F30 plan. **No worker loop, queue polling, job selection, startup registration, scheduler, real scanner dependency, file/storage read, quarantine move, audit, routes, UI, or migration.** Orchestrating one guarded scan attempt is not scanning and is not verification.
 
-Next gate: **owner review of F31**.
+Historical next gate at completion: **owner review of F31**.
+
+### ACCEPTANCE / CURRENT STATUS (Programme 0.4 — 2026-07-19)
+
+- **Accepted** as the current scanner checkpoint with token
+  `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS`.
+- Canonical F31 evidence (byte-unchanged copy of approved readable source; historical Desktop/F3 execution paths inside the evidence body are preserved):
+  `docs/evidence/0053/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`
+- Former F3 worktree and hold branch were later retired safely; official repository is `/Users/tariqnasheed/Desktop/Career_Kundi_2`.
+- **F32 has not started.**
+- **Programme 0.4** implementation is complete and accepted. **Programme 1** is the next authorized planning gate and has not started. **F32 has not started.** No scanner capability expansion occurred. Feature branch remains preserved for Programme 8.
+- Watch items and explicit exclusions in §§10–12 remain binding (no engine, polling, lease/TTL/reclaim, quarantine, admin/UI).
 
 ---
 
@@ -173,7 +184,8 @@ On rejection the orchestrator does **not** bypass F29, does **not** force a term
 - two concurrent same-job calls use independent PostgreSQL sessions; the adapter runs only for a reserved call; final state is one coherent terminal projection with `attempt_count == 1`;
 - no worker loop / startup / routes / UI / migration / forbidden imports; F26 dry-run unchanged.
 
-Evidence: `~/Desktop/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`.
+Evidence (canonical): `docs/evidence/0053/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`.
+Historical Desktop pointer (may remain inside the evidence body): `~/Desktop/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`.
 
 ---
 
@@ -190,4 +202,6 @@ Prototype pages P39, P40, P41, P46 remain **future UX context only**; F31 create
 
 ## 13. Next gate
 
-**Owner review of 0053-F31.** After acceptance, the next owner task is consolidation back into `/Users/tariqnasheed/Desktop/Career_Kundi_2`. Do not begin F32.
+**Historical (at F31 completion):** owner review of 0053-F31; consolidation into `/Users/tariqnasheed/Desktop/Career_Kundi_2`.
+
+**Live:** F31 is accepted (`0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS`) as the current scanner checkpoint. Official workspace consolidation is complete; F3 is retired. **Programme 0.4** implementation is complete and accepted. Next authorized planning gate: **Programme 1** (not started). **Do not begin F32.**

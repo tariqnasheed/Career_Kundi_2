@@ -1,6 +1,6 @@
 # CareerKundi 0053-F29 Scanner Worker Result Application Guard
 
-## Decision (pending owner review)
+## Decision (historical contemporaneous readiness)
 
 `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_COMPLETE_READY_FOR_REVIEW`
 
@@ -10,6 +10,15 @@ when owner, state, triple-hash, policy, idempotency and PostgreSQL concurrency
 requirements pass.
 
 Applying a worker result is **not** scanning and **not** verification.
+
+### CURRENT STATUS / ACCEPTANCE (Programme 0.4 — 2026-07-19)
+
+- F29 was later **accepted** with token
+  `0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_F30_PLANNING`.
+- Accepted F31 orchestration consumes F29 as the **sole** guarded result-application route.
+- Canonical F29 evidence (byte-unchanged historical body):
+  `docs/evidence/0053/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`
+- The historical evidence body was **not** rewritten; contemporaneous readiness wording remains.
 
 ---
 
@@ -202,11 +211,12 @@ Not implemented in F29:
 ## 10. Tests and evidence
 
 - Tests: `backend/app/platform/evidence/tests/test_attachment_scan_worker_result_application.py`
-- Evidence: `~/Desktop/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`
+- Evidence (canonical): `docs/evidence/0053/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`
+- Historical Desktop pointer (unchanged in evidence body / older logs): `~/Desktop/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`
 - Scope token: `0053_F29_SCOPE_OK`
 
 ---
 
-## 11. Next gate
+## 11. Next gate (historical)
 
-Owner review of F29. Do not mark later scanner work implemented.
+Owner review of F29 (completed). Later scanner orchestration was implemented as accepted F31. Do not rewrite this historical F29 record as live F32/Programme 1 work.

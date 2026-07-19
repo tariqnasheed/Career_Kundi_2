@@ -5753,20 +5753,33 @@ Doc: `docs/product/careerkundi_0053_f30_scanner_worker_single_job_orchestration_
 Accepted decision: `0053_F30_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_PLAN_ACCEPTED_READY_FOR_F31_PREPARATION`.  
 Prototype refs (future UX context only): P39, P40, P41, P46.
 
-**Next after F30 acceptance:** 0053-F31 Scanner Worker Single-Job Orchestration Guard (not started).
+**Next after F30 acceptance (historical contemporaneous wording):** 0053-F31 Scanner Worker Single-Job Orchestration Guard was not started at F30 acceptance time. F31 was later implemented and is now the accepted current scanner checkpoint (see CURRENT STATUS below).
 
 ---
 
 ## 0053-F31 Scanner Worker Single-Job Orchestration Guard
 
-**Status:** Complete / ready for owner review. Implements one internal supplied-job callable `orchestrate_attachment_scan_job(owner_user_id, scan_job_id, expected_content_hash_snapshot, …)` that preflights the configured adapter via `adapter_info()` only (`AVAILABLE` + `MALWARE_SCAN`, no `UNAVAILABLE`), reserves via F27, executes the adapter with **no** active DB session/transaction/lock, materialises a safe persistable plan, and applies it **only** through F29. Configured `noop_unavailable` adapter → generic `scanner_unavailable`, job left queued and untouched (no F27/scan/F29, no `attempt_count`/`started_at`, no `scan_error`, no fake CLEAN). F27 result carries an additive immutable `ReservedJobSnapshot`; the adapter receives authoritative reserved-row values only (no caller metadata, no file/storage read). Three separate short-lived sessions. Post-reservation NOT_RUN/unavailable/timeout/error/unsupported/malformed/operational-exception → persistable `MARK_ERROR` (F21-safe codes, no fabricated engine); MALICIOUS/SUSPICIOUS → `scan_failed` (never `quarantined`). F29 guard rejection → `result_application_rejected` (state unchanged; reserved-row watch item). `asyncio.CancelledError`/`KeyboardInterrupt`/`SystemExit` propagate. **No** worker loop, queue polling, SKIP LOCKED, job selection, startup registration, scheduler, real scanner dependency, file/storage read, quarantine, audit, routes/UI, claim/`ReviewRequest`/`EvidenceRecord` mutation, migration, or lease/TTL/reclaim.
+**Status (historical contemporaneous record):** Complete / ready for owner review. Implements one internal supplied-job callable `orchestrate_attachment_scan_job(owner_user_id, scan_job_id, expected_content_hash_snapshot, …)` that preflights the configured adapter via `adapter_info()` only (`AVAILABLE` + `MALWARE_SCAN`, no `UNAVAILABLE`), reserves via F27, executes the adapter with **no** active DB session/transaction/lock, materialises a safe persistable plan, and applies it **only** through F29. Configured `noop_unavailable` adapter → generic `scanner_unavailable`, job left queued and untouched (no F27/scan/F29, no `attempt_count`/`started_at`, no `scan_error`, no fake CLEAN). F27 result carries an additive immutable `ReservedJobSnapshot`; the adapter receives authoritative reserved-row values only (no caller metadata, no file/storage read). Three separate short-lived sessions. Post-reservation NOT_RUN/unavailable/timeout/error/unsupported/malformed/operational-exception → persistable `MARK_ERROR` (F21-safe codes, no fabricated engine); MALICIOUS/SUSPICIOUS → `scan_failed` (never `quarantined`). F29 guard rejection → `result_application_rejected` (state unchanged; reserved-row watch item). `asyncio.CancelledError`/`KeyboardInterrupt`/`SystemExit` propagate. **No** worker loop, queue polling, SKIP LOCKED, job selection, startup registration, scheduler, real scanner dependency, file/storage read, quarantine, audit, routes/UI, claim/`ReviewRequest`/`EvidenceRecord` mutation, migration, or lease/TTL/reclaim.
 
-Evidence: `~/Desktop/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`.  
+Evidence (historical Desktop pointer; canonical repository copy): `docs/evidence/0053/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt` (historical body may still cite Desktop/F3 paths).
 Doc: `docs/product/careerkundi_0053_f31_scanner_worker_single_job_orchestration_guard.md`.  
-Decision token: `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_COMPLETE_READY_FOR_REVIEW`.  
+Historical readiness token (unchanged in evidence body): `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_COMPLETE_READY_FOR_REVIEW`.
 Prototype refs (future UX context only): P39, P40, P41, P46.
 
-**Next after F31:** owner review, then consolidation into `/Users/tariqnasheed/Desktop/Career_Kundi_2`.
+### CURRENT STATUS (Programme 0.4 — 2026-07-19)
+
+- **Accepted** as the current scanner checkpoint with token
+  `0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS`.
+- Official workspace is `/Users/tariqnasheed/Desktop/Career_Kundi_2` only. Former F3 worktree (`Career_Kundi_2_F3`) and hold branch `worktree/f3-consolidation-hold-2026-07-19` are retired and absent — do not treat two active workspaces as current.
+- Canonical F29 evidence: `docs/evidence/0053/CareerKundi_0053_F29_Scanner_Worker_Result_Application_Guard_Evidence.txt`.
+- Canonical F31 evidence: `docs/evidence/0053/CareerKundi_0053_F31_Scanner_Worker_Single_Job_Orchestration_Guard_Evidence.txt`.
+- **F32 has not started.** No real scanner engine, attachment byte read, queue polling, continuous worker, lease/reclaim/heartbeat/TTL, quarantine movement, or scanner frontend/admin routes.
+- **Programme 0.4** implementation is complete and accepted. No scanner capability expansion occurred.
+- **Programme 1** is the next authorized planning gate. Programme 1 has not started.
+- Feature branch `feat/interview-pack-llm-authoring` remains preserved for Programme 8.
+- The F27 top-level duplicate remains deferred to Programme 1.
+
+**Next after F31 (live):** Programme 1 is the next authorized planning gate (not started). Do not begin F32.
 
 ---
 
@@ -5857,7 +5870,7 @@ Public Passport sharing; employer/university/license verification portals; crede
 
 ### Next gate
 
-Owner review of **0053-F31** (guard implemented; ready for review), then consolidation into `/Users/tariqnasheed/Desktop/Career_Kundi_2`. Configured adapter remains noop/unavailable. Later scanner engine / worker loop / queue polling / quarantine / audit / admin / UI remain deferred; stuck-reserved recovery is a watch item.
+**0053-F31 is accepted** (`0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_ACCEPTED_WITH_WATCH_ITEMS`) as the current scanner checkpoint. **Programme 0.4** implementation is complete and accepted. Next authorized planning gate is **Programme 1** (not started). **F32 has not started.** No scanner capability expansion occurred. Configured adapter remains noop/unavailable. Later scanner engine / worker loop / queue polling / quarantine / audit / admin / UI / lease recovery remain deferred; stuck-reserved recovery is a watch item. Official repository: `/Users/tariqnasheed/Desktop/Career_Kundi_2` (F3 retired). Feature branch preserved for Programme 8.
 
 ---
 
