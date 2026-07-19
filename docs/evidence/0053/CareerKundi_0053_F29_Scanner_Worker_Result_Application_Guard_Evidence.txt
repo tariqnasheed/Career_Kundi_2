@@ -1,0 +1,205 @@
+CareerKundi 0053-F29 Scanner Worker Result Application Guard — Evidence
+=======================================================================
+
+1. Decision
+-----------
+0053_F29_SCANNER_WORKER_RESULT_APPLICATION_GUARD_COMPLETE_READY_FOR_REVIEW
+
+F29 implements the smallest safe worker-result application guard. It applies an
+already-produced, persistable ScanJobUpdatePlan to an AttachmentScanJob only when
+owner, state, triple-hash, policy, idempotency and PostgreSQL concurrency
+requirements pass. Result application is not scanning and is not verification.
+
+2. Timestamps
+-------------
+UTC:   2026-07-18T21:36:41Z
+Local: 2026-07-19T03:06:41+0530
+
+3. Repository baseline (before)
+-------------------------------
+Worktree: /Users/tariqnasheed/Desktop/Career_Kundi_2_F3
+Branch:   main
+HEAD:     a3e7b1538cf55276d3ddb3b5968a46b6f60235ec
+origin/main (before): a3e7b1538cf55276d3ddb3b5968a46b6f60235ec
+Divergence (before):  0 0
+Migration head:       f0011_attachment_scan_queue (no f0012)
+F29 module before:    absent
+
+Accepted preceding decisions:
+  0053_F27_SCANNER_WORKER_RESERVATION_ACCEPTED_WITH_WATCH_ITEMS_READY_FOR_F28
+  0053_F28_SCANNER_WORKER_RESULT_APPLICATION_PLAN_ACCEPTED_READY_FOR_F29
+
+4. Repository after
+-------------------
+HEAD:       296f174f9a733ac45548c6cdfc6c3dfeff717dfc
+origin/main: 296f174f9a733ac45548c6cdfc6c3dfeff717dfc
+Divergence: 0 0
+Commit message: feat(evidence): guard scanner worker result application
+Push: origin/main updated a3e7b153..296f174f
+
+5. Known local dirt (preserved; not staged)
+-------------------------------------------
+- .env
+- backend/.env
+- backend/data/knowledge_graph.gpickle
+- documents/indexes/*
+- documents/interview_packs/...
+- documents/interview_packs/technology/ai_engineer/ (untracked)
+- locally excluded prototype PNG/PDF/contact-sheet assets (not staged)
+
+6. Files and symbols read
+-------------------------
+- AGENTS.md, .cursor/rules (00/10/20/40)
+- docs/product/careerkundi_0053_f28_scanner_worker_result_application_planning.md
+- docs/product/careerkundi_0053_claims_evidence_plan.md
+- docs/product/careerkundi_live_tracker.md
+- docs/product/careerkundi_master_build_plan.md
+- report.md
+- backend/app/platform/evidence/README.md
+- attachment_scan.py (model), attachment_scan_queue.py, attachment_scan_worker.py
+- attachment_scan_result_persistence.py, attachment_scan_worker_reservation.py
+- attachment_scan_worker_dry_run.py, attachment_scanner_runtime_policy.py
+- attachment_safety.py, evidence service get_evidence_for_owner
+- F16/F19/F21/F22/F26/F27 tests and patterns
+- foundation_heads / f0011 migration
+
+7. Exact implementation behaviour
+---------------------------------
+Module: backend/app/platform/evidence/attachment_scan_worker_result_application.py
+Entrypoint: apply_attachment_scan_worker_result(db, owner_user_id, scan_job_id,
+            expected_content_hash_snapshot, plan: ScanJobUpdatePlan)
+
+Decisions:
+  applied | already_applied | not_found | evidence_not_found | hash_mismatch |
+  not_reserved | action_not_allowed | plan_not_persistable | conflicting_replay
+
+State surface:
+  reserved -> completed
+  reserved -> failed
+Allowed actions: COMPLETE_PASSED, COMPLETE_FAILED, QUARANTINE_REQUIRED, MARK_ERROR
+QUARANTINE_REQUIRED: job_status=completed, safety=scan_failed (never quarantined; no file move)
+Rejects: CANCEL_JOB, RESERVE_JOB, NO_OP, apply_to_database=False, cancelled target, queued source
+
+F22 reuse:
+  normalize_scan_job_update_plan
+  assert_scan_job_update_allowed
+  apply_normalized_scan_job_update_to_loaded_job (new shared helper; no fetch/commit)
+Public apply_scan_job_update_plan unchanged for non-worker callers (delegates to helper).
+
+8. Lock and transaction proof
+-----------------------------
+Lock order: AttachmentScanJob FOR UPDATE, then EvidenceRecord FOR UPDATE
+One transaction: lock → validate → mutate job only → commit once
+Rejected / soft-replay paths: rollback; no field writes on already_applied
+Does not call public unlocked apply_scan_job_update_plan as outer F29 path
+Tests prove concurrent identical double-apply (APPLIED + ALREADY_APPLIED) and
+concurrent conflicting double-apply (APPLIED + CONFLICTING_REPLAY) via two sessions
++ asyncio.Barrier.
+
+9. Triple-hash proof
+--------------------
+EvidenceRecord.content_hash == AttachmentScanJob.content_hash_snapshot
+  == expected_content_hash_snapshot
+Covered by tests: expected mismatch, live hash drift, aligned success,
+missing evidence, other-owner evidence → evidence_not_found.
+No file/storage open.
+
+10. Idempotency proof
+---------------------
+Six-field effective projection after F22 non-None semantics:
+  job_status, attachment_safety_status, engine_name, engine_version,
+  safe_error_code, safe_error_message
+Exact match → already_applied; completed_at/updated_at/attempt_count unchanged
+Mismatch on safe_error_message or engine → conflicting_replay; no mutation
+
+11. Allowed mutations (first apply)
+-----------------------------------
+AttachmentScanJob only:
+  job_status, attachment_safety_status, engine_name/version (non-None),
+  safe_error_code/message (F21-normalized), completed_at once, updated_at via mixin
+Unchanged: attempt_count, started_at, cancelled_at, snapshots, identity fields
+
+12. Preserved boundaries / absences
+-----------------------------------
+- No scanner adapter call
+- No file/storage access
+- No audit emission
+- No subprocess/network/OCR/parsing/LLM imports in F29 module
+- No worker/admin/scan/quarantine/audit route
+- No frontend scan/admin UI
+- No f0012 migration
+- EvidenceRecord / claim support_status / verification_status / ReviewRequest unchanged
+- Queue cancel_attachment_scan_job still works
+- F22 public non-worker path still works
+- F27 reservation behaviour unchanged
+- F26 dry-run remains disabled and does not auto-apply
+
+13. Migration status
+--------------------
+foundation_heads = ['f0011_attachment_scan_queue']
+f0012* = none
+
+14. Test results
+----------------
+Focused F29: 10 passed
+Regressions (F22/F27/F26/F21/F19/F16/safety/evidence/claims/reviews/badge,
+  excluding pre-existing test_no_verification_routes_or_ui.py which scans
+  routes/tests/ unrelated to F29): 191 passed
+Frontend passportBoundaryAudit: 7 passed
+Backend compileall: OK
+OpenAPI forbidden-route check: none
+Frontend build: OK (tsc && vite build)
+Page smoke (vite preview :4173): 
+  /evidence /passport /profile /cv-builder /roadmap /jobs /platform /dashboard → 200
+
+Pre-existing watch (not introduced by F29):
+  test_mapping_helper_not_imported_by_api_routes fails because
+  app/api/routes/tests/test_evidence_attachment_delete_api.py imports
+  app.platform.verification (routes/tests scanned as routes).
+
+15. Exact files changed / staged
+--------------------------------
+Staged and committed (exact list; no git add -A):
+  AGENTS.md
+  backend/app/platform/evidence/README.md
+  backend/app/platform/evidence/attachment_scan_result_persistence.py
+  backend/app/platform/evidence/attachment_scan_worker_result_application.py
+  backend/app/platform/evidence/tests/test_attachment_scan_worker_result_application.py
+  docs/product/careerkundi_0053_claims_evidence_plan.md
+  docs/product/careerkundi_0053_f29_scanner_worker_result_application_guard.md
+  docs/product/careerkundi_live_tracker.md
+  docs/product/careerkundi_master_build_plan.md
+  report.md
+
+Confirmed NOT staged:
+  .env, backend/.env, backend/data/knowledge_graph.gpickle, documents/,
+  prototype PNG/PDF/ZIP assets
+
+16. Scope token
+---------------
+0053_F29_SCOPE_OK
+
+17. Commit and push
+-------------------
+Commit: 296f174f9a733ac45548c6cdfc6c3dfeff717dfc
+Message: feat(evidence): guard scanner worker result application
+Push: success → origin/main
+HEAD == origin/main; divergence 0 0
+
+18. Remaining limitations
+-------------------------
+- No scanner engine / adapter execution
+- No worker loop / startup registration
+- No quarantine file movement
+- No audit emission
+- No admin / scan routes or frontend UI
+- Public attachment safety response remains scan_not_available (F13)
+- Stuck reserved / TTL not addressed
+- Pre-existing verification routes/tests boundary flake noted above
+
+19. Next gate
+-------------
+Owner review of 0053-F29.
+Later scanner engine / worker loop / quarantine / audit / admin / UI remain deferred.
+
+END
