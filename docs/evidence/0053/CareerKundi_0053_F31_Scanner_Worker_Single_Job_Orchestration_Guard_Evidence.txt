@@ -1,0 +1,230 @@
+CareerKundi 0053-F31 Scanner Worker Single-Job Orchestration Guard — Evidence
+==============================================================================
+
+DECISION
+  0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_COMPLETE_READY_FOR_REVIEW
+
+MODE
+  Security-sensitive orchestration + transaction-boundary implementation.
+  Core logic authored directly (not delegated to Auto/Composer).
+
+1. TIMESTAMPS
+   start 2026-07-19T03:28+05:30 (baseline) → commit/push 2026-07-19T~04:10+05:30
+
+2. REPOSITORY BASELINE (Task A — verified before edits)
+   - worktree: /Users/tariqnasheed/Desktop/Career_Kundi_2_F3
+   - branch: main
+   - HEAD before: a81b3846cb5e2b6a382ed7513d8d859cb62713ef
+   - origin/main before: a81b3846cb5e2b6a382ed7513d8d859cb62713ef
+   - divergence before: 0 0
+   - migration head: f0011_attachment_scan_queue (no f0012*)
+   - F31 module/tests before: ABSENT
+   - accepted preceding: F29 accepted; F30 plan accepted
+   - baseline matched required HEAD/branch → NOT BLOCKED
+
+3. HEAD / ORIGIN / DIVERGENCE
+   - HEAD after:   4c8abbd6ab50198c6d1b8744e5d33f2f391e8a2c
+   - origin after: 4c8abbd6ab50198c6d1b8744e5d33f2f391e8a2c
+   - divergence after: 0 0
+
+4. KNOWN LOCAL DIRT (preserved, NOT staged)
+   - .env, backend/.env, backend/data/knowledge_graph.gpickle
+   - documents/indexes/, documents/interview_packs/ (incl. untracked ai_engineer/)
+   - untracked prior evidence: docs/evidence/0053/CareerKundi_0053_F29_..._Evidence.txt
+   - locally excluded prototype assets
+
+5. FILES / SYMBOLS READ
+   - AGENTS.md; .cursor/rules present (governance/scanner-security/phase-gate)
+   - F30 plan, F29 guard doc, F28 plan, claims plan, live tracker, master plan, report, evidence README
+   - attachment_scanner_adapter.py (+noop +disabled local), attachment_scan_worker.py (F17 contracts/mapping)
+   - attachment_scan_worker_reservation.py (F27), attachment_scan_worker_result_application.py (F29)
+   - attachment_scan_result_persistence.py (F22), attachment_scanner_runtime_policy.py (F21)
+   - attachment_scan_queue.py (F16), AttachmentScanJob + EvidenceRecord models
+   - app/db/session.py (async_session_factory / AsyncSessionLocal)
+   - F21/F22/F26/F27/F29 tests; migration_runner; pf1_test_db; main.py
+
+6. CONFIGURED ADAPTER PROOF
+   get_configured_attachment_scanner_adapter().adapter_info():
+     name=noop_unavailable  availability=unavailable  capabilities=['unavailable']
+   → adapter_is_executable(info) == False → preflight fails (normal production).
+
+7. PREFLIGHT PROOF (adapter_info only)
+   adapter_is_executable requires availability==AVAILABLE AND MALWARE_SCAN present
+   AND UNAVAILABLE absent. scan_attachment is not called during preflight.
+   Tests: test_preflight_predicate (truth table),
+          test_configured_noop_preflight_unavailable_no_db_no_scan,
+          test_adapter_info_exception_fails_safe_before_reservation.
+
+8. UNAVAILABLE-PATH NO-MUTATION PROOF
+   - BoomSession factory raises if any DB session opens; noop adapter asserts if
+     scan_attachment called → unavailable path opens NO session and NO scan.
+   - DB test test_unavailable_preflight_leaves_queued_job_unchanged: after
+     orchestrate with the real configured adapter, the queued job row is
+     unchanged: job_status=queued, attempt_count=0, started_at=None,
+     completed_at=None, safety=scan_pending, engine_name=None, safe_error_code=None.
+   - No F27 / scan_attachment / F29 called; no scan_error created; no fake CLEAN.
+
+9. AUTHORITATIVE SNAPSHOT PROOF (F27 additive extension)
+   - ScanWorkerReservationResult gained additive immutable
+     snapshot: ReservedJobSnapshot | None (default None; set only on success).
+   - Populated from the reserved-and-refreshed row: job_id, owner_user_id,
+     evidence_id, content_hash_snapshot, mime_type_snapshot, size_bytes_snapshot.
+   - Additive-only proof: git diff of reservation module shows no deleted logic
+     lines; F27 suite passes unchanged (see §16).
+   - test_reservation_result_carries_authoritative_snapshot asserts snapshot
+     equals the reserved row (mime text/plain, size 7, evidence_id, hash).
+   - test_executable_adapter_reserves_and_applies_clean: adapter.received equals
+     {evidence_id, content_hash, mime_type='text/plain', size_bytes=4} — adapter
+     is fed authoritative reserved-row values only; caller metadata not accepted
+     (public signature has no evidence_id/mime/size — test_public_input_surface_
+     rejects_attachment_metadata). No file/storage read.
+
+10. THREE-SESSION / TRANSACTION-BOUNDARY PROOF
+    - TrackingSessionFactory wraps the real async factory.
+    - test_executable_adapter_reserves_and_applies_clean asserts:
+        adapter.observed_active_during_scan == 0  (no active session/txn/lock
+        while the adapter runs — Boundary 2 holds none),
+        tracker.opened == 2 and 2 distinct session ids (reservation + application),
+        tracker.max_concurrent == 1 (never overlapping).
+    - Boundary 1 (F27) commits/refreshes and the session closes before Boundary 2;
+      Boundary 3 (F29) uses a new short-lived session.
+
+11. POST-RESERVATION ERROR-MATERIALIZATION PROOF
+    Legitimate verdicts reuse F17 build_scan_job_update_from_result, rebuilt
+    persistable via F22 build_persistable_scan_job_update_plan (no duplicated
+    normalization):
+      CLEAN → completed/scan_passed (real engine identity) — applied via F29.
+      MALICIOUS/SUSPICIOUS → completed/scan_failed, never quarantined
+        (test_malicious_and_suspicious_persist_scan_failed).
+      TIMEOUT/ERROR/UNSUPPORTED → failed/scan_error, code preserved
+        (test_terminal_error_verdicts_mark_error → scanner_timeout/scanner_error/
+        scanner_unsupported).
+    Safe MARK_ERROR (F21-safe codes, engine None) for:
+      NOT_RUN (test_post_reservation_not_run_becomes_mark_error),
+      adapter-now-unavailable (test_adapter_now_unavailable_becomes_mark_error),
+      malformed return (test_malformed_adapter_return_becomes_mark_error →
+        scanner_output_unavailable),
+      adapter exception (test_adapter_exception_becomes_mark_error),
+      mapping exception (test_mapping_exception_becomes_mark_error →
+        scanner_output_unavailable).
+    No fake CLEAN / no fabricated engine on bad paths
+      (test_no_fake_clean_on_bad_paths, test_no_fabricated_engine_on_bad_paths);
+    path/URI redaction (test_safe_message_redacts_paths → no tmp/local-evidence).
+
+12. F29-ONLY APPLICATION PROOF
+    - Orchestrator applies solely through apply_attachment_scan_worker_result.
+    - AST test asserts source does NOT contain "apply_scan_job_update_plan(" (no
+      direct public F22 apply) nor "cancel_attachment_scan_job(" nor
+      "with_for_update"/"SKIP LOCKED"/"skip_locked".
+    - test_f29_decision_mapping (parametrized): APPLIED→applied,
+      ALREADY_APPLIED→already_applied; F29 called exactly once; adapter invoked.
+
+13. F29 REJECTION PROOF
+    - test_f29_decision_mapping rejections (EVIDENCE_NOT_FOUND, HASH_MISMATCH,
+      CONFLICTING_REPLAY, NOT_RESERVED, ACTION_NOT_ALLOWED, PLAN_NOT_PERSISTABLE)
+      all → result_application_rejected, reserved=True.
+    - Real integration: test_hash_drift_rejection_leaves_reserved — live evidence
+      hash drift → F29 hash_mismatch → outcome result_application_rejected; job row
+      remains reserved, cancelled_at None, completed_at None, attempt_count 1
+      (no auto-cancel, no forced terminal, guards not bypassed, F22 not called).
+
+14. INTERRUPTION PROPAGATION PROOF
+    - test_process_interrupt_propagates[CancelledError|KeyboardInterrupt|SystemExit]:
+      adapter.scan_attachment raises the interrupt → propagates out of orchestrate
+      (pytest.raises), and the job remains reserved (attempt_count 1,
+      completed_at None, cancelled_at None) — documented stuck-reserved watch item.
+    - No `except BaseException`; interrupts never caught/suppressed.
+
+15. ALLOWED AND FORBIDDEN EFFECTS
+    Allowed: adapter_info read; F27 reservation; configured adapter seam;
+      F17/F22 plan build; F29 application; structured owner-safe outcome.
+    Forbidden and absent (AST + OpenAPI + frontend + migration checks):
+      worker loop, queue polling, SKIP LOCKED, job selection, startup/scheduler,
+      real scanner dependency, file/storage read, subprocess/network/OCR/LLM,
+      quarantine, audit, routes, frontend UI, claim/ReviewRequest/EvidenceRecord
+      mutation, migration (f0012+), lease/TTL/reclaim, direct F22 apply.
+
+16. CONCURRENCY PROOF (real PostgreSQL)
+    test_concurrent_same_job_only_reserved_calls_invoke_adapter: two concurrent
+    orchestrate calls for the same queued job, each with an independent
+    AsyncSession from a real async_sessionmaker, coordinated by asyncio.Barrier.
+    Asserts: the adapter runs only for a call whose reservation_decision=='reserved';
+    at least one outcome APPLIED; outcomes subset of {APPLIED, ALREADY_APPLIED,
+    RESULT_APPLICATION_REJECTED, RESERVATION_REJECTED}; final job is one coherent
+    terminal projection (completed/scan_passed, not torn), attempt_count == 1.
+
+17. MIGRATION STATE
+    foundation_heads() == ['f0011_attachment_scan_queue']; no f0012+ created.
+
+18. TEST RESULTS
+    - F31 suite: 41 tests (19 static + 22 disposable-PostgreSQL) — ALL PASS.
+    - Scanner family (F16–F31 incl. modified F27): 125 passed.
+    - Evidence + claims + verification suites: 324 passed, 1 pre-existing FAIL.
+      Pre-existing unrelated fail: test_mapping_helper_not_imported_by_api_routes
+      (rglobs app/api/routes/ and reaches routes/tests/
+      test_evidence_attachment_delete_api.py). F31 modifies no routes;
+      git diff HEAD -- app/api/ is empty. Kept visible; not relabelled accepted.
+    - F26 dry-run remains disabled (test_f26_dry_run_remains_disabled).
+
+19. COMPILE / BUILD / OPENAPI / BROWSER
+    - backend compileall app: COMPILEALL_OK
+    - OpenAPI sweep: 129 paths; FORBIDDEN (worker/orchestrate/reserve/scan/
+      quarantine/audit/admin/rescan) NONE
+    - frontend tests: 179 passed / 29 files
+    - frontend build: built OK
+    - page smoke (preview server): /evidence /passport /profile /cv-builder
+      /roadmap /jobs /platform /dashboard → all 200
+
+20. EXACT FILES CHANGED (committed)
+    NEW  backend/app/platform/evidence/attachment_scan_worker_orchestration.py
+    NEW  backend/app/platform/evidence/tests/test_attachment_scan_worker_orchestration.py
+    MOD  backend/app/platform/evidence/attachment_scan_worker_reservation.py (additive snapshot)
+    MOD  backend/app/platform/evidence/README.md
+    NEW  docs/product/careerkundi_0053_f31_scanner_worker_single_job_orchestration_guard.md
+    MOD  docs/product/careerkundi_0053_claims_evidence_plan.md
+    MOD  docs/product/careerkundi_live_tracker.md
+    MOD  docs/product/careerkundi_master_build_plan.md
+    MOD  AGENTS.md
+    MOD  report.md
+
+21. EXACT STAGED FILES (same 10; git add by explicit path only)
+    AGENTS.md
+    backend/app/platform/evidence/README.md
+    backend/app/platform/evidence/attachment_scan_worker_orchestration.py
+    backend/app/platform/evidence/attachment_scan_worker_reservation.py
+    backend/app/platform/evidence/tests/test_attachment_scan_worker_orchestration.py
+    docs/product/careerkundi_0053_claims_evidence_plan.md
+    docs/product/careerkundi_0053_f31_scanner_worker_single_job_orchestration_guard.md
+    docs/product/careerkundi_live_tracker.md
+    docs/product/careerkundi_master_build_plan.md
+    report.md
+    Confirmed NOT staged: .env, backend/.env, knowledge_graph.gpickle, documents/,
+    prototype PNG/PDF/ZIP, prior F29 evidence file, migrations.
+
+22. SCOPE TOKEN
+    0053_F31_SCOPE_OK
+
+23. COMMIT AND PUSH
+    - commit: 4c8abbd6ab50198c6d1b8744e5d33f2f391e8a2c
+    - message: feat(evidence): orchestrate one guarded scanner job
+    - push: a81b3846..4c8abbd6 main -> main
+    - HEAD == origin/main == 4c8abbd6ab50198c6d1b8744e5d33f2f391e8a2c ; divergence 0 0
+
+24. F31 CONFIRMATION
+    - F31 implemented as one supplied-job callable; F32 NOT started.
+    - noop adapter factory unchanged; F29 guards not weakened; F27 change additive.
+    - No session remains open during adapter execution (observed_active==0).
+
+25. REMAINING LIMITATIONS / WATCH ITEMS
+    - Stuck-reserved recovery (interruption / F29 rejection) — no lease/TTL/reclaim.
+    - Configured adapter remains noop/unavailable until a later scanner-enablement phase.
+    - No scanner engine, worker loop, queue polling, quarantine, audit, admin, routes, UI.
+    - Pre-existing unrelated backend fail: test_mapping_helper_not_imported_by_api_routes.
+    - Pre-existing: JobSearchPage.test.tsx still missing.
+    - P39/P40/P41/P46 remain future UX context only.
+
+26. NEXT GATE
+    Owner review of 0053-F31. After acceptance: consolidation into
+    /Users/tariqnasheed/Desktop/Career_Kundi_2. Do not begin F32.
+
+Decision: 0053_F31_SCANNER_WORKER_SINGLE_JOB_ORCHESTRATION_GUARD_COMPLETE_READY_FOR_REVIEW
