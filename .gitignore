@@ -4,22 +4,30 @@
 # =============================================================================
 
 # --- Python ------------------------------------------------------------------
-__pycache__/            # Compiled bytecode caches, regenerated on every run
-*.py[cod]                # Compiled/optimized Python files (.pyc/.pyo/.pyd)
-*$py.class                # Jython compiled classes (defensive, unused here)
-*.so                       # Compiled C extensions (faiss/native deps build artifacts)
-.venv/                     # Local virtualenv created by `uv sync`
+# Compiled bytecode caches, regenerated on every run
+__pycache__/
+# Compiled/optimized Python files (.pyc/.pyo/.pyd)
+*.py[cod]
+# Jython compiled classes (defensive, unused here)
+*$py.class
+# Compiled C extensions (faiss/native deps build artifacts)
+*.so
+# Local virtualenv created by `uv sync`
+.venv/
 venv/
 env/
-*.egg-info/                # setuptools metadata generated on install
+# setuptools metadata generated on install
+*.egg-info/
 *.egg
 .eggs/
 
 # --- UV --------------------------------------------------------------------
-.uv/                        # UV's local cache directory
+# UV's local cache directory
+.uv/
 
 # --- Node.js -----------------------------------------------------------------
-node_modules/                # Installed npm packages — restored via `npm install`
+# Installed npm packages — restored via `npm install`
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -28,19 +36,24 @@ yarn-error.log*
 # --- Build outputs -------------------------------------------------------------
 # Frontend production build output (Vite)
 frontend/dist/
-build/                          # Generic build output directory
-.next/                           # (unused here, defensive for future Next.js migration)
+# Generic build output directory
+build/
+# (unused here, defensive for future Next.js migration)
+.next/
 out/
-*.timestamp-*.mjs              # Vite hot-reload artifacts — regenerated on every dev start
+# Vite hot-reload artifacts — regenerated on every dev start
+*.timestamp-*.mjs
 
 # --- Environment files (NEVER commit secrets) ------------------------------------
-.env                               # Real secrets — local backend env file
+# Real secrets — local backend env file
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 .env.production
-!.env.example                       # Exception: the documented template IS committed
+# Exception: the documented template IS committed
+!.env.example
 
 # --- IDE -------------------------------------------------------------------------
 .vscode/
@@ -58,15 +71,20 @@ ehthumbs.db
 Desktop.ini
 
 # --- Docker ------------------------------------------------------------------------
-docker-compose.override.yml        # Local-only compose overrides should never be shared
+# Local-only compose overrides should never be shared
+docker-compose.override.yml
 
 # --- Database ----------------------------------------------------------------------
 *.db
 *.sqlite3
-data/postgres/                      # Local Postgres volume data (if bind-mounted)
-data/redis/                          # Local Redis volume data (if bind-mounted)
-data/vector_store/                    # Generated FAISS index — rebuildable from source data
-data/knowledge_graph.gpickle            # Generated knowledge graph — rebuildable
+# Local Postgres volume data (if bind-mounted)
+data/postgres/
+# Local Redis volume data (if bind-mounted)
+data/redis/
+# Generated FAISS index — rebuildable from source data
+data/vector_store/
+# Generated knowledge graph — rebuildable
+data/knowledge_graph.gpickle
 
 # --- Logs -----------------------------------------------------------------------------
 *.log
